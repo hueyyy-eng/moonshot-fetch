@@ -263,14 +263,17 @@ def netflow_and_bridges(http: Http, st: Status) -> tuple[Optional[dict], dict[st
     netflow = None
     gross: dict[str, dict] = {}
     bridges = None
+    fb: list = []
     try:
         nd = _next_data(http, f"{SITE}/bridges")
-        nf = nd["props"]["pageProps"]["netflowsData"]
+        pp0 = nd["props"]["pageProps"]
+        nf = pp0["netflowsData"]
         netflow = {}
         for period in ("day", "week", "month"):
             arr = nf.get(period) or []
             netflow[period] = [[x.get("chain"), r2(float(x.get("value") or 0) / 1e6)] for x in arr if x.get("chain")]
         st.ok("llama.netflow", day=len(netflow.get("day", [])))
+        fb = pp0.get("filteredBridges") or []      # confirmed 19 Sep: filteredBridges is on /bridges, not /bridges/chains
     except Exception as e:  # noqa: BLE001
         st.fail("llama.netflow", e)
     try:
@@ -290,7 +293,8 @@ def netflow_and_bridges(http: Http, st: Status) -> tuple[Optional[dict], dict[st
             if g:
                 gross[s] = g
         st.ok("llama.bridges_chains", chains=len(gross))
-        fb = pp.get("filteredBridges") or []
+        if not fb:
+            fb = pp.get("filteredBridges") or []
 
         def pick(o: dict, *cands):
             for k in cands:
@@ -310,7 +314,10 @@ def netflow_and_bridges(http: Http, st: Status) -> tuple[Optional[dict], dict[st
         rows = [r for r in rows if r[1] is not None]
         rows.sort(key=lambda r: -r[1])
         bridges = rows[:14]
-        st.ok("llama.bridges_protocols", rows=len(bridges), sample_keys=sorted(list(fb[0].keys()))[:12] if fb else [])
+        if bridges:
+            st.ok("llama.bridges_protocols", rows=len(bridges))
+        else:
+            st.fail("llama.bridges_protocols", "filteredBridges missing or unrecognised keys", sample_keys=sorted(list(fb[0].keys()))[:12] if fb else [])
     except Exception as e:  # noqa: BLE001
         st.fail("llama.bridges_chains", e)
     return netflow, gross, bridges
