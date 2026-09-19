@@ -67,8 +67,14 @@ def is_unit_not_bet(sym: str, name: str, quote: str) -> bool:
 
 
 # ---------------------------------------------------------------- discovery routes
+_DS_DEAD = {"fails": 0}          # circuit breaker: the screener HTML refused every call from a GitHub runner on 19 Sep
+
+
 def ds_screener(http: Http, chain: str, st: Status) -> tuple[set[str], set[str], set[str], bool]:
-    """Pairs from DexScreener's server-rendered screener pages. Returns (A, B, C, worked)."""
+    """Pairs from DexScreener's server-rendered screener pages. Returns (A, B, C, worked).
+    After three chains where every pass failed, stops trying (saves ~10s/chain and the log noise)."""
+    if _DS_DEAD["fails"] >= 3:
+        return set(), set(), set(), False
     passes = {
         "A": f"{DS}/{chain}?rankBy=volume&order=desc&minLiq=50000&minMarketCap=500000&maxMarketCap=2000000",
         "B": f"{DS}/{chain}?rankBy=trendingScoreH6&order=desc&minLiq=50000&minMarketCap=500000&maxMarketCap=2000000",
@@ -87,6 +93,10 @@ def ds_screener(http: Http, chain: str, st: Status) -> tuple[set[str], set[str],
             worked = worked or bool(found)
         except Exception as e:  # noqa: BLE001
             log.warning("DexScreener screener %s pass %s: %s", chain, k, str(e)[:100])
+    if not worked:
+        _DS_DEAD["fails"] += 1
+        if _DS_DEAD["fails"] == 3:
+            log.warning("DexScreener screener pages refused 3 chains in a row — disabling that route for this run; GeckoTerminal carries discovery")
     return out["A"], out["B"], out["C"], worked
 
 
@@ -97,9 +107,10 @@ def gt_pools(http: Http, chain: str) -> tuple[set[str], bool]:
         return set(), False
     found: set[str] = set()
     worked = False
-    urls = [f"{GT}/networks/{net}/pools?page={p}&sort=h24_volume_usd_desc" for p in range(1, 6)]
-    urls += [f"{GT}/networks/{net}/trending_pools?duration=6h", f"{GT}/networks/{net}/trending_pools?duration=24h",
-             f"{GT}/networks/{net}/new_pools"]
+    # 3 volume pages + 6h trending = 4 calls per chain. First live run (19 Sep) showed 8 calls/chain tripping
+    # GeckoTerminal's per-minute limit (429s on the 24h-trending and new_pools calls) and ~75s per chain.
+    urls = [f"{GT}/networks/{net}/pools?page={p}&sort=h24_volume_usd_desc" for p in range(1, 4)]
+    urls += [f"{GT}/networks/{net}/trending_pools?duration=6h"]
     for u in urls:
         try:
             j = http.get(u, headers={"Accept": "application/json;version=20230302"}, retries=1)
