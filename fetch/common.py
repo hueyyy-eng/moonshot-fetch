@@ -114,10 +114,13 @@ class Http:
                 if r.status_code == 429 or 500 <= r.status_code < 600:
                     last_err = f"HTTP {r.status_code}"
                     if r.status_code == 429:
+                        # GitHub-hosted runners share egress IPs, so a public API's per-IP bucket is shared with
+                        # strangers: back off progressively (20s, 35s, 50s...) and honour Retry-After when longer.
                         try:
-                            wait = min(60.0, float(r.headers.get("Retry-After") or 15))
+                            ra = float(r.headers.get("Retry-After") or 0)
                         except ValueError:
-                            wait = 15.0
+                            ra = 0.0
+                        wait = min(90.0, max(ra, 20.0 + 15.0 * attempt))
                     else:
                         wait = 3.0 * (attempt + 1)
                     time.sleep(wait)
