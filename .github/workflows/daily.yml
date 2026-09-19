@@ -1,0 +1,47 @@
+name: Moonshot daily fetch
+
+on:
+  schedule:
+    # 02:45 UTC = 10:45 SGT, 15 min before the 11:00 SGT cloud scan reads latest/scan.json
+    - cron: "45 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: moonshot-fetch
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Fetch every source and write today's snapshot
+        env:
+          BLOCKSCOUT_API_KEY: ${{ secrets.BLOCKSCOUT_API_KEY }}
+        run: python -m fetch.main "$GITHUB_WORKSPACE"
+
+      - name: Show source status
+        run: python -c "import json;d=json.load(open('latest/status.json'));[print(f\"{k:28s} {v.get('state'):8s} {v.get('note') or v.get('error') or ''}\") for k,v in d['sources'].items()]"
+
+      - name: Commit snapshot
+        run: |
+          git config user.name "moonshot-fetch[bot]"
+          git config user.email "moonshot-fetch@users.noreply.github.com"
+          git add snapshots latest
+          if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
+          git commit -m "snapshot $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push
