@@ -25,6 +25,34 @@ PERMISSIONED_RE = re.compile(r"^0xb20{20,}", re.I)
 POOL_NAME_RE = re.compile(r"pool|manager|uniswap|v4|position", re.I)
 DEAD = {"0x0000000000000000000000000000000000000000", "0x000000000000000000000000000000000000dead"}
 TB_FUNCS = ("pause", "blacklist", "blocklist", "settax", "setfee", "setmaxtx", "enabletrading", "settrading", "setlimit", "excludefrom", "setswap")
+# owner() is read over JSON-RPC. The unified gateway (api.blockscout.com/4663) has NO eth-rpc route
+# (404, verified 20 Sep), so try it first for parity but fall back to the chain's own explorer host,
+# which does expose /api/eth-rpc. Both best-effort; "?" means we genuinely could not read it.
+RPC_HOSTS = ("https://api.blockscout.com/4663", "https://robinhoodchain.blockscout.com")
+
+
+def _owner(http: Http, ta: str, key: str) -> str:
+    """Best-effort owner() read across the RPC hosts. Returns renounced | live | none | ?."""
+    payload = {"jsonrpc": "2.0", "id": 1, "method": "eth_call",
+               "params": [{"to": ta, "data": "0x8da5cb5b"}, "latest"]}
+    saw_revert = False
+    for host in RPC_HOSTS:
+        url = f"{host}/api/eth-rpc" + (f"?apikey={key}" if key else "")
+        try:
+            rpc = http.post_json(url, payload)
+        except Exception:  # noqa: BLE001  (404 on the gateway, 429/timeout on the chain host)
+            continue
+        if not rpc:
+            continue
+        res = rpc.get("result")
+        if res and isinstance(res, str) and len(res) >= 42:
+            return "renounced" if ("0x" + res[-40:]).lower() in DEAD else "live"
+        err = rpc.get("error")
+        if err:
+            msg = str(err).lower()
+            if "too many" not in msg and "rate" not in msg:   # a real revert = no owner(); a rate-limit is not
+                saw_revert = True
+    return "none" if saw_revert else "?"
 
 
 # ---------------------------------------------------------------- Solana
@@ -177,22 +205,15 @@ def explorer(http: Http, row: dict, key: str) -> None:
     row["ver"] = ver
     if sc.get("name"):
         row["cnm"] = sc["name"]
-    own = "?"
-    try:
-        rpc = http.post_json(f"{BLOCKSCOUT}/api/eth-rpc" + (f"?apikey={key}" if key else ""),
-                             {"jsonrpc": "2.0", "id": 1, "method": "eth_call", "params": [{"to": ta, "data": "0x8da5cb5b"}, "latest"]})
-        res = (rpc or {}).get("result")
-        if res and isinstance(res, str) and len(res) >= 42:
-            addr = "0x" + res[-40:]
-            own = "renounced" if addr.lower() in DEAD else "live"
-        elif (rpc or {}).get("error"):
-            own = "none"
-    except Exception:  # noqa: BLE001
-        own = "?"
+    own = _owner(http, ta, key)
     row["own"] = own
     abi = sc.get("abi") or []
     fnames = [(f.get("name") or "").lower() for f in abi if isinstance(f, dict) and f.get("type") == "function"]
-    if ver and own == "live":
+    # Flag a live authority capability unless ownership is PROVABLY renounced. When owner() cannot be
+    # read (own=="?") we still flag any mint / owner-control function the verified ABI exposes, rather
+    # than assume it is dead — assuming dead was the false-pass bug (gateway has no eth-rpc route, so
+    # own was always "?" and mint/tb never set, letting a live-mint token pass the authority check).
+    if ver and own != "renounced":
         if any(n.startswith("mint") for n in fnames):
             row["mint"] = 1
         if any(any(n.startswith(t) for t in TB_FUNCS) for n in fnames):
