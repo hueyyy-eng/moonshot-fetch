@@ -8,11 +8,17 @@ chromium — present in the cloud sandbox (PLAYWRIGHT_BROWSERS_PATH), otherwise:
 from __future__ import annotations
 
 import json
+import os
 import sys
 
 
 def main() -> int:
     page_path, summary_path = sys.argv[1], sys.argv[2]
+    # file:// needs an absolute path — a relative one (e.g. "out/page_new.html")
+    # makes Chromium raise net::ERR_INVALID_URL and every check fails, which is
+    # what silently broke unattended scheduled runs. Resolve it here so the caller
+    # can pass either form.
+    page_path = os.path.abspath(page_path)
     summary = json.load(open(summary_path, encoding="utf-8"))
     from playwright.sync_api import sync_playwright
 
