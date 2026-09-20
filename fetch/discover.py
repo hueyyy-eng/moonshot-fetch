@@ -43,7 +43,7 @@ MCAP_M = (500.0, 2000.0)      # $k
 MCAP_L_MIN = 2000.0
 LIQ_PCT, LIQ_MIN_K, LIQ_L_MIN_K = 5.0, 25.0, 100.0
 TURN_MIN, DROP_MAX = 1.0, -40.0
-CAP_M, CAP_L = 45, 10
+CAP_M, CAP_L = 45, 6          # leaders capped lower than the prompt's ~10: each one costs GeckoTerminal budget the moonshot band needs more
 
 STABLE_RE = re.compile(r"^(usd|usdc|usdt|usde|usdg|dai|fdusd|pyusd|usd1|usdd|usds|tusd|frax|lusd|gusd|usdb|usdx|usdh|eurc|eurt|xusd|susd|susde|ausd|honey|nusd|usd\+|usdt0|usdc\.e|usdbc|musd|cusd|dusd|ust|usdm)$", re.I)
 NATIVE_WRAPPED = {"SOL", "WSOL", "ETH", "WETH", "BNB", "WBNB", "HYPE", "WHYPE", "S", "WS", "POL", "WPOL", "MATIC", "WMATIC", "AVAX", "WAVAX",
@@ -107,13 +107,14 @@ def gt_pools(http: Http, chain: str) -> tuple[set[str], bool]:
         return set(), False
     found: set[str] = set()
     worked = False
-    # 3 volume pages + 6h trending = 4 calls per chain. First live run (19 Sep) showed 8 calls/chain tripping
-    # GeckoTerminal's per-minute limit (429s on the 24h-trending and new_pools calls) and ~75s per chain.
-    urls = [f"{GT}/networks/{net}/pools?page={p}&sort=h24_volume_usd_desc" for p in range(1, 4)]
-    urls += [f"{GT}/networks/{net}/trending_pools?duration=6h"]
+    # GeckoTerminal has no market-cap filter, and the $500k-$2m band sits well below the first page of a
+    # volume-sorted listing (run #2 on 19 Sep: 1-2 pages/chain -> 14 moonshot tokens vs 76 on the dashboard).
+    # So: 8 volume pages + all four trending windows (trending skews small-cap). 12 calls/chain, retried patiently.
+    urls = [f"{GT}/networks/{net}/pools?page={p}&sort=h24_volume_usd_desc" for p in range(1, 9)]
+    urls += [f"{GT}/networks/{net}/trending_pools?duration={d}" for d in ("5m", "1h", "6h", "24h")]
     for u in urls:
         try:
-            j = http.get(u, headers={"Accept": "application/json;version=20230302"}, retries=1)
+            j = http.get(u, headers={"Accept": "application/json;version=20230302"}, retries=3)
             if not j:
                 continue
             for pool in j.get("data", []):
@@ -122,10 +123,41 @@ def gt_pools(http: Http, chain: str) -> tuple[set[str], bool]:
                     found.add(addr)
             worked = True
         except Exception as e:  # noqa: BLE001
-            log.warning("GeckoTerminal discovery %s: %s", chain, str(e)[:100])
+            log.warning("GeckoTerminal discovery %s: %s", chain, str(e)[-160:])
             if isinstance(e, BlockedError):
                 break
     return found, worked
+
+
+def ds_promoted(http: Http) -> dict[str, set[str]]:
+    """DexScreener's public API (not the challenged screener pages): boosted + profiled tokens, chain-agnostic.
+    Paid promotion skews small-cap, so this is a cheap second discovery route. Returns chainId -> token addresses."""
+    out: dict[str, set[str]] = {}
+    for path in ("token-boosts/top/v1", "token-boosts/latest/v1", "token-profiles/latest/v1"):
+        try:
+            j = http.get(f"{DS_API}/{path}", retries=2)
+            for it in j or []:
+                c, ta = it.get("chainId"), it.get("tokenAddress")
+                if c and ta:
+                    out.setdefault(c, set()).add(ta)
+        except Exception as e:  # noqa: BLE001
+            log.warning("DexScreener %s: %s", path, str(e)[-120:])
+    return out
+
+
+def ds_tokens_to_pairs(http: Http, chain: str, tas: list[str]) -> list[dict]:
+    """Resolve token addresses to their best pair via the public tokens API (30 per call)."""
+    rows: list[dict] = []
+    for i in range(0, len(tas), 30):
+        try:
+            j = http.get(f"{DS_API}/tokens/v1/{chain}/{','.join(tas[i:i + 30])}", retries=2)
+            for p in j or []:
+                r = pair_to_row(p)
+                if r:
+                    rows.append(r)
+        except Exception as e:  # noqa: BLE001
+            log.warning("DexScreener tokens %s: %s", chain, str(e)[-120:])
+    return rows
 
 
 # ---------------------------------------------------------------- DexScreener pairs -> rows
@@ -228,7 +260,8 @@ def narrow_and_band(rows: list[dict]) -> list[dict]:
 def run(http: Http, st: Status, passing_slugs: list[str], core: list[str]) -> dict[str, Any]:
     http.pace("api.dexscreener.com", 200)
     http.pace("dexscreener.com", 30)
-    http.pace("api.geckoterminal.com", 25)
+    http.pace("api.geckoterminal.com", 12)     # shared runner IP: 25/min tripped 429s on ~half the calls in run #2
+    promoted = ds_promoted(http)
     slugs = list(dict.fromkeys(list(core) + list(passing_slugs)))
     chains: list[str] = []
     no_ds: list[str] = []
@@ -250,10 +283,14 @@ def run(http: Http, st: Status, passing_slugs: list[str], core: list[str]) -> di
         gt_ok += int(gt_worked)
         cands = list(dict.fromkeys(list(a) + list(b) + list(c) + list(g)))
         rows = ds_pairs(http, chain, cands) if cands else []
+        promo = sorted(promoted.get(chain, set()))
+        if promo:
+            seen = {r["pa"].lower() for r in rows}
+            rows += [r for r in ds_tokens_to_pairs(http, chain, promo) if r["pa"].lower() not in seen]
         kept = narrow_and_band(rows)
         for r in kept:
             r["_from_ds"] = (r["pa"] in a) or (r["pa"] in b) or (r["pa"] in c) or (r["pa"].lower() in {x.lower() for x in a | b | c})
-        per_chain[chain] = {"screened": len(cands), "priced": len(rows), "kept_m": sum(r["band"] == "m" for r in kept),
+        per_chain[chain] = {"screened": len(cands), "promoted": len(promo), "priced": len(rows), "kept_m": sum(r["band"] == "m" for r in kept),
                             "kept_l": sum(r["band"] == "l" for r in kept), "ds": ds_worked, "gt": gt_worked}
         tokens.extend(kept)
         time.sleep(0.5)
