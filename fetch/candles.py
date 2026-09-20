@@ -26,7 +26,7 @@ def _pool_attrs(http: Http, net: str, addrs: list[str]) -> dict[str, dict]:
         batch = addrs[i:i + 30]
         got = False
         try:
-            j = http.get(f"{GT}/networks/{net}/pools/multi/{','.join(batch)}", headers=HDR, retries=1)
+            j = http.get(f"{GT}/networks/{net}/pools/multi/{','.join(batch)}", headers=HDR, retries=3)
             for d in (j or {}).get("data") or []:
                 a = d.get("attributes") or {}
                 if a.get("address"):
@@ -35,11 +35,17 @@ def _pool_attrs(http: Http, net: str, addrs: list[str]) -> dict[str, dict]:
         except BlockedError:
             raise
         except Exception as e:  # noqa: BLE001
-            log.warning("GT multi %s: %s — falling back to single calls", net, str(e)[:80])
+            # Only robinhood/hyperevm are known to reject the multi endpoint outright; elsewhere a failure after
+            # three patient retries is rate-limiting, and 30 single calls would only dig the hole deeper.
+            if net in ("robinhood", "hyperevm"):
+                log.warning("GT multi %s: %s — falling back to single calls", net, str(e)[-120:])
+            else:
+                log.warning("GT multi %s: %s — skipping wallet data for this batch", net, str(e)[-120:])
+                got = True
         if not got:
             for a in batch:
                 try:
-                    j = http.get(f"{GT}/networks/{net}/pools/{a}", headers=HDR, retries=1)
+                    j = http.get(f"{GT}/networks/{net}/pools/{a}", headers=HDR, retries=2)
                     at = ((j or {}).get("data") or {}).get("attributes") or {}
                     if at.get("address"):
                         out[at["address"].lower()] = at
@@ -74,7 +80,7 @@ def _wallets(row: dict, a: dict) -> None:
 
 
 def _candles(http: Http, net: str, pool: str) -> Optional[list[list[float]]]:
-    j = http.get(f"{GT}/networks/{net}/pools/{pool}/ohlcv/day?limit=30", headers=HDR, retries=1)
+    j = http.get(f"{GT}/networks/{net}/pools/{pool}/ohlcv/day?limit=30", headers=HDR, retries=3)
     lst = (((j or {}).get("data") or {}).get("attributes") or {}).get("ohlcv_list")
     if not lst:
         return None
@@ -133,13 +139,14 @@ def flags(row: dict) -> None:
 
 
 def run(http: Http, st: Status, tokens: list[dict]) -> None:
-    http.pace("api.geckoterminal.com", 25)
+    http.pace("api.geckoterminal.com", 12)
+    # moonshot band first, chain by chain, then leaders: if the budget runs out it runs out on the leaders
     by_chain: dict[str, list[dict]] = {}
-    for t in tokens:
-        by_chain.setdefault(t["c"], []).append(t)
+    for t in sorted(tokens, key=lambda t: 0 if t.get("band") == "m" else 1):
+        by_chain.setdefault((0 if t.get("band") == "m" else 1, t["c"]), []).append(t)
     got_wallet = got_candle = 0
     blocked = False
-    for chain, rows in by_chain.items():
+    for (_, chain), rows in by_chain.items():
         net = DS_TO_GT.get(chain)
         if not net:
             for r in rows:
@@ -164,7 +171,7 @@ def run(http: Http, st: Status, tokens: list[dict]) -> None:
                 blocked = True
                 break
             except Exception as e:  # noqa: BLE001
-                log.warning("GT candles %s/%s: %s", net, r["sym"], str(e)[:80])
+                log.warning("GT candles %s/%s: %s", net, r["sym"], str(e)[-120:])
                 cs = None
             if cs:
                 _candle_fields(r, cs)
