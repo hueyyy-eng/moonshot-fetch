@@ -117,7 +117,8 @@ def universe(http: Http, st: Status) -> tuple[dict[str, str], dict[str, float]]:
             s = to_slug(c.get("name", ""))
             if not s:
                 continue
-            names.setdefault(s, display_name(c.get("name", "")))
+            # /v2/chains carries the proper display name ("Solana"); the dexs breakdown keys are lowercase slugs
+            names[s] = display_name(c.get("name", "")) or names.get(s, s)
             if float(c.get("tvl") or 0) / 1e6 >= TVL_MIN_M:
                 big += 1
                 dex24.setdefault(s, 0.0)
