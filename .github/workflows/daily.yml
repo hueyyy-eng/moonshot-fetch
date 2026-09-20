@@ -44,4 +44,12 @@ jobs:
           git add snapshots latest
           if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
           git commit -m "snapshot $(date -u +%Y-%m-%dT%H:%MZ)"
-          git push
+          # rebase-and-retry: main can move while a 45-100 min fetch runs (a code push, or an
+          # overlapping run). snapshots/ and latest/ never conflict with code, so a rebase applies
+          # cleanly. without this the snapshot is silently lost to a non-fast-forward reject.
+          for i in 1 2 3 4 5; do
+            git push && exit 0
+            echo "push rejected, rebasing onto origin/main (attempt $i)"
+            git pull --rebase --autostash origin main || { echo "rebase failed"; exit 1; }
+          done
+          echo "push failed after 5 attempts"; exit 1
