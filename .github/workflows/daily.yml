@@ -2,9 +2,15 @@ name: Moonshot daily fetch
 
 on:
   schedule:
-    # 02:45 UTC = 10:45 SGT, 15 min before the 11:00 SGT cloud scan reads latest/scan.json
-    - cron: "45 2 * * *"
+    # 01:30 UTC = 09:30 SGT. The fetch takes 60-100 min and the build + page check below adds a few
+    # minutes, so site/page.html is ready well before the 11:30 SGT cloud task publishes it.
+    - cron: "30 1 * * *"
   workflow_dispatch:
+    inputs:
+      skip_fetch:
+        description: "Rebuild the page from the snapshot already in latest/ (no new fetch)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -16,7 +22,7 @@ concurrency:
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 150
     steps:
       - uses: actions/checkout@v4
         with:
@@ -30,23 +36,69 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: Fetch every source and write today's snapshot
+        if: ${{ !inputs.skip_fetch }}
         env:
           BLOCKSCOUT_API_KEY: ${{ secrets.BLOCKSCOUT_API_KEY }}
         run: python -m fetch.main "$GITHUB_WORKSPACE"
 
       - name: Show source status
-        run: python -c "import json;d=json.load(open('latest/status.json'));[print(f\"{k:28s} {v.get('state'):8s} {v.get('note') or v.get('error') or ''}\") for k,v in d['sources'].items()]"
+        run: python -c "import json;d=json.load(open('latest/status.json'));print(d['generated_at_sgt']);[print(f\"{k:28s} {v.get('state'):8s} {v.get('note') or v.get('error') or ''}\") for k,v in d['sources'].items()]"
 
       - name: Commit snapshot
+        if: ${{ !inputs.skip_fetch }}
         run: |
           git config user.name "moonshot-fetch[bot]"
           git config user.email "moonshot-fetch@users.noreply.github.com"
           git add snapshots latest
           if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
           git commit -m "snapshot $(date -u +%Y-%m-%dT%H:%MZ)"
-          # rebase-and-retry: main can move while a 45-100 min fetch runs (a code push, or an
-          # overlapping run). snapshots/ and latest/ never conflict with code, so a rebase applies
-          # cleanly. without this the snapshot is silently lost to a non-fast-forward reject.
+          # rebase-and-retry: main can move while a 45-100 min fetch runs. snapshots/ and latest/
+          # never conflict with code, so a rebase applies cleanly.
+          for i in 1 2 3 4 5; do
+            git push && exit 0
+            echo "push rejected, rebasing onto origin/main (attempt $i)"
+            git pull --rebase --autostash origin main || { echo "rebase failed"; exit 1; }
+          done
+          echo "push failed after 5 attempts"; exit 1
+
+      # ---------- build the dashboard page here, so the cloud task only has to publish a file ----------
+      # site/page.html is the last page this job built; the builder reads it for carry-forward and the
+      # four logs, and the result replaces it. The page is stamped with the SNAPSHOT's time, never the
+      # clock, so a rebuild of an old snapshot can never claim newer data than it has.
+
+      - name: Install the page checker (Playwright + Chromium)
+        run: |
+          pip install playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Build the page from the snapshot
+        run: |
+          NOW=$(python -c "import json;print(json.load(open('latest/status.json'))['generated_at_sgt'])")
+          echo "building for $NOW"
+          set +e
+          python scan/build_block.py --page site/page.html --scan latest/scan.json --status latest/status.json --out out/ --now "$NOW"
+          rc=$?
+          if [ $rc -eq 3 ]; then
+            python scan/auto_nar.py out/nar_todo.json out/nar.json
+            python scan/build_block.py --page site/page.html --scan latest/scan.json --status latest/status.json --out out/ --now "$NOW" --nar out/nar.json --allow-unclassified
+            rc=$?
+          fi
+          exit $rc
+
+      - name: Check the rendered page (fails the run, and publishes nothing, if anything is wrong)
+        run: python scan/verify_page.py out/page_new.html out/summary.json
+
+      - name: Commit the built page
+        run: |
+          cp out/page_new.html site/page.html
+          cp out/summary.json site/summary.json
+          cp out/track-record.csv site/track-record.csv
+          if [ -f out/nar.json ]; then cp out/nar.json site/nar_auto.json; else echo "{}" > site/nar_auto.json; fi
+          git config user.name "moonshot-fetch[bot]"
+          git config user.email "moonshot-fetch@users.noreply.github.com"
+          git add site
+          if git diff --cached --quiet; then echo "page unchanged"; exit 0; fi
+          git commit -m "page $(python -c "import json;print(json.load(open('site/summary.json'))['now'])")"
           for i in 1 2 3 4 5; do
             git push && exit 0
             echo "push rejected, rebasing onto origin/main (attempt $i)"
