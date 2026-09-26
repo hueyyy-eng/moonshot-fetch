@@ -1,0 +1,171 @@
+{
+ "now": "2026-09-26 10:48 SGT",
+ "cand_at": "2026-09-26 10:48 SGT",
+ "tokens_carried": false,
+ "stale": [],
+ "notes": [
+  "discovery partial: only one route worked (dexscreener=0, geckoterminal=12 of 12 chains)"
+ ],
+ "sources": {
+  "llama.dexs_overview": "ok",
+  "llama.chains": "ok",
+  "llama.chain_rows": "ok",
+  "llama.perps_page": "ok",
+  "llama.netflow": "ok",
+  "llama.bridges_chains": "ok",
+  "llama.bridges_protocols": "ok",
+  "llama.majors": "ok",
+  "discovery": "partial",
+  "geckoterminal": "ok",
+  "rugcheck": "ok",
+  "goplus": "ok",
+  "blockscout": "ok",
+  "reprice": "ok"
+ },
+ "chains": {
+  "hot": [
+   "thorchain",
+   "cardano",
+   "dexalot",
+   "sui",
+   "chainflip",
+   "canton",
+   "plasma",
+   "injective",
+   "sei",
+   "ripple",
+   "flare",
+   "stellar"
+  ],
+  "new": [
+   "canton",
+   "cardano",
+   "flare",
+   "injective",
+   "stellar"
+  ],
+  "dropped": [
+   "avax",
+   "hedera",
+   "native_core",
+   "optimism",
+   "tempo",
+   "ton"
+  ],
+  "hottest": {
+   "s": "cardano",
+   "n": "Cardano",
+   "dr": 6.49,
+   "dr30": 24.38
+  }
+ },
+ "tokens": {
+  "total": 81,
+  "band_m": 41,
+  "candle_or_wallet_coverage_pct": 100,
+  "nodata": 6
+ },
+ "shortlist": [
+  {
+   "sym": "ARENA",
+   "c": "solana",
+   "mc": 564.9,
+   "nar": "Unclassified",
+   "run": 1.69,
+   "retr": 55.14,
+   "acc": 1.32,
+   "c6": -17.88,
+   "age": 1.13,
+   "sec": "rugcheck",
+   "pa": "RbHYPnS9j1WYBsSsvorm9NXt8hLvsDV3YECZwGMV68T"
+  }
+ ],
+ "shortlist_new": [
+  "ARENA"
+ ],
+ "shortlist_dropped": [],
+ "pullback": [
+  {
+   "sym": "NPC",
+   "c": "solana",
+   "mc": 1971.8,
+   "nar": "Unclassified",
+   "run": 138.2,
+   "retr": 49.23,
+   "acc": 0.54,
+   "c6": -39.01,
+   "age": 1.97,
+   "sec": "rugcheck",
+   "pa": "BRjMA8UALNp3diTKHfdeAn5riQrYPoaYez7KhYWD4oEs"
+  },
+  {
+   "sym": "Holdoween",
+   "c": "solana",
+   "mc": 1226.2,
+   "nar": "Unclassified",
+   "run": 18.05,
+   "retr": 49.94,
+   "acc": 1.11,
+   "c6": -37.43,
+   "age": 10.04,
+   "sec": "rugcheck",
+   "pa": "Apy5FShcDSLdyYSH4HWgY8zSFj4At8FbKeHZF3D72e9k"
+  }
+ ],
+ "pullback_new": [
+  "Holdoween",
+  "NPC"
+ ],
+ "pullback_dropped": [],
+ "igniting": [],
+ "honeypots_new": [
+  "MNT21",
+  "BANK"
+ ],
+ "track": {
+  "logged": 23,
+  "new_rows": [
+   [
+    "ARENA",
+    "S"
+   ],
+   [
+    "NPC",
+    "P"
+   ],
+   [
+    "Holdoween",
+    "P"
+   ]
+  ],
+  "best_x": 14.93,
+  "median_peak_x": 1.0,
+  "hit_2x_today": [
+   "KNOT",
+   "SIGNAL",
+   "CALI"
+  ],
+  "to_zero_today": [
+   "Butterflys",
+   "BinanceTown",
+   "AXIS",
+   "TOLLY",
+   "AXIS",
+   "QED",
+   "DEED",
+   "LMCAT",
+   "PEPE",
+   "AXIS",
+   "OPENAI",
+   "TIKTOK",
+   "APM",
+   "STPASS"
+  ],
+  "repriced": true
+ },
+ "control": {
+  "rows": 208,
+  "median_peak_x": 1.0
+ },
+ "changed": true
+}
