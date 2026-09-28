@@ -30,6 +30,7 @@ from datetime import datetime, timedelta, timezone
 SGT = timezone(timedelta(hours=8))
 KEEP_DAYS = 60
 REJECT_CAP = 30
+MAX_JUMP = 1000   # a re-price above 1000x the logged price is bad data (usually DexScreener quoting the other side of the pair), not a move
 MINLIQ = 25.0
 CANDLE_KEYS = ("run", "retr", "vvp", "nd", "cs", "noCd", "ub", "us", "ubr", "tpw", "lpk")
 SAFETY_KEYS = ("sec", "rcs", "lpk", "t10", "hld", "stx", "sstx", "mint", "frz", "tb", "t1", "pool", "cN", "ver",
@@ -287,7 +288,12 @@ def main() -> int:
         tokens = [dict(t) for t in scan["TOKENS"]]
         new["TOK_AT"] = now
         if state("discovery") == "partial":
-            notes.append("discovery partial: " + str((src.get("discovery") or {}).get("note", "")))
+            dnote = str((src.get("discovery") or {}).get("note", ""))
+            # DexScreener's screener pages have refused GitHub's runners since 19 Sep by design (Cloudflare);
+            # GeckoTerminal + the DexScreener API carry discovery. Only a GeckoTerminal gap is worth a note.
+            m = re.search(r"geckoterminal=(\d+) of (\d+)", dnote)
+            if not (m and m.group(1) == m.group(2)):
+                notes.append("discovery partial: " + dnote)
     else:
         tokens = [dict(t) for t in old_tokens]
         tokens_carried = True
@@ -369,30 +375,46 @@ def main() -> int:
     reprice_ok = state("reprice") in ("ok", "partial")
     hist = [dict(r) for r in oldv("HISTORY", [])]
     rej = [dict(r) for r in oldv("REJECTS", []) if r.get("d", "") >= cutoff]
-    hit2x, tozero = [], []
+    hit2x, tozero = [], []            # picks (HISTORY)
+    c_hit2x, c_tozero = [], []        # near-misses (REJECTS) - reported separately, never as picks
+    bad_px: list[str] = []
 
-    def reprice(row):
+    # clean peaks recorded before the MAX_JUMP guard existed (e.g. 659,611x on a token now at zero)
+    for row in hist + rej:
+        px = row.get("px") or 0
+        if px and (row.get("pxMax") or 0) / px > MAX_JUMP:
+            now_px = row.get("pxNow") or 0
+            row["pxMax"] = now_px if px <= now_px <= px * MAX_JUMP else px
+            row["dMax"] = 0 if row["pxMax"] == px else row.get("dMax", 0)
+            bad_px.append(f"{row['sym']} ({row['c']}) old peak reset")
+
+    def reprice(row, h2, tz):
         if not reprice_ok or row.get("d", "") < cutoff:
             return
         key = f"{row['c']}:{row['pa']}"
         if key not in prices:
             return
         p = float(prices[key])
+        px = row.get("px") or 0
+        if px and p / px > MAX_JUMP:
+            bad_px.append(f"{row['sym']} ({row['c']}) {p / px:,.0f}x ignored")
+            return
         was = row.get("pxNow")
         row["pxNow"] = p
         if p > (row.get("pxMax") or 0):
             row["pxMax"] = p
             row["dMax"] = (datetime.strptime(today, "%Y-%m-%d") - datetime.strptime(row["d"], "%Y-%m-%d")).days
-        px = row.get("px") or 0
         if px and (was or 0) / px < 2 <= p / px:
-            hit2x.append(row)
+            h2.append(row)
         if p == 0 and (was or 0) > 0:
-            tozero.append(row)
+            tz.append(row)
 
     for r in hist:
-        reprice(r)
+        reprice(r, hit2x, tozero)
     for r in rej:
-        reprice(r)
+        reprice(r, c_hit2x, c_tozero)
+    if bad_px:
+        notes.append("implausible re-prices ignored (>" + str(MAX_JUMP) + "x entry): " + "; ".join(bad_px[:12]))
     have = {(r["pa"].lower(), r["l"]) for r in hist}
     new_hist = []
     if not tokens_carried:
@@ -464,6 +486,7 @@ def main() -> int:
         return {"sym": t["sym"], "c": t["c"], "mc": t.get("mc"), "nar": t.get("nar"), "run": t.get("run"), "retr": t.get("retr"),
                 "acc": t.get("_acc"), "c6": t.get("c6"), "age": t.get("age"), "sec": t.get("sec"), "pa": t["pa"]}
     mult = lambda r: (r["pxMax"] / r["px"]) if r.get("px") else None  # noqa: E731
+    names = lambda rows: list(dict.fromkeys(f"{r['sym']} ({r['c']})" for r in rows))  # noqa: E731
     pick_m = [m for m in map(mult, hist) if m]
     rej_m = [m for m in map(mult, rej) if m]
     hottest = max((r for r in data if (r.get("dv") or 0) >= C.CHAIN_GATE["dv"] and r.get("dr") is not None), key=lambda r: r["dr"], default=None)
@@ -486,10 +509,13 @@ def main() -> int:
         "track": {"logged": len(hist), "new_rows": [(r["sym"], r["l"]) for r in new_hist],
                   "best_x": round(max(pick_m), 2) if pick_m else None,
                   "median_peak_x": round(statistics.median(pick_m), 2) if pick_m else None,
-                  "hit_2x_today": [r["sym"] for r in hit2x], "to_zero_today": [r["sym"] for r in tozero],
+                  "hit_2x_today": names(hit2x), "to_zero_today": names(tozero),
                   "repriced": reprice_ok},
-        "control": {"rows": len(rej), "median_peak_x": round(statistics.median(rej_m), 2) if rej_m else None},
+        "control": {"rows": len(rej), "median_peak_x": round(statistics.median(rej_m), 2) if rej_m else None,
+                    "hit_2x_today": names(c_hit2x), "to_zero_today": names(c_tozero)},
         "changed": bool(({t["sym"] for t in short} != old_short) or ({t["sym"] for t in pull} != old_pull) or (set(hot) != set(old_hot))),
+        # time-sensitive even when the lists did not change: something igniting, a new honeypot, a pick at 2x or at zero
+        "alert": bool(ign or honey_new or hit2x or tozero),
     }
     json.dump(summary, open(os.path.join(a.out, "summary.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(json.dumps({k: summary[k] for k in ("now", "cand_at", "stale", "chains", "tokens", "shortlist_new", "shortlist_dropped",
