@@ -337,7 +337,11 @@ def main() -> int:
         if t.get("nar"):
             continue
         o = old_by_pa.get((t.get("pa") or "").lower()) or old_by_ta.get((t.get("ta") or "").lower())
-        n = (o or {}).get("nar") or nar_map.get((t.get("pa") or "").lower()) or nar_map.get((t.get("ta") or "").lower())
+        # an earlier "Unclassified" is not final: such tokens go back to the tagger every day, because their
+        # profile or website often appears a day or two after launch. A tag from --nar always wins.
+        prev = (o or {}).get("nar")
+        n = (nar_map.get((t.get("pa") or "").lower()) or nar_map.get((t.get("ta") or "").lower())
+             or (prev if prev != "Unclassified" or a.allow_unclassified else None))
         if n:
             t["nar"] = n
         elif a.allow_unclassified:
