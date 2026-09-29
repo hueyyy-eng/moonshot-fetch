@@ -1,0 +1,33 @@
+scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol_6h_pace_x,change_6h_pct,age_days,safety_source,pair_url,source
+2026-09-12,shortlist,Hachiko,bsc,1218,,,,,,,,https://dexscreener.com/bsc/0xE6EDC555061D1D9Fe0145867b7eA7b07Da840898,track record (first day listed only; igniting not recorded before 26 Sep)
+2026-09-12,shortlist,ODYS,arbitrum,1381,,,,,,,,https://dexscreener.com/arbitrum/0x628854F0CFD7Debd6E04361421Ee9c06C77048c3,track record (first day listed only; igniting not recorded before 26 Sep)
+2026-09-12,shortlist,STONKS,robinhood,811,,,,,,,,https://dexscreener.com/robinhood/0x1b7d438a31ffa0602509208246d8db133e83e5197e709f9639fe0a2d8fd5c2fa,track record (first day listed only; igniting not recorded before 26 Sep)
+2026-09-12,shortlist,USEFUL,solana,1090,,,,,,,,https://dexscreener.com/solana/FZuTAARDYJapX7HqniQEzzDboNY8RT4FXCrakVFJap2R,track record (first day listed only; igniting not recorded before 26 Sep)
+2026-09-12,pullback,PAIRZ,solana,615,,,,,,,,https://dexscreener.com/solana/8XXnvNEMU3UoMRPWY2KJBW5z1T2KKj6vH9WYJfcGDqYQ,track record (first day listed only; igniting not recorded before 26 Sep)
+2026-09-12,pullback,牛梦,bsc,611,,,,,,,,https://dexscreener.com/bsc/0x33d2E1eeB4D399591C11ac9AD64863fa11678304,track record (first day listed only; igniting not recorded before 26 Sep)
+2026-09-14,pullback,YOYO,solana,1295.1,,,,,,,,https://dexscreener.com/solana/2eAX4Jgn81aaW7wGCoLc43NVrBcnswKKz7cmpE7unyqh,track record (first day listed only; igniting not recorded before 26 Sep)
+2026-09-15,shortlist,Machi,solana,642.6,,,,,,,,https://dexscreener.com/solana/7cmefCYxzK6yfBcmB4j234A3EKY2w13GfEdB3DJvNWzx,track record (first day listed only; igniting not recorded before 26 Sep)
+2026-09-15,shortlist,MENSA,solana,520.4,,,,,,,,https://dexscreener.com/solana/E8RJG3srQBiSFMxDwrKG2DkwpWGyK7UYcFjkaTs9tbrS,track record (first day listed only; igniting not recorded before 26 Sep)
+2026-09-15,pullback,BinanceTown,bsc,959.9,,,,,,,,https://dexscreener.com/bsc/0xcEC13213c390d51121F82bA2ECafb8E11e0AF7a3,track record (first day listed only; igniting not recorded before 26 Sep)
+2026-09-16,shortlist,CX,solana,756.4,,,,,,,,https://dexscreener.com/solana/AtK4fYMF1mFosQn6qRiMJoE1hsjpCFwpTy1TKpE5Ez6E,track record (first day listed only; igniting not recorded before 26 Sep)
+2026-09-16,shortlist,Stonks,bsc,678.4,,,,,,,,https://dexscreener.com/bsc/0xDb6f1D044b8b2887a6C450D0D13176C81E3F936d,track record (first day listed only; igniting not recorded before 26 Sep)
+2026-09-16,pullback,pill,solana,1600.3,,,,,,,,https://dexscreener.com/solana/Bof2XL9zAbLZ15kzAXcXy39wDeZFgKwyvb3UVkv3FhsX,track record (first day listed only; igniting not recorded before 26 Sep)
+2026-09-17,shortlist,GRAMS,solana,869.9,,,,,,,,https://dexscreener.com/solana/FxeRAf7vpaHjH2pzPQhR5bdh85gMLni11k7izjwaJMAa,track record (first day listed only; igniting not recorded before 26 Sep)
+2026-09-19,shortlist,Pepe,solana,1501.1,,,,,,,,https://dexscreener.com/solana/FCEnSxyJfRSKsz6tASUENCsfGwKgkH6YuRn1AMmyHhZn,track record (first day listed only; igniting not recorded before 26 Sep)
+2026-09-20,shortlist,IF,robinhood,1439.5,,,,,,,,https://dexscreener.com/robinhood/0x39A200271525E9641e799127bdAB299DAeF21953,track record (first day listed only; igniting not recorded before 26 Sep)
+2026-09-21,shortlist,INU,solana,1482.8,,,,,,,,https://dexscreener.com/solana/EqnkEMJN4mBWkjTWF5dqED31ax8SZm51suYHbe8PiWqJ,track record (first day listed only; igniting not recorded before 26 Sep)
+2026-09-21,shortlist,WOOF,robinhood,856.4,,,,,,,,https://dexscreener.com/robinhood/0x2a004148BE6eFeE250420d93a1AC6393E32D2D60,track record (first day listed only; igniting not recorded before 26 Sep)
+2026-09-21,pullback,CALI,solana,1025.9,,,,,,,,https://dexscreener.com/solana/2i2iULr7UwK1SDRB17T5FUtiMnFQL7fyy7rh69brZihc,track record (first day listed only; igniting not recorded before 26 Sep)
+2026-09-21,pullback,MUSEWORLD,base,702.0,,,,,,,,https://dexscreener.com/base/0x050e44afe314c0298d695f7e7b6bb4769475d7541a37da644950a59413460360,track record (first day listed only; igniting not recorded before 26 Sep)
+2026-09-26,shortlist,ARENA,solana,564.9,Unclassified,1.69,55.14,1.32,-17.88,1.13,rugcheck,https://dexscreener.com/solana/RbHYPnS9j1WYBsSsvorm9NXt8hLvsDV3YECZwGMV68T,daily scan
+2026-09-26,pullback,Holdoween,solana,1226.2,Unclassified,18.05,49.94,1.11,-37.43,10.04,rugcheck,https://dexscreener.com/solana/Apy5FShcDSLdyYSH4HWgY8zSFj4At8FbKeHZF3D72e9k,daily scan
+2026-09-26,pullback,NPC,solana,1971.8,Unclassified,138.2,49.23,0.54,-39.01,1.97,rugcheck,https://dexscreener.com/solana/BRjMA8UALNp3diTKHfdeAn5riQrYPoaYez7KhYWD4oEs,daily scan
+2026-09-27,shortlist,ARENA,solana,677.5,Unclassified,1.86,53.86,1.29,-10.79,2.13,rugcheck,https://dexscreener.com/solana/RbHYPnS9j1WYBsSsvorm9NXt8hLvsDV3YECZwGMV68T,daily scan
+2026-09-27,igniting,INTC,robinhood,1729.8,Tokenised equities,,,2.01,0.79,45.08,explorer,https://dexscreener.com/robinhood/0x7fb585f108d921de3b197cf7e26b5aebc96b035fec13f972b868e008ea062394,daily scan
+2026-09-28,none,,,,,,,,,,,,daily scan (all three lists empty)
+2026-09-29,shortlist,Pumpoween,solana,997.0,Classic memes,2.54,0.81,2.24,10.02,24.25,rugcheck,https://dexscreener.com/solana/8NVFB1unNk9aDtL5hooF8Hahf2rt4GLPWx9ctEadikHg,daily scan
+2026-09-29,shortlist,ROBIN,robinhood,1678.0,Dog & animal memes,1.74,94.18,0.27,-1.7,23.38,explorer,https://dexscreener.com/robinhood/0x5eac4195930d5ff8b7a34a347f2bde951c42eb730d6e26075bea3dd7c66feb40,daily scan
+2026-09-29,igniting,AXIS,solana,1275.6,Unclassified,,,4.0,47.77,0.09,rugcheck,https://dexscreener.com/solana/G9FyTYBehMn5uUnvw9TTx6deYFMg2mLDJzC8U6Je1mN7,daily scan
+2026-09-29,igniting,JUMP,solana,1357.9,Unclassified,,,4.0,47.14,0.09,rugcheck,https://dexscreener.com/solana/AxGtLoCCfgXD1STXNUT8UFowHHQn4GEFPRg4wWi3uZXq,daily scan
+2026-09-29,igniting,Pumpoween,solana,997.0,Classic memes,2.54,0.81,2.24,10.02,24.25,rugcheck,https://dexscreener.com/solana/8NVFB1unNk9aDtL5hooF8Hahf2rt4GLPWx9ctEadikHg,daily scan
+2026-09-29,igniting,XDP,solana,1443.5,Utilities,,,4.0,46.91,0.09,rugcheck,https://dexscreener.com/solana/8SZkDCsHSexNT4Mz54eGUiD8nUHUaStktR7H4kwsXXdX,daily scan

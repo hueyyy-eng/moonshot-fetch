@@ -80,7 +80,54 @@ def main() -> int:
 
     print(f"export_logs: near-miss {len(rej)} rows, narrative {len(narhist)} days x {len(labels)} labels, "
           f"holders {len(holdhist)} rows")
+    summary_path = os.path.join(out, "summary.json")
+    if os.path.exists(summary_path):
+        update_daily_lists(json.load(open(summary_path, encoding="utf-8")), os.path.join(out, "daily-lists.csv"))
     return 0
+
+
+# ---------------------------------------------------------------- daily-lists.csv: one row per token per day
+# Cumulative: the file in the repo is read, today's rows replace any earlier rows for today (so a re-run of
+# the same day never duplicates), and it is written back. A day with all three lists empty gets one "none" row
+# so a quiet day is distinguishable from a day the scan did not run.
+DAILY_HEADER = ["scan_date", "list", "symbol", "chain", "mcap_k", "narrative", "run_x_off_7d_low", "pct_below_high",
+                "vol_6h_pace_x", "change_6h_pct", "age_days", "safety_source", "pair_url", "source"]
+LIST_NAMES = (("shortlist", "shortlist"), ("pullback", "pullback"), ("igniting", "igniting"))
+
+
+def daily_rows(summary: dict, source: str = "daily scan") -> list[list]:
+    day = str(summary.get("now", ""))[:10]
+    rows = []
+    for key, name in LIST_NAMES:
+        for t in summary.get(key) or []:
+            pa = t.get("pa") or ""
+            rows.append([day, name, t.get("sym"), t.get("c"), t.get("mc"), t.get("nar"), t.get("run"), t.get("retr"),
+                         t.get("acc"), t.get("c6"), t.get("age"), t.get("sec"),
+                         f"https://dexscreener.com/{t.get('c')}/{pa}" if pa else "", source])
+    if not rows and day:
+        rows.append([day, "none", "", "", "", "", "", "", "", "", "", "", "", source + " (all three lists empty)"])
+    return rows
+
+
+def update_daily_lists(summary: dict, path: str) -> None:
+    day = str(summary.get("now", ""))[:10]
+    if not day:
+        print("daily-lists: summary has no date, skipped")
+        return
+    old = []
+    if os.path.exists(path):
+        with open(path, newline="", encoding="utf-8") as f:
+            r = csv.reader(f)
+            next(r, None)
+            old = [row for row in r if row and row[0] != day]
+    rows = sorted(old + [[("" if v is None else v) for v in row] for row in daily_rows(summary)],
+                  key=lambda x: (x[0], ["shortlist", "pullback", "igniting", "none"].index(x[1]) if x[1] in
+                                 ("shortlist", "pullback", "igniting", "none") else 9, str(x[2]).lower()))
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(DAILY_HEADER)
+        w.writerows(rows)
+    print(f"daily-lists: {day} written, {len(rows)} rows in total")
 
 
 if __name__ == "__main__":
