@@ -44,7 +44,7 @@ GATE_KEYS = ["mcap", "liq", "turn", "buyers", "hold", "notRan", "noWash", "safe"
 ORDER = ["LAST_DAY", "SNAP_AT", "TOK_AT", "CHAIN_GATE", "CORE_CHAINS", "MCAP", "LIQ_PCT", "TURN_MIN", "RAN_MULT",
          "DROP_MAX", "PULL", "IGN", "MCAP_L", "TYPE", "CAND_AT", "NO_DEXSCREENER", "DATA", "NETFLOW_AT", "NETFLOW",
          "BRIDGES_AT", "BRIDGES", "REGIME_AT", "MAJORS", "LOG_AT", "REJECTS", "NARHIST", "HOLDHIST", "TOKENS",
-         "HISTORY", "KOLS", "CHAIN_ACCTS"]
+         "HISTORY", "IGNHIST", "KOLS", "CHAIN_ACCTS"]
 
 
 # ------------------------------------------------------------------ block parsing
@@ -378,6 +378,8 @@ def main() -> int:
     prices = scan.get("PRICES") or {}
     reprice_ok = state("reprice") in ("ok", "partial")
     hist = [dict(r) for r in oldv("HISTORY", [])]
+    ign_hist = [dict(r) for r in oldv("IGNHIST", [])]   # igniting tokens, tracked apart from the picks
+    i_hit2x, i_tozero = [], []
     rej = [dict(r) for r in oldv("REJECTS", []) if r.get("d", "") >= cutoff]
     hit2x, tozero = [], []            # picks (HISTORY)
     c_hit2x, c_tozero = [], []        # near-misses (REJECTS) - reported separately, never as picks
@@ -404,6 +406,12 @@ def main() -> int:
             bad_px.append(f"{row['sym']} ({row['c']}) {p / px:,.0f}x ignored")
             return
         was = row.get("pxNow")
+        if row.get("l") in ("S", "P", "I"):              # lowest price seen since listing (picks + igniting only)
+            lo = row.get("pxMin")
+            if lo is None:                                  # rows logged before lows were tracked: start from what is known
+                known = [v for v in (px, was) if v is not None]
+                lo = min(known) if known else p
+            row["pxMin"] = min(lo, p)
         row["pxNow"] = p
         if p > (row.get("pxMax") or 0):
             row["pxMax"] = p
@@ -417,18 +425,27 @@ def main() -> int:
         reprice(r, hit2x, tozero)
     for r in rej:
         reprice(r, c_hit2x, c_tozero)
+    for r in ign_hist:
+        reprice(r, i_hit2x, i_tozero)
     if bad_px:
         notes.append("implausible re-prices ignored (>" + str(MAX_JUMP) + "x entry): " + "; ".join(bad_px[:12]))
     have = {(r["pa"].lower(), r["l"]) for r in hist}
-    new_hist = []
+    new_hist, new_ign = [], []
     if not tokens_carried:
         for lst, rows in (("S", short), ("P", pull)):
             for t in rows:
                 if (t["pa"].lower(), lst) in have or t.get("px") is None:
                     continue
                 row = {"d": today, "sym": t["sym"], "c": t["c"], "pa": t["pa"], "l": lst, "mc": t.get("mc"),
-                       "px": t["px"], "pxNow": t["px"], "pxMax": t["px"], "dMax": 0}
+                       "px": t["px"], "pxNow": t["px"], "pxMax": t["px"], "pxMin": t["px"], "dMax": 0}
                 hist.append(row); new_hist.append(row); have.add((t["pa"].lower(), lst))
+        have_i = {r["pa"].lower() for r in ign_hist}
+        for t in ign:
+            if t["pa"].lower() in have_i or t.get("px") is None:
+                continue
+            row = {"d": today, "sym": t["sym"], "c": t["c"], "pa": t["pa"], "l": "I", "mc": t.get("mc"),
+                   "px": t["px"], "pxNow": t["px"], "pxMax": t["px"], "pxMin": t["px"], "dMax": 0}
+            ign_hist.append(row); new_ign.append(row); have_i.add(t["pa"].lower())
         have_r = {r["pa"].lower() for r in rej}
         near = sorted([t for t in tokens if t["_nf"] == 1 and t["pa"].lower() not in have_r and t.get("px") is not None],
                       key=lambda t: -(t.get("mc") or 0))[:REJECT_CAP]
@@ -449,6 +466,7 @@ def main() -> int:
             if t.get("hld") is not None and (today, t["pa"].lower()) not in seen_h:
                 holdhist.append({"d": today, "pa": t["pa"], "w": t["hld"]})
     new["HISTORY"], new["REJECTS"], new["NARHIST"], new["HOLDHIST"] = hist, rej, narhist, holdhist
+    new["IGNHIST"] = ign_hist
     new["LOG_AT"] = now
     new["TOKENS"] = [public(t) for t in tokens]
 
@@ -458,7 +476,7 @@ def main() -> int:
         if name in ("CHAIN_GATE", "CORE_CHAINS", "MCAP", "LIQ_PCT", "TURN_MIN", "RAN_MULT", "DROP_MAX", "PULL", "IGN",
                     "MCAP_L", "TYPE", "KOLS", "CHAIN_ACCTS"):
             lines.append(old[name]["line"] + "\n")
-        elif name in ("DATA", "REJECTS", "NARHIST", "HOLDHIST", "TOKENS", "HISTORY", "BRIDGES"):
+        elif name in ("DATA", "REJECTS", "NARHIST", "HOLDHIST", "TOKENS", "HISTORY", "IGNHIST", "BRIDGES"):
             lines.append(rows_dump(name, new[name]))
         elif name == "CAND_AT":
             lines.append(f'const CAND_AT = {jsdump(new[name])};   // {"carried" if new[name] != now else "fresh candles + rug checks this run"}\n')
@@ -515,6 +533,8 @@ def main() -> int:
                   "median_peak_x": round(statistics.median(pick_m), 2) if pick_m else None,
                   "hit_2x_today": names(hit2x), "to_zero_today": names(tozero),
                   "repriced": reprice_ok},
+        "igniting_track": {"logged": len(ign_hist), "new_rows": [r["sym"] for r in new_ign],
+                           "hit_2x_today": names(i_hit2x), "to_zero_today": names(i_tozero)},
         "control": {"rows": len(rej), "median_peak_x": round(statistics.median(rej_m), 2) if rej_m else None,
                     "hit_2x_today": names(c_hit2x), "to_zero_today": names(c_tozero)},
         "changed": bool(({t["sym"] for t in short} != old_short) or ({t["sym"] for t in pull} != old_pull) or (set(hot) != set(old_hot))),

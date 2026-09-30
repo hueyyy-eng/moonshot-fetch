@@ -83,7 +83,49 @@ def main() -> int:
     summary_path = os.path.join(out, "summary.json")
     if os.path.exists(summary_path):
         update_daily_lists(json.load(open(summary_path, encoding="utf-8")), os.path.join(out, "daily-lists.csv"))
+    write_price_tracking(src, hist, os.path.join(out, "price-tracking.csv"))
     return 0
+
+
+# ---------------------------------------------------------------- price-tracking.csv: every listed token since listing
+PT_HEADER = ["listed_date", "list", "symbol", "chain", "listed_mcap_k", "listed_price_usd", "price_now_usd",
+             "change_since_listed_pct", "best_pct", "worst_pct", "low_tracked_from_listing", "days_since_listed",
+             "peak_on_day", "pair_url"]
+PT_LIST = {"S": "shortlist", "P": "pullback", "I": "igniting"}
+
+
+def _pct(v, px):
+    return round((v / px - 1) * 100, 1) if px and v is not None else ""
+
+
+def write_price_tracking(src: str, hist: list, path: str) -> None:
+    """Shortlist + pullback (HISTORY) and igniting (IGNHIST), one row per token per list, newest first.
+    Same figures as the dashboard's Price tracking tab."""
+    marker = "const IGNHIST = "
+    ign = read_const(src, "IGNHIST") if marker in src else []
+    from datetime import date
+    try:
+        today = date.fromisoformat(str(read_const(src, "LOG_AT"))[:10])
+    except Exception:  # noqa: BLE001
+        today = None
+    rows = []
+    for r in list(hist) + list(ign):
+        px = r.get("px")
+        if not px:
+            continue
+        low_known = (r.get("d") or "") >= "2026-10-01"      # lows are recorded from this date on
+        lo = r["pxMin"] if r.get("pxMin") is not None else min(px, r["pxNow"] if r.get("pxNow") is not None else px)
+        rows.append([r.get("d"), PT_LIST.get(r.get("l"), r.get("l")), r.get("sym"), r.get("c"), r.get("mc"), px,
+                     r.get("pxNow"), _pct(r.get("pxNow"), px), _pct(r.get("pxMax"), px), _pct(lo, px),
+                     "yes" if low_known else "no (lows recorded from 2026-10-01)",
+                     (today - date.fromisoformat(r["d"])).days if today and r.get("d") else "", r.get("dMax"),
+                     f"https://dexscreener.com/{r.get('c')}/{r.get('pa')}"])
+    rows.sort(key=lambda x: (x[0] or "", x[1] or "", str(x[2]).lower()), reverse=True)
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(PT_HEADER)
+        w.writerows(rows)
+    print(f"price-tracking: {len(rows)} rows")
 
 
 # ---------------------------------------------------------------- daily-lists.csv: one row per token per day
