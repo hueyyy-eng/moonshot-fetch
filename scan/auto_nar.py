@@ -191,6 +191,8 @@ GT_HDR = {"Accept": "application/json;version=20230302"}
 MAX_LOOKUPS = 90            # tokens looked up per run
 TIME_BUDGET_S = 300         # stop looking things up after 5 minutes; the rest wait for tomorrow
 SITE_MAX_BYTES = 300_000
+# how the lookups went today; written into nar.json under "_stats" so the daily report can show it
+STATS = {"gt_ok": 0, "gt_failed": 0, "gt_had_text": 0, "site_tried": 0, "site_ok": 0}
 
 _META_RE = re.compile(r'<meta[^>]+(?:name|property)\s*=\s*["\'](?:description|og:description|twitter:description|'
                       r'og:title|twitter:title)["\'][^>]*>', re.I)
@@ -231,14 +233,18 @@ def gt_profile(http, net_map: dict, t: dict) -> tuple[list[str], str, list[str]]
     try:
         j = http.get(f"{GT}/networks/{net}/tokens/{ta}/info", headers=GT_HDR, retries=1)
     except Exception as e:  # noqa: BLE001 - best-effort
+        STATS["gt_failed"] += 1
         print(f"  gt info {t.get('sym')}: {str(e)[:80]}")
         return [], "", []
+    STATS["gt_ok"] += 1
     a = ((j or {}).get("data") or {}).get("attributes") or {}
     cats = [str(x) for x in (a.get("categories") or []) + (a.get("gt_category_ids") or []) if x]
     desc = a.get("description") or ""
     if isinstance(desc, dict):
         desc = desc.get("en") or ""
     webs = [w for w in (a.get("websites") or []) if isinstance(w, str)]
+    if cats or str(desc).strip():
+        STATS["gt_had_text"] += 1
     return cats, str(desc), webs
 
 
@@ -247,12 +253,16 @@ def fetch_site(http, url: str) -> str:
         return ""
     if re.search(r"(x\.com|twitter\.com|t\.me|telegram\.|discord\.|dexscreener\.|pump\.fun|geckoterminal\.)", url, re.I):
         return ""                               # not the token's own site
+    STATS["site_tried"] += 1
     try:
         raw = http.get(url, retries=0, json_out=False)
     except Exception as e:  # noqa: BLE001
         print(f"  site {url[:50]}: {str(e)[:60]}")
         return ""
-    return site_text(raw or "")
+    txt = site_text(raw or "")
+    if txt:
+        STATS["site_ok"] += 1
+    return txt
 
 
 def main() -> int:
@@ -286,10 +296,17 @@ def main() -> int:
         else:
             how["unclassified" if http is not None or offline else "skipped"] += 1
         out[key] = label
-    json.dump(out, open(args[1], "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     counts: dict[str, int] = {}
     for v in out.values():
         counts[v] = counts.get(v, 0) + 1
+    stats = {"tagged": len(out), "by_name": how["name"], "by_profile_or_site": how["profile"],
+             "still_unclassified": counts.get("Unclassified", 0), "looked_up": looked,
+             "profile_lookups_ok": STATS["gt_ok"], "profile_lookups_failed": STATS["gt_failed"],
+             "profiles_with_text": STATS["gt_had_text"], "sites_tried": STATS["site_tried"],
+             "sites_read": STATS["site_ok"], "lookup_seconds": round(time.time() - t0),
+             "lookups_enabled": http is not None}
+    # the builder only looks up pair/token addresses in this file, so an extra "_stats" key is ignored there
+    json.dump({**out, "_stats": stats}, open(args[1], "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"auto-tagged {len(out)} tokens ({how['name']} by name, {how['profile']} from their profile/site, "
           f"{how['unclassified']} still unclassified, {looked} looked up in {time.time() - t0:.0f}s): "
           + ", ".join(f"{k} {v}" for k, v in sorted(counts.items(), key=lambda x: -x[1])))
