@@ -1,6 +1,6 @@
 {
- "now": "2026-09-30 10:54 SGT",
- "cand_at": "2026-09-30 10:54 SGT",
+ "now": "2026-09-30 18:37 SGT",
+ "cand_at": "2026-09-30 18:37 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -37,23 +37,8 @@
    "stellar",
    "cardano"
   ],
-  "new": [
-   "aptos",
-   "avax",
-   "cardano",
-   "chainflip",
-   "eos",
-   "ethereum",
-   "hedera",
-   "provenance",
-   "ripple"
-  ],
-  "dropped": [
-   "canton",
-   "flare",
-   "plasma",
-   "polygon"
-  ],
+  "new": [],
+  "dropped": [],
   "hottest": {
    "s": "hedera",
    "n": "Hedera",
@@ -62,95 +47,97 @@
   }
  },
  "tokens": {
-  "total": 90,
-  "band_m": 42,
+  "total": 96,
+  "band_m": 48,
   "candle_or_wallet_coverage_pct": 100,
-  "nodata": 8
+  "nodata": 7
  },
  "shortlist": [
   {
    "sym": "Pumpoween",
    "c": "solana",
-   "mc": 928.7,
+   "mc": 995.8,
    "nar": "Classic memes",
    "run": 1.81,
    "retr": 24.45,
-   "acc": 1.53,
-   "c6": -8.85,
-   "age": 25.25,
+   "acc": 0.49,
+   "c6": 4.54,
+   "age": 25.57,
    "sec": "rugcheck",
    "pa": "8NVFB1unNk9aDtL5hooF8Hahf2rt4GLPWx9ctEadikHg"
   }
  ],
  "shortlist_new": [],
- "shortlist_dropped": [
-  "ROBIN"
- ],
+ "shortlist_dropped": [],
  "pullback": [
-  {
-   "sym": "Pygoscelis",
-   "c": "solana",
-   "mc": 545.9,
-   "nar": "Dog & animal memes",
-   "run": 13.85,
-   "retr": 44.66,
-   "acc": 3.3,
-   "c6": 621.0,
-   "age": 1.5,
-   "sec": "rugcheck",
-   "pa": "5fPMykyh2Gc3HC3Rpj2TJQR2LnNuEm2tEEN6Nz9HMBv"
-  },
   {
    "sym": "EUNICE",
    "c": "base",
-   "mc": 1151.9,
+   "mc": 1208.2,
    "nar": "Unclassified",
    "run": 8.15,
    "retr": 56.5,
-   "acc": 1.0,
-   "c6": -2.26,
-   "age": 4.54,
+   "acc": 0.97,
+   "c6": 12.75,
+   "age": 4.86,
    "sec": "goplus",
    "pa": "0x8357668966377879be18A942029DAE8bA6B34dd8"
   },
   {
-   "sym": "ARROWFARM",
-   "c": "robinhood",
-   "mc": 1025.9,
-   "nar": "Utilities",
-   "run": 89.45,
-   "retr": 65.9,
-   "acc": 0.29,
-   "c6": -22.12,
-   "age": 3.17,
-   "sec": "explorer",
-   "pa": "0x81Af43B4A865633Cd16c9758569CDB5846C54CAF"
+   "sym": "MVP",
+   "c": "bsc",
+   "mc": 1231.5,
+   "nar": "AI",
+   "run": 6.93,
+   "retr": 66.98,
+   "acc": 0.28,
+   "c6": 17.97,
+   "age": 508.66,
+   "sec": "goplus",
+   "pa": "0xDBE36fC6ef1b51dd71FdbD136A03F413b83327aa"
   }
  ],
  "pullback_new": [
+  "MVP"
+ ],
+ "pullback_dropped": [
   "ARROWFARM",
-  "EUNICE",
   "Pygoscelis"
  ],
- "pullback_dropped": [],
- "igniting": [],
- "honeypots_new": [
-  "ASTER",
-  "SOON"
+ "igniting": [
+  {
+   "sym": "JUMP",
+   "c": "solana",
+   "mc": 1798.8,
+   "nar": "Unclassified",
+   "run": null,
+   "retr": null,
+   "acc": 4.0,
+   "c6": 93.36,
+   "age": 0.24,
+   "sec": "rugcheck",
+   "pa": "EeYdQrxko3AWEFfDHhzQ6wx24JnXnq48qUMNuDnFz1yt"
+  },
+  {
+   "sym": "AXIS",
+   "c": "solana",
+   "mc": 1611.7,
+   "nar": "Unclassified",
+   "run": null,
+   "retr": null,
+   "acc": 3.95,
+   "c6": 50.37,
+   "age": 0.25,
+   "sec": "rugcheck",
+   "pa": "V2VPbAauwgDd72bsvHTD1s81vUrYTnP4EAjQsjuFJ4F"
+  }
  ],
+ "honeypots_new": [],
  "track": {
-  "logged": 28,
+  "logged": 29,
   "new_rows": [
    [
-    "Pygoscelis",
-    "P"
-   ],
-   [
-    "EUNICE",
-    "P"
-   ],
-   [
-    "ARROWFARM",
+    "MVP",
     "P"
    ]
   ],
@@ -160,24 +147,23 @@
   "to_zero_today": [],
   "repriced": true
  },
- "control": {
-  "rows": 274,
-  "median_peak_x": 1.0,
-  "hit_2x_today": [
-   "AXIS (solana)"
+ "igniting_track": {
+  "logged": 7,
+  "new_rows": [
+   "JUMP",
+   "AXIS"
   ],
+  "hit_2x_today": [],
+  "to_zero_today": []
+ },
+ "control": {
+  "rows": 290,
+  "median_peak_x": 1.0,
+  "hit_2x_today": [],
   "to_zero_today": [
-   "果蝇 (bsc)",
-   "XL (base)",
-   "HYDX (robinhood)",
-   "CIB (robinhood)",
-   "CRED (robinhood)",
-   "PIXTWIN (robinhood)",
-   "AI (robinhood)",
-   "CASHED (robinhood)",
-   "VAULT (robinhood)",
-   "CEREBRO (robinhood)",
-   "astro (robinhood)"
+   "ERRAND (robinhood)",
+   "SHCAT (robinhood)",
+   "ROBIN (robinhood)"
   ]
  },
  "changed": true,
