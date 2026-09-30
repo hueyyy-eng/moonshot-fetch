@@ -341,6 +341,7 @@
 <section class="step" id="prices">
   <div class="step-head"><h2><b>%</b>Price tracking</h2><span class="rule">Every token from the three lists, priced on the day it first appeared there and re-priced every morning since. "Listed price" is the price at scan time, not a fill you got.</span></div>
   <div class="lede" id="priceLede" style="margin-top:14px"></div>
+  <div class="lede" id="priceOutcome" style="margin-top:8px"></div>
   <div class="controls">
     <div class="field"><label>List</label>
       <div class="tabs" id="tabs-pt">
@@ -1766,7 +1767,7 @@ document.querySelectorAll("#tabs-hl button").forEach(b=>b.setAttribute("aria-pre
     const med = a => a.length%2 ? a[(a.length-1)/2] : (a[a.length/2-1]+a[a.length/2])/2;
     return {n:r.length, medPeak:med(peaks), medNow:med(nows), best:peaks[peaks.length-1],
       hit2:r.filter(h=>h.pxMax/h.px>=2).length, hit5:r.filter(h=>h.pxMax/h.px>=5).length, hit10:r.filter(h=>h.pxMax/h.px>=10).length,
-      down:r.filter(h=>h.pxNow/h.px<0.6).length};
+      oc:outcomes(r)};
   };
   const S=stat("S"), P=stat("P"), A=stat("all");
   const tile=(k,v,n)=>`<div><div class="k">${k}</div><div class="v num">${v}</div><div class="n">${n}</div></div>`;
@@ -1776,8 +1777,7 @@ document.querySelectorAll("#tabs-hl button").forEach(b=>b.setAttribute("aria-pre
     tile("Logged", A.n, `${S?S.n:0} shortlist · ${P?P.n:0} pullback · ${span} day${span===1?"":"s"} of data`),
     tile("Median peak", A.medPeak.toFixed(2)+"×", "best case reached while tracked"),
     tile("Median now", A.medNow.toFixed(2)+"×", "where they actually sit today"),
-    tile("Reached 2× / 5× / 10×", A.hit2+" / "+A.hit5+" / "+A.hit10, "of "+A.n+" logged"),
-    tile("Down &gt;40%", A.down, "from the logged entry price")
+    ...outcomeTiles(A.oc, tile)
   ].join("") : tile("Logged","0","the first scan seeds this");
   document.getElementById("histNote").textContent = span < 14
     ? `Only ${span} day${span===1?"":"s"} of history — these figures mean nothing yet. Ignore them until there are at least two weeks and a few dozen entries; a 10× shows up in weeks, not hours. Entry price is the price at the moment the scan logged it, which is not an entry you took.`
@@ -1803,6 +1803,28 @@ function ptRows(){
     });
   });
 }
+/* outcome counts shared by Track record and Price tracking. Each token counts once:
+   2x / 5x / 10x = highest multiple its price reached at any daily scan since listing (2-5x, 5-10x, 10x+);
+   down 50% = 50-99% below the listed price at today's scan; down 100% = worth zero today (rugged or delisted). */
+function outcomes(rows){
+  const o={n:0,b2:0,b5:0,b10:0,d50:0,d100:0};
+  rows.forEach(h=>{
+    if(!h.px) return; o.n++;
+    const pk=h.pxMax!=null?h.pxMax/h.px:1, now=h.pxNow;
+    if(pk>=10) o.b10++; else if(pk>=5) o.b5++; else if(pk>=2) o.b2++;
+    if(now===0) o.d100++; else if(now!=null && now/h.px<=0.5) o.d50++;
+  });
+  return o;
+}
+function outcomeTiles(o, tile){
+  return [
+    tile("Reached 2×", o.b2, "peaked 2–5× at a daily scan"),
+    tile("Reached 5×", o.b5, "peaked 5–10× at a daily scan"),
+    tile("Reached 10×", o.b10, "peaked 10× or more"),
+    tile("Down 50%", o.d50, "50–99% below listed price at today's scan"),
+    tile("Down 100%", o.d100, "worth zero today — rugged or delisted")
+  ];
+}
 const fmtChg = v => v==null ? "—" : (v>0?"+":v<0?"−":"") + Math.round(Math.abs(v)).toLocaleString() + "%";
 function renderPrices(){
   const all=ptRows();
@@ -1815,6 +1837,8 @@ function renderPrices(){
     return tile(LIST_NM[L], fmtChg(m), `median since listed · ${r.length} tracked · ${up} up now · best ${fmtChg(best)}`);
   }).join("");
   let rows = ptL==="all" ? all : all.filter(h=>h.l===ptL);
+  const oc=outcomes(rows);
+  document.getElementById("priceOutcome").innerHTML=[tile(ptL==="all"?"All lists":LIST_NM[ptL], oc.n, "tokens tracked in this view"), ...outcomeTiles(oc, tile)].join("");
   const n = v => v==null ? -1e12 : v;
   const S={date:(a,b)=>b.d.localeCompare(a.d)||n(b._chg)-n(a._chg), chg:(a,b)=>n(b._chg)-n(a._chg),
            best:(a,b)=>n(b._best)-n(a._best), worst:(a,b)=>n(a._worst)-n(b._worst)}[ptSort];
