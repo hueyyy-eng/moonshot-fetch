@@ -247,7 +247,7 @@
   </div>
   <div class="stamp">
     <span class="badge" id="stamp"><span class="dot"></span><span id="stampText">snapshot</span></span>
-    <span class="badge">next scan 11:00 SGT daily · Opus 4.8</span>
+    <span class="badge">new scan daily · starts 9:30 SGT, live by ~11:00</span>
     <div class="refresh-row"><button class="lnk" id="refresh">Refresh numbers</button><span class="rstat" id="rstat"></span></div>
   </div>
 </header>
@@ -431,7 +431,7 @@
     <li><strong>Tokens under about a day old have no daily candles</strong>, so their already-ran check falls back to the 24h move. Marked <span class="chip">new pair</span> on the row.</li>
     <li><strong>Discovery is the real bottleneck, not the gates.</strong> Ranking candidates by 24-hour volume structurally favours tokens whose move is already in that number — in one test, 17 of the top 24 tokens trending on 6-hour activity were absent from the scan entirely. The full scan now runs a second pass ranked by 6-hour trending to catch them while they are still moving.</li>
     <li><strong>The track record is the only honest scoreboard here</strong>, and it starts from nothing. Until it has weeks of entries, treat every threshold on this page as an untested guess.</li>
-    <li><strong>Refresh</strong> re-prices what is listed, in your browser only, and cannot discover new tokens or refresh perp figures. The 8am scan is what discovers. Nothing you do here is written to disk.</li>
+    <li><strong>Refresh</strong> re-prices what is listed, in your browser only, and cannot discover new tokens or refresh perp figures. The daily 9:30am scan is what discovers new tokens. Nothing you do here is saved.</li>
   </ul>
 </div>
 
@@ -1523,7 +1523,7 @@ function renderTokens(){
   const ig=TOKENS.filter(isIgn).sort((a,b)=>b._acc-a._acc);
   document.getElementById("ignHead").innerHTML=TOK_HEAD.map(h=>`<th scope="col" class="${h[1]}">${h[0]}</th>`).join("");
   document.getElementById("ignBody").innerHTML = ig.length ? ig.map(t=>tokRow(t,false)).join("")
-    : `<tr><td colspan="${TOK_HEAD.length}" class="empty">Nothing is igniting in this candidate set. Often that is the discovery step rather than the market — the scan ranks by 24-hour volume, which surfaces tokens whose move is already in that number. The weekly full scan also ranks by 6-hour trending to catch them earlier.</td></tr>`;
+    : `<tr><td colspan="${TOK_HEAD.length}" class="empty">Nothing is igniting in this candidate set. Often that is the discovery step rather than the market — the scan ranks by 24-hour volume, which surfaces tokens whose move is already in that number. The daily scan also ranks by 6-hour trending to catch them earlier.</td></tr>`;
   document.getElementById("ignNote").textContent = ig.length
     ? `${ig.length} accelerating now: 6h volume running ≥${IGN.accel}× the daily pace, still under ${IGN.runHi}× off the 7-day low. This is the highest-variance list on the page — you are buying into a move in progress, so the stop matters more than the thesis.`
     : `Empty is the normal state. A token is only in this window for hours, so an empty list at 10pm says little about 10am.`;
@@ -1875,8 +1875,8 @@ async function refresh(){
   let CHAINS=null;
   try{ const r=await fetch("https://api.llama.fi/v2/chains"); if(!r.ok) throw 0; CHAINS=await r.json(); }
   catch(e){
-    btn.disabled=false; say("blocked here — open the Drive copy in Chrome","err");
-    document.getElementById("note").textContent="This viewer blocks the page from calling DefiLlama, DexScreener and the rug-check APIs, so Refresh cannot run on it. The copy in your Claude Projects/Moonshot Scanner folder refreshes fine in Chrome. The 8am scan is unaffected either way.";
+    btn.disabled=false; say("could not reach DefiLlama — try again in a minute","err");
+    document.getElementById("note").textContent="Refresh could not reach DefiLlama just now (network or rate limit). Nothing on the page was changed; try again shortly. The daily scan is unaffected.";
     return;
   }
   const nameBy={}; CHAINS.forEach(c=>nameBy[String(c.name).toLowerCase().replace(/[\s_]+/g,"-")]=c.name);
