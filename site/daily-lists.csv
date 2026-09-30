@@ -31,3 +31,7 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-09-29,igniting,JUMP,solana,1357.9,Unclassified,,,4.0,47.14,0.09,rugcheck,https://dexscreener.com/solana/AxGtLoCCfgXD1STXNUT8UFowHHQn4GEFPRg4wWi3uZXq,daily scan
 2026-09-29,igniting,Pumpoween,solana,997.0,Classic memes,2.54,0.81,2.24,10.02,24.25,rugcheck,https://dexscreener.com/solana/8NVFB1unNk9aDtL5hooF8Hahf2rt4GLPWx9ctEadikHg,daily scan
 2026-09-29,igniting,XDP,solana,1443.5,Utilities,,,4.0,46.91,0.09,rugcheck,https://dexscreener.com/solana/8SZkDCsHSexNT4Mz54eGUiD8nUHUaStktR7H4kwsXXdX,daily scan
+2026-09-30,shortlist,Pumpoween,solana,928.7,Classic memes,1.81,24.45,1.53,-8.85,25.25,rugcheck,https://dexscreener.com/solana/8NVFB1unNk9aDtL5hooF8Hahf2rt4GLPWx9ctEadikHg,daily scan
+2026-09-30,pullback,ARROWFARM,robinhood,1025.9,Utilities,89.45,65.9,0.29,-22.12,3.17,explorer,https://dexscreener.com/robinhood/0x81Af43B4A865633Cd16c9758569CDB5846C54CAF,daily scan
+2026-09-30,pullback,EUNICE,base,1151.9,Unclassified,8.15,56.5,1.0,-2.26,4.54,goplus,https://dexscreener.com/base/0x8357668966377879be18A942029DAE8bA6B34dd8,daily scan
+2026-09-30,pullback,Pygoscelis,solana,545.9,Dog & animal memes,13.85,44.66,3.3,621.0,1.5,rugcheck,https://dexscreener.com/solana/5fPMykyh2Gc3HC3Rpj2TJQR2LnNuEm2tEEN6Nz9HMBv,daily scan

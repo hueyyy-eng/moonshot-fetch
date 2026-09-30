@@ -1,6 +1,6 @@
 {
- "now": "2026-09-29 11:01 SGT",
- "cand_at": "2026-09-29 11:01 SGT",
+ "now": "2026-09-30 10:54 SGT",
+ "cand_at": "2026-09-30 10:54 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -22,148 +22,136 @@
  },
  "chains": {
   "hot": [
+   "ethereum",
    "base",
-   "polygon",
    "thorchain",
+   "avax",
    "dexalot",
-   "canton",
+   "chainflip",
+   "provenance",
+   "hedera",
    "sei",
-   "plasma",
-   "flare",
-   "stellar"
+   "eos",
+   "aptos",
+   "ripple",
+   "stellar",
+   "cardano"
   ],
   "new": [
-   "base",
-   "dexalot",
-   "flare",
-   "plasma",
-   "polygon",
-   "sei",
-   "stellar"
-  ],
-  "dropped": [
+   "aptos",
+   "avax",
+   "cardano",
    "chainflip",
    "eos",
-   "injective",
-   "sui"
+   "ethereum",
+   "hedera",
+   "provenance",
+   "ripple"
+  ],
+  "dropped": [
+   "canton",
+   "flare",
+   "plasma",
+   "polygon"
   ],
   "hottest": {
-   "s": "sei",
-   "n": "Sei",
-   "dr": 1.93,
-   "dr30": 2.49
+   "s": "hedera",
+   "n": "Hedera",
+   "dr": 2.89,
+   "dr30": 6.05
   }
  },
  "tokens": {
-  "total": 91,
-  "band_m": 41,
+  "total": 90,
+  "band_m": 42,
   "candle_or_wallet_coverage_pct": 100,
-  "nodata": 17
+  "nodata": 8
  },
  "shortlist": [
   {
    "sym": "Pumpoween",
    "c": "solana",
-   "mc": 997.0,
+   "mc": 928.7,
    "nar": "Classic memes",
-   "run": 2.54,
-   "retr": 0.81,
-   "acc": 2.24,
-   "c6": 10.02,
-   "age": 24.25,
+   "run": 1.81,
+   "retr": 24.45,
+   "acc": 1.53,
+   "c6": -8.85,
+   "age": 25.25,
    "sec": "rugcheck",
    "pa": "8NVFB1unNk9aDtL5hooF8Hahf2rt4GLPWx9ctEadikHg"
-  },
-  {
-   "sym": "ROBIN",
-   "c": "robinhood",
-   "mc": 1678.0,
-   "nar": "Dog & animal memes",
-   "run": 1.74,
-   "retr": 94.18,
-   "acc": 0.27,
-   "c6": -1.7,
-   "age": 23.38,
-   "sec": "explorer",
-   "pa": "0x5eac4195930d5ff8b7a34a347f2bde951c42eb730d6e26075bea3dd7c66feb40"
   }
  ],
- "shortlist_new": [
-  "Pumpoween",
+ "shortlist_new": [],
+ "shortlist_dropped": [
   "ROBIN"
  ],
- "shortlist_dropped": [],
- "pullback": [],
- "pullback_new": [],
- "pullback_dropped": [],
- "igniting": [
+ "pullback": [
   {
-   "sym": "AXIS",
+   "sym": "Pygoscelis",
    "c": "solana",
-   "mc": 1275.6,
-   "nar": "Unclassified",
-   "run": null,
-   "retr": null,
-   "acc": 4.0,
-   "c6": 47.77,
-   "age": 0.09,
+   "mc": 545.9,
+   "nar": "Dog & animal memes",
+   "run": 13.85,
+   "retr": 44.66,
+   "acc": 3.3,
+   "c6": 621.0,
+   "age": 1.5,
    "sec": "rugcheck",
-   "pa": "G9FyTYBehMn5uUnvw9TTx6deYFMg2mLDJzC8U6Je1mN7"
+   "pa": "5fPMykyh2Gc3HC3Rpj2TJQR2LnNuEm2tEEN6Nz9HMBv"
   },
   {
-   "sym": "JUMP",
-   "c": "solana",
-   "mc": 1357.9,
+   "sym": "EUNICE",
+   "c": "base",
+   "mc": 1151.9,
    "nar": "Unclassified",
-   "run": null,
-   "retr": null,
-   "acc": 4.0,
-   "c6": 47.14,
-   "age": 0.09,
-   "sec": "rugcheck",
-   "pa": "AxGtLoCCfgXD1STXNUT8UFowHHQn4GEFPRg4wWi3uZXq"
+   "run": 8.15,
+   "retr": 56.5,
+   "acc": 1.0,
+   "c6": -2.26,
+   "age": 4.54,
+   "sec": "goplus",
+   "pa": "0x8357668966377879be18A942029DAE8bA6B34dd8"
   },
   {
-   "sym": "XDP",
-   "c": "solana",
-   "mc": 1443.5,
+   "sym": "ARROWFARM",
+   "c": "robinhood",
+   "mc": 1025.9,
    "nar": "Utilities",
-   "run": null,
-   "retr": null,
-   "acc": 4.0,
-   "c6": 46.91,
-   "age": 0.09,
-   "sec": "rugcheck",
-   "pa": "8SZkDCsHSexNT4Mz54eGUiD8nUHUaStktR7H4kwsXXdX"
-  },
-  {
-   "sym": "Pumpoween",
-   "c": "solana",
-   "mc": 997.0,
-   "nar": "Classic memes",
-   "run": 2.54,
-   "retr": 0.81,
-   "acc": 2.24,
-   "c6": 10.02,
-   "age": 24.25,
-   "sec": "rugcheck",
-   "pa": "8NVFB1unNk9aDtL5hooF8Hahf2rt4GLPWx9ctEadikHg"
+   "run": 89.45,
+   "retr": 65.9,
+   "acc": 0.29,
+   "c6": -22.12,
+   "age": 3.17,
+   "sec": "explorer",
+   "pa": "0x81Af43B4A865633Cd16c9758569CDB5846C54CAF"
   }
  ],
+ "pullback_new": [
+  "ARROWFARM",
+  "EUNICE",
+  "Pygoscelis"
+ ],
+ "pullback_dropped": [],
+ "igniting": [],
  "honeypots_new": [
-  "IMDSTR",
-  "MNT21"
+  "ASTER",
+  "SOON"
  ],
  "track": {
-  "logged": 25,
+  "logged": 28,
   "new_rows": [
    [
-    "Pumpoween",
-    "S"
+    "Pygoscelis",
+    "P"
    ],
    [
-    "ROBIN",
-    "S"
+    "EUNICE",
+    "P"
+   ],
+   [
+    "ARROWFARM",
+    "P"
    ]
   ],
   "best_x": 14.93,
@@ -173,13 +161,23 @@
   "repriced": true
  },
  "control": {
-  "rows": 258,
+  "rows": 274,
   "median_peak_x": 1.0,
   "hit_2x_today": [
-   "WIRED (bsc)"
+   "AXIS (solana)"
   ],
   "to_zero_today": [
-   "FILR (robinhood)"
+   "果蝇 (bsc)",
+   "XL (base)",
+   "HYDX (robinhood)",
+   "CIB (robinhood)",
+   "CRED (robinhood)",
+   "PIXTWIN (robinhood)",
+   "AI (robinhood)",
+   "CASHED (robinhood)",
+   "VAULT (robinhood)",
+   "CEREBRO (robinhood)",
+   "astro (robinhood)"
   ]
  },
  "changed": true,
