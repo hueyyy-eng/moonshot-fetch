@@ -82,6 +82,7 @@
 
   .lede{margin-top:18px; display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:1px; background:var(--line-soft); border:1px solid var(--line-soft)}
   .lede > div{background:var(--surface); padding:14px 16px}
+  #trackLede, #priceOutcome{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
   .k{font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:var(--muted); font-weight:600}
   .lede .v{font-family:Chivo,sans-serif; font-weight:700; font-size:26px; letter-spacing:-.01em; margin-top:2px}
   .lede .n{font-size:13px; color:var(--ink-2)}
@@ -1832,12 +1833,14 @@ function ptRows(){
    2x / 5x / 10x = highest multiple its price reached at any daily scan since listing (2-5x, 5-10x, 10x+);
    down 50% = 50-99% below the listed price at today's scan; down 100% = worth zero today (rugged or delisted). */
 function outcomes(rows){
-  const o={n:0,b2:0,b5:0,b10:0,d50:0,d100:0};
+  /* each token lands in exactly one tile: highest peak first, then where it sits today */
+  const o={n:0,b2:0,b5:0,b10:0,d50:0,d100:0,mid:0};
   rows.forEach(h=>{
     if(!h.px) return; o.n++;
     const pk=h.pxMax!=null?h.pxMax/h.px:1, now=h.pxNow;
     if(pk>=10) o.b10++; else if(pk>=5) o.b5++; else if(pk>=2) o.b2++;
-    if(now===0) o.d100++; else if(now!=null && now/h.px<=0.5) o.d50++;
+    else if(now===0) o.d100++; else if(now!=null && now/h.px<=0.5) o.d50++;
+    else o.mid++;
   });
   return o;
 }
@@ -1846,8 +1849,9 @@ function outcomeTiles(o, tile){
     tile("Reached 2×", o.b2, "peaked 2–5× at a daily scan"),
     tile("Reached 5×", o.b5, "peaked 5–10× at a daily scan"),
     tile("Reached 10×", o.b10, "peaked 10× or more"),
-    tile("Down 50%", o.d50, "50–99% below listed price at today's scan"),
-    tile("Down 100%", o.d100, "worth zero today — rugged or delisted")
+    tile("Down 50%", o.d50, "never hit 2×; now 50–99% below listed price"),
+    tile("Down 100%", o.d100, "never hit 2×; worth zero today — rugged or delisted"),
+    tile("In between −49% to +99%", o.mid, "no 2× yet, not down 50% — each token counted once")
   ];
 }
 const fmtChg = v => v==null ? "—" : (v>0?"+":v<0?"−":"") + Math.round(Math.abs(v)).toLocaleString() + "%";
