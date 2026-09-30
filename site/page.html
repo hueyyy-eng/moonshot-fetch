@@ -262,6 +262,7 @@
   <a href="#s4"><b>4</b>Narrative</a>
   <a href="#playbook"><b>◇</b>Playbook</a>
   <a href="#track"><b>~</b>Track record</a>
+  <a href="#prices"><b>%</b>Price tracking</a>
   <a href="#criteria"><b>=</b>Criteria</a>
 </nav>
 </div>
@@ -335,6 +336,23 @@
   <h3 id="narHead" style="font-size:15px;margin-top:24px">Narrative drift</h3>
   <div class="tablewrap"><table><thead><tr id="narHistHead"></tr></thead><tbody id="narHistBody"></tbody></table></div>
   <div class="note" id="narHistNote"></div>
+</section>
+
+<section class="step" id="prices">
+  <div class="step-head"><h2><b>%</b>Price tracking</h2><span class="rule">Every token from the three lists, priced on the day it first appeared there and re-priced every morning since. "Listed price" is the price at scan time, not a fill you got.</span></div>
+  <div class="lede" id="priceLede" style="margin-top:14px"></div>
+  <div class="controls">
+    <div class="field"><label>List</label>
+      <div class="tabs" id="tabs-pt">
+        <button data-l="all" aria-pressed="true">All</button>
+        <button data-l="S" aria-pressed="false">★ Shortlist</button>
+        <button data-l="P" aria-pressed="false">◆ Pullback</button>
+        <button data-l="I" aria-pressed="false">▲ Igniting</button>
+      </div></div>
+    <div class="field"><label for="ptSort">Sort</label><select id="ptSort"><option value="date">Newest first</option><option value="chg">Change since listed</option><option value="best">Best move</option><option value="worst">Worst drop</option></select></div>
+  </div>
+  <div class="tablewrap"><table><thead><tr id="ptHead"></tr></thead><tbody id="ptBody"></tbody></table></div>
+  <div class="note" id="ptNote"></div>
 </section>
 
 <section class="step" id="s1">
@@ -1083,6 +1101,13 @@ const HISTORY = [
 {"d":"2026-09-30","sym":"EUNICE","c":"base","pa":"0x8357668966377879be18A942029DAE8bA6B34dd8","l":"P","mc":1151.9,"px":0.0005759,"pxNow":0.0005759,"pxMax":0.0005759,"dMax":0},
 {"d":"2026-09-30","sym":"ARROWFARM","c":"robinhood","pa":"0x81Af43B4A865633Cd16c9758569CDB5846C54CAF","l":"P","mc":1025.9,"px":480.53,"pxNow":480.53,"pxMax":480.53,"dMax":0}
 ];
+const IGNHIST = [
+{"d":"2026-09-27","sym":"INTC","c":"robinhood","pa":"0x7fb585f108d921de3b197cf7e26b5aebc96b035fec13f972b868e008ea062394","l":"I","mc":1729.8,"px":123.77,"pxNow":115.83,"pxMax":123.77,"pxMin":115.83,"dMax":0},
+{"d":"2026-09-29","sym":"AXIS","c":"solana","pa":"G9FyTYBehMn5uUnvw9TTx6deYFMg2mLDJzC8U6Je1mN7","l":"I","mc":1275.6,"px":1.275e-05,"pxNow":2.618e-05,"pxMax":2.618e-05,"pxMin":1.275e-05,"dMax":1},
+{"d":"2026-09-29","sym":"JUMP","c":"solana","pa":"AxGtLoCCfgXD1STXNUT8UFowHHQn4GEFPRg4wWi3uZXq","l":"I","mc":1357.9,"px":1.357e-05,"pxNow":2.603e-05,"pxMax":2.603e-05,"pxMin":1.357e-05,"dMax":1},
+{"d":"2026-09-29","sym":"Pumpoween","c":"solana","pa":"8NVFB1unNk9aDtL5hooF8Hahf2rt4GLPWx9ctEadikHg","l":"I","mc":997.0,"px":0.00106,"pxNow":0.0009877,"pxMax":0.00106,"pxMin":0.0009877,"dMax":0},
+{"d":"2026-09-29","sym":"XDP","c":"solana","pa":"8SZkDCsHSexNT4Mz54eGUiD8nUHUaStktR7H4kwsXXdX","l":"I","mc":1443.5,"px":1.443e-05,"pxNow":2.832e-05,"pxMax":2.832e-05,"pxMin":1.443e-05,"dMax":1}
+];
 const KOLS = [{"h":"blknoiz06","w":"Ansem — Solana small-caps"},{"h":"Rasmr_eth","w":"on-chain research, posts entries"},{"h":"Orangie","w":"memecoin flow, signals"},{"h":"0xVonGogh","w":"full-time memecoin trader"},{"h":"Cryptozins","w":"wallet tracking, bots"},{"h":"973Meech","w":"memecoin community flow"},{"h":"Renzofks","w":"exotic low-caps"},{"h":"ValueandTime","w":"value-leaning signals"},{"h":"Theunipcs","w":"BONK / Solana"},{"h":"zachxbt","w":"rug and scam investigations"}];
 const CHAIN_ACCTS = {"robinhood":[["@RobinhoodApp","https://x.com/RobinhoodApp"],["@vladtenev","https://x.com/vladtenev"],["search \"Robinhood Chain\"","https://x.com/search?q=%22Robinhood%20Chain%22&f=live"]],"solana":[["@solana","https://x.com/solana"],["@aeyakovenko","https://x.com/aeyakovenko"],["@A1lon9 (Pump.fun)","https://x.com/A1lon9"]],"bsc":[["@binance","https://x.com/binance"],["@cz_binance","https://x.com/cz_binance"]],"base":[["@base","https://x.com/base"],["@jessepollak","https://x.com/jessepollak"]],"ethereum":[["@ethereum","https://x.com/ethereum"]],"arbitrum":[["@arbitrum","https://x.com/arbitrum"]],"optimism":[["@Optimism","https://x.com/Optimism"]],"ink":[["@inkonchain","https://x.com/inkonchain"]],"unichain":[["@unichain","https://x.com/unichain"]],"pulsechain":[["@RichardHeartWin","https://x.com/RichardHeartWin"]],"xrpl":[["@Ripple","https://x.com/Ripple"]],"hyperliquid":[["@HyperliquidX","https://x.com/HyperliquidX"],["@chameleon_jeff","https://x.com/chameleon_jeff"]]};
 /*DATA-END*/
@@ -1760,6 +1785,62 @@ document.querySelectorAll("#tabs-hl button").forEach(b=>b.setAttribute("aria-pre
   renderControl(); renderNarHist();
 }
 
+/* ---------- price tracking: every listed token, priced from the day it first appeared ---------- */
+let ptL="all", ptSort="date";
+const PT_HEAD=[["Listed",""],["Token",""],["List","w-g"],["Listed mcap",""],["Listed price",""],["Price now",""],["Since listed",""],["Best",""],["Worst",""],["Days",""],["Peak on day",""]];
+const LIST_NM={S:"★ Shortlist",P:"◆ Pullback",I:"▲ Igniting"};
+function ptRows(){
+  const ign=(typeof IGNHIST!=="undefined")?IGNHIST:[];
+  const today=SNAP_AT.slice(0,10);
+  return HISTORY.concat(ign).filter(h=>h.px).map(h=>{
+    // lows are recorded from 1 Oct 2026: for tokens listed earlier the real low may have been deeper
+    const lowSeen=h.d>="2026-10-01", lo=h.pxMin!=null?h.pxMin:Math.min(h.px, h.pxNow!=null?h.pxNow:h.px);
+    return Object.assign({}, h, {
+      _chg: h.pxNow!=null ? (h.pxNow/h.px-1)*100 : null,
+      _best: h.pxMax!=null ? (h.pxMax/h.px-1)*100 : null,
+      _worst: (lo/h.px-1)*100, _lowSeen: lowSeen,
+      _days: Math.max(0, daysBetween(h.d, today))
+    });
+  });
+}
+const fmtChg = v => v==null ? "—" : (v>0?"+":v<0?"−":"") + Math.round(Math.abs(v)).toLocaleString() + "%";
+function renderPrices(){
+  const all=ptRows();
+  document.querySelectorAll("#tabs-pt button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.l===ptL)));
+  const tile=(k,v,n)=>`<div><div class="k">${k}</div><div class="v num">${v}</div><div class="n">${n}</div></div>`;
+  document.getElementById("priceLede").innerHTML=["S","P","I"].map(L=>{
+    const r=all.filter(h=>h.l===L && h._chg!=null);
+    if(!r.length) return tile(LIST_NM[L],"—","nothing tracked yet");
+    const m=med(r.map(h=>h._chg)), up=r.filter(h=>h._chg>0).length, best=Math.max(...r.map(h=>h._best==null?-100:h._best));
+    return tile(LIST_NM[L], fmtChg(m), `median since listed · ${r.length} tracked · ${up} up now · best ${fmtChg(best)}`);
+  }).join("");
+  let rows = ptL==="all" ? all : all.filter(h=>h.l===ptL);
+  const n = v => v==null ? -1e12 : v;
+  const S={date:(a,b)=>b.d.localeCompare(a.d)||n(b._chg)-n(a._chg), chg:(a,b)=>n(b._chg)-n(a._chg),
+           best:(a,b)=>n(b._best)-n(a._best), worst:(a,b)=>n(a._worst)-n(b._worst)}[ptSort];
+  rows.sort(S);
+  document.getElementById("ptHead").innerHTML=PT_HEAD.map(h=>`<th scope="col" class="${h[1]}">${h[0]}</th>`).join("");
+  const body=document.getElementById("ptBody");
+  body.innerHTML = rows.length ? rows.map(h=>`<tr>
+    <td class="num dim">${h.d.slice(5)}</td>
+    <td class="tok"><a href="https://dexscreener.com/${h.c}/${h.pa}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">${esc(h.sym)}</a> <span class="chip">${cname(h.c)}</span></td>
+    <td class="w-g"><span class="gate ${h.l==="S"?"g-pass":"g-fail"}">${LIST_NM[h.l]||h.l}</span></td>
+    <td class="num">${fmtK(h.mc)}</td>
+    <td class="num dim">${px(h.px)}</td>
+    <td class="num">${px(h.pxNow)}</td>
+    <td class="num">${pct(h._chg)}</td>
+    <td class="num">${pct(h._best)}</td>
+    <td class="num"${h._lowSeen?"":' data-tip="Lows are recorded from 1 Oct 2026. For tokens listed earlier it only covers prices seen since then, so the real low may have been deeper."'}>${pct(h._worst)}${h._lowSeen?"":'<span class="dim">*</span>'}</td>
+    <td class="num dim">${h._days}d</td>
+    <td class="num dim">${h.dMax==null?"—":h.dMax+"d"}</td>
+  </tr>`).join("") : `<tr><td colspan="${PT_HEAD.length}" class="empty">Nothing tracked on this list yet.</td></tr>`;
+  document.getElementById("ptNote").textContent =
+    `${rows.length} shown. Since listed, best and worst are measured against the price on the day the token first appeared on that list, and every row is re-priced each morning. `
+    + `Worst marked * is only partly known: lows are recorded from 1 Oct 2026. Igniting tokens listed on 27 and 29 Sep were added from those days' saved scans. `
+    + `Best shows the move that was there at some point, not one you could reliably have caught; the Since listed column is where each one stands today.`;
+  wireTips(body);
+}
+
 /* ---------- control group: picks vs near-misses ---------- */
 const med = a => { if(!a.length) return null; const b=a.slice().sort((x,y)=>x-y); return b.length%2 ? b[(b.length-1)/2] : (b[b.length/2-1]+b[b.length/2])/2; };
 function renderControl(){
@@ -1961,6 +2042,8 @@ document.getElementById("minliq").addEventListener("input",e=>{minliq=+e.target.
 document.getElementById("allowUnk").addEventListener("change",e=>{allowUnk=e.target.checked; renderTokens();});
 document.querySelectorAll("#tabs-hl button").forEach(b=>b.addEventListener("click",()=>{histL=b.dataset.l; renderHistory();}));
 document.getElementById("refresh").addEventListener("click",refresh);
+document.querySelectorAll("#tabs-pt button").forEach(b=>b.addEventListener("click",()=>{ptL=b.dataset.l; renderPrices();}));
+document.getElementById("ptSort").addEventListener("change",e=>{ptSort=e.target.value; renderPrices();});
 const sel=document.getElementById("chainsel");
 [...new Set(TOKENS.map(t=>t.c))].sort().forEach(c=>{ const o=document.createElement("option"); o.value=c; o.textContent=cname(c); sel.appendChild(o); });
 /* freshness light: green = scanned today with today's candles and rug checks,
@@ -1988,7 +2071,7 @@ function freshness(){
 }
 document.getElementById("stampText").textContent="chains "+SNAP_AT.slice(11)+" · tokens "+TOK_AT.slice(11)+" · "+SNAP_AT.slice(0,10);
 freshness();
-renderChains(); renderTokens(); renderCriteria(); renderHistory(); renderRegime();
+renderChains(); renderTokens(); renderCriteria(); renderHistory(); renderRegime(); renderPrices();
 </script>
 
 </body>
