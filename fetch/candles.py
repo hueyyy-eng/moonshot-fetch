@@ -146,11 +146,17 @@ def run(http: Http, st: Status, tokens: list[dict]) -> None:
         by_chain.setdefault((0 if t.get("band") == "m" else 1, t["c"]), []).append(t)
     got_wallet = got_candle = 0
     blocked = False
+    skipped = 0
     for (_, chain), rows in by_chain.items():
         net = DS_TO_GT.get(chain)
         if not net:
             for r in rows:
                 r["noCd"] = 1
+            continue
+        if http.out_of_time():
+            for r in rows:
+                r["noCd"] = 1
+            skipped += len(rows)
             continue
         try:
             attrs = _pool_attrs(http, net, [r["pa"] for r in rows])
@@ -164,6 +170,10 @@ def run(http: Http, st: Status, tokens: list[dict]) -> None:
                 _wallets(r, a)
                 if r.get("ubr") is not None:
                     got_wallet += 1
+            if http.out_of_time():
+                r["noCd"] = 1
+                skipped += 1
+                continue
             try:
                 cs = _candles(http, net, r["pa"])
             except BlockedError as e:
@@ -186,6 +196,8 @@ def run(http: Http, st: Status, tokens: list[dict]) -> None:
     m = [t for t in tokens if t.get("band") == "m"]
     cov = sum(1 for t in m if t.get("run") is not None or t.get("ubr") is not None)
     pct = round(100 * cov / len(m)) if m else 0
+    if skipped:
+        log.warning("candles: time limit reached — %d tokens left without candles (%.0f min)", skipped, http.elapsed_min())
     if blocked:
         return
     if m and pct < 40:

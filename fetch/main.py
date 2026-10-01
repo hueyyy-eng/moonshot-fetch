@@ -18,6 +18,18 @@ from .common import Http, Status, now_utc, now_sgt_str, drop_none, dump_json, SG
 
 CHAIN_GATE = {"dr": 1.3, "dv": 5}
 
+# Time limits, in minutes from the start of the fetch (normal runs finish the whole fetch in 45-90 min).
+# Each stage stops making calls at its limit and keeps what it has, so a slow day still writes a snapshot
+# instead of being killed by GitHub with nothing saved (what happened on 1 Oct). The workflow's own job
+# limit is 170 min; the build and page check after the fetch take about 5-10 min.
+RUN_BUDGET_MIN = 135          # hard end of all network calls (re-pricing the track record runs last, up to here)
+STAGE_END_MIN = {"chains": 25, "discovery": 60, "candles": 100, "safety": 120}
+
+
+def stage(http: Http, name: str) -> None:
+    http.stage_end = http.t0 + STAGE_END_MIN[name] * 60 if name in STAGE_END_MIN else None
+    log.info("stage %s starts at %.0f min", name, http.elapsed_min())
+
 
 def passing_chains(rows: list[dict]) -> list[str]:
     out = []
@@ -45,11 +57,12 @@ def main(repo_root: str) -> int:
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname).1s %(message)s", stream=sys.stdout)
     t0 = time.time()
     st = Status()
-    http = Http()
+    http = Http(budget_s=RUN_BUDGET_MIN * 60)
     stamp = now_sgt_str()
     day = now_utc().astimezone(SGT).strftime("%Y-%m-%d")
 
     # STEP 1 — chains
+    stage(http, "chains")
     try:
         ch = chains.run(http, st)
     except Exception as e:  # noqa: BLE001
@@ -59,6 +72,7 @@ def main(repo_root: str) -> int:
     log.info("passing chains: %s", passing)
 
     # STEP 2 — discovery + pair rows
+    stage(http, "discovery")
     try:
         disc = discover.run(http, st, passing, chains.CORE_CHAINS)
     except Exception as e:  # noqa: BLE001
@@ -69,16 +83,19 @@ def main(repo_root: str) -> int:
 
     # STEP 3 — candles/wallets, then safety
     if tokens:
+        stage(http, "candles")
         try:
             candles.run(http, st, tokens)
         except Exception as e:  # noqa: BLE001
             st.fail("geckoterminal", f"candles stage crashed: {e}")
+        stage(http, "safety")
         try:
             safety.run(http, st, tokens)
         except Exception as e:  # noqa: BLE001
             st.fail("safety", f"safety stage crashed: {e}")
 
     # STEP 4b support — re-price the track record's pairs
+    stage(http, "reprice")
     try:
         prices = reprice.run(http, st, repo_root, tokens)
     except Exception as e:  # noqa: BLE001
@@ -87,6 +104,8 @@ def main(repo_root: str) -> int:
 
     status = st.as_dict()
     status["http_calls"] = dict(http.calls)
+    status["rate_limited_429"] = dict(http.n429)
+    status["fetch_minutes"] = round(http.elapsed_min(), 1)
     status["passing_chains"] = passing
     status["chains_scanned"] = disc.get("chains_scanned", [])
     out = {

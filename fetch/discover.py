@@ -276,7 +276,12 @@ def run(http: Http, st: Status, passing_slugs: list[str], core: list[str]) -> di
     tokens: list[dict] = []
     per_chain: dict[str, dict] = {}
     ds_ok = gt_ok = 0
+    done = 0
     for chain in chains:
+        if http.out_of_time():
+            log.warning("discovery: time limit reached after %d of %d chains (%.0f min) — skipping %s",
+                        done, len(chains), http.elapsed_min(), ", ".join(chains[done:]))
+            break
         a, b, c, ds_worked = ds_screener(http, chain, st)
         g, gt_worked = gt_pools(http, chain)
         ds_ok += int(ds_worked)
@@ -293,12 +298,18 @@ def run(http: Http, st: Status, passing_slugs: list[str], core: list[str]) -> di
         per_chain[chain] = {"screened": len(cands), "promoted": len(promo), "priced": len(rows), "kept_m": sum(r["band"] == "m" for r in kept),
                             "kept_l": sum(r["band"] == "l" for r in kept), "ds": ds_worked, "gt": gt_worked}
         tokens.extend(kept)
+        done += 1
+        log.info("discovery %s: %d candidates, %d kept (%.0f min, GeckoTerminal rate-limited %d times so far)",
+                 chain, len(cands), len(kept), http.elapsed_min(), http.n429.get("api.geckoterminal.com", 0))
         time.sleep(0.5)
+    cut = f"; time limit hit — only {done} of {len(chains)} chains scanned" if done < len(chains) else ""
     if ds_ok == 0 and gt_ok == 0:
         st.fail("discovery", "neither DexScreener screener pages nor GeckoTerminal pools answered", chains=len(chains))
     elif ds_ok == 0 or gt_ok == 0:
-        st.partial("discovery", f"only one route worked (dexscreener={ds_ok}, geckoterminal={gt_ok} of {len(chains)} chains)",
+        st.partial("discovery", f"only one route worked (dexscreener={ds_ok}, geckoterminal={gt_ok} of {len(chains)} chains){cut}",
                    tokens=len(tokens), per_chain=per_chain)
+    elif cut:
+        st.partial("discovery", cut[2:], tokens=len(tokens), per_chain=per_chain)
     else:
         st.ok("discovery", tokens=len(tokens), per_chain=per_chain)
     return {"tokens": tokens, "chains_scanned": chains, "NO_DEXSCREENER": sorted(no_ds)}

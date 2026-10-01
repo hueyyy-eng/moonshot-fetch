@@ -231,9 +231,13 @@ def run(http: Http, st: Status, tokens: list[dict]) -> None:
     n_rc = n_gp = n_hp = n_ex = n_ex_ok = 0
     err_rc = err_gp = err_ex = 0
     key_rejected = False
+    skipped = 0
     for t in tokens:
         t.setdefault("sec", "nodata")
         c = t["c"]
+        if http.out_of_time():
+            skipped += 1
+            continue
         try:
             if c == "solana":
                 if rugcheck(http, t):
@@ -260,6 +264,8 @@ def run(http: Http, st: Status, tokens: list[dict]) -> None:
             else:
                 err_gp += 1
             log.warning("safety %s/%s: %s", c, t["sym"], str(e)[:100])
+    if skipped:
+        log.warning("safety: time limit reached — %d tokens left unchecked (%.0f min)", skipped, http.elapsed_min())
     sol = sum(1 for t in tokens if t["c"] == "solana")
     evm = sum(1 for t in tokens if t["c"] in GOPLUS_IDS)
     rh = sum(1 for t in tokens if t["c"] == "robinhood" and t.get("band") == "m")
