@@ -16,13 +16,13 @@ permissions:
   contents: write
 
 concurrency:
-  group: moonshot-fetch
+  group: moonshot-fetch-v2
   cancel-in-progress: false
 
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 150
+    timeout-minutes: 170
     steps:
       - uses: actions/checkout@v4
         with:
