@@ -36,3 +36,4 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-09-30,pullback,MVP,bsc,1231.5,AI,6.93,66.98,0.28,17.97,508.66,goplus,https://dexscreener.com/bsc/0xDBE36fC6ef1b51dd71FdbD136A03F413b83327aa,daily scan
 2026-09-30,igniting,AXIS,solana,1611.7,Unclassified,,,3.95,50.37,0.25,rugcheck,https://dexscreener.com/solana/V2VPbAauwgDd72bsvHTD1s81vUrYTnP4EAjQsjuFJ4F,daily scan
 2026-09-30,igniting,JUMP,solana,1798.8,Unclassified,,,4.0,93.36,0.24,rugcheck,https://dexscreener.com/solana/EeYdQrxko3AWEFfDHhzQ6wx24JnXnq48qUMNuDnFz1yt,daily scan
+2026-10-02,shortlist,Holdoween,solana,653.3,Classic memes,1.88,75.86,0.53,-5.71,16.04,rugcheck,https://dexscreener.com/solana/Apy5FShcDSLdyYSH4HWgY8zSFj4At8FbKeHZF3D72e9k,daily scan
