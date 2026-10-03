@@ -1,6 +1,6 @@
 {
- "now": "2026-10-02 10:51 SGT",
- "cand_at": "2026-10-02 10:51 SGT",
+ "now": "2026-10-03 10:44 SGT",
+ "cand_at": "2026-10-03 10:44 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -22,86 +22,70 @@
  },
  "chains": {
   "hot": [
-   "avax",
-   "optimism",
+   "base",
+   "arc",
    "provenance",
-   "tron",
-   "cardano",
-   "hedera"
+   "eos",
+   "cardano"
   ],
   "new": [
+   "arc",
+   "base",
+   "eos"
+  ],
+  "dropped": [
+   "avax",
+   "hedera",
    "optimism",
    "tron"
   ],
-  "dropped": [
-   "aptos",
-   "base",
-   "chainflip",
-   "dexalot",
-   "eos",
-   "ethereum",
-   "ripple",
-   "sei",
-   "stellar",
-   "thorchain"
-  ],
   "hottest": {
-   "s": "optimism",
-   "n": "Optimism",
-   "dr": 3.85,
-   "dr30": 5.49
+   "s": "mantle",
+   "n": "Mantle",
+   "dr": 3.34,
+   "dr30": 3.97
   }
  },
  "tokens": {
-  "total": 92,
-  "band_m": 44,
-  "candle_or_wallet_coverage_pct": 98,
-  "nodata": 7
+  "total": 80,
+  "band_m": 41,
+  "candle_or_wallet_coverage_pct": 100,
+  "nodata": 0
  },
  "shortlist": [
   {
-   "sym": "Holdoween",
+   "sym": "Pumpoween",
    "c": "solana",
-   "mc": 653.3,
+   "mc": 1028.8,
    "nar": "Classic memes",
-   "run": 1.88,
-   "retr": 75.86,
-   "acc": 0.53,
-   "c6": -5.71,
-   "age": 16.04,
+   "run": 2.15,
+   "retr": 19.22,
+   "acc": 0.58,
+   "c6": -9.71,
+   "age": 28.25,
    "sec": "rugcheck",
-   "pa": "Apy5FShcDSLdyYSH4HWgY8zSFj4At8FbKeHZF3D72e9k"
+   "pa": "8NVFB1unNk9aDtL5hooF8Hahf2rt4GLPWx9ctEadikHg"
   }
  ],
  "shortlist_new": [
-  "Holdoween"
+  "Pumpoween"
  ],
  "shortlist_dropped": [
-  "Pumpoween"
+  "Holdoween"
  ],
  "pullback": [],
  "pullback_new": [],
- "pullback_dropped": [
-  "EUNICE",
-  "MVP"
- ],
+ "pullback_dropped": [],
  "igniting": [],
  "honeypots_new": [
-  "HUMA"
+  "POP"
  ],
  "track": {
   "logged": 30,
-  "new_rows": [
-   [
-    "Holdoween",
-    "S"
-   ]
-  ],
+  "new_rows": [],
   "best_x": 14.93,
   "median_peak_x": 1.0,
-  "hit_2x_today": [
-   "CALI (solana)"
-  ],
+  "hit_2x_today": [],
   "to_zero_today": [],
   "repriced": true
  },
@@ -109,28 +93,21 @@
   "logged": 7,
   "new_rows": [],
   "hit_2x_today": [],
-  "to_zero_today": [
-   "AXIS (solana)",
-   "JUMP (solana)",
-   "XDP (solana)"
-  ]
+  "to_zero_today": []
  },
  "control": {
-  "rows": 302,
+  "rows": 319,
   "median_peak_x": 1.0,
   "hit_2x_today": [
-   "CALI (solana)",
-   "SI (solana)"
+   "NEST (hyperevm)",
+   "GM (bsc)"
   ],
   "to_zero_today": [
-   "MCU (robinhood)",
-   "BAI (bsc)",
-   "XDP (solana)",
-   "JUMP (solana)",
-   "AXIS (solana)",
-   "Base (base)",
-   "Muse (base)",
-   "Dots (robinhood)"
+   "Butterflys (robinhood)",
+   "Anthropic (solana)",
+   "DICKBUTT (bsc)",
+   "CMC (bsc)",
+   "OpenAI (base)"
   ]
  },
  "changed": true,
