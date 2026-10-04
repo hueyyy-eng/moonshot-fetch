@@ -94,6 +94,7 @@ jobs:
           cp out/summary.json site/summary.json
           cp out/track-record.csv site/track-record.csv
           if [ -f out/nar.json ]; then cp out/nar.json site/nar_auto.json; else echo "{}" > site/nar_auto.json; fi
+          python scan/pattern_study.py . site/page.html || echo "pattern study failed - page still published"
           # the three running logs as CSV for Google Drive. Old copies are removed first, so a failed export
           # leaves them missing (the cloud task then skips them) instead of re-uploading yesterday's files.
           rm -f site/near-miss-log.csv site/narrative-log.csv site/holder-log.csv
