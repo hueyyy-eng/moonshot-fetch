@@ -128,6 +128,7 @@
   td.w-g small{display:block; margin-top:2px; font-size:11px; line-height:1.25; white-space:normal}
   tr.short td.tok, tr.flagged td.chain{box-shadow:inset 3px 0 0 var(--hot)}
   tr.dim-row{opacity:.62}
+  td.pat-hi{color:var(--hot); font-weight:700}
   .ratio{display:inline-block; font-family:"IBM Plex Mono",monospace; font-weight:600; font-size:12.5px; padding:3px 6px; border-radius:2px}
   .r-hot{background:var(--hot-soft); color:var(--hot)} .r-mid{background:var(--surface-2); color:var(--ink-2); border:1px solid var(--line)} .r-cool{background:var(--cool-soft); color:var(--cool)}
   .gate{display:inline-block; font-size:10.5px; letter-spacing:.05em; text-transform:uppercase; font-weight:600; padding:2px 6px; border-radius:2px}
@@ -264,6 +265,7 @@
   <a href="#playbook"><b>◇</b>Playbook</a>
   <a href="#track"><b>~</b>Track record</a>
   <a href="#prices"><b>%</b>Price tracking</a>
+  <a href="#patterns"><b>?</b>Pattern study</a>
   <a href="#criteria"><b>=</b>Criteria</a>
 </nav>
 </div>
@@ -355,6 +357,17 @@
   </div>
   <div class="tablewrap"><table><thead><tr id="ptHead"></tr></thead><tbody id="ptBody"></tbody></table></div>
   <div class="note" id="ptNote"></div>
+</section>
+
+<section class="step" id="patterns">
+  <div class="step-head"><h2><b>?</b>Pattern study</h2><span class="rule">Which characteristics go with a token reaching 2×? Every token the scanner has checked, taken on the day it was first seen and followed at every 9:30am scan since. Rebuilt every day as data grows. A pattern study, not a signal.</span></div>
+  <div class="lede" id="patLede" style="margin-top:14px"></div>
+  <div class="controls">
+    <div class="field"><label>Breakdown</label>
+      <div class="tabs" id="tabs-pat"></div></div>
+  </div>
+  <div id="patTables"></div>
+  <div class="note" id="patNote"></div>
 </section>
 
 <section class="step" id="s1">
@@ -1933,6 +1946,58 @@ function renderPrices(){
   wireTips(body);
 }
 
+/* ---------- pattern study: which characteristics go with reaching 2x (data injected by scan/pattern_study.py) ---------- */
+const PATTERN = /*PATTERN-START*/{"generated":"2026-10-04 13:49 SGT","first_day":"2026-09-19","last_day":"2026-10-04","days":15,"dropped_bad_readings":15,"all":{"n":630,"hit_all":51,"hit_conf":18,"still2":7,"down50":348,"med_peak":0.98},"groups":{"list":{"title":"Which list","note":"Ever on that list. Measured from the day the scanner first saw the token, which can be before it was listed. Saved daily scans start on 19 Sep 2026, so picks from 12-18 Sep (Stonks, pill, IF and others) are not in this study; see Track record and Price tracking for those.","rows":[{"label":"★ Shortlist","n":10,"hit_all":0,"hit_conf":0,"still2":0,"down50":5,"med_peak":0.83},{"label":"◆ Pullback","n":8,"hit_all":1,"hit_conf":1,"still2":0,"down50":6,"med_peak":1.02},{"label":"▲ Igniting","n":6,"hit_all":1,"hit_conf":0,"still2":0,"down50":5,"med_peak":1.55},{"label":"✕ Near-miss","n":165,"hit_all":10,"hit_conf":2,"still2":2,"down50":100,"med_peak":0.79},{"label":"Not listed","n":441,"hit_all":39,"hit_conf":15,"still2":5,"down50":232,"med_peak":1.0}]},"chain":{"title":"Chain","note":"","rows":[{"label":"solana","n":171,"hit_all":25,"hit_conf":8,"still2":2,"down50":128,"med_peak":0.81},{"label":"robinhood","n":165,"hit_all":6,"hit_conf":2,"still2":0,"down50":124,"med_peak":0.57},{"label":"bsc","n":86,"hit_all":14,"hit_conf":5,"still2":3,"down50":46,"med_peak":0.93},{"label":"base","n":75,"hit_all":2,"hit_conf":0,"still2":0,"down50":42,"med_peak":0.97},{"label":"hyperevm","n":18,"hit_all":1,"hit_conf":1,"still2":0,"down50":3,"med_peak":1.06},{"label":"ethereum","n":17,"hit_all":1,"hit_conf":0,"still2":1,"down50":3,"med_peak":1.01},{"label":"avalanche","n":14,"hit_all":1,"hit_conf":1,"still2":0,"down50":0,"med_peak":1.16},{"label":"sui","n":13,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":1.05},{"label":"arbitrum","n":10,"hit_all":0,"hit_conf":0,"still2":0,"down50":1,"med_peak":1.06},{"label":"ton","n":10,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":1.14},{"label":"optimism","n":9,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":1.04},{"label":"near","n":7,"hit_all":1,"hit_conf":1,"still2":1,"down50":1,"med_peak":1.42},{"label":"tron","n":7,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":0.99},{"label":"cronos","n":6,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":0.99},{"label":"polygon","n":6,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":1.02},{"label":"ink","n":5,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":1.0},{"label":"monad","n":4,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":1.23},{"label":"unichain","n":3,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":1.0},{"label":"mantle","n":3,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":1.0},{"label":"plasma","n":1,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":1.01}]},"age":{"title":"Token age when first seen","note":"","rows":[{"label":"under 1 day","n":292,"hit_all":31,"hit_conf":5,"still2":1,"down50":268,"med_peak":0.06},{"label":"1–3 days","n":51,"hit_all":11,"hit_conf":7,"still2":3,"down50":35,"med_peak":1.05},{"label":"3–7 days","n":20,"hit_all":3,"hit_conf":1,"still2":1,"down50":10,"med_peak":1.0},{"label":"7–30 days","n":52,"hit_all":2,"hit_conf":2,"still2":1,"down50":20,"med_peak":1.01},{"label":"30–90 days","n":49,"hit_all":1,"hit_conf":0,"still2":0,"down50":9,"med_peak":1.04},{"label":"90+ days","n":157,"hit_all":3,"hit_conf":3,"still2":1,"down50":5,"med_peak":1.03}]},"mcap":{"title":"Market cap when first seen","note":"","rows":[{"label":"$500k–1m","n":183,"hit_all":20,"hit_conf":7,"still2":2,"down50":132,"med_peak":0.66},{"label":"$1–2m","n":165,"hit_all":20,"hit_conf":6,"still2":2,"down50":121,"med_peak":0.83},{"label":"$2–5m","n":46,"hit_all":5,"hit_conf":2,"still2":1,"down50":23,"med_peak":0.99},{"label":"$5m+","n":236,"hit_all":6,"hit_conf":3,"still2":2,"down50":72,"med_peak":1.01}]},"nar":{"title":"Narrative","note":"Narrative tags come from the dashboard's rules. Tags are kept from 4 Oct 2026 for every scanned token (earlier: list tokens from 26 Sep only).","rows":[{"label":"Unclassified","n":20,"hit_all":2,"hit_conf":0,"still2":0,"down50":8,"med_peak":1.08},{"label":"Utilities","n":9,"hit_all":0,"hit_conf":0,"still2":0,"down50":1,"med_peak":1.22},{"label":"Tokenised equities","n":5,"hit_all":1,"hit_conf":0,"still2":0,"down50":0,"med_peak":1.08},{"label":"Classic memes","n":4,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":1.26},{"label":"AI","n":4,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":0.88},{"label":"Dog & animal memes","n":4,"hit_all":0,"hit_conf":0,"still2":0,"down50":2,"med_peak":0.76},{"label":"Wrapped assets","n":2,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":1.0},{"label":"RWA","n":2,"hit_all":1,"hit_conf":0,"still2":1,"down50":0,"med_peak":5.16},{"label":"Launchpad / infra","n":1,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":1.62},{"label":"Chain-native lore","n":1,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":1.35},{"label":"Gold / BTC proxies","n":1,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":1.0}]},"turn":{"title":"24h volume ÷ liquidity","note":"How hard the pool is being traded.","rows":[{"label":"under 1×","n":94,"hit_all":3,"hit_conf":3,"still2":1,"down50":4,"med_peak":1.04},{"label":"1–3×","n":80,"hit_all":0,"hit_conf":0,"still2":0,"down50":17,"med_peak":1.02},{"label":"3–10×","n":138,"hit_all":9,"hit_conf":4,"still2":2,"down50":74,"med_peak":0.95},{"label":"10–30×","n":132,"hit_all":17,"hit_conf":6,"still2":2,"down50":92,"med_peak":0.91},{"label":"30×+","n":186,"hit_all":22,"hit_conf":5,"still2":2,"down50":161,"med_peak":0.29}]},"ubr":{"title":"Buyer share of traders (6h)","note":"90%+ buyers with almost no sellers is often a honeypot (you can buy but not sell), not strength.","rows":[{"label":"under 45%","n":59,"hit_all":2,"hit_conf":2,"still2":1,"down50":12,"med_peak":1.04},{"label":"45–55%","n":265,"hit_all":15,"hit_conf":6,"still2":4,"down50":117,"med_peak":0.99},{"label":"55–70%","n":135,"hit_all":5,"hit_conf":1,"still2":1,"down50":90,"med_peak":0.56},{"label":"70–90%","n":44,"hit_all":3,"hit_conf":1,"still2":0,"down50":37,"med_peak":0.01},{"label":"90%+","n":84,"hit_all":21,"hit_conf":5,"still2":1,"down50":82,"med_peak":0.23}]},"c24":{"title":"24h price move when first seen","note":"","rows":[{"label":"below −30%","n":18,"hit_all":4,"hit_conf":2,"still2":1,"down50":11,"med_peak":0.93},{"label":"−30% to 0","n":96,"hit_all":3,"hit_conf":3,"still2":2,"down50":15,"med_peak":1.04},{"label":"0 to +30%","n":164,"hit_all":2,"hit_conf":2,"still2":0,"down50":34,"med_peak":1.01},{"label":"+30% to +100%","n":49,"hit_all":4,"hit_conf":1,"still2":0,"down50":28,"med_peak":0.97},{"label":"+100% to +300%","n":46,"hit_all":6,"hit_conf":2,"still2":0,"down50":37,"med_peak":1.03},{"label":"+300%+","n":250,"hit_all":32,"hit_conf":8,"still2":4,"down50":222,"med_peak":0.22}]},"run":{"title":"Run off 7-day low","note":"Needs daily candles; tokens without them are left out.","rows":[{"label":"under 1.5×","n":161,"hit_all":3,"hit_conf":3,"still2":0,"down50":10,"med_peak":1.02},{"label":"1.5–3×","n":44,"hit_all":1,"hit_conf":1,"still2":1,"down50":5,"med_peak":1.14},{"label":"3–5×","n":13,"hit_all":0,"hit_conf":0,"still2":0,"down50":6,"med_peak":0.97},{"label":"5×+","n":75,"hit_all":13,"hit_conf":7,"still2":4,"down50":50,"med_peak":1.05}]}},"tabs":[{"id":"list","name":"List","groups":["list"]},{"id":"cas","name":"Chain, age & size","groups":["chain","age","mcap"]},{"id":"nar","name":"Narrative","groups":["nar"]},{"id":"act","name":"Trading activity","groups":["turn","ubr","c24","run"]}]}/*PATTERN-END*/;
+let patTab = "list";
+function renderPattern(){
+  const lede=document.getElementById("patLede"), tabs=document.getElementById("tabs-pat"),
+        box=document.getElementById("patTables"), note=document.getElementById("patNote");
+  if(!PATTERN || !PATTERN.all){
+    lede.innerHTML=""; tabs.innerHTML=""; box.innerHTML="";
+    note.textContent="The pattern study appears after the next daily scan.";
+    return;
+  }
+  const P=PATTERN, A=P.all;
+  const tile=(k,v,n)=>`<div><div class="k">${k}</div><div class="v num">${v}</div><div class="n">${n}</div></div>`;
+  const pc=(x,n)=> n ? Math.round(100*x/n)+"%" : "—";
+  lede.innerHTML=[
+    tile("Tokens studied", A.n, `${P.days} daily scans · ${P.first_day.slice(5)} to ${P.last_day.slice(5)}`),
+    tile("Reached 2×", pc(A.hit_all,A.n), `${A.hit_all} tokens · at any later daily scan`),
+    tile("Reached 2× (2+ scans)", pc(A.hit_conf,A.n), `${A.hit_conf} tokens · confirmed on two or more scans`),
+    tile("Still 2×+ now", pc(A.still2,A.n), `${A.still2} tokens · at today's scan`),
+    tile("Down 50%+ now", pc(A.down50,A.n), `${A.down50} tokens · at today's scan`)
+  ].join("");
+  tabs.innerHTML=P.tabs.map(t=>`<button data-t="${t.id}" aria-pressed="${t.id===patTab}">${esc(t.name)}</button>`).join("");
+  tabs.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{patTab=b.dataset.t; renderPattern();}));
+  const tab=P.tabs.find(t=>t.id===patTab)||P.tabs[0];
+  const base=A.n?A.hit_all/A.n:0;
+  const cell=(x,n,hi)=>`<td class="num${hi?" pat-hi":""}">${pc(x,n)} <span class="dim">(${x})</span></td>`;
+  box.innerHTML=tab.groups.map(g=>{
+    const G=P.groups[g]; if(!G) return "";
+    const body=G.rows.length ? G.rows.map(r=>{
+      const small=r.n<10, rate=r.n?r.hit_all/r.n:0;
+      return `<tr class="${small?"dim-row":""}">
+        <td class="tok">${esc(r.label)}</td>
+        <td class="num">${r.n}</td>
+        ${cell(r.hit_all,r.n,!small && rate>=base*1.5 && r.hit_all>=3)}
+        ${cell(r.hit_conf,r.n,false)}
+        ${cell(r.still2,r.n,false)}
+        ${cell(r.down50,r.n,false)}
+        <td class="num dim">${r.med_peak==null?"—":r.med_peak.toFixed(2)+"×"}</td>
+      </tr>`;}).join("") : `<tr><td colspan="7" class="empty">Not enough tagged tokens yet.</td></tr>`;
+    return `<h3 style="font-size:15px;margin-top:20px">${esc(G.title)}</h3>
+      <div class="tablewrap"><table><thead><tr>
+        <th scope="col">Group</th><th scope="col">Tokens</th><th scope="col">Reached 2×</th><th scope="col">2× on 2+ scans</th>
+        <th scope="col">Still 2×+ now</th><th scope="col">Down 50%+ now</th><th scope="col">Median best</th>
+      </tr></thead><tbody>${body}</tbody></table></div>${G.note?`<div class="note">${esc(G.note)}</div>`:""}`;
+  }).join("");
+  note.textContent =
+    `Highlighted: groups with at least 10 tokens whose 2× rate is 1.5 times the overall ${Math.round(100*base)}% or more. Faded rows have fewer than 10 tokens — too few to mean anything. `
+    + `"Reached 2×" counts any later 9:30am scan at double the first-seen price; "2× on 2+ scans" needs it on at least two scans, which filters out one-off spikes and bad readings. `
+    + `Peaks above 200× were dropped as bad price readings (${P.dropped_bad_readings} so far). Prices are only taken once a day, so moves inside a day are missed. `
+    + `A group doing well here says nothing about whether a 2× was tradable, and a few weeks of data can easily mislead. Updated ${P.generated}.`;
+}
+
 /* ---------- control group: picks vs near-misses ---------- */
 const med = a => { if(!a.length) return null; const b=a.slice().sort((x,y)=>x-y); return b.length%2 ? b[(b.length-1)/2] : (b[b.length/2-1]+b[b.length/2])/2; };
 function renderControl(){
@@ -2163,7 +2228,7 @@ function freshness(){
 }
 document.getElementById("stampText").textContent="chains "+SNAP_AT.slice(11)+" · tokens "+TOK_AT.slice(11)+" · "+SNAP_AT.slice(0,10);
 freshness();
-renderChains(); renderTokens(); renderCriteria(); renderHistory(); renderRegime(); renderPrices();
+renderChains(); renderTokens(); renderCriteria(); renderHistory(); renderRegime(); renderPrices(); renderPattern();
 </script>
 
 </body>
