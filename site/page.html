@@ -79,6 +79,8 @@
   nav.steps{display:flex; flex-wrap:wrap; gap:6px; margin-top:16px}
   nav.steps a{text-decoration:none; color:var(--ink-2); font:600 12px/1 "Source Sans 3",sans-serif; letter-spacing:.06em; text-transform:uppercase; padding:8px 11px; border:1px solid var(--line); background:var(--surface)}
   nav.steps a b{font-family:"IBM Plex Mono",monospace; color:var(--hot); margin-right:6px}
+  nav.steps a.on{color:var(--hot); border-color:var(--hot)}
+  @media (prefers-reduced-motion:no-preference){ nav.steps a{transition:color .15s ease, border-color .15s ease} }
 
   .lede{margin-top:18px; display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:1px; background:var(--line-soft); border:1px solid var(--line-soft)}
   .lede > div{background:var(--surface); padding:14px 16px}
@@ -492,6 +494,35 @@
   addEventListener("scroll", mark, {passive:true});
   addEventListener("resize", mark);
   mark();
+  // highlight the menu tab for the section being read
+  const nav=bar.querySelector("nav.steps");
+  const links=nav?[...nav.querySelectorAll('a[href^="#"]')]:[];
+  const secs=links.map(a=>document.getElementById(a.getAttribute("href").slice(1))).filter(Boolean);
+  let cur=null, pin=null, pinUntil=0;
+  links.forEach(a=>a.addEventListener("click",()=>{ pin=a.getAttribute("href").slice(1); pinUntil=Date.now()+1500; cur=null; setTimeout(spy,0); }));
+  const spy=()=>{
+    const edge=bar.getBoundingClientRect().bottom+Math.max(100, innerHeight*0.25);
+    let on=null;
+    for(const s of secs){ if(s.getBoundingClientRect().top<=edge && (!on || s.getBoundingClientRect().top>on.getBoundingClientRect().top)) on=s; }
+    if(innerHeight+scrollY>=document.documentElement.scrollHeight-2 && secs.length){
+      on=secs.reduce((a,b)=>b.getBoundingClientRect().top>a.getBoundingClientRect().top?b:a);
+    }
+    let id=on?on.id:null;
+    if(pin && Date.now()<pinUntil) id=pin;
+    if(id===cur) return;
+    cur=id;
+    for(const a of links){
+      const act=a.getAttribute("href")==="#"+id;
+      a.classList.toggle("on",act);
+      if(act){ a.setAttribute("aria-current","true");
+        if(nav.scrollWidth>nav.clientWidth) nav.scrollTo({left:a.offsetLeft-nav.clientWidth/2+a.offsetWidth/2, behavior:"smooth"}); }
+      else a.removeAttribute("aria-current");
+    }
+  };
+  addEventListener("scroll", spy, {passive:true});
+  addEventListener("resize", spy);
+  addEventListener("load", spy);
+  spy();
 })();
 /*DATA-START*/
 const LAST_DAY = 1790985600;
