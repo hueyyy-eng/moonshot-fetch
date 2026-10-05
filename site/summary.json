@@ -1,6 +1,6 @@
 {
- "now": "2026-10-04 13:10 SGT",
- "cand_at": "2026-10-04 13:10 SGT",
+ "now": "2026-10-05 10:45 SGT",
+ "cand_at": "2026-10-05 10:45 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -22,97 +22,65 @@
  },
  "chains": {
   "hot": [
-   "optimism",
+   "arc",
    "starknet",
-   "mantle",
-   "cardano"
+   "mantle"
   ],
   "new": [
-   "mantle",
-   "optimism",
-   "starknet"
+   "arc"
   ],
   "dropped": [
-   "arc",
-   "base",
-   "eos",
-   "provenance"
+   "cardano",
+   "optimism"
   ],
   "hottest": {
-   "s": "optimism",
-   "n": "Optimism",
-   "dr": 4.17,
-   "dr30": 9.79
+   "s": "polygon",
+   "n": "Polygon",
+   "dr": 1.7,
+   "dr30": 1.73
   }
  },
  "tokens": {
-  "total": 83,
-  "band_m": 44,
-  "candle_or_wallet_coverage_pct": 100,
+  "total": 74,
+  "band_m": 35,
+  "candle_or_wallet_coverage_pct": 97,
   "nodata": 0
  },
  "shortlist": [
   {
    "sym": "boar",
    "c": "base",
-   "mc": 1316.0,
+   "mc": 940.5,
    "nar": "AI",
-   "run": 1.2,
-   "retr": 83.38,
-   "acc": 2.83,
-   "c6": 72.75,
-   "age": 8.06,
+   "run": 1.29,
+   "retr": 82.05,
+   "acc": 1.04,
+   "c6": -2.91,
+   "age": 8.96,
    "sec": "goplus",
    "pa": "0xef256e214c45aab706ca54d6e2c5d0ca42b87895a43e97b382ea012d13e78e49"
   }
  ],
- "shortlist_new": [
-  "boar"
- ],
- "shortlist_dropped": [
-  "Pumpoween"
- ],
- "pullback": [
-  {
-   "sym": "PWPLT",
-   "c": "robinhood",
-   "mc": 521.3,
-   "nar": "Dog & animal memes",
-   "run": 42.12,
-   "retr": 58.94,
-   "acc": 0.0,
-   "c6": null,
-   "age": 1.24,
-   "sec": "explorer",
-   "pa": "0xaf2a34fecf939f10f903944adf3d377dcd43360faa1724310668b0fd7aa12d96"
-  }
- ],
- "pullback_new": [
+ "shortlist_new": [],
+ "shortlist_dropped": [],
+ "pullback": [],
+ "pullback_new": [],
+ "pullback_dropped": [
   "PWPLT"
  ],
- "pullback_dropped": [],
  "igniting": [],
  "honeypots_new": [
-  "ZC",
-  "AT"
+  "PROS",
+  "AIN"
  ],
  "track": {
   "logged": 32,
-  "new_rows": [
-   [
-    "boar",
-    "S"
-   ],
-   [
-    "PWPLT",
-    "P"
-   ]
-  ],
+  "new_rows": [],
   "best_x": 14.93,
   "median_peak_x": 1.0,
   "hit_2x_today": [],
   "to_zero_today": [
-   "BinanceTown (bsc)"
+   "PWPLT (robinhood)"
   ],
   "repriced": true
  },
@@ -123,21 +91,23 @@
   "to_zero_today": []
  },
  "control": {
-  "rows": 340,
+  "rows": 353,
   "median_peak_x": 1.0,
   "hit_2x_today": [
-   "Agency (solana)"
+   "SI (solana)",
+   "hooks (bsc)"
   ],
   "to_zero_today": [
-   "GLXY (robinhood)",
-   "BinanceTown (bsc)",
-   "BNC (bsc)",
-   "MWOOF (robinhood)",
-   "PPORT (robinhood)",
+   "Butterflys (robinhood)",
+   "MCU (robinhood)",
+   "UNI (robinhood)",
+   "PAIDBOT (solana)",
+   "SOON (bsc)",
+   "GM (base)",
+   "PWPLT (robinhood)",
    "SI (robinhood)",
-   "Muse (base)",
-   "WCRMB (robinhood)",
-   "MGHST (robinhood)"
+   "ZERO (robinhood)",
+   "CSHMCAT (robinhood)"
   ]
  },
  "changed": true,
