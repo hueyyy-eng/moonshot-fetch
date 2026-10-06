@@ -41,3 +41,6 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-10-04,shortlist,boar,base,1316.0,AI,1.2,83.38,2.83,72.75,8.06,goplus,https://dexscreener.com/base/0xef256e214c45aab706ca54d6e2c5d0ca42b87895a43e97b382ea012d13e78e49,daily scan
 2026-10-04,pullback,PWPLT,robinhood,521.3,Dog & animal memes,42.12,58.94,0.0,,1.24,explorer,https://dexscreener.com/robinhood/0xaf2a34fecf939f10f903944adf3d377dcd43360faa1724310668b0fd7aa12d96,daily scan
 2026-10-05,shortlist,boar,base,940.5,AI,1.29,82.05,1.04,-2.91,8.96,goplus,https://dexscreener.com/base/0xef256e214c45aab706ca54d6e2c5d0ca42b87895a43e97b382ea012d13e78e49,daily scan
+2026-10-06,shortlist,elizaOS,bsc,609.2,AI,2.72,35.02,1.0,-19.86,324.73,goplus,https://dexscreener.com/bsc/0x56ADADF82E3346eb8317628df5ce1f776F89014D,daily scan
+2026-10-06,shortlist,WORM,robinhood,1606.8,AI,2.19,82.43,1.69,29.17,27.3,explorer,https://dexscreener.com/robinhood/0xf49ee5b66c4e7163026e5d25e6a1f93cff46dca4d3752f712d181d9392c1d567,daily scan
+2026-10-06,igniting,WORM,robinhood,1606.8,AI,2.19,82.43,1.69,29.17,27.3,explorer,https://dexscreener.com/robinhood/0xf49ee5b66c4e7163026e5d25e6a1f93cff46dca4d3752f712d181d9392c1d567,daily scan

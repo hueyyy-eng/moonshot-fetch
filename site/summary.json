@@ -1,6 +1,6 @@
 {
- "now": "2026-10-05 10:45 SGT",
- "cand_at": "2026-10-05 10:45 SGT",
+ "now": "2026-10-06 10:30 SGT",
+ "cand_at": "2026-10-06 10:30 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -16,98 +16,137 @@
   "discovery": "partial",
   "geckoterminal": "ok",
   "rugcheck": "ok",
-  "goplus": "ok",
+  "goplus": "partial",
   "blockscout": "ok",
   "reprice": "ok"
  },
  "chains": {
   "hot": [
    "arc",
-   "starknet",
-   "mantle"
+   "eos",
+   "stacks"
   ],
   "new": [
-   "arc"
+   "eos",
+   "stacks"
   ],
   "dropped": [
-   "cardano",
-   "optimism"
+   "mantle",
+   "starknet"
   ],
   "hottest": {
-   "s": "polygon",
-   "n": "Polygon",
-   "dr": 1.7,
-   "dr30": 1.73
+   "s": "mayachain",
+   "n": "Mayachain",
+   "dr": 2.91,
+   "dr30": 15.23
   }
  },
  "tokens": {
-  "total": 74,
-  "band_m": 35,
-  "candle_or_wallet_coverage_pct": 97,
-  "nodata": 0
+  "total": 61,
+  "band_m": 31,
+  "candle_or_wallet_coverage_pct": 100,
+  "nodata": 1
  },
  "shortlist": [
   {
-   "sym": "boar",
-   "c": "base",
-   "mc": 940.5,
+   "sym": "elizaOS",
+   "c": "bsc",
+   "mc": 609.2,
    "nar": "AI",
-   "run": 1.29,
-   "retr": 82.05,
-   "acc": 1.04,
-   "c6": -2.91,
-   "age": 8.96,
+   "run": 2.72,
+   "retr": 35.02,
+   "acc": 1.0,
+   "c6": -19.86,
+   "age": 324.73,
    "sec": "goplus",
-   "pa": "0xef256e214c45aab706ca54d6e2c5d0ca42b87895a43e97b382ea012d13e78e49"
+   "pa": "0x56ADADF82E3346eb8317628df5ce1f776F89014D"
+  },
+  {
+   "sym": "WORM",
+   "c": "robinhood",
+   "mc": 1606.8,
+   "nar": "AI",
+   "run": 2.19,
+   "retr": 82.43,
+   "acc": 1.69,
+   "c6": 29.17,
+   "age": 27.3,
+   "sec": "explorer",
+   "pa": "0xf49ee5b66c4e7163026e5d25e6a1f93cff46dca4d3752f712d181d9392c1d567"
   }
  ],
- "shortlist_new": [],
- "shortlist_dropped": [],
+ "shortlist_new": [
+  "WORM",
+  "elizaOS"
+ ],
+ "shortlist_dropped": [
+  "boar"
+ ],
  "pullback": [],
  "pullback_new": [],
- "pullback_dropped": [
-  "PWPLT"
+ "pullback_dropped": [],
+ "igniting": [
+  {
+   "sym": "WORM",
+   "c": "robinhood",
+   "mc": 1606.8,
+   "nar": "AI",
+   "run": 2.19,
+   "retr": 82.43,
+   "acc": 1.69,
+   "c6": 29.17,
+   "age": 27.3,
+   "sec": "explorer",
+   "pa": "0xf49ee5b66c4e7163026e5d25e6a1f93cff46dca4d3752f712d181d9392c1d567"
+  }
  ],
- "igniting": [],
  "honeypots_new": [
-  "PROS",
-  "AIN"
+  "VRAX"
  ],
  "track": {
-  "logged": 32,
-  "new_rows": [],
+  "logged": 34,
+  "new_rows": [
+   [
+    "elizaOS",
+    "S"
+   ],
+   [
+    "WORM",
+    "S"
+   ]
+  ],
   "best_x": 14.93,
   "median_peak_x": 1.0,
   "hit_2x_today": [],
-  "to_zero_today": [
-   "PWPLT (robinhood)"
-  ],
+  "to_zero_today": [],
   "repriced": true
  },
  "igniting_track": {
-  "logged": 7,
-  "new_rows": [],
+  "logged": 8,
+  "new_rows": [
+   "WORM"
+  ],
   "hit_2x_today": [],
   "to_zero_today": []
  },
  "control": {
-  "rows": 353,
+  "rows": 362,
   "median_peak_x": 1.0,
   "hit_2x_today": [
-   "SI (solana)",
-   "hooks (bsc)"
+   "NEST (hyperevm)"
   ],
   "to_zero_today": [
-   "Butterflys (robinhood)",
-   "MCU (robinhood)",
-   "UNI (robinhood)",
-   "PAIDBOT (solana)",
-   "SOON (bsc)",
-   "GM (base)",
-   "PWPLT (robinhood)",
+   "DICKBUTT (bsc)",
+   "AEVA (robinhood)",
    "SI (robinhood)",
-   "ZERO (robinhood)",
-   "CSHMCAT (robinhood)"
+   "GM (bsc)",
+   "Cincinnati (robinhood)",
+   "SHRINU (robinhood)",
+   "PAWS (robinhood)",
+   "BRODIE (robinhood)",
+   "NHOOD (robinhood)",
+   "PANDAKEY (robinhood)",
+   "PAGT (robinhood)"
   ]
  },
  "changed": true,
