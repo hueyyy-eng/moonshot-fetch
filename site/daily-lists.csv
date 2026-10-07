@@ -44,3 +44,7 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-10-06,shortlist,elizaOS,bsc,609.2,AI,2.72,35.02,1.0,-19.86,324.73,goplus,https://dexscreener.com/bsc/0x56ADADF82E3346eb8317628df5ce1f776F89014D,daily scan
 2026-10-06,shortlist,WORM,robinhood,1606.8,AI,2.19,82.43,1.69,29.17,27.3,explorer,https://dexscreener.com/robinhood/0xf49ee5b66c4e7163026e5d25e6a1f93cff46dca4d3752f712d181d9392c1d567,daily scan
 2026-10-06,igniting,WORM,robinhood,1606.8,AI,2.19,82.43,1.69,29.17,27.3,explorer,https://dexscreener.com/robinhood/0xf49ee5b66c4e7163026e5d25e6a1f93cff46dca4d3752f712d181d9392c1d567,daily scan
+2026-10-07,shortlist,boar,base,634.3,AI,1.07,87.5,0.94,-11.01,10.96,goplus,https://dexscreener.com/base/0xef256e214c45aab706ca54d6e2c5d0ca42b87895a43e97b382ea012d13e78e49,daily scan
+2026-10-07,shortlist,FUSE,ethereum,1177.1,Launchpad / infra,1.3,71.14,0.56,-5.62,26.13,goplus,https://dexscreener.com/ethereum/0x90a64ed1c47392829a39df15ff25401c21818ea2db9e2538c9c25182f76b7c1e,daily scan
+2026-10-07,pullback,GOMO,solana,1576.6,Classic memes,77.12,56.37,0.77,-16.16,2.17,rugcheck,https://dexscreener.com/solana/5a7QurJLARt146JajJYPe5nh6vLyFpN2QrHUSLqbsCZy,daily scan
+2026-10-07,pullback,slopcannon,solana,970.3,Utilities,212.61,69.58,1.43,-39.89,10.75,rugcheck,https://dexscreener.com/solana/BNG5962Zkbd6ZFmfAKjtCF6Z2mJbA7qn97oMsQShspLP,daily scan

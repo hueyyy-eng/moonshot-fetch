@@ -1,6 +1,6 @@
 {
- "now": "2026-10-06 10:30 SGT",
- "cand_at": "2026-10-06 10:30 SGT",
+ "now": "2026-10-07 10:43 SGT",
+ "cand_at": "2026-10-07 10:43 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -16,103 +16,128 @@
   "discovery": "partial",
   "geckoterminal": "ok",
   "rugcheck": "ok",
-  "goplus": "partial",
+  "goplus": "ok",
   "blockscout": "ok",
   "reprice": "ok"
  },
  "chains": {
   "hot": [
+   "ethereum",
+   "avax",
+   "ripple",
+   "injective"
+  ],
+  "new": [
+   "avax",
+   "ethereum",
+   "injective",
+   "ripple"
+  ],
+  "dropped": [
    "arc",
    "eos",
    "stacks"
   ],
-  "new": [
-   "eos",
-   "stacks"
-  ],
-  "dropped": [
-   "mantle",
-   "starknet"
-  ],
   "hottest": {
-   "s": "mayachain",
-   "n": "Mayachain",
-   "dr": 2.91,
-   "dr30": 15.23
+   "s": "ethereum",
+   "n": "Ethereum",
+   "dr": 2.29,
+   "dr30": 2.17
   }
  },
  "tokens": {
-  "total": 61,
-  "band_m": 31,
+  "total": 81,
+  "band_m": 39,
   "candle_or_wallet_coverage_pct": 100,
-  "nodata": 1
+  "nodata": 2
  },
  "shortlist": [
   {
-   "sym": "elizaOS",
-   "c": "bsc",
-   "mc": 609.2,
+   "sym": "boar",
+   "c": "base",
+   "mc": 634.3,
    "nar": "AI",
-   "run": 2.72,
-   "retr": 35.02,
-   "acc": 1.0,
-   "c6": -19.86,
-   "age": 324.73,
+   "run": 1.07,
+   "retr": 87.5,
+   "acc": 0.94,
+   "c6": -11.01,
+   "age": 10.96,
    "sec": "goplus",
-   "pa": "0x56ADADF82E3346eb8317628df5ce1f776F89014D"
+   "pa": "0xef256e214c45aab706ca54d6e2c5d0ca42b87895a43e97b382ea012d13e78e49"
   },
   {
-   "sym": "WORM",
-   "c": "robinhood",
-   "mc": 1606.8,
-   "nar": "AI",
-   "run": 2.19,
-   "retr": 82.43,
-   "acc": 1.69,
-   "c6": 29.17,
-   "age": 27.3,
-   "sec": "explorer",
-   "pa": "0xf49ee5b66c4e7163026e5d25e6a1f93cff46dca4d3752f712d181d9392c1d567"
+   "sym": "FUSE",
+   "c": "ethereum",
+   "mc": 1177.1,
+   "nar": "Launchpad / infra",
+   "run": 1.3,
+   "retr": 71.14,
+   "acc": 0.56,
+   "c6": -5.62,
+   "age": 26.13,
+   "sec": "goplus",
+   "pa": "0x90a64ed1c47392829a39df15ff25401c21818ea2db9e2538c9c25182f76b7c1e"
   }
  ],
  "shortlist_new": [
+  "FUSE",
+  "boar"
+ ],
+ "shortlist_dropped": [
   "WORM",
   "elizaOS"
  ],
- "shortlist_dropped": [
-  "boar"
- ],
- "pullback": [],
- "pullback_new": [],
- "pullback_dropped": [],
- "igniting": [
+ "pullback": [
   {
-   "sym": "WORM",
-   "c": "robinhood",
-   "mc": 1606.8,
-   "nar": "AI",
-   "run": 2.19,
-   "retr": 82.43,
-   "acc": 1.69,
-   "c6": 29.17,
-   "age": 27.3,
-   "sec": "explorer",
-   "pa": "0xf49ee5b66c4e7163026e5d25e6a1f93cff46dca4d3752f712d181d9392c1d567"
+   "sym": "slopcannon",
+   "c": "solana",
+   "mc": 970.3,
+   "nar": "Utilities",
+   "run": 212.61,
+   "retr": 69.58,
+   "acc": 1.43,
+   "c6": -39.89,
+   "age": 10.75,
+   "sec": "rugcheck",
+   "pa": "BNG5962Zkbd6ZFmfAKjtCF6Z2mJbA7qn97oMsQShspLP"
+  },
+  {
+   "sym": "GOMO",
+   "c": "solana",
+   "mc": 1576.6,
+   "nar": "Classic memes",
+   "run": 77.12,
+   "retr": 56.37,
+   "acc": 0.77,
+   "c6": -16.16,
+   "age": 2.17,
+   "sec": "rugcheck",
+   "pa": "5a7QurJLARt146JajJYPe5nh6vLyFpN2QrHUSLqbsCZy"
   }
  ],
+ "pullback_new": [
+  "GOMO",
+  "slopcannon"
+ ],
+ "pullback_dropped": [],
+ "igniting": [],
  "honeypots_new": [
-  "VRAX"
+  "HUMA"
  ],
  "track": {
-  "logged": 34,
+  "logged": 37,
   "new_rows": [
    [
-    "elizaOS",
+    "FUSE",
     "S"
    ],
    [
-    "WORM",
-    "S"
+    "slopcannon",
+    "P"
+   ],
+   [
+    "GOMO",
+    "P"
    ]
   ],
   "best_x": 14.93,
@@ -123,30 +148,21 @@
  },
  "igniting_track": {
   "logged": 8,
-  "new_rows": [
-   "WORM"
-  ],
+  "new_rows": [],
   "hit_2x_today": [],
   "to_zero_today": []
  },
  "control": {
-  "rows": 362,
+  "rows": 383,
   "median_peak_x": 1.0,
   "hit_2x_today": [
-   "NEST (hyperevm)"
+   "hooks (bsc)"
   ],
   "to_zero_today": [
-   "DICKBUTT (bsc)",
-   "AEVA (robinhood)",
-   "SI (robinhood)",
-   "GM (bsc)",
-   "Cincinnati (robinhood)",
-   "SHRINU (robinhood)",
-   "PAWS (robinhood)",
-   "BRODIE (robinhood)",
-   "NHOOD (robinhood)",
-   "PANDAKEY (robinhood)",
-   "PAGT (robinhood)"
+   "DEED (robinhood)",
+   "SHIBPNL (robinhood)",
+   "SXSI (robinhood)",
+   "AOTTR (robinhood)"
   ]
  },
  "changed": true,
