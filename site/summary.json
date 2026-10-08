@@ -1,6 +1,6 @@
 {
- "now": "2026-10-07 10:43 SGT",
- "cand_at": "2026-10-07 10:43 SGT",
+ "now": "2026-10-08 10:47 SGT",
+ "cand_at": "2026-10-08 10:47 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -22,124 +22,63 @@
  },
  "chains": {
   "hot": [
-   "ethereum",
-   "avax",
-   "ripple",
+   "arbitrum",
    "injective"
   ],
   "new": [
-   "avax",
-   "ethereum",
-   "injective",
-   "ripple"
+   "arbitrum"
   ],
   "dropped": [
-   "arc",
-   "eos",
-   "stacks"
+   "avax",
+   "ethereum",
+   "ripple"
   ],
   "hottest": {
-   "s": "ethereum",
-   "n": "Ethereum",
-   "dr": 2.29,
-   "dr30": 2.17
+   "s": "adi",
+   "n": "Adi",
+   "dr": 3.81,
+   "dr30": 2.68
   }
  },
  "tokens": {
   "total": 81,
-  "band_m": 39,
+  "band_m": 28,
   "candle_or_wallet_coverage_pct": 100,
-  "nodata": 2
+  "nodata": 6
  },
  "shortlist": [
   {
-   "sym": "boar",
-   "c": "base",
-   "mc": 634.3,
-   "nar": "AI",
-   "run": 1.07,
-   "retr": 87.5,
-   "acc": 0.94,
-   "c6": -11.01,
-   "age": 10.96,
-   "sec": "goplus",
-   "pa": "0xef256e214c45aab706ca54d6e2c5d0ca42b87895a43e97b382ea012d13e78e49"
-  },
-  {
-   "sym": "FUSE",
-   "c": "ethereum",
-   "mc": 1177.1,
-   "nar": "Launchpad / infra",
-   "run": 1.3,
-   "retr": 71.14,
-   "acc": 0.56,
-   "c6": -5.62,
-   "age": 26.13,
-   "sec": "goplus",
-   "pa": "0x90a64ed1c47392829a39df15ff25401c21818ea2db9e2538c9c25182f76b7c1e"
+   "sym": "Pumpoween",
+   "c": "solana",
+   "mc": 1126.5,
+   "nar": "Classic memes",
+   "run": 1.67,
+   "retr": 26.39,
+   "acc": 1.15,
+   "c6": 15.03,
+   "age": 33.25,
+   "sec": "rugcheck",
+   "pa": "8NVFB1unNk9aDtL5hooF8Hahf2rt4GLPWx9ctEadikHg"
   }
  ],
  "shortlist_new": [
+  "Pumpoween"
+ ],
+ "shortlist_dropped": [
   "FUSE",
   "boar"
  ],
- "shortlist_dropped": [
-  "WORM",
-  "elizaOS"
- ],
- "pullback": [
-  {
-   "sym": "slopcannon",
-   "c": "solana",
-   "mc": 970.3,
-   "nar": "Utilities",
-   "run": 212.61,
-   "retr": 69.58,
-   "acc": 1.43,
-   "c6": -39.89,
-   "age": 10.75,
-   "sec": "rugcheck",
-   "pa": "BNG5962Zkbd6ZFmfAKjtCF6Z2mJbA7qn97oMsQShspLP"
-  },
-  {
-   "sym": "GOMO",
-   "c": "solana",
-   "mc": 1576.6,
-   "nar": "Classic memes",
-   "run": 77.12,
-   "retr": 56.37,
-   "acc": 0.77,
-   "c6": -16.16,
-   "age": 2.17,
-   "sec": "rugcheck",
-   "pa": "5a7QurJLARt146JajJYPe5nh6vLyFpN2QrHUSLqbsCZy"
-  }
- ],
- "pullback_new": [
+ "pullback": [],
+ "pullback_new": [],
+ "pullback_dropped": [
   "GOMO",
   "slopcannon"
  ],
- "pullback_dropped": [],
  "igniting": [],
- "honeypots_new": [
-  "HUMA"
- ],
+ "honeypots_new": [],
  "track": {
   "logged": 37,
-  "new_rows": [
-   [
-    "FUSE",
-    "S"
-   ],
-   [
-    "slopcannon",
-    "P"
-   ],
-   [
-    "GOMO",
-    "P"
-   ]
-  ],
+  "new_rows": [],
   "best_x": 14.93,
   "median_peak_x": 1.0,
   "hit_2x_today": [],
@@ -153,18 +92,20 @@
   "to_zero_today": []
  },
  "control": {
-  "rows": 383,
+  "rows": 393,
   "median_peak_x": 1.0,
-  "hit_2x_today": [
-   "hooks (bsc)"
-  ],
+  "hit_2x_today": [],
   "to_zero_today": [
-   "DEED (robinhood)",
-   "SHIBPNL (robinhood)",
-   "SXSI (robinhood)",
-   "AOTTR (robinhood)"
+   "RWA (robinhood)",
+   "GOOSE (robinhood)",
+   "CTURN (robinhood)",
+   "BULLCZ (bsc)",
+   "NESTCAT (robinhood)",
+   "ERNCAT (robinhood)",
+   "BARKBYTE (robinhood)",
+   "CLKCAT (robinhood)"
   ]
  },
  "changed": true,
- "alert": true
+ "alert": false
 }
