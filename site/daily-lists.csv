@@ -49,3 +49,8 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-10-07,pullback,GOMO,solana,1576.6,Classic memes,77.12,56.37,0.77,-16.16,2.17,rugcheck,https://dexscreener.com/solana/5a7QurJLARt146JajJYPe5nh6vLyFpN2QrHUSLqbsCZy,daily scan
 2026-10-07,pullback,slopcannon,solana,970.3,Utilities,212.61,69.58,1.43,-39.89,10.75,rugcheck,https://dexscreener.com/solana/BNG5962Zkbd6ZFmfAKjtCF6Z2mJbA7qn97oMsQShspLP,daily scan
 2026-10-08,shortlist,Pumpoween,solana,1126.5,Classic memes,1.67,26.39,1.15,15.03,33.25,rugcheck,https://dexscreener.com/solana/8NVFB1unNk9aDtL5hooF8Hahf2rt4GLPWx9ctEadikHg,daily scan
+2026-10-09,shortlist,DGUY,base,734.1,Classic memes,2.85,44.48,0.14,5.1,24.26,goplus,https://dexscreener.com/base/0x4bE684f77419999AA3E1162D25D9aE6FF64C05a0,daily scan
+2026-10-09,shortlist,Pumpoween,solana,1050.0,Classic memes,1.66,27.03,2.12,13.74,34.26,rugcheck,https://dexscreener.com/solana/8NVFB1unNk9aDtL5hooF8Hahf2rt4GLPWx9ctEadikHg,daily scan
+2026-10-09,pullback,elizaOS,bsc,921.9,AI,3.8,51.31,0.44,-17.23,327.73,goplus,https://dexscreener.com/bsc/0x56ADADF82E3346eb8317628df5ce1f776F89014D,daily scan
+2026-10-09,pullback,Frank,solana,709.3,Unclassified,17.54,45.4,0.96,15.2,4.15,rugcheck,https://dexscreener.com/solana/745ATaSSWxvry5qt1XVv9eXuG884hDvNJfvA2o82dNBi,daily scan
+2026-10-09,igniting,Pumpoween,solana,1050.0,Classic memes,1.66,27.03,2.12,13.74,34.26,rugcheck,https://dexscreener.com/solana/8NVFB1unNk9aDtL5hooF8Hahf2rt4GLPWx9ctEadikHg,daily scan
