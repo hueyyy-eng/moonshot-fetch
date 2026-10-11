@@ -1,6 +1,6 @@
 {
- "now": "2026-10-10 10:47 SGT",
- "cand_at": "2026-10-10 10:47 SGT",
+ "now": "2026-10-11 10:41 SGT",
+ "cand_at": "2026-10-11 10:41 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -23,74 +23,113 @@
  "chains": {
   "hot": [
    "near",
-   "starknet",
-   "hedera"
+   "starknet"
   ],
-  "new": [
-   "hedera"
-  ],
+  "new": [],
   "dropped": [
-   "adi",
-   "arbitrum",
-   "base",
-   "eos",
-   "flare",
-   "ink",
-   "sui",
-   "tron",
-   "xlayer"
+   "hedera"
   ],
   "hottest": {
-   "s": "ton",
-   "n": "TON",
-   "dr": 2.63,
-   "dr30": 2.79
+   "s": "mayachain",
+   "n": "Mayachain",
+   "dr": 2.66,
+   "dr30": 9.8
   }
  },
  "tokens": {
-  "total": 71,
-  "band_m": 32,
+  "total": 74,
+  "band_m": 41,
   "candle_or_wallet_coverage_pct": 100,
-  "nodata": 9
+  "nodata": 5
  },
  "shortlist": [
   {
-   "sym": "WhiteWhale",
-   "c": "solana",
-   "mc": 1708.5,
-   "nar": "Dog & animal memes",
-   "run": 2.55,
-   "retr": 63.1,
-   "acc": 0.09,
-   "c6": -10.75,
-   "age": 362.01,
-   "sec": "rugcheck",
-   "pa": "4qxSqMh6iEdbdvtMp8r5MK2psAGKNk57PfGeVo2VhczQ"
+   "sym": "elizaOS",
+   "c": "bsc",
+   "mc": 661.4,
+   "nar": "AI",
+   "run": 2.52,
+   "retr": 67.33,
+   "acc": 2.05,
+   "c6": 2.13,
+   "age": 329.73,
+   "sec": "goplus",
+   "pa": "0x56ADADF82E3346eb8317628df5ce1f776F89014D"
   }
  ],
  "shortlist_new": [
-  "WhiteWhale"
- ],
- "shortlist_dropped": [
-  "DGUY",
-  "Pumpoween"
- ],
- "pullback": [],
- "pullback_new": [],
- "pullback_dropped": [
-  "Frank",
   "elizaOS"
  ],
- "igniting": [],
- "honeypots_new": [
-  "HUMA"
+ "shortlist_dropped": [
+  "WhiteWhale"
  ],
+ "pullback": [
+  {
+   "sym": "SI276",
+   "c": "solana",
+   "mc": 861.0,
+   "nar": "Unclassified",
+   "run": 14.92,
+   "retr": 69.91,
+   "acc": 0.69,
+   "c6": 33.11,
+   "age": 4.27,
+   "sec": "rugcheck",
+   "pa": "12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG"
+  }
+ ],
+ "pullback_new": [
+  "SI276"
+ ],
+ "pullback_dropped": [],
+ "igniting": [
+  {
+   "sym": "ALLOX",
+   "c": "solana",
+   "mc": 1323.0,
+   "nar": "Unclassified",
+   "run": null,
+   "retr": null,
+   "acc": 4.0,
+   "c6": 65.25,
+   "age": 0.09,
+   "sec": "rugcheck",
+   "pa": "HikPqbKMSwFfwmqpNg9MgBC69L1nrnyf5p5oLLgTBihT"
+  },
+  {
+   "sym": "RSGP",
+   "c": "solana",
+   "mc": 1361.9,
+   "nar": "Unclassified",
+   "run": null,
+   "retr": null,
+   "acc": 4.0,
+   "c6": 49.57,
+   "age": 0.09,
+   "sec": "rugcheck",
+   "pa": "C8WBdieHDTjKC6u2X4vxNkHu61CsY3c3yQkVjdWYYjm1"
+  },
+  {
+   "sym": "elizaOS",
+   "c": "bsc",
+   "mc": 661.4,
+   "nar": "AI",
+   "run": 2.52,
+   "retr": 67.33,
+   "acc": 2.05,
+   "c6": 2.13,
+   "age": 329.73,
+   "sec": "goplus",
+   "pa": "0x56ADADF82E3346eb8317628df5ce1f776F89014D"
+  }
+ ],
+ "honeypots_new": [],
  "track": {
-  "logged": 41,
+  "logged": 42,
   "new_rows": [
    [
-    "WhiteWhale",
-    "S"
+    "SI276",
+    "P"
    ]
   ],
   "best_x": 14.93,
@@ -100,25 +139,29 @@
   "repriced": true
  },
  "igniting_track": {
-  "logged": 8,
-  "new_rows": [],
+  "logged": 11,
+  "new_rows": [
+   "ALLOX",
+   "RSGP",
+   "elizaOS"
+  ],
   "hit_2x_today": [],
   "to_zero_today": []
  },
  "control": {
-  "rows": 417,
+  "rows": 431,
   "median_peak_x": 1.0,
   "hit_2x_today": [
-   "DRV (base)",
-   "CRAWL (solana)",
-   "PSTR (hyperevm)",
-   "HeeHaw (solana)"
+   "HOTBOT (solana)",
+   "CYBERLEEK (solana)"
   ],
   "to_zero_today": [
-   "DICKBUTT (bsc)",
-   "躺赢 (bsc)",
-   "V4 (robinhood)",
-   "ORBIO (robinhood)"
+   "GLXY (robinhood)",
+   "CATE (bsc)",
+   "MUNKIEAI (solana)",
+   "PAIDBOT (solana)",
+   "CRNKP (robinhood)",
+   "MBLOOM (robinhood)"
   ]
  },
  "changed": true,
