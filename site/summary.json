@@ -1,6 +1,6 @@
 {
- "now": "2026-10-11 10:41 SGT",
- "cand_at": "2026-10-11 10:41 SGT",
+ "now": "2026-10-12 10:42 SGT",
+ "cand_at": "2026-10-12 10:42 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -22,113 +22,136 @@
  },
  "chains": {
   "hot": [
-   "near",
-   "starknet"
+   "starknet",
+   "eos",
+   "sonic"
   ],
-  "new": [],
+  "new": [
+   "eos",
+   "sonic"
+  ],
   "dropped": [
-   "hedera"
+   "near"
   ],
   "hottest": {
    "s": "mayachain",
    "n": "Mayachain",
-   "dr": 2.66,
-   "dr30": 9.8
+   "dr": 2.68,
+   "dr30": 10.3
   }
  },
  "tokens": {
-  "total": 74,
-  "band_m": 41,
+  "total": 77,
+  "band_m": 46,
   "candle_or_wallet_coverage_pct": 100,
-  "nodata": 5
+  "nodata": 2
  },
  "shortlist": [
   {
-   "sym": "elizaOS",
+   "sym": "TRUMAN",
    "c": "bsc",
-   "mc": 661.4,
-   "nar": "AI",
-   "run": 2.52,
-   "retr": 67.33,
-   "acc": 2.05,
-   "c6": 2.13,
-   "age": 329.73,
+   "mc": 1326.8,
+   "nar": "Unclassified",
+   "run": 2.22,
+   "retr": 71.88,
+   "acc": 0.06,
+   "c6": 6.28,
+   "age": 22.39,
    "sec": "goplus",
-   "pa": "0x56ADADF82E3346eb8317628df5ce1f776F89014D"
+   "pa": "0xD05AdB810Fe61b441808a54137E410BBcCd9d03a"
   }
  ],
  "shortlist_new": [
-  "elizaOS"
+  "TRUMAN"
  ],
  "shortlist_dropped": [
-  "WhiteWhale"
+  "elizaOS"
  ],
  "pullback": [
   {
    "sym": "SI276",
    "c": "solana",
-   "mc": 861.0,
+   "mc": 1384.6,
    "nar": "Unclassified",
-   "run": 14.92,
-   "retr": 69.91,
-   "acc": 0.69,
-   "c6": 33.11,
-   "age": 4.27,
+   "run": 26.63,
+   "retr": 46.31,
+   "acc": 0.94,
+   "c6": 23.2,
+   "age": 5.27,
    "sec": "rugcheck",
    "pa": "12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG"
+  },
+  {
+   "sym": "龙虾",
+   "c": "bsc",
+   "mc": 612.6,
+   "nar": "Dog & animal memes",
+   "run": 56.99,
+   "retr": 61.17,
+   "acc": 0.18,
+   "c6": 100.0,
+   "age": 3.45,
+   "sec": "goplus",
+   "pa": "0x2124251eB568784AB50B5d2fB9D45B86e2a63aaf"
   }
  ],
  "pullback_new": [
-  "SI276"
+  "龙虾"
  ],
  "pullback_dropped": [],
  "igniting": [
   {
    "sym": "ALLOX",
    "c": "solana",
-   "mc": 1323.0,
+   "mc": 1174.2,
    "nar": "Unclassified",
    "run": null,
    "retr": null,
    "acc": 4.0,
-   "c6": 65.25,
-   "age": 0.09,
+   "c6": 45.31,
+   "age": 0.07,
    "sec": "rugcheck",
-   "pa": "HikPqbKMSwFfwmqpNg9MgBC69L1nrnyf5p5oLLgTBihT"
+   "pa": "6KCmCfW5GSf7nQ7hfk8ds2aTiZXUYLcKAsmH3ZLZW6p3"
+  },
+  {
+   "sym": "PULT",
+   "c": "solana",
+   "mc": 1182.4,
+   "nar": "Unclassified",
+   "run": null,
+   "retr": null,
+   "acc": 4.0,
+   "c6": 50.49,
+   "age": 0.06,
+   "sec": "rugcheck",
+   "pa": "FRvYyNTGzQRQfsbDZntcqQwHJpmHZKtMh7N85uDG1i4H"
   },
   {
    "sym": "RSGP",
    "c": "solana",
-   "mc": 1361.9,
+   "mc": 1219.1,
    "nar": "Unclassified",
    "run": null,
    "retr": null,
    "acc": 4.0,
-   "c6": 49.57,
-   "age": 0.09,
+   "c6": 45.85,
+   "age": 0.06,
    "sec": "rugcheck",
-   "pa": "C8WBdieHDTjKC6u2X4vxNkHu61CsY3c3yQkVjdWYYjm1"
-  },
-  {
-   "sym": "elizaOS",
-   "c": "bsc",
-   "mc": 661.4,
-   "nar": "AI",
-   "run": 2.52,
-   "retr": 67.33,
-   "acc": 2.05,
-   "c6": 2.13,
-   "age": 329.73,
-   "sec": "goplus",
-   "pa": "0x56ADADF82E3346eb8317628df5ce1f776F89014D"
+   "pa": "D3vzKTEJntE3wSu4QaPd79e2bnifnHggVDVewu1ukkAJ"
   }
  ],
- "honeypots_new": [],
+ "honeypots_new": [
+  "GAIN"
+ ],
  "track": {
-  "logged": 42,
+  "logged": 44,
   "new_rows": [
    [
-    "SI276",
+    "TRUMAN",
+    "S"
+   ],
+   [
+    "龙虾",
     "P"
    ]
   ],
@@ -139,29 +162,27 @@
   "repriced": true
  },
  "igniting_track": {
-  "logged": 11,
+  "logged": 14,
   "new_rows": [
    "ALLOX",
-   "RSGP",
-   "elizaOS"
+   "PULT",
+   "RSGP"
   ],
   "hit_2x_today": [],
   "to_zero_today": []
  },
  "control": {
-  "rows": 431,
+  "rows": 446,
   "median_peak_x": 1.0,
-  "hit_2x_today": [
-   "HOTBOT (solana)",
-   "CYBERLEEK (solana)"
-  ],
+  "hit_2x_today": [],
   "to_zero_today": [
-   "GLXY (robinhood)",
-   "CATE (bsc)",
-   "MUNKIEAI (solana)",
-   "PAIDBOT (solana)",
-   "CRNKP (robinhood)",
-   "MBLOOM (robinhood)"
+   "CHINAPAD (robinhood)",
+   "RWA (robinhood)",
+   "FOMOBALL (robinhood)",
+   "GOOSE (robinhood)",
+   "AUTON (solana)",
+   "QQQ (robinhood)",
+   "FMRGN (robinhood)"
   ]
  },
  "changed": true,
