@@ -44,7 +44,7 @@ GATE_KEYS = ["mcap", "liq", "turn", "buyers", "hold", "notRan", "noWash", "safe"
 ORDER = ["LAST_DAY", "SNAP_AT", "TOK_AT", "CHAIN_GATE", "CORE_CHAINS", "MCAP", "LIQ_PCT", "TURN_MIN", "RAN_MULT",
          "DROP_MAX", "PULL", "IGN", "MCAP_L", "TYPE", "CAND_AT", "NO_DEXSCREENER", "DATA", "NETFLOW_AT", "NETFLOW",
          "BRIDGES_AT", "BRIDGES", "REGIME_AT", "MAJORS", "LOG_AT", "REJECTS", "NARHIST", "HOLDHIST", "TOKENS",
-         "HISTORY", "IGNHIST", "KOLS", "CHAIN_ACCTS"]
+         "HISTORY", "IGNHIST", "MOMHIST", "KOLS", "CHAIN_ACCTS"]
 
 
 # ------------------------------------------------------------------ block parsing
@@ -87,6 +87,12 @@ class Consts:
     DROP_MAX = -40; TOP10_MAX = 50; TAX_MAX = 10; BUYER_SHARE = 0.5
     PULL = {"run": 3, "retrLo": 40, "retrHi": 70, "volVsPeak": 30}
     IGN = {"runLo": 1.3, "runHi": 3, "accel": 1.5, "c24Max": 200}
+    # Momentum (experimental, added 13 Oct 2026): the profile that produced most 2x/10x outcomes in the first
+    # 23 days of snapshots — 1-3 days old, small cap, buyers neither one-sided nor absent. Tracked in MOMHIST
+    # to find out whether that pattern survives on data it was not tuned on.
+    MOM = {"ageLo": 1, "ageHi": 3, "mcLo": 500, "mcHi": 2000, "ubrLo": 0.45, "ubrHi": 0.90,
+           "chains": ("solana", "bsc", "robinhood")}
+    UBR_MAX = 0.90   # 90%+ buyers with no sellers = honeypot profile (95% of them end down 50%+); no list admits it
     CHAIN_GATE = {"dr": 1.3, "dv": 5}
 
 
@@ -156,13 +162,18 @@ def evaluate(t: dict) -> None:
     t["_nu"] = sum(1 for v in g.values() if v is None)
 
 
-def is_short(t):  return t.get("band") != "l" and t["_nf"] == 0 and t["_nu"] == 0
+def crowded(t):
+    """90%+ of traders are buyers: the one-way flow of a honeypot or a coordinated pump, not demand."""
+    return t.get("ubr") is not None and t["ubr"] >= C.UBR_MAX
+
+
+def is_short(t):  return t.get("band") != "l" and t["_nf"] == 0 and t["_nu"] == 0 and not crowded(t)
 def is_pull(t):
     g = t["_g"]
     return (t.get("band") != "l" and t["_runOk"] and t.get("retr") is not None and t["run"] >= C.PULL["run"]
             and C.PULL["retrLo"] <= t["retr"] <= C.PULL["retrHi"] and t.get("vvp") is not None and t["vvp"] >= C.PULL["volVsPeak"]
             and t.get("ubr") is not None and t["ubr"] >= C.BUYER_SHARE and not t["_honey"] and not t["_wash"]
-            and g["safe"] is True and g["liq"] is True and g["mcap"] is True)
+            and not crowded(t) and g["safe"] is True and g["liq"] is True and g["mcap"] is True)
 def is_ign(t):
     g = t["_g"]
     return (t.get("band") != "l" and t["_acc"] is not None and t["_acc"] >= C.IGN["accel"]
@@ -170,7 +181,20 @@ def is_ign(t):
             and (t.get("c24") is None or t["c24"] < C.IGN["c24Max"])
             and (t.get("run") is None or C.IGN["runLo"] <= t["run"] < C.IGN["runHi"])
             and t.get("ubr") is not None and t["ubr"] >= C.BUYER_SHARE and not t["_wash"] and not t["_honey"]
-            and g["safe"] is True and g["liq"] is True and g["mcap"] is True and g["turn"] is True)
+            and not crowded(t) and g["safe"] is True and g["liq"] is True and g["mcap"] is True and g["turn"] is True)
+
+
+def is_mom(t):
+    """Experimental momentum pick. Day-zero tokens are deliberately excluded: first seen under 1 day old they
+    were the worst group in the data (median peak 0.11x); the same tokens that survive to day 1-3 were the best.
+    A token that keeps the profile simply qualifies the next morning."""
+    age, mc, ubr = t.get("age"), t.get("mc"), t.get("ubr")
+    return (t.get("band") != "l" and age is not None and C.MOM["ageLo"] <= age < C.MOM["ageHi"]
+            and t.get("c") in C.MOM["chains"]
+            and mc is not None and C.MOM["mcLo"] <= mc < C.MOM["mcHi"]
+            and ubr is not None and C.MOM["ubrLo"] <= ubr < C.MOM["ubrHi"]
+            and not t["_honey"] and t["_g"]["safe"] is not False
+            and not (is_short(t) or is_pull(t) or is_ign(t)))
 
 
 def chain_hot(r: dict) -> bool:
@@ -369,8 +393,10 @@ def main() -> int:
     short = [t for t in tokens if is_short(t)]
     pull = [t for t in tokens if is_pull(t) and not is_short(t)]
     ign = sorted([t for t in tokens if is_ign(t)], key=lambda t: -t["_acc"])
+    mom = sorted([t for t in tokens if is_mom(t)], key=lambda t: -(t.get("turn") or 0))
     old_short = {t["sym"] for t in old_tokens if is_short(t)}
     old_pull = {t["sym"] for t in old_tokens if is_pull(t) and not is_short(t)}
+    old_mom = {t["sym"] for t in old_tokens if is_mom(t)}
     hot = [r["s"] for r in data if chain_hot(r)]
     old_hot = [r["s"] for r in old_data if chain_hot(r)]
 
@@ -379,7 +405,9 @@ def main() -> int:
     reprice_ok = state("reprice") in ("ok", "partial")
     hist = [dict(r) for r in oldv("HISTORY", [])]
     ign_hist = [dict(r) for r in oldv("IGNHIST", [])]   # igniting tokens, tracked apart from the picks
+    mom_hist = [dict(r) for r in oldv("MOMHIST", [])]   # experimental momentum picks, same treatment
     i_hit2x, i_tozero = [], []
+    m_hit2x, m_tozero = [], []
     rej = [dict(r) for r in oldv("REJECTS", []) if r.get("d", "") >= cutoff]
     hit2x, tozero = [], []            # picks (HISTORY)
     c_hit2x, c_tozero = [], []        # near-misses (REJECTS) - reported separately, never as picks
@@ -406,7 +434,7 @@ def main() -> int:
             bad_px.append(f"{row['sym']} ({row['c']}) {p / px:,.0f}x ignored")
             return
         was = row.get("pxNow")
-        if row.get("l") in ("S", "P", "I"):              # lowest price seen since listing (picks + igniting only)
+        if row.get("l") in ("S", "P", "I", "M"):              # lowest price seen since listing (picks + igniting only)
             lo = row.get("pxMin")
             if lo is None:                                  # rows logged before lows were tracked: start from what is known
                 known = [v for v in (px, was) if v is not None]
@@ -427,10 +455,12 @@ def main() -> int:
         reprice(r, c_hit2x, c_tozero)
     for r in ign_hist:
         reprice(r, i_hit2x, i_tozero)
+    for r in mom_hist:
+        reprice(r, m_hit2x, m_tozero)
     if bad_px:
         notes.append("implausible re-prices ignored (>" + str(MAX_JUMP) + "x entry): " + "; ".join(bad_px[:12]))
     have = {(r["pa"].lower(), r["l"]) for r in hist}
-    new_hist, new_ign = [], []
+    new_hist, new_ign, new_mom = [], [], []
     if not tokens_carried:
         for lst, rows in (("S", short), ("P", pull)):
             for t in rows:
@@ -446,6 +476,13 @@ def main() -> int:
             row = {"d": today, "sym": t["sym"], "c": t["c"], "pa": t["pa"], "l": "I", "mc": t.get("mc"),
                    "px": t["px"], "pxNow": t["px"], "pxMax": t["px"], "pxMin": t["px"], "dMax": 0}
             ign_hist.append(row); new_ign.append(row); have_i.add(t["pa"].lower())
+        have_m = {r["pa"].lower() for r in mom_hist}
+        for t in mom:
+            if t["pa"].lower() in have_m or t.get("px") is None:
+                continue
+            row = {"d": today, "sym": t["sym"], "c": t["c"], "pa": t["pa"], "l": "M", "mc": t.get("mc"),
+                   "px": t["px"], "pxNow": t["px"], "pxMax": t["px"], "pxMin": t["px"], "dMax": 0}
+            mom_hist.append(row); new_mom.append(row); have_m.add(t["pa"].lower())
         have_r = {r["pa"].lower() for r in rej}
         near = sorted([t for t in tokens if t["_nf"] == 1 and t["pa"].lower() not in have_r and t.get("px") is not None],
                       key=lambda t: -(t.get("mc") or 0))[:REJECT_CAP]
@@ -467,6 +504,7 @@ def main() -> int:
                 holdhist.append({"d": today, "pa": t["pa"], "w": t["hld"]})
     new["HISTORY"], new["REJECTS"], new["NARHIST"], new["HOLDHIST"] = hist, rej, narhist, holdhist
     new["IGNHIST"] = ign_hist
+    new["MOMHIST"] = mom_hist
     new["LOG_AT"] = now
     new["TOKENS"] = [public(t) for t in tokens]
 
@@ -476,7 +514,7 @@ def main() -> int:
         if name in ("CHAIN_GATE", "CORE_CHAINS", "MCAP", "LIQ_PCT", "TURN_MIN", "RAN_MULT", "DROP_MAX", "PULL", "IGN",
                     "MCAP_L", "TYPE", "KOLS", "CHAIN_ACCTS"):
             lines.append(old[name]["line"] + "\n")
-        elif name in ("DATA", "REJECTS", "NARHIST", "HOLDHIST", "TOKENS", "HISTORY", "IGNHIST", "BRIDGES"):
+        elif name in ("DATA", "REJECTS", "NARHIST", "HOLDHIST", "TOKENS", "HISTORY", "IGNHIST", "MOMHIST", "BRIDGES"):
             lines.append(rows_dump(name, new[name]))
         elif name == "CAND_AT":
             lines.append(f'const CAND_AT = {jsdump(new[name])};   // {"carried" if new[name] != now else "fresh candles + rug checks this run"}\n')
@@ -527,6 +565,9 @@ def main() -> int:
         "pullback": [brief(t) for t in pull], "pullback_new": sorted({t["sym"] for t in pull} - old_pull),
         "pullback_dropped": sorted(old_pull - {t["sym"] for t in pull}),
         "igniting": [brief(t) for t in ign],
+        "momentum": [brief(t) for t in mom],
+        "momentum_new": sorted({t["sym"] for t in mom} - old_mom),
+        "momentum_dropped": sorted(old_mom - {t["sym"] for t in mom}),
         "honeypots_new": honey_new,
         "track": {"logged": len(hist), "new_rows": [(r["sym"], r["l"]) for r in new_hist],
                   "best_x": round(max(pick_m), 2) if pick_m else None,
@@ -535,16 +576,19 @@ def main() -> int:
                   "repriced": reprice_ok},
         "igniting_track": {"logged": len(ign_hist), "new_rows": [r["sym"] for r in new_ign],
                            "hit_2x_today": names(i_hit2x), "to_zero_today": names(i_tozero)},
+        "momentum_track": {"logged": len(mom_hist), "new_rows": [r["sym"] for r in new_mom],
+                           "hit_2x_today": names(m_hit2x), "to_zero_today": names(m_tozero)},
         "control": {"rows": len(rej), "median_peak_x": round(statistics.median(rej_m), 2) if rej_m else None,
                     "hit_2x_today": names(c_hit2x), "to_zero_today": names(c_tozero)},
-        "changed": bool(({t["sym"] for t in short} != old_short) or ({t["sym"] for t in pull} != old_pull) or (set(hot) != set(old_hot))),
+        "changed": bool(({t["sym"] for t in short} != old_short) or ({t["sym"] for t in pull} != old_pull)
+                        or ({t["sym"] for t in mom} != old_mom) or (set(hot) != set(old_hot))),
         # time-sensitive even when the lists did not change: something igniting, a new honeypot, a pick at 2x or at zero
         "alert": bool(ign or honey_new or hit2x or tozero),
     }
     json.dump(summary, open(os.path.join(a.out, "summary.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(json.dumps({k: summary[k] for k in ("now", "cand_at", "stale", "chains", "tokens", "shortlist_new", "shortlist_dropped",
                                                "pullback_new", "pullback_dropped", "changed")}, ensure_ascii=False))
-    print(f"shortlist {len(short)} · pullback {len(pull)} · igniting {len(ign)} · history {len(hist)} (+{len(new_hist)}) · rejects {len(rej)}")
+    print(f"shortlist {len(short)} · pullback {len(pull)} · igniting {len(ign)} · momentum {len(mom)} (+{len(new_mom)}) · history {len(hist)} (+{len(new_hist)}) · rejects {len(rej)}")
     return 0
 
 

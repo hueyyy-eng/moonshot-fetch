@@ -56,7 +56,7 @@ def bucket(x, edges, labels):
 
 GROUPS = {
     # name: (title, function(row) -> label, ordered labels or None, note)
-    "list": ("Which list", None, ["★ Shortlist", "◆ Pullback", "▲ Igniting", "✕ Near-miss", "Not listed"],
+    "list": ("Which list", None, ["★ Shortlist", "◆ Pullback", "▲ Igniting", "⚡ Momentum", "✕ Near-miss", "Not listed"],
              "Ever on that list. Measured from the day the scanner first saw the token, which can be before it was listed. Saved daily scans start on 19 Sep 2026, so picks from 12-18 Sep (Stonks, pill, IF and others) are not in this study; see Track record and Price tracking for those."),
     "chain": ("Chain", None, None, ""),
     "age": ("Token age when first seen", None, ["under 1 day", "1–3 days", "3–7 days", "7–30 days", "30–90 days", "90+ days"], ""),
@@ -74,7 +74,7 @@ TABS = [("list", "List", ["list"]), ("cas", "Chain, age & size", ["chain", "age"
 
 def label_for(g: str, r: dict):
     if g == "list":
-        return {"S": "★ Shortlist", "P": "◆ Pullback", "I": "▲ Igniting", "R": "✕ Near-miss"}.get(r["lst"], "Not listed")
+        return {"S": "★ Shortlist", "P": "◆ Pullback", "I": "▲ Igniting", "M": "⚡ Momentum", "R": "✕ Near-miss"}.get(r["lst"], "Not listed")
     if g == "chain":
         return r["c"]
     if g == "age":
@@ -112,7 +112,7 @@ def study(root: str, page: str, nar_path: str) -> dict:
             s = json.load(open(f, encoding="utf-8"))
         except (OSError, ValueError):
             continue
-        d = s.get("day_sgt") or os.path.basename(os.path.dirname(f))
+        d = os.path.basename(os.path.dirname(f))          # "<day>" or "<day>-pm" (evening run): both kept
         snaps[d] = s
     days = sorted(snaps)
     if len(days) < 2:
@@ -134,7 +134,7 @@ def study(root: str, page: str, nar_path: str) -> dict:
                 nar.setdefault(key(r["chain"], r["pair_url"].rstrip("/").rsplit("/", 1)[-1]), r["narrative"])
 
     lists = {}
-    for name, lab in (("HISTORY", None), ("IGNHIST", "I"), ("REJECTS", "R")):
+    for name, lab in (("HISTORY", None), ("IGNHIST", "I"), ("MOMHIST", "M"), ("REJECTS", "R")):
         for h in js_const(page, name):
             if h.get("pa"):
                 k = key(h["c"], h["pa"])
