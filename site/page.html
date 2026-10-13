@@ -260,6 +260,7 @@
   <a href="#shortlist"><b>★</b>Shortlist</a>
   <a href="#pullback"><b>◆</b>Pullback watch</a>
   <a href="#ignite"><b>▲</b>Igniting</a>
+  <a href="#momentum"><b>⚡</b>Momentum</a>
   <a href="#s1"><b>1</b>Liquidity flow</a>
   <a href="#s2"><b>2</b>Trading volume</a>
   <a href="#s3"><b>3</b>Token age</a>
@@ -305,6 +306,12 @@
   <div class="step-head"><h2><b>▲</b>Igniting</h2><span class="rule">The third case, and the hardest: moving <em>right now</em>, early enough to matter. Volume in the last 6 hours running ≥1.5× the day's average pace, price up on 6h but not parabolic, 24h not already blown out, and under 3× off its 7-day low. Brand-new pairs with no candle history are allowed in here — that is where early moves actually live.</span></div>
   <div class="tablewrap"><table><thead><tr id="ignHead"></tr></thead><tbody id="ignBody"></tbody></table></div>
   <div class="note" id="ignNote"></div>
+</section>
+
+<section class="step" id="momentum">
+  <div class="step-head"><h2><b>⚡</b>Momentum</h2><span class="rule">Experimental (13 Oct 2026). The opposite bet to the Shortlist: tokens 1–3 days old on Solana, BSC or Robinhood Chain, $500k–2m cap, with buyers between 45% and 90% of traders and no honeypot flag. In the first 23 days of snapshots this profile reached 2× about three times as often as average — and was down 50%+ well over half the time. High variance by design; judge it by its own track record below, not by this description.</span></div>
+  <div class="tablewrap"><table><thead><tr id="momHead"></tr></thead><tbody id="momBody"></tbody></table></div>
+  <div class="note" id="momNote"></div>
 </section>
 
 <section class="step" id="playbook">
@@ -354,6 +361,7 @@
         <button data-l="S" aria-pressed="false">★ Shortlist</button>
         <button data-l="P" aria-pressed="false">◆ Pullback</button>
         <button data-l="I" aria-pressed="false">▲ Igniting</button>
+        <button data-l="M" aria-pressed="false">⚡ Momentum</button>
       </div></div>
     <div class="field"><label for="ptSort">Sort</label><select id="ptSort"><option value="date">Newest first</option><option value="chg">Change since listed</option><option value="best">Best move</option><option value="worst">Worst drop</option></select></div>
   </div>
@@ -1348,6 +1356,12 @@ const IGNHIST = [
 {"d":"2026-10-12","sym":"PULT","c":"solana","pa":"FRvYyNTGzQRQfsbDZntcqQwHJpmHZKtMh7N85uDG1i4H","l":"I","mc":1182.4,"px":1.182e-05,"pxNow":5.18e-05,"pxMax":5.18e-05,"pxMin":1.182e-05,"dMax":1},
 {"d":"2026-10-12","sym":"RSGP","c":"solana","pa":"D3vzKTEJntE3wSu4QaPd79e2bnifnHggVDVewu1ukkAJ","l":"I","mc":1219.1,"px":1.219e-05,"pxNow":4.848e-05,"pxMax":4.848e-05,"pxMin":1.219e-05,"dMax":1}
 ];
+const MOMHIST = [
+{"d":"2026-10-13","sym":"Altai","c":"robinhood","pa":"0x286d938416257a7faae3f046f2fbc3fa360fbc48d6d9e3c9e6bd77c556f1abc6","l":"M","mc":630.6,"px":0.0006305,"pxNow":0.0006305,"pxMax":0.0006305,"pxMin":0.0006305,"dMax":0},
+{"d":"2026-10-13","sym":"SAFU","c":"bsc","pa":"0x13b86Fcf85C9C8F5C36593822D216B8893C25450","l":"M","mc":978.9,"px":0.0009789,"pxNow":0.0009789,"pxMax":0.0009789,"pxMin":0.0009789,"dMax":0},
+{"d":"2026-10-13","sym":"RETURN","c":"robinhood","pa":"0x75e4de5b2feb359c0526c3e31eb71e76efcf2864248e39453912e3984c656c53","l":"M","mc":605.2,"px":0.0006051,"pxNow":0.0006051,"pxMax":0.0006051,"pxMin":0.0006051,"dMax":0},
+{"d":"2026-10-13","sym":"Normie","c":"solana","pa":"4powEghZAR3Qd2HpbKrkyq8bB3dy7vAnSZHbQ3rSXrYh","l":"M","mc":709.8,"px":0.0007251,"pxNow":0.0007251,"pxMax":0.0007251,"pxMin":0.0007251,"dMax":0}
+];
 const KOLS = [{"h":"blknoiz06","w":"Ansem — Solana small-caps"},{"h":"Rasmr_eth","w":"on-chain research, posts entries"},{"h":"Orangie","w":"memecoin flow, signals"},{"h":"0xVonGogh","w":"full-time memecoin trader"},{"h":"Cryptozins","w":"wallet tracking, bots"},{"h":"973Meech","w":"memecoin community flow"},{"h":"Renzofks","w":"exotic low-caps"},{"h":"ValueandTime","w":"value-leaning signals"},{"h":"Theunipcs","w":"BONK / Solana"},{"h":"zachxbt","w":"rug and scam investigations"}];
 const CHAIN_ACCTS = {"robinhood":[["@RobinhoodApp","https://x.com/RobinhoodApp"],["@vladtenev","https://x.com/vladtenev"],["search \"Robinhood Chain\"","https://x.com/search?q=%22Robinhood%20Chain%22&f=live"]],"solana":[["@solana","https://x.com/solana"],["@aeyakovenko","https://x.com/aeyakovenko"],["@A1lon9 (Pump.fun)","https://x.com/A1lon9"]],"bsc":[["@binance","https://x.com/binance"],["@cz_binance","https://x.com/cz_binance"]],"base":[["@base","https://x.com/base"],["@jessepollak","https://x.com/jessepollak"]],"ethereum":[["@ethereum","https://x.com/ethereum"]],"arbitrum":[["@arbitrum","https://x.com/arbitrum"]],"optimism":[["@Optimism","https://x.com/Optimism"]],"ink":[["@inkonchain","https://x.com/inkonchain"]],"unichain":[["@unichain","https://x.com/unichain"]],"pulsechain":[["@RichardHeartWin","https://x.com/RichardHeartWin"]],"xrpl":[["@Ripple","https://x.com/Ripple"]],"hyperliquid":[["@HyperliquidX","https://x.com/HyperliquidX"],["@chameleon_jeff","https://x.com/chameleon_jeff"]]};
 /*DATA-END*/
@@ -1459,11 +1473,13 @@ function evalGates(t){
   t._nf=Object.values(r).filter(v=>v===false).length;
   t._nu=Object.values(r).filter(v=>v===null).length;
 }
-function isShort(t){ return t.band!=="l" && t._nf===0 && (allowUnk ? true : t._nu===0); }
+const UBR_MAX=0.90;   // 90%+ buyers with almost no sellers: honeypot / coordinated-pump profile — no list admits it
+const crowded=t=>t.ubr!=null && t.ubr>=UBR_MAX;
+function isShort(t){ return t.band!=="l" && t._nf===0 && (allowUnk ? true : t._nu===0) && !crowded(t); }
 function isPull(t){
   return t.band!=="l" && t._runOk && t.retr!=null && t.run>=PULL.run && t.retr>=PULL.retrLo && t.retr<=PULL.retrHi
     && t.vvp!=null && t.vvp>=PULL.volVsPeak && t.ubr!=null && t.ubr>=BUYER_SHARE
-    && !t._honey && !t._wash && (allowUnk ? t._g.safe!==false : t._g.safe===true) && t._g.liq===true && t._g.mcap===true;
+    && !t._honey && !t._wash && !crowded(t) && (allowUnk ? t._g.safe!==false : t._g.safe===true) && t._g.liq===true && t._g.mcap===true;
 }
 
 // Igniting: moving RIGHT NOW and early in the move. Deliberately admits tokens with no candles yet
@@ -1474,8 +1490,21 @@ function isIgn(t){
     && (t.c24==null || t.c24<IGN.c24Max)
     && (t.run==null || (t.run>=IGN.runLo && t.run<IGN.runHi))
     && t.ubr!=null && t.ubr>=BUYER_SHARE
-    && !t._wash && !t._honey && (allowUnk ? t._g.safe!==false : t._g.safe===true)
+    && !t._wash && !t._honey && !crowded(t) && (allowUnk ? t._g.safe!==false : t._g.safe===true)
     && t._g.liq===true && t._g.mcap===true && t._g.turn===true;
+}
+
+// Momentum (experimental): the 2x/10x profile from the first 23 days of snapshots. Day-zero tokens are
+// excluded on purpose — first seen under 1 day old they were the worst group (median peak 0.11x); the ones
+// that survive to day 1-3 were the best. A token that keeps the profile qualifies the next morning.
+const MOM={ageLo:1, ageHi:3, mcLo:500, mcHi:2000, ubrLo:0.45, ubrHi:0.90, chains:["solana","bsc","robinhood"]};
+function isMom(t){
+  return t.band!=="l" && t.age!=null && t.age>=MOM.ageLo && t.age<MOM.ageHi
+    && MOM.chains.indexOf(t.c)>=0
+    && t.mc!=null && t.mc>=MOM.mcLo && t.mc<MOM.mcHi
+    && t.ubr!=null && t.ubr>=MOM.ubrLo && t.ubr<MOM.ubrHi
+    && !t._honey && t._g.safe!==false
+    && !(isShort(t)||isPull(t)||isIgn(t));
 }
 
 /* ---------- playbook type: A survived leader / B emerging / C early ----------
@@ -1793,6 +1822,15 @@ function renderTokens(){
     ? `${ig.length} accelerating now: 6h volume running ≥${IGN.accel}× the daily pace, still under ${IGN.runHi}× off the 7-day low. This is the highest-variance list on the page — you are buying into a move in progress, so the stop matters more than the thesis.`
     : `Empty is the normal state. A token is only in this window for hours, so an empty list at 10pm says little about 10am.`;
 
+  // momentum (experimental)
+  const mo=TOKENS.filter(isMom).sort((a,b)=>(b.turn||0)-(a.turn||0));
+  document.getElementById("momHead").innerHTML=TOK_HEAD.map(h=>`<th scope="col" class="${h[1]}">${h[0]}</th>`).join("");
+  document.getElementById("momBody").innerHTML = mo.length ? mo.map(t=>tokRow(t,false)).join("")
+    : `<tr><td colspan="${TOK_HEAD.length}" class="empty">No token fits the momentum profile today. The window is 1–3 days of age, so names enter and leave quickly.</td></tr>`;
+  document.getElementById("momNote").textContent = mo.length
+    ? `${mo.length} in the experimental window. Expect most to fail: in the data this profile was built on, roughly 1 in 4 reached 2× and well over half ended down 50%+. Each is logged to Price tracking under ⚡ on the day it first appears, so the idea is judged on data it was not tuned on.`
+    : `Tokens first seen under 1 day old are deliberately left out — they were the worst group in the data. The ones that survive to day 1–3 with balanced buying are what this list waits for.`;
+
   // staleness of candle-derived fields
   const sb2=staleBanner();
   document.getElementById("shortStale").innerHTML=sb2;
@@ -2027,11 +2065,12 @@ document.querySelectorAll("#tabs-hl button").forEach(b=>b.setAttribute("aria-pre
 /* ---------- price tracking: every listed token, priced from the day it first appeared ---------- */
 let ptL="all", ptSort="date";
 const PT_HEAD=[["Listed",""],["Token",""],["List","w-g"],["Listed mcap",""],["Listed price",""],["Price now",""],["Since listed",""],["Best",""],["Worst",""],["Days",""],["Peak on day",""]];
-const LIST_NM={S:"★ Shortlist",P:"◆ Pullback",I:"▲ Igniting"};
+const LIST_NM={S:"★ Shortlist",P:"◆ Pullback",I:"▲ Igniting",M:"⚡ Momentum"};
 function ptRows(){
   const ign=(typeof IGNHIST!=="undefined")?IGNHIST:[];
+  const mh=(typeof MOMHIST!=="undefined")?MOMHIST:[];
   const today=SNAP_AT.slice(0,10);
-  return HISTORY.concat(ign).filter(h=>h.px).map(h=>{
+  return HISTORY.concat(ign).concat(mh).filter(h=>h.px).map(h=>{
     // lows are recorded from 1 Oct 2026: for tokens listed earlier the real low may have been deeper
     const lowSeen=h.d>="2026-10-01", lo=h.pxMin!=null?h.pxMin:Math.min(h.px, h.pxNow!=null?h.pxNow:h.px);
     return Object.assign({}, h, {
@@ -2072,7 +2111,7 @@ function renderPrices(){
   const all=ptRows();
   document.querySelectorAll("#tabs-pt button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.l===ptL)));
   const tile=(k,v,n)=>`<div><div class="k">${k}</div><div class="v num">${v}</div><div class="n">${n}</div></div>`;
-  document.getElementById("priceLede").innerHTML=["S","P","I"].map(L=>{
+  document.getElementById("priceLede").innerHTML=["S","P","I","M"].map(L=>{
     const r=all.filter(h=>h.l===L && h._chg!=null);
     if(!r.length) return tile(LIST_NM[L],"—","nothing tracked yet");
     const m=med(r.map(h=>h._chg)), up=r.filter(h=>h._chg>0).length, best=Math.max(...r.map(h=>h._best==null?-100:h._best));
