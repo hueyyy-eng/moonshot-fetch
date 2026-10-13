@@ -60,6 +60,9 @@ def main(repo_root: str) -> int:
     http = Http(budget_s=RUN_BUDGET_MIN * 60)
     stamp = now_sgt_str()
     day = now_utc().astimezone(SGT).strftime("%Y-%m-%d")
+    # the 21:30 SGT evening run (added 13 Oct 2026) saves to snapshots/<day>-pm/ so the morning snapshot is kept;
+    # "<day>-pm" sorts between <day> and the next day, so every date comparison downstream still works
+    snap_dir = day if now_utc().astimezone(SGT).hour < 15 else day + "-pm"
 
     # STEP 1 — chains
     stage(http, "chains")
@@ -125,10 +128,10 @@ def main(repo_root: str) -> int:
         "TOKENS": [clean_token(t) for t in tokens],
         "PRICES": prices,
     }
-    dump_json(os.path.join(repo_root, "snapshots", day, "scan.json"), out)
+    dump_json(os.path.join(repo_root, "snapshots", snap_dir, "scan.json"), out)
     dump_json(os.path.join(repo_root, "latest", "scan.json"), out)
     dump_json(os.path.join(repo_root, "latest", "status.json"), status)
-    dump_json(os.path.join(repo_root, "snapshots", day, "status.json"), status)
+    dump_json(os.path.join(repo_root, "snapshots", snap_dir, "status.json"), status)
     log.info("wrote snapshot for %s in %ds — %d chains, %d tokens, %d prices", day, int(time.time() - t0),
              len(out["DATA"]), len(out["TOKENS"]), len(prices))
     bad = [k for k, v in status["sources"].items() if v.get("state") == "fail"]
