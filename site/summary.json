@@ -1,6 +1,6 @@
 {
- "now": "2026-10-13 10:42 SGT",
- "cand_at": "2026-10-13 10:42 SGT",
+ "now": "2026-10-13 21:26 SGT",
+ "cand_at": "2026-10-13 21:26 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -28,14 +28,8 @@
    "eos",
    "doma"
   ],
-  "new": [
-   "dexalot",
-   "doma",
-   "tron"
-  ],
-  "dropped": [
-   "sonic"
-  ],
+  "new": [],
+  "dropped": [],
   "hottest": {
    "s": "eos",
    "n": "Eos",
@@ -44,38 +38,102 @@
   }
  },
  "tokens": {
-  "total": 65,
-  "band_m": 29,
+  "total": 70,
+  "band_m": 34,
   "candle_or_wallet_coverage_pct": 100,
-  "nodata": 6
+  "nodata": 8
  },
- "shortlist": [],
- "shortlist_new": [],
- "shortlist_dropped": [
-  "TRUMAN"
+ "shortlist": [
+  {
+   "sym": "Pumpoween",
+   "c": "solana",
+   "mc": 858.6,
+   "nar": "Classic memes",
+   "run": 1.3,
+   "retr": 41.08,
+   "acc": 0.98,
+   "c6": -13.04,
+   "age": 38.7,
+   "sec": "rugcheck",
+   "pa": "8NVFB1unNk9aDtL5hooF8Hahf2rt4GLPWx9ctEadikHg"
+  }
  ],
+ "shortlist_new": [
+  "Pumpoween"
+ ],
+ "shortlist_dropped": [],
  "pullback": [
   {
    "sym": "SI276",
    "c": "solana",
-   "mc": 918.3,
+   "mc": 1124.1,
    "nar": "Unclassified",
    "run": 16.95,
    "retr": 65.83,
-   "acc": 1.0,
-   "c6": -1.96,
-   "age": 6.27,
+   "acc": 0.76,
+   "c6": 34.52,
+   "age": 6.72,
    "sec": "rugcheck",
    "pa": "12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG"
   }
  ],
  "pullback_new": [],
- "pullback_dropped": [
-  "龙虾"
+ "pullback_dropped": [],
+ "igniting": [
+  {
+   "sym": "ALLOX",
+   "c": "solana",
+   "mc": 1157.6,
+   "nar": "Unclassified",
+   "run": null,
+   "retr": null,
+   "acc": 4.0,
+   "c6": 63.75,
+   "age": 0.11,
+   "sec": "rugcheck",
+   "pa": "95rrREz1jUvQML9XJ5b3UwbNq62EFs9o87wAFwLFwTpf"
+  },
+  {
+   "sym": "RSGP",
+   "c": "solana",
+   "mc": 1251.5,
+   "nar": "Unclassified",
+   "run": null,
+   "retr": null,
+   "acc": 4.0,
+   "c6": 55.4,
+   "age": 0.11,
+   "sec": "rugcheck",
+   "pa": "4URjTvHggPQ6F7oYGcF9ocSfg83SAFSaf5oMEq36xRgN"
+  }
  ],
- "igniting": [],
+ "momentum": [
+  {
+   "sym": "DOPE",
+   "c": "solana",
+   "mc": 995.5,
+   "nar": "Dog & animal memes",
+   "run": 16.32,
+   "retr": 72.31,
+   "acc": 0.52,
+   "c6": 81.71,
+   "age": 1.97,
+   "sec": "rugcheck",
+   "pa": "6iep3EgqksbZwgzMBCyAJtiVtVYkCgL9BnPBEwLR8AGQ"
+  }
+ ],
+ "momentum_new": [
+  "DOPE"
+ ],
+ "momentum_dropped": [
+  "Altai",
+  "Normie",
+  "RETURN",
+  "SAFU"
+ ],
  "honeypots_new": [
-  "AA"
+  "ZEST",
+  "MAT"
  ],
  "track": {
   "logged": 44,
@@ -87,36 +145,37 @@
   "repriced": true
  },
  "igniting_track": {
-  "logged": 14,
-  "new_rows": [],
-  "hit_2x_today": [
-   "ALLOX (solana)",
-   "PULT (solana)",
-   "RSGP (solana)"
+  "logged": 16,
+  "new_rows": [
+   "ALLOX",
+   "RSGP"
   ],
+  "hit_2x_today": [],
   "to_zero_today": [
-   "ALLOX (solana)"
+   "RSGP (solana)"
+  ]
+ },
+ "momentum_track": {
+  "logged": 5,
+  "new_rows": [
+   "DOPE"
+  ],
+  "hit_2x_today": [],
+  "to_zero_today": [
+   "RETURN (robinhood)"
   ]
  },
  "control": {
-  "rows": 449,
+  "rows": 454,
   "median_peak_x": 1.0,
-  "hit_2x_today": [
-   "PSTR (hyperevm)",
-   "TORCH (robinhood)",
-   "RSGP (solana)",
-   "PULT (solana)",
-   "ALLOX (solana)"
-  ],
+  "hit_2x_today": [],
   "to_zero_today": [
-   "MUNKIEAI (solana)",
-   "ALLOX (solana)",
-   "BRML (robinhood)",
-   "中国人能飞 (bsc)",
-   "FUNPANDA (robinhood)",
-   "DIALN (robinhood)",
-   "CPANC (robinhood)",
-   "BSKCAT (robinhood)"
+   "LAURA (robinhood)",
+   "MCU (robinhood)",
+   "GOOSE (robinhood)",
+   "RSGP (solana)",
+   "RBCAT (robinhood)",
+   "EQVTA (robinhood)"
   ]
  },
  "changed": true,
