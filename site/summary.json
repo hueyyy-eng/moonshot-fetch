@@ -1,6 +1,6 @@
 {
- "now": "2026-10-12 10:42 SGT",
- "cand_at": "2026-10-12 10:42 SGT",
+ "now": "2026-10-13 10:42 SGT",
+ "cand_at": "2026-10-13 10:42 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -22,139 +22,64 @@
  },
  "chains": {
   "hot": [
+   "tron",
+   "dexalot",
    "starknet",
    "eos",
-   "sonic"
+   "doma"
   ],
   "new": [
-   "eos",
-   "sonic"
+   "dexalot",
+   "doma",
+   "tron"
   ],
   "dropped": [
-   "near"
+   "sonic"
   ],
   "hottest": {
-   "s": "mayachain",
-   "n": "Mayachain",
-   "dr": 2.68,
-   "dr30": 10.3
+   "s": "eos",
+   "n": "Eos",
+   "dr": 1.56,
+   "dr30": 1.71
   }
  },
  "tokens": {
-  "total": 77,
-  "band_m": 46,
+  "total": 65,
+  "band_m": 29,
   "candle_or_wallet_coverage_pct": 100,
-  "nodata": 2
+  "nodata": 6
  },
- "shortlist": [
-  {
-   "sym": "TRUMAN",
-   "c": "bsc",
-   "mc": 1326.8,
-   "nar": "Unclassified",
-   "run": 2.22,
-   "retr": 71.88,
-   "acc": 0.06,
-   "c6": 6.28,
-   "age": 22.39,
-   "sec": "goplus",
-   "pa": "0xD05AdB810Fe61b441808a54137E410BBcCd9d03a"
-  }
- ],
- "shortlist_new": [
-  "TRUMAN"
- ],
+ "shortlist": [],
+ "shortlist_new": [],
  "shortlist_dropped": [
-  "elizaOS"
+  "TRUMAN"
  ],
  "pullback": [
   {
    "sym": "SI276",
    "c": "solana",
-   "mc": 1384.6,
+   "mc": 918.3,
    "nar": "Unclassified",
-   "run": 26.63,
-   "retr": 46.31,
-   "acc": 0.94,
-   "c6": 23.2,
-   "age": 5.27,
+   "run": 16.95,
+   "retr": 65.83,
+   "acc": 1.0,
+   "c6": -1.96,
+   "age": 6.27,
    "sec": "rugcheck",
    "pa": "12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG"
-  },
-  {
-   "sym": "龙虾",
-   "c": "bsc",
-   "mc": 612.6,
-   "nar": "Dog & animal memes",
-   "run": 56.99,
-   "retr": 61.17,
-   "acc": 0.18,
-   "c6": 100.0,
-   "age": 3.45,
-   "sec": "goplus",
-   "pa": "0x2124251eB568784AB50B5d2fB9D45B86e2a63aaf"
   }
  ],
- "pullback_new": [
+ "pullback_new": [],
+ "pullback_dropped": [
   "龙虾"
  ],
- "pullback_dropped": [],
- "igniting": [
-  {
-   "sym": "ALLOX",
-   "c": "solana",
-   "mc": 1174.2,
-   "nar": "Unclassified",
-   "run": null,
-   "retr": null,
-   "acc": 4.0,
-   "c6": 45.31,
-   "age": 0.07,
-   "sec": "rugcheck",
-   "pa": "6KCmCfW5GSf7nQ7hfk8ds2aTiZXUYLcKAsmH3ZLZW6p3"
-  },
-  {
-   "sym": "PULT",
-   "c": "solana",
-   "mc": 1182.4,
-   "nar": "Unclassified",
-   "run": null,
-   "retr": null,
-   "acc": 4.0,
-   "c6": 50.49,
-   "age": 0.06,
-   "sec": "rugcheck",
-   "pa": "FRvYyNTGzQRQfsbDZntcqQwHJpmHZKtMh7N85uDG1i4H"
-  },
-  {
-   "sym": "RSGP",
-   "c": "solana",
-   "mc": 1219.1,
-   "nar": "Unclassified",
-   "run": null,
-   "retr": null,
-   "acc": 4.0,
-   "c6": 45.85,
-   "age": 0.06,
-   "sec": "rugcheck",
-   "pa": "D3vzKTEJntE3wSu4QaPd79e2bnifnHggVDVewu1ukkAJ"
-  }
- ],
+ "igniting": [],
  "honeypots_new": [
-  "GAIN"
+  "AA"
  ],
  "track": {
   "logged": 44,
-  "new_rows": [
-   [
-    "TRUMAN",
-    "S"
-   ],
-   [
-    "龙虾",
-    "P"
-   ]
-  ],
+  "new_rows": [],
   "best_x": 14.93,
   "median_peak_x": 1.0,
   "hit_2x_today": [],
@@ -163,26 +88,35 @@
  },
  "igniting_track": {
   "logged": 14,
-  "new_rows": [
-   "ALLOX",
-   "PULT",
-   "RSGP"
+  "new_rows": [],
+  "hit_2x_today": [
+   "ALLOX (solana)",
+   "PULT (solana)",
+   "RSGP (solana)"
   ],
-  "hit_2x_today": [],
-  "to_zero_today": []
+  "to_zero_today": [
+   "ALLOX (solana)"
+  ]
  },
  "control": {
-  "rows": 446,
+  "rows": 449,
   "median_peak_x": 1.0,
-  "hit_2x_today": [],
+  "hit_2x_today": [
+   "PSTR (hyperevm)",
+   "TORCH (robinhood)",
+   "RSGP (solana)",
+   "PULT (solana)",
+   "ALLOX (solana)"
+  ],
   "to_zero_today": [
-   "CHINAPAD (robinhood)",
-   "RWA (robinhood)",
-   "FOMOBALL (robinhood)",
-   "GOOSE (robinhood)",
-   "AUTON (solana)",
-   "QQQ (robinhood)",
-   "FMRGN (robinhood)"
+   "MUNKIEAI (solana)",
+   "ALLOX (solana)",
+   "BRML (robinhood)",
+   "中国人能飞 (bsc)",
+   "FUNPANDA (robinhood)",
+   "DIALN (robinhood)",
+   "CPANC (robinhood)",
+   "BSKCAT (robinhood)"
   ]
  },
  "changed": true,

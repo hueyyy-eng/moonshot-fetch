@@ -66,3 +66,4 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-10-12,igniting,ALLOX,solana,1174.2,Unclassified,,,4.0,45.31,0.07,rugcheck,https://dexscreener.com/solana/6KCmCfW5GSf7nQ7hfk8ds2aTiZXUYLcKAsmH3ZLZW6p3,daily scan
 2026-10-12,igniting,PULT,solana,1182.4,Unclassified,,,4.0,50.49,0.06,rugcheck,https://dexscreener.com/solana/FRvYyNTGzQRQfsbDZntcqQwHJpmHZKtMh7N85uDG1i4H,daily scan
 2026-10-12,igniting,RSGP,solana,1219.1,Unclassified,,,4.0,45.85,0.06,rugcheck,https://dexscreener.com/solana/D3vzKTEJntE3wSu4QaPd79e2bnifnHggVDVewu1ukkAJ,daily scan
+2026-10-13,pullback,SI276,solana,918.3,Unclassified,16.95,65.83,1.0,-1.96,6.27,rugcheck,https://dexscreener.com/solana/12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG,daily scan
