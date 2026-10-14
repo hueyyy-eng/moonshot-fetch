@@ -74,8 +74,14 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-10-14,shortlist,GME,robinhood,1182.9,Classic memes,,,3.68,59.09,39.94,explorer,https://dexscreener.com/robinhood/0x24c65014991e23383da21f9081f99c6e4bc128bbd4075c1b7d67a7e44efa4f2e,daily scan
 2026-10-14,shortlist,Pumpoween,solana,977.7,Classic memes,1.43,33.54,1.74,5.52,39.27,rugcheck,https://dexscreener.com/solana/8NVFB1unNk9aDtL5hooF8Hahf2rt4GLPWx9ctEadikHg,daily scan
 2026-10-14,shortlist,SI,solana,1030.0,AI,1.82,85.81,2.37,-17.57,14.15,rugcheck,https://dexscreener.com/solana/7Nj7mBE7iVmjvnBHNvjgaz6G3ZktTHFNbf7aQDfZ7iNR,daily scan
+2026-10-14,shortlist,中国人能飞,bsc,1608.1,Classic memes,1.44,85.76,1.13,4.65,23.22,goplus,https://dexscreener.com/bsc/0x8650B97Cc260125119D8c6FBE7cCe69A2676eE49,evening scan
+2026-10-14,pullback,Altai,solana,1626.5,Dog & animal memes,27.24,59.11,0.33,-26.88,3.96,rugcheck,https://dexscreener.com/solana/DMEUT8UV5JX8G7jB7TP9XyfBUrP5z7p6VPLSE2WbbRHt,evening scan
 2026-10-14,pullback,EAXO,robinhood,1007.3,Unclassified,40.48,45.8,0.0,,1.03,goplus,https://dexscreener.com/robinhood/0x77a2f375a10b017436e34bd523ca2b3827459f425190d6c7f36da126a1b796fb,daily scan
 2026-10-14,pullback,GIGATENEV,robinhood,755.5,Classic memes,554.91,52.63,0.56,-24.96,4.36,explorer,https://dexscreener.com/robinhood/0xe96c99be1ffcc204714ebce32870ab12b8b362308fa50b9352c03b2486a5d448,daily scan
+2026-10-14,pullback,SEALS,solana,918.0,Unclassified,57.42,66.66,0.44,29.81,1.12,rugcheck,https://dexscreener.com/solana/HvYfFr8nm6bn9V93TDDMgqWwS2D2LsMn1Y3rDCToqeAB,evening scan
 2026-10-14,pullback,SI276,solana,862.1,Unclassified,6.35,59.66,1.78,-7.91,7.29,rugcheck,https://dexscreener.com/solana/12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG,daily scan
 2026-10-14,igniting,GME,robinhood,1182.9,Classic memes,,,3.68,59.09,39.94,explorer,https://dexscreener.com/robinhood/0x24c65014991e23383da21f9081f99c6e4bc128bbd4075c1b7d67a7e44efa4f2e,daily scan
 2026-10-14,igniting,Pumpoween,solana,977.7,Classic memes,1.43,33.54,1.74,5.52,39.27,rugcheck,https://dexscreener.com/solana/8NVFB1unNk9aDtL5hooF8Hahf2rt4GLPWx9ctEadikHg,daily scan
+2026-10-14,momentum,BIBI,bsc,1408.6,AI,79.61,33.87,1.81,47.77,2.5,goplus,https://dexscreener.com/bsc/0xeD76AF88Fd8C74bd287468348600c9643eFb7dcF,evening scan
+2026-10-14,momentum,DOPE,solana,1922.2,Dog & animal memes,39.05,33.74,0.61,-16.48,2.97,rugcheck,https://dexscreener.com/solana/6iep3EgqksbZwgzMBCyAJtiVtVYkCgL9BnPBEwLR8AGQ,evening scan
+2026-10-14,momentum,IGNITION,robinhood,635.0,Unclassified,11.68,41.11,0.5,6.43,1.09,explorer,https://dexscreener.com/robinhood/0x5e4ae95442e07e3c996890515d32c50cb5c975cc001df477ec53da5d3fd28e48,evening scan
