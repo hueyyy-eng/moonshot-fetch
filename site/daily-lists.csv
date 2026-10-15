@@ -85,3 +85,12 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-10-14,momentum,BIBI,bsc,1408.6,AI,79.61,33.87,1.81,47.77,2.5,goplus,https://dexscreener.com/bsc/0xeD76AF88Fd8C74bd287468348600c9643eFb7dcF,evening scan
 2026-10-14,momentum,DOPE,solana,1922.2,Dog & animal memes,39.05,33.74,0.61,-16.48,2.97,rugcheck,https://dexscreener.com/solana/6iep3EgqksbZwgzMBCyAJtiVtVYkCgL9BnPBEwLR8AGQ,evening scan
 2026-10-14,momentum,IGNITION,robinhood,635.0,Unclassified,11.68,41.11,0.5,6.43,1.09,explorer,https://dexscreener.com/robinhood/0x5e4ae95442e07e3c996890515d32c50cb5c975cc001df477ec53da5d3fd28e48,evening scan
+2026-10-15,shortlist,Agency,solana,1523.9,RWA,1.39,95.6,1.74,-4.23,13.14,rugcheck,https://dexscreener.com/solana/CyJwKnLiiY4fmiwqMCSWFSHxo7T9Ubshgs2uRAuJCrk5,daily scan
+2026-10-15,shortlist,BABA,robinhood,1458.6,Tokenised equities,,,0.33,-0.83,0.48,explorer,https://dexscreener.com/robinhood/0xfe709115a71c7f9c007f2ac9cb932071ff3b3117865122134e2c1bd96719734c,daily scan
+2026-10-15,shortlist,GOMO,solana,587.8,Classic memes,1.36,79.59,0.74,-8.63,10.18,rugcheck,https://dexscreener.com/solana/5a7QurJLARt146JajJYPe5nh6vLyFpN2QrHUSLqbsCZy,daily scan
+2026-10-15,pullback,GIGATENEV,robinhood,796.6,Classic memes,579.97,50.49,0.91,17.07,5.35,explorer,https://dexscreener.com/robinhood/0xe96c99be1ffcc204714ebce32870ab12b8b362308fa50b9352c03b2486a5d448,daily scan
+2026-10-15,pullback,SI276,solana,1253.6,Unclassified,3.12,50.04,0.89,20.01,8.28,rugcheck,https://dexscreener.com/solana/12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG,daily scan
+2026-10-15,igniting,ALLOX,solana,1072.1,Unclassified,,,4.0,55.21,0.08,rugcheck,https://dexscreener.com/solana/8cUHbh9vdDmLSWoLe5cqsBb7u3kaDKVWBaeyhmZGN9KR,daily scan
+2026-10-15,igniting,PULT,solana,1043.6,Unclassified,,,4.0,41.5,0.08,rugcheck,https://dexscreener.com/solana/DCpcRwtyq2WzZNuJdCSS8SQjAyk1r5t4QxDz3Kahqk5W,daily scan
+2026-10-15,igniting,RSGP,solana,1086.9,Unclassified,,,4.0,38.44,0.08,rugcheck,https://dexscreener.com/solana/9C25APpJyrRf3zHKwrgZcwPNDP85AVJQeT2HRqwREY5v,daily scan
+2026-10-15,momentum,binancians,bsc,825.3,Unclassified,63.1,71.56,0.91,120.0,1.46,goplus,https://dexscreener.com/bsc/0x19C389a3bBbbC4676EfCA4244B580b5933a966CC,daily scan
