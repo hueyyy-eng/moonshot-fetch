@@ -94,3 +94,5 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-10-15,igniting,PULT,solana,1043.6,Unclassified,,,4.0,41.5,0.08,rugcheck,https://dexscreener.com/solana/DCpcRwtyq2WzZNuJdCSS8SQjAyk1r5t4QxDz3Kahqk5W,daily scan
 2026-10-15,igniting,RSGP,solana,1086.9,Unclassified,,,4.0,38.44,0.08,rugcheck,https://dexscreener.com/solana/9C25APpJyrRf3zHKwrgZcwPNDP85AVJQeT2HRqwREY5v,daily scan
 2026-10-15,momentum,binancians,bsc,825.3,Unclassified,63.1,71.56,0.91,120.0,1.46,goplus,https://dexscreener.com/bsc/0x19C389a3bBbbC4676EfCA4244B580b5933a966CC,daily scan
+2026-10-15,momentum,LLL,robinhood,548.3,Unclassified,21.91,32.96,0.0,,1.0,explorer,https://dexscreener.com/robinhood/0x697052f1b1df9354b884a78d37a8db9df82b86fd677ee97fc6fab4f20bd87442,evening scan
+2026-10-15,momentum,SAINDRA,solana,651.4,Unclassified,18.22,24.04,0.68,16.53,1.28,rugcheck,https://dexscreener.com/solana/9hjKmterUjufRaYUrSTEHEYJZg83LQ52behux54LSeF6,evening scan
