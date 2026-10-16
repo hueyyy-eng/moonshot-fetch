@@ -1,6 +1,6 @@
 {
- "now": "2026-10-15 21:40 SGT",
- "cand_at": "2026-10-15 21:40 SGT",
+ "now": "2026-10-16 11:24 SGT",
+ "cand_at": "2026-10-16 11:24 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -22,140 +22,114 @@
  },
  "chains": {
   "hot": [
-   "arc",
-   "sui",
-   "provenance"
+   "solana",
+   "base",
+   "plasma",
+   "xdai"
   ],
-  "new": [],
+  "new": [
+   "base",
+   "plasma",
+   "solana",
+   "xdai"
+  ],
   "dropped": [
-   "chainflip"
+   "arc",
+   "provenance",
+   "sui"
   ],
   "hottest": {
-   "s": "pulse",
-   "n": "Pulse",
-   "dr": 5.71,
-   "dr30": 9.56
+   "s": "xlayer",
+   "n": "X Layer",
+   "dr": 2.63,
+   "dr30": 2.55
   }
  },
  "tokens": {
-  "total": 90,
-  "band_m": 48,
+  "total": 101,
+  "band_m": 45,
   "candle_or_wallet_coverage_pct": 100,
-  "nodata": 7
+  "nodata": 3
  },
  "shortlist": [
   {
-   "sym": "GOMO",
+   "sym": "SI276",
    "c": "solana",
-   "mc": 537.0,
-   "nar": "Classic memes",
-   "run": 1.36,
-   "retr": 79.59,
-   "acc": 0.48,
-   "c6": 8.89,
-   "age": 10.63,
+   "mc": 1103.2,
+   "nar": "Unclassified",
+   "run": 2.6,
+   "retr": 56.48,
+   "acc": 1.25,
+   "c6": 2.31,
+   "age": 9.28,
    "sec": "rugcheck",
-   "pa": "5a7QurJLARt146JajJYPe5nh6vLyFpN2QrHUSLqbsCZy"
-  },
-  {
-   "sym": "BABA",
-   "c": "robinhood",
-   "mc": 1449.8,
-   "nar": "Tokenised equities",
-   "run": null,
-   "retr": null,
-   "acc": 0.12,
-   "c6": 1.05,
-   "age": 0.93,
-   "sec": "explorer",
-   "pa": "0xfe709115a71c7f9c007f2ac9cb932071ff3b3117865122134e2c1bd96719734c"
+   "pa": "12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG"
   }
  ],
- "shortlist_new": [],
+ "shortlist_new": [
+  "SI276"
+ ],
  "shortlist_dropped": [
-  "Agency"
+  "BABA",
+  "GOMO"
  ],
  "pullback": [
   {
-   "sym": "SI276",
-   "c": "solana",
-   "mc": 1118.7,
-   "nar": "Unclassified",
-   "run": 3.12,
-   "retr": 50.04,
-   "acc": 0.85,
-   "c6": -6.22,
-   "age": 8.73,
-   "sec": "rugcheck",
-   "pa": "12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG"
-  },
-  {
    "sym": "GIGATENEV",
    "c": "robinhood",
-   "mc": 646.7,
+   "mc": 555.8,
    "nar": "Classic memes",
-   "run": 579.97,
-   "retr": 50.49,
-   "acc": 0.81,
-   "c6": 11.68,
-   "age": 5.79,
+   "run": 395.08,
+   "retr": 66.28,
+   "acc": 0.91,
+   "c6": -4.54,
+   "age": 6.35,
    "sec": "explorer",
    "pa": "0xe96c99be1ffcc204714ebce32870ab12b8b362308fa50b9352c03b2486a5d448"
   }
  ],
  "pullback_new": [],
- "pullback_dropped": [],
+ "pullback_dropped": [
+  "SI276"
+ ],
  "igniting": [],
  "momentum": [
   {
-   "sym": "binancians",
-   "c": "bsc",
-   "mc": 713.0,
-   "nar": "Unclassified",
-   "run": 63.1,
-   "retr": 71.56,
-   "acc": 0.44,
-   "c6": -10.23,
-   "age": 1.9,
-   "sec": "goplus",
-   "pa": "0x19C389a3bBbbC4676EfCA4244B580b5933a966CC"
-  },
-  {
-   "sym": "SAINDRA",
-   "c": "solana",
-   "mc": 651.4,
-   "nar": "Unclassified",
-   "run": 18.22,
-   "retr": 24.04,
-   "acc": 0.68,
-   "c6": 16.53,
-   "age": 1.28,
-   "sec": "rugcheck",
-   "pa": "9hjKmterUjufRaYUrSTEHEYJZg83LQ52behux54LSeF6"
-  },
-  {
-   "sym": "LLL",
+   "sym": "MEKIBA",
    "c": "robinhood",
-   "mc": 548.3,
+   "mc": 1138.8,
    "nar": "Unclassified",
-   "run": 21.91,
-   "retr": 32.96,
+   "run": 47.17,
+   "retr": 16.41,
    "acc": 0.0,
    "c6": null,
-   "age": 1.0,
+   "age": 1.03,
    "sec": "explorer",
-   "pa": "0x697052f1b1df9354b884a78d37a8db9df82b86fd677ee97fc6fab4f20bd87442"
+   "pa": "0x81cfec237c216048a1dccd5eb030ffdd3cd260aa7a8612573252f8f9bd6f8c8f"
   }
  ],
  "momentum_new": [
-  "LLL",
-  "SAINDRA"
+  "MEKIBA"
  ],
- "momentum_dropped": [],
- "honeypots_new": [],
+ "momentum_dropped": [
+  "LLL",
+  "SAINDRA",
+  "binancians"
+ ],
+ "honeypots_new": [
+  "AGT",
+  "STBL",
+  "AKE",
+  "LBTC"
+ ],
  "track": {
-  "logged": 54,
-  "new_rows": [],
+  "logged": 55,
+  "new_rows": [
+   [
+    "SI276",
+    "S"
+   ]
+  ],
   "best_x": 14.93,
   "median_peak_x": 1.0,
   "hit_2x_today": [],
@@ -167,36 +141,40 @@
   "new_rows": [],
   "hit_2x_today": [],
   "to_zero_today": [
+   "PULT (solana)",
+   "RSGP (solana)",
    "ALLOX (solana)"
   ]
  },
  "momentum_track": {
-  "logged": 10,
+  "logged": 11,
   "new_rows": [
-   "SAINDRA",
-   "LLL"
+   "MEKIBA"
   ],
   "hit_2x_today": [],
-  "to_zero_today": []
+  "to_zero_today": [
+   "LLL (robinhood)"
+  ]
  },
  "control": {
-  "rows": 488,
+  "rows": 495,
   "median_peak_x": 1.0,
   "hit_2x_today": [
-   "astro (robinhood)",
-   "DOPE (solana)",
-   "STREAM (solana)"
+   "GP (solana)",
+   "NEARLY (near)",
+   "FTR (solana)"
   ],
   "to_zero_today": [
-   "Flylife (bsc)",
-   "PAIDBOT (solana)",
-   "V4 (robinhood)",
-   "ORBIO (robinhood)",
+   "MCU (robinhood)",
+   "CATE (bsc)",
+   "VRAX (robinhood)",
+   "BABAB (bsc)",
+   "RSGP (solana)",
    "ALLOX (solana)",
-   "WBROO (robinhood)",
-   "DKIT (robinhood)"
+   "ODDSINU (robinhood)",
+   "PULT (solana)"
   ]
  },
  "changed": true,
- "alert": false
+ "alert": true
 }
