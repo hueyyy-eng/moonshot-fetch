@@ -1,6 +1,6 @@
 {
- "now": "2026-10-16 11:24 SGT",
- "cand_at": "2026-10-16 11:24 SGT",
+ "now": "2026-10-16 22:03 SGT",
+ "cand_at": "2026-10-16 22:03 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -27,17 +27,8 @@
    "plasma",
    "xdai"
   ],
-  "new": [
-   "base",
-   "plasma",
-   "solana",
-   "xdai"
-  ],
-  "dropped": [
-   "arc",
-   "provenance",
-   "sui"
-  ],
+  "new": [],
+  "dropped": [],
   "hottest": {
    "s": "xlayer",
    "n": "X Layer",
@@ -46,87 +37,102 @@
   }
  },
  "tokens": {
-  "total": 101,
-  "band_m": 45,
+  "total": 98,
+  "band_m": 41,
   "candle_or_wallet_coverage_pct": 100,
-  "nodata": 3
+  "nodata": 1
  },
  "shortlist": [
   {
+   "sym": "PsyopAnime",
+   "c": "solana",
+   "mc": 766.9,
+   "nar": "AI",
+   "run": 1.11,
+   "retr": 46.25,
+   "acc": 1.08,
+   "c6": -9.01,
+   "age": 279.49,
+   "sec": "rugcheck",
+   "pa": "FpyosQzp5ijfrxqqBVNm67rfam7VsbVNAm7PUf8Yvt1c"
+  },
+  {
    "sym": "SI276",
    "c": "solana",
-   "mc": 1103.2,
+   "mc": 1083.3,
    "nar": "Unclassified",
    "run": 2.6,
    "retr": 56.48,
-   "acc": 1.25,
-   "c6": 2.31,
-   "age": 9.28,
+   "acc": 0.45,
+   "c6": -15.31,
+   "age": 9.73,
    "sec": "rugcheck",
    "pa": "12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG"
   }
  ],
  "shortlist_new": [
-  "SI276"
+  "PsyopAnime"
  ],
- "shortlist_dropped": [
-  "BABA",
-  "GOMO"
- ],
+ "shortlist_dropped": [],
  "pullback": [
   {
    "sym": "GIGATENEV",
    "c": "robinhood",
-   "mc": 555.8,
+   "mc": 734.4,
    "nar": "Classic memes",
    "run": 395.08,
    "retr": 66.28,
-   "acc": 0.91,
-   "c6": -4.54,
-   "age": 6.35,
+   "acc": 0.96,
+   "c6": 24.47,
+   "age": 6.79,
    "sec": "explorer",
    "pa": "0xe96c99be1ffcc204714ebce32870ab12b8b362308fa50b9352c03b2486a5d448"
   }
  ],
  "pullback_new": [],
- "pullback_dropped": [
-  "SI276"
+ "pullback_dropped": [],
+ "igniting": [
+  {
+   "sym": "PULT",
+   "c": "solana",
+   "mc": 1310.4,
+   "nar": "Unclassified",
+   "run": null,
+   "retr": null,
+   "acc": 4.0,
+   "c6": 73.68,
+   "age": 0.15,
+   "sec": "rugcheck",
+   "pa": "7BmRsyd5zCfN9rVpdyyApP2joyn8Qqg1nXMh1e6oY5vV"
+  }
  ],
- "igniting": [],
  "momentum": [
   {
-   "sym": "MEKIBA",
+   "sym": "HGLHG",
    "c": "robinhood",
-   "mc": 1138.8,
+   "mc": 1730.6,
    "nar": "Unclassified",
-   "run": 47.17,
-   "retr": 16.41,
+   "run": 88.02,
+   "retr": 19.33,
    "acc": 0.0,
    "c6": null,
-   "age": 1.03,
+   "age": 1.02,
    "sec": "explorer",
-   "pa": "0x81cfec237c216048a1dccd5eb030ffdd3cd260aa7a8612573252f8f9bd6f8c8f"
+   "pa": "0x5e3b0d14e416dd5910a4d4177da582bc8e17854fc11ff8bb996bf63e92c0875d"
   }
  ],
  "momentum_new": [
-  "MEKIBA"
+  "HGLHG"
  ],
  "momentum_dropped": [
-  "LLL",
-  "SAINDRA",
-  "binancians"
+  "MEKIBA"
  ],
- "honeypots_new": [
-  "AGT",
-  "STBL",
-  "AKE",
-  "LBTC"
- ],
+ "honeypots_new": [],
  "track": {
-  "logged": 55,
+  "logged": 56,
   "new_rows": [
    [
-    "SI276",
+    "PsyopAnime",
     "S"
    ]
   ],
@@ -137,42 +143,38 @@
   "repriced": true
  },
  "igniting_track": {
-  "logged": 20,
-  "new_rows": [],
+  "logged": 21,
+  "new_rows": [
+   "PULT"
+  ],
   "hit_2x_today": [],
   "to_zero_today": [
-   "PULT (solana)",
-   "RSGP (solana)",
-   "ALLOX (solana)"
+   "RSGP (solana)"
   ]
  },
  "momentum_track": {
-  "logged": 11,
+  "logged": 12,
   "new_rows": [
-   "MEKIBA"
+   "HGLHG"
   ],
   "hit_2x_today": [],
   "to_zero_today": [
-   "LLL (robinhood)"
+   "MEKIBA (robinhood)"
   ]
  },
  "control": {
-  "rows": 495,
+  "rows": 497,
   "median_peak_x": 1.0,
   "hit_2x_today": [
-   "GP (solana)",
-   "NEARLY (near)",
-   "FTR (solana)"
+   "astro (robinhood)",
+   "TORCH (robinhood)",
+   "1 (solana)",
+   "FTR (ethereum)"
   ],
   "to_zero_today": [
-   "MCU (robinhood)",
-   "CATE (bsc)",
-   "VRAX (robinhood)",
-   "BABAB (bsc)",
+   "FOMOBALL (robinhood)",
    "RSGP (solana)",
-   "ALLOX (solana)",
-   "ODDSINU (robinhood)",
-   "PULT (solana)"
+   "GMOTH (robinhood)"
   ]
  },
  "changed": true,
