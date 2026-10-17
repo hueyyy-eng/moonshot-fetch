@@ -102,7 +102,11 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-10-16,igniting,PULT,solana,1310.4,Unclassified,,,4.0,73.68,0.15,rugcheck,https://dexscreener.com/solana/7BmRsyd5zCfN9rVpdyyApP2joyn8Qqg1nXMh1e6oY5vV,evening scan
 2026-10-16,momentum,HGLHG,robinhood,1730.6,Unclassified,88.02,19.33,0.0,,1.02,explorer,https://dexscreener.com/robinhood/0x5e3b0d14e416dd5910a4d4177da582bc8e17854fc11ff8bb996bf63e92c0875d,evening scan
 2026-10-16,momentum,MEKIBA,robinhood,1138.8,Unclassified,47.17,16.41,0.0,,1.03,explorer,https://dexscreener.com/robinhood/0x81cfec237c216048a1dccd5eb030ffdd3cd260aa7a8612573252f8f9bd6f8c8f,daily scan
+2026-10-17,shortlist,HARMONIC,robinhood,1243.5,AI,1.08,80.78,1.06,-15.64,49.31,explorer,https://dexscreener.com/robinhood/0x77ea11bbfb8f1259c702cb0ebc2105b7c007db89cf30c2f1a8776886a4467c07,evening scan
 2026-10-17,shortlist,PsyopAnime,solana,573.2,AI,1.71,58.38,0.11,-7.8,280.04,rugcheck,https://dexscreener.com/solana/FpyosQzp5ijfrxqqBVNm67rfam7VsbVNAm7PUf8Yvt1c,daily scan
 2026-10-17,shortlist,SI276,solana,845.5,Unclassified,2.14,64.18,0.51,-1.29,10.28,rugcheck,https://dexscreener.com/solana/12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG,daily scan
 2026-10-17,pullback,1,solana,1196.9,KOL / personality,12.94,65.2,0.5,-22.62,1.24,rugcheck,https://dexscreener.com/solana/AQN7UkKYSnaZns61dVW2Q6hQmm7WiFSAyjBon6FVwhGf,daily scan
 2026-10-17,igniting,PULT,solana,1454.1,Unclassified,,,4.0,98.5,0.22,rugcheck,https://dexscreener.com/solana/7keTBuD7Q9HczsvxRhvQ7uXT5biVLsRgPDSfqEkDFjqm,daily scan
+2026-10-17,igniting,RSGP,solana,1174.6,Unclassified,,,4.0,49.04,0.09,rugcheck,https://dexscreener.com/solana/8dvFN9YTbWW3Lo6zV9Uxs6Mzkgg6fyuA6vAYDN94twvN,evening scan
+2026-10-17,momentum,OPOSS,robinhood,1148.7,AI,27.92,70.29,0.0,,1.01,explorer,https://dexscreener.com/robinhood/0xcdc8430fc758ff94d153eb304797f8c373337992d6617ab2d02f1d0ef205b0da,evening scan
+2026-10-17,momentum,蝴蝶人生,bsc,506.8,Unclassified,39.06,35.69,0.86,47.33,1.34,goplus,https://dexscreener.com/bsc/0xA1c7Fab4E28fc8244fc57e7863221FD38F9F673c,evening scan
