@@ -1,6 +1,6 @@
 {
- "now": "2026-10-16 22:03 SGT",
- "cand_at": "2026-10-16 22:03 SGT",
+ "now": "2026-10-17 10:45 SGT",
+ "cand_at": "2026-10-17 10:45 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -22,23 +22,33 @@
  },
  "chains": {
   "hot": [
-   "solana",
+   "native_core",
+   "chainflip",
+   "provenance",
+   "eos"
+  ],
+  "new": [
+   "chainflip",
+   "eos",
+   "native_core",
+   "provenance"
+  ],
+  "dropped": [
    "base",
    "plasma",
+   "solana",
    "xdai"
   ],
-  "new": [],
-  "dropped": [],
   "hottest": {
-   "s": "xlayer",
-   "n": "X Layer",
-   "dr": 2.63,
-   "dr30": 2.55
+   "s": "eos",
+   "n": "Eos",
+   "dr": 3.08,
+   "dr30": 3.39
   }
  },
  "tokens": {
-  "total": 98,
-  "band_m": 41,
+  "total": 63,
+  "band_m": 33,
   "candle_or_wallet_coverage_pct": 100,
   "nodata": 1
  },
@@ -46,94 +56,82 @@
   {
    "sym": "PsyopAnime",
    "c": "solana",
-   "mc": 766.9,
+   "mc": 573.2,
    "nar": "AI",
-   "run": 1.11,
-   "retr": 46.25,
-   "acc": 1.08,
-   "c6": -9.01,
-   "age": 279.49,
+   "run": 1.71,
+   "retr": 58.38,
+   "acc": 0.11,
+   "c6": -7.8,
+   "age": 280.04,
    "sec": "rugcheck",
    "pa": "FpyosQzp5ijfrxqqBVNm67rfam7VsbVNAm7PUf8Yvt1c"
   },
   {
    "sym": "SI276",
    "c": "solana",
-   "mc": 1083.3,
+   "mc": 845.5,
    "nar": "Unclassified",
-   "run": 2.6,
-   "retr": 56.48,
-   "acc": 0.45,
-   "c6": -15.31,
-   "age": 9.73,
+   "run": 2.14,
+   "retr": 64.18,
+   "acc": 0.51,
+   "c6": -1.29,
+   "age": 10.28,
    "sec": "rugcheck",
    "pa": "12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG"
   }
  ],
- "shortlist_new": [
-  "PsyopAnime"
- ],
+ "shortlist_new": [],
  "shortlist_dropped": [],
  "pullback": [
   {
-   "sym": "GIGATENEV",
-   "c": "robinhood",
-   "mc": 734.4,
-   "nar": "Classic memes",
-   "run": 395.08,
-   "retr": 66.28,
-   "acc": 0.96,
-   "c6": 24.47,
-   "age": 6.79,
-   "sec": "explorer",
-   "pa": "0xe96c99be1ffcc204714ebce32870ab12b8b362308fa50b9352c03b2486a5d448"
+   "sym": "1",
+   "c": "solana",
+   "mc": 1196.9,
+   "nar": "KOL / personality",
+   "run": 12.94,
+   "retr": 65.2,
+   "acc": 0.5,
+   "c6": -22.62,
+   "age": 1.24,
+   "sec": "rugcheck",
+   "pa": "AQN7UkKYSnaZns61dVW2Q6hQmm7WiFSAyjBon6FVwhGf"
   }
  ],
- "pullback_new": [],
- "pullback_dropped": [],
+ "pullback_new": [
+  "1"
+ ],
+ "pullback_dropped": [
+  "GIGATENEV"
+ ],
  "igniting": [
   {
    "sym": "PULT",
    "c": "solana",
-   "mc": 1310.4,
+   "mc": 1454.1,
    "nar": "Unclassified",
    "run": null,
    "retr": null,
    "acc": 4.0,
-   "c6": 73.68,
-   "age": 0.15,
+   "c6": 98.5,
+   "age": 0.22,
    "sec": "rugcheck",
-   "pa": "7BmRsyd5zCfN9rVpdyyApP2joyn8Qqg1nXMh1e6oY5vV"
+   "pa": "7keTBuD7Q9HczsvxRhvQ7uXT5biVLsRgPDSfqEkDFjqm"
   }
  ],
- "momentum": [
-  {
-   "sym": "HGLHG",
-   "c": "robinhood",
-   "mc": 1730.6,
-   "nar": "Unclassified",
-   "run": 88.02,
-   "retr": 19.33,
-   "acc": 0.0,
-   "c6": null,
-   "age": 1.02,
-   "sec": "explorer",
-   "pa": "0x5e3b0d14e416dd5910a4d4177da582bc8e17854fc11ff8bb996bf63e92c0875d"
-  }
- ],
- "momentum_new": [
+ "momentum": [],
+ "momentum_new": [],
+ "momentum_dropped": [
   "HGLHG"
  ],
- "momentum_dropped": [
-  "MEKIBA"
+ "honeypots_new": [
+  "Q"
  ],
- "honeypots_new": [],
  "track": {
-  "logged": 56,
+  "logged": 57,
   "new_rows": [
    [
-    "PsyopAnime",
-    "S"
+    "1",
+    "P"
    ]
   ],
   "best_x": 14.93,
@@ -143,38 +141,36 @@
   "repriced": true
  },
  "igniting_track": {
-  "logged": 21,
+  "logged": 22,
   "new_rows": [
    "PULT"
   ],
   "hit_2x_today": [],
-  "to_zero_today": [
-   "RSGP (solana)"
-  ]
+  "to_zero_today": []
  },
  "momentum_track": {
   "logged": 12,
-  "new_rows": [
-   "HGLHG"
-  ],
+  "new_rows": [],
   "hit_2x_today": [],
   "to_zero_today": [
-   "MEKIBA (robinhood)"
+   "binancians (bsc)",
+   "HGLHG (robinhood)"
   ]
  },
  "control": {
-  "rows": 497,
+  "rows": 507,
   "median_peak_x": 1.0,
-  "hit_2x_today": [
-   "astro (robinhood)",
-   "TORCH (robinhood)",
-   "1 (solana)",
-   "FTR (ethereum)"
-  ],
+  "hit_2x_today": [],
   "to_zero_today": [
-   "FOMOBALL (robinhood)",
-   "RSGP (solana)",
-   "GMOTH (robinhood)"
+   "DICKBUTT (bsc)",
+   "PAIDBOT (solana)",
+   "BAI (bsc)",
+   "中国人能飞 (bsc)",
+   "GBT (bsc)",
+   "LLL (robinhood)",
+   "binancians (bsc)",
+   "龙虾 (bsc)",
+   "HGLHG (robinhood)"
   ]
  },
  "changed": true,
