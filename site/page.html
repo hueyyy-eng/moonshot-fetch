@@ -2234,7 +2234,8 @@ function outcomeTiles(o, tile){
     tile("Reached 5×", o.b5, "peaked 5–10× at a daily scan"),
     tile("Reached 10×", o.b10, "peaked 10× or more"),
     tile("Down 50%", o.d50, "never hit 2×; now 50–99% below listed price"),
-    tile("Down 100%", o.d100, "never hit 2×; worth zero today — rugged or delisted")
+    tile("Down 100%", o.d100, "never hit 2×; worth zero today — rugged or delisted"),
+    tile("In between −49% to +99%", o.mid, "no 2× yet, not down 50% — each token counted once")
   ];
 }
 const fmtChg = v => v==null ? "—" : (v>0?"+":v<0?"−":"") + Math.round(Math.abs(v)).toLocaleString() + "%";

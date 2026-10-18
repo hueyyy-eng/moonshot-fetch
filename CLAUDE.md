@@ -51,7 +51,8 @@ If a change would break one of them, stop and ask first.
 - **Keep** the "reached 2x / 5x / 10x" counts in the track record and in the alerts.
 - Keep the **Price tracking** tab.
 - Keep the **Momentum** list, including **Robinhood Chain**.
-- Track record tiles show **only these five** counts: **2x, 5x, 10x, Down 50%, Down 100%**.
+- Track record and Price tracking show these six outcome tiles: **2x, 5x, 10x, Down 50%, Down 100%**
+  and **"In between −49% to +99%"**. Keep all six.
 
 ## To-do: where the code does not match these rules yet
 
@@ -63,8 +64,6 @@ Recorded 18 Oct 2026. Not fixed yet — only change these when the owner asks.
       Mixed and Hard mode. It should be empty / 0% unless the verdict is Easy mode.
 - [x] **Gaming tagged as Utilities.** `scan/auto_nar.py` maps "gaming" and "gamefi" to
       "Utilities". Give them a new "Gaming" label instead. *(Done 18 Oct 2026.)*
-- [x] **Sixth track record tile.** The page has an extra "In between −49% to +99%" tile.
-      Remove it so only the five tiles remain. *(Done 18 Oct 2026.)*
 - [x] **Out-of-date schedule notes.** `README.md` says 10:45 SGT and a comment in
       `fetch/main.py` says 21:30 SGT. The real times are 9:30am and 8:07pm (the workflow file is correct). *(Done 18 Oct 2026.)*
 - [ ] **Retag existing gaming tokens.** Tokens tagged "Utilities" before 18 Oct 2026 keep that
