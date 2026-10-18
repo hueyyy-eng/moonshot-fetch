@@ -43,6 +43,7 @@ If a change would break one of them, stop and ask first.
 - **"Utilities"** = tools, DeFi, trading infrastructure, data, and general infrastructure. Not launchpads.
 - **"Launchpad / infra"** = launchpads only.
 - **"Gaming"** = gaming / GameFi tokens get their own label, not Utilities.
+  Detected from GeckoTerminal's category tags only — no keyword matching on names or descriptions.
 
 ## Tracking
 
@@ -60,12 +61,16 @@ Recorded 18 Oct 2026. Not fixed yet — only change these when the owner asks.
       but no allocation %. Add pot % that sums to 100, biggest share to A.
 - [ ] **Pot C shows in every mode.** It is labelled "Easy mode only" but still appears in
       Mixed and Hard mode. It should be empty / 0% unless the verdict is Easy mode.
-- [ ] **Gaming tagged as Utilities.** `scan/auto_nar.py` maps "gaming" and "gamefi" to
-      "Utilities". Give them a new "Gaming" label instead.
+- [x] **Gaming tagged as Utilities.** `scan/auto_nar.py` maps "gaming" and "gamefi" to
+      "Utilities". Give them a new "Gaming" label instead. *(Done 18 Oct 2026.)*
 - [ ] **Sixth track record tile.** The page has an extra "In between −49% to +99%" tile.
       Remove it so only the five tiles remain.
-- [ ] **Out-of-date schedule notes.** `README.md` says 10:45 SGT and a comment in
-      `fetch/main.py` says 21:30 SGT. The real times are 9:30am and 8:07pm (the workflow file is correct).
+- [x] **Out-of-date schedule notes.** `README.md` says 10:45 SGT and a comment in
+      `fetch/main.py` says 21:30 SGT. The real times are 9:30am and 8:07pm (the workflow file is correct). *(Done 18 Oct 2026.)*
+- [ ] **Retag existing gaming tokens.** Tokens tagged "Utilities" before 18 Oct 2026 keep that
+      label, because the page builder reuses yesterday's narrative. Retag the gaming ones to "Gaming".
+- [ ] **Offline test fails after 3pm SGT.** `tests/run_offline.py` looks for `snapshots/<day>/`,
+      but runs after 3pm SGT save to `snapshots/<day>-pm/`. Make the test look in the right folder.
 
 ## Working in this repo
 

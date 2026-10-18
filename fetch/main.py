@@ -60,7 +60,7 @@ def main(repo_root: str) -> int:
     http = Http(budget_s=RUN_BUDGET_MIN * 60)
     stamp = now_sgt_str()
     day = now_utc().astimezone(SGT).strftime("%Y-%m-%d")
-    # the 21:30 SGT evening run (added 13 Oct 2026) saves to snapshots/<day>-pm/ so the morning snapshot is kept;
+    # the 8:07pm SGT evening run (added 13 Oct 2026) saves to snapshots/<day>-pm/ so the morning snapshot is kept;
     # "<day>-pm" sorts between <day> and the next day, so every date comparison downstream still works
     snap_dir = day if now_utc().astimezone(SGT).hour < 15 else day + "-pm"
 

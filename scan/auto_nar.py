@@ -96,9 +96,9 @@ CATEGORY_MAP: list[tuple[str, str]] = [
     ("real world asset", "RWA"), ("real-world-asset", "RWA"), ("rwa", "RWA"), ("prediction market", "RWA"),
     ("dog", "Dog & animal memes"), ("cat-themed", "Dog & animal memes"), ("cat themed", "Dog & animal memes"),
     ("frog", "Dog & animal memes"), ("animal", "Dog & animal memes"),
+    ("gaming", "Gaming"), ("gamefi", "Gaming"),      # ahead of Utilities, so a "Gaming | Infrastructure" token reads Gaming
     ("decentralized exchange", "Utilities"), ("dex", "Utilities"), ("lending", "Utilities"), ("yield", "Utilities"),
     ("derivatives", "Utilities"), ("perpetual", "Utilities"), ("oracle", "Utilities"), ("infrastructure", "Utilities"),
-    ("gaming", "Utilities"), ("gamefi", "Utilities"),
     ("meme", "Classic memes"),
 ]
 

@@ -1,8 +1,8 @@
 # moonshot-fetch
 
-Daily data collector for Wai Keong's **Moonshot Scanner** dashboard. Runs on GitHub Actions at
-**10:45 SGT** (02:45 UTC) with no laptop involved, pulls every external source the scan needs, and
-commits the result to this repository. The cloud scan at 11:00 SGT reads `latest/scan.json` from
+Daily data collector for Wai Keong's **Moonshot Scanner** dashboard. Runs on GitHub Actions twice a day,
+at **9:30am SGT** (01:30 UTC) and **8:07pm SGT** (12:07 UTC), with no laptop involved, pulls every external source the scan needs, and
+commits the result to this repository. The cloud scan at 11:30 SGT reads `latest/scan.json` from
 `raw.githubusercontent.com`, applies its own judgement (narrative tags, track-record advancement,
 carry-forward decisions) and republishes the dashboard.
 
@@ -25,9 +25,9 @@ without one.
 ## Layout
 
 ```
-.github/workflows/daily.yml   cron 02:45 UTC + manual "Run workflow" button
+.github/workflows/daily.yml   cron 01:30 + 12:07 UTC (9:30am + 8:07pm SGT) + manual "Run workflow" button
 fetch/                        the job (python -m fetch.main <repo-root>)
-scan/                         the cloud scan's deterministic half (see below) — fetched by the 11:00 task each day
+scan/                         the cloud scan's deterministic half (see below) — fetched by the 11:30 task each day
 seed_pairs.json               track-record pairs at setup time, so re-pricing has history from day one
 snapshots/YYYY-MM-DD/         scan.json + status.json, one folder per SGT day (permanent archive)
 latest/                       copy of the newest day — what the scan reads
@@ -60,7 +60,7 @@ latest/scan.json
   PRICES            {"<chainId>:<pairAddress>": priceUsd}  (0 = DexScreener no longer knows the pair)
 ```
 
-## The cloud scan (11:00 SGT scheduled task, no laptop)
+## The cloud scan (11:30 SGT scheduled task, no laptop)
 
 The scheduled task downloads `latest/scan.json`, `latest/status.json` and the two scripts below from
 `raw.githubusercontent.com`, reads the live dashboard with its Artifact tool, and runs:
