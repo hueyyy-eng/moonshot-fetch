@@ -9,7 +9,8 @@ If a change would break one of them, stop and ask first.
 - Never put an API key, password, token or private URL in any file, commit message,
   code comment, log line or test fixture — not even temporarily.
 - Keys live only in **GitHub → Settings → Secrets and variables → Actions** and reach the
-  code as environment variables (today: `BLOCKSCOUT_API_KEY`, read in `fetch/safety.py`).
+  code as environment variables (today: `BLOCKSCOUT_API_KEY`, read in `fetch/safety.py`, and
+  `GDRIVE_SERVICE_ACCOUNT_JSON` + `GDRIVE_FOLDER_ID`, read in `scan/upload_drive.py`).
 - If a new source needs a key, add it as an Actions secret and pass it in through `env:`
   in `.github/workflows/daily.yml`. Tell the owner the secret's name; never ask them to paste the value into chat.
 
@@ -18,6 +19,22 @@ If a change would break one of them, stop and ask first.
 - Scans run at **9:30am SGT** and **8:07pm SGT** every day
   (cron `30 1 * * *` and `7 12 * * *` in UTC, in `.github/workflows/daily.yml`).
 - Do not change these times without being asked.
+
+## Google Drive copy
+
+- After **every** scan (9:30am, 8:07pm and manual "Run workflow" runs), the last step of
+  `.github/workflows/daily.yml` runs `scan/upload_drive.py`. It copies these six files from `site/` to the
+  owner's Drive folder **"Claude Projects/Moonshot Scanner"**, overwriting the files already there (same names):
+  `track-record.csv`, `price-tracking.csv`, `daily-lists.csv`, `near-miss-log.csv`, `narrative-log.csv`, `holder-log.csv`.
+- It signs in as a Google **service account** (a robot login) that has Editor access to that one folder only.
+  Secrets: `GDRIVE_SERVICE_ACCOUNT_JSON` (the key file) and `GDRIVE_FOLDER_ID`. Never write the folder ID,
+  file IDs or Drive links into the repo or print them in the logs.
+- The robot can only **replace** files, not create them (Google's rule for personal Gmail Drives).
+  If a file is deleted from Drive, the owner uploads one copy by hand once.
+- If any file is not copied, the step **fails the run (red)** so the owner gets GitHub's failure email.
+  The page is already published by then. Keep it that way.
+- The owner's Claude scheduled task also uploads these files today. The owner will remove that step
+  themselves after a few days. Do not edit that scheduled task.
 
 ## Playbook: three pots
 
