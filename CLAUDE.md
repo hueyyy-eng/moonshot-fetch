@@ -63,17 +63,22 @@ Recorded 18 Oct 2026. Not fixed yet — only change these when the owner asks.
       Mixed and Hard mode. It should be empty / 0% unless the verdict is Easy mode.
 - [x] **Gaming tagged as Utilities.** `scan/auto_nar.py` maps "gaming" and "gamefi" to
       "Utilities". Give them a new "Gaming" label instead. *(Done 18 Oct 2026.)*
-- [ ] **Sixth track record tile.** The page has an extra "In between −49% to +99%" tile.
-      Remove it so only the five tiles remain.
+- [x] **Sixth track record tile.** The page has an extra "In between −49% to +99%" tile.
+      Remove it so only the five tiles remain. *(Done 18 Oct 2026.)*
 - [x] **Out-of-date schedule notes.** `README.md` says 10:45 SGT and a comment in
       `fetch/main.py` says 21:30 SGT. The real times are 9:30am and 8:07pm (the workflow file is correct). *(Done 18 Oct 2026.)*
 - [ ] **Retag existing gaming tokens.** Tokens tagged "Utilities" before 18 Oct 2026 keep that
       label, because the page builder reuses yesterday's narrative. Retag the gaming ones to "Gaming".
-- [ ] **Offline test fails after 3pm SGT.** `tests/run_offline.py` looks for `snapshots/<day>/`,
-      but runs after 3pm SGT save to `snapshots/<day>-pm/`. Make the test look in the right folder.
+- [x] **Offline test fails after 3pm SGT.** `tests/run_offline.py` looks for `snapshots/<day>/`,
+      but runs after 3pm SGT save to `snapshots/<day>-pm/`. Make the test look in the right folder. *(Done 18 Oct 2026.)*
 
 ## Working in this repo
 
 - Explain changes to the owner in plain English — they are not a programmer.
 - Do not change code unless the owner asks for it in that session.
-- `snapshots/`, `latest/` and `site/` are written by the bot. Do not hand-edit them.
+- `snapshots/` and `latest/` are written by the bot. Do not hand-edit them.
+- `site/page.html`: the page design (layout, labels, tiles, the code that draws the page) may be
+  edited **only when the owner asks**. Never touch the data section between `/*DATA-START*/` and
+  `/*DATA-END*/` (or `/*PATTERN-START*/` … `/*PATTERN-END*/`) — the bot replaces it every scan.
+- The other files in `site/` (CSVs, `summary.json`, `nar_auto.json`, `pattern-nar.json`) are written
+  by the bot. Do not hand-edit them.
