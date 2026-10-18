@@ -110,3 +110,15 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-10-17,igniting,RSGP,solana,1174.6,Unclassified,,,4.0,49.04,0.09,rugcheck,https://dexscreener.com/solana/8dvFN9YTbWW3Lo6zV9Uxs6Mzkgg6fyuA6vAYDN94twvN,evening scan
 2026-10-17,momentum,OPOSS,robinhood,1148.7,AI,27.92,70.29,0.0,,1.01,explorer,https://dexscreener.com/robinhood/0xcdc8430fc758ff94d153eb304797f8c373337992d6617ab2d02f1d0ef205b0da,evening scan
 2026-10-17,momentum,蝴蝶人生,bsc,506.8,Unclassified,39.06,35.69,0.86,47.33,1.34,goplus,https://dexscreener.com/bsc/0xA1c7Fab4E28fc8244fc57e7863221FD38F9F673c,evening scan
+2026-10-18,shortlist,Gato,solana,645.5,Unclassified,2.75,51.29,2.99,40.22,1.13,rugcheck,https://dexscreener.com/solana/H4wp14QGkt3YextGrQXDqF1c3EPZVMxufgGcUhxSRJN4,daily scan
+2026-10-18,shortlist,HARMONIC,robinhood,1199.6,AI,1.28,84.53,0.51,15.95,49.87,explorer,https://dexscreener.com/robinhood/0x77ea11bbfb8f1259c702cb0ebc2105b7c007db89cf30c2f1a8776886a4467c07,daily scan
+2026-10-18,shortlist,SI276,solana,655.3,Unclassified,1.07,71.37,1.21,-1.88,11.28,rugcheck,https://dexscreener.com/solana/12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG,daily scan
+2026-10-18,shortlist,WORM,robinhood,802.2,AI,1.36,89.72,0.58,-17.58,39.31,explorer,https://dexscreener.com/robinhood/0xf49ee5b66c4e7163026e5d25e6a1f93cff46dca4d3752f712d181d9392c1d567,daily scan
+2026-10-18,pullback,simulator,solana,1497.8,Classic memes,21.5,46.95,0.63,63.41,201.51,rugcheck,https://dexscreener.com/solana/EzJV2yGpbS3VM5qWmgqYQ4GPVi77LdhwgFhAy6u4ts1U,daily scan
+2026-10-18,igniting,ALLOX,solana,1474.8,Unclassified,,,3.76,66.05,0.27,rugcheck,https://dexscreener.com/solana/9sRABaFrHnF5rk9gG5ekzJCR9CYkeCWKV8BPTrsyd4JA,daily scan
+2026-10-18,igniting,FABLES,solana,1410.4,Unclassified,,,3.76,52.06,0.27,rugcheck,https://dexscreener.com/solana/uMviMGzSbeBgo3juhL9MfKwBmnZM2ricRCjaoA5X4UM,daily scan
+2026-10-18,igniting,RSGP,solana,1545.6,Unclassified,,,3.77,59.71,0.26,rugcheck,https://dexscreener.com/solana/7iz4WepXZdBQnWUZvzKVqNSy2gg7uojCVVRNuQLPs6ho,daily scan
+2026-10-18,momentum,EMPIREX,robinhood,1080.5,Unclassified,22.72,23.66,0.28,14.48,1.3,explorer,https://dexscreener.com/robinhood/0x8f9952e593923792ffbcbc882dcf9c1112c2351c780e28f54a53abf0e8501f32,daily scan
+2026-10-18,momentum,FTR,solana,1192.0,Classic memes,20.94,34.71,1.13,7.82,1.33,rugcheck,https://dexscreener.com/solana/8JoQRQ4oAXNuQSTcComuUAAgF3ViJ7e3escwatMncZ3H,daily scan
+2026-10-18,momentum,GLITCH,solana,970.2,Classic memes,62.43,22.93,0.95,28.17,1.44,rugcheck,https://dexscreener.com/solana/Em6RvzGXhd35pZ7CVUjCTPEnv4jAztScaVHaXBXCBcG7,daily scan
+2026-10-18,momentum,OPOSS,robinhood,1148.7,AI,45.6,51.48,0.0,,1.57,explorer,https://dexscreener.com/robinhood/0xcdc8430fc758ff94d153eb304797f8c373337992d6617ab2d02f1d0ef205b0da,daily scan
