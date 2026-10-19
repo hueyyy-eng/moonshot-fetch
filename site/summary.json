@@ -1,6 +1,6 @@
 {
- "now": "2026-10-19 10:49 SGT",
- "cand_at": "2026-10-19 10:49 SGT",
+ "now": "2026-10-19 21:26 SGT",
+ "cand_at": "2026-10-19 21:26 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -15,7 +15,7 @@
   "llama.majors": "ok",
   "discovery": "partial",
   "geckoterminal": "ok",
-  "rugcheck": "partial",
+  "rugcheck": "ok",
   "goplus": "ok",
   "blockscout": "ok",
   "reprice": "ok"
@@ -35,61 +35,94 @@
   }
  },
  "tokens": {
-  "total": 66,
-  "band_m": 36,
+  "total": 63,
+  "band_m": 33,
   "candle_or_wallet_coverage_pct": 100,
-  "nodata": 23
+  "nodata": 0
  },
- "shortlist": [],
- "shortlist_new": [],
+ "shortlist": [
+  {
+   "sym": "SI276",
+   "c": "solana",
+   "mc": 643.0,
+   "nar": "Unclassified",
+   "run": 1.88,
+   "retr": 73.2,
+   "acc": 0.9,
+   "c6": 17.45,
+   "age": 12.73,
+   "sec": "rugcheck",
+   "pa": "12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG"
+  }
+ ],
+ "shortlist_new": [
+  "SI276"
+ ],
  "shortlist_dropped": [],
  "pullback": [],
  "pullback_new": [],
  "pullback_dropped": [],
- "igniting": [],
- "momentum": [
+ "igniting": [
   {
-   "sym": "特斯拉能飞",
-   "c": "bsc",
-   "mc": 603.1,
-   "nar": "Unclassified",
-   "run": 45.87,
-   "retr": 42.19,
-   "acc": 0.76,
-   "c6": 97.27,
-   "age": 1.39,
-   "sec": "goplus",
-   "pa": "0x74191a5c48fa64b7d062e8f63B16fFf5324Ea81F"
-  },
-  {
-   "sym": "FTR",
+   "sym": "FABLES",
    "c": "solana",
-   "mc": 875.7,
-   "nar": "Classic memes",
-   "run": 32.02,
-   "retr": 19.69,
-   "acc": 0.63,
-   "c6": -39.21,
-   "age": 2.33,
-   "sec": "nodata",
-   "pa": "8JoQRQ4oAXNuQSTcComuUAAgF3ViJ7e3escwatMncZ3H"
+   "mc": 1355.6,
+   "nar": "Unclassified",
+   "run": null,
+   "retr": null,
+   "acc": 4.0,
+   "c6": 81.74,
+   "age": 0.19,
+   "sec": "rugcheck",
+   "pa": "E1F4pd8Bo5cfx24J3GKNUxAknErn8CrHKSUzvCbVcovC"
   },
+  {
+   "sym": "SO",
+   "c": "solana",
+   "mc": 1382.1,
+   "nar": "Utilities",
+   "run": null,
+   "retr": null,
+   "acc": 4.0,
+   "c6": 74.04,
+   "age": 0.16,
+   "sec": "rugcheck",
+   "pa": "CAxbjZUBVWkMi8TJ4TqRdPgqyCX8onQF67kGgSgogjvK"
+  },
+  {
+   "sym": "ALLOX",
+   "c": "solana",
+   "mc": 1132.7,
+   "nar": "Unclassified",
+   "run": null,
+   "retr": null,
+   "acc": 4.0,
+   "c6": 63.29,
+   "age": 0.1,
+   "sec": "rugcheck",
+   "pa": "BkoJbnvzDVnMx64rC3G2okQumt2tdoxtitN8eHJhkM8F"
+  }
+ ],
+ "momentum": [
   {
    "sym": "GLITCH",
    "c": "solana",
-   "mc": 1815.8,
+   "mc": 1949.8,
    "nar": "Classic memes",
    "run": 98.6,
    "retr": 19.59,
-   "acc": 0.69,
-   "c6": 18.06,
-   "age": 2.44,
-   "sec": "nodata",
+   "acc": 0.7,
+   "c6": 3.54,
+   "age": 2.89,
+   "sec": "rugcheck",
    "pa": "Em6RvzGXhd35pZ7CVUjCTPEnv4jAztScaVHaXBXCBcG7"
   }
  ],
  "momentum_new": [],
- "momentum_dropped": [],
+ "momentum_dropped": [
+  "FTR",
+  "特斯拉能飞"
+ ],
  "honeypots_new": [],
  "track": {
   "logged": 61,
@@ -101,23 +134,41 @@
   "repriced": true
  },
  "igniting_track": {
-  "logged": 28,
-  "new_rows": [],
+  "logged": 31,
+  "new_rows": [
+   "FABLES",
+   "SO",
+   "ALLOX"
+  ],
   "hit_2x_today": [],
-  "to_zero_today": []
+  "to_zero_today": [
+   "RSGP (solana)",
+   "FABLES (solana)"
+  ]
  },
  "momentum_track": {
   "logged": 19,
   "new_rows": [],
-  "hit_2x_today": [],
+  "hit_2x_today": [
+   "GLITCH (solana)"
+  ],
   "to_zero_today": []
  },
  "control": {
-  "rows": 549,
+  "rows": 561,
   "median_peak_x": 1.0,
-  "hit_2x_today": [],
-  "to_zero_today": []
+  "hit_2x_today": [
+   "GLITCH (solana)"
+  ],
+  "to_zero_today": [
+   "MUNKIEAI (solana)",
+   "FTR (ethereum)",
+   "STANDARD (robinhood)",
+   "RSGP (solana)",
+   "FABLES (solana)",
+   "SHOOT (robinhood)"
+  ]
  },
- "changed": false,
- "alert": false
+ "changed": true,
+ "alert": true
 }

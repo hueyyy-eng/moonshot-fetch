@@ -1,550 +1,562 @@
 logged_date,symbol,chain,missed_gate,entry_mcap_k,entry_price_usd,price_now_usd,now_vs_entry,peak_vs_entry,peak_on_day
-2026-09-13,AAPLc,base,Rug checks,1836.2,331.21,344.76,1.041,1.046,32
-2026-09-13,DKNG,solana,Has not already run,663.7,0.0002668,2.287e-05,0.086,1.0,0
-2026-09-13,GP,solana,Unique buyers >= sellers,606.3,0.0006493,0.001393,2.145,22.686,13
-2026-09-13,HEV,solana,Has not already run,857.1,0.001825,1.378e-05,0.008,1.879,5
-2026-09-13,KNOT,bsc,Has not already run,1294,0.0005163,0.0001878,0.364,8.069,5
-2026-09-13,LAURA,robinhood,Has not already run,810.1,0.000644,3.307e-05,0.051,1.0,0
-2026-09-13,LPAD,robinhood,Has not already run,831.5,0.0004793,2.639e-05,0.055,1.076,2
-2026-09-13,METAc,base,Rug checks,1647,642.43,716.14,1.115,1.19,31
-2026-09-13,MM,solana,Has not already run,1186.7,0.0003216,3.69e-06,0.011,1.209,9
-2026-09-13,Maple,robinhood,Has not already run,766.7,8.23e-05,7.715e-06,0.094,2.211,2
+2026-09-13,AAPLc,base,Rug checks,1836.2,331.21,340.23,1.027,1.046,32
+2026-09-13,DKNG,solana,Has not already run,663.7,0.0002668,2.307e-05,0.086,1.0,0
+2026-09-13,GP,solana,Unique buyers >= sellers,606.3,0.0006493,0.001622,2.498,22.686,13
+2026-09-13,HEV,solana,Has not already run,857.1,0.001825,1.517e-05,0.008,1.879,5
+2026-09-13,KNOT,bsc,Has not already run,1294,0.0005163,0.0001976,0.383,8.069,5
+2026-09-13,LAURA,robinhood,Has not already run,810.1,0.000644,3.343e-05,0.052,1.0,0
+2026-09-13,LPAD,robinhood,Has not already run,831.5,0.0004793,2.343e-05,0.049,1.076,2
+2026-09-13,METAc,base,Rug checks,1647,642.43,711.18,1.107,1.19,31
+2026-09-13,MM,solana,Has not already run,1186.7,0.0003216,4.205e-06,0.013,1.209,9
+2026-09-13,Maple,robinhood,Has not already run,766.7,8.23e-05,7.639e-06,0.093,2.211,2
 2026-09-13,OS,solana,Has not already run,607,0.0002318,1.188e-05,0.051,1.28,2
-2026-09-13,PAIREX,robinhood,Has not already run,1363,0.0007231,1.072e-05,0.015,1.0,0
-2026-09-13,PAIRZ,solana,Has not already run,1441,0.0005006,3.044e-06,0.006,1.0,0
-2026-09-13,PUMPCAT,solana,Unique buyers >= sellers,621.5,0.0007019,0.0002044,0.291,1.152,5
-2026-09-13,SPAWN,robinhood,Has not already run,593.1,0.000187,6.252e-05,0.334,1.0,0
-2026-09-13,STFY,base,Unique buyers >= sellers,1564.2,0.00156,0.0008448,0.542,1.256,1
-2026-09-13,Stonks,bsc,Unique buyers >= sellers,1972.9,0.001413,0.0005453,0.386,1.018,1
-2026-09-13,TREE,solana,Unique buyers >= sellers,1658.2,0.001521,3.839e-05,0.025,1.0,0
-2026-09-13,XBT,solana,Has not already run,1776.5,0.001127,9.48e-05,0.084,1.578,1
-2026-09-13,cbHYPE,base,Rug checks,1099.7,78.0016,79.13,1.014,1.209,23
-2026-09-13,plumber,base,Unique buyers >= sellers,1277.5,0.001435,0.0002795,0.195,1.626,6
+2026-09-13,PAIREX,robinhood,Has not already run,1363,0.0007231,1.061e-05,0.015,1.0,0
+2026-09-13,PAIRZ,solana,Has not already run,1441,0.0005006,2.668e-06,0.005,1.0,0
+2026-09-13,PUMPCAT,solana,Unique buyers >= sellers,621.5,0.0007019,0.00025,0.356,1.152,5
+2026-09-13,SPAWN,robinhood,Has not already run,593.1,0.000187,5.588e-05,0.299,1.0,0
+2026-09-13,STFY,base,Unique buyers >= sellers,1564.2,0.00156,0.0008166,0.523,1.256,1
+2026-09-13,Stonks,bsc,Unique buyers >= sellers,1972.9,0.001413,0.0005334,0.377,1.018,1
+2026-09-13,TREE,solana,Unique buyers >= sellers,1658.2,0.001521,4.079e-05,0.027,1.0,0
+2026-09-13,XBT,solana,Has not already run,1776.5,0.001127,0.0001687,0.15,1.578,1
+2026-09-13,cbHYPE,base,Rug checks,1099.7,78.0016,79.55,1.02,1.209,23
+2026-09-13,plumber,base,Unique buyers >= sellers,1277.5,0.001435,0.0002911,0.203,1.626,6
 2026-09-13,quq,bsc,Rug checks,1410,0.001779,0.00168,0.944,1.0,0
 2026-09-13,牛梦,bsc,Has not already run,682.7,0.0006035,4.798e-06,0.008,1.0,0
-2026-09-14,ANTHROPICx1L,robinhood,Has an X or a site,878.8,1.18,0.9038,0.766,1.0,0
-2026-09-14,AST,bsc,Unique buyers >= sellers,1764.1,0.001793,0.0001886,0.105,1.0,0
-2026-09-14,BABAB,bsc,Rug checks,4167.3,108.45,110.18,1.016,1.091,8
-2026-09-14,BATONIUS,solana,Has not already run,509,0.0005127,2.548e-06,0.005,1.0,0
-2026-09-14,BEN,bsc,Unique buyers >= sellers,1392.7,0.001392,0.0005799,0.417,1.0,0
-2026-09-14,BLAST,robinhood,Has not already run,595.6,0.0007992,2.812e-05,0.035,1.0,0
+2026-09-14,ANTHROPICx1L,robinhood,Has an X or a site,878.8,1.18,0.9101,0.771,1.0,0
+2026-09-14,AST,bsc,Unique buyers >= sellers,1764.1,0.001793,0.0001854,0.103,1.0,0
+2026-09-14,BABAB,bsc,Rug checks,4167.3,108.45,110.27,1.017,1.091,8
+2026-09-14,BATONIUS,solana,Has not already run,509,0.0005127,2.643e-06,0.005,1.0,0
+2026-09-14,BEN,bsc,Unique buyers >= sellers,1392.7,0.001392,0.0005489,0.394,1.0,0
+2026-09-14,BLAST,robinhood,Has not already run,595.6,0.0007992,2.704e-05,0.034,1.0,0
 2026-09-14,CHINAPAD,robinhood,Has not already run,587.9,0.0005912,5.45e-06,0.009,1.0,0
 2026-09-14,CLARITY,robinhood,Has not already run,1544.6,1.544e-05,0.0,0.0,1.0,0
-2026-09-14,GLXY,robinhood,Has an X or a site,634.5,23.81,0.0,0.0,1.093,8
+2026-09-14,GLXY,robinhood,Has an X or a site,634.5,23.81,16.39,0.688,1.093,8
 2026-09-14,GOOGL,robinhood,Has an X or a site,5596.4,335.47,0.0,0.0,1.034,1
-2026-09-14,GOOGLc,base,Unique buyers >= sellers,2213,335.1,345.49,1.031,1.067,8
-2026-09-14,JubJub,solana,Has not already run,805.6,0.0008055,0.0001082,0.134,3.048,4
-2026-09-14,NVDA,robinhood,Has an X or a site,20888.2,214.65,217.13,1.012,1.119,23
-2026-09-14,NVDAx3L,robinhood,Has an X or a site,619.6,1.087,0.9888,0.91,1.233,22
-2026-09-14,OPENAIx1L,robinhood,Has an X or a site,733,1.072,1.0031,0.936,1.045,4
-2026-09-14,PERPSPAD,solana,Has not already run,4295.6,0.005851,0.001324,0.226,1.301,4
-2026-09-14,QQQ,robinhood,Has an X or a site,4667.5,707.52,718.55,1.016,1.073,24
-2026-09-14,RAYCAT,solana,Has not already run,6497,0.006496,0.0004961,0.076,1.0,0
-2026-09-14,SPCX,robinhood,Has an X or a site,10989.1,148.16,148.014,0.999,1.158,22
-2026-09-14,SPY,robinhood,Has an X or a site,24942.8,761.37,769.36,1.01,1.029,28
-2026-09-14,STONK10,solana,Has not already run,765.2,0.0007651,9.172e-05,0.12,5.354,7
-2026-09-14,STONKEX,base,Unique buyers >= sellers,8954,0.009802,0.004551,0.464,1.254,6
-2026-09-14,USO,robinhood,Has an X or a site,1840.8,158.74,159.88,1.007,1.025,33
-2026-09-14,XL,robinhood,Has not already run,1331.8,0.001331,2.813e-05,0.021,1.0,0
-2026-09-14,YOYO,solana,Has not already run,1295.1,0.001296,0.0001605,0.124,1.0,0
-2026-09-14,哈基米,bsc,Rug checks,33323.2,0.03332,0.01895,0.569,1.072,5
+2026-09-14,GOOGLc,base,Unique buyers >= sellers,2213,335.1,342.98,1.024,1.067,8
+2026-09-14,JubJub,solana,Has not already run,805.6,0.0008055,9.799e-05,0.122,3.048,4
+2026-09-14,NVDA,robinhood,Has an X or a site,20888.2,214.65,218.33,1.017,1.119,23
+2026-09-14,NVDAx3L,robinhood,Has an X or a site,619.6,1.087,1.0084,0.928,1.233,22
+2026-09-14,OPENAIx1L,robinhood,Has an X or a site,733,1.072,1.011,0.943,1.045,4
+2026-09-14,PERPSPAD,solana,Has not already run,4295.6,0.005851,0.001348,0.23,1.301,4
+2026-09-14,QQQ,robinhood,Has an X or a site,4667.5,707.52,720.12,1.018,1.073,24
+2026-09-14,RAYCAT,solana,Has not already run,6497,0.006496,0.0005114,0.079,1.0,0
+2026-09-14,SPCX,robinhood,Has an X or a site,10989.1,148.16,148.48,1.002,1.158,22
+2026-09-14,SPY,robinhood,Has an X or a site,24942.8,761.37,768.26,1.009,1.029,28
+2026-09-14,STONK10,solana,Has not already run,765.2,0.0007651,9.476e-05,0.124,5.354,7
+2026-09-14,STONKEX,base,Unique buyers >= sellers,8954,0.009802,0.005465,0.558,1.254,6
+2026-09-14,USO,robinhood,Has an X or a site,1840.8,158.74,159.74,1.006,1.025,33
+2026-09-14,XL,robinhood,Has not already run,1331.8,0.001331,2.777e-05,0.021,1.0,0
+2026-09-14,YOYO,solana,Has not already run,1295.1,0.001296,0.0001672,0.129,1.0,0
+2026-09-14,哈基米,bsc,Rug checks,33323.2,0.03332,0.01896,0.569,1.072,5
 2026-09-14,富贵,base,Has an X or a site,5036.1,5.036e-05,0.0,0.0,1.0,0
-2026-09-14,富贵,robinhood,Has not already run,2310.7,0.002589,0.0007241,0.28,1.0,0
-2026-09-15,BNBCAT,bsc,Unique buyers >= sellers,809.4,0.0008093,0.0008479,1.048,1.861,21
+2026-09-14,富贵,robinhood,Has not already run,2310.7,0.002589,0.0007308,0.282,1.0,0
+2026-09-15,BNBCAT,bsc,Unique buyers >= sellers,809.4,0.0008093,0.0008309,1.027,1.861,21
 2026-09-15,Butterflys,robinhood,Has not already run,1017.8,0.001052,0.0,0.0,1.0,0
-2026-09-15,FATCOIN,robinhood,Unique buyers >= sellers,1172.3,0.001194,0.0004138,0.347,2.02,3
+2026-09-15,FATCOIN,robinhood,Unique buyers >= sellers,1172.3,0.001194,0.0003798,0.318,2.02,3
 2026-09-15,FlyBrain,bsc,Has not already run,751.4,0.0007513,1.548e-05,0.021,1.0,0
-2026-09-15,HOOD,robinhood,Unique buyers >= sellers,1259.5,112.73,100.15,0.888,1.075,7
-2026-09-15,HUHCAT,solana,Has not already run,843.6,0.0008788,3.898e-05,0.044,1.0,0
-2026-09-15,MOMO,bsc,Unique buyers >= sellers,899.5,0.001006,0.0002637,0.262,1.427,2
-2026-09-15,NECTAR,bsc,Has not already run,1009.6,0.00117,2.064e-05,0.018,1.0,0
-2026-09-15,OPEN,robinhood,Unique buyers >= sellers,1704,0.001703,0.0002526,0.148,2.219,3
+2026-09-15,HOOD,robinhood,Unique buyers >= sellers,1259.5,112.73,100.33,0.89,1.075,7
+2026-09-15,HUHCAT,solana,Has not already run,843.6,0.0008788,3.999e-05,0.046,1.0,0
+2026-09-15,MOMO,bsc,Unique buyers >= sellers,899.5,0.001006,0.0002384,0.237,1.427,2
+2026-09-15,NECTAR,bsc,Has not already run,1009.6,0.00117,2.061e-05,0.018,1.0,0
+2026-09-15,OPEN,robinhood,Unique buyers >= sellers,1704,0.001703,0.0002461,0.145,2.219,3
 2026-09-15,OPENAI,solana,Has an X or a site,973.4,9.734e-06,0.0,0.0,1.999,1
-2026-09-15,OTC,solana,Unique buyers >= sellers,4126.4,0.005862,0.006787,1.158,1.711,31
-2026-09-15,Pepe,solana,Unique buyers >= sellers,732.3,0.0007326,0.0008191,1.118,2.271,5
-2026-09-15,RBLX,robinhood,Has an X or a site,767.2,50.51,49.83,0.987,1.012,7
-2026-09-15,RICH,solana,Unique buyers >= sellers,1922.3,0.001922,2.218e-05,0.012,1.596,7
-2026-09-15,RWA,robinhood,Has not already run,676,0.0006759,7.129e-05,0.105,1.0,0
+2026-09-15,OTC,solana,Unique buyers >= sellers,4126.4,0.005862,0.006981,1.191,1.711,31
+2026-09-15,Pepe,solana,Unique buyers >= sellers,732.3,0.0007326,0.0008179,1.116,2.271,5
+2026-09-15,RBLX,robinhood,Has an X or a site,767.2,50.51,49.78,0.986,1.012,7
+2026-09-15,RICH,solana,Unique buyers >= sellers,1922.3,0.001922,3.393e-05,0.018,1.596,7
+2026-09-15,RWA,robinhood,Has not already run,676,0.0006759,7.28e-05,0.108,1.0,0
 2026-09-15,SEND,base,Has an X or a site,633.2,6.331e-07,0.0,0.0,1.0,0
-2026-09-15,SIGNAL,hyperevm,Unique buyers >= sellers,1626.4,0.001654,0.000797,0.482,2.628,11
-2026-09-15,SNAP,robinhood,Has an X or a site,735.8,5.79,6.14,1.06,1.126,29
-2026-09-15,SOCK,bsc,Unique buyers >= sellers,870,0.0008954,7.298e-05,0.082,1.0,0
+2026-09-15,SIGNAL,hyperevm,Unique buyers >= sellers,1626.4,0.001654,0.0008544,0.517,2.628,11
+2026-09-15,SNAP,robinhood,Has an X or a site,735.8,5.79,6.1,1.054,1.126,29
+2026-09-15,SOCK,bsc,Unique buyers >= sellers,870,0.0008954,7.495e-05,0.084,1.0,0
 2026-09-15,SPIRAL,base,Has an X or a site,1550,1.549e-06,0.0,0.0,1.0,0
-2026-09-15,SPRING,robinhood,Has not already run,1080.6,0.002423,0.002305,0.951,1.11,31
-2026-09-15,STANDARD,robinhood,Has not already run,46782.4,0.4757,0.2226,0.468,1.0,0
-2026-09-15,TOEROGAN,solana,Has not already run,1699.4,0.001699,2.978e-05,0.018,1.0,0
-2026-09-15,TSM,robinhood,Has an X or a site,1675.5,421.93,417.54,0.99,1.146,21
-2026-09-15,WAIFU,robinhood,Has not already run,912.3,0.0009396,8.566e-06,0.009,1.0,0
-2026-09-15,WET,solana,Has not already run,828.1,0.0008281,1.26e-05,0.015,1.0,0
-2026-09-15,cbMEGA,base,Has an X or a site,609.1,0.03524,0.04396,1.247,1.507,17
-2026-09-15,うさぎ,bsc,Unique buyers >= sellers,1348.1,0.001348,0.0008509,0.631,1.852,4
-2026-09-15,富贵,bsc,Unique buyers >= sellers,586.7,0.0005867,0.0003246,0.553,1.212,3
-2026-09-15,混混猫,bsc,Has an X or a site,1598.7,0.003127,0.0003009,0.096,1.0,0
+2026-09-15,SPRING,robinhood,Has not already run,1080.6,0.002423,0.002612,1.078,1.11,31
+2026-09-15,STANDARD,robinhood,Has not already run,46782.4,0.4757,0.2251,0.473,1.0,0
+2026-09-15,TOEROGAN,solana,Has not already run,1699.4,0.001699,2.989e-05,0.018,1.0,0
+2026-09-15,TSM,robinhood,Has an X or a site,1675.5,421.93,423.73,1.004,1.146,21
+2026-09-15,WAIFU,robinhood,Has not already run,912.3,0.0009396,8.334e-06,0.009,1.0,0
+2026-09-15,WET,solana,Has not already run,828.1,0.0008281,1.2e-05,0.014,1.0,0
+2026-09-15,cbMEGA,base,Has an X or a site,609.1,0.03524,0.04282,1.215,1.507,17
+2026-09-15,うさぎ,bsc,Unique buyers >= sellers,1348.1,0.001348,0.0008014,0.595,1.852,4
+2026-09-15,富贵,bsc,Unique buyers >= sellers,586.7,0.0005867,0.0003355,0.572,1.212,3
+2026-09-15,混混猫,bsc,Has an X or a site,1598.7,0.003127,0.0003176,0.102,1.0,0
 2026-09-16,Anthropic,solana,Has an X or a site,1257.9,1.257e-05,0.0,0.0,218.934,2
 2026-09-16,Arc,solana,Has an X or a site,1233.9,1.233e-05,0.0,0.0,1.026,1
 2026-09-16,BNC,bsc,Has not already run,553,0.000553,0.0,0.0,1.0,0
 2026-09-16,CATE,bsc,Has not already run,649.3,0.0006492,0.0,0.0,3.483,11
-2026-09-16,Flylife,bsc,Has not already run,561.5,0.0005615,0.0,0.0,1.0,0
+2026-09-16,Flylife,bsc,Has not already run,561.5,0.0005615,5.087e-06,0.009,1.0,0
 2026-09-16,GNOT,solana,Has an X or a site,907.5,9.074e-06,0.0,0.0,1.0,0
-2026-09-16,LIT,solana,Has an X or a site,602.5,4.27,3.15,0.738,1.178,3
+2026-09-16,LIT,solana,Has an X or a site,602.5,4.27,3.055,0.715,1.178,3
 2026-09-16,MCU,robinhood,Unique buyers >= sellers,1015.7,0.001015,5.516e-06,0.005,1.0,0
-2026-09-16,ODYS,arbitrum,Unique buyers >= sellers,1250.9,0.001354,0.000272,0.201,1.0,0
+2026-09-16,ODYS,arbitrum,Unique buyers >= sellers,1250.9,0.001354,0.0002862,0.211,1.0,0
 2026-09-16,OpenAI,solana,Has an X or a site,1087.7,1.087e-05,0.0,0.0,1.0,0
-2026-09-16,SNAP,robinhood,Has an X or a site,741,5.82,6.14,1.055,1.12,28
-2026-09-16,SWOLE,robinhood,Unique buyers >= sellers,684.9,0.0007022,3.502e-05,0.05,2.065,2
-2026-09-16,pill,solana,Has not already run,1600.3,0.001656,0.001062,0.641,2.434,2
+2026-09-16,SNAP,robinhood,Has an X or a site,741,5.82,6.1,1.048,1.12,28
+2026-09-16,SWOLE,robinhood,Unique buyers >= sellers,684.9,0.0007022,3.642e-05,0.052,2.065,2
+2026-09-16,pill,solana,Has not already run,1600.3,0.001656,0.0008397,0.507,2.434,2
 2026-09-16,果蝇,bsc,Has not already run,607.9,0.0006079,0.0,0.0,1.0,0
-2026-09-16,永生果蝇,bsc,Has an X or a site,637.5,0.0006375,0.0001944,0.305,1.0,0
-2026-09-17,AERO,base,Liquidity vs size,1091856.8,0.5518,0.7975,1.445,1.703,24
-2026-09-17,ALL,solana,Unique buyers >= sellers,508.2,0.0005551,1.47e-05,0.026,1.0,0
-2026-09-17,AMBA,solana,Unique buyers >= sellers,981,0.0009809,4.267e-06,0.004,3.131,1
+2026-09-16,永生果蝇,bsc,Has an X or a site,637.5,0.0006375,0.000173,0.271,1.0,0
+2026-09-17,AERO,base,Liquidity vs size,1091856.8,0.5518,0.784,1.421,1.703,24
+2026-09-17,ALL,solana,Unique buyers >= sellers,508.2,0.0005551,1.587e-05,0.029,1.0,0
+2026-09-17,AMBA,solana,Unique buyers >= sellers,981,0.0009809,4.564e-06,0.005,3.131,1
 2026-09-17,APM,solana,Has an X or a site,699.2,6.991e-06,0.0,0.0,3.844,1
 2026-09-17,BinanceTown,bsc,Has not already run,549.7,0.0005496,0.0,0.0,1.0,0
-2026-09-17,CX,solana,Rug checks,701.1,0.02909,0.03371,1.159,1.553,3
-2026-09-17,DRV,base,Liquidity vs size,243971.9,0.244,0.3894,1.596,2.204,23
+2026-09-17,CX,solana,Rug checks,701.1,0.02909,0.03281,1.128,1.553,3
+2026-09-17,DRV,base,Liquidity vs size,243971.9,0.244,0.3885,1.592,2.204,23
 2026-09-17,FLY,bsc,Has not already run,902.7,0.0009027,0.0,0.0,1.0,0
 2026-09-17,FOMOBALL,robinhood,Has not already run,1491.9,0.001511,0.0,0.0,1.0,0
 2026-09-17,FOMOBALL,robinhood,Has not already run,731.7,0.0008671,0.0,0.0,1.0,0
 2026-09-17,HOOD,solana,Has an X or a site,1452.3,1.452e-05,0.0,0.0,1.0,0
-2026-09-17,JOFF,hyperevm,Real turnover,12189.3,0.01398,0.007338,0.525,1.236,2
-2026-09-17,KEVIN,solana,Has not already run,949.5,0.0009905,5.355e-06,0.005,1.0,0
+2026-09-17,JOFF,hyperevm,Real turnover,12189.3,0.01398,0.00735,0.526,1.236,2
+2026-09-17,KEVIN,solana,Has not already run,949.5,0.0009905,5.542e-06,0.006,1.0,0
 2026-09-17,KEVIN,solana,Has an X or a site,666.4,6.663e-06,0.0,0.0,1.272,1
 2026-09-17,Moth,robinhood,Has not already run,1567.2,0.001576,0.0,0.0,1.0,0
-2026-09-17,NEST,hyperevm,Real turnover,2108,0.008631,0.01552,1.798,2.545,5
-2026-09-17,PAIDDOGE,solana,Has not already run,965.7,0.0009699,2.87e-06,0.003,1.0,0
-2026-09-17,PENIS,solana,Has not already run,566.4,0.0005663,0.0001134,0.2,1.948,1
-2026-09-17,PONS,robinhood,Liquidity vs size,430135.1,0.6259,0.2615,0.418,1.228,1
-2026-09-17,RAIN,arbitrum,Liquidity vs size,9171545.7,0.01293,0.009347,0.723,1.095,4
-2026-09-17,STONK,solana,Liquidity vs size,182537.9,0.2082,0.1049,0.504,1.71,4
-2026-09-17,VVV,base,Liquidity vs size,1184768.6,24.52,24.52,1.0,1.308,4
-2026-09-17,ZEC,near,Has an X or a site,64504.7,1384.53,1181.77,0.854,1.192,10
-2026-09-17,musebook,robinhood,Has not already run,4504.9,4.504e-05,2.009e-05,0.446,5.189,5
+2026-09-17,NEST,hyperevm,Real turnover,2108,0.008631,0.01548,1.794,2.545,5
+2026-09-17,PAIDDOGE,solana,Has not already run,965.7,0.0009699,2.849e-06,0.003,1.0,0
+2026-09-17,PENIS,solana,Has not already run,566.4,0.0005663,0.0001228,0.217,1.948,1
+2026-09-17,PONS,robinhood,Liquidity vs size,430135.1,0.6259,0.26,0.415,1.228,1
+2026-09-17,RAIN,arbitrum,Liquidity vs size,9171545.7,0.01293,0.009173,0.709,1.095,4
+2026-09-17,STONK,solana,Liquidity vs size,182537.9,0.2082,0.1121,0.538,1.71,4
+2026-09-17,VVV,base,Liquidity vs size,1184768.6,24.52,23.81,0.971,1.308,4
+2026-09-17,ZEC,near,Has an X or a site,64504.7,1384.53,1148.48,0.83,1.192,10
+2026-09-17,musebook,robinhood,Has not already run,4504.9,4.504e-05,1.894e-05,0.421,5.189,5
 2026-09-18,AINVDA,base,Has an X or a site,1418.6,1.418e-06,0.0,0.0,1.0,0
-2026-09-18,CPU,robinhood,Has not already run,636.1,0.000636,0.000178,0.28,5.099,10
+2026-09-18,CPU,robinhood,Has not already run,636.1,0.000636,0.0001872,0.294,5.099,10
 2026-09-18,DICKBUTT,bsc,Has not already run,504.3,0.0005073,0.0,0.0,1.0,0
-2026-09-18,INTC,robinhood,Has an X or a site,1739.9,109.79,91.98,0.838,1.127,9
-2026-09-18,RSI,robinhood,Has an X or a site,545,0.000545,7.516e-05,0.138,1.014,0
+2026-09-18,INTC,robinhood,Has an X or a site,1739.9,109.79,94.085,0.857,1.127,9
+2026-09-18,RSI,robinhood,Has an X or a site,545,0.000545,7.558e-05,0.139,1.014,0
 2026-09-18,RightsLayer,robinhood,Has not already run,1237.3,0.001237,0.0,0.0,1.0,0
-2026-09-18,TIMELESS,bsc,Has an X or a site,606.8,0.0006067,3.671e-05,0.061,1.0,0
-2026-09-18,TSLAc,base,Has an X or a site,1129.3,366.83,357.18,0.974,1.049,24
+2026-09-18,TIMELESS,bsc,Has an X or a site,606.8,0.0006067,3.712e-05,0.061,1.0,0
+2026-09-18,TSLAc,base,Has an X or a site,1129.3,366.83,356.21,0.971,1.049,24
 2026-09-18,Tilcayo,solana,Has not already run,1821.3,0.001865,0.0,0.0,1.0,0
-2026-09-18,UNI,robinhood,Has an X or a site,552.4,8.34,7.18,0.861,1.168,9
-2026-09-18,ZDOG,solana,Has an X or a site,642.8,0.0006428,0.0001329,0.207,1.0,0
-2026-09-18,ZFORGE,robinhood,Has not already run,717.4,0.0009347,1.932e-05,0.021,32.909,1
-2026-09-18,ZILLIONS,solana,Has not already run,673.6,0.0006735,0.0001751,0.26,1.0,0
-2026-09-18,永生果蝇,bsc,Has not already run,961.6,0.001083,1.935e-05,0.018,1.0,0
+2026-09-18,UNI,robinhood,Has an X or a site,552.4,8.34,7.34,0.88,1.168,9
+2026-09-18,ZDOG,solana,Has an X or a site,642.8,0.0006428,0.0001191,0.185,1.0,0
+2026-09-18,ZFORGE,robinhood,Has not already run,717.4,0.0009347,1.95e-05,0.021,32.909,1
+2026-09-18,ZILLIONS,solana,Has not already run,673.6,0.0006735,0.00013,0.193,1.0,0
+2026-09-18,永生果蝇,bsc,Has not already run,961.6,0.001083,1.871e-05,0.017,1.0,0
 2026-09-19,AXIS,bsc,Has an X or a site,1587.9,0,0.0,,,3
 2026-09-19,AXIS,base,Has an X or a site,797.9,0,0.0,,,3
-2026-09-19,BABYCATE,solana,Has not already run,622,0,0.0003703,,,1
-2026-09-19,BRK.Bx,solana,Has an X or a site,1818.6,0,531.49,,,30
+2026-09-19,BABYCATE,solana,Has not already run,622,0,0.0003835,,,1
+2026-09-19,BRK.Bx,solana,Has an X or a site,1818.6,0,531.26,,,30
 2026-09-19,CDOG,solana,Has not already run,1003.1,0,3.764e-06,,,1
-2026-09-19,CRIME,solana,Has not already run,1300.4,0,0.002264,,,11
-2026-09-19,FLEX,solana,Has not already run,588.7,0,2.435e-05,,,1
-2026-09-19,INJ,solana,Has an X or a site,625.8,0,8.54,,,27
-2026-09-19,METAx,solana,Has an X or a site,672,0,717.7,,,25
-2026-09-19,PEPE,solana,Has an X or a site,553.8,0,4.049e-06,,,3
+2026-09-19,CRIME,solana,Has not already run,1300.4,0,0.002284,,,11
+2026-09-19,FLEX,solana,Has not already run,588.7,0,2.512e-05,,,1
+2026-09-19,INJ,solana,Has an X or a site,625.8,0,8.58,,,27
+2026-09-19,METAx,solana,Has an X or a site,672,0,713.72,,,25
+2026-09-19,PEPE,solana,Has an X or a site,553.8,0,4.138e-06,,,3
 2026-09-19,QED,robinhood,Unique buyers >= sellers,661.8,0,0.0,,,3
-2026-09-19,QQQx,solana,Has an X or a site,722.1,0,718.59,,,18
-2026-09-19,RGE,bsc,Has an X or a site,909.9,0,0.03231,,,9
-2026-09-19,Sue,bsc,Unique buyers >= sellers,1753,0,0.0003759,,,7
+2026-09-19,QQQx,solana,Has an X or a site,722.1,0,722.11,,,18
+2026-09-19,RGE,bsc,Has an X or a site,909.9,0,0.03143,,,9
+2026-09-19,Sue,bsc,Unique buyers >= sellers,1753,0,0.0003362,,,7
 2026-09-19,TOLLY,base,Has an X or a site,1129.3,0,0.0,,,3
 2026-09-19,XL,base,Has an X or a site,731.4,0,0.0,,,8
-2026-09-19,旺柴,bsc,Has not already run,692,0,0.006241,,,25
-2026-09-20,CATE,solana,Liquidity vs size,110611.0,0.1147,0.07139,0.622,1.0,0
+2026-09-19,旺柴,bsc,Has not already run,692,0,0.006,,,25
+2026-09-20,CATE,solana,Liquidity vs size,110611.0,0.1147,0.06704,0.584,1.0,0
 2026-09-20,DEED,robinhood,Has not already run,984.2,0.0009966,0.0,0.0,1.359,1
-2026-09-20,DEEP,sui,Liquidity vs size,98075.7,0.01707,0.01991,1.166,1.453,15
-2026-09-20,JEV,robinhood,Has not already run,590.3,0.0005962,1.253e-05,0.021,1.0,0
+2026-09-20,DEEP,sui,Liquidity vs size,98075.7,0.01707,0.01986,1.163,1.453,15
+2026-09-20,JEV,robinhood,Has not already run,590.3,0.0005962,1.261e-05,0.021,1.0,0
 2026-09-20,OPENAI,solana,Has an X or a site,1546.1,1.546e-05,0.0,0.0,3.38,1
-2026-09-20,RHEA,near,Real turnover,9369.8,0.02313,0.07086,3.064,7.073,8
-2026-09-20,SI,robinhood,Has not already run,1219.0,0.001219,6.804e-06,0.006,1.177,1
-2026-09-20,Stryker,solana,Has not already run,1176.7,0.001184,3.051e-06,0.003,1.0,0
+2026-09-20,RHEA,near,Real turnover,9369.8,0.02313,0.07125,3.08,7.073,8
+2026-09-20,SI,robinhood,Has not already run,1219.0,0.001219,7.194e-06,0.006,1.177,1
+2026-09-20,Stryker,solana,Has not already run,1176.7,0.001184,3.072e-06,0.003,1.0,0
 2026-09-20,TIPPED,solana,Has not already run,928.6,0.0009369,0.0009369,1.0,1.0,0
-2026-09-20,URANUS,robinhood,Has not already run,3181.1,0.003181,0.0001366,0.043,1.0,0
-2026-09-20,WAL,sui,Liquidity vs size,84465.6,0.03294,0.04043,1.227,1.913,25
-2026-09-20,ZAMA,hyperevm,Has an X or a site,644.7,0.08354,0.07051,0.844,1.159,2
-2026-09-21,+,robinhood,Has not already run,1936.9,0.001936,8.606e-05,0.044,1.0,0
-2026-09-21,CALI,solana,Has not already run,1025.9,0.001035,0.0002257,0.218,11.884,8
-2026-09-21,CASHCAT,robinhood,Liquidity vs size,173766.1,0.1758,0.1078,0.613,1.119,5
-2026-09-21,IF,robinhood,Unique buyers >= sellers,899.2,0.001002,0.0003021,0.301,1.0,0
-2026-09-21,JEANJAK,solana,Has not already run,1294.1,0.001305,2.559e-06,0.002,1.0,0
+2026-09-20,URANUS,robinhood,Has not already run,3181.1,0.003181,0.000131,0.041,1.0,0
+2026-09-20,WAL,sui,Liquidity vs size,84465.6,0.03294,0.03984,1.209,1.913,25
+2026-09-20,ZAMA,hyperevm,Has an X or a site,644.7,0.08354,0.07201,0.862,1.159,2
+2026-09-21,+,robinhood,Has not already run,1936.9,0.001936,8.528e-05,0.044,1.0,0
+2026-09-21,CALI,solana,Has not already run,1025.9,0.001035,0.0001715,0.166,11.884,8
+2026-09-21,CASHCAT,robinhood,Liquidity vs size,173766.1,0.1758,0.1086,0.618,1.119,5
+2026-09-21,IF,robinhood,Unique buyers >= sellers,899.2,0.001002,0.0002896,0.289,1.0,0
+2026-09-21,JEANJAK,solana,Has not already run,1294.1,0.001305,2.613e-06,0.002,1.0,0
 2026-09-21,LMCAT,robinhood,Has not already run,704.2,7.042e-06,0.0,0.0,1.0,0
-2026-09-21,MACHINE,robinhood,Has not already run,654.8,0.0006548,1.901e-05,0.029,1.0,0
-2026-09-21,MUSEWORLD,base,Has not already run,702.0,0.0007292,0.0001223,0.168,1.503,1
+2026-09-21,MACHINE,robinhood,Has not already run,654.8,0.0006548,1.973e-05,0.03,1.0,0
+2026-09-21,MUSEWORLD,base,Has not already run,702.0,0.0007292,0.0001431,0.196,1.503,1
 2026-09-21,Stamp,base,Has an X or a site,10357.3,0.0001035,0.0,0.0,1.0,0
 2026-09-21,Stamp,solana,Has an X or a site,1442.8,1.442e-05,0.0,0.0,1.0,0
-2026-09-21,TRUMAN,bsc,Has not already run,1959.2,0.001959,0.0007933,0.405,1.309,1
-2026-09-21,USDSUI,sui,Has an X or a site,7808.5,1.001,1.000089,0.999,1.0,1
-2026-09-21,VVV,base,Liquidity vs size,1583675.2,32.76,24.52,0.748,1.0,0
-2026-09-21,ZEBRA,solana,Has not already run,579.1,0.0005979,7.09e-06,0.012,1.0,0
-2026-09-21,ZEN,base,Liquidity vs size,142051.6,7.74,5.93,0.766,1.03,6
+2026-09-21,TRUMAN,bsc,Has not already run,1959.2,0.001959,0.0008066,0.412,1.309,1
+2026-09-21,USDSUI,sui,Has an X or a site,7808.5,1.001,1.00013,0.999,1.0,1
+2026-09-21,VVV,base,Liquidity vs size,1583675.2,32.76,23.77,0.726,1.0,0
+2026-09-21,ZEBRA,solana,Has not already run,579.1,0.0005979,7.346e-06,0.012,1.0,0
+2026-09-21,ZEN,base,Liquidity vs size,142051.6,7.74,5.96,0.77,1.03,6
 2026-09-22,APM,solana,Has an X or a site,1040.0,1.039e-05,0.0,0.0,1.0,0
-2026-09-22,ARENA,avalanche,Unique buyers >= sellers,823.6,0.0009809,0.0006897,0.703,1.0,0
+2026-09-22,ARENA,avalanche,Unique buyers >= sellers,823.6,0.0009809,0.0006932,0.707,1.0,0
 2026-09-22,AXIS,solana,Has an X or a site,1346.9,1.346e-05,0.0,0.0,1.0,0
 2026-09-22,DEED,robinhood,Has not already run,1343.3,0.001343,0.0,0.0,1.0,0
-2026-09-22,FXIon,bsc,Has an X or a site,1222.4,35.28,34.093,0.966,1.0,0
-2026-09-22,HKT,ink,Has not already run,885.4,0.0008853,0.0009694,1.095,1.204,11
-2026-09-22,LOOONGCAT,solana,Has not already run,1161.4,0.001172,3.518e-06,0.003,1.0,0
+2026-09-22,FXIon,bsc,Has an X or a site,1222.4,35.28,34.16,0.968,1.0,0
+2026-09-22,HKT,ink,Has not already run,885.4,0.0008853,0.0009459,1.068,1.204,11
+2026-09-22,LOOONGCAT,solana,Has not already run,1161.4,0.001172,3.616e-06,0.003,1.0,0
 2026-09-22,OPENAI,solana,Has an X or a site,1234.5,1.234e-05,0.0,0.0,1.0,0
 2026-09-22,PEPE,base,Has an X or a site,10154.5,0.0001015,0.0,0.0,1.0,0
-2026-09-22,REDO,ton,Real turnover,5695.5,0.05695,0.04939,0.867,1.236,6
+2026-09-22,REDO,ton,Real turnover,5695.5,0.05695,0.04541,0.797,1.236,6
 2026-09-22,STPASS,robinhood,Has not already run,729.9,7.299e-06,0.0,0.0,1.0,0
 2026-09-22,TIKTOK,solana,Has an X or a site,1230.9,1.23e-05,0.0,0.0,1.0,0
-2026-09-22,Underdog,robinhood,Has not already run,640.1,6.4e-06,8.953e-07,0.14,1.0,0
-2026-09-22,WOOF,robinhood,Unique buyers >= sellers,725.8,7.258e-07,3.28e-07,0.452,1.0,0
-2026-09-22,龙虾,bsc,Liquidity vs size,219512.3,0.2195,0.02216,0.101,1.0,0
+2026-09-22,Underdog,robinhood,Has not already run,640.1,6.4e-06,8.972e-07,0.14,1.0,0
+2026-09-22,WOOF,robinhood,Unique buyers >= sellers,725.8,7.258e-07,3.229e-07,0.445,1.0,0
+2026-09-22,龙虾,bsc,Liquidity vs size,219512.3,0.2195,0.02035,0.093,1.0,0
 2026-09-26,AEVA,robinhood,Has not already run,1267.2,0.001267,0.0,0.0,1.0,0
 2026-09-26,AORB,robinhood,Has not already run,1043.3,0.001043,0.0,0.0,1.0,0
-2026-09-26,Cream,solana,Has not already run,1003.7,0.001022,6.779e-06,0.007,1.0,0
-2026-09-26,Holdoween,solana,Has not already run,1226.2,0.00126,0.0001118,0.089,1.0,0
-2026-09-26,KMNO,solana,Liquidity vs size,232732.1,0.0415,0.04032,0.972,1.163,1
+2026-09-26,Cream,solana,Has not already run,1003.7,0.001022,6.823e-06,0.007,1.0,0
+2026-09-26,Holdoween,solana,Has not already run,1226.2,0.00126,9.869e-05,0.078,1.0,0
+2026-09-26,KMNO,solana,Liquidity vs size,232732.1,0.0415,0.03923,0.945,1.163,1
 2026-09-26,MB4U,robinhood,Has not already run,891.4,8.914e-06,0.0,0.0,1.0,0
-2026-09-26,NPC,solana,Has not already run,1971.8,0.002131,2.086e-05,0.01,1.0,0
+2026-09-26,NPC,solana,Has not already run,1971.8,0.002131,2.259e-05,0.011,1.0,0
 2026-09-26,OPENPAD,robinhood,Has not already run,1357.5,0.001357,0.0,0.0,1.0,0
-2026-09-26,R2,bsc,Has an X or a site,895.1,0.008606,0.005045,0.586,1.0,0
-2026-09-26,RAY,solana,Liquidity vs size,1129525.4,2.035,1.91,0.939,1.199,16
-2026-09-26,ROBINPEPE,robinhood,Has not already run,643.5,0.0006435,6.851e-05,0.106,2.155,1
-2026-09-26,ROO,robinhood,Has not already run,721.1,0.0007211,8.909e-05,0.124,1.0,0
+2026-09-26,R2,bsc,Has an X or a site,895.1,0.008606,0.004695,0.546,1.0,0
+2026-09-26,RAY,solana,Liquidity vs size,1129525.4,2.035,1.92,0.943,1.199,16
+2026-09-26,ROBINPEPE,robinhood,Has not already run,643.5,0.0006435,6.86e-05,0.107,2.155,1
+2026-09-26,ROO,robinhood,Has not already run,721.1,0.0007211,8.77e-05,0.122,1.0,0
 2026-09-26,TALIS,robinhood,Has not already run,532.9,0.0005328,0.0,0.0,1.0,0
-2026-09-26,YAP,solana,Has not already run,1505.4,0.001648,1.589e-05,0.01,1.606,1
+2026-09-26,YAP,solana,Has not already run,1505.4,0.001648,1.62e-05,0.01,1.606,1
 2026-09-26,e/acc,robinhood,Has not already run,989.5,0.0009895,0.0,0.0,1.0,0
-2026-09-27,7,solana,Has not already run,1243.9,0.001243,1.502e-05,0.012,1.0,0
-2026-09-27,AEVA,robinhood,Has not already run,768.1,0.0007984,0.0002541,0.318,1.0,0
+2026-09-27,7,solana,Has not already run,1243.9,0.001243,1.521e-05,0.012,1.0,0
+2026-09-27,AEVA,robinhood,Has not already run,768.1,0.0007984,0.0002279,0.285,1.0,0
 2026-09-27,BAI,bsc,Has not already run,539.4,0.0005394,0.0,0.0,1.0,0
-2026-09-27,BNBO,bsc,Unique buyers >= sellers,712.3,0.0007123,0.0004501,0.632,1.0,0
-2026-09-27,CAKE,solana,Has not already run,1399.9,0.001481,0.0001325,0.089,1.0,0
-2026-09-27,CEREBRO,robinhood,Unique buyers >= sellers,1404.9,0.001433,6.615e-05,0.046,1.0,0
+2026-09-27,BNBO,bsc,Unique buyers >= sellers,712.3,0.0007123,0.0004394,0.617,1.0,0
+2026-09-27,CAKE,solana,Has not already run,1399.9,0.001481,0.000138,0.093,1.0,0
+2026-09-27,CEREBRO,robinhood,Unique buyers >= sellers,1404.9,0.001433,5.711e-05,0.04,1.0,0
 2026-09-27,CIB,robinhood,Has not already run,935.9,0.0009359,0.0,0.0,1.0,0
-2026-09-27,ClipX,bsc,Unique buyers >= sellers,1313.1,0.001398,0.0007645,0.547,1.002,8
+2026-09-27,ClipX,bsc,Unique buyers >= sellers,1313.1,0.001398,0.0007528,0.538,1.002,8
 2026-09-27,HYDX,robinhood,Has not already run,1854.8,0.001854,0.0,0.0,1.0,0
-2026-09-27,KARDASHEV,solana,Has not already run,800.9,0.0008133,6.185e-05,0.076,1.0,0
-2026-09-27,MUNKIEAI,solana,Has not already run,842.2,0.0008507,2.382e-06,0.003,1.0,0
+2026-09-27,KARDASHEV,solana,Has not already run,800.9,0.0008133,5.646e-05,0.069,1.0,0
+2026-09-27,MUNKIEAI,solana,Has not already run,842.2,0.0008507,0.0,0.0,1.0,0
 2026-09-27,PAIDBOT,solana,Has not already run,789.7,0.0008038,0.0,0.0,1.0,0
-2026-09-27,WIRED,bsc,Has not already run,833.3,0.0008353,0.0002393,0.286,2.015,2
-2026-09-27,boar,base,Has not already run,2128.5,2.128e-05,4.401e-06,0.207,1.0,0
-2026-09-28,BOB,solana,Has not already run,525.0,0.0005386,4.452e-06,0.008,1.0,0
-2026-09-28,CEREBRO,robinhood,Unique buyers >= sellers,888.8,0.0009069,6.559e-05,0.072,1.389,4
+2026-09-27,WIRED,bsc,Has not already run,833.3,0.0008353,0.0002625,0.314,2.015,2
+2026-09-27,boar,base,Has not already run,2128.5,2.128e-05,4.56e-06,0.214,1.0,0
+2026-09-28,BOB,solana,Has not already run,525.0,0.0005386,4.5e-06,0.008,1.0,0
+2026-09-28,CEREBRO,robinhood,Unique buyers >= sellers,888.8,0.0009069,5.609e-05,0.062,1.389,4
 2026-09-28,CRED,robinhood,Has not already run,1583.6,1.583e-05,0.0,0.0,1.0,0
 2026-09-28,ERRAND,robinhood,Has not already run,1173.1,0.001173,0.0,0.0,1.0,0
-2026-09-28,ERRAND,robinhood,Has not already run,587.8,0.0005877,7.853e-05,0.134,1.344,6
+2026-09-28,ERRAND,robinhood,Has not already run,587.8,0.0005877,8.967e-05,0.153,1.344,6
 2026-09-28,FILR,robinhood,Has not already run,841.1,8.41e-06,0.0,0.0,1.0,0
-2026-09-28,GD,bsc,Has an X or a site,12274.5,0.1773,0.1685,0.95,1.227,2
-2026-09-28,GIWA,robinhood,Unique buyers >= sellers,574.9,0.0006342,0.0004366,0.688,1.095,4
-2026-09-28,INSTA,solana,Has not already run,880.9,0.0009209,5.734e-06,0.006,1.0,0
+2026-09-28,GD,bsc,Has an X or a site,12274.5,0.1773,0.1651,0.931,1.227,2
+2026-09-28,GIWA,robinhood,Unique buyers >= sellers,574.9,0.0006342,0.0004364,0.688,1.095,4
+2026-09-28,INSTA,solana,Has not already run,880.9,0.0009209,5.668e-06,0.006,1.0,0
 2026-09-28,PIXTWIN,robinhood,Has not already run,897.9,8.978e-06,0.0,0.0,1.0,0
-2026-09-28,PUMP,solana,Liquidity vs size,2414162.5,0.005176,0.004308,0.832,1.236,6
-2026-09-28,e/acc,solana,Has not already run,8252.1,0.008391,0.000563,0.067,1.903,4
-2026-09-28,moin,solana,Has not already run,501.7,0.0005164,0.000161,0.312,1.0,0
+2026-09-28,PUMP,solana,Liquidity vs size,2414162.5,0.005176,0.004495,0.868,1.236,6
+2026-09-28,e/acc,solana,Has not already run,8252.1,0.008391,0.0005844,0.07,1.903,4
+2026-09-28,moin,solana,Has not already run,501.7,0.0005164,0.000149,0.289,1.0,0
 2026-09-29,AI,robinhood,Has an X or a site,220103.4,0.222,0.0,0.0,1.0,0
 2026-09-29,AI,robinhood,Has an X or a site,209667.7,0.2115,0.0,0.0,1.0,0
 2026-09-29,AXIS,solana,Has an X or a site,1275.6,1.275e-05,0.0,0.0,2.053,1
-2026-09-29,CARDS,solana,Liquidity vs size,85597.0,0.2177,0.269,1.236,1.521,13
+2026-09-29,CARDS,solana,Liquidity vs size,85597.0,0.2177,0.273,1.254,1.521,13
 2026-09-29,CASHED,robinhood,Has an X or a site,1896.4,0.001896,0.0,0.0,1.0,0
 2026-09-29,CEREBRO,robinhood,Has an X or a site,773.8,0.0007738,0.0,0.0,1.0,0
 2026-09-29,CMC,bsc,Has not already run,910.2,0.0009101,0.0,0.0,1.0,0
-2026-09-29,HOOKEDCAT,solana,Has not already run,1177.5,0.001198,2.644e-06,0.002,1.0,0
-2026-09-29,INUINK,solana,Has not already run,877.9,0.0008859,2.748e-06,0.003,1.0,0
+2026-09-29,HOOKEDCAT,solana,Has not already run,1177.5,0.001198,2.71e-06,0.002,1.0,0
+2026-09-29,INUINK,solana,Has not already run,877.9,0.0008859,2.816e-06,0.003,1.0,0
 2026-09-29,JUMP,solana,Has an X or a site,1357.9,1.357e-05,0.0,0.0,1.918,1
-2026-09-29,NET,robinhood,Rug checks,1972.1,408.78,161.37,0.395,1.076,1
-2026-09-29,NVDAc,base,Unique buyers >= sellers,4458.3,228.79,216.87,0.948,1.051,8
-2026-09-29,PAID,solana,Not collapsing,13240.9,0.01423,0.00257,0.181,1.0,0
-2026-09-29,PARASITE,solana,Has not already run,633.4,0.0006334,2.255e-05,0.036,1.347,1
+2026-09-29,NET,robinhood,Rug checks,1972.1,408.78,161.45,0.395,1.076,1
+2026-09-29,NVDAc,base,Unique buyers >= sellers,4458.3,228.79,218.25,0.954,1.051,8
+2026-09-29,PAID,solana,Not collapsing,13240.9,0.01423,0.002746,0.193,1.0,0
+2026-09-29,PARASITE,solana,Has not already run,633.4,0.0006334,2.406e-05,0.038,1.347,1
 2026-09-29,SHCAT,robinhood,Has not already run,3847.2,3.847e-05,0.0,0.0,1.0,0
-2026-09-29,SLVR,robinhood,Rug checks,1216.6,32.35,20.57,0.636,1.321,4
-2026-09-29,STOXES,solana,Has not already run,807.6,0.0008951,7.989e-05,0.089,1.0,0
-2026-09-29,UPUMP,hyperevm,Has an X or a site,1328.6,0.004808,0.004392,0.913,1.34,7
-2026-09-29,US,sui,Liquidity vs size,68970.8,0.03135,0.005989,0.191,1.171,3
+2026-09-29,SLVR,robinhood,Rug checks,1216.6,32.35,19.73,0.61,1.321,4
+2026-09-29,STOXES,solana,Has not already run,807.6,0.0008951,8.094e-05,0.09,1.0,0
+2026-09-29,UPUMP,hyperevm,Has an X or a site,1328.6,0.004808,0.004502,0.936,1.34,7
+2026-09-29,US,sui,Liquidity vs size,68970.8,0.03135,0.005936,0.189,1.171,3
 2026-09-29,VAULT,robinhood,Has an X or a site,1177.8,0.001177,0.0,0.0,1.0,0
-2026-09-29,VLAD,robinhood,Has not already run,836.1,0.0008411,0.0002518,0.299,1.0,0
+2026-09-29,VLAD,robinhood,Has not already run,836.1,0.0008411,0.0002287,0.272,1.0,0
 2026-09-29,XDP,solana,Has an X or a site,1443.5,1.443e-05,0.0,0.0,1.963,1
 2026-09-29,astro,robinhood,Has an X or a site,680.9,0.0006809,0.0,0.0,1.0,0
-2026-09-30,AGI,robinhood,Unique buyers >= sellers,1912.6,0.001912,0.0004375,0.229,1.0,0
-2026-09-30,AIRPAD,solana,Has not already run,842.7,0.0008481,3.28e-06,0.004,1.0,0
+2026-09-30,AGI,robinhood,Unique buyers >= sellers,1912.6,0.001912,0.0003998,0.209,1.0,0
+2026-09-30,AIRPAD,solana,Has not already run,842.7,0.0008481,3.388e-06,0.004,1.0,0
 2026-09-30,ARROWFARM,robinhood,Has not already run,1025.9,480.53,376.46,0.783,1.0,0
 2026-09-30,AXIS,solana,Has an X or a site,2347.4,2.347e-05,2.481e-05,1.057,1.057,0
 2026-09-30,AXIS,solana,Has an X or a site,1611.7,1.611e-05,0.0,0.0,1.0,0
 2026-09-30,BNC,bsc,Has not already run,572.1,0.000572,0.0,0.0,1.0,0
-2026-09-30,BNCDAO,bsc,Has not already run,1818.2,0.001818,0.000113,0.062,1.0,0
+2026-09-30,BNCDAO,bsc,Has not already run,1818.2,0.001818,0.0001541,0.085,1.0,0
 2026-09-30,Base,base,Has an X or a site,11110.7,0.0001111,0.0,0.0,1.0,0
-2026-09-30,CONDO,ethereum,Has not already run,1003.8,0.001048,0.0001575,0.15,1.035,0
-2026-09-30,CSI,bsc,Has not already run,756.2,0.0007561,6.609e-06,0.009,1.0,0
-2026-09-30,DUST,ton,Real turnover,2399.7,0.7021,0.4905,0.699,1.0,0
+2026-09-30,CONDO,ethereum,Has not already run,1003.8,0.001048,0.0001875,0.179,1.035,0
+2026-09-30,CSI,bsc,Has not already run,756.2,0.0007561,6.38e-06,0.008,1.0,0
+2026-09-30,DUST,ton,Real turnover,2399.7,0.7021,0.5119,0.729,1.0,0
 2026-09-30,Dots,robinhood,Has not already run,789.2,0.0007891,0.0,0.0,1.0,0
-2026-09-30,FUSE,ethereum,Unique buyers >= sellers,1594.7,0.001671,0.0003709,0.222,1.138,2
+2026-09-30,FUSE,ethereum,Unique buyers >= sellers,1594.7,0.001671,0.0003962,0.237,1.138,2
 2026-09-30,GOOSE,robinhood,Has an X or a site,116635.8,0.1166,0.0,0.0,1.005,0
 2026-09-30,HLCAT,robinhood,Has not already run,502.4,5.024e-06,5.024e-06,1.0,1.0,0
 2026-09-30,JUMP,solana,Has an X or a site,2544.7,2.544e-05,2.609e-05,1.026,1.026,0
 2026-09-30,JUMP,solana,Has an X or a site,1798.8,1.798e-05,0.0,0.0,1.0,0
-2026-09-30,MVP,bsc,Has not already run,1231.5,0.001291,0.00139,1.077,1.11,18
+2026-09-30,MVP,bsc,Has not already run,1231.5,0.001291,0.001467,1.136,1.136,19
 2026-09-30,Muse,base,Has an X or a site,2008.3,2.008e-05,0.0,0.0,1.0,0
 2026-09-30,OFY,robinhood,Has not already run,1202.6,0.001202,8.22e-06,0.007,1.0,0
-2026-09-30,PONS,robinhood,Liquidity vs size,380451.6,0.5576,0.2602,0.467,1.0,0
+2026-09-30,PONS,robinhood,Liquidity vs size,380451.6,0.5576,0.2597,0.466,1.0,0
 2026-09-30,Pygoscelis,solana,Has not already run,545.9,0.0005653,0.0002646,0.468,1.0,0
 2026-09-30,RESI,solana,Has not already run,936.9,0.0009368,0.0002989,0.319,1.0,0
 2026-09-30,ROBIN,robinhood,Has an X or a site,1537.1,0.001537,0.0,0.0,1.0,0
-2026-09-30,ROBIN,robinhood,Unique buyers >= sellers,1301.0,0.0013,0.0004943,0.38,1.117,3
-2026-09-30,SI,solana,Has not already run,760.6,0.0007833,0.0004255,0.543,4.846,2
-2026-09-30,SS,solana,Has not already run,914.6,0.000928,2.405e-06,0.003,1.467,0
+2026-09-30,ROBIN,robinhood,Unique buyers >= sellers,1301.0,0.0013,0.0005723,0.44,1.117,3
+2026-09-30,SI,solana,Has not already run,760.6,0.0007833,0.0004359,0.556,4.846,2
+2026-09-30,SS,solana,Has not already run,914.6,0.000928,2.375e-06,0.003,1.467,0
 2026-09-30,TAO,base,Unique buyers >= sellers,1514.2,303.59,305.78,1.007,1.007,0
-2026-09-30,THESIS,bsc,Has not already run,602.7,0.0006026,0.0001099,0.182,1.076,4
-2026-09-30,VRAX,robinhood,Has not already run,582.8,0.0005827,1.523e-05,0.026,1.0,0
+2026-09-30,THESIS,bsc,Has not already run,602.7,0.0006026,8.874e-05,0.147,1.076,4
+2026-09-30,VRAX,robinhood,Has not already run,582.8,0.0005827,1.536e-05,0.026,1.0,0
 2026-09-30,XDP,solana,Has an X or a site,2585.2,2.585e-05,2.588e-05,1.001,1.001,0
-2026-09-30,cbADA,base,Has an X or a site,718.6,0.2452,0.2207,0.9,1.099,6
-2026-10-02,Ansemmas,solana,Has not already run,565.6,0.0005932,0.0003311,0.558,1.0,0
-2026-10-02,COCKROACH,solana,Has not already run,1657.3,0.001687,0.0003436,0.204,1.0,0
+2026-09-30,cbADA,base,Has an X or a site,718.6,0.2452,0.2197,0.896,1.099,6
+2026-10-02,Ansemmas,solana,Has not already run,565.6,0.0005932,0.0002876,0.485,1.0,0
+2026-10-02,COCKROACH,solana,Has not already run,1657.3,0.001687,0.0005095,0.302,1.0,0
 2026-10-02,GM,bsc,Has not already run,675.1,0.0006751,0.0,0.0,3.826,1
 2026-10-02,MWOOF,robinhood,Has not already run,1566.2,1.566e-05,0.0,0.0,1.0,0
 2026-10-02,OpenAI,base,Has an X or a site,10526.4,0.0001052,0.0,0.0,1.0,0
 2026-10-02,PPORT,robinhood,Has not already run,1031.0,1.03e-05,0.0,0.0,1.0,0
-2026-10-02,PumpBlox,solana,Has not already run,586.2,0.0005901,0.0001551,0.263,1.0,0
-2026-10-02,SGT,robinhood,Has not already run,1537.8,0.001537,0.0003165,0.206,1.0,0
+2026-10-02,PumpBlox,solana,Has not already run,586.2,0.0005901,0.0001779,0.301,1.0,0
+2026-10-02,SGT,robinhood,Has not already run,1537.8,0.001537,0.0002817,0.183,1.0,0
 2026-10-02,SI,robinhood,Has not already run,858.1,0.0008581,0.0,0.0,1.0,0
-2026-10-02,SIP,solana,Has not already run,500.9,0.0005036,2.638e-06,0.005,1.0,0
+2026-10-02,SIP,solana,Has not already run,500.9,0.0005036,2.676e-06,0.005,1.0,0
 2026-10-02,SOON,bsc,Has not already run,792.8,0.0007927,0.0,0.0,1.0,0
-2026-10-02,wTCENTx,bsc,Has an X or a site,524.6,54.32,54.21,0.998,1.008,15
-2026-10-03,ANON,solana,Has not already run,975.8,0.000982,2.899e-06,0.003,1.0,0
-2026-10-03,Agency,solana,Has not already run,2207.0,0.002284,0.001266,0.554,9.365,1
+2026-10-02,wTCENTx,bsc,Has an X or a site,524.6,54.32,54.24,0.999,1.008,15
+2026-10-03,ANON,solana,Has not already run,975.8,0.000982,2.975e-06,0.003,1.0,0
+2026-10-03,Agency,solana,Has not already run,2207.0,0.002284,0.001137,0.498,9.365,1
 2026-10-03,Cincinnati,robinhood,Has not already run,633.3,0.0006333,0.0,0.0,1.0,0
-2026-10-03,FILLED,solana,Has not already run,1059.0,0.001092,0.0002289,0.21,1.0,0
+2026-10-03,FILLED,solana,Has not already run,1059.0,0.001092,0.0002194,0.201,1.0,0
 2026-10-03,GM,base,Has an X or a site,10228.5,0.0001022,0.0,0.0,1.008,1
-2026-10-03,HOOKEDINU,solana,Has not already run,1136.5,0.001146,2.289e-06,0.002,1.0,0
-2026-10-03,HOTBOT,solana,Has not already run,1510.2,0.001568,0.00361,2.302,3.439,13
-2026-10-03,Hachiko,bsc,Unique buyers >= sellers,881.4,0.0009318,0.0008008,0.859,1.0,0
+2026-10-03,HOOKEDINU,solana,Has not already run,1136.5,0.001146,2.297e-06,0.002,1.0,0
+2026-10-03,HOTBOT,solana,Has not already run,1510.2,0.001568,0.004582,2.922,3.439,13
+2026-10-03,Hachiko,bsc,Unique buyers >= sellers,881.4,0.0009318,0.000805,0.864,1.0,0
 2026-10-03,MGHST,robinhood,Has not already run,856.1,8.56e-06,0.0,0.0,1.0,0
-2026-10-03,MOON,bsc,Has not already run,1087.7,0.001087,2.959e-05,0.027,1.0,0
+2026-10-03,MOON,bsc,Has not already run,1087.7,0.001087,3.049e-05,0.028,1.0,0
 2026-10-03,Muse,base,Has an X or a site,10100.5,0.000101,0.0,0.0,1.0,0
 2026-10-03,PWPLT,robinhood,Has not already run,1868.3,1.868e-05,0.0,0.0,1.0,0
 2026-10-03,SI,robinhood,Has not already run,1786.5,0.001786,0.0,0.0,1.0,0
-2026-10-03,SOCKET,solana,Has not already run,607.8,0.0006228,8.656e-06,0.014,1.0,0
+2026-10-03,SOCKET,solana,Has not already run,607.8,0.0006228,8.578e-06,0.014,1.0,0
 2026-10-03,WCRMB,robinhood,Has not already run,993.1,9.931e-06,0.0,0.0,1.0,0
 2026-10-03,ZERO,robinhood,Has not already run,995.9,0.0009959,0.0,0.0,1.0,0
-2026-10-03,swordcat,solana,Has not already run,1629.6,0.001697,0.001925,1.134,2.105,6
-2026-10-04,Aiden,solana,Has not already run,1276.5,0.001385,1.529e-05,0.011,1.0,0
+2026-10-03,swordcat,solana,Has not already run,1629.6,0.001697,0.002031,1.197,2.105,6
+2026-10-04,Aiden,solana,Has not already run,1276.5,0.001385,1.492e-05,0.011,1.0,0
 2026-10-04,BRODIE,robinhood,Has not already run,1048.0,0.001048,0.0,0.0,1.0,0
-2026-10-04,CLAUDIA,solana,Has not already run,1720.1,0.001811,2.757e-05,0.015,1.0,0
-2026-10-04,CRAWL,solana,Has not already run,2857.2,0.002929,0.001856,0.634,2.332,6
+2026-10-04,CLAUDIA,solana,Has not already run,1720.1,0.001811,2.647e-05,0.015,1.0,0
+2026-10-04,CRAWL,solana,Has not already run,2857.2,0.002929,0.001925,0.657,2.332,6
 2026-10-04,CSHMCAT,robinhood,Has not already run,503.9,5.039e-06,0.0,0.0,1.0,0
 2026-10-04,EUNICE,base,Has an X or a site,697.0,0.0003484,0.0,0.0,1.0,0
-2026-10-04,KGST,bsc,Has an X or a site,1002.2,0.01145,0.01129,0.986,1.0,0
+2026-10-04,KGST,bsc,Has an X or a site,1002.2,0.01145,0.0113,0.987,1.0,0
 2026-10-04,NHOOD,robinhood,Has not already run,687.8,6.877e-06,0.0,0.0,1.0,0
 2026-10-04,PAWS,robinhood,Has not already run,1194.8,0.001194,0.0,0.0,1.0,0
-2026-10-04,PAWS,robinhood,Has not already run,614.8,0.0006147,0.0001769,0.288,1.837,1
-2026-10-04,PAYR,solana,Has not already run,528.0,0.0005366,3.662e-06,0.007,1.0,0
-2026-10-04,SA,solana,Has not already run,856.8,0.0008736,2.641e-06,0.003,1.0,0
+2026-10-04,PAWS,robinhood,Has not already run,614.8,0.0006147,0.0001799,0.293,1.837,1
+2026-10-04,PAYR,solana,Has not already run,528.0,0.0005366,3.59e-06,0.007,1.0,0
+2026-10-04,SA,solana,Has not already run,856.8,0.0008736,2.666e-06,0.003,1.0,0
 2026-10-04,SHRINU,robinhood,Has not already run,1513.3,1.513e-05,0.0,0.0,1.0,0
 2026-10-04,SI,robinhood,Has not already run,561.9,0.0005618,0.0,0.0,1.0,0
-2026-10-04,SKHYB,bsc,Rug checks,15353.8,196.19,139.68,0.712,1.0,0
-2026-10-04,SPEC,solana,Has not already run,2261.9,0.002261,1.151e-05,0.005,1.0,0
-2026-10-04,SPLICE,solana,Has not already run,1369.0,0.001414,1.123e-05,0.008,1.0,0
-2026-10-04,VELVET,base,Liquidity vs size,35699.2,0.07696,0.06698,0.87,1.008,6
-2026-10-04,catius,solana,Has not already run,763.6,0.0007836,2.456e-06,0.003,1.0,0
-2026-10-04,hooks,bsc,Has not already run,548.1,0.0005661,0.0004549,0.804,2.349,3
-2026-10-04,🙈,bsc,Has not already run,663.2,0.0006632,5.586e-05,0.084,1.0,0
-2026-10-05,BATONROGUE,solana,Has not already run,675.1,0.0006821,0.0,0.0,1.0,0
-2026-10-05,DJCECE,solana,Has not already run,801.7,0.0008207,0.0006768,0.825,1.361,2
-2026-10-05,Human,solana,Has not already run,4194.0,0.004312,0.0001218,0.028,1.0,0
-2026-10-05,MEMEAGENCY,solana,Has not already run,1123.5,0.001143,3.482e-06,0.003,1.772,1
-2026-10-05,ORE,robinhood,Has not already run,508.6,0.0005085,6.445e-06,0.013,1.0,0
+2026-10-04,SKHYB,bsc,Rug checks,15353.8,196.19,143.4,0.731,1.0,0
+2026-10-04,SPEC,solana,Has not already run,2261.9,0.002261,1.177e-05,0.005,1.0,0
+2026-10-04,SPLICE,solana,Has not already run,1369.0,0.001414,1.153e-05,0.008,1.0,0
+2026-10-04,VELVET,base,Liquidity vs size,35699.2,0.07696,0.065,0.845,1.008,6
+2026-10-04,catius,solana,Has not already run,763.6,0.0007836,2.503e-06,0.003,1.0,0
+2026-10-04,hooks,bsc,Has not already run,548.1,0.0005661,0.0004305,0.76,2.349,3
+2026-10-04,🙈,bsc,Has not already run,663.2,0.0006632,5.598e-05,0.084,1.0,0
+2026-10-05,BATONROGUE,solana,Has not already run,675.1,0.0006821,2.959e-06,0.004,1.0,0
+2026-10-05,DJCECE,solana,Has not already run,801.7,0.0008207,0.0007537,0.918,1.361,2
+2026-10-05,Human,solana,Has not already run,4194.0,0.004312,0.0001524,0.035,1.0,0
+2026-10-05,MEMEAGENCY,solana,Has not already run,1123.5,0.001143,3.466e-06,0.003,1.772,1
+2026-10-05,ORE,robinhood,Has not already run,508.6,0.0005085,6.502e-06,0.013,1.0,0
 2026-10-05,PAGT,robinhood,Has not already run,1186.2,1.186e-05,0.0,0.0,1.0,0
 2026-10-05,PANDAKEY,robinhood,Has not already run,2402.8,2.402e-05,0.0,0.0,1.0,0
-2026-10-05,PSTR,solana,Has not already run,531.3,0.0005312,2.088e-05,0.039,1.0,0
+2026-10-05,PSTR,solana,Has not already run,531.3,0.0005312,2.29e-05,0.043,1.0,0
 2026-10-05,SHIBPNL,robinhood,Has not already run,1311.1,1.311e-05,0.0,0.0,1.0,0
-2026-10-05,SI,bsc,Has not already run,790.8,0.0007908,4.207e-05,0.053,1.0,0
+2026-10-05,SI,bsc,Has not already run,790.8,0.0007908,7.275e-05,0.092,1.0,0
 2026-10-05,SXSI,robinhood,Has not already run,1114.0,0.001114,0.0,0.0,1.0,0
-2026-10-05,中国人能飞,bsc,Has not already run,1884.5,0.001884,0.001545,0.82,1.71,5
-2026-10-05,躺赢,bsc,Has not already run,904.3,0.0009043,4.667e-05,0.052,1.0,0
-2026-10-06,ANIMA,bsc,Has not already run,552.5,0.0005611,1.062e-05,0.019,1.0,0
+2026-10-05,中国人能飞,bsc,Has not already run,1884.5,0.001884,0.001491,0.791,1.71,5
+2026-10-05,躺赢,bsc,Has not already run,904.3,0.0009043,4.874e-05,0.054,1.0,0
+2026-10-06,ANIMA,bsc,Has not already run,552.5,0.0005611,9.32e-06,0.017,1.0,0
 2026-10-06,AOTTR,robinhood,Has not already run,822.9,8.228e-06,0.0,0.0,1.0,0
-2026-10-06,BOB,bsc,Rug checks,3966.2,9.427e-09,7.656e-09,0.812,1.0,0
+2026-10-06,BOB,bsc,Rug checks,3966.2,9.427e-09,7.391e-09,0.784,1.0,0
 2026-10-06,BULLCZ,bsc,Has not already run,929.2,0.0009294,0.0,0.0,1.0,0
 2026-10-06,CTURN,robinhood,Has not already run,2107.0,2.106e-05,0.0,0.0,1.0,0
-2026-10-06,CZ,bsc,Has not already run,826.5,0.000856,0.0001328,0.155,1.404,3
-2026-10-06,POD,solana,Has not already run,808.1,0.0008081,7.607e-05,0.094,1.473,2
-2026-10-06,phubber,solana,Has not already run,820.2,0.0008511,1.716e-05,0.02,1.0,0
+2026-10-06,CZ,bsc,Has not already run,826.5,0.000856,0.0001241,0.145,1.404,3
+2026-10-06,POD,solana,Has not already run,808.1,0.0008081,9.835e-05,0.122,1.473,2
+2026-10-06,phubber,solana,Has not already run,820.2,0.0008511,1.558e-05,0.018,1.0,0
 2026-10-06,躺赢,bsc,Has not already run,568.3,0.0005683,0.0,0.0,1.0,0
-2026-10-07,A1,solana,Has not already run,1110.6,0.001119,2.889e-06,0.003,1.0,0
+2026-10-07,A1,solana,Has not already run,1110.6,0.001119,2.916e-06,0.003,1.0,0
 2026-10-07,AUTON,solana,Has not already run,3275.4,0.003285,0.0,0.0,1.0,0
 2026-10-07,BARKBYTE,robinhood,Has not already run,1046.6,1.046e-05,0.0,0.0,1.0,0
-2026-10-07,CATCRAFT,solana,Has not already run,1511.7,0.001535,2.855e-06,0.002,1.0,0
+2026-10-07,CATCRAFT,solana,Has not already run,1511.7,0.001535,2.879e-06,0.002,1.0,0
 2026-10-07,CLKCAT,robinhood,Has not already run,808.5,8.084e-06,0.0,0.0,1.0,0
-2026-10-07,CNDR,solana,Has not already run,877.8,0.0008781,0.0004126,0.47,1.0,0
+2026-10-07,CNDR,solana,Has not already run,877.8,0.0008781,0.0004144,0.472,1.0,0
 2026-10-07,ERNCAT,robinhood,Has not already run,1110.5,1.11e-05,0.0,0.0,1.0,0
-2026-10-07,GOMO,solana,Has not already run,1576.6,0.001894,0.0002747,0.145,1.0,0
-2026-10-07,IMD,ethereum,Rug checks,38169.1,9.3,5.4,0.581,1.073,5
+2026-10-07,GOMO,solana,Has not already run,1576.6,0.001894,0.0004309,0.228,1.0,0
+2026-10-07,IMD,ethereum,Rug checks,38169.1,9.3,5.2,0.559,1.073,5
 2026-10-07,NESTCAT,robinhood,Has not already run,1958.7,1.958e-05,0.0,0.0,1.0,0
 2026-10-07,NVDA,robinhood,Has an X or a site,16786.3,233.13,0.0,0.0,1.0,1
 2026-10-07,ORBIO,robinhood,Has an X or a site,49422.8,0.05202,0.0,0.0,1.0,0
-2026-10-07,RARI,solana,Has not already run,1527.1,0.001534,0.0003734,0.243,1.0,0
-2026-10-07,RARINU,solana,Has not already run,1019.1,0.00103,2.521e-06,0.002,1.929,1
+2026-10-07,RARI,solana,Has not already run,1527.1,0.001534,0.0004687,0.306,1.0,0
+2026-10-07,RARINU,solana,Has not already run,1019.1,0.00103,2.55e-06,0.002,1.929,1
 2026-10-07,SAI,robinhood,Has not already run,687.2,0.0006871,0.0,0.0,1.0,0
-2026-10-07,TWEETCRAFT,solana,Has not already run,1087.6,0.001097,4.404e-05,0.04,1.473,1
-2026-10-07,ZEVIO,ethereum,Has not already run,501.4,0.0005013,9.929e-05,0.198,1.847,1
-2026-10-07,astro,robinhood,Has not already run,1818.0,0.002928,0.0007502,0.256,7.169,7
-2026-10-07,elizaOS,bsc,Has not already run,858.4,0.0005691,0.0004475,0.786,1.354,1
-2026-10-07,slopcannon,solana,Has not already run,970.3,0.001006,0.0001691,0.168,1.0,0
+2026-10-07,TWEETCRAFT,solana,Has not already run,1087.6,0.001097,3.895e-05,0.036,1.473,1
+2026-10-07,ZEVIO,ethereum,Has not already run,501.4,0.0005013,0.0001,0.199,1.847,1
+2026-10-07,astro,robinhood,Has not already run,1818.0,0.002928,0.0005399,0.184,7.169,7
+2026-10-07,elizaOS,bsc,Has not already run,858.4,0.0005691,0.0004357,0.766,1.354,1
+2026-10-07,slopcannon,solana,Has not already run,970.3,0.001006,0.0001432,0.142,1.0,0
 2026-10-07,躺赢,bsc,Has not already run,1584.6,0.001584,0.0,0.0,1.0,0
 2026-10-08,BAMBOO,robinhood,Has not already run,623.7,6.236e-06,0.0,0.0,1.0,0
-2026-10-08,GRIFT,robinhood,Has not already run,838.9,0.0008897,0.0007678,0.863,1.109,1
-2026-10-08,NOSH,robinhood,Unique buyers >= sellers,549.2,0.0005911,4.513e-05,0.076,1.0,0
-2026-10-08,NVDA,robinhood,Has an X or a site,17876.1,238.029,217.12,0.912,1.0,0
-2026-10-08,OTO,ink,Real turnover,4431.4,0.01295,0.01223,0.944,1.0,0
-2026-10-08,PSTR,hyperevm,Has not already run,857.5,0.0008574,0.007716,8.999,11.279,8
-2026-10-08,STORM,ton,Real turnover,3724.3,0.003724,0.002814,0.756,1.0,0
-2026-10-08,SharkTank,solana,Has not already run,550.3,0.0005624,5.402e-06,0.01,1.0,0
+2026-10-08,GRIFT,robinhood,Has not already run,838.9,0.0008897,0.0006434,0.723,1.109,1
+2026-10-08,NOSH,robinhood,Unique buyers >= sellers,549.2,0.0005911,4.847e-05,0.082,1.0,0
+2026-10-08,NVDA,robinhood,Has an X or a site,17876.1,238.029,218.99,0.92,1.0,0
+2026-10-08,OTO,ink,Real turnover,4431.4,0.01295,0.01219,0.941,1.0,0
+2026-10-08,PSTR,hyperevm,Has not already run,857.5,0.0008574,0.007607,8.872,11.279,8
+2026-10-08,STORM,ton,Real turnover,3724.3,0.003724,0.002822,0.758,1.0,0
+2026-10-08,SharkTank,solana,Has not already run,550.3,0.0005624,5.349e-06,0.01,1.0,0
 2026-10-08,V4,robinhood,Has an X or a site,5185.3,0.005185,0.0,0.0,1.0,0
 2026-10-08,WKWR,robinhood,Has not already run,640.5,6.405e-06,0.0,0.0,1.0,0
 2026-10-09,AI,robinhood,Has an X or a site,104875.8,0.1058,0.0,0.0,1.0,0
-2026-10-09,AIA,bsc,Has an X or a site,8231.7,0.08273,0.07575,0.916,1.027,2
-2026-10-09,CHOP,robinhood,Has not already run,529.5,5.294e-06,6.343e-06,1.198,1.473,7
+2026-10-09,AIA,bsc,Has an X or a site,8231.7,0.08273,0.07629,0.922,1.027,2
+2026-10-09,CHOP,robinhood,Has not already run,529.5,5.294e-06,5.891e-06,1.113,1.473,7
 2026-10-09,CRNKP,robinhood,Has not already run,1667.0,1.666e-05,0.0,0.0,1.0,0
-2026-10-09,CYBERLEEK,solana,Has an X or a site,1772.6,0.002428,0.002363,0.973,2.836,2
-2026-10-09,Frank,solana,Has not already run,709.3,0.0007462,3.891e-05,0.052,1.0,0
-2026-10-09,Gary,solana,Has not already run,1903.5,0.001914,2.956e-06,0.002,1.0,0
-2026-10-09,HeeHaw,solana,Has not already run,661.7,0.0006758,0.0004546,0.673,2.572,1
-2026-10-09,LLY,robinhood,Has an X or a site,1002.1,1167.77,1256.71,1.076,1.08,7
+2026-10-09,CYBERLEEK,solana,Has an X or a site,1772.6,0.002428,0.002749,1.132,2.836,2
+2026-10-09,Frank,solana,Has not already run,709.3,0.0007462,5.766e-05,0.077,1.0,0
+2026-10-09,Gary,solana,Has not already run,1903.5,0.001914,2.974e-06,0.002,1.0,0
+2026-10-09,HeeHaw,solana,Has not already run,661.7,0.0006758,0.0003742,0.554,2.572,1
+2026-10-09,LLY,robinhood,Has an X or a site,1002.1,1167.77,1247.72,1.068,1.08,7
 2026-10-09,MBLOOM,robinhood,Has not already run,821.6,8.215e-06,0.0,0.0,1.0,0
-2026-10-09,MU,robinhood,Has an X or a site,746.5,1044.68,893.99,0.856,1.0,0
-2026-10-09,NEARLY,near,Unique buyers >= sellers,1935.7,0.001935,0.00241,1.245,2.278,5
+2026-10-09,MU,robinhood,Has an X or a site,746.5,1044.68,915.81,0.877,1.0,0
+2026-10-09,NEARLY,near,Unique buyers >= sellers,1935.7,0.001935,0.002595,1.341,2.278,5
 2026-10-09,ORBIO,robinhood,Has an X or a site,47633.3,0.05014,0.0,0.0,1.001,3
-2026-10-09,OWLNIGHT,solana,Has not already run,629.6,0.0006343,3.16e-06,0.005,1.0,0
-2026-10-09,PUBLIC,near,Liquidity vs size,2234.8,0.01117,0.005896,0.528,1.0,0
-2026-10-09,SI276,solana,Has not already run,1881.1,0.001901,0.000603,0.317,1.0,0
+2026-10-09,OWLNIGHT,solana,Has not already run,629.6,0.0006343,3.136e-06,0.005,1.0,0
+2026-10-09,PUBLIC,near,Liquidity vs size,2234.8,0.01117,0.005817,0.521,1.0,0
+2026-10-09,SI276,solana,Has not already run,1881.1,0.001901,0.0006674,0.351,1.0,0
 2026-10-09,龙虾,bsc,Has not already run,650.5,0.0006504,0.0,0.0,2.249,5
 2026-10-10,FMRGN,robinhood,Has not already run,1392.9,1.392e-05,0.0,0.0,1.0,0
-2026-10-10,MSTRc,base,Has an X or a site,2074.9,154.64,139.88,0.905,1.019,2
-2026-10-10,MYC,base,Has not already run,615.5,0.001672,0.002176,1.301,1.301,9
-2026-10-10,PQC,solana,Has not already run,1478.3,0.001537,0.000166,0.108,1.0,0
-2026-10-10,QI,solana,Has not already run,4199.6,0.004407,0.0003805,0.086,1.0,0
+2026-10-10,MSTRc,base,Has an X or a site,2074.9,154.64,139.26,0.901,1.019,2
+2026-10-10,MYC,base,Has not already run,615.5,0.001672,0.002089,1.249,1.301,9
+2026-10-10,PQC,solana,Has not already run,1478.3,0.001537,0.0001363,0.089,1.0,0
+2026-10-10,QI,solana,Has not already run,4199.6,0.004407,0.0002971,0.067,1.0,0
 2026-10-10,QQQ,robinhood,Has an X or a site,4750.4,729.5,0.0,0.0,1.0,0
-2026-10-10,SIB,solana,Has not already run,688.8,0.0007082,1.269e-05,0.018,1.0,0
+2026-10-10,SIB,solana,Has not already run,688.8,0.0007082,1.179e-05,0.017,1.0,0
 2026-10-11,ALLOX,solana,Has an X or a site,1323.0,1.322e-05,0.0,0.0,1.0,0
-2026-10-11,Altai,solana,Has not already run,787.2,0.0008,0.0001414,0.177,2.066,3
+2026-10-11,Altai,solana,Has not already run,787.2,0.0008,0.0001505,0.188,2.066,3
 2026-10-11,Altai,robinhood,Has not already run,513.9,0.0005138,0.0,0.0,1.227,2
 2026-10-11,BRML,robinhood,Has not already run,917.9,9.178e-06,0.0,0.0,1.689,1
-2026-10-11,GIGATENEV,robinhood,Has not already run,1164.4,0.001164,0.0003991,0.343,1.0,0
-2026-10-11,QT,solana,Has not already run,1657.7,0.001677,2.49e-06,0.001,1.0,0
+2026-10-11,GIGATENEV,robinhood,Has not already run,1164.4,0.001164,0.000371,0.319,1.0,0
+2026-10-11,QT,solana,Has not already run,1657.7,0.001677,2.448e-06,0.001,1.0,0
 2026-10-11,RSGP,solana,Has an X or a site,1361.9,1.361e-05,0.0,0.0,1.0,0
-2026-10-11,SAFU,bsc,Has not already run,1623.3,0.001623,0.0002221,0.137,1.0,0
-2026-10-11,SUPMKT,solana,Has not already run,1216.5,0.001225,2.227e-06,0.002,1.0,0
-2026-10-11,TORCH,robinhood,Has not already run,1335.1,0.001353,0.007977,5.896,5.896,8
-2026-10-11,WORM,robinhood,Unique buyers >= sellers,1740.3,0.001808,0.0009605,0.531,1.21,1
-2026-10-11,WoD,bsc,Has an X or a site,1704.5,0.005818,0.009038,1.553,1.851,7
+2026-10-11,SAFU,bsc,Has not already run,1623.3,0.001623,0.0003208,0.198,1.0,0
+2026-10-11,SUPMKT,solana,Has not already run,1216.5,0.001225,2.232e-06,0.002,1.0,0
+2026-10-11,TORCH,robinhood,Has not already run,1335.1,0.001353,0.009225,6.818,6.818,8
+2026-10-11,WORM,robinhood,Unique buyers >= sellers,1740.3,0.001808,0.0009271,0.513,1.21,1
+2026-10-11,WoD,bsc,Has an X or a site,1704.5,0.005818,0.009356,1.608,1.851,7
 2026-10-11,中国人能飞,bsc,Has not already run,831.5,0.0008315,0.0,0.0,1.0,0
-2026-10-11,破茧成蝶,bsc,Has not already run,804.4,0.0008043,0.0001083,0.135,1.0,0
+2026-10-11,破茧成蝶,bsc,Has not already run,804.4,0.0008043,9.686e-05,0.12,1.0,0
 2026-10-12,ALLOX,solana,Has an X or a site,1174.2,1.174e-05,0.0,0.0,2.593,1
 2026-10-12,BSKCAT,robinhood,Has not already run,533.4,5.334e-06,0.0,0.0,1.0,0
-2026-10-12,CLAUD,solana,Has not already run,651.7,0.000659,2.322e-06,0.004,1.0,0
+2026-10-12,CLAUD,solana,Has not already run,651.7,0.000659,2.367e-06,0.004,1.0,0
 2026-10-12,CPANC,robinhood,Has not already run,587.1,5.871e-06,0.0,0.0,1.0,0
 2026-10-12,DIALN,robinhood,Has not already run,1027.3,1.027e-05,0.0,0.0,1.0,0
-2026-10-12,DOPE,solana,Has not already run,1833.2,0.001856,0.00413,2.225,2.71,4
+2026-10-12,DOPE,solana,Has not already run,1833.2,0.001856,0.003011,1.622,2.71,4
 2026-10-12,FUNPANDA,robinhood,Has not already run,3932.0,3.932e-05,0.0,0.0,1.0,0
-2026-10-12,FXIon,bsc,Has an X or a site,2502.9,34.55,34.15,0.988,1.0,0
-2026-10-12,HIGGS,solana,Unique buyers >= sellers,1082.0,0.001118,0.0001863,0.167,1.0,0
-2026-10-12,MINTFOLIO,robinhood,Has not already run,871.3,0.0008713,8.657e-06,0.01,1.0,0
+2026-10-12,FXIon,bsc,Has an X or a site,2502.9,34.55,34.21,0.99,1.0,0
+2026-10-12,HIGGS,solana,Unique buyers >= sellers,1082.0,0.001118,0.0001882,0.168,1.0,0
+2026-10-12,MINTFOLIO,robinhood,Has not already run,871.3,0.0008713,1.018e-05,0.012,1.0,0
 2026-10-12,PULT,solana,Has an X or a site,1182.4,1.182e-05,0.0,0.0,4.755,1
 2026-10-12,RBCAT,robinhood,Has not already run,1177.0,1.176e-05,0.0,0.0,1.0,0
 2026-10-12,RSGP,solana,Has an X or a site,1219.1,1.219e-05,0.0,0.0,5.785,1
-2026-10-12,SEAN,solana,Has not already run,1790.2,0.001808,4.524e-06,0.003,1.0,0
-2026-10-12,TasQ,robinhood,Has not already run,1311.6,0.001323,0.0003301,0.25,1.0,0
+2026-10-12,SEAN,solana,Has not already run,1790.2,0.001808,4.831e-06,0.003,1.0,0
+2026-10-12,TasQ,robinhood,Has not already run,1311.6,0.001323,0.000334,0.252,1.0,0
 2026-10-13,ALLOX,solana,Has an X or a site,1157.6,1.157e-05,0.0,0.0,2.688,1
 2026-10-13,CBARA,robinhood,Has not already run,675.0,6.75e-06,0.0,0.0,1.0,0
 2026-10-13,EAXO,robinhood,Has not already run,1007.3,1.007e-05,0.0,0.0,1.0,0
 2026-10-13,EQVTA,robinhood,Has not already run,2242.1,2.242e-05,0.0,0.0,1.0,0
-2026-10-13,HIRE,solana,Has not already run,565.9,0.0006003,4.687e-05,0.078,1.812,0
-2026-10-13,POLLY,solana,Unique buyers >= sellers,927.3,0.0009272,0.0007725,0.833,1.0,0
+2026-10-13,HIRE,solana,Has not already run,565.9,0.0006003,5.359e-05,0.089,1.812,0
+2026-10-13,POLLY,solana,Unique buyers >= sellers,927.3,0.0009272,0.0007395,0.798,1.0,0
 2026-10-13,RSGP,solana,Has an X or a site,1251.5,1.251e-05,0.0,0.0,4.145,1
-2026-10-13,SUN,tron,Real turnover,317513.9,0.01651,0.01654,1.002,1.01,1
+2026-10-13,SUN,tron,Real turnover,317513.9,0.01651,0.01649,0.999,1.01,1
 2026-10-14,BABAB,bsc,Has an X or a site,42227.9,95.51,0.0,0.0,1.0,0
-2026-10-14,CAW,cronos,Real turnover,5258.1,6.858e-09,6.341e-09,0.925,1.0,0
-2026-10-14,CROBINHOOD,cronos,Real turnover,2035.8,0.002035,0.002812,1.382,1.825,1
-2026-10-14,DUCAT,robinhood,Rug checks,869.1,16.53,11.33,0.685,1.0,0
-2026-10-14,SEALS,solana,Has not already run,918.0,0.0009902,4.451e-05,0.045,1.0,0
-2026-10-14,VEILDOGE,solana,Has not already run,1297.5,0.00132,1.997e-06,0.002,1.0,0
+2026-10-14,CAW,cronos,Real turnover,5258.1,6.858e-09,6.439e-09,0.939,1.0,0
+2026-10-14,CROBINHOOD,cronos,Real turnover,2035.8,0.002035,0.002876,1.413,1.825,1
+2026-10-14,DUCAT,robinhood,Rug checks,869.1,16.53,11.97,0.724,1.0,0
+2026-10-14,SEALS,solana,Has not already run,918.0,0.0009902,4.25e-05,0.043,1.0,0
+2026-10-14,VEILDOGE,solana,Has not already run,1297.5,0.00132,2.058e-06,0.002,1.0,0
 2026-10-14,VRAX,robinhood,Has not already run,1455.8,0.001455,0.0,0.0,1.0,0
 2026-10-14,WBROO,robinhood,Has not already run,1465.8,1.465e-05,0.0,0.0,1.0,0
 2026-10-15,ALLOX,solana,Has an X or a site,1072.1,1.072e-05,0.0,0.0,1.022,0
 2026-10-15,DKIT,robinhood,Has not already run,939.2,9.391e-06,0.0,0.0,1.0,0
-2026-10-15,FTR,solana,Has not already run,691.8,0.0007199,0.002041,2.835,6.934,1
-2026-10-15,GBT,bsc,Liquidity vs size,1224329.2,0.583,0.2762,0.474,1.0,0
+2026-10-15,FTR,solana,Has not already run,691.8,0.0007199,0.001361,1.891,6.934,1
+2026-10-15,GBT,bsc,Liquidity vs size,1224329.2,0.583,0.2255,0.387,1.0,0
 2026-10-15,GMOTH,robinhood,Has not already run,2504.2,2.504e-05,0.0,0.0,1.0,0
-2026-10-15,Groklet,solana,Has not already run,756.2,0.0007707,0.0002202,0.286,1.0,0
+2026-10-15,Groklet,solana,Has not already run,756.2,0.0007707,0.000265,0.344,1.0,0
 2026-10-15,HGLHG,robinhood,Has not already run,1369.3,1.369e-05,0.0,0.0,1.264,1
-2026-10-15,INU,robinhood,Unique buyers >= sellers,1809.7,0.001818,0.001765,0.971,1.245,1
+2026-10-15,INU,robinhood,Unique buyers >= sellers,1809.7,0.001818,0.001707,0.939,1.245,1
 2026-10-15,LLL,robinhood,Has not already run,1543.8,0.001543,0.0,0.0,1.271,0
-2026-10-15,MOW,robinhood,Has an X or a site,105165.6,0.1051,0.105,0.999,1.016,1
-2026-10-15,OBI,bsc,Has not already run,1216.7,0.001328,0.001447,1.09,1.415,3
+2026-10-15,MOW,robinhood,Has an X or a site,105165.6,0.1051,0.1051,1.0,1.016,1
+2026-10-15,OBI,bsc,Has not already run,1216.7,0.001328,0.001683,1.267,1.415,3
 2026-10-15,ODDSINU,robinhood,Has not already run,1054.8,1.054e-05,0.0,0.0,1.0,0
 2026-10-15,PULT,solana,Has an X or a site,1043.6,1.043e-05,0.0,0.0,1.008,0
 2026-10-15,RSGP,solana,Has an X or a site,1086.9,1.086e-05,0.0,0.0,1.015,0
-2026-10-15,SAINDRA,solana,Has not already run,530.0,0.0005383,0.0003033,0.563,1.229,0
-2026-10-15,SKHY,robinhood,Has an X or a site,1688.0,139.58,139.078,0.996,1.03,1
-2026-10-15,STREAM,solana,Has not already run,1710.0,0.001718,7.368e-06,0.004,15.46,1
-2026-10-15,SYCAMORE,solana,Has not already run,947.0,0.0009765,3.322e-06,0.003,1.0,0
-2026-10-15,TRUMP,solana,Liquidity vs size,363545.8,1.81,1.73,0.956,1.028,1
-2026-10-15,VEILTRUMP,solana,Has not already run,818.3,0.0008268,2.281e-06,0.003,1.34,1
-2026-10-15,ZEREBRO,solana,Unique buyers >= sellers,43261.7,0.04326,0.02468,0.571,1.196,1
-2026-10-15,arc,solana,Unique buyers >= sellers,35994.9,0.03599,0.042,1.167,1.171,3
+2026-10-15,SAINDRA,solana,Has not already run,530.0,0.0005383,0.0002146,0.399,1.229,0
+2026-10-15,SKHY,robinhood,Has an X or a site,1688.0,139.58,143.19,1.026,1.03,1
+2026-10-15,STREAM,solana,Has not already run,1710.0,0.001718,6.98e-06,0.004,15.46,1
+2026-10-15,SYCAMORE,solana,Has not already run,947.0,0.0009765,3.503e-06,0.004,1.0,0
+2026-10-15,TRUMP,solana,Liquidity vs size,363545.8,1.81,1.71,0.945,1.028,1
+2026-10-15,VEILTRUMP,solana,Has not already run,818.3,0.0008268,2.41e-06,0.003,1.34,1
+2026-10-15,ZEREBRO,solana,Unique buyers >= sellers,43261.7,0.04326,0.02475,0.572,1.196,1
+2026-10-15,arc,solana,Unique buyers >= sellers,35994.9,0.03599,0.04506,1.252,1.252,4
 2026-10-15,binancians,bsc,Has not already run,825.3,0.0008253,0.0,0.0,1.0,0
-2026-10-15,dopewif,solana,Has not already run,623.5,0.0006339,3.136e-06,0.005,1.0,0
+2026-10-15,dopewif,solana,Has not already run,623.5,0.0006339,3.201e-06,0.005,1.0,0
 2026-10-15,旺柴,bsc,Has not already run,531.9,0.0005318,0.0,0.0,1.0,0
 2026-10-15,龙虾,bsc,Has an X or a site,12607.4,25.61,0.0,0.0,1.0,0
-2026-10-16,1,solana,Has not already run,839.2,0.00086,0.0005362,0.623,3.205,0
-2026-10-16,1,solana,Has not already run,500.0,0.0005092,2.203e-06,0.004,1.0,0
-2026-10-16,CBUCKS,solana,Has not already run,709.4,0.0007521,0.0009736,1.295,1.295,3
-2026-10-16,FTR,ethereum,Has not already run,536.7,0.000538,2.546e-06,0.005,5.27,0
-2026-10-16,OWLDACITY,solana,Has not already run,717.2,0.0007231,2.639e-06,0.004,1.095,0
+2026-10-16,1,solana,Has not already run,839.2,0.00086,0.000432,0.502,3.205,0
+2026-10-16,1,solana,Has not already run,500.0,0.0005092,2.223e-06,0.004,1.0,0
+2026-10-16,CBUCKS,solana,Has not already run,709.4,0.0007521,0.001194,1.588,1.588,3
+2026-10-16,FTR,ethereum,Has not already run,536.7,0.000538,0.0,0.0,5.27,0
+2026-10-16,OWLDACITY,solana,Has not already run,717.2,0.0007231,2.679e-06,0.004,1.095,0
 2026-10-16,PFNDL,robinhood,Has not already run,1030.1,1.03e-05,0.0,0.0,1.0,0
 2026-10-16,PULT,solana,Has an X or a site,1310.4,1.31e-05,0.0,0.0,1.756,1
-2026-10-16,RACECAT,cronos,Has not already run,906.8,0.0009068,0.00079,0.871,1.034,0
-2026-10-16,STBL,bsc,Rug checks,14082.4,0.02816,0.02282,0.81,1.0,0
+2026-10-16,RACECAT,cronos,Has not already run,906.8,0.0009068,0.0008478,0.935,1.034,0
+2026-10-16,STBL,bsc,Rug checks,14082.4,0.02816,0.02288,0.812,1.0,0
 2026-10-17,AI,robinhood,Has an X or a site,94895.6,0.09575,0.0,0.0,1.0,0
 2026-10-17,CASHCAT,robinhood,Has an X or a site,37515.2,0.1071,0.0,0.0,1.001,1
 2026-10-17,DI,robinhood,Has not already run,506.7,0.0005067,0.0,0.0,1.0,0
-2026-10-17,ELON,solana,Has not already run,844.0,0.000844,0.002952,3.498,3.498,2
-2026-10-17,EMPIREX,robinhood,Has not already run,698.1,0.0007012,0.0003066,0.437,1.566,1
-2026-10-17,Eternia,solana,Has not already run,1850.9,0.001895,3.757e-06,0.002,1.0,0
-2026-10-17,FTR,solana,Has not already run,934.0,0.0009441,0.0008852,0.938,1.275,1
-2026-10-17,HARMONIC,robinhood,Unique buyers >= sellers,1652.9,0.002009,0.001102,0.549,1.0,0
+2026-10-17,ELON,solana,Has not already run,844.0,0.000844,0.002213,2.622,3.498,2
+2026-10-17,EMPIREX,robinhood,Has not already run,698.1,0.0007012,0.0003425,0.488,1.566,1
+2026-10-17,Eternia,solana,Has not already run,1850.9,0.001895,3.873e-06,0.002,1.0,0
+2026-10-17,FTR,solana,Has not already run,934.0,0.0009441,0.0003545,0.375,1.275,1
+2026-10-17,HARMONIC,robinhood,Unique buyers >= sellers,1652.9,0.002009,0.001301,0.648,1.0,0
 2026-10-17,HOOKR,robinhood,Has an X or a site,27512.4,0.02751,0.0,0.0,1.0,0
-2026-10-17,MAKERS,solana,Has not already run,820.7,0.0008576,2.919e-05,0.034,1.0,0
+2026-10-17,MAKERS,solana,Has not already run,820.7,0.0008576,2.537e-05,0.03,1.0,0
 2026-10-17,NULLN,robinhood,Has not already run,1327.8,1.327e-05,0.0,0.0,1.0,0
 2026-10-17,OPOSS,robinhood,Has not already run,1315.0,1.315e-05,0.0,0.0,1.0,0
 2026-10-17,ORBIO,robinhood,Has an X or a site,29260.5,0.0308,0.0,0.0,1.132,0
 2026-10-17,PULT,solana,Has an X or a site,1454.1,1.454e-05,0.0,0.0,2.023,1
 2026-10-17,RSGP,solana,Has an X or a site,1174.6,1.174e-05,0.0,0.0,1.0,0
 2026-10-17,coms,robinhood,Has not already run,614.3,0.0006143,0.0,0.0,1.0,0
-2026-10-17,simulator,solana,Has not already run,1771.6,0.001773,0.001062,0.599,1.0,0
+2026-10-17,simulator,solana,Has not already run,1771.6,0.001773,0.0009355,0.528,1.0,0
 2026-10-17,蝴蝶人生,bsc,Has not already run,506.8,0.0005068,7.824e-12,0.0,1.0,0
 2026-10-18,AI,robinhood,Has an X or a site,33249.6,0.09573,0.09573,1.0,1.0,0
 2026-10-18,ALLOX,solana,Has an X or a site,1474.8,1.474e-05,6.124e-05,4.155,4.155,1
-2026-10-18,BOOMER,robinhood,Has not already run,1969.8,2.839e-05,2.925e-05,1.03,1.177,0
-2026-10-18,CATSZN,solana,Has not already run,1138.1,0.00115,2.483e-06,0.002,1.0,0
-2026-10-18,Chaton,solana,Has not already run,731.0,0.0007391,2.519e-06,0.003,1.0,0
-2026-10-18,FABLES,solana,Has an X or a site,1410.4,1.41e-05,4.95e-08,0.004,1.0,0
-2026-10-18,FABLES,solana,Has an X or a site,1651.1,1.651e-05,0.007979,483.283,483.283,1
-2026-10-18,GLITCH,solana,Has not already run,970.2,0.001017,0.001903,1.871,1.871,1
+2026-10-18,BOOMER,robinhood,Has not already run,1969.8,2.839e-05,3.567e-05,1.256,1.256,1
+2026-10-18,CATSZN,solana,Has not already run,1138.1,0.00115,2.505e-06,0.002,1.0,0
+2026-10-18,Chaton,solana,Has not already run,731.0,0.0007391,2.392e-06,0.003,1.0,0
+2026-10-18,FABLES,solana,Has an X or a site,1410.4,1.41e-05,0.0,0.0,1.0,0
+2026-10-18,FABLES,solana,Has an X or a site,1651.1,1.651e-05,0.001932,117.02,483.283,1
+2026-10-18,GLITCH,solana,Has not already run,970.2,0.001017,0.002088,2.053,2.053,1
 2026-10-18,Gato,robinhood,Has not already run,752.9,0.0007528,7.398e-06,0.01,1.0,0
-2026-10-18,IBS,bsc,Has an X or a site,3896.9,4.36,3.66,0.839,1.0,0
-2026-10-18,MeiMei,solana,Has not already run,683.0,0.0006831,0.000485,0.71,1.0,0
+2026-10-18,IBS,bsc,Has an X or a site,3896.9,4.36,8.374e-12,0.0,1.0,0
+2026-10-18,MeiMei,solana,Has not already run,683.0,0.0006831,0.0004595,0.673,1.0,0
 2026-10-18,NVDA,robinhood,Has an X or a site,18771.4,208.22,0.0,0.0,1.0,0
 2026-10-18,ORBIO,robinhood,Has an X or a site,19088.7,0.03078,0.03078,1.0,1.0,0
 2026-10-18,PHOLE,robinhood,Has not already run,607.1,6.071e-06,0.0,0.0,1.0,0
 2026-10-18,PLPRSM,robinhood,Has not already run,981.1,9.81e-06,0.0,0.0,1.0,0
 2026-10-18,PONS,robinhood,Has an X or a site,106836.0,0.3052,0.3052,1.0,1.0,0
-2026-10-18,RSGP,solana,Has an X or a site,1545.6,1.545e-05,2.544e-08,0.002,1.0,0
-2026-10-18,SHOOT,robinhood,Has not already run,802.3,8.022e-06,8.022e-06,1.0,1.0,0
+2026-10-18,RSGP,solana,Has an X or a site,1545.6,1.545e-05,0.0,0.0,1.0,0
+2026-10-18,SHOOT,robinhood,Has not already run,802.3,8.022e-06,0.0,0.0,1.0,0
 2026-10-18,SO,solana,Has an X or a site,1421.0,1.421e-05,2.973e-05,2.092,2.092,1
-2026-10-18,SPCXc,base,Has an X or a site,2192.1,144.56,148.16,1.025,1.025,1
-2026-10-18,STANDARD,robinhood,Has an X or a site,16635.1,0.2227,0.2227,1.0,1.0,0
-2026-10-18,YILONGMA,solana,Has not already run,1710.9,0.001717,3.305e-06,0.002,1.0,0
-2026-10-18,mucron,solana,Has not already run,663.7,0.0006966,0.0001412,0.203,1.0,0
-2026-10-18,onboard,solana,Has not already run,566.0,0.0005803,0.0003935,0.678,1.0,0
-2026-10-18,特斯拉能飞,bsc,Has not already run,623.0,0.000623,0.000603,0.968,1.0,0
-2026-10-19,ALLOX,solana,Has an X or a site,1016.3,1.016e-05,1.016e-05,1.0,1.0,0
-2026-10-19,CATONICE,solana,Has not already run,1077.7,0.001086,0.001086,1.0,1.0,0
-2026-10-19,Doomsday,solana,Has not already run,575.0,0.0005821,0.0005821,1.0,1.0,0
-2026-10-19,FABLES,solana,Has an X or a site,1041.8,1.041e-05,1.041e-05,1.0,1.0,0
+2026-10-18,SPCXc,base,Has an X or a site,2192.1,144.56,148.48,1.027,1.027,1
+2026-10-18,STANDARD,robinhood,Has an X or a site,16635.1,0.2227,0.0,0.0,1.0,0
+2026-10-18,YILONGMA,solana,Has not already run,1710.9,0.001717,2.999e-06,0.002,1.0,0
+2026-10-18,mucron,solana,Has not already run,663.7,0.0006966,9.629e-05,0.138,1.0,0
+2026-10-18,onboard,solana,Has not already run,566.0,0.0005803,0.0002593,0.447,1.0,0
+2026-10-18,特斯拉能飞,bsc,Has not already run,623.0,0.000623,8.958e-05,0.144,1.0,0
+2026-10-19,ALLOX,solana,Has an X or a site,1016.3,1.016e-05,6.721e-07,0.066,1.0,0
+2026-10-19,ALLOX,solana,Has an X or a site,1132.7,1.132e-05,1.132e-05,1.0,1.0,0
+2026-10-19,AgenC,solana,Unique buyers >= sellers,1000.4,0.001,0.001,1.0,1.0,0
+2026-10-19,CATONICE,solana,Has not already run,1077.7,0.001086,8.608e-05,0.079,1.0,0
+2026-10-19,Doomsday,solana,Has not already run,575.0,0.0005821,0.0006339,1.089,1.089,0
+2026-10-19,ELSA,base,Liquidity vs size,14469.5,0.06319,0.06319,1.0,1.0,0
+2026-10-19,EMRUN,robinhood,Has not already run,937.4,9.373e-06,9.373e-06,1.0,1.0,0
+2026-10-19,FABLES,solana,Has an X or a site,1041.8,1.041e-05,1.731e-08,0.002,1.0,0
+2026-10-19,FABLES,solana,Has an X or a site,1355.6,1.355e-05,1.355e-05,1.0,1.0,0
+2026-10-19,FXCPU,robinhood,Has not already run,1095.6,1.095e-05,1.095e-05,1.0,1.0,0
 2026-10-19,HOOKR,robinhood,Has an X or a site,9628.4,0.0275,0.0275,1.0,1.0,0
-2026-10-19,LUKE,solana,Has not already run,519.9,0.0005346,0.0005346,1.0,1.0,0
-2026-10-19,PIERRE,solana,Has not already run,1253.1,0.001319,0.001319,1.0,1.0,0
-2026-10-19,SO,solana,Has an X or a site,1153.9,1.153e-05,1.153e-05,1.0,1.0,0
-2026-10-19,TTWO,solana,Has an X or a site,1067.2,207.24,207.24,1.0,1.0,0
+2026-10-19,LUKE,solana,Has not already run,519.9,0.0005346,0.0006104,1.142,1.142,0
+2026-10-19,PIERRE,solana,Has not already run,1253.1,0.001319,0.001401,1.062,1.062,0
+2026-10-19,SO,solana,Has an X or a site,1153.9,1.153e-05,5.357e-09,0.0,1.0,0
+2026-10-19,SO,solana,Has an X or a site,1382.1,1.382e-05,1.382e-05,1.0,1.0,0
+2026-10-19,SPSI,robinhood,Has not already run,891.4,0.0008913,0.0008913,1.0,1.0,0
+2026-10-19,SUPERMAMA,bsc,Has not already run,504.3,0.0005043,0.0005043,1.0,1.0,0
+2026-10-19,TTWO,solana,Has an X or a site,1067.2,207.24,205.11,0.99,1.0,0
+2026-10-19,UHI,solana,Has not already run,949.1,0.000988,0.000988,1.0,1.0,0
+2026-10-19,WMGDN,robinhood,Has not already run,1854.0,1.854e-05,1.854e-05,1.0,1.0,0
+2026-10-19,pPOLY,bsc,Has an X or a site,5932.6,10.019,10.019,1.0,1.0,0
