@@ -127,3 +127,6 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-10-18,momentum,GLITCH,solana,970.2,Classic memes,62.43,22.93,0.95,28.17,1.44,rugcheck,https://dexscreener.com/solana/Em6RvzGXhd35pZ7CVUjCTPEnv4jAztScaVHaXBXCBcG7,daily scan
 2026-10-18,momentum,onboard,solana,566.0,Unclassified,5.08,72.23,0.41,-10.42,1.7,rugcheck,https://dexscreener.com/solana/DBzf8tQ3mTLSdGMLcDj1YA7E8HqAtq22JaFqma92Fi4,evening scan
 2026-10-18,momentum,OPOSS,robinhood,1148.7,AI,45.6,51.48,0.0,,1.57,explorer,https://dexscreener.com/robinhood/0xcdc8430fc758ff94d153eb304797f8c373337992d6617ab2d02f1d0ef205b0da,daily scan
+2026-10-19,momentum,FTR,solana,875.7,Classic memes,32.02,19.69,0.63,-39.21,2.33,nodata,https://dexscreener.com/solana/8JoQRQ4oAXNuQSTcComuUAAgF3ViJ7e3escwatMncZ3H,daily scan
+2026-10-19,momentum,GLITCH,solana,1815.8,Classic memes,98.6,19.59,0.69,18.06,2.44,nodata,https://dexscreener.com/solana/Em6RvzGXhd35pZ7CVUjCTPEnv4jAztScaVHaXBXCBcG7,daily scan
+2026-10-19,momentum,特斯拉能飞,bsc,603.1,Unclassified,45.87,42.19,0.76,97.27,1.39,goplus,https://dexscreener.com/bsc/0x74191a5c48fa64b7d062e8f63B16fFf5324Ea81F,daily scan

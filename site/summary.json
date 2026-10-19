@@ -1,6 +1,6 @@
 {
- "now": "2026-10-18 21:16 SGT",
- "cand_at": "2026-10-18 21:16 SGT",
+ "now": "2026-10-19 10:49 SGT",
+ "cand_at": "2026-10-19 10:49 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -15,247 +15,141 @@
   "llama.majors": "ok",
   "discovery": "partial",
   "geckoterminal": "ok",
-  "rugcheck": "ok",
+  "rugcheck": "partial",
   "goplus": "ok",
   "blockscout": "ok",
   "reprice": "ok"
  },
  "chains": {
   "hot": [
+   "native_core",
    "doma"
   ],
-  "new": [],
+  "new": [
+   "native_core"
+  ],
   "dropped": [],
   "hottest": {
-   "s": "doma",
-   "n": "Doma",
-   "dr": 1.64,
-   "dr30": 1.88
+   "s": "sxr",
+   "n": "Sxr",
+   "dr": 1.59,
+   "dr30": 4.11
   }
  },
  "tokens": {
-  "total": 61,
-  "band_m": 31,
+  "total": 66,
+  "band_m": 36,
   "candle_or_wallet_coverage_pct": 100,
-  "nodata": 0
+  "nodata": 23
  },
- "shortlist": [
-  {
-   "sym": "Gato",
-   "c": "solana",
-   "mc": 571.2,
-   "nar": "Unclassified",
-   "run": 2.75,
-   "retr": 51.29,
-   "acc": 0.19,
-   "c6": 28.1,
-   "age": 1.57,
-   "sec": "rugcheck",
-   "pa": "H4wp14QGkt3YextGrQXDqF1c3EPZVMxufgGcUhxSRJN4"
-  },
-  {
-   "sym": "AgenC",
-   "c": "solana",
-   "mc": 1466.4,
-   "nar": "AI",
-   "run": 1.15,
-   "retr": 42.66,
-   "acc": 0.82,
-   "c6": -9.49,
-   "age": 235.54,
-   "sec": "rugcheck",
-   "pa": "BUMh6YebpBvAh4by4oTGJUvzQ9CvH6dqPgrZvXFDMwC1"
-  },
-  {
-   "sym": "SI276",
-   "c": "solana",
-   "mc": 619.3,
-   "nar": "Unclassified",
-   "run": 1.07,
-   "retr": 71.37,
-   "acc": 0.78,
-   "c6": -9.02,
-   "age": 11.72,
-   "sec": "rugcheck",
-   "pa": "12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG"
-  },
-  {
-   "sym": "elizaOS",
-   "c": "bsc",
-   "mc": 806.3,
-   "nar": "AI",
-   "run": 1.37,
-   "retr": 59.73,
-   "acc": 1.3,
-   "c6": -3.11,
-   "age": 337.18,
-   "sec": "goplus",
-   "pa": "0x56ADADF82E3346eb8317628df5ce1f776F89014D"
-  },
-  {
-   "sym": "HARMONIC",
-   "c": "robinhood",
-   "mc": 1251.0,
-   "nar": "AI",
-   "run": 1.28,
-   "retr": 84.53,
-   "acc": 0.37,
-   "c6": 9.63,
-   "age": 50.31,
-   "sec": "explorer",
-   "pa": "0x77ea11bbfb8f1259c702cb0ebc2105b7c007db89cf30c2f1a8776886a4467c07"
-  }
- ],
- "shortlist_new": [
-  "AgenC",
-  "elizaOS"
- ],
+ "shortlist": [],
+ "shortlist_new": [],
  "shortlist_dropped": [
-  "WORM"
+  "AgenC",
+  "Gato",
+  "HARMONIC",
+  "SI276",
+  "elizaOS"
  ],
  "pullback": [],
  "pullback_new": [],
- "pullback_dropped": [
-  "simulator"
- ],
- "igniting": [
-  {
-   "sym": "SO",
-   "c": "solana",
-   "mc": 1421.0,
-   "nar": "Utilities",
-   "run": null,
-   "retr": null,
-   "acc": 4.0,
-   "c6": 82.97,
-   "age": 0.19,
-   "sec": "rugcheck",
-   "pa": "HSvpmiasoQkQnATU2tCr6RzsPFJ4AXKeSsxpMdbCNqQd"
-  },
-  {
-   "sym": "FABLES",
-   "c": "solana",
-   "mc": 1651.1,
-   "nar": "Unclassified",
-   "run": null,
-   "retr": null,
-   "acc": 3.2,
-   "c6": 57.55,
-   "age": 0.31,
-   "sec": "rugcheck",
-   "pa": "4YQbqJ7v2N8awVZ5JUVjgTBfKsdYSEBJT4KbMpW4sKhD"
-  }
- ],
+ "pullback_dropped": [],
+ "igniting": [],
  "momentum": [
+  {
+   "sym": "特斯拉能飞",
+   "c": "bsc",
+   "mc": 603.1,
+   "nar": "Unclassified",
+   "run": 45.87,
+   "retr": 42.19,
+   "acc": 0.76,
+   "c6": 97.27,
+   "age": 1.39,
+   "sec": "goplus",
+   "pa": "0x74191a5c48fa64b7d062e8f63B16fFf5324Ea81F"
+  },
   {
    "sym": "FTR",
    "c": "solana",
-   "mc": 852.3,
+   "mc": 875.7,
    "nar": "Classic memes",
-   "run": 20.94,
-   "retr": 34.71,
-   "acc": 1.23,
-   "c6": -35.9,
-   "age": 1.77,
-   "sec": "rugcheck",
+   "run": 32.02,
+   "retr": 19.69,
+   "acc": 0.63,
+   "c6": -39.21,
+   "age": 2.33,
+   "sec": "nodata",
    "pa": "8JoQRQ4oAXNuQSTcComuUAAgF3ViJ7e3escwatMncZ3H"
-  },
-  {
-   "sym": "onboard",
-   "c": "solana",
-   "mc": 566.0,
-   "nar": "Unclassified",
-   "run": 5.08,
-   "retr": 72.23,
-   "acc": 0.41,
-   "c6": -10.42,
-   "age": 1.7,
-   "sec": "rugcheck",
-   "pa": "DBzf8tQ3mTLSdGMLcDj1YA7E8HqAtq22JaFqma92Fi4"
   },
   {
    "sym": "GLITCH",
    "c": "solana",
-   "mc": 1743.0,
+   "mc": 1815.8,
    "nar": "Classic memes",
-   "run": 62.43,
-   "retr": 22.93,
-   "acc": 0.98,
-   "c6": 86.23,
-   "age": 1.88,
-   "sec": "rugcheck",
+   "run": 98.6,
+   "retr": 19.59,
+   "acc": 0.69,
+   "c6": 18.06,
+   "age": 2.44,
+   "sec": "nodata",
    "pa": "Em6RvzGXhd35pZ7CVUjCTPEnv4jAztScaVHaXBXCBcG7"
   }
  ],
  "momentum_new": [
-  "onboard"
+  "特斯拉能飞"
  ],
  "momentum_dropped": [
-  "EMPIREX",
-  "OPOSS"
+  "onboard"
  ],
  "honeypots_new": [
-  "STBL"
+  "ARIA"
  ],
  "track": {
   "logged": 61,
-  "new_rows": [
-   [
-    "AgenC",
-    "S"
-   ]
-  ],
+  "new_rows": [],
   "best_x": 14.93,
   "median_peak_x": 1.0,
   "hit_2x_today": [],
-  "to_zero_today": [
-   "EUNICE (base)"
-  ],
+  "to_zero_today": [],
   "repriced": true
  },
  "igniting_track": {
   "logged": 28,
-  "new_rows": [
-   "SO",
-   "FABLES"
-  ],
+  "new_rows": [],
   "hit_2x_today": [
-   "ALLOX (solana)"
+   "SO (solana)",
+   "FABLES (solana)"
   ],
   "to_zero_today": [
-   "PULT (solana)"
+   "RSGP (solana)"
   ]
  },
  "momentum_track": {
-  "logged": 18,
+  "logged": 19,
   "new_rows": [
-   "onboard"
+   "特斯拉能飞"
   ],
   "hit_2x_today": [],
-  "to_zero_today": [
-   "OPOSS (robinhood)"
-  ]
+  "to_zero_today": []
  },
  "control": {
-  "rows": 540,
+  "rows": 549,
   "median_peak_x": 1.0,
   "hit_2x_today": [
-   "ALLOX (solana)"
+   "FABLES (solana)",
+   "SO (solana)"
   ],
   "to_zero_today": [
-   "PAIREX (robinhood)",
-   "OS (solana)",
-   "FOMOBALL (robinhood)",
-   "BAI (bsc)",
-   "EUNICE (base)",
-   "AI (robinhood)",
-   "ORBIO (robinhood)",
-   "HOOKR (robinhood)",
-   "PULT (solana)",
-   "OPOSS (robinhood)",
-   "coms (robinhood)",
-   "NVDA (robinhood)",
-   "PHOLE (robinhood)"
+   "Flylife (bsc)",
+   "Tilcayo (solana)",
+   "GOOSE (robinhood)",
+   "BATONROGUE (solana)",
+   "RSGP (solana)",
+   "CASHCAT (robinhood)",
+   "NULLN (robinhood)",
+   "DI (robinhood)",
+   "PLPRSM (robinhood)"
   ]
  },
  "changed": true,
