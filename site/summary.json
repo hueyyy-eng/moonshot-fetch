@@ -25,9 +25,7 @@
    "native_core",
    "doma"
   ],
-  "new": [
-   "native_core"
-  ],
+  "new": [],
   "dropped": [],
   "hottest": {
    "s": "sxr",
@@ -44,13 +42,7 @@
  },
  "shortlist": [],
  "shortlist_new": [],
- "shortlist_dropped": [
-  "AgenC",
-  "Gato",
-  "HARMONIC",
-  "SI276",
-  "elizaOS"
- ],
+ "shortlist_dropped": [],
  "pullback": [],
  "pullback_new": [],
  "pullback_dropped": [],
@@ -96,15 +88,9 @@
    "pa": "Em6RvzGXhd35pZ7CVUjCTPEnv4jAztScaVHaXBXCBcG7"
   }
  ],
- "momentum_new": [
-  "特斯拉能飞"
- ],
- "momentum_dropped": [
-  "onboard"
- ],
- "honeypots_new": [
-  "ARIA"
- ],
+ "momentum_new": [],
+ "momentum_dropped": [],
+ "honeypots_new": [],
  "track": {
   "logged": 61,
   "new_rows": [],
@@ -117,41 +103,21 @@
  "igniting_track": {
   "logged": 28,
   "new_rows": [],
-  "hit_2x_today": [
-   "SO (solana)",
-   "FABLES (solana)"
-  ],
-  "to_zero_today": [
-   "RSGP (solana)"
-  ]
+  "hit_2x_today": [],
+  "to_zero_today": []
  },
  "momentum_track": {
   "logged": 19,
-  "new_rows": [
-   "特斯拉能飞"
-  ],
+  "new_rows": [],
   "hit_2x_today": [],
   "to_zero_today": []
  },
  "control": {
   "rows": 549,
   "median_peak_x": 1.0,
-  "hit_2x_today": [
-   "FABLES (solana)",
-   "SO (solana)"
-  ],
-  "to_zero_today": [
-   "Flylife (bsc)",
-   "Tilcayo (solana)",
-   "GOOSE (robinhood)",
-   "BATONROGUE (solana)",
-   "RSGP (solana)",
-   "CASHCAT (robinhood)",
-   "NULLN (robinhood)",
-   "DI (robinhood)",
-   "PLPRSM (robinhood)"
-  ]
+  "hit_2x_today": [],
+  "to_zero_today": []
  },
- "changed": true,
- "alert": true
+ "changed": false,
+ "alert": false
 }
