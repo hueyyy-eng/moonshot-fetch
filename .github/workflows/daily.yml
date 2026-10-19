@@ -97,7 +97,7 @@ jobs:
           if [ -f out/nar.json ]; then cp out/nar.json site/nar_auto.json; else echo "{}" > site/nar_auto.json; fi
           python scan/pattern_study.py . site/page.html || echo "pattern study failed - page still published"
           # the three running logs as CSV for Google Drive. Old copies are removed first, so a failed export
-          # leaves them missing (the cloud task then skips them) instead of re-uploading yesterday's files.
+          # leaves them missing (the Drive step below then fails, instead of re-uploading yesterday's files).
           rm -f site/near-miss-log.csv site/narrative-log.csv site/holder-log.csv
           python scan/export_logs.py site/page.html site/ || echo "log export failed - page still published"
           git config user.name "moonshot-fetch[bot]"
@@ -111,3 +111,13 @@ jobs:
             git pull --rebase --autostash origin main || { echo "rebase failed"; exit 1; }
           done
           echo "push failed after 5 attempts"; exit 1
+
+      # Runs after every scan (both daily times and manual runs), once the page is already published.
+      # Any file not copied turns the run red, so the owner gets GitHub's failure email.
+      - name: Copy the CSV files to Google Drive
+        env:
+          GDRIVE_SERVICE_ACCOUNT_JSON: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_JSON }}
+          GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
+        run: |
+          pip install google-auth
+          python scan/upload_drive.py site/

@@ -27,6 +27,7 @@ without one.
 ```
 .github/workflows/daily.yml   cron 01:30 + 12:07 UTC (9:30am + 8:07pm SGT) + manual "Run workflow" button
 fetch/                        the job (python -m fetch.main <repo-root>)
+scan/upload_drive.py          copies the six CSVs in site/ to the owner's Google Drive after every run
 scan/                         the cloud scan's deterministic half (see below) — fetched by the 11:30 task each day
 seed_pairs.json               track-record pairs at setup time, so re-pricing has history from day one
 snapshots/YYYY-MM-DD/         scan.json + status.json, one folder per SGT day (permanent archive)
