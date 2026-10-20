@@ -134,3 +134,14 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-10-19,momentum,FTR,solana,875.7,Classic memes,32.02,19.69,0.63,-39.21,2.33,nodata,https://dexscreener.com/solana/8JoQRQ4oAXNuQSTcComuUAAgF3ViJ7e3escwatMncZ3H,daily scan
 2026-10-19,momentum,GLITCH,solana,1815.8,Classic memes,98.6,19.59,0.69,18.06,2.44,nodata,https://dexscreener.com/solana/Em6RvzGXhd35pZ7CVUjCTPEnv4jAztScaVHaXBXCBcG7,daily scan
 2026-10-19,momentum,特斯拉能飞,bsc,603.1,Unclassified,45.87,42.19,0.76,97.27,1.39,goplus,https://dexscreener.com/bsc/0x74191a5c48fa64b7d062e8f63B16fFf5324Ea81F,daily scan
+2026-10-20,shortlist,SI276,solana,693.2,Unclassified,1.97,71.82,0.71,-1.72,13.28,rugcheck,https://dexscreener.com/solana/12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG,daily scan
+2026-10-20,shortlist,swordcat,solana,1416.7,Dog & animal memes,1.05,69.93,1.04,-11.09,21.71,rugcheck,https://dexscreener.com/solana/8ewuF2o8ACro7fqWepZ3tKhkbBjndZU4Ldk9scRPw83d,daily scan
+2026-10-20,pullback,CBUCKS,solana,1047.1,Unclassified,5.19,41.92,1.08,-8.08,13.32,rugcheck,https://dexscreener.com/solana/B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB,daily scan
+2026-10-20,igniting,ALLOX,solana,1210.0,Unclassified,,,4.0,73.91,0.15,rugcheck,https://dexscreener.com/solana/2818ceegRd4tzxwvv7y4CWWWKtP6McGGg2VfPYuLLGjC,daily scan
+2026-10-20,igniting,FABLES,solana,1272.1,Unclassified,,,4.0,71.18,0.15,rugcheck,https://dexscreener.com/solana/3AX1xG9t725R8Lf3quVv6qfCeoVLCoWadfskpn8zEyZf,daily scan
+2026-10-20,igniting,SO,solana,990.6,Utilities,,,4.0,26.09,0.02,rugcheck,https://dexscreener.com/solana/Hk3i8DQTMvTXbWUrv3Ciyq2r2C458Rvfo1PfXN7Sv6nN,daily scan
+2026-10-20,momentum,$Light,bsc,938.7,Unclassified,49.16,15.99,0.88,-12.59,1.17,goplus,https://dexscreener.com/bsc/0xc9ac824CBc99d0EF8BB0026699a5A63184780cE5,daily scan
+2026-10-20,momentum,FLFLT,robinhood,651.3,Dog & animal memes,25.87,76.54,0.0,,1.0,explorer,https://dexscreener.com/robinhood/0x1f3c9a7dd32c98644be90f4e2ad62cfe39fbf44954aa53cbf34d54d29d54e0eb,daily scan
+2026-10-20,momentum,Paper,robinhood,1282.7,Unclassified,2.4,91.14,0.0,474.0,1.0,explorer,https://dexscreener.com/robinhood/0x4079162f402622db782a862c6a85e2f1158723df1ef4b62f1af37cd610387a6c,daily scan
+2026-10-20,momentum,Pokémon,solana,631.0,Brand-name memes,,,3.89,3885.0,1.14,rugcheck,https://dexscreener.com/solana/CxyUG8PvWbbKW41MLAq7J87ft3dryDJZV2A5pgwb31an,daily scan
+2026-10-20,momentum,UMBRA,robinhood,628.0,Unclassified,27.47,28.16,0.0,,1.0,explorer,https://dexscreener.com/robinhood/0xeca49d10868e52e750c86cc75a01464381133d3a8e71992aa6518d8846ea5c86,daily scan

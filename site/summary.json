@@ -1,6 +1,6 @@
 {
- "now": "2026-10-19 21:26 SGT",
- "cand_at": "2026-10-19 21:26 SGT",
+ "now": "2026-10-20 10:58 SGT",
+ "cand_at": "2026-10-20 10:58 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -22,151 +22,271 @@
  },
  "chains": {
   "hot": [
-   "native_core",
-   "doma"
+   "chainflip",
+   "eos"
   ],
-  "new": [],
-  "dropped": [],
+  "new": [
+   "chainflip",
+   "eos"
+  ],
+  "dropped": [
+   "doma",
+   "native_core"
+  ],
   "hottest": {
-   "s": "sxr",
-   "n": "Sxr",
-   "dr": 1.59,
-   "dr30": 4.11
+   "s": "mantle",
+   "n": "Mantle",
+   "dr": 3.93,
+   "dr30": 5.24
   }
  },
  "tokens": {
-  "total": 63,
-  "band_m": 33,
+  "total": 70,
+  "band_m": 36,
   "candle_or_wallet_coverage_pct": 100,
   "nodata": 0
  },
  "shortlist": [
   {
+   "sym": "swordcat",
+   "c": "solana",
+   "mc": 1416.7,
+   "nar": "Dog & animal memes",
+   "run": 1.05,
+   "retr": 69.93,
+   "acc": 1.04,
+   "c6": -11.09,
+   "age": 21.71,
+   "sec": "rugcheck",
+   "pa": "8ewuF2o8ACro7fqWepZ3tKhkbBjndZU4Ldk9scRPw83d"
+  },
+  {
    "sym": "SI276",
    "c": "solana",
-   "mc": 643.0,
+   "mc": 693.2,
    "nar": "Unclassified",
-   "run": 1.88,
-   "retr": 73.2,
-   "acc": 0.9,
-   "c6": 17.45,
-   "age": 12.73,
+   "run": 1.97,
+   "retr": 71.82,
+   "acc": 0.71,
+   "c6": -1.72,
+   "age": 13.28,
    "sec": "rugcheck",
    "pa": "12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG"
   }
  ],
  "shortlist_new": [
-  "SI276"
+  "swordcat"
  ],
  "shortlist_dropped": [],
- "pullback": [],
- "pullback_new": [],
+ "pullback": [
+  {
+   "sym": "CBUCKS",
+   "c": "solana",
+   "mc": 1047.1,
+   "nar": "Unclassified",
+   "run": 5.19,
+   "retr": 41.92,
+   "acc": 1.08,
+   "c6": -8.08,
+   "age": 13.32,
+   "sec": "rugcheck",
+   "pa": "B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB"
+  }
+ ],
+ "pullback_new": [
+  "CBUCKS"
+ ],
  "pullback_dropped": [],
  "igniting": [
   {
-   "sym": "FABLES",
+   "sym": "ALLOX",
    "c": "solana",
-   "mc": 1355.6,
+   "mc": 1210.0,
    "nar": "Unclassified",
    "run": null,
    "retr": null,
    "acc": 4.0,
-   "c6": 81.74,
-   "age": 0.19,
+   "c6": 73.91,
+   "age": 0.15,
    "sec": "rugcheck",
-   "pa": "E1F4pd8Bo5cfx24J3GKNUxAknErn8CrHKSUzvCbVcovC"
+   "pa": "2818ceegRd4tzxwvv7y4CWWWKtP6McGGg2VfPYuLLGjC"
+  },
+  {
+   "sym": "FABLES",
+   "c": "solana",
+   "mc": 1272.1,
+   "nar": "Unclassified",
+   "run": null,
+   "retr": null,
+   "acc": 4.0,
+   "c6": 71.18,
+   "age": 0.15,
+   "sec": "rugcheck",
+   "pa": "3AX1xG9t725R8Lf3quVv6qfCeoVLCoWadfskpn8zEyZf"
   },
   {
    "sym": "SO",
    "c": "solana",
-   "mc": 1382.1,
+   "mc": 990.6,
    "nar": "Utilities",
    "run": null,
    "retr": null,
    "acc": 4.0,
-   "c6": 74.04,
-   "age": 0.16,
+   "c6": 26.09,
+   "age": 0.02,
    "sec": "rugcheck",
-   "pa": "CAxbjZUBVWkMi8TJ4TqRdPgqyCX8onQF67kGgSgogjvK"
-  },
-  {
-   "sym": "ALLOX",
-   "c": "solana",
-   "mc": 1132.7,
-   "nar": "Unclassified",
-   "run": null,
-   "retr": null,
-   "acc": 4.0,
-   "c6": 63.29,
-   "age": 0.1,
-   "sec": "rugcheck",
-   "pa": "BkoJbnvzDVnMx64rC3G2okQumt2tdoxtitN8eHJhkM8F"
+   "pa": "Hk3i8DQTMvTXbWUrv3Ciyq2r2C458Rvfo1PfXN7Sv6nN"
   }
  ],
  "momentum": [
   {
-   "sym": "GLITCH",
+   "sym": "FLFLT",
+   "c": "robinhood",
+   "mc": 651.3,
+   "nar": "Dog & animal memes",
+   "run": 25.87,
+   "retr": 76.54,
+   "acc": 0.0,
+   "c6": null,
+   "age": 1.0,
+   "sec": "explorer",
+   "pa": "0x1f3c9a7dd32c98644be90f4e2ad62cfe39fbf44954aa53cbf34d54d29d54e0eb"
+  },
+  {
+   "sym": "Pokémon",
    "c": "solana",
-   "mc": 1949.8,
-   "nar": "Classic memes",
-   "run": 98.6,
-   "retr": 19.59,
-   "acc": 0.7,
-   "c6": 3.54,
-   "age": 2.89,
+   "mc": 631.0,
+   "nar": "Brand-name memes",
+   "run": null,
+   "retr": null,
+   "acc": 3.89,
+   "c6": 3885.0,
+   "age": 1.14,
    "sec": "rugcheck",
-   "pa": "Em6RvzGXhd35pZ7CVUjCTPEnv4jAztScaVHaXBXCBcG7"
+   "pa": "CxyUG8PvWbbKW41MLAq7J87ft3dryDJZV2A5pgwb31an"
+  },
+  {
+   "sym": "UMBRA",
+   "c": "robinhood",
+   "mc": 628.0,
+   "nar": "Unclassified",
+   "run": 27.47,
+   "retr": 28.16,
+   "acc": 0.0,
+   "c6": null,
+   "age": 1.0,
+   "sec": "explorer",
+   "pa": "0xeca49d10868e52e750c86cc75a01464381133d3a8e71992aa6518d8846ea5c86"
+  },
+  {
+   "sym": "Paper",
+   "c": "robinhood",
+   "mc": 1282.7,
+   "nar": "Unclassified",
+   "run": 2.4,
+   "retr": 91.14,
+   "acc": 0.0,
+   "c6": 474.0,
+   "age": 1.0,
+   "sec": "explorer",
+   "pa": "0x4079162f402622db782a862c6a85e2f1158723df1ef4b62f1af37cd610387a6c"
+  },
+  {
+   "sym": "$Light",
+   "c": "bsc",
+   "mc": 938.7,
+   "nar": "Unclassified",
+   "run": 49.16,
+   "retr": 15.99,
+   "acc": 0.88,
+   "c6": -12.59,
+   "age": 1.17,
+   "sec": "goplus",
+   "pa": "0xc9ac824CBc99d0EF8BB0026699a5A63184780cE5"
   }
  ],
- "momentum_new": [],
- "momentum_dropped": [
-  "FTR",
-  "特斯拉能飞"
+ "momentum_new": [
+  "$Light",
+  "FLFLT",
+  "Paper",
+  "Pokémon",
+  "UMBRA"
  ],
- "honeypots_new": [],
+ "momentum_dropped": [
+  "GLITCH"
+ ],
+ "honeypots_new": [
+  "CTR"
+ ],
  "track": {
-  "logged": 61,
-  "new_rows": [],
+  "logged": 63,
+  "new_rows": [
+   [
+    "swordcat",
+    "S"
+   ],
+   [
+    "CBUCKS",
+    "P"
+   ]
+  ],
   "best_x": 14.93,
   "median_peak_x": 1.0,
   "hit_2x_today": [],
-  "to_zero_today": [],
+  "to_zero_today": [
+   "牛梦 (bsc)"
+  ],
   "repriced": true
  },
  "igniting_track": {
-  "logged": 31,
+  "logged": 34,
   "new_rows": [
+   "ALLOX",
    "FABLES",
-   "SO",
-   "ALLOX"
+   "SO"
   ],
-  "hit_2x_today": [],
+  "hit_2x_today": [
+   "ALLOX (solana)"
+  ],
   "to_zero_today": [
-   "RSGP (solana)",
-   "FABLES (solana)"
+   "ALLOX (solana)",
+   "SO (solana)"
   ]
  },
  "momentum_track": {
-  "logged": 19,
-  "new_rows": [],
-  "hit_2x_today": [
-   "GLITCH (solana)"
+  "logged": 24,
+  "new_rows": [
+   "FLFLT",
+   "Pokémon",
+   "UMBRA",
+   "Paper",
+   "$Light"
   ],
-  "to_zero_today": []
+  "hit_2x_today": [],
+  "to_zero_today": [
+   "蝴蝶人生 (bsc)"
+  ]
  },
  "control": {
-  "rows": 561,
+  "rows": 572,
   "median_peak_x": 1.0,
   "hit_2x_today": [
-   "GLITCH (solana)"
+   "ALLOX (solana)"
   ],
   "to_zero_today": [
-   "MUNKIEAI (solana)",
-   "FTR (ethereum)",
-   "STANDARD (robinhood)",
-   "RSGP (solana)",
-   "FABLES (solana)",
-   "SHOOT (robinhood)"
+   "牛梦 (bsc)",
+   "CHINAPAD (robinhood)",
+   "FlyBrain (bsc)",
+   "MCU (robinhood)",
+   "蝴蝶人生 (bsc)",
+   "PONS (robinhood)",
+   "AI (robinhood)",
+   "ALLOX (solana)",
+   "ORBIO (robinhood)",
+   "SO (solana)",
+   "Gato (robinhood)",
+   "HOOKR (robinhood)",
+   "EMRUN (robinhood)"
   ]
  },
  "changed": true,
