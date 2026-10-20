@@ -145,3 +145,10 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-10-20,momentum,Paper,robinhood,1282.7,Unclassified,2.4,91.14,0.0,474.0,1.0,explorer,https://dexscreener.com/robinhood/0x4079162f402622db782a862c6a85e2f1158723df1ef4b62f1af37cd610387a6c,daily scan
 2026-10-20,momentum,Pokémon,solana,631.0,Brand-name memes,,,3.89,3885.0,1.14,rugcheck,https://dexscreener.com/solana/CxyUG8PvWbbKW41MLAq7J87ft3dryDJZV2A5pgwb31an,daily scan
 2026-10-20,momentum,UMBRA,robinhood,628.0,Unclassified,27.47,28.16,0.0,,1.0,explorer,https://dexscreener.com/robinhood/0xeca49d10868e52e750c86cc75a01464381133d3a8e71992aa6518d8846ea5c86,daily scan
+2026-10-21,shortlist,SI276,solana,689.4,Unclassified,1.97,71.82,2.17,5.32,13.9,rugcheck,https://dexscreener.com/solana/12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG,daily scan
+2026-10-21,shortlist,WORM,robinhood,1229.6,AI,1.74,86.18,1.13,1.15,41.93,explorer,https://dexscreener.com/robinhood/0xf49ee5b66c4e7163026e5d25e6a1f93cff46dca4d3752f712d181d9392c1d567,daily scan
+2026-10-21,pullback,CBUCKS,solana,1054.4,Unclassified,5.19,41.92,0.71,11.45,13.94,rugcheck,https://dexscreener.com/solana/B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB,daily scan
+2026-10-21,pullback,GLOAM,robinhood,567.5,Stablecoins,31.47,44.85,1.31,86.16,62.94,explorer,https://dexscreener.com/robinhood/0xc5f373710186d788eee3048f9ff92608d344e3360b2a35bea98068146e18dd1a,daily scan
+2026-10-21,igniting,SI276,solana,689.4,Unclassified,1.97,71.82,2.17,5.32,13.9,rugcheck,https://dexscreener.com/solana/12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG,daily scan
+2026-10-21,momentum,Pokémon,solana,1469.3,Brand-name memes,,,0.75,13.63,1.76,rugcheck,https://dexscreener.com/solana/CxyUG8PvWbbKW41MLAq7J87ft3dryDJZV2A5pgwb31an,daily scan
+2026-10-21,momentum,WEFT,solana,1447.4,Utilities,85.81,55.77,0.84,11.35,2.96,rugcheck,https://dexscreener.com/solana/E5bdE27ATDTeg1ZPNFhjnU5fcVKjccQ5iFZLaX8fscgx,daily scan

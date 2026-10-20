@@ -1,6 +1,6 @@
 {
- "now": "2026-10-20 10:58 SGT",
- "cand_at": "2026-10-20 10:58 SGT",
+ "now": "2026-10-21 01:39 SGT",
+ "cand_at": "2026-10-21 01:39 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -25,14 +25,8 @@
    "chainflip",
    "eos"
   ],
-  "new": [
-   "chainflip",
-   "eos"
-  ],
-  "dropped": [
-   "doma",
-   "native_core"
-  ],
+  "new": [],
+  "dropped": [],
   "hottest": {
    "s": "mantle",
    "n": "Mantle",
@@ -41,252 +35,192 @@
   }
  },
  "tokens": {
-  "total": 70,
-  "band_m": 36,
+  "total": 66,
+  "band_m": 32,
   "candle_or_wallet_coverage_pct": 100,
-  "nodata": 0
+  "nodata": 2
  },
  "shortlist": [
   {
-   "sym": "swordcat",
-   "c": "solana",
-   "mc": 1416.7,
-   "nar": "Dog & animal memes",
-   "run": 1.05,
-   "retr": 69.93,
-   "acc": 1.04,
-   "c6": -11.09,
-   "age": 21.71,
-   "sec": "rugcheck",
-   "pa": "8ewuF2o8ACro7fqWepZ3tKhkbBjndZU4Ldk9scRPw83d"
-  },
-  {
    "sym": "SI276",
    "c": "solana",
-   "mc": 693.2,
+   "mc": 689.4,
    "nar": "Unclassified",
    "run": 1.97,
    "retr": 71.82,
-   "acc": 0.71,
-   "c6": -1.72,
-   "age": 13.28,
+   "acc": 2.17,
+   "c6": 5.32,
+   "age": 13.9,
    "sec": "rugcheck",
    "pa": "12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG"
+  },
+  {
+   "sym": "WORM",
+   "c": "robinhood",
+   "mc": 1229.6,
+   "nar": "AI",
+   "run": 1.74,
+   "retr": 86.18,
+   "acc": 1.13,
+   "c6": 1.15,
+   "age": 41.93,
+   "sec": "explorer",
+   "pa": "0xf49ee5b66c4e7163026e5d25e6a1f93cff46dca4d3752f712d181d9392c1d567"
   }
  ],
  "shortlist_new": [
+  "WORM"
+ ],
+ "shortlist_dropped": [
   "swordcat"
  ],
- "shortlist_dropped": [],
  "pullback": [
   {
    "sym": "CBUCKS",
    "c": "solana",
-   "mc": 1047.1,
+   "mc": 1054.4,
    "nar": "Unclassified",
    "run": 5.19,
    "retr": 41.92,
-   "acc": 1.08,
-   "c6": -8.08,
-   "age": 13.32,
+   "acc": 0.71,
+   "c6": 11.45,
+   "age": 13.94,
    "sec": "rugcheck",
    "pa": "B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB"
+  },
+  {
+   "sym": "GLOAM",
+   "c": "robinhood",
+   "mc": 567.5,
+   "nar": "Stablecoins",
+   "run": 31.47,
+   "retr": 44.85,
+   "acc": 1.31,
+   "c6": 86.16,
+   "age": 62.94,
+   "sec": "explorer",
+   "pa": "0xc5f373710186d788eee3048f9ff92608d344e3360b2a35bea98068146e18dd1a"
   }
  ],
  "pullback_new": [
-  "CBUCKS"
+  "GLOAM"
  ],
  "pullback_dropped": [],
  "igniting": [
   {
-   "sym": "ALLOX",
+   "sym": "SI276",
    "c": "solana",
-   "mc": 1210.0,
+   "mc": 689.4,
    "nar": "Unclassified",
-   "run": null,
-   "retr": null,
-   "acc": 4.0,
-   "c6": 73.91,
-   "age": 0.15,
+   "run": 1.97,
+   "retr": 71.82,
+   "acc": 2.17,
+   "c6": 5.32,
+   "age": 13.9,
    "sec": "rugcheck",
-   "pa": "2818ceegRd4tzxwvv7y4CWWWKtP6McGGg2VfPYuLLGjC"
-  },
-  {
-   "sym": "FABLES",
-   "c": "solana",
-   "mc": 1272.1,
-   "nar": "Unclassified",
-   "run": null,
-   "retr": null,
-   "acc": 4.0,
-   "c6": 71.18,
-   "age": 0.15,
-   "sec": "rugcheck",
-   "pa": "3AX1xG9t725R8Lf3quVv6qfCeoVLCoWadfskpn8zEyZf"
-  },
-  {
-   "sym": "SO",
-   "c": "solana",
-   "mc": 990.6,
-   "nar": "Utilities",
-   "run": null,
-   "retr": null,
-   "acc": 4.0,
-   "c6": 26.09,
-   "age": 0.02,
-   "sec": "rugcheck",
-   "pa": "Hk3i8DQTMvTXbWUrv3Ciyq2r2C458Rvfo1PfXN7Sv6nN"
+   "pa": "12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG"
   }
  ],
  "momentum": [
   {
-   "sym": "FLFLT",
-   "c": "robinhood",
-   "mc": 651.3,
-   "nar": "Dog & animal memes",
-   "run": 25.87,
-   "retr": 76.54,
-   "acc": 0.0,
-   "c6": null,
-   "age": 1.0,
-   "sec": "explorer",
-   "pa": "0x1f3c9a7dd32c98644be90f4e2ad62cfe39fbf44954aa53cbf34d54d29d54e0eb"
-  },
-  {
    "sym": "Pokémon",
    "c": "solana",
-   "mc": 631.0,
+   "mc": 1469.3,
    "nar": "Brand-name memes",
    "run": null,
    "retr": null,
-   "acc": 3.89,
-   "c6": 3885.0,
-   "age": 1.14,
+   "acc": 0.75,
+   "c6": 13.63,
+   "age": 1.76,
    "sec": "rugcheck",
    "pa": "CxyUG8PvWbbKW41MLAq7J87ft3dryDJZV2A5pgwb31an"
   },
   {
-   "sym": "UMBRA",
-   "c": "robinhood",
-   "mc": 628.0,
-   "nar": "Unclassified",
-   "run": 27.47,
-   "retr": 28.16,
-   "acc": 0.0,
-   "c6": null,
-   "age": 1.0,
-   "sec": "explorer",
-   "pa": "0xeca49d10868e52e750c86cc75a01464381133d3a8e71992aa6518d8846ea5c86"
-  },
-  {
-   "sym": "Paper",
-   "c": "robinhood",
-   "mc": 1282.7,
-   "nar": "Unclassified",
-   "run": 2.4,
-   "retr": 91.14,
-   "acc": 0.0,
-   "c6": 474.0,
-   "age": 1.0,
-   "sec": "explorer",
-   "pa": "0x4079162f402622db782a862c6a85e2f1158723df1ef4b62f1af37cd610387a6c"
-  },
-  {
-   "sym": "$Light",
-   "c": "bsc",
-   "mc": 938.7,
-   "nar": "Unclassified",
-   "run": 49.16,
-   "retr": 15.99,
-   "acc": 0.88,
-   "c6": -12.59,
-   "age": 1.17,
-   "sec": "goplus",
-   "pa": "0xc9ac824CBc99d0EF8BB0026699a5A63184780cE5"
+   "sym": "WEFT",
+   "c": "solana",
+   "mc": 1447.4,
+   "nar": "Utilities",
+   "run": 85.81,
+   "retr": 55.77,
+   "acc": 0.84,
+   "c6": 11.35,
+   "age": 2.96,
+   "sec": "rugcheck",
+   "pa": "E5bdE27ATDTeg1ZPNFhjnU5fcVKjccQ5iFZLaX8fscgx"
   }
  ],
  "momentum_new": [
+  "WEFT"
+ ],
+ "momentum_dropped": [
   "$Light",
   "FLFLT",
   "Paper",
-  "Pokémon",
   "UMBRA"
  ],
- "momentum_dropped": [
-  "GLITCH"
- ],
  "honeypots_new": [
-  "CTR"
+  "AKE"
  ],
  "track": {
-  "logged": 63,
+  "logged": 64,
   "new_rows": [
    [
-    "swordcat",
-    "S"
-   ],
-   [
-    "CBUCKS",
+    "GLOAM",
     "P"
    ]
   ],
   "best_x": 14.93,
   "median_peak_x": 1.0,
-  "hit_2x_today": [],
-  "to_zero_today": [
-   "牛梦 (bsc)"
+  "hit_2x_today": [
+   "GIGATENEV (robinhood)"
   ],
+  "to_zero_today": [],
   "repriced": true
  },
  "igniting_track": {
-  "logged": 34,
+  "logged": 35,
   "new_rows": [
-   "ALLOX",
-   "FABLES",
-   "SO"
-  ],
-  "hit_2x_today": [
-   "ALLOX (solana)"
-  ],
-  "to_zero_today": [
-   "ALLOX (solana)",
-   "SO (solana)"
-  ]
- },
- "momentum_track": {
-  "logged": 24,
-  "new_rows": [
-   "FLFLT",
-   "Pokémon",
-   "UMBRA",
-   "Paper",
-   "$Light"
+   "SI276"
   ],
   "hit_2x_today": [],
   "to_zero_today": [
-   "蝴蝶人生 (bsc)"
+   "FABLES (solana)"
+  ]
+ },
+ "momentum_track": {
+  "logged": 25,
+  "new_rows": [
+   "WEFT"
+  ],
+  "hit_2x_today": [
+   "Pokémon (solana)",
+   "$Light (bsc)"
+  ],
+  "to_zero_today": [
+   "特斯拉能飞 (bsc)",
+   "FLFLT (robinhood)",
+   "UMBRA (robinhood)"
   ]
  },
  "control": {
-  "rows": 572,
+  "rows": 576,
   "median_peak_x": 1.0,
   "hit_2x_today": [
-   "ALLOX (solana)"
+   "GIGATENEV (robinhood)"
   ],
   "to_zero_today": [
-   "牛梦 (bsc)",
-   "CHINAPAD (robinhood)",
-   "FlyBrain (bsc)",
-   "MCU (robinhood)",
-   "蝴蝶人生 (bsc)",
-   "PONS (robinhood)",
-   "AI (robinhood)",
-   "ALLOX (solana)",
-   "ORBIO (robinhood)",
+   "Maple (robinhood)",
+   "CDOG (solana)",
+   "VEILDOGE (solana)",
+   "IBS (bsc)",
+   "FABLES (solana)",
+   "特斯拉能飞 (bsc)",
    "SO (solana)",
-   "Gato (robinhood)",
-   "HOOKR (robinhood)",
-   "EMRUN (robinhood)"
+   "ALLOX (solana)",
+   "pPOLY (bsc)",
+   "WMGDN (robinhood)",
+   "FXCPU (robinhood)",
+   "FLFLT (robinhood)"
   ]
  },
  "changed": true,
