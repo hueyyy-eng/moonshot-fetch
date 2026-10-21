@@ -61,6 +61,13 @@ If a change would break one of them, stop and ask first.
 - **"Launchpad / infra"** = launchpads only.
 - **"Gaming"** = gaming / GameFi tokens get their own label, not Utilities.
   Detected from GeckoTerminal's category tags only — no keyword matching on names or descriptions.
+- Every token shows its **type tag** (dashed chip) beside its chain, in **every** section that lists tokens
+  (Shortlist, Pullback, Igniting, Momentum, token list, age cards, Narrative, Playbook, Track record,
+  near-misses, Price tracking). No type → the tag says **"Unclassified"**.
+- A token that plainly fits two types shows **both tags** (e.g. PUMP: Launchpad / infra + Classic memes).
+  The first tag is the one used for grouping (Playbook "by narrative") and for the narrative counts.
+- Well-known projects whose name misleads are fixed in `KNOWN_PROJECTS` in `scan/auto_nar.py`; those
+  labels replace any older label on the next scan.
 
 ## Tracking
 
