@@ -45,7 +45,7 @@
    "sym": "SI276",
    "c": "solana",
    "mc": 689.4,
-   "nar": "Unclassified",
+   "nar": "AI",
    "run": 1.97,
    "retr": 71.82,
    "acc": 2.17,
@@ -68,12 +68,8 @@
    "pa": "0xf49ee5b66c4e7163026e5d25e6a1f93cff46dca4d3752f712d181d9392c1d567"
   }
  ],
- "shortlist_new": [
-  "WORM"
- ],
- "shortlist_dropped": [
-  "swordcat"
- ],
+ "shortlist_new": [],
+ "shortlist_dropped": [],
  "pullback": [
   {
    "sym": "CBUCKS",
@@ -102,16 +98,14 @@
    "pa": "0xc5f373710186d788eee3048f9ff92608d344e3360b2a35bea98068146e18dd1a"
   }
  ],
- "pullback_new": [
-  "GLOAM"
- ],
+ "pullback_new": [],
  "pullback_dropped": [],
  "igniting": [
   {
    "sym": "SI276",
    "c": "solana",
    "mc": 689.4,
-   "nar": "Unclassified",
+   "nar": "AI",
    "run": 1.97,
    "retr": 71.82,
    "acc": 2.17,
@@ -149,80 +143,36 @@
    "pa": "E5bdE27ATDTeg1ZPNFhjnU5fcVKjccQ5iFZLaX8fscgx"
   }
  ],
- "momentum_new": [
-  "WEFT"
- ],
- "momentum_dropped": [
-  "$Light",
-  "FLFLT",
-  "Paper",
-  "UMBRA"
- ],
- "honeypots_new": [
-  "AKE"
- ],
+ "momentum_new": [],
+ "momentum_dropped": [],
+ "honeypots_new": [],
  "track": {
   "logged": 64,
-  "new_rows": [
-   [
-    "GLOAM",
-    "P"
-   ]
-  ],
+  "new_rows": [],
   "best_x": 14.93,
   "median_peak_x": 1.0,
-  "hit_2x_today": [
-   "GIGATENEV (robinhood)"
-  ],
+  "hit_2x_today": [],
   "to_zero_today": [],
   "repriced": true
  },
  "igniting_track": {
   "logged": 35,
-  "new_rows": [
-   "SI276"
-  ],
+  "new_rows": [],
   "hit_2x_today": [],
-  "to_zero_today": [
-   "FABLES (solana)"
-  ]
+  "to_zero_today": []
  },
  "momentum_track": {
   "logged": 25,
-  "new_rows": [
-   "WEFT"
-  ],
-  "hit_2x_today": [
-   "Pokémon (solana)",
-   "$Light (bsc)"
-  ],
-  "to_zero_today": [
-   "特斯拉能飞 (bsc)",
-   "FLFLT (robinhood)",
-   "UMBRA (robinhood)"
-  ]
+  "new_rows": [],
+  "hit_2x_today": [],
+  "to_zero_today": []
  },
  "control": {
   "rows": 576,
   "median_peak_x": 1.0,
-  "hit_2x_today": [
-   "GIGATENEV (robinhood)"
-  ],
-  "to_zero_today": [
-   "Maple (robinhood)",
-   "CDOG (solana)",
-   "VEILDOGE (solana)",
-   "IBS (bsc)",
-   "FABLES (solana)",
-   "特斯拉能飞 (bsc)",
-   "SO (solana)",
-   "ALLOX (solana)",
-   "pPOLY (bsc)",
-   "WMGDN (robinhood)",
-   "FXCPU (robinhood)",
-   "FLFLT (robinhood)"
-  ]
+  "hit_2x_today": [],
+  "to_zero_today": []
  },
- "changed": true,
+ "changed": false,
  "alert": true
 }
