@@ -1,6 +1,6 @@
 {
- "now": "2026-10-21 15:29 SGT",
- "cand_at": "2026-10-21 15:29 SGT",
+ "now": "2026-10-22 02:06 SGT",
+ "cand_at": "2026-10-22 02:06 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -25,14 +25,8 @@
    "mantle",
    "injective"
   ],
-  "new": [
-   "injective",
-   "mantle"
-  ],
-  "dropped": [
-   "chainflip",
-   "eos"
-  ],
+  "new": [],
+  "dropped": [],
   "hottest": {
    "s": "mayachain",
    "n": "Mayachain",
@@ -41,107 +35,209 @@
   }
  },
  "tokens": {
-  "total": 75,
-  "band_m": 36,
-  "candle_or_wallet_coverage_pct": 89,
-  "nodata": 5
+  "total": 84,
+  "band_m": 44,
+  "candle_or_wallet_coverage_pct": 100,
+  "nodata": 2
  },
  "shortlist": [
   {
-   "sym": "WORM",
-   "c": "robinhood",
-   "mc": 1292.7,
+   "sym": "swordcat",
+   "c": "solana",
+   "mc": 1170.2,
+   "nar": "Dog & animal memes",
+   "run": 1.04,
+   "retr": 76.48,
+   "acc": 1.44,
+   "c6": 6.34,
+   "age": 23.33,
+   "sec": "rugcheck",
+   "pa": "8ewuF2o8ACro7fqWepZ3tKhkbBjndZU4Ldk9scRPw83d"
+  },
+  {
+   "sym": ".ai",
+   "c": "bsc",
+   "mc": 561.4,
    "nar": "AI",
-   "run": 1.96,
-   "retr": 84.39,
+   "run": null,
+   "retr": null,
    "acc": 0.62,
-   "c6": 8.27,
-   "age": 42.5,
-   "sec": "explorer",
-   "pa": "0xf49ee5b66c4e7163026e5d25e6a1f93cff46dca4d3752f712d181d9392c1d567"
+   "c6": 2.06,
+   "age": 0.95,
+   "sec": "goplus",
+   "pa": "0xcBc77d857D11d9a8407B6e580010540D885b0B40"
   }
  ],
- "shortlist_new": [],
+ "shortlist_new": [
+  ".ai",
+  "swordcat"
+ ],
  "shortlist_dropped": [
-  "SI276"
+  "WORM"
  ],
- "pullback": [],
- "pullback_new": [],
- "pullback_dropped": [
-  "CBUCKS",
-  "GLOAM"
+ "pullback": [
+  {
+   "sym": "GIGATENEV",
+   "c": "robinhood",
+   "mc": 1808.3,
+   "nar": "Unclassified",
+   "run": 12.84,
+   "retr": 44.37,
+   "acc": 0.81,
+   "c6": -6.93,
+   "age": 11.98,
+   "sec": "explorer",
+   "pa": "0xe96c99be1ffcc204714ebce32870ab12b8b362308fa50b9352c03b2486a5d448"
+  }
  ],
- "igniting": [],
+ "pullback_new": [
+  "GIGATENEV"
+ ],
+ "pullback_dropped": [],
+ "igniting": [
+  {
+   "sym": "SO",
+   "c": "solana",
+   "mc": 1158.2,
+   "nar": "Utilities",
+   "run": null,
+   "retr": null,
+   "acc": 4.0,
+   "c6": 41.53,
+   "age": 0.06,
+   "sec": "rugcheck",
+   "pa": "HJ2dFju4rZsMydA86WQooLq3Jgfda2uUEzmvCEMCQX8g"
+  },
+  {
+   "sym": "ALLOX",
+   "c": "solana",
+   "mc": 1016.2,
+   "nar": "Unclassified",
+   "run": null,
+   "retr": null,
+   "acc": 4.0,
+   "c6": 41.48,
+   "age": 0.06,
+   "sec": "rugcheck",
+   "pa": "SVMvpwvGEo1Ht33WPxpVdBuSsMSYssJA8s9QYCgwMTa"
+  },
+  {
+   "sym": "RSGP",
+   "c": "solana",
+   "mc": 1059.1,
+   "nar": "Unclassified",
+   "run": null,
+   "retr": null,
+   "acc": 4.0,
+   "c6": 38.12,
+   "age": 0.05,
+   "sec": "rugcheck",
+   "pa": "GUpgi7i5WKHGCWLHxPghLSpZSLdHt7yHtb5saDm29LHY"
+  }
+ ],
  "momentum": [
   {
-   "sym": "重生之我在币安广场赚100个亿",
-   "c": "bsc",
-   "mc": 521.7,
+   "sym": "EMBER",
+   "c": "robinhood",
+   "mc": 642.7,
    "nar": "Unclassified",
-   "run": 14.76,
-   "retr": 77.82,
-   "acc": 1.07,
-   "c6": -10.0,
-   "age": 1.57,
+   "run": 26.52,
+   "retr": 49.87,
+   "acc": 0.0,
+   "c6": null,
+   "age": 1.05,
+   "sec": "nodata",
+   "pa": "0x2833187af60775a392d4ce69ce068699771cd4c4d609ec5fcd548b895a2d764d"
+  },
+  {
+   "sym": "MONEYBIZ",
+   "c": "robinhood",
+   "mc": 1801.8,
+   "nar": "Unclassified",
+   "run": 73.44,
+   "retr": 25.15,
+   "acc": 0.0,
+   "c6": null,
+   "age": 1.06,
+   "sec": "explorer",
+   "pa": "0x636aa2466f59d74075983420405feb9719f056ed432842d6f15d53f5924319d5"
+  },
+  {
+   "sym": "$AXIS",
+   "c": "bsc",
+   "mc": 1355.0,
+   "nar": "Unclassified",
+   "run": 26.87,
+   "retr": 15.57,
+   "acc": 0.87,
+   "c6": 17.67,
+   "age": 1.19,
    "sec": "goplus",
-   "pa": "0xb54DAFca9Ae333f9eE6cF57C1F65635046515e19"
+   "pa": "0x74Cf25D6d8C96242493621d7ABE980CC6a370E89"
   }
  ],
  "momentum_new": [
-  "重生之我在币安广场赚100个亿"
+  "$AXIS",
+  "EMBER",
+  "MONEYBIZ"
  ],
  "momentum_dropped": [
-  "Pokémon",
-  "WEFT"
+  "重生之我在币安广场赚100个亿"
  ],
- "honeypots_new": [],
+ "honeypots_new": [
+  "DOOD",
+  "AKE"
+ ],
  "track": {
-  "logged": 64,
-  "new_rows": [],
+  "logged": 65,
+  "new_rows": [
+   [
+    ".ai",
+    "S"
+   ]
+  ],
   "best_x": 14.93,
   "median_peak_x": 1.0,
-  "hit_2x_today": [
-   "GLOAM (robinhood)"
+  "hit_2x_today": [],
+  "to_zero_today": [
+   "牛梦 (bsc)"
   ],
-  "to_zero_today": [],
   "repriced": true
  },
  "igniting_track": {
-  "logged": 35,
-  "new_rows": [],
+  "logged": 38,
+  "new_rows": [
+   "SO",
+   "ALLOX",
+   "RSGP"
+  ],
   "hit_2x_today": [],
   "to_zero_today": [
-   "RSGP (solana)",
-   "FABLES (solana)",
-   "SO (solana)",
-   "ALLOX (solana)"
+   "SO (solana)"
   ]
  },
  "momentum_track": {
-  "logged": 26,
+  "logged": 29,
   "new_rows": [
-   "重生之我在币安广场赚100个亿"
+   "EMBER",
+   "MONEYBIZ",
+   "$AXIS"
   ],
   "hit_2x_today": [],
-  "to_zero_today": []
+  "to_zero_today": [
+   "Paper (robinhood)",
+   "$Light (bsc)"
+  ]
  },
  "control": {
-  "rows": 586,
+  "rows": 593,
   "median_peak_x": 1.0,
   "hit_2x_today": [
-   "GLOAM (robinhood)"
+   "GP (solana)"
   ],
   "to_zero_today": [
-   "GLXY (robinhood)",
-   "RWA (robinhood)",
-   "RSGP (solana)",
-   "1 (solana)",
-   "SO (solana)",
-   "FABLES (solana)",
-   "ALLOX (solana)",
-   "SPSI (robinhood)",
-   "W4WORK (robinhood)",
-   "NWOO (robinhood)"
+   "牛梦 (bsc)",
+   "SO (solana)"
   ]
  },
  "changed": true,
