@@ -1,6 +1,6 @@
 {
- "now": "2026-10-21 01:39 SGT",
- "cand_at": "2026-10-21 01:39 SGT",
+ "now": "2026-10-21 15:29 SGT",
+ "cand_at": "2026-10-21 15:29 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -22,136 +22,87 @@
  },
  "chains": {
   "hot": [
+   "mantle",
+   "injective"
+  ],
+  "new": [
+   "injective",
+   "mantle"
+  ],
+  "dropped": [
    "chainflip",
    "eos"
   ],
-  "new": [],
-  "dropped": [],
   "hottest": {
-   "s": "mantle",
-   "n": "Mantle",
-   "dr": 3.93,
-   "dr30": 5.24
+   "s": "mayachain",
+   "n": "Mayachain",
+   "dr": 2.06,
+   "dr30": 4.46
   }
  },
  "tokens": {
-  "total": 66,
-  "band_m": 32,
-  "candle_or_wallet_coverage_pct": 100,
-  "nodata": 2
+  "total": 75,
+  "band_m": 36,
+  "candle_or_wallet_coverage_pct": 89,
+  "nodata": 5
  },
  "shortlist": [
   {
-   "sym": "SI276",
-   "c": "solana",
-   "mc": 689.4,
-   "nar": "AI",
-   "run": 1.97,
-   "retr": 71.82,
-   "acc": 2.17,
-   "c6": 5.32,
-   "age": 13.9,
-   "sec": "rugcheck",
-   "pa": "12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG"
-  },
-  {
    "sym": "WORM",
    "c": "robinhood",
-   "mc": 1229.6,
+   "mc": 1292.7,
    "nar": "AI",
-   "run": 1.74,
-   "retr": 86.18,
-   "acc": 1.13,
-   "c6": 1.15,
-   "age": 41.93,
+   "run": 1.96,
+   "retr": 84.39,
+   "acc": 0.62,
+   "c6": 8.27,
+   "age": 42.5,
    "sec": "explorer",
    "pa": "0xf49ee5b66c4e7163026e5d25e6a1f93cff46dca4d3752f712d181d9392c1d567"
   }
  ],
  "shortlist_new": [],
- "shortlist_dropped": [],
- "pullback": [
-  {
-   "sym": "CBUCKS",
-   "c": "solana",
-   "mc": 1054.4,
-   "nar": "Unclassified",
-   "run": 5.19,
-   "retr": 41.92,
-   "acc": 0.71,
-   "c6": 11.45,
-   "age": 13.94,
-   "sec": "rugcheck",
-   "pa": "B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB"
-  },
-  {
-   "sym": "GLOAM",
-   "c": "robinhood",
-   "mc": 567.5,
-   "nar": "Stablecoins",
-   "run": 31.47,
-   "retr": 44.85,
-   "acc": 1.31,
-   "c6": 86.16,
-   "age": 62.94,
-   "sec": "explorer",
-   "pa": "0xc5f373710186d788eee3048f9ff92608d344e3360b2a35bea98068146e18dd1a"
-  }
+ "shortlist_dropped": [
+  "SI276"
  ],
+ "pullback": [],
  "pullback_new": [],
- "pullback_dropped": [],
- "igniting": [
-  {
-   "sym": "SI276",
-   "c": "solana",
-   "mc": 689.4,
-   "nar": "AI",
-   "run": 1.97,
-   "retr": 71.82,
-   "acc": 2.17,
-   "c6": 5.32,
-   "age": 13.9,
-   "sec": "rugcheck",
-   "pa": "12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG"
-  }
+ "pullback_dropped": [
+  "CBUCKS",
+  "GLOAM"
  ],
+ "igniting": [],
  "momentum": [
   {
-   "sym": "Pokémon",
-   "c": "solana",
-   "mc": 1469.3,
-   "nar": "Brand-name memes",
-   "run": null,
-   "retr": null,
-   "acc": 0.75,
-   "c6": 13.63,
-   "age": 1.76,
-   "sec": "rugcheck",
-   "pa": "CxyUG8PvWbbKW41MLAq7J87ft3dryDJZV2A5pgwb31an"
-  },
-  {
-   "sym": "WEFT",
-   "c": "solana",
-   "mc": 1447.4,
-   "nar": "Utilities",
-   "run": 85.81,
-   "retr": 55.77,
-   "acc": 0.84,
-   "c6": 11.35,
-   "age": 2.96,
-   "sec": "rugcheck",
-   "pa": "E5bdE27ATDTeg1ZPNFhjnU5fcVKjccQ5iFZLaX8fscgx"
+   "sym": "重生之我在币安广场赚100个亿",
+   "c": "bsc",
+   "mc": 521.7,
+   "nar": "Unclassified",
+   "run": 14.76,
+   "retr": 77.82,
+   "acc": 1.07,
+   "c6": -10.0,
+   "age": 1.57,
+   "sec": "goplus",
+   "pa": "0xb54DAFca9Ae333f9eE6cF57C1F65635046515e19"
   }
  ],
- "momentum_new": [],
- "momentum_dropped": [],
+ "momentum_new": [
+  "重生之我在币安广场赚100个亿"
+ ],
+ "momentum_dropped": [
+  "Pokémon",
+  "WEFT"
+ ],
  "honeypots_new": [],
  "track": {
   "logged": 64,
   "new_rows": [],
   "best_x": 14.93,
   "median_peak_x": 1.0,
-  "hit_2x_today": [],
+  "hit_2x_today": [
+   "GLOAM (robinhood)"
+  ],
   "to_zero_today": [],
   "repriced": true
  },
@@ -159,20 +110,40 @@
   "logged": 35,
   "new_rows": [],
   "hit_2x_today": [],
-  "to_zero_today": []
+  "to_zero_today": [
+   "RSGP (solana)",
+   "FABLES (solana)",
+   "SO (solana)",
+   "ALLOX (solana)"
+  ]
  },
  "momentum_track": {
-  "logged": 25,
-  "new_rows": [],
+  "logged": 26,
+  "new_rows": [
+   "重生之我在币安广场赚100个亿"
+  ],
   "hit_2x_today": [],
   "to_zero_today": []
  },
  "control": {
-  "rows": 576,
+  "rows": 586,
   "median_peak_x": 1.0,
-  "hit_2x_today": [],
-  "to_zero_today": []
+  "hit_2x_today": [
+   "GLOAM (robinhood)"
+  ],
+  "to_zero_today": [
+   "GLXY (robinhood)",
+   "RWA (robinhood)",
+   "RSGP (solana)",
+   "1 (solana)",
+   "SO (solana)",
+   "FABLES (solana)",
+   "ALLOX (solana)",
+   "SPSI (robinhood)",
+   "W4WORK (robinhood)",
+   "NWOO (robinhood)"
+  ]
  },
- "changed": false,
+ "changed": true,
  "alert": true
 }
