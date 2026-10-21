@@ -27,6 +27,8 @@ import statistics
 import sys
 from datetime import datetime, timedelta, timezone
 
+import auto_nar
+
 SGT = timezone(timedelta(hours=8))
 KEEP_DAYS = 60
 REJECT_CAP = 30
@@ -248,7 +250,8 @@ def main() -> int:
     src = status.get("sources") or scan.get("status") or {}
     state = lambda k: (src.get(k) or {}).get("state", "missing")  # noqa: E731
     nar_map = json.load(open(a.nar, encoding="utf-8")) if a.nar else {}
-    nar_map = {k.lower(): v for k, v in nar_map.items()}
+    # a value is a label, or ["first", "second"] when the token fits two
+    nar_map = {k.lower(): (list(v) if isinstance(v, list) else [v]) for k, v in nar_map.items() if v}
 
     def oldv(name, default):
         v = old.get(name, {}).get("val")
@@ -363,8 +366,11 @@ def main() -> int:
         o = old_by_pa.get((t.get("pa") or "").lower()) or old_by_ta.get((t.get("ta") or "").lower())
         # an earlier "Unclassified" is not final: such tokens go back to the tagger every day, because their
         # profile or website often appears a day or two after launch. A tag from --nar always wins.
+        # A well-known project (auto_nar.KNOWN_PROJECTS) wins over both, so a wrong old label gets corrected.
         prev = (o or {}).get("nar")
-        n = (nar_map.get((t.get("pa") or "").lower()) or nar_map.get((t.get("ta") or "").lower())
+        known = list(auto_nar.known_labels(t))
+        tagged = nar_map.get((t.get("pa") or "").lower()) or nar_map.get((t.get("ta") or "").lower()) or []
+        n = ((known or tagged or [None])[0]
              or (prev if prev != "Unclassified" or a.allow_unclassified else None))
         if n:
             t["nar"] = n
@@ -373,6 +379,17 @@ def main() -> int:
         else:
             todo.append({"pa": t.get("pa"), "ta": t.get("ta"), "c": t.get("c"), "sym": t.get("sym"), "nm": t.get("nm"),
                          "q": t.get("q"), "web": t.get("web"), "tw": t.get("tw"), "band": t.get("band"), "mc": t.get("mc")})
+        # second label: shown as an extra tag only; grouping and counts use t["nar"]
+        t.pop("nar2", None)
+        if t.get("nar") and t["nar"] != "Unclassified":
+            if known:
+                n2 = known[1] if len(known) > 1 else None
+            elif tagged:
+                n2 = tagged[1] if len(tagged) > 1 else auto_nar.second_label(t, t["nar"])
+            else:
+                n2 = (o or {}).get("nar2") or auto_nar.second_label(t, t["nar"])
+            if n2 and n2 not in (t["nar"], "Unclassified"):
+                t["nar2"] = n2
     os.makedirs(a.out, exist_ok=True)
     json.dump(todo, open(os.path.join(a.out, "nar_todo.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     if todo:
@@ -490,6 +507,26 @@ def main() -> int:
             why = next(k for k, v in t["_g"].items() if v is False)
             rej.append({"d": today, "sym": t["sym"], "c": t["c"], "pa": t["pa"], "mc": t.get("mc"), "px": t["px"],
                         "pxNow": t["px"], "pxMax": t["px"], "dMax": 0, "why": why})
+    # every logged row carries its token's labels, so Track record / Price tracking can show them after the
+    # token has left the page. Tokens still on the page refresh theirs; older rows fall back to pattern_study's
+    # running map of every token it has seen tagged.
+    try:
+        seen_nar = json.load(open(os.path.join(os.path.dirname(a.page), "pattern-nar.json"), encoding="utf-8"))
+    except (OSError, ValueError):
+        seen_nar = {}
+    tok_by_pa = {(t.get("pa") or "").lower(): t for t in tokens}
+    for row in hist + rej + ign_hist + mom_hist:
+        t = tok_by_pa.get((row.get("pa") or "").lower())
+        if t and t.get("nar"):
+            row["nar"] = t["nar"]
+            if t.get("nar2"):
+                row["nar2"] = t["nar2"]
+            else:
+                row.pop("nar2", None)
+        elif not row.get("nar"):
+            n = seen_nar.get(f"{row.get('c')}:{row.get('pa')}".lower())
+            if n:
+                row["nar"] = n
     narhist = [r for r in oldv("NARHIST", []) if r.get("d", "") >= cutoff]
     holdhist = [r for r in oldv("HOLDHIST", []) if r.get("d", "") >= cutoff]
     if not tokens_carried:

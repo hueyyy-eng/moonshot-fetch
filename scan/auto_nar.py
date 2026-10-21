@@ -5,6 +5,10 @@
 Reads the builder's nar_todo.json (tokens that are new today, plus tokens still tagged "Unclassified")
 and writes {"<pair address>": "<label>"}. Labels match the ones the page already uses.
 
+A token can carry a second label when it plainly fits two (OpenAI PreStocks: Tokenised equities + AI).
+The first label is the one the page groups and counts by; the second only shows as an extra tag. A token
+with two labels is written as ["first", "second"] instead of a plain string.
+
 Two passes per token:
   1. its ticker, name and website address (the original keyword rules, widened);
   2. only if pass 1 finds nothing: what the token says about itself - its GeckoTerminal profile
@@ -30,6 +34,16 @@ EQUITY_TICKERS = {
     "AAPL", "AMZN", "GOOG", "GOOGL", "META", "MSFT", "NVDA", "TSLA", "NFLX", "AMD", "INTC", "HOOD", "COIN",
     "MSTR", "PLTR", "SPY", "QQQ", "IWM", "DIA", "GME", "AMC", "BABA", "TSM", "SNAP", "RBLX", "UBER", "ORCL",
     "CRCL", "SPCX", "GLXY", "USO", "SNDK", "BRK.B", "BRK", "GOOGLE", "TESLA", "APPLE", "NVIDIA",
+    "BNC",                                    # CEA Industries (Nasdaq: BNC)
+}
+
+# well-known projects whose name gives no clue, or whose name points the wrong way: (chain, ticker) -> labels.
+# These win over yesterday's label too (build_block applies them to every token, every scan).
+KNOWN_PROJECTS: dict[tuple[str, str], tuple[str, ...]] = {
+    ("solana", "PUMP"): ("Launchpad / infra", "Classic memes"),   # pump.fun's own token
+    ("base", "XDP"): ("Launchpad / infra",),                       # Doppler, a token-launch protocol
+    ("solana", "MPLX"): ("Utilities",),                            # Metaplex, NFT / token infrastructure
+    ("mantle", "MOE"): ("Utilities",),                             # Merchant Moe, Mantle's main exchange
 }
 
 KNOWN_UTILITIES = {  # established protocols by ticker or name
@@ -63,9 +77,9 @@ RULES: list[tuple[str, re.Pattern]] = [
         r"\bwrapped\b|\bstak(ed|ers?|ing)\b|liquid staking|\blst\b|^usd|usd$|usd[t₮]|usdc|\bdollar\b|bridged", re.I)),
     ("AI", re.compile(
         r"\b(ai|a\.i\.|gpt|agents?|agentic|openai|anthropic|claude|grok|llm|neural|deepseek|gemini|agi|"
-        r"artificial intelligence|machine learning|e/acc|accelerationism)\b", re.I)),
-    ("Launchpad / infra", re.compile(r"launchpad|\blauncher\b|token launch platform", re.I)),
-    ("Gold / BTC proxies", re.compile(r"\b(gold|xau|btc|bitcoin|zcash|zec|satoshi)\b", re.I)),
+        r"artificial intelligence|machine learning|e/acc|accelerationism|robotics?|super ?intelligence)\b", re.I)),
+    ("Launchpad / infra", re.compile(r"launchpad|\blauncher\b|token launch platform|\b[a-z]{3,}pad\b", re.I)),
+    ("Gold / BTC proxies", re.compile(r"\b(gold|xau|xaut0?|paxg|btc|bitcoin|zcash|zec|satoshi)\b", re.I)),
     ("RWA", re.compile(r"\brwa\b|real[ -]?world asset|real[ -]?estate|\bestate\b|treasur|\bdeed\b|polymarket|"
                        r"\bbond\b|prediction market", re.I)),
     ("Brand-name memes", re.compile(BRANDS, re.I)),
@@ -105,7 +119,7 @@ CATEGORY_MAP: list[tuple[str, str]] = [
 # pass 2 reads free text, where some pass-1 words are too loose ("worth a dollar", "the next bitcoin")
 DESC_OVERRIDES: dict[str, re.Pattern] = {
     "Wrapped assets": re.compile(r"\bwrapped\b|liquid staking|\bstak(ed|ers)\b|\blst\b|bridged (version|token|asset)", re.I),
-    "Gold / BTC proxies": re.compile(r"\b(xau|zcash|zec)\b|\bgold[- ]backed|backed by (gold|btc|bitcoin)|bitcoin (proxy|treasury)", re.I),
+    "Gold / BTC proxies": re.compile(r"\b(xau|xaut0?|paxg|zcash|zec)\b|\bgold[- ]backed|backed by (gold|btc|bitcoin)|bitcoin (proxy|treasury)", re.I),
     "Tokenised equities": re.compile(r"xstock|tokeni[sz]ed (stock|equit|share)|common stock|tracks the (share|stock) price", re.I),
 }
 
@@ -117,11 +131,34 @@ UTILITY_DESC_RE = re.compile(r"\b(protocol|decentrali[sz]ed exchange|\bdex\b|len
 
 
 def _base(sym: str) -> str:
-    return re.sub(r"(c|x|b|on|x1l|x3l)$", "", sym.upper()) if len(sym) > 2 else sym.upper()
+    return re.sub(r"(c|x|b|on|x1l|x3l)$", "", sym.upper(), flags=re.I) if len(sym) > 2 else sym.upper()
+
+
+def known_labels(t: dict) -> tuple[str, ...]:
+    return KNOWN_PROJECTS.get(((t.get("c") or "").lower(), (t.get("sym") or "").strip().upper()), ())
 
 
 def tag_basic(t: dict) -> str:
     """Pass 1: ticker, name and website address only (no network)."""
+    return tags_basic(t)[0]
+
+
+def second_label(t: dict, first: str) -> str | None:
+    """A second name-based label that differs from `first`, or None. No network."""
+    return next((lbl for lbl in tags_basic(t) if lbl not in (first, "Unclassified")), None)
+
+
+def tags_basic(t: dict) -> list[str]:
+    """Every pass-1 label that fits, best first; ["Unclassified"] when none does."""
+    known = known_labels(t)
+    found = list(known)
+    for lbl in _tags_basic(t):
+        if lbl not in found:
+            found.append(lbl)
+    return found or ["Unclassified"]
+
+
+def _tags_basic(t: dict):
     sym = (t.get("sym") or "").strip()
     nm = (t.get("nm") or "").strip()
     if nm.lower() in ("none", "null"):
@@ -130,42 +167,49 @@ def tag_basic(t: dict) -> str:
     chain = (t.get("c") or "").lower()
     text = f"{sym} {nm}"
     if any(s in web for s in LAUNCHPAD_SITES):
-        return "Launchpad / infra"
+        yield "Launchpad / infra"
     if (chain, sym.upper()) in CHAIN_LORE:
-        return "Chain-native lore"
+        yield "Chain-native lore"
     if (t.get("ta") or "").lower().startswith("0xb200000000000000000000"):
-        return "Tokenised equities"          # Coinbase tokenised-stock contracts share this prefix
+        yield "Tokenised equities"          # Coinbase tokenised-stock contracts share this prefix
     if re.search(r"hype$", sym, re.I):
-        return "Chain-native lore"            # kHYPE, vkHYPE: Hyperliquid staking wrappers
+        yield "Chain-native lore"            # kHYPE, vkHYPE: Hyperliquid staking wrappers
     if re.search(r"x\d+[ls]$", sym, re.I):
-        return "Leveraged tokens"
+        yield "Leveraged tokens"
     if sym.upper() in KNOWN_UTILITIES or nm.upper() in KNOWN_UTILITIES or nm.upper().replace(" TOKEN", "") in KNOWN_UTILITIES:
-        return "Utilities"
+        yield "Utilities"
     for label, rx in RULES:
         if rx.search(text):
-            return label
-    if re.search(r"(inu|doge|shib|pepe|dog|cat|frog)", sym, re.I):
-        return "Dog & animal memes"           # tickers glue words together: BASEDOG, CASHCAT, LMCAT
+            yield label
+    if re.search(r"(inu|doge|shib|pepe|dog|cat|frog|pup|paw)", sym, re.I):
+        yield "Dog & animal memes"           # tickers glue words together: BASEDOG, CASHCAT, LMCAT
     if sym.upper().endswith("AI") and len(sym) > 3:
-        return "AI"
+        yield "AI"
     if UTILITY_NAME_RE.search(nm):
-        return "Utilities"
+        yield "Utilities"
     if sym.upper() in EQUITY_TICKERS or _base(sym) in EQUITY_TICKERS:
-        return "Tokenised equities"
-    return "Unclassified"
+        yield "Tokenised equities"
 
 
 def tag_from_profile(categories: list[str], text: str) -> str:
-    """Pass 2: what the token says about itself. Category tags first (they are curated), then the most
-    frequent keyword family in the description / site text. A bare 'meme' mention only counts when nothing
-    more specific does, and generic product words only when the text never calls itself a meme."""
+    return tags_from_profile(categories, text)[0]
+
+
+def tags_from_profile(categories: list[str], text: str) -> list[str]:
+    """Pass 2: what the token says about itself. Category tags first (they are curated; up to two labels,
+    e.g. "Gaming" + "Classic memes"), then the most frequent keyword family in the description / site text.
+    A bare 'meme' mention only counts when nothing more specific does, and generic product words only when
+    the text never calls itself a meme."""
     cats = " | ".join(c.lower() for c in categories if c)
     if cats:
+        found: list[str] = []
         for key, label in CATEGORY_MAP:
-            if key == "meme":
-                continue
-            if re.search(r"\b" + re.escape(key), cats):
-                return label
+            if key != "meme" and label not in found and re.search(r"\b" + re.escape(key), cats):
+                found.append(label)
+        if found:
+            if re.search(r"\bmeme", cats) and "Classic memes" not in found and not any("memes" in f for f in found):
+                found.append("Classic memes")
+            return found[:2]
     text = (text or "")[:4000]
     if text:
         hits: dict[str, int] = {}
@@ -177,12 +221,12 @@ def tag_from_profile(categories: list[str], text: str) -> str:
                 hits[label] = n
         if hits:
             order = [lbl for lbl, _ in RULES]
-            return sorted(hits.items(), key=lambda kv: (-kv[1], order.index(kv[0])))[0][0]
+            return [sorted(hits.items(), key=lambda kv: (-kv[1], order.index(kv[0])))[0][0]]
     if re.search(r"\bmeme", cats) or (text and RULES[-1][1].search(text)):
-        return "Classic memes"
+        return ["Classic memes"]
     if text and len(UTILITY_DESC_RE.findall(text)) >= 2:
-        return "Utilities"
-    return "Unclassified"
+        return ["Utilities"]
+    return ["Unclassified"]
 
 
 # ------------------------------------------------------------------ network (best-effort)
@@ -269,7 +313,7 @@ def main() -> int:
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     offline = "--offline" in sys.argv
     todo = json.load(open(args[0], encoding="utf-8"))
-    out: dict[str, str] = {}
+    out: dict[str, str | list[str]] = {}
     how: dict[str, int] = {"name": 0, "profile": 0, "unclassified": 0, "skipped": 0}
     http = net_map = None
     if not offline:
@@ -282,22 +326,23 @@ def main() -> int:
         key = t.get("pa") or t.get("ta")
         if not key:
             continue
-        label = tag_basic(t)
-        if label != "Unclassified":
+        labels = tags_basic(t)
+        if labels[0] != "Unclassified":
             how["name"] += 1
         elif http is not None and looked < MAX_LOOKUPS and time.time() - t0 < TIME_BUDGET_S:
             looked += 1
             cats, desc, webs = gt_profile(http, net_map, t)
-            label = tag_from_profile(cats, desc)
-            if label == "Unclassified":
+            labels = tags_from_profile(cats, desc)
+            if labels[0] == "Unclassified":
                 site = t.get("web") or (webs[0] if webs else "")
-                label = tag_from_profile([], f"{desc} . {fetch_site(http, site)}")
-            how["profile" if label != "Unclassified" else "unclassified"] += 1
+                labels = tags_from_profile([], f"{desc} . {fetch_site(http, site)}")
+            how["profile" if labels[0] != "Unclassified" else "unclassified"] += 1
         else:
             how["unclassified" if http is not None or offline else "skipped"] += 1
-        out[key] = label
+        out[key] = labels[:2] if len(labels) > 1 else labels[0]
     counts: dict[str, int] = {}
     for v in out.values():
+        v = v[0] if isinstance(v, list) else v
         counts[v] = counts.get(v, 0) + 1
     stats = {"tagged": len(out), "by_name": how["name"], "by_profile_or_site": how["profile"],
              "still_unclassified": counts.get("Unclassified", 0), "looked_up": looked,

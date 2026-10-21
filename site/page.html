@@ -141,6 +141,7 @@
   .chip{display:inline-block; font-size:10.5px; font-weight:600; letter-spacing:.03em; padding:1px 5px; border:1px solid var(--line); border-radius:2px; color:var(--ink-2); background:var(--surface-2); margin-right:3px}
   .chip.warn{background:var(--warm-soft); color:var(--warm); border-color:transparent}
   .chip.bad{background:var(--crit-soft); color:var(--crit); border-color:transparent}
+  .chip.nar{border-style:dashed; white-space:nowrap}
   .dim{color:var(--muted)} .pos{color:var(--good)} .neg{color:var(--crit)} .warnc{color:var(--warm); font-weight:600}
   svg.spark{display:block}
   .empty{padding:26px 16px; color:var(--muted); text-align:center}
@@ -1961,6 +1962,17 @@ const safetyCell = t => {
 const buyCell = t => t.ubr==null ? '<span class="dim">—</span>'
   : `<span class="buybar" data-tip="${t.ub} unique buyers vs ${t.us} sellers (24h)"><i style="width:${(t.ubr*100).toFixed(0)}%"></i></span><span class="num">${(t.ubr*100).toFixed(0)}%</span>`;
 const xSearch = (q) => `https://x.com/search?q=${encodeURIComponent(q)}&src=typed_query&f=live`;
+// Token type (narrative) tags: the main label, plus a second one when the token plainly fits two.
+function narChips(n, n2){
+  return `<span class="chip nar" data-tip="Token type">${esc(n||"Unclassified")}</span>${n2&&n2!==n?`<span class="chip nar" data-tip="Also fits">${esc(n2)}</span>`:""}`;
+}
+// Logged rows (track record, near-misses, price tracking): today's label if the token is still on the page,
+// otherwise the label saved on the row when it was logged.
+function rowNar(h){
+  const t=TOKENS.find(x=>x.pa.toLowerCase()===String(h.pa).toLowerCase());
+  return t ? narChips(t.nar, t.nar2) : narChips(h.nar, h.nar2);
+}
+
 function tokRow(t, dimIfFail){
   const tags=[];
   if(t._ran) tags.push(`<span class="chip warn" data-tip="Up ${t._runOk?t.run+"× from its 7-day low":"+"+t.c24+"% in 24h"} — the move has happened">already ran</span>`);
@@ -1974,7 +1986,7 @@ function tokRow(t, dimIfFail){
   if(t._acc!=null && t._acc>=IGN.accel) tags.push(`<span class="chip" data-tip="Last 6 hours of volume running ${t._acc}× the 24-hour average pace">heating ${t._acc}×</span>`);
   const dimmed = dimIfFail && t._nf>0;
   return `<tr class="${isShort(t)?"short":""}${isIgn(t)?" ign":""}${dimmed?" dim-row":""}">
-    <td class="tok"><a href="https://dexscreener.com/${t.c}/${t.pa}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">${esc(t.sym)}</a> <span class="chip">${cname(t.c)}</span><small>${esc(t.nm||"")}${t.nm?" · ":""}${esc(t.dex)} · ${esc(t.q)} pair${tags.length?"<br>"+tags.join(""):""}</small></td>
+    <td class="tok"><a href="https://dexscreener.com/${t.c}/${t.pa}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">${esc(t.sym)}</a> <span class="chip">${cname(t.c)}</span><small>${narChips(t.nar, t.nar2)}${esc(t.nm||"")}${t.nm?" · ":""}${esc(t.dex)} · ${esc(t.q)} pair${tags.length?"<br>"+tags.join(""):""}</small></td>
     <td class="w-g">${segs(t)}</td>
     <td class="w-sf">${safetyCell(t)}</td>
     <td class="w-sp">${spark(t.cs, t._ran)}</td>
@@ -2073,12 +2085,12 @@ function renderTokens(){
     const rs=TOKENS.filter(t=>t._band===b).sort((a,b2)=>b2._np-a._np||b2.v24-a.v24);
     const cl=rs.filter(isShort).length;
     return `<div class="card"><h3>${bandName[b].replace(/^./,c=>c.toUpperCase())}<span>${cl}/${rs.length}</span></h3><p>${play[b]}</p><ol>${
-      rs.slice(0,5).map(t=>`<li><a href="https://dexscreener.com/${t.c}/${t.pa}" target="_blank" rel="noopener">${esc(t.sym)}</a> <span class="chip">${cname(t.c)}</span><small>${t._np}/${GATES.length} · ${fmtK(t.v24)}</small></li>`).join("")||'<li class="dim">none</li>'}</ol></div>`;
+      rs.slice(0,5).map(t=>`<li><a href="https://dexscreener.com/${t.c}/${t.pa}" target="_blank" rel="noopener">${esc(t.sym)}</a> <span class="chip">${cname(t.c)}</span>${narChips(t.nar, t.nar2)}<small>${t._np}/${GATES.length} · ${fmtK(t.v24)}</small></li>`).join("")||'<li class="dim">none</li>'}</ol></div>`;
   }).join("");
 
   // narrative
   const focus = (all.length?all:near).slice(0,12);
-  document.getElementById("narrList").innerHTML = focus.map(t=>`<li><span class="who">${esc(t.sym)} <span class="chip">${cname(t.c)}</span></span>
+  document.getElementById("narrList").innerHTML = focus.map(t=>`<li><span class="who">${esc(t.sym)} <span class="chip">${cname(t.c)}</span>${narChips(t.nar, t.nar2)}</span>
     <a class="q" href="${xSearch("$"+t.sym)}" target="_blank" rel="noopener">$${esc(t.sym)}</a>
     <a class="q" href="${xSearch(t.sym+" min_faves:20")}" target="_blank" rel="noopener">${esc(t.sym)} min_faves:20</a>
     ${t.tw?`<a class="q" href="https://x.com/${esc(t.tw)}" target="_blank" rel="noopener">@${esc(t.tw)}</a>`:""}
@@ -2156,7 +2168,7 @@ function renderPlaybook(){
       const M=TYPE_META[T];
       return `<div class="pbtier"><div class="tl"><span class="tier t${T}">${T}</span><b>${M.nm}</b><span class="why">${M.sub}</span></div>${
         list.length ? list.map((t,i)=>`<div class="pbrow">
-            <div class="nm">${i+1}. <a href="https://dexscreener.com/${t.c}/${t.pa}" target="_blank" rel="noopener" style="color:inherit">${esc(t.sym)}</a>${pbView==="chain"?` <span class="chip">${esc(t.nar||"Other")}</span>`:` <span class="chip">${cname(t.c)}</span>`}</div>
+            <div class="nm">${i+1}. <a href="https://dexscreener.com/${t.c}/${t.pa}" target="_blank" rel="noopener" style="color:inherit">${esc(t.sym)}</a>${pbView==="chain"?` ${narChips(t.nar, t.nar2)}`:` <span class="chip">${cname(t.c)}</span>${t.nar2&&t.nar2!==t.nar?`<span class="chip nar" data-tip="Also fits">${esc(t.nar2)}</span>`:""}`}</div>
             <div class="mt">${fmtK(t.mc)} · ${t._np}/${GATES.length}</div>
             <div class="rz">${esc(whyLine(t))}</div>
           </div>`).join("")
@@ -2217,7 +2229,7 @@ document.querySelectorAll("#tabs-hl button").forEach(b=>b.setAttribute("aria-pre
   if(histL==="R"){
     document.getElementById("histBody").innerHTML = rows.length ? rows.map(h=>`<tr>
       <td class="num dim">${h.d.slice(5)}</td>
-      <td class="tok"><a href="https://dexscreener.com/${h.c}/${h.pa}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">${esc(h.sym)}</a> <span class="chip">${cname(h.c)}</span></td>
+      <td class="tok"><a href="https://dexscreener.com/${h.c}/${h.pa}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">${esc(h.sym)}</a> <span class="chip">${cname(h.c)}</span><small>${rowNar(h)}</small></td>
       <td class="w-g"><span class="gate g-fail">${esc(gateName(h.why))}</span></td>
       <td class="num">${fmtK(h.mc)}</td>
       <td class="num dim">${px(h.px)}</td>
@@ -2233,7 +2245,7 @@ document.querySelectorAll("#tabs-hl button").forEach(b=>b.setAttribute("aria-pre
   }
   document.getElementById("histBody").innerHTML = rows.length ? rows.map(h=>`<tr>
     <td class="num dim">${h.d.slice(5)}</td>
-    <td class="tok"><a href="https://dexscreener.com/${h.c}/${h.pa}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">${esc(h.sym)}</a> <span class="chip">${cname(h.c)}</span></td>
+    <td class="tok"><a href="https://dexscreener.com/${h.c}/${h.pa}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">${esc(h.sym)}</a> <span class="chip">${cname(h.c)}</span><small>${rowNar(h)}</small></td>
     <td class="w-g"><span class="gate ${h.l==="S"?"g-pass":"g-fail"}">${h.l==="S"?"★ short":"◆ pull"}</span></td>
     <td class="num">${fmtK(h.mc)}</td>
     <td class="num dim">${px(h.px)}</td>
@@ -2337,7 +2349,7 @@ function renderPrices(){
   const body=document.getElementById("ptBody");
   body.innerHTML = rows.length ? rows.map(h=>`<tr>
     <td class="num dim">${h.d.slice(5)}</td>
-    <td class="tok"><a href="https://dexscreener.com/${h.c}/${h.pa}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">${esc(h.sym)}</a> <span class="chip">${cname(h.c)}</span></td>
+    <td class="tok"><a href="https://dexscreener.com/${h.c}/${h.pa}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">${esc(h.sym)}</a> <span class="chip">${cname(h.c)}</span><small>${rowNar(h)}</small></td>
     <td class="w-g"><span class="gate ${h.l==="S"?"g-pass":"g-fail"}">${LIST_NM[h.l]||h.l}</span></td>
     <td class="num">${fmtK(h.mc)}</td>
     <td class="num dim">${px(h.px)}</td>
