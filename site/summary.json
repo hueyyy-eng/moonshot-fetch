@@ -1,11 +1,9 @@
 {
- "now": "2026-10-22 15:28 SGT",
- "cand_at": "2026-10-22 15:28 SGT",
+ "now": "2026-10-23 02:01 SGT",
+ "cand_at": "2026-10-23 02:01 SGT",
  "tokens_carried": false,
  "stale": [],
- "notes": [
-  "implausible re-prices ignored (>1000x entry): $AXIS (bsc) 640,916x ignored"
- ],
+ "notes": [],
  "sources": {
   "llama.dexs_overview": "ok",
   "llama.chains": "ok",
@@ -28,15 +26,8 @@
    "edgex",
    "chainflip"
   ],
-  "new": [
-   "chainflip",
-   "edgex",
-   "thorchain"
-  ],
-  "dropped": [
-   "injective",
-   "mantle"
-  ],
+  "new": [],
+  "dropped": [],
   "hottest": {
    "s": "provenance",
    "n": "Provenance",
@@ -45,121 +36,149 @@
   }
  },
  "tokens": {
-  "total": 76,
-  "band_m": 33,
+  "total": 74,
+  "band_m": 31,
   "candle_or_wallet_coverage_pct": 100,
-  "nodata": 1
+  "nodata": 0
  },
- "shortlist": [],
- "shortlist_new": [],
- "shortlist_dropped": [
-  ".ai",
-  "swordcat"
+ "shortlist": [
+  {
+   "sym": "DOPE",
+   "c": "solana",
+   "mc": 1722.7,
+   "nar": "Dog & animal memes",
+   "run": 1.6,
+   "retr": 65.74,
+   "acc": 0.55,
+   "c6": -18.26,
+   "age": 11.15,
+   "sec": "rugcheck",
+   "pa": "6iep3EgqksbZwgzMBCyAJtiVtVYkCgL9BnPBEwLR8AGQ"
+  }
  ],
+ "shortlist_new": [
+  "DOPE"
+ ],
+ "shortlist_dropped": [],
  "pullback": [
   {
    "sym": "PHP",
    "c": "solana",
-   "mc": 1300.5,
+   "mc": 1250.6,
    "nar": "Unclassified",
    "run": 12.63,
    "retr": 55.49,
-   "acc": 1.04,
-   "c6": 101.0,
-   "age": 1.06,
+   "acc": 0.87,
+   "c6": 3.39,
+   "age": 1.5,
    "sec": "rugcheck",
    "pa": "YQ4NNeQxHAtdcB8ohx21eJ9U8eTzxNRvGNHkRaA4Pnw"
   },
   {
-   "sym": ".ai",
-   "c": "bsc",
-   "mc": 1062.4,
-   "nar": "AI",
-   "run": 12.16,
-   "retr": 64.97,
-   "acc": 0.69,
-   "c6": 9.03,
-   "age": 1.51,
-   "sec": "goplus",
-   "pa": "0xcBc77d857D11d9a8407B6e580010540D885b0B40"
+   "sym": "IBM",
+   "c": "robinhood",
+   "mc": 574.1,
+   "nar": "Unclassified",
+   "run": 23.41,
+   "retr": 47.91,
+   "acc": 0.0,
+   "c6": null,
+   "age": 1.13,
+   "sec": "explorer",
+   "pa": "0x1e0b3c5082f2f5777f0b2a1e378cff6e72395bbfe907deed758801361eb25e7e"
   }
  ],
  "pullback_new": [
-  ".ai",
-  "PHP"
+  "IBM"
  ],
  "pullback_dropped": [
-  "GIGATENEV"
+  ".ai"
  ],
  "igniting": [],
- "momentum": [],
- "momentum_new": [],
- "momentum_dropped": [
-  "$AXIS",
-  "EMBER",
-  "MONEYBIZ"
+ "momentum": [
+  {
+   "sym": ".ai",
+   "c": "bsc",
+   "mc": 590.9,
+   "nar": "AI",
+   "run": 12.16,
+   "retr": 64.97,
+   "acc": 0.77,
+   "c6": -6.32,
+   "age": 1.95,
+   "sec": "goplus",
+   "pa": "0xcBc77d857D11d9a8407B6e580010540D885b0B40"
+  },
+  {
+   "sym": "Lovot",
+   "c": "robinhood",
+   "mc": 976.6,
+   "nar": "Unclassified",
+   "run": 39.19,
+   "retr": 34.39,
+   "acc": 0.0,
+   "c6": null,
+   "age": 1.24,
+   "sec": "explorer",
+   "pa": "0xfa2ae66897e4b3edf4c9c29d7a5baa941754c8da96fed88de4de43e03979ff63"
+  }
  ],
- "honeypots_new": [
-  "TAKE"
+ "momentum_new": [
+  ".ai",
+  "Lovot"
  ],
+ "momentum_dropped": [],
+ "honeypots_new": [],
  "track": {
-  "logged": 67,
+  "logged": 69,
   "new_rows": [
    [
-    "PHP",
-    "P"
+    "DOPE",
+    "S"
    ],
    [
-    ".ai",
+    "IBM",
     "P"
    ]
   ],
   "best_x": 14.93,
   "median_peak_x": 1.0,
-  "hit_2x_today": [],
+  "hit_2x_today": [
+   "GIGATENEV (robinhood)"
+  ],
   "to_zero_today": [],
   "repriced": true
  },
  "igniting_track": {
   "logged": 38,
   "new_rows": [],
-  "hit_2x_today": [
-   "SO (solana)",
-   "ALLOX (solana)",
-   "RSGP (solana)"
-  ],
+  "hit_2x_today": [],
   "to_zero_today": []
  },
  "momentum_track": {
-  "logged": 29,
-  "new_rows": [],
-  "hit_2x_today": [
-   "DOPE (solana)"
+  "logged": 31,
+  "new_rows": [
+   ".ai",
+   "Lovot"
   ],
+  "hit_2x_today": [],
   "to_zero_today": [
-   "EMBER (robinhood)",
-   "MONEYBIZ (robinhood)"
+   "重生之我在币安广场赚100个亿 (bsc)"
   ]
  },
  "control": {
-  "rows": 598,
+  "rows": 602,
   "median_peak_x": 1.0,
-  "hit_2x_today": [
-   "astro (robinhood)",
-   "SO (solana)",
-   "RSGP (solana)",
-   "ALLOX (solana)",
-   "PANGEA (robinhood)"
-  ],
+  "hit_2x_today": [],
   "to_zero_today": [
-   "Maple (robinhood)",
-   "CHINAPAD (robinhood)",
-   "CATE (bsc)",
-   "Flylife (bsc)",
-   "QED (robinhood)",
-   "MUNKIEAI (solana)",
-   "SUPERMAMA (bsc)",
-   "PONS (robinhood)"
+   "BLAST (robinhood)",
+   "CEREBRO (robinhood)",
+   "VEILDOGE (solana)",
+   "重生之我在币安广场赚100个亿 (bsc)",
+   "フリーダム.オブ.マネー (bsc)",
+   "Kimchi (robinhood)",
+   "SO (solana)",
+   "AXIS (solana)"
   ]
  },
  "changed": true,

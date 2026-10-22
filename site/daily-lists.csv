@@ -164,3 +164,8 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-10-22,momentum,$AXIS,bsc,1355.0,Unclassified,26.87,15.57,0.87,17.67,1.19,goplus,https://dexscreener.com/bsc/0x74Cf25D6d8C96242493621d7ABE980CC6a370E89,daily scan
 2026-10-22,momentum,EMBER,robinhood,642.7,Unclassified,26.52,49.87,0.0,,1.05,nodata,https://dexscreener.com/robinhood/0x2833187af60775a392d4ce69ce068699771cd4c4d609ec5fcd548b895a2d764d,daily scan
 2026-10-22,momentum,MONEYBIZ,robinhood,1801.8,Unclassified,73.44,25.15,0.0,,1.06,explorer,https://dexscreener.com/robinhood/0x636aa2466f59d74075983420405feb9719f056ed432842d6f15d53f5924319d5,daily scan
+2026-10-23,shortlist,DOPE,solana,1722.7,Dog & animal memes,1.6,65.74,0.55,-18.26,11.15,rugcheck,https://dexscreener.com/solana/6iep3EgqksbZwgzMBCyAJtiVtVYkCgL9BnPBEwLR8AGQ,daily scan
+2026-10-23,pullback,IBM,robinhood,574.1,Unclassified,23.41,47.91,0.0,,1.13,explorer,https://dexscreener.com/robinhood/0x1e0b3c5082f2f5777f0b2a1e378cff6e72395bbfe907deed758801361eb25e7e,daily scan
+2026-10-23,pullback,PHP,solana,1250.6,Unclassified,12.63,55.49,0.87,3.39,1.5,rugcheck,https://dexscreener.com/solana/YQ4NNeQxHAtdcB8ohx21eJ9U8eTzxNRvGNHkRaA4Pnw,daily scan
+2026-10-23,momentum,.ai,bsc,590.9,AI,12.16,64.97,0.77,-6.32,1.95,goplus,https://dexscreener.com/bsc/0xcBc77d857D11d9a8407B6e580010540D885b0B40,daily scan
+2026-10-23,momentum,Lovot,robinhood,976.6,Unclassified,39.19,34.39,0.0,,1.24,explorer,https://dexscreener.com/robinhood/0xfa2ae66897e4b3edf4c9c29d7a5baa941754c8da96fed88de4de43e03979ff63,daily scan
