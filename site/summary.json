@@ -1,6 +1,6 @@
 {
- "now": "2026-10-23 02:01 SGT",
- "cand_at": "2026-10-23 02:01 SGT",
+ "now": "2026-10-23 15:17 SGT",
+ "cand_at": "2026-10-23 15:17 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -22,163 +22,239 @@
  },
  "chains": {
   "hot": [
-   "thorchain",
-   "edgex",
-   "chainflip"
+   "arc",
+   "plasma",
+   "eos"
   ],
-  "new": [],
-  "dropped": [],
+  "new": [
+   "arc",
+   "eos",
+   "plasma"
+  ],
+  "dropped": [
+   "chainflip",
+   "edgex",
+   "thorchain"
+  ],
   "hottest": {
-   "s": "provenance",
-   "n": "Provenance",
-   "dr": 1.89,
-   "dr30": 1.37
+   "s": "stacks",
+   "n": "Stacks",
+   "dr": 5.24,
+   "dr30": 5.69
   }
  },
  "tokens": {
-  "total": 74,
-  "band_m": 31,
+  "total": 76,
+  "band_m": 45,
   "candle_or_wallet_coverage_pct": 100,
-  "nodata": 0
+  "nodata": 5
  },
  "shortlist": [
   {
-   "sym": "DOPE",
+   "sym": "SI276",
    "c": "solana",
-   "mc": 1722.7,
-   "nar": "Dog & animal memes",
-   "run": 1.6,
-   "retr": 65.74,
-   "acc": 0.55,
-   "c6": -18.26,
-   "age": 11.15,
+   "mc": 666.7,
+   "nar": "AI",
+   "run": 2.0,
+   "retr": 71.49,
+   "acc": 0.36,
+   "c6": 5.3,
+   "age": 16.46,
    "sec": "rugcheck",
-   "pa": "6iep3EgqksbZwgzMBCyAJtiVtVYkCgL9BnPBEwLR8AGQ"
+   "pa": "12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG"
+  },
+  {
+   "sym": "CBUCKS",
+   "c": "solana",
+   "mc": 1267.2,
+   "nar": "Unclassified",
+   "run": 2.73,
+   "retr": 30.66,
+   "acc": 1.29,
+   "c6": 19.55,
+   "age": 16.5,
+   "sec": "rugcheck",
+   "pa": "B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB"
+  },
+  {
+   "sym": "PAIR",
+   "c": "robinhood",
+   "mc": 1347.6,
+   "nar": "Unclassified",
+   "run": 1.98,
+   "retr": 76.84,
+   "acc": 0.36,
+   "c6": -3.34,
+   "age": 54.49,
+   "sec": "explorer",
+   "pa": "0xf224a070c8626c890a085b258cf562ee4bf052b6d1d59104b3b44d722640c001"
   }
  ],
  "shortlist_new": [
+  "CBUCKS",
+  "PAIR",
+  "SI276"
+ ],
+ "shortlist_dropped": [
   "DOPE"
  ],
- "shortlist_dropped": [],
  "pullback": [
   {
-   "sym": "PHP",
+   "sym": "Pepper",
    "c": "solana",
-   "mc": 1250.6,
+   "mc": 605.8,
    "nar": "Unclassified",
-   "run": 12.63,
-   "retr": 55.49,
-   "acc": 0.87,
-   "c6": 3.39,
-   "age": 1.5,
+   "run": 3.25,
+   "retr": 66.43,
+   "acc": 0.2,
+   "c6": 1.61,
+   "age": 12.55,
    "sec": "rugcheck",
-   "pa": "YQ4NNeQxHAtdcB8ohx21eJ9U8eTzxNRvGNHkRaA4Pnw"
-  },
-  {
-   "sym": "IBM",
-   "c": "robinhood",
-   "mc": 574.1,
-   "nar": "Unclassified",
-   "run": 23.41,
-   "retr": 47.91,
-   "acc": 0.0,
-   "c6": null,
-   "age": 1.13,
-   "sec": "explorer",
-   "pa": "0x1e0b3c5082f2f5777f0b2a1e378cff6e72395bbfe907deed758801361eb25e7e"
+   "pa": "GKVfZiv4EUNViMRfUejEn5QJN29oXGCyk7FY2iUv3bGi"
   }
  ],
  "pullback_new": [
-  "IBM"
+  "Pepper"
  ],
  "pullback_dropped": [
-  ".ai"
+  "IBM",
+  "PHP"
  ],
- "igniting": [],
+ "igniting": [
+  {
+   "sym": "SO",
+   "c": "solana",
+   "mc": 1564.1,
+   "nar": "Utilities",
+   "run": null,
+   "retr": null,
+   "acc": 3.52,
+   "c6": 52.44,
+   "age": 0.28,
+   "sec": "rugcheck",
+   "pa": "3iquRUwXxp5uPFwteeR7facKaqp6rEaN4v8EzRRNuAhE"
+  }
+ ],
  "momentum": [
   {
-   "sym": ".ai",
-   "c": "bsc",
-   "mc": 590.9,
-   "nar": "AI",
-   "run": 12.16,
-   "retr": 64.97,
-   "acc": 0.77,
-   "c6": -6.32,
-   "age": 1.95,
-   "sec": "goplus",
-   "pa": "0xcBc77d857D11d9a8407B6e580010540D885b0B40"
+   "sym": "ヤギ",
+   "c": "solana",
+   "mc": 1930.5,
+   "nar": "Unclassified",
+   "run": 30.38,
+   "retr": 21.68,
+   "acc": 1.82,
+   "c6": 106.0,
+   "age": 1.07,
+   "sec": "rugcheck",
+   "pa": "FQ75g9yWEK5jhyjVX3vWyXQ8AXKYJFNXaM5dYDBfqYyb"
   },
   {
-   "sym": "Lovot",
-   "c": "robinhood",
-   "mc": 976.6,
+   "sym": "POFD",
+   "c": "bsc",
+   "mc": 1379.1,
    "nar": "Unclassified",
-   "run": 39.19,
-   "retr": 34.39,
-   "acc": 0.0,
-   "c6": null,
-   "age": 1.24,
-   "sec": "explorer",
-   "pa": "0xfa2ae66897e4b3edf4c9c29d7a5baa941754c8da96fed88de4de43e03979ff63"
+   "run": 36.61,
+   "retr": 2.56,
+   "acc": 1.43,
+   "c6": 70.27,
+   "age": 2.63,
+   "sec": "goplus",
+   "pa": "0x0622F87D1643cdB0c79421a644885FF44E2D56F2"
+  },
+  {
+   "sym": "TIM",
+   "c": "bsc",
+   "mc": 1878.6,
+   "nar": "Unclassified",
+   "run": 64.0,
+   "retr": 7.62,
+   "acc": 1.08,
+   "c6": 29.37,
+   "age": 1.02,
+   "sec": "goplus",
+   "pa": "0x7582990c08cDb734f5DE18E3b4E203B7418Df375"
   }
  ],
  "momentum_new": [
+  "POFD",
+  "TIM",
+  "ヤギ"
+ ],
+ "momentum_dropped": [
   ".ai",
   "Lovot"
  ],
- "momentum_dropped": [],
- "honeypots_new": [],
+ "honeypots_new": [
+  "BTR"
+ ],
  "track": {
-  "logged": 69,
+  "logged": 72,
   "new_rows": [
    [
-    "DOPE",
+    "CBUCKS",
     "S"
    ],
    [
-    "IBM",
+    "PAIR",
+    "S"
+   ],
+   [
+    "Pepper",
     "P"
    ]
   ],
   "best_x": 14.93,
   "median_peak_x": 1.0,
-  "hit_2x_today": [
-   "GIGATENEV (robinhood)"
+  "hit_2x_today": [],
+  "to_zero_today": [
+   "BinanceTown (bsc)",
+   "IBM (robinhood)"
   ],
-  "to_zero_today": [],
   "repriced": true
  },
  "igniting_track": {
-  "logged": 38,
-  "new_rows": [],
-  "hit_2x_today": [],
-  "to_zero_today": []
- },
- "momentum_track": {
-  "logged": 31,
+  "logged": 39,
   "new_rows": [
-   ".ai",
-   "Lovot"
+   "SO"
   ],
   "hit_2x_today": [],
   "to_zero_today": [
-   "重生之我在币安广场赚100个亿 (bsc)"
+   "FABLES (solana)",
+   "SO (solana)",
+   "RSGP (solana)"
+  ]
+ },
+ "momentum_track": {
+  "logged": 34,
+  "new_rows": [
+   "ヤギ",
+   "POFD",
+   "TIM"
+  ],
+  "hit_2x_today": [
+   "DOPE (solana)"
+  ],
+  "to_zero_today": [
+   "Lovot (robinhood)"
   ]
  },
  "control": {
-  "rows": 602,
+  "rows": 609,
   "median_peak_x": 1.0,
   "hit_2x_today": [],
   "to_zero_today": [
-   "BLAST (robinhood)",
-   "CEREBRO (robinhood)",
-   "VEILDOGE (solana)",
-   "重生之我在币安广场赚100个亿 (bsc)",
-   "フリーダム.オブ.マネー (bsc)",
-   "Kimchi (robinhood)",
+   "OS (solana)",
+   "RWA (robinhood)",
+   "BNC (bsc)",
+   "KEVIN (solana)",
+   "FLY (bsc)",
+   "BinanceTown (bsc)",
+   "1 (solana)",
+   "FABLES (solana)",
+   "umi (robinhood)",
    "SO (solana)",
-   "AXIS (solana)"
+   "RSGP (solana)"
   ]
  },
  "changed": true,
