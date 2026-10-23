@@ -326,6 +326,12 @@ def main() -> int:
         tokens_carried = True
         new["TOK_AT"] = oldv("TOK_AT", now)
         stale.append("tokens (discovery failed — previous TOKENS kept)")
+    # sources sometimes pad a ticker or name with spaces (" POFD", 23 Oct); the page trims them when it
+    # renders, so trim here too or the page check sees a different list and fails the run
+    for t in tokens:
+        for k in ("sym", "nm"):
+            if isinstance(t.get(k), str):
+                t[k] = t[k].strip()
 
     cand_at = now
     gt = state("geckoterminal")
