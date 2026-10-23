@@ -1,17 +1,22 @@
 {
- "now": "2026-10-23 15:17 SGT",
- "cand_at": "2026-10-23 15:17 SGT",
+ "now": "2026-10-24 01:52 SGT",
+ "cand_at": "2026-10-24 01:52 SGT",
  "tokens_carried": false,
- "stale": [],
- "notes": [],
+ "stale": [
+  "net flows (carried)",
+  "bridge protocol stats (carried)"
+ ],
+ "notes": [
+  "implausible re-prices ignored (>1000x entry): TIM (bsc) 441,480x ignored"
+ ],
  "sources": {
   "llama.dexs_overview": "ok",
   "llama.chains": "ok",
   "llama.chain_rows": "ok",
   "llama.perps_page": "ok",
-  "llama.netflow": "ok",
+  "llama.netflow": "fail",
   "llama.bridges_chains": "ok",
-  "llama.bridges_protocols": "ok",
+  "llama.bridges_protocols": "fail",
   "llama.majors": "ok",
   "discovery": "partial",
   "geckoterminal": "ok",
@@ -26,16 +31,8 @@
    "plasma",
    "eos"
   ],
-  "new": [
-   "arc",
-   "eos",
-   "plasma"
-  ],
-  "dropped": [
-   "chainflip",
-   "edgex",
-   "thorchain"
-  ],
+  "new": [],
+  "dropped": [],
   "hottest": {
    "s": "stacks",
    "n": "Stacks",
@@ -44,217 +41,169 @@
   }
  },
  "tokens": {
-  "total": 76,
-  "band_m": 45,
+  "total": 75,
+  "band_m": 44,
   "candle_or_wallet_coverage_pct": 100,
-  "nodata": 5
+  "nodata": 10
  },
  "shortlist": [
   {
-   "sym": "SI276",
-   "c": "solana",
-   "mc": 666.7,
-   "nar": "AI",
-   "run": 2.0,
-   "retr": 71.49,
-   "acc": 0.36,
-   "c6": 5.3,
-   "age": 16.46,
-   "sec": "rugcheck",
-   "pa": "12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG"
-  },
-  {
    "sym": "CBUCKS",
    "c": "solana",
-   "mc": 1267.2,
+   "mc": 1234.2,
    "nar": "Unclassified",
    "run": 2.73,
    "retr": 30.66,
-   "acc": 1.29,
-   "c6": 19.55,
-   "age": 16.5,
+   "acc": 0.78,
+   "c6": -14.93,
+   "age": 16.94,
    "sec": "rugcheck",
    "pa": "B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB"
   },
   {
-   "sym": "PAIR",
-   "c": "robinhood",
-   "mc": 1347.6,
-   "nar": "Unclassified",
-   "run": 1.98,
-   "retr": 76.84,
-   "acc": 0.36,
-   "c6": -3.34,
-   "age": 54.49,
-   "sec": "explorer",
-   "pa": "0xf224a070c8626c890a085b258cf562ee4bf052b6d1d59104b3b44d722640c001"
+   "sym": "SI276",
+   "c": "solana",
+   "mc": 790.5,
+   "nar": "AI",
+   "run": 2.0,
+   "retr": 71.49,
+   "acc": 1.0,
+   "c6": -2.51,
+   "age": 16.9,
+   "sec": "rugcheck",
+   "pa": "12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG"
+  },
+  {
+   "sym": "HELL",
+   "c": "solana",
+   "mc": 1804.1,
+   "nar": "Dog & animal memes",
+   "run": 1.65,
+   "retr": 21.78,
+   "acc": 1.07,
+   "c6": -1.94,
+   "age": 10.17,
+   "sec": "rugcheck",
+   "pa": "EwsYHiuznyNqH5f65YpfsoQBLq2KyETuvhm5un7wsfDG"
   }
  ],
  "shortlist_new": [
-  "CBUCKS",
-  "PAIR",
-  "SI276"
+  "HELL"
  ],
  "shortlist_dropped": [
-  "DOPE"
+  "PAIR"
  ],
- "pullback": [
-  {
-   "sym": "Pepper",
-   "c": "solana",
-   "mc": 605.8,
-   "nar": "Unclassified",
-   "run": 3.25,
-   "retr": 66.43,
-   "acc": 0.2,
-   "c6": 1.61,
-   "age": 12.55,
-   "sec": "rugcheck",
-   "pa": "GKVfZiv4EUNViMRfUejEn5QJN29oXGCyk7FY2iUv3bGi"
-  }
- ],
- "pullback_new": [
-  "Pepper"
- ],
+ "pullback": [],
+ "pullback_new": [],
  "pullback_dropped": [
-  "IBM",
-  "PHP"
+  "Pepper"
  ],
  "igniting": [
   {
+   "sym": "ALLOX",
+   "c": "solana",
+   "mc": 1190.3,
+   "nar": "Unclassified",
+   "run": null,
+   "retr": null,
+   "acc": 4.0,
+   "c6": 71.95,
+   "age": 0.14,
+   "sec": "rugcheck",
+   "pa": "BLjvc4NjYCyPtUv68FghNXN47LoLah5E2rWYiyxyfzzU"
+  },
+  {
    "sym": "SO",
    "c": "solana",
-   "mc": 1564.1,
+   "mc": 1283.1,
    "nar": "Utilities",
    "run": null,
    "retr": null,
-   "acc": 3.52,
-   "c6": 52.44,
-   "age": 0.28,
+   "acc": 4.0,
+   "c6": 63.17,
+   "age": 0.14,
    "sec": "rugcheck",
-   "pa": "3iquRUwXxp5uPFwteeR7facKaqp6rEaN4v8EzRRNuAhE"
+   "pa": "CmonQbqzYFGTh6tucPsw5798uuEEQ7Y5GkUJwowVnDhn"
   }
  ],
  "momentum": [
   {
-   "sym": "ヤギ",
+   "sym": "BLACKTOBER",
    "c": "solana",
-   "mc": 1930.5,
+   "mc": 702.5,
    "nar": "Unclassified",
-   "run": 30.38,
-   "retr": 21.68,
-   "acc": 1.82,
-   "c6": 106.0,
-   "age": 1.07,
+   "run": 13.21,
+   "retr": 70.81,
+   "acc": 1.74,
+   "c6": 86.4,
+   "age": 1.44,
    "sec": "rugcheck",
-   "pa": "FQ75g9yWEK5jhyjVX3vWyXQ8AXKYJFNXaM5dYDBfqYyb"
+   "pa": "C73M9QWLSAY16TKQEsEjSThBVXwMpbg94ijZRzYCxbiR"
   },
   {
-   "sym": "POFD",
-   "c": "bsc",
-   "mc": 1379.1,
+   "sym": "CREORA",
+   "c": "robinhood",
+   "mc": 1317.3,
    "nar": "Unclassified",
-   "run": 36.61,
-   "retr": 2.56,
-   "acc": 1.43,
-   "c6": 70.27,
-   "age": 2.63,
-   "sec": "goplus",
-   "pa": "0x0622F87D1643cdB0c79421a644885FF44E2D56F2"
-  },
-  {
-   "sym": "TIM",
-   "c": "bsc",
-   "mc": 1878.6,
-   "nar": "Unclassified",
-   "run": 64.0,
-   "retr": 7.62,
-   "acc": 1.08,
-   "c6": 29.37,
-   "age": 1.02,
-   "sec": "goplus",
-   "pa": "0x7582990c08cDb734f5DE18E3b4E203B7418Df375"
+   "run": 14.21,
+   "retr": 74.53,
+   "acc": 1.35,
+   "c6": 13.97,
+   "age": 2.95,
+   "sec": "explorer",
+   "pa": "0x089ada66d5258297e1cab1516708a9fb1aef166df3ee901a75f3f2c7f7e79202"
   }
  ],
  "momentum_new": [
+  "BLACKTOBER",
+  "CREORA"
+ ],
+ "momentum_dropped": [
   "POFD",
   "TIM",
   "ヤギ"
  ],
- "momentum_dropped": [
-  ".ai",
-  "Lovot"
- ],
- "honeypots_new": [
-  "BTR"
- ],
+ "honeypots_new": [],
  "track": {
-  "logged": 72,
+  "logged": 73,
   "new_rows": [
    [
-    "CBUCKS",
+    "HELL",
     "S"
-   ],
-   [
-    "PAIR",
-    "S"
-   ],
-   [
-    "Pepper",
-    "P"
    ]
   ],
   "best_x": 14.93,
   "median_peak_x": 1.0,
   "hit_2x_today": [],
-  "to_zero_today": [
-   "BinanceTown (bsc)",
-   "IBM (robinhood)"
-  ],
+  "to_zero_today": [],
   "repriced": true
  },
  "igniting_track": {
-  "logged": 39,
+  "logged": 41,
   "new_rows": [
+   "ALLOX",
    "SO"
   ],
   "hit_2x_today": [],
-  "to_zero_today": [
-   "FABLES (solana)",
-   "SO (solana)",
-   "RSGP (solana)"
-  ]
+  "to_zero_today": []
  },
  "momentum_track": {
-  "logged": 34,
+  "logged": 36,
   "new_rows": [
-   "ヤギ",
-   "POFD",
-   "TIM"
+   "BLACKTOBER",
+   "CREORA"
   ],
-  "hit_2x_today": [
-   "DOPE (solana)"
-  ],
-  "to_zero_today": [
-   "Lovot (robinhood)"
-  ]
+  "hit_2x_today": [],
+  "to_zero_today": []
  },
  "control": {
-  "rows": 609,
+  "rows": 615,
   "median_peak_x": 1.0,
   "hit_2x_today": [],
   "to_zero_today": [
-   "OS (solana)",
-   "RWA (robinhood)",
-   "BNC (bsc)",
-   "KEVIN (solana)",
-   "FLY (bsc)",
-   "BinanceTown (bsc)",
-   "1 (solana)",
-   "FABLES (solana)",
-   "umi (robinhood)",
-   "SO (solana)",
-   "RSGP (solana)"
+   "FOMOBALL (robinhood)",
+   "BOB (solana)",
+   "ヤギ (solana)"
   ]
  },
  "changed": true,

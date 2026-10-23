@@ -177,3 +177,10 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-10-23,momentum,POFD,bsc,1379.1,Unclassified,36.61,2.56,1.43,70.27,2.63,goplus,https://dexscreener.com/bsc/0x0622F87D1643cdB0c79421a644885FF44E2D56F2,evening scan
 2026-10-23,momentum,TIM,bsc,1878.6,Unclassified,64.0,7.62,1.08,29.37,1.02,goplus,https://dexscreener.com/bsc/0x7582990c08cDb734f5DE18E3b4E203B7418Df375,evening scan
 2026-10-23,momentum,ヤギ,solana,1930.5,Unclassified,30.38,21.68,1.82,106.0,1.07,rugcheck,https://dexscreener.com/solana/FQ75g9yWEK5jhyjVX3vWyXQ8AXKYJFNXaM5dYDBfqYyb,evening scan
+2026-10-24,shortlist,CBUCKS,solana,1234.2,Unclassified,2.73,30.66,0.78,-14.93,16.94,rugcheck,https://dexscreener.com/solana/B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB,daily scan
+2026-10-24,shortlist,HELL,solana,1804.1,Dog & animal memes,1.65,21.78,1.07,-1.94,10.17,rugcheck,https://dexscreener.com/solana/EwsYHiuznyNqH5f65YpfsoQBLq2KyETuvhm5un7wsfDG,daily scan
+2026-10-24,shortlist,SI276,solana,790.5,AI,2.0,71.49,1.0,-2.51,16.9,rugcheck,https://dexscreener.com/solana/12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG,daily scan
+2026-10-24,igniting,ALLOX,solana,1190.3,Unclassified,,,4.0,71.95,0.14,rugcheck,https://dexscreener.com/solana/BLjvc4NjYCyPtUv68FghNXN47LoLah5E2rWYiyxyfzzU,daily scan
+2026-10-24,igniting,SO,solana,1283.1,Utilities,,,4.0,63.17,0.14,rugcheck,https://dexscreener.com/solana/CmonQbqzYFGTh6tucPsw5798uuEEQ7Y5GkUJwowVnDhn,daily scan
+2026-10-24,momentum,BLACKTOBER,solana,702.5,Unclassified,13.21,70.81,1.74,86.4,1.44,rugcheck,https://dexscreener.com/solana/C73M9QWLSAY16TKQEsEjSThBVXwMpbg94ijZRzYCxbiR,daily scan
+2026-10-24,momentum,CREORA,robinhood,1317.3,Unclassified,14.21,74.53,1.35,13.97,2.95,explorer,https://dexscreener.com/robinhood/0x089ada66d5258297e1cab1516708a9fb1aef166df3ee901a75f3f2c7f7e79202,daily scan
