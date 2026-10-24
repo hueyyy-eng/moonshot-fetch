@@ -186,3 +186,11 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-10-24,momentum,BLACKTOBER,solana,702.5,Unclassified,13.21,70.81,1.74,86.4,1.44,rugcheck,https://dexscreener.com/solana/C73M9QWLSAY16TKQEsEjSThBVXwMpbg94ijZRzYCxbiR,daily scan
 2026-10-24,momentum,CREORA,robinhood,1317.3,Unclassified,14.21,74.53,1.35,13.97,2.95,explorer,https://dexscreener.com/robinhood/0x089ada66d5258297e1cab1516708a9fb1aef166df3ee901a75f3f2c7f7e79202,daily scan
 2026-10-24,momentum,TOGI,robinhood,643.7,Dog & animal memes,27.07,51.84,0.0,,1.05,nodata,https://dexscreener.com/robinhood/0x59f6a572f1f5f123f05c217496142e2f61154410c939c4c46a2acd1cc894a68d,evening scan
+2026-10-25,shortlist,CBUCKS,solana,1295.2,Unclassified,2.31,27.3,0.84,-3.45,17.9,rugcheck,https://dexscreener.com/solana/B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB,daily scan
+2026-10-25,shortlist,swordcat,solana,1872.2,Dog & animal memes,1.54,76.51,3.27,80.32,26.28,rugcheck,https://dexscreener.com/solana/8ewuF2o8ACro7fqWepZ3tKhkbBjndZU4Ldk9scRPw83d,daily scan
+2026-10-25,igniting,ALLOX,solana,1124.4,Unclassified,,,4.0,67.69,0.1,rugcheck,https://dexscreener.com/solana/A67d8qXm4frRJc4LcdoXnvEbXjUT4ywWCRvWBFSY6Y7W,daily scan
+2026-10-25,igniting,SO,solana,1189.1,Utilities,,,4.0,55.99,0.11,rugcheck,https://dexscreener.com/solana/J6sx2A6hgt8S3pB7zd4BmPdMwDqEaBibnDtfozBq55Ku,daily scan
+2026-10-25,igniting,swordcat,solana,1872.2,Dog & animal memes,1.54,76.51,3.27,80.32,26.28,rugcheck,https://dexscreener.com/solana/8ewuF2o8ACro7fqWepZ3tKhkbBjndZU4Ldk9scRPw83d,daily scan
+2026-10-25,momentum,MONEROPAY,robinhood,505.2,Unclassified,21.06,2.12,0.0,,1.01,nodata,https://dexscreener.com/robinhood/0x07e48a2ba2248b3c8ed0ec19042952257a0bc8554f3019911cf46bfe67f2eb3a,daily scan
+2026-10-25,momentum,ODIE,robinhood,658.3,Unclassified,26.68,0.1,0.0,,1.03,explorer,https://dexscreener.com/robinhood/0x171194dfe8041edc99cbf78b3dfc2b25c0134a35e339941d208defdd5837d1dd,daily scan
+2026-10-25,momentum,PANGEA,robinhood,1343.2,Unclassified,174.31,83.64,1.34,1.43,2.99,explorer,https://dexscreener.com/robinhood/0xcfe04bc182706f8683f4f486104b52fb6a4115cfe9e4471c468fca65703f9b9d,daily scan
