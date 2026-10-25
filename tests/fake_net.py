@@ -163,21 +163,21 @@ class FakeNet:
                     {"name": "Hyperliquid L1", "total24h": 7.18e9, "total7d": 4.5e10, "total30d": 2.4e11, "openInterest": 7.14e9},
                     {"name": "Solana", "total24h": 1.72e9, "total7d": 1.16e10, "total30d": 4.7e10, "openInterest": 2.1e8},
                     {"name": "Robinhood Chain", "total24h": 4.5e8, "total7d": 3.3e9, "total30d": 1.16e10, "openInterest": 2.2e8}]}}}
-            elif path.startswith("/bridges/chains"):
-                nd = {"props": {"pageProps": {
-                    "tableData": [{"name": "Solana", "prevDayUsdDeposits": 1.08e8, "prevDayUsdWithdrawals": 1.15e8, "prevDayNetFlow": -6.9e6,
-                                   "prevWeekUsdDeposits": 7.3e8, "prevWeekUsdWithdrawals": 7.6e8, "prevWeekNetFlow": -2.8e7, "topTokenDepositedSymbol": "USDC"},
-                                  {"name": "BSC", "prevDayUsdDeposits": 3.7e7, "prevDayUsdWithdrawals": 2.8e7, "prevDayNetFlow": 9.5e6,
-                                   "prevWeekUsdDeposits": 2.7e8, "prevWeekUsdWithdrawals": 2.3e8, "prevWeekNetFlow": 4.6e7, "topTokenDepositedSymbol": "USDT"},
-                                  {"name": "StarkNet", "prevDayUsdDeposits": 0, "prevDayUsdWithdrawals": 6e4, "prevDayNetFlow": -5e4,
-                                   "prevWeekUsdDeposits": 7.5e5, "prevWeekUsdWithdrawals": 8e4, "prevWeekNetFlow": 6.7e5}],
-                    "filteredBridges": [{"displayName": "Across", "lastDailyVolume": 4.14e8, "weeklyVolume": 1.71e9, "monthlyVolume": 8.2e9, "txsPrevDay": 103171, "change_1d": 45.8, "chains": list(range(25))},
-                                        {"displayName": "Relay", "lastDailyVolume": 3.15e8, "weeklyVolume": 2.4e9, "monthlyVolume": 1.25e10, "txsPrevDay": 1785061, "change_1d": -18.9, "chains": list(range(46))}]}}}
+            elif path.startswith("/bridges/chains"):        # layout since 23-24 Oct 2026
+                nd = {"props": {"pageProps": {"adapterType": "bridges", "chains": [
+                    {"name": "Solana", "total24h": 2.23e8, "incoming24h": 1.08e8, "outgoing24h": 1.15e8, "netflow24h": -7e6,
+                     "total7d": 1.49e9, "netflow7d": -3e7, "total30d": 6e9, "netflow30d": -1e8},
+                    {"name": "BSC", "total24h": 6.5e7, "incoming24h": 3.7e7, "outgoing24h": 2.8e7, "netflow24h": 9e6,
+                     "total7d": 5e8, "netflow7d": 4e7, "total30d": 2e9, "netflow30d": -1.00333e9},
+                    {"name": "Hyperliquid L1", "total24h": 9e8, "incoming24h": 3.18225e8, "outgoing24h": 5.81775e8, "netflow24h": -2.6355e8,
+                     "total7d": 5e9, "netflow7d": 1e8, "total30d": 2e10, "netflow30d": 5e8},
+                    {"name": "Arbitrum", "total24h": 8e8, "incoming24h": 5.54355e8, "outgoing24h": 2.45645e8, "netflow24h": 3.0871e8,
+                     "total7d": 4e9, "netflow7d": -5e7, "total30d": 1.6e10, "netflow30d": 1e8},
+                    {"name": "OldChain", "deprecated": True, "total24h": 1e9, "incoming24h": 1e9, "outgoing24h": 0, "netflow24h": 1e9}]}}}
             elif path.startswith("/bridges"):
-                nd = {"props": {"pageProps": {"netflowsData": {
-                    "day": [{"chain": "Hyperliquid", "value": -2.6355e8}, {"chain": "Arbitrum", "value": 3.0871e8}],
-                    "week": [{"chain": "Robinhood Chain", "value": 1.549e7}],
-                    "month": [{"chain": "BSC", "value": -1.00333e9}]}}}}
+                nd = {"props": {"pageProps": {"adapterType": "bridges", "protocols": [
+                    {"name": "Across", "total24h": 4.14e8, "total7d": 1.71e9, "total30d": 8.2e9, "change_1d": 45.8, "chains": list(range(25))},
+                    {"name": "Relay", "total24h": 3.15e8, "total7d": 2.4e9, "total30d": 1.25e10, "change_1d": -18.9, "chains": list(range(46))}]}}}
             else:
                 return "<html>nope</html>"
             return f'<html><script id="__NEXT_DATA__" type="application/json">{json.dumps(nd)}</script></html>'

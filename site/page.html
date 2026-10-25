@@ -1944,7 +1944,7 @@ function renderBridges(){
       <td class="num">${fmtM(v24)}</td>
       <td class="num"><span class="${ch>0?"pos":ch<0?"neg":"dim"}">${ch>0?"+":""}${ch}%</span></td>
       <td class="num dim">${fmtM(v7)}</td><td class="num dim">${fmtM(v30)}</td>
-      <td class="num dim">${tx.toLocaleString()}</td>
+      <td class="num dim">${tx==null?"—":tx.toLocaleString()}</td>
       <td class="num dim">${nch}</td></tr>`;
   }).join("");
   const down=BRIDGES.filter(b=>b[5]<0).length;

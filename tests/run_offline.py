@@ -74,14 +74,18 @@ bsc = data["bsc"]
 assert abs(bsc["dr"] - 1.6) < 0.05, ("bsc dr should reflect 24h at 1.6× pace", bsc["dr"])
 assert "bsc" in status["passing_chains"] and "solana" not in status["passing_chains"]
 assert sol["oi"] == 210.0 and sol["pv"] == 1720.0 and abs(sol["pr"] - 1.04) < 0.02, (sol["oi"], sol["pv"], sol["pr"])
-assert sol["bd24"] == 108.0 and sol["bn7"] == -28.0 and sol["btop"] == "USDC", sol
-assert "bd24" not in data["robinhood"], "chain absent from tableData must get NO bridge keys"
+assert sol["bd24"] == 108.0 and sol["bw24"] == 115.0 and sol["bn24"] == -7.0, sol
+assert sol["bd7"] == 730.0 and sol["bw7"] == 760.0 and sol["bn7"] == -30.0, sol     # 7d in/out from total + net
+assert "bd24" not in data["robinhood"], "chain absent from /bridges/chains must get NO bridge keys"
 assert data["hyperliquid"]["n"] == "Hyperliquid" and data["hyperliquid"]["oi"] == 7140.0
 assert sol["sb"] > 15000 and "f1" in sol and "f7" in sol and "fr" in sol
 assert sol["fe24"] == 14.6 and sol["tv"] > 5000 and len(sol["ts"]) == 14
 assert out["MAJORS"]["btc"] == {"d1": 4.21, "d7": 8.42, "d30": 12.63}, out["MAJORS"]
-assert out["NETFLOW"]["day"][0] == ["Hyperliquid", -263.55], out["NETFLOW"]
-assert out["BRIDGES"][0] == ["Across", 414.0, 1710.0, 8200.0, 103171, 45.8, 25], out["BRIDGES"][0]
+assert out["NETFLOW"]["day"][0] == ["Hyperliquid L1", -263.55], out["NETFLOW"]
+assert "OldChain" not in [c for c, _ in out["NETFLOW"]["day"]], "deprecated chains are left out"
+assert out["NETFLOW"]["month"][0] == ["BSC", -1003.33], out["NETFLOW"]
+assert out["BRIDGES"][0] == ["Across", 414.0, 1710.0, 8200.0, None, 45.8, 25], out["BRIDGES"][0]
+assert status["sources"]["llama.bridges_chains"]["state"] == "ok"
 
 # ---------------- tokens
 assert BSC_USDT_PAIR in toks or True  # USDT must NOT be present as a leader
