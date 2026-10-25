@@ -30,30 +30,20 @@ jobs:
               if isinstance(v, list):
                   return [f"list[{len(v)}]", show(v[0], depth + 1, maxd) if v else None]
               return v if not isinstance(v, str) else v[:80]
-          for path in ("/bridges", "/bridges/chains"):
+          for path in ("/bridges/chains", "/bridges"):
               code, html = get("https://defillama.com" + path)
-              print(f"\n===== {path}: HTTP {code}, {len(html)} chars")
               m = re.search(r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>', html, re.S)
-              print("has __NEXT_DATA__:", bool(m), "| app-router chunks (self.__next_f):", html.count("self.__next_f"))
-              for w in ("netflowsData", "netflows", "filteredBridges", "tableData", "prevDayUsdDeposits", "lastDailyVolume"):
-                  print(f"  mentions {w!r}: {html.count(w)}")
-              if m:
-                  pp = json.loads(m.group(1)).get("props", {}).get("pageProps", {})
-                  print("pageProps keys:", list(pp.keys()))
-                  print(json.dumps(show(pp), default=str)[:6000])
+              pp = json.loads(m.group(1))["props"]["pageProps"]
+              print(f"\n===== {path}: HTTP {code}")
+              if path == "/bridges/chains":
+                  rows = sorted(pp["chains"], key=lambda c: -(c.get("total24h") or 0))
+                  for c in rows[:12]:
+                      t24, i24, o24, n24 = (c.get(k) for k in ("total24h", "incoming24h", "outgoing24h", "netflow24h"))
+                      print(c["name"], {k: c.get(k) for k in ("total24h", "incoming24h", "outgoing24h", "netflow24h", "total7d", "netflow7d", "total30d", "netflow30d")},
+                            "| in+out-total:", round((i24 or 0) + (o24 or 0) - (t24 or 0), 2), "| in-out-net:", round((i24 or 0) - (o24 or 0) - (n24 or 0), 2))
+                  print("all keys seen:", sorted({k for c in pp["chains"] for k in c}))
               else:
-                  for w in ("netflow", "filteredBridges", "tableData"):
-                      i = html.find(w)
-                      if i >= 0:
-                          print(f"  context {w!r}:", html[max(0, i - 200):i + 400].replace("\n", " "))
-          for u in ("https://bridges.llama.fi/bridges?includeChains=true",
-                    "https://bridges.llama.fi/bridgevolume/all",
-                    "https://bridges.llama.fi/netflows/day",
-                    "https://api.llama.fi/bridges?includeChains=true"):
-              code, body = get(u)
-              print(f"\n===== {u}: HTTP {code}, {len(body)} chars")
-              try:
-                  j = json.loads(body)
-                  print(json.dumps(show(j, maxd=3), default=str)[:3000])
-              except Exception:
-                  print(body[:300])
+                  ps = sorted(pp["protocols"], key=lambda p: -(p.get("total24h") or 0))
+                  for p in ps[:6]:
+                      print(p["name"], {k: p.get(k) for k in ("total24h", "total7d", "total30d", "change_1d", "category")}, "chains:", len(p.get("chains") or []))
+                  print("categories:", pp.get("categories"))
