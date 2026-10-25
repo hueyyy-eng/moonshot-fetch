@@ -1,6 +1,6 @@
 {
- "now": "2026-10-25 00:40 SGT",
- "cand_at": "2026-10-25 00:40 SGT",
+ "now": "2026-10-25 15:19 SGT",
+ "cand_at": "2026-10-25 15:19 SGT",
  "tokens_carried": false,
  "stale": [
   "net flows (carried)",
@@ -24,204 +24,142 @@
   "reprice": "ok"
  },
  "chains": {
-  "hot": [
+  "hot": [],
+  "new": [],
+  "dropped": [
    "eos"
   ],
-  "new": [],
-  "dropped": [],
   "hottest": {
-   "s": "provenance",
-   "n": "Provenance",
-   "dr": 2.58,
-   "dr30": 1.86
+   "s": "sxr",
+   "n": "Sxr",
+   "dr": 1.78,
+   "dr30": 3.56
   }
  },
  "tokens": {
-  "total": 66,
-  "band_m": 36,
+  "total": 65,
+  "band_m": 35,
   "candle_or_wallet_coverage_pct": 100,
-  "nodata": 4
+  "nodata": 6
  },
- "shortlist": [
-  {
-   "sym": "swordcat",
-   "c": "solana",
-   "mc": 1872.2,
-   "nar": "Dog & animal memes",
-   "run": 1.54,
-   "retr": 76.51,
-   "acc": 3.27,
-   "c6": 80.32,
-   "age": 26.28,
-   "sec": "rugcheck",
-   "pa": "8ewuF2o8ACro7fqWepZ3tKhkbBjndZU4Ldk9scRPw83d"
-  },
-  {
-   "sym": "CBUCKS",
-   "c": "solana",
-   "mc": 1295.2,
-   "nar": "Unclassified",
-   "run": 2.31,
-   "retr": 27.3,
-   "acc": 0.84,
-   "c6": -3.45,
-   "age": 17.9,
-   "sec": "rugcheck",
-   "pa": "B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB"
-  }
- ],
- "shortlist_new": [
+ "shortlist": [],
+ "shortlist_new": [],
+ "shortlist_dropped": [
   "CBUCKS",
   "swordcat"
  ],
- "shortlist_dropped": [
-  "fone"
- ],
- "pullback": [],
- "pullback_new": [],
- "pullback_dropped": [],
- "igniting": [
+ "pullback": [
   {
-   "sym": "SO",
+   "sym": "███",
    "c": "solana",
-   "mc": 1189.1,
-   "nar": "Utilities",
-   "run": null,
-   "retr": null,
-   "acc": 4.0,
-   "c6": 55.99,
-   "age": 0.11,
-   "sec": "rugcheck",
-   "pa": "J6sx2A6hgt8S3pB7zd4BmPdMwDqEaBibnDtfozBq55Ku"
-  },
-  {
-   "sym": "ALLOX",
-   "c": "solana",
-   "mc": 1124.4,
-   "nar": "Unclassified",
-   "run": null,
-   "retr": null,
-   "acc": 4.0,
-   "c6": 67.69,
-   "age": 0.1,
-   "sec": "rugcheck",
-   "pa": "A67d8qXm4frRJc4LcdoXnvEbXjUT4ywWCRvWBFSY6Y7W"
-  },
-  {
-   "sym": "swordcat",
-   "c": "solana",
-   "mc": 1872.2,
+   "mc": 641.7,
    "nar": "Dog & animal memes",
-   "run": 1.54,
-   "retr": 76.51,
-   "acc": 3.27,
-   "c6": 80.32,
-   "age": 26.28,
+   "run": 9.25,
+   "retr": 50.13,
+   "acc": 0.88,
+   "c6": 21.19,
+   "age": 1.13,
    "sec": "rugcheck",
-   "pa": "8ewuF2o8ACro7fqWepZ3tKhkbBjndZU4Ldk9scRPw83d"
+   "pa": "9sY4Amm2RFpsBQ1qgCQTxcjfvhmfJ9K4d2J5xfM1k75M"
   }
  ],
+ "pullback_new": [
+  "███"
+ ],
+ "pullback_dropped": [],
+ "igniting": [],
  "momentum": [
   {
-   "sym": "PANGEA",
-   "c": "robinhood",
-   "mc": 1343.2,
-   "nar": "Unclassified",
-   "run": 174.31,
-   "retr": 83.64,
-   "acc": 1.34,
-   "c6": 1.43,
-   "age": 2.99,
-   "sec": "explorer",
-   "pa": "0xcfe04bc182706f8683f4f486104b52fb6a4115cfe9e4471c468fca65703f9b9d"
+   "sym": "REMUS",
+   "c": "solana",
+   "mc": 629.0,
+   "nar": "Classic memes",
+   "run": 31.3,
+   "retr": 19.89,
+   "acc": 0.54,
+   "c6": 14.35,
+   "age": 1.31,
+   "sec": "rugcheck",
+   "pa": "6JDiSPsWBwcSN8xBa4LNBzMZRikxksbxcto8J3ELR4cG"
   },
   {
-   "sym": "MONEROPAY",
+   "sym": "microduck",
    "c": "robinhood",
-   "mc": 505.2,
+   "mc": 1844.3,
    "nar": "Unclassified",
-   "run": 21.06,
-   "retr": 2.12,
+   "run": 82.46,
+   "retr": 0.0,
    "acc": 0.0,
    "c6": null,
    "age": 1.01,
-   "sec": "nodata",
-   "pa": "0x07e48a2ba2248b3c8ed0ec19042952257a0bc8554f3019911cf46bfe67f2eb3a"
-  },
-  {
-   "sym": "ODIE",
-   "c": "robinhood",
-   "mc": 658.3,
-   "nar": "Unclassified",
-   "run": 26.68,
-   "retr": 0.1,
-   "acc": 0.0,
-   "c6": null,
-   "age": 1.03,
    "sec": "explorer",
-   "pa": "0x171194dfe8041edc99cbf78b3dfc2b25c0134a35e339941d208defdd5837d1dd"
+   "pa": "0x698f77b916377245308362957007182ac45957b19501a9ea71905934d5eca2ed"
   }
  ],
  "momentum_new": [
+  "REMUS",
+  "microduck"
+ ],
+ "momentum_dropped": [
   "MONEROPAY",
   "ODIE",
   "PANGEA"
  ],
- "momentum_dropped": [
-  "TOGI"
- ],
  "honeypots_new": [
-  "ORDER"
+  "LIGHT",
+  "Q"
  ],
  "track": {
-  "logged": 74,
-  "new_rows": [],
+  "logged": 75,
+  "new_rows": [
+   [
+    "███",
+    "P"
+   ]
+  ],
   "best_x": 14.93,
   "median_peak_x": 1.0,
-  "hit_2x_today": [
-   "DOPE (solana)"
-  ],
+  "hit_2x_today": [],
   "to_zero_today": [],
   "repriced": true
  },
  "igniting_track": {
   "logged": 44,
-  "new_rows": [
-   "SO",
-   "ALLOX",
-   "swordcat"
-  ],
+  "new_rows": [],
   "hit_2x_today": [],
   "to_zero_today": [
-   "ALLOX (solana)",
-   "SO (solana)"
+   "FABLES (solana)"
   ]
  },
  "momentum_track": {
-  "logged": 40,
+  "logged": 42,
   "new_rows": [
-   "PANGEA",
-   "MONEROPAY",
-   "ODIE"
+   "REMUS",
+   "microduck"
   ],
-  "hit_2x_today": [],
+  "hit_2x_today": [
+   "PANGEA (robinhood)"
+  ],
   "to_zero_today": [
-   "TIM (bsc)",
-   "TOGI (robinhood)"
+   "MONEROPAY (robinhood)",
+   "ODIE (robinhood)"
   ]
  },
  "control": {
-  "rows": 625,
+  "rows": 631,
   "median_peak_x": 1.0,
   "hit_2x_today": [
-   "DOPE (solana)",
-   "DacityCoin (solana)"
+   "PANGEA (robinhood)",
+   "SEASON (robinhood)"
   ],
   "to_zero_today": [
-   "astro (robinhood)",
-   "ALLOX (solana)",
-   "SO (solana)",
-   "GANG (bsc)"
+   "LAURA (robinhood)",
+   "GLXY (robinhood)",
+   "CDOG (solana)",
+   "SI (robinhood)",
+   "VEILDOGE (solana)",
+   "1 (solana)",
+   "FABLES (solana)"
   ]
  },
  "changed": true,
