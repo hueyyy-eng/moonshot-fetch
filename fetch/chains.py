@@ -260,67 +260,71 @@ def perps(http: Http, st: Status) -> dict[str, dict]:
 
 
 # ---------------------------------------------------------------- net flows + bridges
+# DefiLlama redesigned both bridge pages on 23-24 Oct 2026: netflowsData, tableData and filteredBridges are gone.
+# /bridges/chains now lists every chain with incoming / outgoing / net (incoming + outgoing = total, incoming -
+# outgoing = netflow, checked on live data 25 Oct), and /bridges lists the bridge protocols with 24h / 7d / 30d
+# volume but no transaction counts. Their bridges.llama.fi API now answers 402 (paid), so the pages stay the source.
+NETFLOW_TOP = 15            # the chart shows the largest movers per period, as DefiLlama's old netflow block did
+
+
 def netflow_and_bridges(http: Http, st: Status) -> tuple[Optional[dict], dict[str, dict], Optional[list]]:
     netflow = None
     gross: dict[str, dict] = {}
     bridges = None
-    fb: list = []
-    try:
-        nd = _next_data(http, f"{SITE}/bridges")
-        pp0 = nd["props"]["pageProps"]
-        nf = pp0["netflowsData"]
-        netflow = {}
-        for period in ("day", "week", "month"):
-            arr = nf.get(period) or []
-            netflow[period] = [[x.get("chain"), r2(float(x.get("value") or 0) / 1e6)] for x in arr if x.get("chain")]
-        st.ok("llama.netflow", day=len(netflow.get("day", [])))
-        fb = pp0.get("filteredBridges") or []      # confirmed 19 Sep: filteredBridges is on /bridges, not /bridges/chains
-    except Exception as e:  # noqa: BLE001
-        st.fail("llama.netflow", e)
     try:
         nd = _next_data(http, f"{SITE}/bridges/chains")
-        pp = nd["props"]["pageProps"]
-        for c in pp.get("tableData") or []:
-            s = to_slug(c.get("name", ""))
+        chains = [c for c in nd["props"]["pageProps"].get("chains") or [] if c.get("name") and not c.get("deprecated")]
+        netflow = {}
+        for period, key in (("day", "netflow24h"), ("week", "netflow7d"), ("month", "netflow30d")):
+            vals = [(c["name"], float(c[key])) for c in chains if c.get(key) is not None]
+            top = sorted(vals, key=lambda x: -abs(x[1]))[:NETFLOW_TOP]
+            netflow[period] = [[n, r2(v / 1e6)] for n, v in sorted(top, key=lambda x: x[1])]
+        if netflow["day"]:
+            st.ok("llama.netflow", day=len(netflow["day"]))
+        else:
+            netflow = None
+            st.fail("llama.netflow", "no netflow24h values on /bridges/chains",
+                    sample_keys=sorted(chains[0].keys())[:12] if chains else [])
+        for c in chains:
+            s = to_slug(c["name"])
             if not s:
                 continue
+            i24, o24, t7, n7 = (c.get(k) for k in ("incoming24h", "outgoing24h", "total7d", "netflow7d"))
             g = {}
-            for k, src in (("bd24", "prevDayUsdDeposits"), ("bw24", "prevDayUsdWithdrawals"), ("bn24", "prevDayNetFlow"),
-                           ("bd7", "prevWeekUsdDeposits"), ("bw7", "prevWeekUsdWithdrawals"), ("bn7", "prevWeekNetFlow")):
-                if c.get(src) is not None:
-                    g[k] = r2(float(c[src]) / 1e6)
-            if c.get("topTokenDepositedSymbol"):
-                g["btop"] = c["topTokenDepositedSymbol"]
+            if i24 is not None and o24 is not None:
+                g.update(bd24=r2(float(i24) / 1e6), bw24=r2(float(o24) / 1e6), bn24=r2((float(i24) - float(o24)) / 1e6))
+            if t7 is not None and n7 is not None:     # 7d comes as total + net only: in = (total + net) / 2
+                g.update(bd7=r2((float(t7) + float(n7)) / 2e6), bw7=r2((float(t7) - float(n7)) / 2e6), bn7=r2(float(n7) / 1e6))
             if g:
                 gross[s] = g
-        st.ok("llama.bridges_chains", chains=len(gross))
-        if not fb:
-            fb = pp.get("filteredBridges") or []
-
-        def pick(o: dict, *cands):
-            for k in cands:
-                if k in o and o[k] is not None:
-                    return o[k]
-            return None
-        rows = []
-        for b in fb:
-            v24 = pick(b, "lastDailyVolume", "volumePrevDay", "dailyVolume", "volume24h")
-            rows.append([b.get("displayName") or b.get("name"),
-                         r2(float(v24) / 1e6) if v24 is not None else None,
-                         r2(float(pick(b, "weeklyVolume", "volumePrevWeek", "volume7d") or 0) / 1e6) if pick(b, "weeklyVolume", "volumePrevWeek", "volume7d") is not None else None,
-                         r2(float(pick(b, "monthlyVolume", "volume30d") or 0) / 1e6) if pick(b, "monthlyVolume", "volume30d") is not None else None,
-                         int(pick(b, "txsPrevDay", "dailyTxs", "txs24h") or 0) if pick(b, "txsPrevDay", "dailyTxs", "txs24h") is not None else None,
-                         r1(pick(b, "change_1d", "change1d", "changeDay")) if pick(b, "change_1d", "change1d", "changeDay") is not None else None,
-                         len(b.get("chains") or []) if isinstance(b.get("chains"), list) else None])
+        if gross:
+            st.ok("llama.bridges_chains", chains=len(gross))
+        else:                                         # an empty table used to pass as "ok" with 0 chains
+            st.fail("llama.bridges_chains", "no per-chain in/out rows on /bridges/chains",
+                    sample_keys=sorted(chains[0].keys())[:12] if chains else [])
+    except Exception as e:  # noqa: BLE001
+        st.fail("llama.netflow", e)
+        st.fail("llama.bridges_chains", e)
+    try:
+        nd = _next_data(http, f"{SITE}/bridges")
+        protos = nd["props"]["pageProps"].get("protocols") or []
+        m = lambda v: r2(float(v) / 1e6) if v is not None else None  # noqa: E731
+        rows = [[p.get("name"), m(p.get("total24h")), m(p.get("total7d")), m(p.get("total30d")),
+                 None,                                # transaction counts are no longer published
+                 r1(p.get("change_1d")),
+                 len(p["chains"]) if isinstance(p.get("chains"), list) else None]
+                for p in protos if p.get("name")]
         rows = [r for r in rows if r[1] is not None]
         rows.sort(key=lambda r: -r[1])
         bridges = rows[:14]
         if bridges:
             st.ok("llama.bridges_protocols", rows=len(bridges))
         else:
-            st.fail("llama.bridges_protocols", "filteredBridges missing or unrecognised keys", sample_keys=sorted(list(fb[0].keys()))[:12] if fb else [])
+            bridges = None
+            st.fail("llama.bridges_protocols", "protocols missing or without total24h on /bridges",
+                    sample_keys=sorted(protos[0].keys())[:12] if protos else [])
     except Exception as e:  # noqa: BLE001
-        st.fail("llama.bridges_chains", e)
+        st.fail("llama.bridges_protocols", e)
     return netflow, gross, bridges
 
 

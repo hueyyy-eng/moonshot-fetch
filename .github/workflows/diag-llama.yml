@@ -3,7 +3,7 @@ name: diag llama bridges (temporary)
 on:
   push:
     branches: [claude/funny-goodall-y0z745]
-    paths: [.github/workflows/diag-llama.yml]
+    paths: [.github/workflows/diag-llama.yml, fetch/chains.py]
 
 permissions:
   contents: read
@@ -13,37 +13,19 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Inspect DefiLlama bridges pages and API
-        shell: python
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Run the new netflow / bridges parser against live DefiLlama
         run: |
-          import json, re, urllib.request
-          UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36"}
-          def get(u):
-              try:
-                  r = urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=40)
-                  return r.status, r.read().decode("utf-8", "replace")
-              except Exception as e:
-                  return getattr(e, "code", "ERR"), str(e)[:200]
-          def show(v, depth=0, maxd=2):
-              if isinstance(v, dict):
-                  return {k: (show(x, depth + 1, maxd) if depth < maxd else type(x).__name__) for k, x in list(v.items())[:40]}
-              if isinstance(v, list):
-                  return [f"list[{len(v)}]", show(v[0], depth + 1, maxd) if v else None]
-              return v if not isinstance(v, str) else v[:80]
-          for path in ("/bridges/chains", "/bridges"):
-              code, html = get("https://defillama.com" + path)
-              m = re.search(r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>', html, re.S)
-              pp = json.loads(m.group(1))["props"]["pageProps"]
-              print(f"\n===== {path}: HTTP {code}")
-              if path == "/bridges/chains":
-                  rows = sorted(pp["chains"], key=lambda c: -(c.get("total24h") or 0))
-                  for c in rows[:12]:
-                      t24, i24, o24, n24 = (c.get(k) for k in ("total24h", "incoming24h", "outgoing24h", "netflow24h"))
-                      print(c["name"], {k: c.get(k) for k in ("total24h", "incoming24h", "outgoing24h", "netflow24h", "total7d", "netflow7d", "total30d", "netflow30d")},
-                            "| in+out-total:", round((i24 or 0) + (o24 or 0) - (t24 or 0), 2), "| in-out-net:", round((i24 or 0) - (o24 or 0) - (n24 or 0), 2))
-                  print("all keys seen:", sorted({k for c in pp["chains"] for k in c}))
-              else:
-                  ps = sorted(pp["protocols"], key=lambda p: -(p.get("total24h") or 0))
-                  for p in ps[:6]:
-                      print(p["name"], {k: p.get(k) for k in ("total24h", "total7d", "total30d", "change_1d", "category")}, "chains:", len(p.get("chains") or []))
-                  print("categories:", pp.get("categories"))
+          python - <<'PY'
+          import json
+          from fetch.common import Http, Status
+          from fetch.chains import netflow_and_bridges
+          st = Status()
+          nf, gross, br = netflow_and_bridges(Http(timeout=30.0), st)
+          print("STATUS", json.dumps({k: v for k, v in st.sources.items()}))
+          print("RESULT_JSON", json.dumps({"NETFLOW": nf, "GROSS": gross, "BRIDGES": br}, separators=(",", ":")))
+          PY
