@@ -1,6 +1,6 @@
 {
- "now": "2026-10-27 03:19 SGT",
- "cand_at": "2026-10-27 03:19 SGT",
+ "now": "2026-10-27 15:26 SGT",
+ "cand_at": "2026-10-27 15:26 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -21,107 +21,137 @@
   "reprice": "ok"
  },
  "chains": {
-  "hot": [],
-  "new": [],
+  "hot": [
+   "eos"
+  ],
+  "new": [
+   "eos"
+  ],
   "dropped": [],
   "hottest": {
-   "s": "sxr",
-   "n": "Sxr",
-   "dr": 1.58,
-   "dr30": 3.0
+   "s": "eos",
+   "n": "Eos",
+   "dr": 2.15,
+   "dr30": 1.49
   }
  },
  "tokens": {
-  "total": 59,
-  "band_m": 29,
-  "candle_or_wallet_coverage_pct": 100,
-  "nodata": 4
+  "total": 71,
+  "band_m": 38,
+  "candle_or_wallet_coverage_pct": 97,
+  "nodata": 5
  },
  "shortlist": [
   {
-   "sym": "CBUCKS",
+   "sym": "LAUNCH",
    "c": "solana",
-   "mc": 1128.4,
+   "mc": 1906.5,
    "nar": "Unclassified",
-   "run": 1.78,
-   "retr": 13.69,
-   "acc": 0.94,
-   "c6": -6.72,
-   "age": 20.01,
+   "run": 2.44,
+   "retr": 52.24,
+   "acc": 0.28,
+   "c6": 6.27,
+   "age": 1.54,
    "sec": "rugcheck",
-   "pa": "B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB"
+   "pa": "2H2TNJuqivWWM87oZF3pgBa7KhH3ugo6qea5rjkFey2b"
   },
   {
    "sym": "SI276",
    "c": "solana",
-   "mc": 715.2,
+   "mc": 705.1,
    "nar": "AI",
-   "run": 2.09,
-   "retr": 65.63,
-   "acc": 1.45,
-   "c6": -5.13,
-   "age": 19.97,
+   "run": 1.98,
+   "retr": 67.47,
+   "acc": 0.96,
+   "c6": -4.01,
+   "age": 20.47,
    "sec": "rugcheck",
    "pa": "12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG"
+  },
+  {
+   "sym": "WORM",
+   "c": "robinhood",
+   "mc": 1660.7,
+   "nar": "AI",
+   "run": 1.77,
+   "retr": 67.74,
+   "acc": 0.69,
+   "c6": 17.92,
+   "age": 48.5,
+   "sec": "goplus",
+   "pa": "0xf49ee5b66c4e7163026e5d25e6a1f93cff46dca4d3752f712d181d9392c1d567"
   }
  ],
  "shortlist_new": [
-  "SI276"
+  "LAUNCH",
+  "WORM"
  ],
- "shortlist_dropped": [],
- "pullback": [],
- "pullback_new": [],
- "pullback_dropped": [
-  "CATTLEAXE",
-  "PMUP"
+ "shortlist_dropped": [
+  "CBUCKS"
  ],
+ "pullback": [
+  {
+   "sym": "worth",
+   "c": "base",
+   "mc": 1104.8,
+   "nar": "Tokenised equities",
+   "run": 80.56,
+   "retr": 42.9,
+   "acc": 0.38,
+   "c6": -3.25,
+   "age": 72.48,
+   "sec": "goplus",
+   "pa": "0x6cf637a82362d304dfa56a6387fc8f909ec0008ec520ee5fb999506d9b1f3514"
+  }
+ ],
+ "pullback_new": [
+  "worth"
+ ],
+ "pullback_dropped": [],
  "igniting": [],
  "momentum": [
   {
-   "sym": "LAUNCH",
-   "c": "solana",
-   "mc": 1917.4,
+   "sym": "KIVO",
+   "c": "robinhood",
+   "mc": 718.5,
    "nar": "Unclassified",
-   "run": null,
-   "retr": null,
-   "acc": 0.65,
-   "c6": -9.71,
-   "age": 1.3,
-   "sec": "rugcheck",
-   "pa": "GezArkyjgqsjid7m9zg3jkxxFmnHuh8dDzmqUpbL7K59"
-  },
-  {
-   "sym": "REMUS",
-   "c": "solana",
-   "mc": 1356.8,
-   "nar": "Classic memes",
-   "run": 40.07,
-   "retr": 28.0,
-   "acc": 0.93,
-   "c6": 30.51,
-   "age": 2.82,
-   "sec": "rugcheck",
-   "pa": "6JDiSPsWBwcSN8xBa4LNBzMZRikxksbxcto8J3ELR4cG"
+   "run": 31.23,
+   "retr": 6.68,
+   "acc": 0.0,
+   "c6": null,
+   "age": 1.01,
+   "sec": "explorer",
+   "pa": "0x7f6f3fc2dc5f751225eb59bf0e73d4ae04534bbdc08e8e66fcaa06c50164323f"
   }
  ],
  "momentum_new": [
-  "LAUNCH"
+  "KIVO"
  ],
  "momentum_dropped": [
-  "4AGENT",
-  "DARK",
-  "牛币"
+  "LAUNCH",
+  "REMUS"
  ],
  "honeypots_new": [
-  "ARIA"
+  "AIN"
  ],
  "track": {
-  "logged": 77,
-  "new_rows": [],
+  "logged": 79,
+  "new_rows": [
+   [
+    "LAUNCH",
+    "S"
+   ],
+   [
+    "worth",
+    "P"
+   ]
+  ],
   "best_x": 14.93,
   "median_peak_x": 1.0,
   "hit_2x_today": [],
-  "to_zero_today": [],
+  "to_zero_today": [
+   "牛梦 (bsc)"
+  ],
   "repriced": true
  },
  "igniting_track": {
@@ -131,26 +161,28 @@
   "to_zero_today": []
  },
  "momentum_track": {
-  "logged": 48,
+  "logged": 49,
   "new_rows": [
-   "LAUNCH"
+   "KIVO"
   ],
   "hit_2x_today": [],
-  "to_zero_today": [
-   "DARK (robinhood)"
-  ]
+  "to_zero_today": []
  },
  "control": {
-  "rows": 641,
+  "rows": 648,
   "median_peak_x": 1.0,
-  "hit_2x_today": [
-   "GRIFT (robinhood)"
-  ],
+  "hit_2x_today": [],
   "to_zero_today": [
-   "FlyBrain (bsc)",
-   "FOMOBALL (robinhood)",
-   "ORE (robinhood)",
-   "GANG (bsc)"
+   "LAURA (robinhood)",
+   "牛梦 (bsc)",
+   "RWA (robinhood)",
+   "SWOLE (robinhood)",
+   "CDOG (solana)",
+   "JEV (robinhood)",
+   "HYDX (robinhood)",
+   "NOSH (robinhood)",
+   "VEILDOGE (solana)",
+   "富途牛牛&币安 (bsc)"
   ]
  },
  "changed": true,
