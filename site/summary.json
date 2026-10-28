@@ -1,6 +1,6 @@
 {
- "now": "2026-10-28 15:58 SGT",
- "cand_at": "2026-10-28 15:58 SGT",
+ "now": "2026-10-29 03:06 SGT",
+ "cand_at": "2026-10-29 03:06 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -21,16 +21,11 @@
   "reprice": "ok"
  },
  "chains": {
-  "hot": [
-   "ripple",
-   "xrpl"
-  ],
-  "new": [
-   "ripple",
-   "xrpl"
-  ],
+  "hot": [],
+  "new": [],
   "dropped": [
-   "eos"
+   "ripple",
+   "xrpl"
   ],
   "hottest": {
    "s": "tron",
@@ -40,66 +35,65 @@
   }
  },
  "tokens": {
-  "total": 77,
-  "band_m": 41,
+  "total": 74,
+  "band_m": 38,
   "candle_or_wallet_coverage_pct": 100,
   "nodata": 8
  },
- "shortlist": [
-  {
-   "sym": "LAUNCH",
-   "c": "solana",
-   "mc": 1639.5,
-   "nar": "Unclassified",
-   "run": 1.98,
-   "retr": 61.28,
-   "acc": 0.3,
-   "c6": -7.15,
-   "age": 2.56,
-   "sec": "rugcheck",
-   "pa": "2H2TNJuqivWWM87oZF3pgBa7KhH3ugo6qea5rjkFey2b"
-  },
-  {
-   "sym": "富贵",
-   "c": "robinhood",
-   "mc": 1313.3,
-   "nar": "Unclassified",
-   "run": 1.91,
-   "retr": 23.44,
-   "acc": 2.53,
-   "c6": 30.46,
-   "age": 104.85,
-   "sec": "explorer",
-   "pa": "0xec52A53D7AA278b2027C83449B425Cde8ff8015b"
-  }
- ],
- "shortlist_new": [
+ "shortlist": [],
+ "shortlist_new": [],
+ "shortlist_dropped": [
   "LAUNCH",
   "富贵"
  ],
- "shortlist_dropped": [
-  "SI276",
-  "WORM"
- ],
- "pullback": [],
- "pullback_new": [],
- "pullback_dropped": [],
- "igniting": [
+ "pullback": [
   {
-   "sym": "富贵",
-   "c": "robinhood",
-   "mc": 1313.3,
+   "sym": "███WIF",
+   "c": "solana",
+   "mc": 1465.4,
+   "nar": "Dog & animal memes",
+   "run": 18.09,
+   "retr": 66.39,
+   "acc": 1.66,
+   "c6": 21.71,
+   "age": 1.81,
+   "sec": "rugcheck",
+   "pa": "35QgKestyQozSeRbZa7c7WDhR32svTgC6RZVDS8KcEmQ"
+  },
+  {
+   "sym": "Trenchors",
+   "c": "base",
+   "mc": 611.2,
    "nar": "Unclassified",
-   "run": 1.91,
-   "retr": 23.44,
-   "acc": 2.53,
-   "c6": 30.46,
-   "age": 104.85,
-   "sec": "explorer",
-   "pa": "0xec52A53D7AA278b2027C83449B425Cde8ff8015b"
+   "run": 29.27,
+   "retr": 54.39,
+   "acc": 0.0,
+   "c6": null,
+   "age": 1.2,
+   "sec": "goplus",
+   "pa": "0x9706d902794dbedaccd47e6255d99797ae379288c965d8063e09b2d2da828f4f"
   }
  ],
+ "pullback_new": [
+  "Trenchors",
+  "███WIF"
+ ],
+ "pullback_dropped": [],
+ "igniting": [],
  "momentum": [
+  {
+   "sym": "MOGZ",
+   "c": "solana",
+   "mc": 581.7,
+   "nar": "Launchpad / infra",
+   "run": 9.19,
+   "retr": 59.18,
+   "acc": 0.88,
+   "c6": -30.11,
+   "age": 1.12,
+   "sec": "rugcheck",
+   "pa": "7j13CapqLC4dGaGYFCxgL8t31R7B1Gt93uBh8EdoRp9H"
+  },
   {
    "sym": "GANG",
    "c": "robinhood",
@@ -107,92 +101,97 @@
    "nar": "Unclassified",
    "run": 20.95,
    "retr": 10.44,
-   "acc": 0.62,
-   "c6": 41.14,
-   "age": 1.06,
+   "acc": 0.0,
+   "c6": null,
+   "age": 1.53,
    "sec": "explorer",
    "pa": "0x9ab3fa44f5d207907042d520fd8bb61b53f1c9ed9c2946ef1d0ea89d1844329c"
   },
   {
+   "sym": "REBATE",
+   "c": "robinhood",
+   "mc": 1640.3,
+   "nar": "Launchpad / infra",
+   "run": 21.18,
+   "retr": 13.82,
+   "acc": 1.14,
+   "c6": -7.63,
+   "age": 1.07,
+   "sec": "explorer",
+   "pa": "0xdfc96a1bc3455ffce6564e1833270c1b0664b761626db961012068007851d83c"
+  },
+  {
    "sym": "旺柴",
    "c": "robinhood",
-   "mc": 1876.3,
+   "mc": 1876.8,
    "nar": "Dog & animal memes",
    "run": 20.32,
    "retr": 1.38,
-   "acc": 1.01,
-   "c6": 0.08,
-   "age": 2.0,
+   "acc": 0.0,
+   "c6": null,
+   "age": 2.46,
    "sec": "explorer",
    "pa": "0x913b544fa778b6e3a4942fd1195d3b19d93448330dc6e2c4be5379c22f5017b4"
   }
  ],
  "momentum_new": [
-  "GANG",
-  "旺柴"
+  "MOGZ",
+  "REBATE"
  ],
- "momentum_dropped": [
-  "Kimchi"
- ],
- "honeypots_new": [
-  "AKE",
-  "TAG"
- ],
+ "momentum_dropped": [],
+ "honeypots_new": [],
  "track": {
-  "logged": 80,
+  "logged": 82,
   "new_rows": [
    [
-    "富贵",
-    "S"
+    "███WIF",
+    "P"
+   ],
+   [
+    "Trenchors",
+    "P"
    ]
   ],
   "best_x": 14.93,
   "median_peak_x": 1.0,
-  "hit_2x_today": [
-   "DGUY (base)",
-   "GIGATENEV (robinhood)"
-  ],
+  "hit_2x_today": [],
   "to_zero_today": [],
   "repriced": true
  },
  "igniting_track": {
   "logged": 47,
-  "new_rows": [
-   "富贵"
-  ],
+  "new_rows": [],
   "hit_2x_today": [],
   "to_zero_today": [
-   "RSGP (solana)"
+   "FABLES (solana)"
   ]
  },
  "momentum_track": {
-  "logged": 52,
+  "logged": 54,
   "new_rows": [
-   "GANG",
-   "旺柴"
+   "MOGZ",
+   "REBATE"
   ],
-  "hit_2x_today": [
-   "PANGEA (robinhood)",
-   "REMUS (solana)"
-  ],
-  "to_zero_today": [
-   "Kimchi (robinhood)"
-  ]
+  "hit_2x_today": [],
+  "to_zero_today": []
  },
  "control": {
-  "rows": 662,
+  "rows": 667,
   "median_peak_x": 1.0,
   "hit_2x_today": [
-   "GP (solana)",
-   "REMUS (solana)"
+   "NEST (hyperevm)",
+   "INVERSE (solana)"
   ],
   "to_zero_today": [
-   "KNOT (bsc)",
-   "Flylife (bsc)",
-   "FOMOBALL (robinhood)",
-   "RSGP (solana)"
+   "OS (solana)",
+   "CHINAPAD (robinhood)",
+   "CEREBRO (robinhood)",
+   "astro (robinhood)",
+   "FTR (ethereum)",
+   "FABLES (solana)",
+   "EDS (robinhood)"
   ]
  },
  "changed": true,
- "alert": true
+ "alert": false
 }
