@@ -1,6 +1,6 @@
 {
- "now": "2026-10-28 02:41 SGT",
- "cand_at": "2026-10-28 02:41 SGT",
+ "now": "2026-10-28 15:58 SGT",
+ "cand_at": "2026-10-28 15:58 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -22,135 +22,175 @@
  },
  "chains": {
   "hot": [
+   "ripple",
+   "xrpl"
+  ],
+  "new": [
+   "ripple",
+   "xrpl"
+  ],
+  "dropped": [
    "eos"
   ],
-  "new": [],
-  "dropped": [],
   "hottest": {
-   "s": "eos",
-   "n": "Eos",
-   "dr": 2.15,
-   "dr30": 1.49
+   "s": "tron",
+   "n": "Tron",
+   "dr": 1.99,
+   "dr30": 2.03
   }
  },
  "tokens": {
-  "total": 63,
-  "band_m": 30,
+  "total": 77,
+  "band_m": 41,
   "candle_or_wallet_coverage_pct": 100,
-  "nodata": 1
+  "nodata": 8
  },
  "shortlist": [
   {
-   "sym": "SI276",
+   "sym": "LAUNCH",
    "c": "solana",
-   "mc": 702.6,
-   "nar": "AI",
+   "mc": 1639.5,
+   "nar": "Unclassified",
    "run": 1.98,
-   "retr": 67.47,
-   "acc": 0.85,
-   "c6": 0.79,
-   "age": 20.94,
+   "retr": 61.28,
+   "acc": 0.3,
+   "c6": -7.15,
+   "age": 2.56,
    "sec": "rugcheck",
-   "pa": "12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG"
+   "pa": "2H2TNJuqivWWM87oZF3pgBa7KhH3ugo6qea5rjkFey2b"
   },
   {
-   "sym": "WORM",
+   "sym": "富贵",
    "c": "robinhood",
-   "mc": 1725.4,
-   "nar": "AI",
-   "run": 1.77,
-   "retr": 67.74,
-   "acc": 1.18,
-   "c6": 3.93,
-   "age": 48.97,
+   "mc": 1313.3,
+   "nar": "Unclassified",
+   "run": 1.91,
+   "retr": 23.44,
+   "acc": 2.53,
+   "c6": 30.46,
+   "age": 104.85,
    "sec": "explorer",
-   "pa": "0xf49ee5b66c4e7163026e5d25e6a1f93cff46dca4d3752f712d181d9392c1d567"
+   "pa": "0xec52A53D7AA278b2027C83449B425Cde8ff8015b"
   }
  ],
- "shortlist_new": [],
+ "shortlist_new": [
+  "LAUNCH",
+  "富贵"
+ ],
  "shortlist_dropped": [
-  "LAUNCH"
+  "SI276",
+  "WORM"
  ],
  "pullback": [],
  "pullback_new": [],
- "pullback_dropped": [
-  "worth"
+ "pullback_dropped": [],
+ "igniting": [
+  {
+   "sym": "富贵",
+   "c": "robinhood",
+   "mc": 1313.3,
+   "nar": "Unclassified",
+   "run": 1.91,
+   "retr": 23.44,
+   "acc": 2.53,
+   "c6": 30.46,
+   "age": 104.85,
+   "sec": "explorer",
+   "pa": "0xec52A53D7AA278b2027C83449B425Cde8ff8015b"
+  }
  ],
- "igniting": [],
  "momentum": [
   {
-   "sym": "Kimchi",
+   "sym": "GANG",
    "c": "robinhood",
-   "mc": 1796.7,
+   "mc": 951.3,
    "nar": "Unclassified",
-   "run": 26.91,
-   "retr": 0.16,
-   "acc": 0.0,
-   "c6": null,
-   "age": 1.29,
+   "run": 20.95,
+   "retr": 10.44,
+   "acc": 0.62,
+   "c6": 41.14,
+   "age": 1.06,
    "sec": "explorer",
-   "pa": "0x8399570a66ee464ee168f8048b548dae3801bd7250e005cc533b79deec4b773d"
+   "pa": "0x9ab3fa44f5d207907042d520fd8bb61b53f1c9ed9c2946ef1d0ea89d1844329c"
+  },
+  {
+   "sym": "旺柴",
+   "c": "robinhood",
+   "mc": 1876.3,
+   "nar": "Dog & animal memes",
+   "run": 20.32,
+   "retr": 1.38,
+   "acc": 1.01,
+   "c6": 0.08,
+   "age": 2.0,
+   "sec": "explorer",
+   "pa": "0x913b544fa778b6e3a4942fd1195d3b19d93448330dc6e2c4be5379c22f5017b4"
   }
  ],
  "momentum_new": [
-  "Kimchi"
+  "GANG",
+  "旺柴"
  ],
  "momentum_dropped": [
-  "KIVO"
+  "Kimchi"
  ],
- "honeypots_new": [],
+ "honeypots_new": [
+  "AKE",
+  "TAG"
+ ],
  "track": {
-  "logged": 79,
-  "new_rows": [],
+  "logged": 80,
+  "new_rows": [
+   [
+    "富贵",
+    "S"
+   ]
+  ],
   "best_x": 14.93,
   "median_peak_x": 1.0,
   "hit_2x_today": [
-   "HARMONIC (robinhood)",
-   "GLOAM (robinhood)"
+   "DGUY (base)",
+   "GIGATENEV (robinhood)"
   ],
-  "to_zero_today": [
-   "STONKS (robinhood)"
-  ],
+  "to_zero_today": [],
   "repriced": true
  },
  "igniting_track": {
-  "logged": 46,
-  "new_rows": [],
+  "logged": 47,
+  "new_rows": [
+   "富贵"
+  ],
   "hit_2x_today": [],
   "to_zero_today": [
-   "FABLES (solana)",
-   "ALLOX (solana)",
-   "SO (solana)"
+   "RSGP (solana)"
   ]
  },
  "momentum_track": {
-  "logged": 50,
+  "logged": 52,
   "new_rows": [
-   "Kimchi"
+   "GANG",
+   "旺柴"
   ],
-  "hit_2x_today": [],
+  "hit_2x_today": [
+   "PANGEA (robinhood)",
+   "REMUS (solana)"
+  ],
   "to_zero_today": [
-   "牛币 (bsc)",
-   "KIVO (robinhood)"
+   "Kimchi (robinhood)"
   ]
  },
  "control": {
-  "rows": 652,
+  "rows": 662,
   "median_peak_x": 1.0,
   "hit_2x_today": [
-   "GRIFT (robinhood)",
-   "GLOAM (robinhood)"
+   "GP (solana)",
+   "REMUS (solana)"
   ],
   "to_zero_today": [
-   "Maple (robinhood)",
-   "PAIREX (robinhood)",
-   "WAIFU (robinhood)",
-   "AMBA (solana)",
-   "UNI (robinhood)",
-   "FABLES (solana)",
-   "SO (solana)",
-   "ALLOX (solana)",
-   "牛币 (bsc)"
+   "KNOT (bsc)",
+   "Flylife (bsc)",
+   "FOMOBALL (robinhood)",
+   "RSGP (solana)"
   ]
  },
  "changed": true,

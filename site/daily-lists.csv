@@ -216,6 +216,11 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-10-27,momentum,KIVO,robinhood,718.5,Unclassified,31.23,6.68,0.0,,1.01,explorer,https://dexscreener.com/robinhood/0x7f6f3fc2dc5f751225eb59bf0e73d4ae04534bbdc08e8e66fcaa06c50164323f,evening scan
 2026-10-27,momentum,LAUNCH,solana,1917.4,Unclassified,,,0.65,-9.71,1.3,rugcheck,https://dexscreener.com/solana/GezArkyjgqsjid7m9zg3jkxxFmnHuh8dDzmqUpbL7K59,daily scan
 2026-10-27,momentum,REMUS,solana,1356.8,Classic memes,40.07,28.0,0.93,30.51,2.82,rugcheck,https://dexscreener.com/solana/6JDiSPsWBwcSN8xBa4LNBzMZRikxksbxcto8J3ELR4cG,daily scan
+2026-10-28,shortlist,LAUNCH,solana,1639.5,Unclassified,1.98,61.28,0.3,-7.15,2.56,rugcheck,https://dexscreener.com/solana/2H2TNJuqivWWM87oZF3pgBa7KhH3ugo6qea5rjkFey2b,evening scan
 2026-10-28,shortlist,SI276,solana,702.6,AI,1.98,67.47,0.85,0.79,20.94,rugcheck,https://dexscreener.com/solana/12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG,daily scan
 2026-10-28,shortlist,WORM,robinhood,1725.4,AI,1.77,67.74,1.18,3.93,48.97,explorer,https://dexscreener.com/robinhood/0xf49ee5b66c4e7163026e5d25e6a1f93cff46dca4d3752f712d181d9392c1d567,daily scan
+2026-10-28,shortlist,富贵,robinhood,1313.3,Unclassified,1.91,23.44,2.53,30.46,104.85,explorer,https://dexscreener.com/robinhood/0xec52A53D7AA278b2027C83449B425Cde8ff8015b,evening scan
+2026-10-28,igniting,富贵,robinhood,1313.3,Unclassified,1.91,23.44,2.53,30.46,104.85,explorer,https://dexscreener.com/robinhood/0xec52A53D7AA278b2027C83449B425Cde8ff8015b,evening scan
+2026-10-28,momentum,GANG,robinhood,951.3,Unclassified,20.95,10.44,0.62,41.14,1.06,explorer,https://dexscreener.com/robinhood/0x9ab3fa44f5d207907042d520fd8bb61b53f1c9ed9c2946ef1d0ea89d1844329c,evening scan
 2026-10-28,momentum,Kimchi,robinhood,1796.7,Unclassified,26.91,0.16,0.0,,1.29,explorer,https://dexscreener.com/robinhood/0x8399570a66ee464ee168f8048b548dae3801bd7250e005cc533b79deec4b773d,daily scan
+2026-10-28,momentum,旺柴,robinhood,1876.3,Dog & animal memes,20.32,1.38,1.01,0.08,2.0,explorer,https://dexscreener.com/robinhood/0x913b544fa778b6e3a4942fd1195d3b19d93448330dc6e2c4be5379c22f5017b4,evening scan
