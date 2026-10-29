@@ -1,6 +1,6 @@
 {
- "now": "2026-10-29 03:06 SGT",
- "cand_at": "2026-10-29 03:06 SGT",
+ "now": "2026-10-29 16:28 SGT",
+ "cand_at": "2026-10-29 16:28 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -21,177 +21,211 @@
   "reprice": "ok"
  },
  "chains": {
-  "hot": [],
-  "new": [],
-  "dropped": [
-   "ripple",
-   "xrpl"
+  "hot": [
+   "doma",
+   "eos"
   ],
+  "new": [
+   "doma",
+   "eos"
+  ],
+  "dropped": [],
   "hottest": {
-   "s": "tron",
-   "n": "Tron",
-   "dr": 1.99,
-   "dr30": 2.03
+   "s": "doma",
+   "n": "Doma",
+   "dr": 5.39,
+   "dr30": 2.31
   }
  },
  "tokens": {
-  "total": 74,
-  "band_m": 38,
+  "total": 85,
+  "band_m": 37,
   "candle_or_wallet_coverage_pct": 100,
   "nodata": 8
  },
- "shortlist": [],
- "shortlist_new": [],
- "shortlist_dropped": [
-  "LAUNCH",
-  "富贵"
- ],
- "pullback": [
+ "shortlist": [
   {
-   "sym": "███WIF",
+   "sym": "swordcat",
    "c": "solana",
-   "mc": 1465.4,
+   "mc": 1241.9,
    "nar": "Dog & animal memes",
-   "run": 18.09,
-   "retr": 66.39,
-   "acc": 1.66,
-   "c6": 21.71,
-   "age": 1.81,
+   "run": 2.18,
+   "retr": 66.81,
+   "acc": 1.31,
+   "c6": -18.86,
+   "age": 30.93,
    "sec": "rugcheck",
-   "pa": "35QgKestyQozSeRbZa7c7WDhR32svTgC6RZVDS8KcEmQ"
+   "pa": "8ewuF2o8ACro7fqWepZ3tKhkbBjndZU4Ldk9scRPw83d"
   },
   {
-   "sym": "Trenchors",
-   "c": "base",
-   "mc": 611.2,
+   "sym": "SI276",
+   "c": "solana",
+   "mc": 501.4,
+   "nar": "AI",
+   "run": 1.21,
+   "retr": 76.87,
+   "acc": 0.73,
+   "c6": -5.07,
+   "age": 22.51,
+   "sec": "rugcheck",
+   "pa": "12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG"
+  },
+  {
+   "sym": "CBUCKS",
+   "c": "solana",
+   "mc": 933.8,
    "nar": "Unclassified",
-   "run": 29.27,
-   "retr": 54.39,
-   "acc": 0.0,
-   "c6": null,
-   "age": 1.2,
-   "sec": "goplus",
-   "pa": "0x9706d902794dbedaccd47e6255d99797ae379288c965d8063e09b2d2da828f4f"
+   "run": 1.8,
+   "retr": 16.67,
+   "acc": 0.5,
+   "c6": 1.6,
+   "age": 22.55,
+   "sec": "rugcheck",
+   "pa": "B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB"
+  },
+  {
+   "sym": "RAETO",
+   "c": "robinhood",
+   "mc": 1647.8,
+   "nar": "AI",
+   "run": 2.72,
+   "retr": 46.15,
+   "acc": 0.68,
+   "c6": 31.36,
+   "age": 16.72,
+   "sec": "explorer",
+   "pa": "0xdb36324392b4a3f4261230e21f9f3f04e627074e8866ec9b69ee1d00af96d60a"
   }
  ],
- "pullback_new": [
+ "shortlist_new": [
+  "CBUCKS",
+  "RAETO",
+  "SI276",
+  "swordcat"
+ ],
+ "shortlist_dropped": [],
+ "pullback": [],
+ "pullback_new": [],
+ "pullback_dropped": [
   "Trenchors",
   "███WIF"
  ],
- "pullback_dropped": [],
  "igniting": [],
  "momentum": [
   {
-   "sym": "MOGZ",
+   "sym": "INVERSE",
    "c": "solana",
-   "mc": 581.7,
-   "nar": "Launchpad / infra",
-   "run": 9.19,
-   "retr": 59.18,
-   "acc": 0.88,
-   "c6": -30.11,
-   "age": 1.12,
+   "mc": 1481.6,
+   "nar": "Unclassified",
+   "run": 36.05,
+   "retr": 28.15,
+   "acc": 0.2,
+   "c6": 49.44,
+   "age": 1.42,
    "sec": "rugcheck",
-   "pa": "7j13CapqLC4dGaGYFCxgL8t31R7B1Gt93uBh8EdoRp9H"
+   "pa": "Rwq7WrFAzyBtDzGBxYKEHAtHfhAedW6vYqghPT1xBau"
   },
   {
-   "sym": "GANG",
+   "sym": "poteto",
    "c": "robinhood",
-   "mc": 951.3,
+   "mc": 505.8,
    "nar": "Unclassified",
-   "run": 20.95,
-   "retr": 10.44,
+   "run": 71.09,
+   "retr": 24.02,
    "acc": 0.0,
    "c6": null,
-   "age": 1.53,
+   "age": 1.14,
    "sec": "explorer",
-   "pa": "0x9ab3fa44f5d207907042d520fd8bb61b53f1c9ed9c2946ef1d0ea89d1844329c"
+   "pa": "0x99ce1ebbca95379324a146deaec4c80cd0f4bb0513cd0d43d54f4b8320421f6a"
+  },
+  {
+   "sym": "SI",
+   "c": "robinhood",
+   "mc": 980.7,
+   "nar": "Dog & animal memes",
+   "run": 21.6,
+   "retr": 11.6,
+   "acc": 0.96,
+   "c6": 63.79,
+   "age": 1.13,
+   "sec": "explorer",
+   "pa": "0x6d95f92f493ba13f95e416dc2b1ea58f079550b980543d48f45a26b44ced0b50"
   },
   {
    "sym": "REBATE",
    "c": "robinhood",
-   "mc": 1640.3,
+   "mc": 1742.5,
    "nar": "Launchpad / infra",
-   "run": 21.18,
-   "retr": 13.82,
-   "acc": 1.14,
-   "c6": -7.63,
-   "age": 1.07,
+   "run": 82.63,
+   "retr": 33.52,
+   "acc": 0.74,
+   "c6": 5.04,
+   "age": 1.62,
    "sec": "explorer",
    "pa": "0xdfc96a1bc3455ffce6564e1833270c1b0664b761626db961012068007851d83c"
-  },
-  {
-   "sym": "旺柴",
-   "c": "robinhood",
-   "mc": 1876.8,
-   "nar": "Dog & animal memes",
-   "run": 20.32,
-   "retr": 1.38,
-   "acc": 0.0,
-   "c6": null,
-   "age": 2.46,
-   "sec": "explorer",
-   "pa": "0x913b544fa778b6e3a4942fd1195d3b19d93448330dc6e2c4be5379c22f5017b4"
   }
  ],
  "momentum_new": [
-  "MOGZ",
-  "REBATE"
+  "INVERSE",
+  "SI",
+  "poteto"
  ],
- "momentum_dropped": [],
- "honeypots_new": [],
+ "momentum_dropped": [
+  "GANG",
+  "MOGZ",
+  "旺柴"
+ ],
+ "honeypots_new": [
+  "IDOL"
+ ],
  "track": {
-  "logged": 82,
+  "logged": 83,
   "new_rows": [
    [
-    "███WIF",
-    "P"
-   ],
-   [
-    "Trenchors",
-    "P"
+    "RAETO",
+    "S"
    ]
   ],
   "best_x": 14.93,
   "median_peak_x": 1.0,
-  "hit_2x_today": [],
-  "to_zero_today": [],
+  "hit_2x_today": [
+   "DGUY (base)"
+  ],
+  "to_zero_today": [
+   "牛梦 (bsc)",
+   "Trenchors (base)"
+  ],
   "repriced": true
  },
  "igniting_track": {
   "logged": 47,
   "new_rows": [],
   "hit_2x_today": [],
-  "to_zero_today": [
-   "FABLES (solana)"
-  ]
- },
- "momentum_track": {
-  "logged": 54,
-  "new_rows": [
-   "MOGZ",
-   "REBATE"
-  ],
-  "hit_2x_today": [],
   "to_zero_today": []
  },
- "control": {
-  "rows": 667,
-  "median_peak_x": 1.0,
-  "hit_2x_today": [
-   "NEST (hyperevm)",
-   "INVERSE (solana)"
+ "momentum_track": {
+  "logged": 57,
+  "new_rows": [
+   "INVERSE",
+   "poteto",
+   "SI"
   ],
+  "hit_2x_today": [],
   "to_zero_today": [
-   "OS (solana)",
-   "CHINAPAD (robinhood)",
-   "CEREBRO (robinhood)",
-   "astro (robinhood)",
-   "FTR (ethereum)",
-   "FABLES (solana)",
-   "EDS (robinhood)"
+   "GANG (robinhood)",
+   "旺柴 (robinhood)"
+  ]
+ },
+ "control": {
+  "rows": 674,
+  "median_peak_x": 1.0,
+  "hit_2x_today": [],
+  "to_zero_today": [
+   "牛梦 (bsc)",
+   "ORE (robinhood)",
+   "VEILDOGE (solana)"
   ]
  },
  "changed": true,
- "alert": false
+ "alert": true
 }
