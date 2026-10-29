@@ -239,6 +239,13 @@
   .method{margin-top:34px; border-top:1px solid var(--line); padding-top:16px; color:var(--ink-2); font-size:14px; max-width:95ch}
   .method h2{font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:8px}
   .method ul{margin:0; padding-left:18px} .method li{margin-bottom:6px}
+  .tip.wide{max-width:440px; z-index:1000}
+  .step-head h2.has-tip, .method h2.has-tip{cursor:help}
+  .step-head h2.has-tip::after{content:"ⓘ"; font-size:.55em; vertical-align:super; margin-left:4px; color:var(--muted); font-weight:400}
+  th.has-tip{cursor:help; text-decoration:underline dotted; text-underline-offset:3px; text-decoration-color:var(--muted)}
+  .howto p, .howto li{font-size:14px; color:var(--ink-2); max-width:95ch}
+  .howto h3{font-size:15px; margin-top:22px}
+  .howto ol, .howto ul{padding-left:20px; margin:8px 0} .howto li{margin-bottom:6px}
   .tip{position:fixed; z-index:5; pointer-events:none; background:var(--ink); color:var(--bg); font:500 12px/1.4 "IBM Plex Mono",monospace; padding:7px 9px; border-radius:2px; opacity:0; transition:opacity .1s; max-width:320px; white-space:pre-line}
   @media (prefers-reduced-motion:reduce){ .tip{transition:none} }
 </style>
@@ -271,6 +278,7 @@
   <a href="#prices"><b>%</b>Price tracking</a>
   <a href="#patterns"><b>?</b>Pattern study</a>
   <a href="#criteria"><b>=</b>Criteria</a>
+  <a href="#howto"><b>ⓘ</b>How to use</a>
 </nav>
 </div>
 
@@ -463,6 +471,36 @@
   <div class="crit" id="critIgn"></div>
   <h3 style="font-size:15px;margin-top:20px">Tags and what they mean</h3>
   <div class="tagdefs" id="tagDefs"></div>
+</section>
+
+<section class="step howto" id="howto">
+  <div class="step-head"><h2><b>ⓘ</b>How to use</h2><span class="rule">A plain-English guide: what this page is for, a daily checklist, the live scoreboard of how past picks did, and what each part means. Hover any section title or column heading on the page for the same explanations.</span></div>
+  <h3>What this dashboard is</h3>
+  <p>A daily <strong>research list</strong> of small crypto tokens worth a closer look — not a buy list. Twice a day the scanner checks which blockchains have money and trading moving in, looks at every $500k–$2m token on those chains (plus a separate group of bigger "leaders" above $2m), and keeps the ones that pass a set of safety and "the demand looks real" checks. It then follows every token it ever listed, so you can see whether the method actually works.</p>
+  <h3>Daily checklist</h3>
+  <ol>
+    <li><strong>Check the date at the top.</strong> Make sure you are looking at today's scan (GitHub sometimes starts it hours late).</li>
+    <li><strong>Liquidity flow (step 1):</strong> which chains are "hot" — that is where the token search happens.</li>
+    <li><strong>Read the four lists:</strong> ★ Shortlist (passed every check), ◆ Pullback watch (ran, dipped, buyers still there), ▲ Igniting (moving right now — act fast or skip), ⚡ Momentum (experimental, very new tokens).</li>
+    <li><strong>For any token you like, check it yourself:</strong> hover the gate bars and safety pill to see why it passed, note its type tag, then use <a href="#s4">Narrative</a> to see whether real people on X are talking about it.</li>
+    <li><strong>Size it with the <a href="#playbook">Playbook</a>:</strong> pot A (safest) gets the biggest share, then B, then C; pot C only in easy markets.</li>
+    <li><strong>Decide your exit before you buy</strong> — a price to take profit and a price to cut the loss. The scoreboard below shows why.</li>
+    <li><strong>Once a week, look at the scoreboard</strong> (<a href="#track">Track record</a>, <a href="#prices">Price tracking</a>, <a href="#patterns">Pattern study</a>) to see whether the picks are earning their keep.</li>
+  </ol>
+  <h3>Live scoreboard — how past picks actually did</h3>
+  <p id="howtoScoreLede"></p>
+  <div class="lede" id="howtoScore"></div>
+  <p id="howtoScoreNote" style="margin-top:8px"></p>
+  <h3>Each part of the page</h3>
+  <div class="cards" id="howtoParts"></div>
+  <h3>Before you put money in</h3>
+  <ul>
+    <li>This page finds <strong>conditions</strong>, not winners. Most candidates still fail, and many of these tokens go to zero.</li>
+    <li>Only use money you can afford to lose completely, and spread it in small amounts rather than one big bet.</li>
+    <li>Gains on these tokens are often gone within days — have your exit plan before you buy.</li>
+    <li>Igniting and Momentum are the most time-sensitive lists. If the scan ran late, the move may already be over by the time you see it.</li>
+    <li>Nothing on this page is financial advice.</li>
+  </ul>
 </section>
 
 <div class="method">
@@ -1788,6 +1826,133 @@ function hideTip(){ tip.style.opacity=0; }
 function wireTips(scope){ scope.querySelectorAll("[data-tip]").forEach(el=>{
   el.addEventListener("mousemove",e=>showTip(e,el.getAttribute("data-tip"))); el.addEventListener("mouseleave",hideTip); }); }
 
+/* ---------- plain-English explanations: hover a section title or a column heading ---------- */
+const SECTION_TIPS={
+  shortlist:"WHAT: tokens that passed every one of the 9 checks (size, liquidity, real trading, more buyers than sellers, not collapsing, has not already run, no wash trading, rug checks, has an X or website).\nHOW TO USE: your cleanest research candidates. Open each one, check the safety pill and its X activity before buying anything.",
+  pullback:"WHAT: tokens that already ran 3x or more, fell back 40-70%, and still have buyers and volume.\nHOW TO USE: the 'second chance' entry, after the first spike has cooled. They are tagged 'already ran' on purpose. Riskier than the Shortlist; decide your exit first.",
+  ignite:"WHAT: tokens moving right now: volume in the last 6 hours well above the day's pace, price up but not yet blown out.\nHOW TO USE: the most time-sensitive list. Check the scan time at the top: if the scan ran late, the move may already be over.",
+  momentum:"WHAT: experimental. Very new tokens (1-3 days old) on Solana, BSC or Robinhood Chain with steady buyers.\nHOW TO USE: highest risk on the page. Small amounts only; most of these have gone to zero in the track record.",
+  playbook:"WHAT: the same candidates sorted into three pots: A Leader of the Leaders (safest), B Emerging Leaders, C Itch Hand Early Plays (very new or already ran). Toggle by chain or by narrative.\nHOW TO USE: decide how much goes where. A gets the biggest share, then B, then C; pot C only in easy markets. The one line beside each token says why it is in its pot.",
+  track:"WHAT: every token ever put on the Shortlist or Pullback list, with its price on the day it was listed, re-priced daily. Below it: the near-misses that failed exactly one check, as a control group.\nHOW TO USE: the honest scoreboard. If the picks do no better than the near-misses, the checks are not earning their keep.",
+  prices:"WHAT: every token from the four lists, from the day it was listed: change since then, best and worst point.\nHOW TO USE: see how fast gains appear and disappear. Use it to set realistic profit-taking and stop-loss levels.",
+  patterns:"WHAT: of every token the scanner has looked at, which features (list, chain, age, size, type, trading activity) went with reaching 2x.\nHOW TO USE: spot which kinds of tokens tend to work, and which to avoid. Small samples, so treat it as a hint, not proof.",
+  s1:"WHAT: step 1. Which blockchains are 'hot': trading volume rising against their own recent average, with stablecoins not leaving. Tabs show DEX volume, perps, TVL, stablecoins and bridge net flows.\nHOW TO USE: tokens are only searched on hot chains (plus a few always-scanned ones). Think: which neighbourhood is getting busy.",
+  s2:"WHAT: step 2. Every $500k-$2m token found on the scanned chains, with each check's pass/fail. Failed rows stay visible but dimmed.\nHOW TO USE: browse beyond the Shortlist, or see why a token you know was rejected. Filters at the top narrow it down.",
+  s3:"WHAT: step 3. The same candidates grouped by how old the trading pair is (under 24h, 1-3 days, 3-7 days, over 7 days).\nHOW TO USE: each age band needs a different entry; the text in each card explains what to look for.",
+  s4:"WHAT: step 4. One-click X searches for each shortlisted token, plus well-known accounts and each chain's own voices.\nHOW TO USE: the check the scanner cannot do for you. Is anyone real talking about this token, or only bots? Attention usually comes before price.",
+  criteria:"WHAT: the exact rules and thresholds the scan uses, generated from the same settings the scanner runs on.\nHOW TO USE: look up what any check or tag means.",
+  howto:"WHAT: this guide: what the page is for, a daily checklist, the live scoreboard and what each part means.\nHOW TO USE: start here when you forget how the page works."
+};
+const METHOD_TIP="WHAT: known blind spots of the data sources and checks.\nHOW TO USE: read once, so you know when a 'pass' is weaker than it looks.";
+const COL_TIPS={
+  "Token":"The token's ticker (click it to open the chart on DexScreener), its chain, type tag and trading pair.",
+  "Gates":"The 9 checks as small bars: green = passed, red = failed, grey = no data. Hover the bars for each check's reason.",
+  "Safety":"Rug and honeypot checks (RugCheck, GoPlus, Honeypot.is, or the Blockscout explorer on Robinhood Chain). 'Partial ok' means only some checks are possible on that chain.",
+  "Price · days":"Small daily price chart of the last days. Orange means it has already run.",
+  "Mcap":"Market cap: price x supply. The moonshot band is $500k-$2m.",
+  "Liq / mcap":"Liquidity as a share of market cap. Higher = easier to buy and sell without moving the price.",
+  "Vol 24h":"Trading volume in the last 24 hours.",
+  "Turn":"Turnover: 24h volume divided by liquidity. Healthy trading is active but not extreme; very high can mean wash trading.",
+  "Buyers":"Share of unique wallets buying vs selling in 24h. Above 50% = more buyers than sellers. Counted by wallets, which are harder to fake than trades.",
+  "Run off low":"How many times the price has risen from its 7-day low. 3x or more counts as 'already ran'.",
+  "Off high":"How far the price is below its recent high. Used by Pullback watch (40-70% below).",
+  "6h":"Price change in the last 6 hours.",
+  "24h":"Price change in the last 24 hours (bridge table: volume through the bridge).",
+  "Age":"How old the trading pair is.",
+  "X":"The token's X (Twitter) account, or a search link if it has none.",
+  "Logged":"The date the token was added to the list.",
+  "Listed":"The date the token was added to the list.",
+  "List":"Which list it was on: Shortlist, Pullback, Igniting or Momentum.",
+  "Entry mcap":"Market cap on the day it was listed.",
+  "Listed mcap":"Market cap on the day it was listed.",
+  "Mcap then":"Market cap on the day it was logged.",
+  "Entry price":"Price on the day it was listed.",
+  "Listed price":"Price on the day it was listed.",
+  "Price then":"Price on the day it was logged.",
+  "Price now":"Price at the latest scan.",
+  "Now vs entry":"Price now divided by the listed price. 1.00x = unchanged, 2.00x = doubled, 0.50x = halved.",
+  "Now vs then":"Price now divided by the price on the day it was logged.",
+  "Peak vs entry":"The highest price seen at any daily scan, divided by the listed price.",
+  "Peak vs then":"The highest price seen at any daily scan, divided by the logged price.",
+  "Days held":"Days since it was listed.",
+  "Days tracked":"Days since it was logged.",
+  "Days":"Days since it was listed.",
+  "Peak on day":"How many days after listing the highest price came. Small numbers mean gains came and went fast.",
+  "Holders":"Number of holders at the latest scan, where known.",
+  "Gate it failed":"The one check this near-miss failed.",
+  "Since listed":"Change from the listed price to today.",
+  "Best":"The best point since listing, at a daily scan.",
+  "Worst":"The worst point since listing, at a daily scan.",
+  "Chain":"The blockchain.",
+  "Hot":"Whether the chain passes the 'hot' test today, and why. Hot chains are where tokens are searched.",
+  "Daily DEX volume · 14d":"Two weeks of daily trading volume on the chain's exchanges.",
+  "DEX 24h":"Exchange trading volume on the chain in the last 24 hours.",
+  "DEX 7d":"Exchange trading volume over the last 7 days.",
+  "DEX 30d":"Exchange trading volume over the last 30 days.",
+  "vs 7d":"Today's volume vs the chain's own 7-day daily average. 1.3x or more = running hot.",
+  "vs 30d":"Today's volume vs the chain's own 30-day daily average.",
+  "DEX vs 7d":"Today's exchange volume vs its 7-day daily average.",
+  "Fees 24h":"Fees users paid on the chain in 24 hours: a sign of real activity.",
+  "Fee / vol":"Fees as a share of volume.",
+  "Perp 24h":"Perpetual-futures trading volume in 24 hours.",
+  "Perp 7d":"Perpetual-futures volume over 7 days.",
+  "Perp 30d":"Perpetual-futures volume over 30 days.",
+  "Open interest":"Value of open futures positions.",
+  "Stables 7d":"Net change in stablecoins on the chain over 7 days. Positive = money arriving.",
+  "TVL 7d":"Change in total value locked over 7 days.",
+  "TVL · 14d":"Two weeks of total value locked.",
+  "TVL now":"Total value locked in the chain's apps today.",
+  "vs 7d avg":"Today vs the 7-day average.",
+  "TVL 30d":"Change in total value locked over 30 days.",
+  "Stablecoins":"Total stablecoins on the chain.",
+  "1d flow":"Stablecoins that arrived (+) or left (-) in the last day.",
+  "7d flow":"Stablecoins that arrived (+) or left (-) over 7 days.",
+  "vs typical":"This week's stablecoin flow compared with a typical week.",
+  "Bridged in 7d":"Money bridged into the chain over 7 days.",
+  "Bridged out 7d":"Money bridged out of the chain over 7 days.",
+  "Net 7d":"Bridged in minus bridged out over 7 days. Positive = more arrived than left.",
+  "Net kept":"Net 7d as a share of everything that crossed either way. 100% = all of it stayed; 0% = as much left as arrived.",
+  "In 24h":"Money bridged in over the last day.",
+  "Out 24h":"Money bridged out over the last day.",
+  "Net 24h":"Bridged in minus bridged out over the last day.",
+  "Top asset in":"The asset most bridged in (when available).",
+  "Bridge":"The bridge app that carried the money.",
+  "vs yesterday":"Change in the bridge's volume vs the day before.",
+  "7d":"Volume over 7 days.",
+  "30d":"Volume over 30 days.",
+  "Txs 24h":"Number of bridge transactions in 24 hours (no longer published by DefiLlama, shown as —).",
+  "Chains served":"How many chains the bridge connects.",
+  "Narrative":"The token type (narrative label).",
+  "Change":"How the number of tokens with this type changed over the days shown: which narratives are growing or fading.",
+  "Group":"The group of tokens this row describes (e.g. a chain, an age band, a size or a type).",
+  "Tokens":"How many tokens the scanner has seen in this group.",
+  "Reached 2×":"How many reached 2x their first-seen price at some daily scan.",
+  "2× on 2+ scans":"How many stayed at 2x or more on at least two scans: a sturdier sign than a one-scan spike.",
+  "Still 2×+ now":"How many are still at 2x or more today.",
+  "Down 50%+ now":"How many are now 50% or more below their first-seen price.",
+  "Median best":"The typical best multiple reached (half did better, half worse). 1.00x = never rose above the first-seen price."
+};
+// hover explanations for section titles and column headings (event delegation, so tables built later are covered)
+(function(){
+  let cur=null;
+  const tipFor=el=>{
+    if(el.tagName==="TH"){ const t=el.textContent.trim();
+      return COL_TIPS[t] || (/^\d\d-\d\d$/.test(t) ? "Number of tokens with this type on that day's scan (month-day)." : null); }
+    const sec=el.closest("section.step"); if(sec) return SECTION_TIPS[sec.id]||null;
+    return el.closest(".method") ? METHOD_TIP : null;
+  };
+  document.addEventListener("mouseover",e=>{
+    const el=e.target.closest&&e.target.closest("th, .step-head h2, .method h2");
+    if(el && tipFor(el)) el.classList.add("has-tip");
+  });
+  document.addEventListener("mousemove",e=>{
+    const el=e.target.closest&&e.target.closest("th, .step-head h2, .method h2");
+    const txt=el?tipFor(el):null;
+    if(txt){ cur=el; tip.classList.add("wide"); showTip(e,txt); }
+    else if(cur){ cur=null; tip.classList.remove("wide"); hideTip(); }
+  });
+})();
+
 /* ---------- derived token state ---------- */
 let minliq = 25, allowUnk = false;
 function derive(t){
@@ -2560,6 +2725,32 @@ function renderPrices(){
   wireTips(body);
 }
 
+/* ---------- how-to guide: live scoreboard + one card per part of the page ---------- */
+function renderHowto(){
+  document.querySelectorAll("section.step").forEach(sec=>{ const h=sec.querySelector(".step-head h2"); if(h && SECTION_TIPS[sec.id]) h.classList.add("has-tip"); });
+  const box=document.getElementById("howtoScore"); if(!box) return;
+  const all=ptRows().filter(h=>h._chg!=null);
+  const tile=(k,v,n)=>`<div><div class="k">${k}</div><div class="v num">${v}</div><div class="n">${n}</div></div>`;
+  const first=all.length?all.map(h=>h.d).sort()[0]:null;
+  document.getElementById("howtoScoreLede").textContent = all.length
+    ? `Every token the four lists have shown since ${first}, followed at each daily scan. Updated automatically with every scan.`
+    : "Nothing tracked yet.";
+  box.innerHTML=["S","P","I","M"].map(L=>{
+    const r=all.filter(h=>h.l===L); if(!r.length) return tile(LIST_NM[L],"—","nothing tracked yet");
+    const o=outcomes(r), hit=o.b2+o.b5+o.b10, m=med(r.map(h=>h._chg));
+    return tile(LIST_NM[L], `${hit} of ${o.n}`, `reached 2× or more at some point · median today ${fmtChg(m)} · ${o.d50+o.d100} now down 50% or more`);
+  }).join("");
+  const o=outcomes(all), hit=o.b2+o.b5+o.b10, down=o.d50+o.d100;
+  document.getElementById("howtoScoreNote").textContent = all.length
+    ? `In total ${hit} of ${o.n} listed tokens (${Math.round(hit/o.n*100)}%) reached 2× at some point, while ${down} (${Math.round(down/o.n*100)}%) are now down 50% or more without ever reaching 2×. Read it as: some picks spike, most fade — the exit plan matters more than the entry.`
+    : "";
+  document.getElementById("howtoParts").innerHTML=[...document.querySelectorAll("nav.steps a")].map(a=>{
+    const id=a.getAttribute("href").slice(1), t=SECTION_TIPS[id]; if(!t || id==="howto") return "";
+    const [what,how]=t.split("\nHOW TO USE: ");
+    return `<div class="card"><h3><a href="#${id}" style="color:inherit">${esc(a.textContent.replace(/^./,"").trim())}</a></h3><p>${esc(what.replace(/^WHAT: /,""))}</p><p><strong>How to use:</strong> ${esc(how||"")}</p></div>`;
+  }).join("");
+}
+
 /* ---------- pattern study: which characteristics go with reaching 2x (data injected by scan/pattern_study.py) ---------- */
 const PATTERN = /*PATTERN-START*/{"generated":"2026-10-29 16:34 SGT","first_day":"2026-09-19","last_day":"2026-10-29-pm","days":50,"dropped_bad_readings":39,"all":{"n":1498,"hit_all":137,"hit_conf":85,"still2":18,"down50":1073,"med_peak":0.98},"groups":{"list":{"title":"Which list","note":"Ever on that list. Measured from the day the scanner first saw the token, which can be before it was listed. Saved daily scans start on 19 Sep 2026, so picks from 12-18 Sep (Stonks, pill, IF and others) are not in this study; see Track record and Price tracking for those.","rows":[{"label":"★ Shortlist","n":33,"hit_all":5,"hit_conf":5,"still2":1,"down50":15,"med_peak":1.14},{"label":"◆ Pullback","n":30,"hit_all":4,"hit_conf":1,"still2":0,"down50":23,"med_peak":0.96},{"label":"▲ Igniting","n":38,"hit_all":9,"hit_conf":7,"still2":0,"down50":37,"med_peak":1.21},{"label":"⚡ Momentum","n":50,"hit_all":5,"hit_conf":4,"still2":2,"down50":42,"med_peak":1.0},{"label":"✕ Near-miss","n":417,"hit_all":27,"hit_conf":18,"still2":4,"down50":310,"med_peak":0.79},{"label":"Not listed","n":930,"hit_all":87,"hit_conf":50,"still2":11,"down50":646,"med_peak":0.99}]},"chain":{"title":"Chain","note":"","rows":[{"label":"robinhood","n":512,"hit_all":22,"hit_conf":15,"still2":4,"down50":441,"med_peak":0.72},{"label":"solana","n":412,"hit_all":66,"hit_conf":42,"still2":4,"down50":336,"med_peak":0.89},{"label":"bsc","n":235,"hit_all":36,"hit_conf":18,"still2":5,"down50":166,"med_peak":0.85},{"label":"base","n":150,"hit_all":4,"hit_conf":2,"still2":2,"down50":96,"med_peak":1.0},{"label":"hyperevm","n":28,"hit_all":2,"hit_conf":2,"still2":1,"down50":4,"med_peak":1.11},{"label":"ethereum","n":28,"hit_all":2,"hit_conf":1,"still2":0,"down50":15,"med_peak":1.05},{"label":"arbitrum","n":16,"hit_all":1,"hit_conf":1,"still2":0,"down50":4,"med_peak":1.08},{"label":"avalanche","n":16,"hit_all":1,"hit_conf":1,"still2":0,"down50":2,"med_peak":1.16},{"label":"sui","n":16,"hit_all":0,"hit_conf":0,"still2":0,"down50":3,"med_peak":1.01},{"label":"ton","n":12,"hit_all":0,"hit_conf":0,"still2":0,"down50":1,"med_peak":1.09},{"label":"cronos","n":12,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":1.01},{"label":"optimism","n":10,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":1.03},{"label":"tron","n":10,"hit_all":1,"hit_conf":1,"still2":1,"down50":0,"med_peak":1.01},{"label":"near","n":9,"hit_all":2,"hit_conf":2,"still2":1,"down50":3,"med_peak":1.42},{"label":"ink","n":9,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":1.0},{"label":"polygon","n":9,"hit_all":0,"hit_conf":0,"still2":0,"down50":1,"med_peak":1.0},{"label":"monad","n":4,"hit_all":0,"hit_conf":0,"still2":0,"down50":1,"med_peak":1.23},{"label":"mantle","n":4,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":1.02},{"label":"unichain","n":3,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":1.0},{"label":"sonic","n":2,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":1.01},{"label":"plasma","n":1,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":1.01}]},"age":{"title":"Token age when first seen","note":"","rows":[{"label":"under 1 day","n":867,"hit_all":85,"hit_conf":43,"still2":8,"down50":820,"med_peak":0.26},{"label":"1–3 days","n":150,"hit_all":22,"hit_conf":16,"still2":2,"down50":116,"med_peak":0.96},{"label":"3–7 days","n":47,"hit_all":8,"hit_conf":6,"still2":2,"down50":31,"med_peak":1.0},{"label":"7–30 days","n":88,"hit_all":8,"hit_conf":8,"still2":3,"down50":46,"med_peak":1.02},{"label":"30–90 days","n":88,"hit_all":5,"hit_conf":3,"still2":0,"down50":29,"med_peak":1.04},{"label":"90+ days","n":249,"hit_all":9,"hit_conf":9,"still2":3,"down50":30,"med_peak":1.02}]},"mcap":{"title":"Market cap when first seen","note":"","rows":[{"label":"$500k–1m","n":506,"hit_all":48,"hit_conf":26,"still2":8,"down50":427,"med_peak":0.66},{"label":"$1–2m","n":405,"hit_all":56,"hit_conf":36,"still2":5,"down50":325,"med_peak":0.95},{"label":"$2–5m","n":106,"hit_all":13,"hit_conf":8,"still2":0,"down50":72,"med_peak":0.95},{"label":"$5m+","n":481,"hit_all":20,"hit_conf":15,"still2":5,"down50":249,"med_peak":1.0}]},"nar":{"title":"Narrative","note":"Narrative tags come from the dashboard's rules. Tags are kept from 4 Oct 2026 for every scanned token (earlier: list tokens from 26 Sep only).","rows":[{"label":"Unclassified","n":408,"hit_all":44,"hit_conf":32,"still2":7,"down50":350,"med_peak":0.99},{"label":"Dog & animal memes","n":129,"hit_all":12,"hit_conf":5,"still2":1,"down50":104,"med_peak":0.3},{"label":"AI","n":109,"hit_all":10,"hit_conf":9,"still2":3,"down50":71,"med_peak":1.0},{"label":"Utilities","n":96,"hit_all":5,"hit_conf":5,"still2":1,"down50":47,"med_peak":1.03},{"label":"Classic memes","n":66,"hit_all":7,"hit_conf":7,"still2":3,"down50":37,"med_peak":0.96},{"label":"Tokenised equities","n":66,"hit_all":1,"hit_conf":1,"still2":0,"down50":12,"med_peak":1.02},{"label":"Wrapped assets","n":35,"hit_all":1,"hit_conf":1,"still2":1,"down50":1,"med_peak":1.01},{"label":"KOL / personality","n":27,"hit_all":4,"hit_conf":2,"still2":0,"down50":22,"med_peak":0.95},{"label":"Gold / BTC proxies","n":12,"hit_all":0,"hit_conf":0,"still2":0,"down50":3,"med_peak":1.02},{"label":"Launchpad / infra","n":12,"hit_all":2,"hit_conf":1,"still2":0,"down50":6,"med_peak":1.07},{"label":"Stablecoins","n":11,"hit_all":0,"hit_conf":0,"still2":0,"down50":1,"med_peak":1.0},{"label":"RWA","n":10,"hit_all":1,"hit_conf":1,"still2":0,"down50":7,"med_peak":0.98},{"label":"Brand-name memes","n":7,"hit_all":0,"hit_conf":0,"still2":0,"down50":7,"med_peak":0.02},{"label":"Chain-native lore","n":5,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":1.08},{"label":"Leveraged tokens","n":2,"hit_all":0,"hit_conf":0,"still2":0,"down50":2,"med_peak":0.5}]},"turn":{"title":"24h volume ÷ liquidity","note":"How hard the pool is being traded.","rows":[{"label":"under 1×","n":144,"hit_all":5,"hit_conf":5,"still2":2,"down50":27,"med_peak":1.02},{"label":"1–3×","n":199,"hit_all":11,"hit_conf":9,"still2":3,"down50":96,"med_peak":1.0},{"label":"3–10×","n":376,"hit_all":30,"hit_conf":19,"still2":7,"down50":271,"med_peak":0.99},{"label":"10–30×","n":366,"hit_all":38,"hit_conf":22,"still2":2,"down50":301,"med_peak":0.87},{"label":"30×+","n":413,"hit_all":53,"hit_conf":30,"still2":4,"down50":378,"med_peak":0.26}]},"ubr":{"title":"Buyer share of traders (6h)","note":"90%+ buyers with almost no sellers is often a honeypot (you can buy but not sell), not strength.","rows":[{"label":"under 45%","n":107,"hit_all":5,"hit_conf":5,"still2":0,"down50":38,"med_peak":1.01},{"label":"45–55%","n":595,"hit_all":42,"hit_conf":30,"still2":9,"down50":366,"med_peak":0.99},{"label":"55–70%","n":456,"hit_all":24,"hit_conf":15,"still2":5,"down50":380,"med_peak":0.53},{"label":"70–90%","n":167,"hit_all":27,"hit_conf":19,"still2":2,"down50":151,"med_peak":1.0},{"label":"90%+","n":124,"hit_all":34,"hit_conf":13,"still2":2,"down50":119,"med_peak":0.73}]},"c24":{"title":"24h price move when first seen","note":"","rows":[{"label":"below −30%","n":28,"hit_all":7,"hit_conf":6,"still2":1,"down50":18,"med_peak":1.24},{"label":"−30% to 0","n":185,"hit_all":6,"hit_conf":6,"still2":2,"down50":50,"med_peak":1.02},{"label":"0 to +30%","n":252,"hit_all":6,"hit_conf":6,"still2":3,"down50":79,"med_peak":1.01},{"label":"+30% to +100%","n":130,"hit_all":17,"hit_conf":13,"still2":1,"down50":104,"med_peak":0.96},{"label":"+100% to +300%","n":109,"hit_all":23,"hit_conf":15,"still2":0,"down50":89,"med_peak":1.04},{"label":"+300%+","n":762,"hit_all":78,"hit_conf":39,"still2":11,"down50":711,"med_peak":0.26}]},"run":{"title":"Run off 7-day low","note":"Needs daily candles; tokens without them are left out.","rows":[{"label":"under 1.5×","n":276,"hit_all":7,"hit_conf":7,"still2":1,"down50":34,"med_peak":1.02},{"label":"1.5–3×","n":88,"hit_all":9,"hit_conf":8,"still2":4,"down50":33,"med_peak":1.14},{"label":"3–5×","n":23,"hit_all":3,"hit_conf":3,"still2":1,"down50":13,"med_peak":1.05},{"label":"5×+","n":181,"hit_all":29,"hit_conf":21,"still2":4,"down50":148,"med_peak":0.95}]}},"tabs":[{"id":"list","name":"List","groups":["list"]},{"id":"cas","name":"Chain, age & size","groups":["chain","age","mcap"]},{"id":"nar","name":"Narrative","groups":["nar"]},{"id":"act","name":"Trading activity","groups":["turn","ubr","c24","run"]}]}/*PATTERN-END*/;
 let patTab = "list";
@@ -2842,7 +3033,7 @@ function freshness(){
 }
 document.getElementById("stampText").textContent="chains "+SNAP_AT.slice(11)+" · tokens "+TOK_AT.slice(11)+" · "+SNAP_AT.slice(0,10);
 freshness();
-renderChains(); renderTokens(); renderCriteria(); renderHistory(); renderRegime(); renderPrices(); renderPattern();
+renderChains(); renderTokens(); renderCriteria(); renderHistory(); renderRegime(); renderPrices(); renderPattern(); renderHowto();
 </script>
 
 </body>

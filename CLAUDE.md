@@ -95,6 +95,15 @@ Recorded 18 Oct 2026. Not fixed yet — only change these when the owner asks.
 - [x] **Offline test fails after 3pm SGT.** `tests/run_offline.py` looks for `snapshots/<day>/`,
       but runs after 3pm SGT save to `snapshots/<day>-pm/`. Make the test look in the right folder. *(Done 18 Oct 2026.)*
 
+## Explanations on the page
+
+- Keep the **"How to use" tab** (`#howto` in `site/page.html`): what the page is for, a daily checklist,
+  the **live scoreboard** (worked out in the browser from the track-record data, so it updates every scan)
+  and one card per section.
+- Every section title and table column heading shows a **hover explanation** (what it is + how to use it),
+  from `SECTION_TIPS` and `COL_TIPS` in `site/page.html`. When a section or column is added or renamed,
+  add or update its explanation there in plain English.
+
 ## Working in this repo
 
 - Explain changes to the owner in plain English — they are not a programmer.
