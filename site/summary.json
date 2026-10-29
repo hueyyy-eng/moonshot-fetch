@@ -25,10 +25,7 @@
    "doma",
    "eos"
   ],
-  "new": [
-   "doma",
-   "eos"
-  ],
+  "new": [],
   "dropped": [],
   "hottest": {
    "s": "doma",
@@ -97,19 +94,11 @@
    "pa": "0xdb36324392b4a3f4261230e21f9f3f04e627074e8866ec9b69ee1d00af96d60a"
   }
  ],
- "shortlist_new": [
-  "CBUCKS",
-  "RAETO",
-  "SI276",
-  "swordcat"
- ],
+ "shortlist_new": [],
  "shortlist_dropped": [],
  "pullback": [],
  "pullback_new": [],
- "pullback_dropped": [
-  "Trenchors",
-  "███WIF"
- ],
+ "pullback_dropped": [],
  "igniting": [],
  "momentum": [
   {
@@ -165,36 +154,16 @@
    "pa": "0xdfc96a1bc3455ffce6564e1833270c1b0664b761626db961012068007851d83c"
   }
  ],
- "momentum_new": [
-  "INVERSE",
-  "SI",
-  "poteto"
- ],
- "momentum_dropped": [
-  "GANG",
-  "MOGZ",
-  "旺柴"
- ],
- "honeypots_new": [
-  "IDOL"
- ],
+ "momentum_new": [],
+ "momentum_dropped": [],
+ "honeypots_new": [],
  "track": {
   "logged": 83,
-  "new_rows": [
-   [
-    "RAETO",
-    "S"
-   ]
-  ],
+  "new_rows": [],
   "best_x": 14.93,
   "median_peak_x": 1.0,
-  "hit_2x_today": [
-   "DGUY (base)"
-  ],
-  "to_zero_today": [
-   "牛梦 (bsc)",
-   "Trenchors (base)"
-  ],
+  "hit_2x_today": [],
+  "to_zero_today": [],
   "repriced": true
  },
  "igniting_track": {
@@ -205,27 +174,16 @@
  },
  "momentum_track": {
   "logged": 57,
-  "new_rows": [
-   "INVERSE",
-   "poteto",
-   "SI"
-  ],
+  "new_rows": [],
   "hit_2x_today": [],
-  "to_zero_today": [
-   "GANG (robinhood)",
-   "旺柴 (robinhood)"
-  ]
+  "to_zero_today": []
  },
  "control": {
   "rows": 674,
   "median_peak_x": 1.0,
   "hit_2x_today": [],
-  "to_zero_today": [
-   "牛梦 (bsc)",
-   "ORE (robinhood)",
-   "VEILDOGE (solana)"
-  ]
+  "to_zero_today": []
  },
- "changed": true,
- "alert": true
+ "changed": false,
+ "alert": false
 }
