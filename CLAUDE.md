@@ -54,6 +54,10 @@ If a change would break one of them, stop and ask first.
 
 - Keep the **separate higher-cap discovery pass** (the "leader" band, market cap ≥ $2m)
   that feeds pot A. Do not merge it into the $500k–$2m moonshot pass or remove it.
+- Tokens are searched on: the 5 **core** chains (Solana, Base, BSC, Hyperliquid, Robinhood Chain), every
+  **hot** chain, and the **3 chains with the biggest 7-day net bridge inflow** that are not core
+  (`top_inflow_chains` in `fetch/main.py`, picked fresh every scan). A chain with no token data source
+  (e.g. Arc) is skipped and the next one taken. These show a **"top inflow"** tag on the page.
 
 ## Narrative labels
 

@@ -278,7 +278,7 @@ def netflow_and_bridges(http: Http, st: Status) -> tuple[Optional[dict], dict[st
         for period, key in (("day", "netflow24h"), ("week", "netflow7d"), ("month", "netflow30d")):
             vals = [(c["name"], float(c[key])) for c in chains if c.get(key) is not None]
             top = sorted(vals, key=lambda x: -abs(x[1]))[:NETFLOW_TOP]
-            netflow[period] = [[n, r2(v / 1e6)] for n, v in sorted(top, key=lambda x: x[1])]
+            netflow[period] = [[n, r2(v / 1e6), to_slug(n)] for n, v in sorted(top, key=lambda x: x[1])]   # slug: for the page's "scanned" tag
         if netflow["day"]:
             st.ok("llama.netflow", day=len(netflow["day"]))
         else:
@@ -378,5 +378,7 @@ def run(http: Http, st: Status) -> dict[str, Any]:
             row.pop(k)
     rows = [drop_none(r) for r in rows]
     rows.sort(key=lambda r: -(r.get("dv") or 0))
+    # every chain's 7-day net bridge inflow ($m), not just the 15 chart movers: main.py picks the top inflow chains from it
+    inflow7 = {s: g["bn7"] for s, g in gross.items() if g.get("bn7") is not None}
     return {"LAST_DAY": last_day, "DATA": rows, "NETFLOW": netflow, "BRIDGES": bridges, "MAJORS": maj,
-            "perp_slugs_present": sorted(pv.keys())}
+            "INFLOW7": inflow7, "perp_slugs_present": sorted(pv.keys())}
