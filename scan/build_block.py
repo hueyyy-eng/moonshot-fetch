@@ -44,7 +44,7 @@ NAMES = {"solana": "Solana", "ethereum": "Ethereum", "robinhood": "Robinhood Cha
          "ton": "TON", "sei": "Sei", "aptos": "Aptos", "monad": "Monad", "mantle": "Mantle", "starknet": "Starknet", "sonic": "Sonic"}
 GATE_KEYS = ["mcap", "liq", "turn", "buyers", "hold", "notRan", "noWash", "safe", "social"]
 ORDER = ["LAST_DAY", "SNAP_AT", "TOK_AT", "CHAIN_GATE", "CORE_CHAINS", "MCAP", "LIQ_PCT", "TURN_MIN", "RAN_MULT",
-         "DROP_MAX", "PULL", "IGN", "MCAP_L", "TYPE", "CAND_AT", "NO_DEXSCREENER", "DATA", "NETFLOW_AT", "NETFLOW",
+         "DROP_MAX", "PULL", "IGN", "MCAP_L", "TYPE", "CAND_AT", "NO_DEXSCREENER", "INFLOW_CHAINS", "SCANNED_CHAINS", "DATA", "NETFLOW_AT", "NETFLOW",
          "BRIDGES_AT", "BRIDGES", "REGIME_AT", "MAJORS", "LOG_AT", "REJECTS", "NARHIST", "HOLDHIST", "TOKENS",
          "HISTORY", "IGNHIST", "MOMHIST", "KOLS", "CHAIN_ACCTS"]
 
@@ -280,6 +280,8 @@ def main() -> int:
         new["LAST_DAY"] = scan.get("LAST_DAY") or oldv("LAST_DAY", 0)
         new["SNAP_AT"] = now
         new["NO_DEXSCREENER"] = scan.get("NO_DEXSCREENER", oldv("NO_DEXSCREENER", []))
+        new["INFLOW_CHAINS"] = scan.get("INFLOW_CHAINS", oldv("INFLOW_CHAINS", []))     # top 7-day inflow chains, also scanned
+        new["SCANNED_CHAINS"] = scan.get("SCANNED_CHAINS", oldv("SCANNED_CHAINS", []))
         if state("llama.perps_page") != "ok":
             stale.append("perps (carried, pStale)")
     else:
@@ -287,6 +289,8 @@ def main() -> int:
         new["LAST_DAY"] = oldv("LAST_DAY", 0)
         new["SNAP_AT"] = oldv("SNAP_AT", now)
         new["NO_DEXSCREENER"] = oldv("NO_DEXSCREENER", [])
+        new["INFLOW_CHAINS"] = oldv("INFLOW_CHAINS", [])
+        new["SCANNED_CHAINS"] = oldv("SCANNED_CHAINS", [])
         stale.append("chain rows (DefiLlama failed — previous DATA kept)")
     new["DATA"] = data
 

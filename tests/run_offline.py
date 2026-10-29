@@ -81,9 +81,16 @@ assert data["hyperliquid"]["n"] == "Hyperliquid" and data["hyperliquid"]["oi"] =
 assert sol["sb"] > 15000 and "f1" in sol and "f7" in sol and "fr" in sol
 assert sol["fe24"] == 14.6 and sol["tv"] > 5000 and len(sol["ts"]) == 14
 assert out["MAJORS"]["btc"] == {"d1": 4.21, "d7": 8.42, "d30": 12.63}, out["MAJORS"]
-assert out["NETFLOW"]["day"][0] == ["Hyperliquid L1", -263.55], out["NETFLOW"]
-assert "OldChain" not in [c for c, _ in out["NETFLOW"]["day"]], "deprecated chains are left out"
-assert out["NETFLOW"]["month"][0] == ["BSC", -1003.33], out["NETFLOW"]
+assert out["NETFLOW"]["day"][0] == ["Hyperliquid L1", -263.55, "hyperliquid"], out["NETFLOW"]
+# top 7-day inflow chains: core chains and chains with no token source (arc) are skipped, the next ones taken
+from fetch.main import top_inflow_chains
+from fetch.chains import CORE_CHAINS
+assert top_inflow_chains({"arc": 4822, "ethereum": 860, "base": 45, "plasma": 20, "mantle": 14, "anubis": 15,
+                          "polygon": -4612, "sui": -4}, CORE_CHAINS) == ["ethereum", "plasma", "mantle"]
+assert top_inflow_chains({"ethereum": 5, "polygon": -1}, CORE_CHAINS) == ["ethereum"], "never pads with outflow chains"
+assert "INFLOW_CHAINS" in out and set(out["SCANNED_CHAINS"]) >= {"solana", "bsc"}, (out.get("INFLOW_CHAINS"), out.get("SCANNED_CHAINS"))
+assert "OldChain" not in [r[0] for r in out["NETFLOW"]["day"]], "deprecated chains are left out"
+assert out["NETFLOW"]["month"][0] == ["BSC", -1003.33, "bsc"], out["NETFLOW"]
 assert out["BRIDGES"][0] == ["Across", 414.0, 1710.0, 8200.0, None, 45.8, 25], out["BRIDGES"][0]
 assert status["sources"]["llama.bridges_chains"]["state"] == "ok"
 

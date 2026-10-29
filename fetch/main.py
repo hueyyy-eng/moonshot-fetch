@@ -40,6 +40,22 @@ def passing_chains(rows: list[dict]) -> list[str]:
     return out
 
 
+INFLOW_EXTRA = 3   # owner, 29 Oct 2026: also scan the 3 chains with the biggest 7-day net bridge inflow
+
+
+def top_inflow_chains(inflow7: dict, core: list[str], n: int = INFLOW_EXTRA) -> list[str]:
+    """The n chains with the biggest positive 7-day net bridge inflow, leaving out the core chains (scanned anyway)
+    and chains with no token data source (e.g. Arc) — those are skipped and the next chain is taken instead."""
+    picked: list[str] = []
+    for s, v in sorted((inflow7 or {}).items(), key=lambda kv: -kv[1]):
+        if v <= 0 or len(picked) == n:
+            break
+        if s in core or not discover.LLAMA_TO_DS.get(s):
+            continue
+        picked.append(s)
+    return picked
+
+
 def clean_token(t: dict) -> dict:
     t = {k: v for k, v in t.items() if not k.startswith("_")}
     order = ["c", "pa", "sym", "nm", "ta", "q", "dex", "mc", "liq", "lp", "v24", "v6", "v1", "b6", "s6", "ub", "us", "ubr", "tpw",
@@ -73,11 +89,13 @@ def main(repo_root: str) -> int:
         ch = {"LAST_DAY": None, "DATA": [], "NETFLOW": None, "BRIDGES": None, "MAJORS": None, "perp_slugs_present": []}
     passing = passing_chains(ch["DATA"])
     log.info("passing chains: %s", passing)
+    inflow = top_inflow_chains(ch.get("INFLOW7"), chains.CORE_CHAINS)
+    log.info("top 7-day inflow chains: %s", inflow)
 
     # STEP 2 — discovery + pair rows
     stage(http, "discovery")
     try:
-        disc = discover.run(http, st, passing, chains.CORE_CHAINS)
+        disc = discover.run(http, st, passing + [s for s in inflow if s not in passing], chains.CORE_CHAINS)
     except Exception as e:  # noqa: BLE001
         st.fail("discovery", f"discovery stage crashed: {e}")
         disc = {"tokens": [], "chains_scanned": [], "NO_DEXSCREENER": []}
@@ -111,6 +129,11 @@ def main(repo_root: str) -> int:
     status["fetch_minutes"] = round(http.elapsed_min(), 1)
     status["passing_chains"] = passing
     status["chains_scanned"] = disc.get("chains_scanned", [])
+    status["inflow_chains"] = inflow
+    scanned_ds = set(disc.get("chains_scanned", []))
+    # DefiLlama names of the chains actually searched (core + hot + top inflow), for the page's "scanned" tags
+    scanned_llama = [s for s in dict.fromkeys(chains.CORE_CHAINS + passing + inflow)
+                     if any(d in scanned_ds for d in discover.LLAMA_TO_DS.get(s, []))]
     out = {
         "schema": 1,
         "generated_at_sgt": stamp,
@@ -120,6 +143,8 @@ def main(repo_root: str) -> int:
         "CORE_CHAINS": chains.CORE_CHAINS,
         "NO_DEXSCREENER": [s for s in disc.get("NO_DEXSCREENER", []) if s in passing],
         "passing_chains": passing,
+        "INFLOW_CHAINS": inflow,
+        "SCANNED_CHAINS": scanned_llama,
         "DATA": ch["DATA"],
         "NETFLOW": ch.get("NETFLOW"),
         "BRIDGES": ch.get("BRIDGES"),

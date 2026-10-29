@@ -193,7 +193,9 @@
   .nf-rows{margin-top:12px; display:grid; gap:2px}
   .nf-row{display:grid; grid-template-columns:minmax(84px,132px) minmax(0,1fr) minmax(74px,auto); gap:10px; align-items:center; cursor:default}
   .nf-row:hover .nf-track{background:var(--surface-2)}
-  .nf-name{font-size:13px; color:var(--ink-2); text-align:right; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+  .nf-name{font-size:13px; color:var(--ink-2); display:flex; justify-content:flex-end; align-items:center; gap:2px; min-width:0; overflow:hidden; white-space:nowrap}
+  .nf-name .nf-nm{overflow:hidden; text-overflow:ellipsis; min-width:0}
+  .nf-name .chip{flex-shrink:0; margin-right:0}
   .nf-track{position:relative; height:15px; background:transparent}
   .nf-zero{position:absolute; top:-1px; bottom:-1px; width:1px; background:var(--line); left:50%}
   .nf-bar{position:absolute; top:1px; bottom:1px}
@@ -480,7 +482,7 @@
   <h3>Daily checklist</h3>
   <ol>
     <li><strong>Check the date at the top.</strong> Make sure you are looking at today's scan (GitHub sometimes starts it hours late).</li>
-    <li><strong>Liquidity flow (step 1):</strong> which chains are "hot" — that is where the token search happens.</li>
+    <li><strong>Liquidity flow (step 1):</strong> which chains are "hot". Tokens are searched on hot chains, the 5 core chains, and the 3 chains with the biggest 7-day net inflow (tagged <span class="chip">top inflow</span>).</li>
     <li><strong>Read the four lists:</strong> ★ Shortlist (passed every check), ◆ Pullback watch (ran, dipped, buyers still there), ▲ Igniting (moving right now — act fast or skip), ⚡ Momentum (experimental, very new tokens).</li>
     <li><strong>For any token you like, check it yourself:</strong> hover the gate bars and safety pill to see why it passed, note its type tag, then use <a href="#s4">Narrative</a> to see whether real people on X are talking about it.</li>
     <li><strong>Size it with the <a href="#playbook">Playbook</a>:</strong> pot A (safest) gets the biggest share, then B, then C; pot C only in easy markets.</li>
@@ -1836,7 +1838,7 @@ const SECTION_TIPS={
   track:"WHAT: every token ever put on the Shortlist or Pullback list, with its price on the day it was listed, re-priced daily. Below it: the near-misses that failed exactly one check, as a control group.\nHOW TO USE: the honest scoreboard. If the picks do no better than the near-misses, the checks are not earning their keep.",
   prices:"WHAT: every token from the four lists, from the day it was listed: change since then, best and worst point.\nHOW TO USE: see how fast gains appear and disappear. Use it to set realistic profit-taking and stop-loss levels.",
   patterns:"WHAT: of every token the scanner has looked at, which features (list, chain, age, size, type, trading activity) went with reaching 2x.\nHOW TO USE: spot which kinds of tokens tend to work, and which to avoid. Small samples, so treat it as a hint, not proof.",
-  s1:"WHAT: step 1. Which blockchains are 'hot': trading volume rising against their own recent average, with stablecoins not leaving. Tabs show DEX volume, perps, TVL, stablecoins and bridge net flows.\nHOW TO USE: tokens are only searched on hot chains (plus a few always-scanned ones). Think: which neighbourhood is getting busy.",
+  s1:"WHAT: step 1. Which blockchains are 'hot': trading volume rising against their own recent average, with stablecoins not leaving. Tabs show DEX volume, perps, TVL, stablecoins and bridge net flows.\nHOW TO USE: tokens are searched on hot chains, on the 5 core chains (Solana, Base, BSC, Hyperliquid, Robinhood Chain), and on the 3 chains with the biggest 7-day net bridge inflow (tagged 'top inflow'). Think: which neighbourhood is getting busy.",
   s2:"WHAT: step 2. Every $500k-$2m token found on the scanned chains, with each check's pass/fail. Failed rows stay visible but dimmed.\nHOW TO USE: browse beyond the Shortlist, or see why a token you know was rejected. Filters at the top narrow it down.",
   s3:"WHAT: step 3. The same candidates grouped by how old the trading pair is (under 24h, 1-3 days, 3-7 days, over 7 days).\nHOW TO USE: each age band needs a different entry; the text in each card explains what to look for.",
   s4:"WHAT: step 4. One-click X searches for each shortlisted token, plus well-known accounts and each chain's own voices.\nHOW TO USE: the check the scanner cannot do for you. Is anyone real talking about this token, or only bots? Attention usually comes before price.",
@@ -1884,7 +1886,7 @@ const COL_TIPS={
   "Best":"The best point since listing, at a daily scan.",
   "Worst":"The worst point since listing, at a daily scan.",
   "Chain":"The blockchain.",
-  "Hot":"Whether the chain passes the 'hot' test today, and why. Hot chains are where tokens are searched.",
+  "Hot":"Whether the chain passes the 'hot' test today, and why. Tags: core = always searched; scanned = searched this scan; top inflow = searched because it had one of the 3 biggest 7-day net bridge inflows.",
   "Daily DEX volume · 14d":"Two weeks of daily trading volume on the chain's exchanges.",
   "DEX 24h":"Exchange trading volume on the chain in the last 24 hours.",
   "DEX 7d":"Exchange trading volume over the last 7 days.",
@@ -2144,7 +2146,10 @@ function chainHot(r){
   return {ok:true, why:(fast&&slow?"7d + 30d":fast?"7d pace":"30d pace")};
 }
 const HOT = new Set(DATA.filter(r=>chainHot(r).ok).map(r=>r.s));
-const SCANNED = new Set([...CORE_CHAINS, ...[...new Set(TOKENS.map(t=>t.c))]]);
+const SCANNED = new Set([...CORE_CHAINS, ...(typeof SCANNED_CHAINS!=="undefined"?SCANNED_CHAINS:[]), ...[...new Set(TOKENS.map(t=>t.c))]]);
+// chains added to the search because they had one of the 3 biggest 7-day net bridge inflows (owner, 29 Oct 2026)
+const INFLOW = new Set(typeof INFLOW_CHAINS!=="undefined"?INFLOW_CHAINS:[]);
+const inflowChip = s => INFLOW.has(s) ? '<span class="chip" data-tip="Added to the token search because it had one of the 3 biggest 7-day net bridge inflows (outside the 5 core chains)">top inflow</span>' : "";
 const HEADS = {
   dex:[["Chain",""],["Hot","w-g"],["Daily DEX volume · 14d","w-sp"],["DEX 24h",""],["DEX 7d",""],["DEX 30d",""],["vs 7d",""],["vs 30d",""],["Fees 24h",""],["Fee / vol",""],["Perp 24h",""],["Stables 7d",""],["TVL 7d",""]],
   perp:[["Chain",""],["Hot","w-g"],["Perp 24h",""],["Perp 7d",""],["Perp 30d",""],["vs 7d",""],["vs 30d",""],["Open interest",""],["DEX 24h",""],["DEX 30d",""]],
@@ -2239,14 +2244,15 @@ function renderNetflow(){
   rows.sort((a,b)=>b[1]-a[1]);                       // biggest inflow first
   const max=Math.max(...rows.map(r=>Math.abs(r[1]))) || 1;
   const scanned=new Set([...SCANNED].map(x=>cname(x).toLowerCase()));
-  box.innerHTML=rows.map(([chain,v])=>{
+  box.innerHTML=rows.map(([chain,v,slug])=>{
     const pos=v>=0, w=(Math.abs(v)/max)*50;          // half-width each side of zero
     const side=pos?"in":"out";
     const style=pos?`left:50%; width:${w}%`:`right:50%; width:${w}%`;
-    const mine=scanned.has(chain.toLowerCase())?' <span class="chip">scanned</span>':"";
+    // match on DefiLlama's chain id where the scan supplies it ("Hyperliquid L1" is chain hyperliquid), else on the name
+    const mine=(slug && INFLOW.has(slug)) ? "" : ((slug && SCANNED.has(slug)) || scanned.has(chain.toLowerCase()))?' <span class="chip">scanned</span>':"";   // "top inflow" already says scanned
     const tip=`${chain}\n${pos?"+":"−"}${fmtM(Math.abs(v))} net over the ${NF_LABEL[nfP]}\n${pos?"more capital bridged in than out":"more capital bridged out than in"}`;
     return `<div class="nf-row" data-tip="${esc(tip)}">
-      <div class="nf-name">${esc(chain)}${mine}</div>
+      <div class="nf-name"><span class="nf-nm" title="${esc(chain)}">${esc(chain)}</span>${mine}${inflowChip(slug)}</div>
       <div class="nf-track"><span class="nf-zero"></span><span class="nf-bar ${side}" style="${style}"></span></div>
       <div class="nf-val ${side}">${pos?"+":"−"}${fmtM(Math.abs(v))}</div>
     </div>`;
@@ -2287,7 +2293,7 @@ function renderChains(){
       : `<span class="ratio ${rcls(metric==="stab"?Math.abs(rv):rv,thr)}">${metric==="stab"&&rv<0?"−":""}${fmtX(Math.abs(rv))}</span>`;
     const rp=v=>v==null?'<span class="dim">—</span>':`<span class="ratio ${rcls(v,thr)}">${fmtX(v)}</span>`;
     const core=CORE_CHAINS.includes(r.s), scanned=SCANNED.has(r.s);
-    const hot=`<td class="w-g"><span class="gate ${g.ok?"g-pass":"g-fail"}">${g.ok?"hot":"—"}</span>${core?'<span class="chip" data-tip="Always scanned for tokens regardless of the chain gate">core</span>':(scanned?'<span class="chip">scanned</span>':(NO_DEXSCREENER.includes(r.s)?'<span class="chip" data-tip="No DexScreener chain page, so no token scan is possible">no DS</span>':""))}<small>${g.why}</small></td>`;
+    const hot=`<td class="w-g"><span class="gate ${g.ok?"g-pass":"g-fail"}">${g.ok?"hot":"—"}</span>${core?'<span class="chip" data-tip="Always scanned for tokens regardless of the chain gate">core</span>':(scanned?'<span class="chip">scanned</span>':(NO_DEXSCREENER.includes(r.s)?'<span class="chip" data-tip="No DexScreener chain page, so no token scan is possible">no DS</span>':""))}${inflowChip(r.s)}<small>${g.why}</small></td>`;
     const PT = r.pStale?' data-tip="Perp figures carried over from an earlier scan — this chain has since dropped out of DefiLlama\'s ranked perp table, so treat them as up to a day old"':'';
     const pc = v => `<td class="num${r.pStale?" dim":""}"${PT}>${fmtM(v)}${r.pStale?" *":""}</td>`;
     let cells;
