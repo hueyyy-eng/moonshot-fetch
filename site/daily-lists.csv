@@ -250,3 +250,9 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-10-30,momentum,MAFIA,robinhood,526.3,Unclassified,22.7,30.72,0.0,,1.13,explorer,https://dexscreener.com/robinhood/0xb3d5de63afbc54eb5e1fbe685e469cb2b04944aa432293f9c66c672c86924340,evening scan
 2026-10-30,momentum,REBATE,robinhood,1267.5,Launchpad / infra,82.63,33.52,1.27,-23.31,2.08,explorer,https://dexscreener.com/robinhood/0xdfc96a1bc3455ffce6564e1833270c1b0664b761626db961012068007851d83c,daily scan
 2026-10-30,momentum,SI,robinhood,980.7,Dog & animal memes,21.6,11.6,0.0,,1.59,explorer,https://dexscreener.com/robinhood/0x6d95f92f493ba13f95e416dc2b1ea58f079550b980543d48f45a26b44ced0b50,daily scan
+2026-10-31,shortlist,CLAUDIA,solana,1965.8,AI,1.11,84.74,0.42,-12.19,23.68,rugcheck,https://dexscreener.com/solana/Fe7bpDYCs74GqiCUF14HwgUMToPKV1d9mDYVX5BTohFr,daily scan
+2026-10-31,shortlist,GIGATENEV,robinhood,1190.6,Classic memes,1.52,79.54,0.87,7.11,21.01,explorer,https://dexscreener.com/robinhood/0xe96c99be1ffcc204714ebce32870ab12b8b362308fa50b9352c03b2486a5d448,daily scan
+2026-10-31,shortlist,GME,robinhood,968.0,Classic memes,1.08,66.03,2.38,28.35,56.59,explorer,https://dexscreener.com/robinhood/0x24c65014991e23383da21f9081f99c6e4bc128bbd4075c1b7d67a7e44efa4f2e,daily scan
+2026-10-31,shortlist,three,solana,551.7,AI,1.98,33.16,0.23,-8.42,184.46,rugcheck,https://dexscreener.com/solana/5ByL7MZoLABYnwMPZKPKjf4MGkZ7FeBzrAnos19Pre2z,daily scan
+2026-10-31,momentum,GTA6,robinhood,1018.0,Unclassified,8.17,1.21,0.0,,1.04,explorer,https://dexscreener.com/robinhood/0xa64f8671cd44d693edf4395df498abdd4097869e49e53ed34e5fe34ec3440f42,daily scan
+2026-10-31,momentum,HI,solana,1022.9,Dog & animal memes,2.05,75.66,0.51,29.37,1.06,rugcheck,https://dexscreener.com/solana/2yyP1cEXm4VZEHSGpqnWGxcZ3kSSVAK7m3j5nsKmFAhE,daily scan

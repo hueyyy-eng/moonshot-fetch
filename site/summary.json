@@ -1,10 +1,10 @@
 {
- "now": "2026-10-30 17:08 SGT",
- "cand_at": "2026-10-30 17:08 SGT",
+ "now": "2026-10-31 03:35 SGT",
+ "cand_at": "2026-10-31 03:35 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [
-  "discovery partial: only one route worked (dexscreener=0, geckoterminal=19 of 20 chains); time limit hit — only 19 of 20 chains scanned"
+  "discovery partial: only one route worked (dexscreener=0, geckoterminal=18 of 20 chains); time limit hit — only 18 of 20 chains scanned"
  ],
  "sources": {
   "llama.dexs_overview": "ok",
@@ -29,18 +29,15 @@
    "avax",
    "arc",
    "unichain",
+   "ripple",
+   "xrpl",
    "doma"
   ],
   "new": [
-   "arc",
-   "avax",
-   "polygon",
-   "robinhood",
-   "unichain"
+   "ripple",
+   "xrpl"
   ],
-  "dropped": [
-   "eos"
-  ],
+  "dropped": [],
   "hottest": {
    "s": "tron",
    "n": "Tron",
@@ -49,59 +46,71 @@
   }
  },
  "tokens": {
-  "total": 118,
-  "band_m": 42,
+  "total": 114,
+  "band_m": 39,
   "candle_or_wallet_coverage_pct": 100,
   "nodata": 12
  },
  "shortlist": [
   {
+   "sym": "CLAUDIA",
+   "c": "solana",
+   "mc": 1965.8,
+   "nar": "AI",
+   "run": 1.11,
+   "retr": 84.74,
+   "acc": 0.42,
+   "c6": -12.19,
+   "age": 23.68,
+   "sec": "rugcheck",
+   "pa": "Fe7bpDYCs74GqiCUF14HwgUMToPKV1d9mDYVX5BTohFr"
+  },
+  {
    "sym": "three",
    "c": "solana",
-   "mc": 644.6,
+   "mc": 551.7,
    "nar": "AI",
    "run": 1.98,
    "retr": 33.16,
-   "acc": 0.72,
-   "c6": -3.63,
-   "age": 184.02,
+   "acc": 0.23,
+   "c6": -8.42,
+   "age": 184.46,
    "sec": "rugcheck",
    "pa": "5ByL7MZoLABYnwMPZKPKjf4MGkZ7FeBzrAnos19Pre2z"
   },
   {
-   "sym": "Macca",
-   "c": "solana",
-   "mc": 742.8,
-   "nar": "Unclassified",
-   "run": 1.16,
-   "retr": 63.46,
-   "acc": 0.42,
-   "c6": -5.94,
-   "age": 14.75,
-   "sec": "rugcheck",
-   "pa": "4FoNNNMMKMa66ppCiA9557cg63s2BNN9UoFcaKxXbmvg"
-  },
-  {
    "sym": "GIGATENEV",
    "c": "robinhood",
-   "mc": 1083.0,
+   "mc": 1190.6,
    "nar": "Classic memes",
    "run": 1.52,
    "retr": 79.54,
-   "acc": 0.7,
-   "c6": -0.64,
-   "age": 20.58,
+   "acc": 0.87,
+   "c6": 7.11,
+   "age": 21.01,
    "sec": "explorer",
    "pa": "0xe96c99be1ffcc204714ebce32870ab12b8b362308fa50b9352c03b2486a5d448"
+  },
+  {
+   "sym": "GME",
+   "c": "robinhood",
+   "mc": 968.0,
+   "nar": "Classic memes",
+   "run": 1.08,
+   "retr": 66.03,
+   "acc": 2.38,
+   "c6": 28.35,
+   "age": 56.59,
+   "sec": "explorer",
+   "pa": "0x24c65014991e23383da21f9081f99c6e4bc128bbd4075c1b7d67a7e44efa4f2e"
   }
  ],
  "shortlist_new": [
-  "GIGATENEV",
-  "Macca",
-  "three"
+  "CLAUDIA",
+  "GME"
  ],
  "shortlist_dropped": [
-  "AgenC"
+  "Macca"
  ],
  "pullback": [],
  "pullback_new": [],
@@ -109,57 +118,46 @@
  "igniting": [],
  "momentum": [
   {
-   "sym": "jeff",
+   "sym": "HI",
    "c": "solana",
-   "mc": 1433.2,
-   "nar": "KOL / personality",
-   "run": 396.64,
-   "retr": 65.91,
-   "acc": 0.89,
-   "c6": 86.43,
-   "age": 2.28,
+   "mc": 1022.9,
+   "nar": "Dog & animal memes",
+   "run": 2.05,
+   "retr": 75.66,
+   "acc": 0.51,
+   "c6": 29.37,
+   "age": 1.06,
    "sec": "rugcheck",
-   "pa": "JCXWfcZGjgJC8NZa5Qb6JP3cgvqW4vGUg4Tqj87G5ZnY"
+   "pa": "2yyP1cEXm4VZEHSGpqnWGxcZ3kSSVAK7m3j5nsKmFAhE"
   },
   {
-   "sym": "MAFIA",
+   "sym": "GTA6",
    "c": "robinhood",
-   "mc": 526.3,
+   "mc": 1018.0,
    "nar": "Unclassified",
-   "run": 22.7,
-   "retr": 30.72,
+   "run": 8.17,
+   "retr": 1.21,
    "acc": 0.0,
    "c6": null,
-   "age": 1.13,
+   "age": 1.04,
    "sec": "explorer",
-   "pa": "0xb3d5de63afbc54eb5e1fbe685e469cb2b04944aa432293f9c66c672c86924340"
+   "pa": "0xa64f8671cd44d693edf4395df498abdd4097869e49e53ed34e5fe34ec3440f42"
   }
  ],
  "momentum_new": [
+  "GTA6",
+  "HI"
+ ],
+ "momentum_dropped": [
   "MAFIA",
   "jeff"
  ],
- "momentum_dropped": [
-  "ASSAY",
-  "REBATE",
-  "SI"
- ],
- "honeypots_new": [
-  "TAKE"
- ],
+ "honeypots_new": [],
  "track": {
-  "logged": 86,
+  "logged": 87,
   "new_rows": [
    [
-    "three",
-    "S"
-   ],
-   [
-    "Macca",
-    "S"
-   ],
-   [
-    "GIGATENEV",
+    "CLAUDIA",
     "S"
    ]
   ],
@@ -176,30 +174,27 @@
   "to_zero_today": []
  },
  "momentum_track": {
-  "logged": 60,
+  "logged": 62,
   "new_rows": [
-   "jeff",
-   "MAFIA"
+   "HI",
+   "GTA6"
   ],
   "hit_2x_today": [],
   "to_zero_today": [
-   "SI (robinhood)"
+   "MAFIA (robinhood)"
   ]
  },
  "control": {
-  "rows": 694,
+  "rows": 698,
   "median_peak_x": 1.0,
   "hit_2x_today": [
-   "AgenC (solana)",
-   "WOLFINA (ethereum)"
+   "CHOP (robinhood)"
   ],
   "to_zero_today": [
-   "Maple (robinhood)",
-   "LAURA (robinhood)",
-   "KEVIN (solana)",
-   "BABY (robinhood)"
+   "FlyBrain (bsc)",
+   "RWA (robinhood)"
   ]
  },
  "changed": true,
- "alert": true
+ "alert": false
 }
