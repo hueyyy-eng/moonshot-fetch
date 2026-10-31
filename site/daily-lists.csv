@@ -260,3 +260,6 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-10-31,momentum,GTA6,robinhood,1018.0,Unclassified,8.17,1.21,0.0,,1.04,explorer,https://dexscreener.com/robinhood/0xa64f8671cd44d693edf4395df498abdd4097869e49e53ed34e5fe34ec3440f42,daily scan
 2026-10-31,momentum,HI,solana,1022.9,Dog & animal memes,2.05,75.66,0.51,29.37,1.06,rugcheck,https://dexscreener.com/solana/2yyP1cEXm4VZEHSGpqnWGxcZ3kSSVAK7m3j5nsKmFAhE,daily scan
 2026-10-31,momentum,Pumpkin,bsc,507.9,Classic memes,61.01,36.99,0.87,-37.76,1.61,goplus,https://dexscreener.com/bsc/0x423803827377Cf404264FFfad0b0cB234197CbAE,evening scan
+2026-11-01,pullback,Saturween,solana,519.7,Dog & animal memes,17.99,51.32,1.17,-23.95,50.49,rugcheck,https://dexscreener.com/solana/HJZMbpTZGuq5Nkss7CrDV4ooxfYKLv7p5aWiqYSBDdq2,daily scan
+2026-11-01,momentum,LOBIN,robinhood,558.6,Launchpad / infra,110.93,4.89,1.43,-2.52,2.92,explorer,https://dexscreener.com/robinhood/0xf1289106ef25c46c4c2c0d7c87f7f506723650f5629ea17ad27c20f896029667,daily scan
+2026-11-01,momentum,币安人,bsc,835.9,Unclassified,,,2.83,329.0,1.15,goplus,https://dexscreener.com/bsc/0xf7F7ccEdAEb1FB131e2b5bB0790B51b5Ad3B1260,daily scan

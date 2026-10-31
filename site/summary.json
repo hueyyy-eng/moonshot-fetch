@@ -1,10 +1,10 @@
 {
- "now": "2026-10-31 16:52 SGT",
- "cand_at": "2026-10-31 16:52 SGT",
+ "now": "2026-11-01 02:43 SGT",
+ "cand_at": "2026-11-01 02:43 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [
-  "discovery partial: only one route worked (dexscreener=0, geckoterminal=18 of 20 chains); time limit hit — only 19 of 20 chains scanned"
+  "discovery partial: only one route worked (dexscreener=0, geckoterminal=18 of 20 chains); time limit hit — only 18 of 20 chains scanned"
  ],
  "sources": {
   "llama.dexs_overview": "ok",
@@ -17,7 +17,7 @@
   "llama.majors": "ok",
   "discovery": "partial",
   "geckoterminal": "ok",
-  "rugcheck": "partial",
+  "rugcheck": "ok",
   "goplus": "ok",
   "blockscout": "ok",
   "reprice": "ok"
@@ -34,23 +34,8 @@
    "eos",
    "ink"
   ],
-  "new": [
-   "arbitrum",
-   "edgex",
-   "eos",
-   "ink",
-   "near",
-   "sui",
-   "thorchain"
-  ],
-  "dropped": [
-   "arc",
-   "avax",
-   "polygon",
-   "ripple",
-   "robinhood",
-   "xrpl"
-  ],
+  "new": [],
+  "dropped": [],
   "hottest": {
    "s": "doma",
    "n": "Doma",
@@ -59,161 +44,130 @@
   }
  },
  "tokens": {
-  "total": 103,
-  "band_m": 33,
+  "total": 94,
+  "band_m": 23,
   "candle_or_wallet_coverage_pct": 100,
-  "nodata": 27
+  "nodata": 14
  },
- "shortlist": [
-  {
-   "sym": "GRIFT",
-   "c": "robinhood",
-   "mc": 1607.1,
-   "nar": "Unclassified",
-   "run": 1.66,
-   "retr": 62.73,
-   "acc": 1.42,
-   "c6": 0.99,
-   "age": 43.68,
-   "sec": "explorer",
-   "pa": "0xd23635812197b00b0ea0fd0e36021740c7951fb34ff1ca79260052b47e9769bc"
-  },
-  {
-   "sym": "DACITY",
-   "c": "ethereum",
-   "mc": 764.8,
-   "nar": "Classic memes",
-   "run": 1.15,
-   "retr": 97.47,
-   "acc": 0.96,
-   "c6": 7.48,
-   "age": 11.34,
-   "sec": "goplus",
-   "pa": "0x8D5288B22EAeF3084dF16159D5491De6140E95EA"
-  }
- ],
- "shortlist_new": [
+ "shortlist": [],
+ "shortlist_new": [],
+ "shortlist_dropped": [
   "DACITY",
   "GRIFT"
  ],
- "shortlist_dropped": [
-  "CLAUDIA",
-  "GIGATENEV",
-  "GME",
-  "three"
+ "pullback": [
+  {
+   "sym": "Saturween",
+   "c": "solana",
+   "mc": 519.7,
+   "nar": "Dog & animal memes",
+   "run": 17.99,
+   "retr": 51.32,
+   "acc": 1.17,
+   "c6": -23.95,
+   "age": 50.49,
+   "sec": "rugcheck",
+   "pa": "HJZMbpTZGuq5Nkss7CrDV4ooxfYKLv7p5aWiqYSBDdq2"
+  }
  ],
- "pullback": [],
- "pullback_new": [],
+ "pullback_new": [
+  "Saturween"
+ ],
  "pullback_dropped": [],
  "igniting": [],
  "momentum": [
   {
-   "sym": "Pumpkin",
+   "sym": "币安人",
    "c": "bsc",
-   "mc": 507.9,
-   "nar": "Classic memes",
-   "run": 61.01,
-   "retr": 36.99,
-   "acc": 0.87,
-   "c6": -37.76,
-   "age": 1.61,
+   "mc": 835.9,
+   "nar": "Unclassified",
+   "run": null,
+   "retr": null,
+   "acc": 2.83,
+   "c6": 329.0,
+   "age": 1.15,
    "sec": "goplus",
-   "pa": "0x423803827377Cf404264FFfad0b0cB234197CbAE"
+   "pa": "0xf7F7ccEdAEb1FB131e2b5bB0790B51b5Ad3B1260"
   },
   {
-   "sym": "HI",
-   "c": "solana",
-   "mc": 723.1,
-   "nar": "Dog & animal memes",
-   "run": 5.24,
-   "retr": 40.9,
-   "acc": 0.46,
-   "c6": 12.61,
-   "age": 1.62,
-   "sec": "nodata",
-   "pa": "2yyP1cEXm4VZEHSGpqnWGxcZ3kSSVAK7m3j5nsKmFAhE"
-  },
-  {
-   "sym": "FLOAT",
-   "c": "solana",
-   "mc": 622.4,
-   "nar": "Tokenised equities",
-   "run": 4.95,
-   "retr": 72.81,
-   "acc": 0.39,
-   "c6": -1.23,
-   "age": 2.38,
-   "sec": "nodata",
-   "pa": "FJk9sajdc2Q4heRPPu3yLzkmf2ZByZkpiHQLv9e2bn5A"
+   "sym": "LOBIN",
+   "c": "robinhood",
+   "mc": 558.6,
+   "nar": "Launchpad / infra",
+   "run": 110.93,
+   "retr": 4.89,
+   "acc": 1.43,
+   "c6": -2.52,
+   "age": 2.92,
+   "sec": "explorer",
+   "pa": "0xf1289106ef25c46c4c2c0d7c87f7f506723650f5629ea17ad27c20f896029667"
   }
  ],
  "momentum_new": [
-  "FLOAT",
-  "Pumpkin"
+  "LOBIN",
+  "币安人"
  ],
  "momentum_dropped": [
-  "GTA6"
+  "FLOAT",
+  "HI",
+  "Pumpkin"
  ],
  "honeypots_new": [
-  "AKE",
-  "ON"
+  "AIN"
  ],
  "track": {
-  "logged": 89,
+  "logged": 90,
   "new_rows": [
    [
-    "GRIFT",
-    "S"
-   ],
-   [
-    "DACITY",
-    "S"
+    "Saturween",
+    "P"
    ]
   ],
   "best_x": 14.93,
-  "median_peak_x": 1.0,
-  "hit_2x_today": [],
-  "to_zero_today": [
-   "牛梦 (bsc)"
+  "median_peak_x": 1.01,
+  "hit_2x_today": [
+   "WORM (robinhood)"
   ],
+  "to_zero_today": [],
   "repriced": true
  },
  "igniting_track": {
   "logged": 51,
   "new_rows": [],
-  "hit_2x_today": [],
-  "to_zero_today": [
-   "PREDICT (solana)",
-   "RSGP (solana)",
-   "FOREVER (solana)"
-  ]
+  "hit_2x_today": [
+   "WORM (robinhood)"
+  ],
+  "to_zero_today": []
  },
  "momentum_track": {
-  "logged": 64,
+  "logged": 66,
   "new_rows": [
-   "Pumpkin",
-   "FLOAT"
+   "币安人",
+   "LOBIN"
   ],
   "hit_2x_today": [],
-  "to_zero_today": [
-   "GTA6 (robinhood)"
-  ]
+  "to_zero_today": []
  },
  "control": {
-  "rows": 704,
+  "rows": 708,
   "median_peak_x": 1.0,
   "hit_2x_today": [
-   "GP (solana)",
-   "WoD (bsc)"
+   "WORM (robinhood)",
+   "Paper (robinhood)"
   ],
   "to_zero_today": [
-   "牛梦 (bsc)",
-   "CHINAPAD (robinhood)",
-   "e/acc (robinhood)",
-   "DJCECE (solana)",
-   "FOREVER (solana)",
-   "PREDICT (solana)",
-   "RSGP (solana)"
+   "GLXY (robinhood)",
+   "BLAST (robinhood)",
+   "WAIFU (robinhood)",
+   "WET (solana)",
+   "FOMOBALL (robinhood)",
+   "JEV (robinhood)",
+   "NET (robinhood)",
+   "SS (solana)",
+   "SA (solana)",
+   "MINTFOLIO (robinhood)",
+   "BABY (robinhood)",
+   "meat (robinhood)"
   ]
  },
  "changed": true,
