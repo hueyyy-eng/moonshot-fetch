@@ -260,6 +260,15 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-10-31,momentum,GTA6,robinhood,1018.0,Unclassified,8.17,1.21,0.0,,1.04,explorer,https://dexscreener.com/robinhood/0xa64f8671cd44d693edf4395df498abdd4097869e49e53ed34e5fe34ec3440f42,daily scan
 2026-10-31,momentum,HI,solana,1022.9,Dog & animal memes,2.05,75.66,0.51,29.37,1.06,rugcheck,https://dexscreener.com/solana/2yyP1cEXm4VZEHSGpqnWGxcZ3kSSVAK7m3j5nsKmFAhE,daily scan
 2026-10-31,momentum,Pumpkin,bsc,507.9,Classic memes,61.01,36.99,0.87,-37.76,1.61,goplus,https://dexscreener.com/bsc/0x423803827377Cf404264FFfad0b0cB234197CbAE,evening scan
+2026-11-01,shortlist,Anakin,solana,697.0,Unclassified,1.99,50.89,0.26,-21.17,2.52,rugcheck,https://dexscreener.com/solana/HJa61kEfSAwRt3DW9p15mLh6U5MaQgZGbE51ngg7bYtT,evening scan
+2026-11-01,shortlist,SAFU,bsc,635.2,KOL / personality,2.11,89.37,1.46,22.79,21.55,goplus,https://dexscreener.com/bsc/0x13b86Fcf85C9C8F5C36593822D216B8893C25450,evening scan
+2026-11-01,shortlist,WIF,robinhood,1384.0,Launchpad / infra,1.25,30.58,1.08,0.88,86.94,explorer,https://dexscreener.com/robinhood/0x71ef4106340f0a3b9c19ec994eef4fc44a1d2513f38faac39d7636b156548c79,evening scan
+2026-11-01,pullback,paws,solana,732.2,Dog & animal memes,21.21,48.28,0.32,-6.01,5.16,rugcheck,https://dexscreener.com/solana/2rmaFtFZmJtLXdPgRvk417RLc9GBD3jGbAqtttmfG3AF,evening scan
+2026-11-01,pullback,PEAK,solana,551.1,Launchpad / infra,15.15,42.11,1.23,36.44,5.3,rugcheck,https://dexscreener.com/solana/H4sb6cH4bJ4G9vJG3cDA2h3gYAMgCfuzXu8h56RhkVnC,evening scan
 2026-11-01,pullback,Saturween,solana,519.7,Dog & animal memes,17.99,51.32,1.17,-23.95,50.49,rugcheck,https://dexscreener.com/solana/HJZMbpTZGuq5Nkss7CrDV4ooxfYKLv7p5aWiqYSBDdq2,daily scan
+2026-11-01,momentum,GTA6,robinhood,826.5,Unclassified,21.05,0.0,0.3,2.38,1.1,explorer,https://dexscreener.com/robinhood/0x991841e9254714f4b4f94c5acdd85b6eaea2c2540cade3256672b942da6b4a47,evening scan
 2026-11-01,momentum,LOBIN,robinhood,558.6,Launchpad / infra,110.93,4.89,1.43,-2.52,2.92,explorer,https://dexscreener.com/robinhood/0xf1289106ef25c46c4c2c0d7c87f7f506723650f5629ea17ad27c20f896029667,daily scan
+2026-11-01,momentum,Pumpkin,bsc,753.6,Classic memes,50.72,47.61,0.79,25.99,2.63,goplus,https://dexscreener.com/bsc/0x423803827377Cf404264FFfad0b0cB234197CbAE,evening scan
+2026-11-01,momentum,SAFU,bsc,694.0,Unclassified,53.39,35.63,0.91,9.62,1.63,goplus,https://dexscreener.com/bsc/0x7B889D19a3Cc60a0C7bC577333aCa16efdB209A0,evening scan
+2026-11-01,momentum,WOFL,robinhood,507.3,Dog & animal memes,7.27,67.46,1.52,64.18,2.87,explorer,https://dexscreener.com/robinhood/0x780ab912bafd2c7c4a41cdaf517ff48e76d84218ffabafea14be5d27591efe52,evening scan
 2026-11-01,momentum,币安人,bsc,835.9,Unclassified,,,2.83,329.0,1.15,goplus,https://dexscreener.com/bsc/0xf7F7ccEdAEb1FB131e2b5bB0790B51b5Ad3B1260,daily scan
