@@ -2,12 +2,14 @@ name: Moonshot daily fetch
 
 on:
   schedule:
-    # Owner, 1 Nov 2026: GitHub has been starting scheduled runs 5-6 h late and a scan takes 1.5-2 h,
-    # so the scans are scheduled ~7.5 h before the time the page should be ready:
-    #   17:53 UTC = 1:53am SGT  -> morning page, usually ready ~9:30am SGT
+    # Owner, 1-2 Nov 2026: GitHub has been starting scheduled runs 5-6 h late and a scan takes 1.5-2 h,
+    # so the scans are scheduled well before the time the page should be ready:
+    #   18:53 UTC = 2:53am SGT  -> morning page, usually ready ~10-10:30am SGT
     #   04:37 UTC = 12:37pm SGT -> evening page, usually ready ~8pm SGT
-    # If GitHub runs on time the page simply arrives early. SCAN_SLOT below follows these two lines.
-    - cron: "53 17 * * *"
+    # The morning scan never fetches before 00:15 UTC (8:15am SGT), when CoinGecko/GeckoTerminal and
+    # DefiLlama have closed the previous day (see the wait job). 18:53 keeps that wait under GitHub's
+    # 6-hour job limit even when GitHub starts on time. SCAN_SLOT below follows these two lines.
+    - cron: "53 18 * * *"
     - cron: "37 4 * * *"
   workflow_dispatch:
     inputs:
@@ -23,8 +25,31 @@ concurrency:
   group: moonshot-fetch-v2
   cancel-in-progress: false
 
+env:
+  # morning or evening scan, by which schedule started the run (manual runs: decided by the clock in fetch/main.py)
+  SCAN_SLOT: ${{ github.event.schedule == '53 18 * * *' && 'am' || github.event.schedule == '37 4 * * *' && 'pm' || '' }}
+
 jobs:
+  wait:
+    # Morning scan only: wait until 00:15 UTC (8:15am SGT) so the daily candles and chain volumes include
+    # yesterday's closed day. A separate job so the wait does not eat into the fetch job's time limit.
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - name: Wait for the daily close (8:15am SGT) if the morning scan started early
+        run: |
+          if [ "$SCAN_SLOT" != "am" ]; then echo "not the morning scan - no wait"; exit 0; fi
+          now=$(date -u +%s)
+          target=$(date -u -d "today 00:15" +%s)
+          if [ "$(date -u +%H)" -ge 12 ]; then target=$(date -u -d "tomorrow 00:15" +%s); fi
+          wait=$(( target - now ))
+          if [ "$wait" -le 0 ]; then echo "after 8:15am SGT already - no wait"; exit 0; fi
+          if [ "$wait" -gt 20400 ]; then wait=20400; fi   # stay under this job's time limit
+          echo "started $(TZ=Asia/Singapore date '+%H:%M') SGT - waiting $(( wait / 60 )) min for the daily close"
+          sleep "$wait"
+
   fetch:
+    needs: wait
     runs-on: ubuntu-latest
     timeout-minutes: 170
     steps:
@@ -43,8 +68,6 @@ jobs:
         if: ${{ !inputs.skip_fetch }}
         env:
           BLOCKSCOUT_API_KEY: ${{ secrets.BLOCKSCOUT_API_KEY }}
-          # morning or evening scan, by which schedule started the run (manual runs: decided by the clock)
-          SCAN_SLOT: ${{ github.event.schedule == '53 17 * * *' && 'am' || github.event.schedule == '37 4 * * *' && 'pm' || '' }}
         run: python -m fetch.main "$GITHUB_WORKSPACE"
 
       - name: Show source status
