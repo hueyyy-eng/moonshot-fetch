@@ -273,9 +273,12 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-11-01,momentum,WOFL,robinhood,507.3,Dog & animal memes,7.27,67.46,1.52,64.18,2.87,explorer,https://dexscreener.com/robinhood/0x780ab912bafd2c7c4a41cdaf517ff48e76d84218ffabafea14be5d27591efe52,evening scan
 2026-11-01,momentum,币安人,bsc,835.9,Unclassified,,,2.83,329.0,1.15,goplus,https://dexscreener.com/bsc/0xf7F7ccEdAEb1FB131e2b5bB0790B51b5Ad3B1260,daily scan
 2026-11-02,shortlist,Anakin,solana,1770.8,Unclassified,1.99,50.89,1.02,53.76,2.94,rugcheck,https://dexscreener.com/solana/HJa61kEfSAwRt3DW9p15mLh6U5MaQgZGbE51ngg7bYtT,daily scan
+2026-11-02,shortlist,CBUCKS,solana,1656.7,Unclassified,2.54,14.97,1.27,-9.68,26.31,rugcheck,https://dexscreener.com/solana/B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB,daily scan
+2026-11-02,shortlist,GLOAM,robinhood,592.8,Stablecoins,2.27,73.0,0.29,11.89,75.32,explorer,https://dexscreener.com/robinhood/0xc5f373710186d788eee3048f9ff92608d344e3360b2a35bea98068146e18dd1a,daily scan
 2026-11-02,pullback,ANSEM,solana,683.7,KOL / personality,21.55,46.61,1.44,107.0,1.08,rugcheck,https://dexscreener.com/solana/8q2jaCSxrbD98BBC9M8TsWY8euKCjuhk7hdv7YqJV174,daily scan
 2026-11-02,pullback,Leverhedge,solana,744.3,Classic memes,18.07,61.4,0.8,-26.26,1.76,rugcheck,https://dexscreener.com/solana/6d3uJEzDB2WDbvVryFycvgXSiH9fW6ML6hScia5QVHwp,daily scan
 2026-11-02,pullback,paws,solana,623.1,Dog & animal memes,21.21,48.28,0.26,-8.49,5.57,rugcheck,https://dexscreener.com/solana/2rmaFtFZmJtLXdPgRvk417RLc9GBD3jGbAqtttmfG3AF,daily scan
 2026-11-02,pullback,PEAK,solana,922.4,Launchpad / infra,15.15,42.11,1.63,98.34,5.72,rugcheck,https://dexscreener.com/solana/H4sb6cH4bJ4G9vJG3cDA2h3gYAMgCfuzXu8h56RhkVnC,daily scan
 2026-11-02,momentum,GTA6,robinhood,826.5,Unclassified,21.05,0.0,0.0,,1.52,explorer,https://dexscreener.com/robinhood/0x991841e9254714f4b4f94c5acdd85b6eaea2c2540cade3256672b942da6b4a47,daily scan
 2026-11-02,momentum,SAFU,bsc,574.4,Unclassified,53.39,35.63,0.2,-20.97,2.05,goplus,https://dexscreener.com/bsc/0x7B889D19a3Cc60a0C7bC577333aCa16efdB209A0,daily scan
+2026-11-02,momentum,WASTED,solana,626.1,Classic memes,112.16,84.33,3.36,314.0,2.33,rugcheck,https://dexscreener.com/solana/TT7DKs9YjJZj1fwMGoPmKBmDreZzyMAMrHoDCGdfwqN,daily scan
