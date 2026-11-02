@@ -1,7 +1,7 @@
 {
- "now": "2026-11-02 10:54 SGT",
- "slot": "am",
- "cand_at": "2026-11-02 10:54 SGT",
+ "now": "2026-11-02 21:51 SGT",
+ "slot": "pm",
+ "cand_at": "2026-11-02 21:51 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -26,9 +26,7 @@
    "arc",
    "doma"
   ],
-  "new": [
-   "arc"
-  ],
+  "new": [],
   "dropped": [],
   "hottest": {
    "s": "arc",
@@ -38,138 +36,136 @@
   }
  },
  "tokens": {
-  "total": 74,
-  "band_m": 26,
+  "total": 71,
+  "band_m": 23,
   "candle_or_wallet_coverage_pct": 100,
-  "nodata": 7
+  "nodata": 6
  },
  "shortlist": [
   {
    "sym": "CBUCKS",
    "c": "solana",
-   "mc": 1656.7,
+   "mc": 1826.7,
    "nar": "Unclassified",
    "run": 2.54,
    "retr": 14.97,
-   "acc": 1.27,
-   "c6": -9.68,
-   "age": 26.31,
+   "acc": 0.44,
+   "c6": 1.24,
+   "age": 26.77,
    "sec": "rugcheck",
    "pa": "B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB"
-  },
-  {
-   "sym": "GLOAM",
-   "c": "robinhood",
-   "mc": 592.8,
-   "nar": "Stablecoins",
-   "run": 2.27,
-   "retr": 73.0,
-   "acc": 0.29,
-   "c6": 11.89,
-   "age": 75.32,
-   "sec": "explorer",
-   "pa": "0xc5f373710186d788eee3048f9ff92608d344e3360b2a35bea98068146e18dd1a"
   }
  ],
- "shortlist_new": [
-  "CBUCKS",
-  "GLOAM"
- ],
+ "shortlist_new": [],
  "shortlist_dropped": [
-  "Anakin"
+  "GLOAM"
  ],
  "pullback": [],
  "pullback_new": [],
- "pullback_dropped": [
-  "ANSEM",
-  "Leverhedge",
-  "PEAK",
-  "paws"
+ "pullback_dropped": [],
+ "igniting": [
+  {
+   "sym": "XTEN",
+   "c": "solana",
+   "mc": 584.9,
+   "nar": "Unclassified",
+   "run": null,
+   "retr": null,
+   "acc": 4.0,
+   "c6": 51.25,
+   "age": 0.08,
+   "sec": "rugcheck",
+   "pa": "EZdUr7QVnY2tXh4uHVR6aDMCTW4GB9S3XKCa8dEA8tsG"
+  },
+  {
+   "sym": "PREDICT",
+   "c": "solana",
+   "mc": 988.6,
+   "nar": "Unclassified",
+   "run": null,
+   "retr": null,
+   "acc": 2.83,
+   "c6": 62.72,
+   "age": 0.36,
+   "sec": "rugcheck",
+   "pa": "3KZbpFg3ofXRy2sbdKugaQV3M7hWW5zJZt87GauqZqtL"
+  }
  ],
- "igniting": [],
  "momentum": [
+  {
+   "sym": "Leverhedge",
+   "c": "solana",
+   "mc": 784.2,
+   "nar": "Classic memes",
+   "run": 16.97,
+   "retr": 63.75,
+   "acc": 1.17,
+   "c6": -17.15,
+   "age": 2.55,
+   "sec": "rugcheck",
+   "pa": "6d3uJEzDB2WDbvVryFycvgXSiH9fW6ML6hScia5QVHwp"
+  },
   {
    "sym": "SAFU",
    "c": "bsc",
-   "mc": 873.5,
+   "mc": 507.8,
    "nar": "Unclassified",
    "run": 89.24,
    "retr": 6.33,
-   "acc": 0.27,
-   "c6": 13.67,
-   "age": 2.38,
+   "acc": 1.08,
+   "c6": -39.16,
+   "age": 2.84,
    "sec": "goplus",
    "pa": "0x7B889D19a3Cc60a0C7bC577333aCa16efdB209A0"
-  },
-  {
-   "sym": "WASTED",
-   "c": "solana",
-   "mc": 626.1,
-   "nar": "Classic memes",
-   "run": 112.16,
-   "retr": 84.33,
-   "acc": 3.36,
-   "c6": 314.0,
-   "age": 2.33,
-   "sec": "rugcheck",
-   "pa": "TT7DKs9YjJZj1fwMGoPmKBmDreZzyMAMrHoDCGdfwqN"
   }
  ],
  "momentum_new": [
-  "WASTED"
+  "Leverhedge"
  ],
  "momentum_dropped": [
-  "GTA6"
+  "WASTED"
  ],
- "honeypots_new": [
-  "ON"
- ],
+ "honeypots_new": [],
  "track": {
   "logged": 98,
-  "new_rows": [
-   [
-    "GLOAM",
-    "S"
-   ]
-  ],
+  "new_rows": [],
   "best_x": 14.93,
-  "median_peak_x": 1.01,
+  "median_peak_x": 1.02,
   "hit_2x_today": [],
   "to_zero_today": [],
   "repriced": true
  },
  "igniting_track": {
-  "logged": 51,
-  "new_rows": [],
-  "hit_2x_today": [],
-  "to_zero_today": [
-   "ALLOX (solana)"
-  ]
- },
- "momentum_track": {
-  "logged": 70,
+  "logged": 53,
   "new_rows": [
-   "WASTED"
+   "XTEN",
+   "PREDICT"
   ],
-  "hit_2x_today": [
-   "FLOAT (solana)"
-  ],
+  "hit_2x_today": [],
   "to_zero_today": []
  },
+ "momentum_track": {
+  "logged": 71,
+  "new_rows": [
+   "Leverhedge"
+  ],
+  "hit_2x_today": [],
+  "to_zero_today": [
+   "GTA6 (robinhood)"
+  ]
+ },
  "control": {
-  "rows": 725,
+  "rows": 730,
   "median_peak_x": 1.0,
   "hit_2x_today": [
-   "AgenC (solana)"
+   "MYC (base)",
+   "ANT (ethereum)"
   ],
   "to_zero_today": [
-   "AMBA (solana)",
-   "VLAD (robinhood)",
-   "ALLOX (solana)",
-   "SO (solana)",
-   "富途牛牛&币安 (bsc)",
-   "OPTIPEPE (ethereum)",
-   "Paper (robinhood)"
+   "PAIREX (robinhood)",
+   "LAURA (robinhood)",
+   "SI (robinhood)",
+   "ZEBRA (solana)"
   ]
  },
  "changed": true,
