@@ -1,9 +1,10 @@
 # moonshot-fetch
 
 Daily data collector for Wai Keong's **Moonshot Scanner** dashboard. Runs on GitHub Actions twice a day,
-scheduled at **1:53am SGT** (17:53 UTC) and **12:37pm SGT** (04:37 UTC) so that, with GitHub's usual 5-6 h
-start delay, the pages are ready around 9:30am and 8pm SGT. No laptop involved; it pulls every external source the scan needs, and
-commits the result to this repository. The cloud summary at 10:00 SGT reads `latest/scan.json` from
+scheduled at **2:53am SGT** (18:53 UTC) and **12:37pm SGT** (04:37 UTC) so that, with GitHub's usual 5-6 h
+start delay, the pages are ready around 10-10:30am and 8pm SGT. The morning scan waits until 8:15am SGT if it
+starts earlier, so it always uses the day CoinGecko and DefiLlama closed at 8am SGT. No laptop involved; it pulls every external source the scan needs, and
+commits the result to this repository. The cloud summary at 10:30 SGT reads `latest/scan.json` from
 `raw.githubusercontent.com`, applies its own judgement (narrative tags, track-record advancement,
 carry-forward decisions) and republishes the dashboard.
 
@@ -26,7 +27,7 @@ without one.
 ## Layout
 
 ```
-.github/workflows/daily.yml   cron 17:53 + 04:37 UTC (1:53am + 12:37pm SGT) + manual "Run workflow" button
+.github/workflows/daily.yml   cron 18:53 + 04:37 UTC (2:53am + 12:37pm SGT) + manual "Run workflow" button
 fetch/                        the job (python -m fetch.main <repo-root>)
 scan/upload_drive.py          copies the six CSVs in site/ to the owner's Google Drive after every run
 scan/                         the cloud scan's deterministic half (see below) — fetched by the 11:30 task each day

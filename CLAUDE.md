@@ -17,9 +17,12 @@ If a change would break one of them, stop and ask first.
 ## Schedule
 
 - Two scans a day, a **morning** and an **evening** scan. Since 1 Nov 2026 (owner's request) they are
-  scheduled at **1:53am SGT** and **12:37pm SGT** (cron `53 17 * * *` and `37 4 * * *` in UTC, in
+  scheduled at **2:53am SGT** and **12:37pm SGT** (cron `53 18 * * *` and `37 4 * * *` in UTC, in
   `.github/workflows/daily.yml`), because GitHub starts scheduled runs 5-6 hours late and a scan takes
-  1.5-2 hours. Aim: morning page ready **~9:30am**, evening page **~8pm**. If GitHub runs on time, pages come early.
+  1.5-2 hours. Aim: morning page ready **~10-10:30am**, evening page **~8pm**.
+- The morning scan **never fetches before 8:15am SGT** (00:15 UTC): CoinGecko/GeckoTerminal and DefiLlama close
+  their daily figures at 8am SGT, and the scanner only uses closed days. If GitHub starts it early, the `wait` job
+  in the workflow waits until then (owner's choice, 2 Nov 2026). Keep this.
 - Each run knows which scan it is from its cron line (`SCAN_SLOT` → `SLOT` in `latest/scan.json`, `slot` in
   `site/summary.json`): morning → `snapshots/<day>/`, evening → `snapshots/<day>-pm/`. Manual runs: before 3pm SGT = morning.
   If a cron line changes, change the matching `SCAN_SLOT` line in the workflow too.
