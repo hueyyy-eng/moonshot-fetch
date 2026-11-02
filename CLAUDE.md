@@ -16,13 +16,18 @@ If a change would break one of them, stop and ask first.
 
 ## Schedule
 
-- Scans run at **9:30am SGT** and **8:07pm SGT** every day
-  (cron `30 1 * * *` and `7 12 * * *` in UTC, in `.github/workflows/daily.yml`).
+- Two scans a day, a **morning** and an **evening** scan. Since 1 Nov 2026 (owner's request) they are
+  scheduled at **1:53am SGT** and **12:37pm SGT** (cron `53 17 * * *` and `37 4 * * *` in UTC, in
+  `.github/workflows/daily.yml`), because GitHub starts scheduled runs 5-6 hours late and a scan takes
+  1.5-2 hours. Aim: morning page ready **~9:30am**, evening page **~8pm**. If GitHub runs on time, pages come early.
+- Each run knows which scan it is from its cron line (`SCAN_SLOT` → `SLOT` in `latest/scan.json`, `slot` in
+  `site/summary.json`): morning → `snapshots/<day>/`, evening → `snapshots/<day>-pm/`. Manual runs: before 3pm SGT = morning.
+  If a cron line changes, change the matching `SCAN_SLOT` line in the workflow too.
 - Do not change these times without being asked.
 
 ## Google Drive copy
 
-- After **every** scan (9:30am, 8:07pm and manual "Run workflow" runs), the last step of
+- After **every** scan (morning, evening and manual "Run workflow" runs), the last step of
   `.github/workflows/daily.yml` runs `scan/upload_drive.py`. It copies these six files from `site/` to the
   owner's Drive folder **"Claude Projects/Moonshot Scanner"**, overwriting the files already there (same names):
   `track-record.csv`, `price-tracking.csv`, `daily-lists.csv`, `near-miss-log.csv`, `narrative-log.csv`, `holder-log.csv`.

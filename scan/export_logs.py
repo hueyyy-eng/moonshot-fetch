@@ -141,7 +141,8 @@ def daily_rows(summary: dict, source: str = "") -> list[list]:
     day = str(summary.get("now", ""))[:10]
     if not source:
         hh = str(summary.get("now", ""))[11:13]
-        source = "evening scan" if hh.isdigit() and int(hh) >= 15 else "daily scan"
+        slot = summary.get("slot") or ("pm" if hh.isdigit() and int(hh) >= 15 else "am")
+        source = "evening scan" if slot == "pm" else "daily scan"
     rows = []
     for key, name in LIST_NAMES:
         for t in summary.get(key) or []:
@@ -168,7 +169,7 @@ def update_daily_lists(summary: dict, path: str) -> None:
                 if row:
                     (today_old if row[0] == day else old).append(row)
     fresh = [[("" if v is None else v) for v in row] for row in daily_rows(summary)]
-    # Two runs a day (09:30 and 21:30 SGT): keep what the earlier run listed and add only tokens not already
+    # Two runs a day (morning and evening): keep what the earlier run listed and add only tokens not already
     # listed today on the same list (same list + pair). A "none" row survives only if the day stays empty.
     seen = {(row[1], row[12]) for row in today_old if row[1] != "none"}
     merged = [row for row in today_old if row[1] != "none"]

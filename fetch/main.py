@@ -76,9 +76,11 @@ def main(repo_root: str) -> int:
     http = Http(budget_s=RUN_BUDGET_MIN * 60)
     stamp = now_sgt_str()
     day = now_utc().astimezone(SGT).strftime("%Y-%m-%d")
-    # the 8:07pm SGT evening run (added 13 Oct 2026) saves to snapshots/<day>-pm/ so the morning snapshot is kept;
-    # "<day>-pm" sorts between <day> and the next day, so every date comparison downstream still works
-    snap_dir = day if now_utc().astimezone(SGT).hour < 15 else day + "-pm"
+    # the evening run saves to snapshots/<day>-pm/ so the morning snapshot is kept; "<day>-pm" sorts between
+    # <day> and the next day, so every date comparison downstream still works. Scheduled runs say which one they
+    # are (SCAN_SLOT, set by the workflow from the cron line); manual runs go by the clock (before 3pm = morning).
+    slot = os.environ.get("SCAN_SLOT", "").strip() or ("am" if now_utc().astimezone(SGT).hour < 15 else "pm")
+    snap_dir = day if slot == "am" else day + "-pm"
 
     # STEP 1 — chains
     stage(http, "chains")
@@ -138,6 +140,7 @@ def main(repo_root: str) -> int:
         "schema": 1,
         "generated_at_sgt": stamp,
         "day_sgt": day,
+        "SLOT": slot,
         "status": status["sources"],
         "LAST_DAY": ch.get("LAST_DAY"),
         "CORE_CHAINS": chains.CORE_CHAINS,

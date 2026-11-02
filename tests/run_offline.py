@@ -128,8 +128,9 @@ zeros = sum(1 for k, v in out["PRICES"].items() if v == 0)
 print(f"\nprices: {len(out['PRICES'])} entries, {zeros} unknown→0")
 
 # ---------------- snapshot files
-# runs from 3pm SGT on (the 8:07pm evening scan) save to snapshots/<day>-pm/, earlier ones to snapshots/<day>/
-snap_dir = out["day_sgt"] + ("-pm" if int(out["generated_at_sgt"][11:13]) >= 15 else "")
+# the evening scan saves to snapshots/<day>-pm/, the morning one to snapshots/<day>/ (SLOT; manual runs: 3pm SGT cut-off)
+assert out["SLOT"] in ("am", "pm"), out.get("SLOT")
+snap_dir = out["day_sgt"] + ("-pm" if out["SLOT"] == "pm" else "")
 assert os.path.exists(os.path.join(root, "snapshots", snap_dir, "scan.json")), f"no snapshots/{snap_dir}/scan.json"
 assert not any(k.startswith("_") for t in out["TOKENS"] for k in t), "no private keys may leak into the snapshot"
 print("\nALL ASSERTIONS PASSED —", len(out["DATA"]), "chains,", len(out["TOKENS"]), "tokens, day", out["day_sgt"], "at", out["generated_at_sgt"])

@@ -601,7 +601,8 @@ def main() -> int:
     band_m = [t for t in tokens if t.get("band") == "m"]
     cov = sum(1 for t in band_m if t.get("run") is not None or t.get("ubr") is not None)
     summary = {
-        "now": now, "cand_at": cand_at, "tokens_carried": tokens_carried, "stale": stale, "notes": notes,
+        "now": now, "slot": scan.get("SLOT") or ("am" if now[11:13].isdigit() and int(now[11:13]) < 15 else "pm"),
+        "cand_at": cand_at, "tokens_carried": tokens_carried, "stale": stale, "notes": notes,
         "sources": {k: v.get("state") for k, v in src.items()},
         "chains": {"hot": hot, "new": sorted(set(hot) - set(old_hot)), "dropped": sorted(set(old_hot) - set(hot)),
                    "hottest": {"s": hottest["s"], "n": hottest.get("n"), "dr": hottest["dr"], "dr30": hottest.get("dr30")} if hottest else None},
