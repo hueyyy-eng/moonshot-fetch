@@ -1,7 +1,7 @@
 {
- "now": "2026-11-03 10:21 SGT",
- "slot": "am",
- "cand_at": "2026-11-03 10:21 SGT",
+ "now": "2026-11-03 21:12 SGT",
+ "slot": "pm",
+ "cand_at": "2026-11-03 21:12 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -22,15 +22,11 @@
   "reprice": "ok"
  },
  "chains": {
-  "hot": [
-   "base",
-   "arc"
-  ],
-  "new": [
-   "base"
-  ],
+  "hot": [],
+  "new": [],
   "dropped": [
-   "doma"
+   "arc",
+   "base"
   ],
   "hottest": {
    "s": "provenance",
@@ -40,113 +36,134 @@
   }
  },
  "tokens": {
-  "total": 75,
+  "total": 72,
   "band_m": 30,
   "candle_or_wallet_coverage_pct": 100,
-  "nodata": 2
+  "nodata": 0
  },
  "shortlist": [
   {
-   "sym": "swordcat",
-   "c": "solana",
-   "mc": 1291.5,
-   "nar": "Dog & animal memes",
-   "run": 1.14,
-   "retr": 75.46,
-   "acc": 2.18,
-   "c6": -6.82,
-   "age": 35.68,
-   "sec": "rugcheck",
-   "pa": "8ewuF2o8ACro7fqWepZ3tKhkbBjndZU4Ldk9scRPw83d"
-  },
-  {
-   "sym": "worth",
-   "c": "base",
-   "mc": 603.9,
-   "nar": "Tokenised equities",
-   "run": 1.13,
-   "retr": 75.76,
-   "acc": 1.76,
-   "c6": -19.04,
-   "age": 79.26,
-   "sec": "goplus",
-   "pa": "0x6cf637a82362d304dfa56a6387fc8f909ec0008ec520ee5fb999506d9b1f3514"
+   "sym": "WIF",
+   "c": "robinhood",
+   "mc": 1464.8,
+   "nar": "Launchpad / infra",
+   "run": 1.3,
+   "retr": 27.35,
+   "acc": 0.05,
+   "c6": 2.59,
+   "age": 89.12,
+   "sec": "explorer",
+   "pa": "0x71ef4106340f0a3b9c19ec994eef4fc44a1d2513f38faac39d7636b156548c79"
   }
  ],
  "shortlist_new": [
+  "WIF"
+ ],
+ "shortlist_dropped": [
   "swordcat",
   "worth"
  ],
- "shortlist_dropped": [
-  "CBUCKS"
+ "pullback": [
+  {
+   "sym": "MAMESUKE",
+   "c": "solana",
+   "mc": 1732.0,
+   "nar": "Unclassified",
+   "run": 20.76,
+   "retr": 59.72,
+   "acc": 0.41,
+   "c6": 62.82,
+   "age": 1.03,
+   "sec": "rugcheck",
+   "pa": "HPeXruE5Msv7paz5WPViwScLeSYWgZr8vhDakuiEp5ku"
+  }
  ],
- "pullback": [],
- "pullback_new": [],
+ "pullback_new": [
+  "MAMESUKE"
+ ],
  "pullback_dropped": [],
  "igniting": [],
- "momentum": [],
- "momentum_new": [],
- "momentum_dropped": [
-  "Leverhedge",
-  "SAFU"
+ "momentum": [
+  {
+   "sym": "ANT",
+   "c": "robinhood",
+   "mc": 1507.3,
+   "nar": "AI",
+   "run": 677.68,
+   "retr": 5.81,
+   "acc": 0.31,
+   "c6": 20.25,
+   "age": 1.01,
+   "sec": "explorer",
+   "pa": "0xaf7d2ecec21c88509c317726ee7408a390199103f242695dfe554ff5d559f9c3"
+  },
+  {
+   "sym": "币安魂",
+   "c": "bsc",
+   "mc": 827.8,
+   "nar": "Unclassified",
+   "run": null,
+   "retr": null,
+   "acc": 2.43,
+   "c6": 152.0,
+   "age": 1.03,
+   "sec": "goplus",
+   "pa": "0x5E2F5A94FcFeA8115f363195850849F8898F0e7C"
+  }
  ],
- "honeypots_new": [
-  "AGT",
-  "ARIA"
+ "momentum_new": [
+  "ANT",
+  "币安魂"
  ],
+ "momentum_dropped": [],
+ "honeypots_new": [],
  "track": {
-  "logged": 99,
+  "logged": 100,
   "new_rows": [
    [
-    "worth",
-    "S"
+    "MAMESUKE",
+    "P"
    ]
   ],
   "best_x": 14.93,
   "median_peak_x": 1.02,
-  "hit_2x_today": [
-   "SAFU (bsc)"
-  ],
+  "hit_2x_today": [],
   "to_zero_today": [],
   "repriced": true
  },
  "igniting_track": {
   "logged": 53,
   "new_rows": [],
-  "hit_2x_today": [
-   "XTEN (solana)",
-   "PREDICT (solana)"
-  ],
-  "to_zero_today": [
-   "RSGP (solana)"
-  ]
- },
- "momentum_track": {
-  "logged": 71,
-  "new_rows": [],
   "hit_2x_today": [],
   "to_zero_today": []
  },
+ "momentum_track": {
+  "logged": 73,
+  "new_rows": [
+   "ANT",
+   "币安魂"
+  ],
+  "hit_2x_today": [
+   "WASTED (solana)"
+  ],
+  "to_zero_today": []
+ },
  "control": {
-  "rows": 733,
+  "rows": 736,
   "median_peak_x": 1.0,
   "hit_2x_today": [
-   "DacityCoin (solana)",
-   "FLOAT (solana)",
-   "PREDICT (solana)",
-   "XTEN (solana)"
+   "WASTED (solana)",
+   "MAMESUKE (solana)",
+   "MINIMAL (ethereum)"
   ],
   "to_zero_today": [
-   "SPAWN (robinhood)",
-   "OS (solana)",
-   "BLAST (robinhood)",
-   "CHINAPAD (robinhood)",
-   "CDOG (solana)",
-   "MINTFOLIO (robinhood)",
-   "RSGP (solana)",
-   "ANTS (solana)"
+   "FOMOBALL (robinhood)",
+   "MACHINE (robinhood)",
+   "1 (solana)",
+   "OPTIPEPE (ethereum)",
+   "HYPEPE (ethereum)"
   ]
  },
  "changed": true,
- "alert": true
+ "alert": false
 }

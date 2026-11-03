@@ -286,4 +286,8 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-11-02,momentum,SAFU,bsc,574.4,Unclassified,53.39,35.63,0.2,-20.97,2.05,goplus,https://dexscreener.com/bsc/0x7B889D19a3Cc60a0C7bC577333aCa16efdB209A0,daily scan
 2026-11-02,momentum,WASTED,solana,626.1,Classic memes,112.16,84.33,3.36,314.0,2.33,rugcheck,https://dexscreener.com/solana/TT7DKs9YjJZj1fwMGoPmKBmDreZzyMAMrHoDCGdfwqN,daily scan
 2026-11-03,shortlist,swordcat,solana,1291.5,Dog & animal memes,1.14,75.46,2.18,-6.82,35.68,rugcheck,https://dexscreener.com/solana/8ewuF2o8ACro7fqWepZ3tKhkbBjndZU4Ldk9scRPw83d,daily scan
+2026-11-03,shortlist,WIF,robinhood,1464.8,Launchpad / infra,1.3,27.35,0.05,2.59,89.12,explorer,https://dexscreener.com/robinhood/0x71ef4106340f0a3b9c19ec994eef4fc44a1d2513f38faac39d7636b156548c79,evening scan
 2026-11-03,shortlist,worth,base,603.9,Tokenised equities,1.13,75.76,1.76,-19.04,79.26,goplus,https://dexscreener.com/base/0x6cf637a82362d304dfa56a6387fc8f909ec0008ec520ee5fb999506d9b1f3514,daily scan
+2026-11-03,pullback,MAMESUKE,solana,1732.0,Unclassified,20.76,59.72,0.41,62.82,1.03,rugcheck,https://dexscreener.com/solana/HPeXruE5Msv7paz5WPViwScLeSYWgZr8vhDakuiEp5ku,evening scan
+2026-11-03,momentum,ANT,robinhood,1507.3,AI,677.68,5.81,0.31,20.25,1.01,explorer,https://dexscreener.com/robinhood/0xaf7d2ecec21c88509c317726ee7408a390199103f242695dfe554ff5d559f9c3,evening scan
+2026-11-03,momentum,币安魂,bsc,827.8,Unclassified,,,2.43,152.0,1.03,goplus,https://dexscreener.com/bsc/0x5E2F5A94FcFeA8115f363195850849F8898F0e7C,evening scan
