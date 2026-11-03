@@ -1,7 +1,7 @@
 {
- "now": "2026-11-02 21:51 SGT",
- "slot": "pm",
- "cand_at": "2026-11-02 21:51 SGT",
+ "now": "2026-11-03 10:21 SGT",
+ "slot": "am",
+ "cand_at": "2026-11-03 10:21 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -23,149 +23,128 @@
  },
  "chains": {
   "hot": [
-   "arc",
+   "base",
+   "arc"
+  ],
+  "new": [
+   "base"
+  ],
+  "dropped": [
    "doma"
   ],
-  "new": [],
-  "dropped": [],
   "hottest": {
-   "s": "arc",
-   "n": "Arc",
-   "dr": 1.92,
-   "dr30": 1.67
+   "s": "provenance",
+   "n": "Provenance",
+   "dr": 2.69,
+   "dr30": 2.46
   }
  },
  "tokens": {
-  "total": 71,
-  "band_m": 23,
+  "total": 75,
+  "band_m": 30,
   "candle_or_wallet_coverage_pct": 100,
-  "nodata": 6
+  "nodata": 2
  },
  "shortlist": [
   {
-   "sym": "CBUCKS",
+   "sym": "swordcat",
    "c": "solana",
-   "mc": 1826.7,
-   "nar": "Unclassified",
-   "run": 2.54,
-   "retr": 14.97,
-   "acc": 0.44,
-   "c6": 1.24,
-   "age": 26.77,
+   "mc": 1291.5,
+   "nar": "Dog & animal memes",
+   "run": 1.14,
+   "retr": 75.46,
+   "acc": 2.18,
+   "c6": -6.82,
+   "age": 35.68,
    "sec": "rugcheck",
-   "pa": "B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB"
+   "pa": "8ewuF2o8ACro7fqWepZ3tKhkbBjndZU4Ldk9scRPw83d"
+  },
+  {
+   "sym": "worth",
+   "c": "base",
+   "mc": 603.9,
+   "nar": "Tokenised equities",
+   "run": 1.13,
+   "retr": 75.76,
+   "acc": 1.76,
+   "c6": -19.04,
+   "age": 79.26,
+   "sec": "goplus",
+   "pa": "0x6cf637a82362d304dfa56a6387fc8f909ec0008ec520ee5fb999506d9b1f3514"
   }
  ],
- "shortlist_new": [],
+ "shortlist_new": [
+  "swordcat",
+  "worth"
+ ],
  "shortlist_dropped": [
-  "GLOAM"
+  "CBUCKS"
  ],
  "pullback": [],
  "pullback_new": [],
  "pullback_dropped": [],
- "igniting": [
-  {
-   "sym": "XTEN",
-   "c": "solana",
-   "mc": 584.9,
-   "nar": "Unclassified",
-   "run": null,
-   "retr": null,
-   "acc": 4.0,
-   "c6": 51.25,
-   "age": 0.08,
-   "sec": "rugcheck",
-   "pa": "EZdUr7QVnY2tXh4uHVR6aDMCTW4GB9S3XKCa8dEA8tsG"
-  },
-  {
-   "sym": "PREDICT",
-   "c": "solana",
-   "mc": 988.6,
-   "nar": "Unclassified",
-   "run": null,
-   "retr": null,
-   "acc": 2.83,
-   "c6": 62.72,
-   "age": 0.36,
-   "sec": "rugcheck",
-   "pa": "3KZbpFg3ofXRy2sbdKugaQV3M7hWW5zJZt87GauqZqtL"
-  }
- ],
- "momentum": [
-  {
-   "sym": "Leverhedge",
-   "c": "solana",
-   "mc": 784.2,
-   "nar": "Classic memes",
-   "run": 16.97,
-   "retr": 63.75,
-   "acc": 1.17,
-   "c6": -17.15,
-   "age": 2.55,
-   "sec": "rugcheck",
-   "pa": "6d3uJEzDB2WDbvVryFycvgXSiH9fW6ML6hScia5QVHwp"
-  },
-  {
-   "sym": "SAFU",
-   "c": "bsc",
-   "mc": 507.8,
-   "nar": "Unclassified",
-   "run": 89.24,
-   "retr": 6.33,
-   "acc": 1.08,
-   "c6": -39.16,
-   "age": 2.84,
-   "sec": "goplus",
-   "pa": "0x7B889D19a3Cc60a0C7bC577333aCa16efdB209A0"
-  }
- ],
- "momentum_new": [
-  "Leverhedge"
- ],
+ "igniting": [],
+ "momentum": [],
+ "momentum_new": [],
  "momentum_dropped": [
-  "WASTED"
+  "Leverhedge",
+  "SAFU"
  ],
- "honeypots_new": [],
+ "honeypots_new": [
+  "AGT",
+  "ARIA"
+ ],
  "track": {
-  "logged": 98,
-  "new_rows": [],
+  "logged": 99,
+  "new_rows": [
+   [
+    "worth",
+    "S"
+   ]
+  ],
   "best_x": 14.93,
   "median_peak_x": 1.02,
-  "hit_2x_today": [],
+  "hit_2x_today": [
+   "SAFU (bsc)"
+  ],
   "to_zero_today": [],
   "repriced": true
  },
  "igniting_track": {
   "logged": 53,
-  "new_rows": [
-   "XTEN",
-   "PREDICT"
+  "new_rows": [],
+  "hit_2x_today": [
+   "XTEN (solana)",
+   "PREDICT (solana)"
   ],
-  "hit_2x_today": [],
-  "to_zero_today": []
+  "to_zero_today": [
+   "RSGP (solana)"
+  ]
  },
  "momentum_track": {
   "logged": 71,
-  "new_rows": [
-   "Leverhedge"
-  ],
+  "new_rows": [],
   "hit_2x_today": [],
-  "to_zero_today": [
-   "GTA6 (robinhood)"
-  ]
+  "to_zero_today": []
  },
  "control": {
-  "rows": 730,
+  "rows": 733,
   "median_peak_x": 1.0,
   "hit_2x_today": [
-   "MYC (base)",
-   "ANT (ethereum)"
+   "DacityCoin (solana)",
+   "FLOAT (solana)",
+   "PREDICT (solana)",
+   "XTEN (solana)"
   ],
   "to_zero_today": [
-   "PAIREX (robinhood)",
-   "LAURA (robinhood)",
-   "SI (robinhood)",
-   "ZEBRA (solana)"
+   "SPAWN (robinhood)",
+   "OS (solana)",
+   "BLAST (robinhood)",
+   "CHINAPAD (robinhood)",
+   "CDOG (solana)",
+   "MINTFOLIO (robinhood)",
+   "RSGP (solana)",
+   "ANTS (solana)"
   ]
  },
  "changed": true,
