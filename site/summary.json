@@ -1,7 +1,7 @@
 {
- "now": "2026-11-03 21:12 SGT",
- "slot": "pm",
- "cand_at": "2026-11-03 21:12 SGT",
+ "now": "2026-11-04 09:12 SGT",
+ "slot": "am",
+ "cand_at": "2026-11-04 09:12 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -22,112 +22,114 @@
   "reprice": "ok"
  },
  "chains": {
-  "hot": [],
-  "new": [],
-  "dropped": [
-   "arc",
-   "base"
+  "hot": [
+   "chainflip"
   ],
+  "new": [
+   "chainflip"
+  ],
+  "dropped": [],
   "hottest": {
    "s": "provenance",
    "n": "Provenance",
-   "dr": 2.69,
+   "dr": 2.48,
    "dr30": 2.46
   }
  },
  "tokens": {
-  "total": 72,
-  "band_m": 30,
+  "total": 77,
+  "band_m": 32,
   "candle_or_wallet_coverage_pct": 100,
   "nodata": 0
  },
- "shortlist": [
-  {
-   "sym": "WIF",
-   "c": "robinhood",
-   "mc": 1464.8,
-   "nar": "Launchpad / infra",
-   "run": 1.3,
-   "retr": 27.35,
-   "acc": 0.05,
-   "c6": 2.59,
-   "age": 89.12,
-   "sec": "explorer",
-   "pa": "0x71ef4106340f0a3b9c19ec994eef4fc44a1d2513f38faac39d7636b156548c79"
-  }
- ],
- "shortlist_new": [
-  "WIF"
- ],
+ "shortlist": [],
+ "shortlist_new": [],
  "shortlist_dropped": [
-  "swordcat",
-  "worth"
+  "WIF"
  ],
  "pullback": [
   {
    "sym": "MAMESUKE",
    "c": "solana",
-   "mc": 1732.0,
+   "mc": 1395.7,
    "nar": "Unclassified",
-   "run": 20.76,
-   "retr": 59.72,
-   "acc": 0.41,
-   "c6": 62.82,
-   "age": 1.03,
+   "run": 35.72,
+   "retr": 52.64,
+   "acc": 0.55,
+   "c6": -20.03,
+   "age": 1.53,
    "sec": "rugcheck",
    "pa": "HPeXruE5Msv7paz5WPViwScLeSYWgZr8vhDakuiEp5ku"
+  },
+  {
+   "sym": "WASTED",
+   "c": "solana",
+   "mc": 906.2,
+   "nar": "Classic memes",
+   "run": 303.05,
+   "retr": 67.13,
+   "acc": 0.6,
+   "c6": 4.09,
+   "age": 4.26,
+   "sec": "rugcheck",
+   "pa": "TT7DKs9YjJZj1fwMGoPmKBmDreZzyMAMrHoDCGdfwqN"
   }
  ],
  "pullback_new": [
-  "MAMESUKE"
+  "WASTED"
  ],
  "pullback_dropped": [],
  "igniting": [],
  "momentum": [
   {
-   "sym": "ANT",
-   "c": "robinhood",
-   "mc": 1507.3,
-   "nar": "AI",
-   "run": 677.68,
-   "retr": 5.81,
-   "acc": 0.31,
-   "c6": 20.25,
-   "age": 1.01,
-   "sec": "explorer",
-   "pa": "0xaf7d2ecec21c88509c317726ee7408a390199103f242695dfe554ff5d559f9c3"
-  },
-  {
    "sym": "币安魂",
    "c": "bsc",
-   "mc": 827.8,
+   "mc": 589.2,
    "nar": "Unclassified",
    "run": null,
    "retr": null,
-   "acc": 2.43,
-   "c6": 152.0,
-   "age": 1.03,
+   "acc": 0.62,
+   "c6": 3.07,
+   "age": 1.53,
    "sec": "goplus",
    "pa": "0x5E2F5A94FcFeA8115f363195850849F8898F0e7C"
+  },
+  {
+   "sym": "SI",
+   "c": "robinhood",
+   "mc": 833.7,
+   "nar": "AI",
+   "run": 365.29,
+   "retr": 21.93,
+   "acc": 1.89,
+   "c6": -4.69,
+   "age": 1.68,
+   "sec": "explorer",
+   "pa": "0xbd3ffe5499ab2f76e5c30192d7563ffd0b25392f0c9e5a6507115af6ca2db958"
   }
  ],
  "momentum_new": [
-  "ANT",
-  "币安魂"
+  "SI"
  ],
- "momentum_dropped": [],
- "honeypots_new": [],
+ "momentum_dropped": [
+  "ANT"
+ ],
+ "honeypots_new": [
+  "ESPORTS"
+ ],
  "track": {
-  "logged": 100,
+  "logged": 101,
   "new_rows": [
    [
-    "MAMESUKE",
+    "WASTED",
     "P"
    ]
   ],
   "best_x": 14.93,
   "median_peak_x": 1.02,
-  "hit_2x_today": [],
+  "hit_2x_today": [
+   "███ (solana)"
+  ],
   "to_zero_today": [],
   "repriced": true
  },
@@ -135,35 +137,38 @@
   "logged": 53,
   "new_rows": [],
   "hit_2x_today": [],
-  "to_zero_today": []
+  "to_zero_today": [
+   "XTEN (solana)",
+   "PREDICT (solana)"
+  ]
  },
  "momentum_track": {
-  "logged": 73,
+  "logged": 74,
   "new_rows": [
-   "ANT",
-   "币安魂"
+   "SI"
   ],
-  "hit_2x_today": [
-   "WASTED (solana)"
-  ],
-  "to_zero_today": []
+  "hit_2x_today": [],
+  "to_zero_today": [
+   "蝴蝶人生 (bsc)"
+  ]
  },
  "control": {
-  "rows": 736,
+  "rows": 743,
   "median_peak_x": 1.0,
   "hit_2x_today": [
-   "WASTED (solana)",
-   "MAMESUKE (solana)",
-   "MINIMAL (ethereum)"
+   "███ (solana)"
   ],
   "to_zero_today": [
-   "FOMOBALL (robinhood)",
-   "MACHINE (robinhood)",
-   "1 (solana)",
-   "OPTIPEPE (ethereum)",
-   "HYPEPE (ethereum)"
+   "JEV (robinhood)",
+   "DJCECE (solana)",
+   "SUPMKT (solana)",
+   "蝴蝶人生 (bsc)",
+   "WOLFINA (ethereum)",
+   "David (solana)",
+   "PREDICT (solana)",
+   "XTEN (solana)"
   ]
  },
  "changed": true,
- "alert": false
+ "alert": true
 }
