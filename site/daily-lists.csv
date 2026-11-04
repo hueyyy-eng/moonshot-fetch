@@ -291,7 +291,14 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-11-03,pullback,MAMESUKE,solana,1732.0,Unclassified,20.76,59.72,0.41,62.82,1.03,rugcheck,https://dexscreener.com/solana/HPeXruE5Msv7paz5WPViwScLeSYWgZr8vhDakuiEp5ku,evening scan
 2026-11-03,momentum,ANT,robinhood,1507.3,AI,677.68,5.81,0.31,20.25,1.01,explorer,https://dexscreener.com/robinhood/0xaf7d2ecec21c88509c317726ee7408a390199103f242695dfe554ff5d559f9c3,evening scan
 2026-11-03,momentum,币安魂,bsc,827.8,Unclassified,,,2.43,152.0,1.03,goplus,https://dexscreener.com/bsc/0x5E2F5A94FcFeA8115f363195850849F8898F0e7C,evening scan
+2026-11-04,shortlist,DOPE,solana,1916.3,Dog & animal memes,1.36,77.96,0.94,1.76,23.96,rugcheck,https://dexscreener.com/solana/6iep3EgqksbZwgzMBCyAJtiVtVYkCgL9BnPBEwLR8AGQ,evening scan
+2026-11-04,shortlist,SI276,solana,504.6,AI,1.42,79.25,1.51,3.51,28.72,rugcheck,https://dexscreener.com/solana/12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG,evening scan
+2026-11-04,pullback,ANT,robinhood,1285.7,AI,317.85,60.53,1.06,134.0,2.02,explorer,https://dexscreener.com/robinhood/0xaf7d2ecec21c88509c317726ee7408a390199103f242695dfe554ff5d559f9c3,evening scan
 2026-11-04,pullback,MAMESUKE,solana,1395.7,Unclassified,35.72,52.64,0.55,-20.03,1.53,rugcheck,https://dexscreener.com/solana/HPeXruE5Msv7paz5WPViwScLeSYWgZr8vhDakuiEp5ku,daily scan
 2026-11-04,pullback,WASTED,solana,906.2,Classic memes,303.05,67.13,0.6,4.09,4.26,rugcheck,https://dexscreener.com/solana/TT7DKs9YjJZj1fwMGoPmKBmDreZzyMAMrHoDCGdfwqN,daily scan
+2026-11-04,igniting,PREDICT,solana,760.4,Unclassified,,,3.52,56.3,0.28,rugcheck,https://dexscreener.com/solana/4AAfKd5GYZhJJXJXeqq31KpD4r1dM9grpaD2kq46XfUU,evening scan
+2026-11-04,igniting,SI276,solana,504.6,AI,1.42,79.25,1.51,3.51,28.72,rugcheck,https://dexscreener.com/solana/12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG,evening scan
+2026-11-04,igniting,XTEN,solana,1051.3,Unclassified,,,2.55,55.58,0.39,rugcheck,https://dexscreener.com/solana/4sQ1M4mB6MybZ4Qk1Vn6TszjsYpyLVJwTEpe787xhceu,evening scan
+2026-11-04,momentum,OAK,robinhood,504.9,AI,14.84,20.93,0.91,-18.21,2.33,explorer,https://dexscreener.com/robinhood/0xdb324dde34ef01debe23f8f8ab4bb6053154b5dea8646dec9d8ea65e414fad59,evening scan
 2026-11-04,momentum,SI,robinhood,833.7,AI,365.29,21.93,1.89,-4.69,1.68,explorer,https://dexscreener.com/robinhood/0xbd3ffe5499ab2f76e5c30192d7563ffd0b25392f0c9e5a6507115af6ca2db958,daily scan
 2026-11-04,momentum,币安魂,bsc,589.2,Unclassified,,,0.62,3.07,1.53,goplus,https://dexscreener.com/bsc/0x5E2F5A94FcFeA8115f363195850849F8898F0e7C,daily scan
