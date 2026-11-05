@@ -302,3 +302,8 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-11-04,momentum,OAK,robinhood,504.9,AI,14.84,20.93,0.91,-18.21,2.33,explorer,https://dexscreener.com/robinhood/0xdb324dde34ef01debe23f8f8ab4bb6053154b5dea8646dec9d8ea65e414fad59,evening scan
 2026-11-04,momentum,SI,robinhood,833.7,AI,365.29,21.93,1.89,-4.69,1.68,explorer,https://dexscreener.com/robinhood/0xbd3ffe5499ab2f76e5c30192d7563ffd0b25392f0c9e5a6507115af6ca2db958,daily scan
 2026-11-04,momentum,币安魂,bsc,589.2,Unclassified,,,0.62,3.07,1.53,goplus,https://dexscreener.com/bsc/0x5E2F5A94FcFeA8115f363195850849F8898F0e7C,daily scan
+2026-11-05,shortlist,jeff,solana,1381.5,KOL / personality,2.61,59.57,2.62,49.87,7.98,rugcheck,https://dexscreener.com/solana/JCXWfcZGjgJC8NZa5Qb6JP3cgvqW4vGUg4Tqj87G5ZnY,daily scan
+2026-11-05,igniting,jeff,solana,1381.5,KOL / personality,2.61,59.57,2.62,49.87,7.98,rugcheck,https://dexscreener.com/solana/JCXWfcZGjgJC8NZa5Qb6JP3cgvqW4vGUg4Tqj87G5ZnY,daily scan
+2026-11-05,momentum,Impeach,solana,814.3,KOL / personality,207.46,27.15,1.12,84.58,1.13,rugcheck,https://dexscreener.com/solana/12Y1mRKWEWEwoYqhSwybEsJzM8gAGnig1XqGQLC5uW3V,daily scan
+2026-11-05,momentum,OAK,robinhood,679.4,AI,21.49,21.17,0.99,8.74,2.82,explorer,https://dexscreener.com/robinhood/0xdb324dde34ef01debe23f8f8ab4bb6053154b5dea8646dec9d8ea65e414fad59,daily scan
+2026-11-05,momentum,STONKS,solana,549.7,Classic memes,7.88,60.91,0.72,-32.34,1.27,rugcheck,https://dexscreener.com/solana/4KHfHnqxV4BRGvwoRtuFj2P8P6JesY65sWecVpxfHdpn,daily scan
