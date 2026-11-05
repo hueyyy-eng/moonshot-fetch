@@ -1,10 +1,12 @@
 {
- "now": "2026-11-05 09:15 SGT",
- "slot": "am",
- "cand_at": "2026-11-05 09:15 SGT",
+ "now": "2026-11-05 22:15 SGT",
+ "slot": "pm",
+ "cand_at": "2026-11-05 22:15 SGT",
  "tokens_carried": false,
  "stale": [],
- "notes": [],
+ "notes": [
+  "implausible re-prices ignored (>1000x entry): XTEN (solana) 2,418x ignored; XTEN (solana) 2,418x ignored"
+ ],
  "sources": {
   "llama.dexs_overview": "ok",
   "llama.chains": "ok",
@@ -17,171 +19,173 @@
   "discovery": "partial",
   "geckoterminal": "ok",
   "rugcheck": "ok",
-  "goplus": "ok",
+  "goplus": "partial",
   "blockscout": "ok",
   "reprice": "ok"
  },
  "chains": {
   "hot": [
+   "base",
+   "polygon",
    "thorchain",
+   "sui",
+   "dexalot",
+   "arc",
+   "unichain",
+   "ink",
+   "doma"
+  ],
+  "new": [
+   "arc",
+   "base",
+   "dexalot",
+   "doma",
+   "ink",
+   "polygon",
+   "sui",
+   "unichain"
+  ],
+  "dropped": [
    "eos"
   ],
-  "new": [],
-  "dropped": [],
   "hottest": {
-   "s": "eos",
-   "n": "Eos",
-   "dr": 2.24,
-   "dr30": 1.61
+   "s": "mantle",
+   "n": "Mantle",
+   "dr": 3.93,
+   "dr30": 5.1
   }
  },
  "tokens": {
-  "total": 82,
-  "band_m": 37,
+  "total": 103,
+  "band_m": 39,
   "candle_or_wallet_coverage_pct": 100,
-  "nodata": 0
+  "nodata": 7
  },
- "shortlist": [
-  {
-   "sym": "jeff",
-   "c": "solana",
-   "mc": 1381.5,
-   "nar": "KOL / personality",
-   "run": 2.61,
-   "retr": 59.57,
-   "acc": 2.62,
-   "c6": 49.87,
-   "age": 7.98,
-   "sec": "rugcheck",
-   "pa": "JCXWfcZGjgJC8NZa5Qb6JP3cgvqW4vGUg4Tqj87G5ZnY"
-  }
- ],
- "shortlist_new": [
-  "jeff"
- ],
+ "shortlist": [],
+ "shortlist_new": [],
  "shortlist_dropped": [
-  "DOPE",
-  "SI276"
+  "jeff"
  ],
  "pullback": [],
  "pullback_new": [],
- "pullback_dropped": [
-  "ANT"
- ],
+ "pullback_dropped": [],
  "igniting": [
   {
-   "sym": "jeff",
+   "sym": "PREDICT",
    "c": "solana",
-   "mc": 1381.5,
-   "nar": "KOL / personality",
-   "run": 2.61,
-   "retr": 59.57,
-   "acc": 2.62,
-   "c6": 49.87,
-   "age": 7.98,
+   "mc": 1007.2,
+   "nar": "Unclassified",
+   "run": null,
+   "retr": null,
+   "acc": 2.76,
+   "c6": 65.41,
+   "age": 0.37,
    "sec": "rugcheck",
-   "pa": "JCXWfcZGjgJC8NZa5Qb6JP3cgvqW4vGUg4Tqj87G5ZnY"
+   "pa": "8qv79veb8rA4RLHi7CKxnuP78iS7HRqVdoZjJZDSAuYL"
+  },
+  {
+   "sym": "XTEN",
+   "c": "solana",
+   "mc": 1052.6,
+   "nar": "Unclassified",
+   "run": null,
+   "retr": null,
+   "acc": 2.74,
+   "c6": 62.2,
+   "age": 0.37,
+   "sec": "rugcheck",
+   "pa": "GeHmsyqLrLSwxNDNj5iT3A93z3Er7G4xgA1X1njd3rSJ"
   }
  ],
  "momentum": [
   {
    "sym": "Impeach",
    "c": "solana",
-   "mc": 814.3,
+   "mc": 502.0,
    "nar": "KOL / personality",
    "run": 207.46,
    "retr": 27.15,
-   "acc": 1.12,
-   "c6": 84.58,
-   "age": 1.13,
+   "acc": 0.11,
+   "c6": 4.96,
+   "age": 1.65,
    "sec": "rugcheck",
    "pa": "12Y1mRKWEWEwoYqhSwybEsJzM8gAGnig1XqGQLC5uW3V"
   },
   {
-   "sym": "STONKS",
-   "c": "solana",
-   "mc": 549.7,
-   "nar": "Classic memes",
-   "run": 7.88,
-   "retr": 60.91,
-   "acc": 0.72,
-   "c6": -32.34,
-   "age": 1.27,
-   "sec": "rugcheck",
-   "pa": "4KHfHnqxV4BRGvwoRtuFj2P8P6JesY65sWecVpxfHdpn"
-  },
-  {
-   "sym": "OAK",
-   "c": "robinhood",
-   "mc": 679.4,
-   "nar": "AI",
-   "run": 21.49,
-   "retr": 21.17,
-   "acc": 0.99,
-   "c6": 8.74,
-   "age": 2.82,
-   "sec": "explorer",
-   "pa": "0xdb324dde34ef01debe23f8f8ab4bb6053154b5dea8646dec9d8ea65e414fad59"
+   "sym": "爱奇艺",
+   "c": "bsc",
+   "mc": 784.2,
+   "nar": "Unclassified",
+   "run": 37.36,
+   "retr": 5.47,
+   "acc": 0.98,
+   "c6": 80.89,
+   "age": 1.06,
+   "sec": "goplus",
+   "pa": "0xdc06bf60826EEE79167a68a946BbBDc7276DA804"
   }
  ],
  "momentum_new": [
-  "Impeach",
-  "STONKS"
+  "爱奇艺"
  ],
  "momentum_dropped": [
-  "SI"
+  "OAK",
+  "STONKS"
  ],
  "honeypots_new": [],
  "track": {
   "logged": 103,
-  "new_rows": [
-   [
-    "jeff",
-    "S"
-   ]
-  ],
+  "new_rows": [],
   "best_x": 14.93,
   "median_peak_x": 1.05,
   "hit_2x_today": [
-   "GIGATENEV (robinhood)"
+   "ANT (robinhood)"
   ],
   "to_zero_today": [],
   "repriced": true
  },
  "igniting_track": {
-  "logged": 56,
+  "logged": 58,
   "new_rows": [
-   "jeff"
+   "PREDICT",
+   "XTEN"
   ],
-  "hit_2x_today": [
-   "PREDICT (solana)",
-   "XTEN (solana)"
-  ],
+  "hit_2x_today": [],
   "to_zero_today": []
  },
  "momentum_track": {
-  "logged": 77,
+  "logged": 78,
   "new_rows": [
-   "Impeach",
-   "STONKS"
+   "爱奇艺"
   ],
   "hit_2x_today": [
-   "DOPE (solana)"
-  ],
-  "to_zero_today": []
- },
- "control": {
-  "rows": 756,
-  "median_peak_x": 1.0,
-  "hit_2x_today": [
-   "JOB (solana)",
-   "XTEN (solana)",
-   "PREDICT (solana)"
+   "ANT (robinhood)"
   ],
   "to_zero_today": [
-   "BLAST (robinhood)",
-   "ZEBRA (solana)",
-   "Claude (robinhood)"
+   "Pumpkin (bsc)",
+   "SAFU (bsc)"
+  ]
+ },
+ "control": {
+  "rows": 763,
+  "median_peak_x": 1.0,
+  "hit_2x_today": [
+   "ANT (robinhood)"
+  ],
+  "to_zero_today": [
+   "Maple (robinhood)",
+   "OS (solana)",
+   "CHINAPAD (robinhood)",
+   "FlyBrain (bsc)",
+   "Flylife (bsc)",
+   "GOOSE (robinhood)",
+   "MOON (bsc)",
+   "富途牛牛&币安 (bsc)",
+   "WOLFINA (ethereum)",
+   "Pumpkin (bsc)",
+   "SAFU (bsc)",
+   "ANT (ethereum)",
+   "Anthropic (robinhood)"
   ]
  },
  "changed": true,
