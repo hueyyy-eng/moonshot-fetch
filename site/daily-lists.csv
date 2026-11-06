@@ -310,3 +310,6 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-11-05,momentum,OAK,robinhood,679.4,AI,21.49,21.17,0.99,8.74,2.82,explorer,https://dexscreener.com/robinhood/0xdb324dde34ef01debe23f8f8ab4bb6053154b5dea8646dec9d8ea65e414fad59,daily scan
 2026-11-05,momentum,STONKS,solana,549.7,Classic memes,7.88,60.91,0.72,-32.34,1.27,rugcheck,https://dexscreener.com/solana/4KHfHnqxV4BRGvwoRtuFj2P8P6JesY65sWecVpxfHdpn,daily scan
 2026-11-05,momentum,爱奇艺,bsc,784.2,Unclassified,37.36,5.47,0.98,80.89,1.06,goplus,https://dexscreener.com/bsc/0xdc06bf60826EEE79167a68a946BbBDc7276DA804,evening scan
+2026-11-06,igniting,PREDICT,solana,848.1,Unclassified,,,3.15,66.03,0.32,rugcheck,https://dexscreener.com/solana/FRSrUPVvuF4bSeQAZdVrCNmVwywhZr2S8CKnMn5UzNX7,daily scan
+2026-11-06,momentum,AMD,solana,695.4,Dog & animal memes,42.82,79.24,0.54,35.21,2.12,rugcheck,https://dexscreener.com/solana/7RD5YALHcMLUFKJ8FRePGd6ei11F15uXZF1rc7mPKeCv,daily scan
+2026-11-06,momentum,SAFU,bsc,609.9,Unclassified,51.87,46.12,0.77,76.99,1.44,goplus,https://dexscreener.com/bsc/0x4bbd2227d7149c57319b10eE27C8c3BFBC55Fea8,daily scan

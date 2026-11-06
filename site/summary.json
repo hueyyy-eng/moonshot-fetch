@@ -1,11 +1,11 @@
 {
- "now": "2026-11-05 22:15 SGT",
- "slot": "pm",
- "cand_at": "2026-11-05 22:15 SGT",
+ "now": "2026-11-06 09:50 SGT",
+ "slot": "am",
+ "cand_at": "2026-11-06 09:50 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [
-  "implausible re-prices ignored (>1000x entry): XTEN (solana) 2,418x ignored; XTEN (solana) 2,418x ignored"
+  "implausible re-prices ignored (>1000x entry): XTEN (solana) 2,418x ignored; XTEN (solana) 2,226x ignored; XTEN (solana) 2,418x ignored; XTEN (solana) 2,226x ignored"
  ],
  "sources": {
   "llama.dexs_overview": "ok",
@@ -19,7 +19,7 @@
   "discovery": "partial",
   "geckoterminal": "ok",
   "rugcheck": "ok",
-  "goplus": "partial",
+  "goplus": "ok",
   "blockscout": "ok",
   "reprice": "ok"
  },
@@ -27,7 +27,6 @@
   "hot": [
    "base",
    "polygon",
-   "thorchain",
    "sui",
    "dexalot",
    "arc",
@@ -35,37 +34,26 @@
    "ink",
    "doma"
   ],
-  "new": [
-   "arc",
-   "base",
-   "dexalot",
-   "doma",
-   "ink",
-   "polygon",
-   "sui",
-   "unichain"
-  ],
+  "new": [],
   "dropped": [
-   "eos"
+   "thorchain"
   ],
   "hottest": {
    "s": "mantle",
    "n": "Mantle",
-   "dr": 3.93,
+   "dr": 2.91,
    "dr30": 5.1
   }
  },
  "tokens": {
-  "total": 103,
-  "band_m": 39,
+  "total": 106,
+  "band_m": 38,
   "candle_or_wallet_coverage_pct": 100,
-  "nodata": 7
+  "nodata": 6
  },
  "shortlist": [],
  "shortlist_new": [],
- "shortlist_dropped": [
-  "jeff"
- ],
+ "shortlist_dropped": [],
  "pullback": [],
  "pullback_new": [],
  "pullback_dropped": [],
@@ -73,119 +61,105 @@
   {
    "sym": "PREDICT",
    "c": "solana",
-   "mc": 1007.2,
+   "mc": 848.1,
    "nar": "Unclassified",
    "run": null,
    "retr": null,
-   "acc": 2.76,
-   "c6": 65.41,
-   "age": 0.37,
+   "acc": 3.15,
+   "c6": 66.03,
+   "age": 0.32,
    "sec": "rugcheck",
-   "pa": "8qv79veb8rA4RLHi7CKxnuP78iS7HRqVdoZjJZDSAuYL"
-  },
-  {
-   "sym": "XTEN",
-   "c": "solana",
-   "mc": 1052.6,
-   "nar": "Unclassified",
-   "run": null,
-   "retr": null,
-   "acc": 2.74,
-   "c6": 62.2,
-   "age": 0.37,
-   "sec": "rugcheck",
-   "pa": "GeHmsyqLrLSwxNDNj5iT3A93z3Er7G4xgA1X1njd3rSJ"
+   "pa": "FRSrUPVvuF4bSeQAZdVrCNmVwywhZr2S8CKnMn5UzNX7"
   }
  ],
  "momentum": [
   {
-   "sym": "Impeach",
-   "c": "solana",
-   "mc": 502.0,
-   "nar": "KOL / personality",
-   "run": 207.46,
-   "retr": 27.15,
-   "acc": 0.11,
-   "c6": 4.96,
-   "age": 1.65,
-   "sec": "rugcheck",
-   "pa": "12Y1mRKWEWEwoYqhSwybEsJzM8gAGnig1XqGQLC5uW3V"
+   "sym": "SAFU",
+   "c": "bsc",
+   "mc": 609.9,
+   "nar": "Unclassified",
+   "run": 51.87,
+   "retr": 46.12,
+   "acc": 0.77,
+   "c6": 76.99,
+   "age": 1.44,
+   "sec": "goplus",
+   "pa": "0x4bbd2227d7149c57319b10eE27C8c3BFBC55Fea8"
   },
   {
-   "sym": "爱奇艺",
-   "c": "bsc",
-   "mc": 784.2,
-   "nar": "Unclassified",
-   "run": 37.36,
-   "retr": 5.47,
-   "acc": 0.98,
-   "c6": 80.89,
-   "age": 1.06,
-   "sec": "goplus",
-   "pa": "0xdc06bf60826EEE79167a68a946BbBDc7276DA804"
+   "sym": "AMD",
+   "c": "solana",
+   "mc": 695.4,
+   "nar": "Dog & animal memes",
+   "run": 42.82,
+   "retr": 79.24,
+   "acc": 0.54,
+   "c6": 35.21,
+   "age": 2.12,
+   "sec": "rugcheck",
+   "pa": "7RD5YALHcMLUFKJ8FRePGd6ei11F15uXZF1rc7mPKeCv"
   }
  ],
  "momentum_new": [
-  "爱奇艺"
+  "AMD",
+  "SAFU"
  ],
  "momentum_dropped": [
-  "OAK",
-  "STONKS"
+  "Impeach",
+  "爱奇艺"
  ],
- "honeypots_new": [],
+ "honeypots_new": [
+  "ARIA",
+  "ON",
+  "LBTC"
+ ],
  "track": {
   "logged": 103,
   "new_rows": [],
   "best_x": 14.93,
   "median_peak_x": 1.05,
-  "hit_2x_today": [
-   "ANT (robinhood)"
-  ],
+  "hit_2x_today": [],
   "to_zero_today": [],
   "repriced": true
  },
  "igniting_track": {
-  "logged": 58,
+  "logged": 59,
   "new_rows": [
-   "PREDICT",
-   "XTEN"
+   "PREDICT"
   ],
   "hit_2x_today": [],
   "to_zero_today": []
  },
  "momentum_track": {
-  "logged": 78,
+  "logged": 80,
   "new_rows": [
-   "爱奇艺"
+   "SAFU",
+   "AMD"
   ],
   "hit_2x_today": [
-   "ANT (robinhood)"
+   "爱奇艺 (bsc)"
   ],
-  "to_zero_today": [
-   "Pumpkin (bsc)",
-   "SAFU (bsc)"
-  ]
+  "to_zero_today": []
  },
  "control": {
-  "rows": 763,
+  "rows": 769,
   "median_peak_x": 1.0,
   "hit_2x_today": [
-   "ANT (robinhood)"
+   "RAYCAT (solana)",
+   "JOB (solana)"
   ],
   "to_zero_today": [
-   "Maple (robinhood)",
-   "OS (solana)",
-   "CHINAPAD (robinhood)",
-   "FlyBrain (bsc)",
-   "Flylife (bsc)",
-   "GOOSE (robinhood)",
-   "MOON (bsc)",
-   "富途牛牛&币安 (bsc)",
-   "WOLFINA (ethereum)",
-   "Pumpkin (bsc)",
-   "SAFU (bsc)",
-   "ANT (ethereum)",
-   "Anthropic (robinhood)"
+   "LAURA (robinhood)",
+   "KNOT (bsc)",
+   "KEVIN (solana)",
+   "ROBINPEPE (robinhood)",
+   "7 (solana)",
+   "TasQ (robinhood)",
+   "ANTS (solana)",
+   "OPTIPEPE (ethereum)",
+   "David (solana)",
+   "MINIMAL (ethereum)",
+   "AMD (robinhood)"
   ]
  },
  "changed": true,
