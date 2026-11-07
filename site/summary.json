@@ -1,10 +1,12 @@
 {
- "now": "2026-11-07 09:35 SGT",
- "slot": "am",
- "cand_at": "2026-11-07 09:35 SGT",
+ "now": "2026-11-07 20:20 SGT",
+ "slot": "pm",
+ "cand_at": "2026-11-07 20:20 SGT",
  "tokens_carried": false,
  "stale": [],
- "notes": [],
+ "notes": [
+  "implausible re-prices ignored (>1000x entry): 腾讯场 (bsc) 11,570,312x ignored"
+ ],
  "sources": {
   "llama.dexs_overview": "ok",
   "llama.chains": "ok",
@@ -23,268 +25,152 @@
  },
  "chains": {
   "hot": [
-   "dexalot",
-   "sui",
-   "edgex",
    "doma",
+   "ripple",
    "ink"
   ],
-  "new": [],
+  "new": [
+   "ripple"
+  ],
   "dropped": [
-   "chainflip"
+   "dexalot",
+   "edgex",
+   "sui"
   ],
   "hottest": {
-   "s": "dexalot",
-   "n": "Dexalot",
-   "dr": 2.27,
-   "dr30": 2.03
+   "s": "thorchain",
+   "n": "Thorchain",
+   "dr": 2.18,
+   "dr30": 4.14
   }
  },
  "tokens": {
-  "total": 93,
+  "total": 72,
   "band_m": 31,
   "candle_or_wallet_coverage_pct": 100,
-  "nodata": 7
+  "nodata": 1
  },
  "shortlist": [
   {
-   "sym": "BAGSPAY",
-   "c": "solana",
-   "mc": 1570.7,
-   "nar": "Unclassified",
-   "run": 2.37,
-   "retr": 37.34,
-   "acc": 2.75,
-   "c6": 80.77,
-   "age": 39.03,
-   "sec": "rugcheck",
-   "pa": "DxSBgaYreFNFxGu9TEC17n4Usq5jjy4Zf9djT7RBLrGf"
-  },
-  {
-   "sym": "three",
-   "c": "solana",
-   "mc": 557.1,
-   "nar": "AI",
-   "run": 1.29,
-   "retr": 31.76,
-   "acc": 0.37,
-   "c6": -6.24,
-   "age": 191.72,
-   "sec": "rugcheck",
-   "pa": "5ByL7MZoLABYnwMPZKPKjf4MGkZ7FeBzrAnos19Pre2z"
-  },
-  {
    "sym": "jeff",
    "c": "solana",
-   "mc": 864.1,
+   "mc": 1004.9,
    "nar": "KOL / personality",
    "run": 1.34,
    "retr": 76.82,
-   "acc": 1.59,
-   "c6": 13.15,
-   "age": 9.98,
+   "acc": 0.26,
+   "c6": 1.55,
+   "age": 10.44,
    "sec": "rugcheck",
    "pa": "JCXWfcZGjgJC8NZa5Qb6JP3cgvqW4vGUg4Tqj87G5ZnY"
-  },
-  {
-   "sym": "CLAUS",
-   "c": "robinhood",
-   "mc": 1585.2,
-   "nar": "AI",
-   "run": 1.38,
-   "retr": 53.11,
-   "acc": 2.54,
-   "c6": -10.58,
-   "age": 1.02,
-   "sec": "explorer",
-   "pa": "0x51c9a331b57ac985e5b66849ae04a755a9f6257d2b88ae951f9e5a1c7116e6a7"
   }
  ],
- "shortlist_new": [
+ "shortlist_new": [],
+ "shortlist_dropped": [
   "BAGSPAY",
   "CLAUS",
-  "jeff",
   "three"
- ],
- "shortlist_dropped": [
-  "BABA"
  ],
  "pullback": [],
  "pullback_new": [],
- "pullback_dropped": [
-  "MAMESUKE"
- ],
- "igniting": [
-  {
-   "sym": "BAGSPAY",
-   "c": "solana",
-   "mc": 1570.7,
-   "nar": "Unclassified",
-   "run": 2.37,
-   "retr": 37.34,
-   "acc": 2.75,
-   "c6": 80.77,
-   "age": 39.03,
-   "sec": "rugcheck",
-   "pa": "DxSBgaYreFNFxGu9TEC17n4Usq5jjy4Zf9djT7RBLrGf"
-  },
-  {
-   "sym": "jeff",
-   "c": "solana",
-   "mc": 864.1,
-   "nar": "KOL / personality",
-   "run": 1.34,
-   "retr": 76.82,
-   "acc": 1.59,
-   "c6": 13.15,
-   "age": 9.98,
-   "sec": "rugcheck",
-   "pa": "JCXWfcZGjgJC8NZa5Qb6JP3cgvqW4vGUg4Tqj87G5ZnY"
-  }
- ],
+ "pullback_dropped": [],
+ "igniting": [],
  "momentum": [
-  {
-   "sym": "coin",
-   "c": "solana",
-   "mc": 568.6,
-   "nar": "Tokenised equities",
-   "run": 21.73,
-   "retr": 38.91,
-   "acc": 0.96,
-   "c6": 112.0,
-   "age": 1.02,
-   "sec": "rugcheck",
-   "pa": "GaCmBdqtW7HbUEv6BWe583Yxw5gS9gjGr59GYmvygTRi"
-  },
-  {
-   "sym": "ASI",
-   "c": "bsc",
-   "mc": 1036.2,
-   "nar": "Dog & animal memes",
-   "run": 111.59,
-   "retr": 6.48,
-   "acc": 0.79,
-   "c6": 34.2,
-   "age": 1.36,
-   "sec": "goplus",
-   "pa": "0xADd329E52669aBABE0DAC6A35D2BB3D5BAdc0F58"
-  },
   {
    "sym": "Rocco",
    "c": "solana",
-   "mc": 792.8,
+   "mc": 802.7,
    "nar": "Classic memes",
    "run": 6.35,
    "retr": 26.73,
-   "acc": 0.43,
-   "c6": 10.74,
-   "age": 1.39,
+   "acc": 0.24,
+   "c6": 10.02,
+   "age": 1.85,
    "sec": "rugcheck",
    "pa": "3jW1ykKqUTNgNUDGbrwXpvZKtMFf4pWytoTP3TeXhKBQ"
   },
   {
+   "sym": "WEALTH",
+   "c": "solana",
+   "mc": 589.2,
+   "nar": "Unclassified",
+   "run": 7.27,
+   "retr": 31.6,
+   "acc": 1.04,
+   "c6": 56.55,
+   "age": 1.85,
+   "sec": "rugcheck",
+   "pa": "5n8V68fCaNTRQvaXzrmBryDe5jFLrgm65pFfsmia6Nro"
+  },
+  {
    "sym": "CORLA",
    "c": "bsc",
-   "mc": 674.0,
+   "mc": 579.2,
    "nar": "Unclassified",
    "run": 7.89,
    "retr": 60.48,
-   "acc": 0.5,
-   "c6": 11.06,
-   "age": 1.78,
+   "acc": 0.88,
+   "c6": 15.15,
+   "age": 2.24,
    "sec": "goplus",
    "pa": "0xe015a78814EbAdEB0f202446E64B970642F9B965"
-  },
-  {
-   "sym": "腾讯场",
-   "c": "bsc",
-   "mc": 1280.7,
-   "nar": "Unclassified",
-   "run": 56.66,
-   "retr": 3.79,
-   "acc": 0.78,
-   "c6": 10.82,
-   "age": 1.4,
-   "sec": "goplus",
-   "pa": "0xfd72aAd8AED0f638D2b86Dc3fe9Ca6B3D37D6D74"
   }
  ],
  "momentum_new": [
+  "WEALTH"
+ ],
+ "momentum_dropped": [
   "ASI",
-  "Rocco",
   "coin",
   "腾讯场"
  ],
- "momentum_dropped": [
-  "AMD"
- ],
- "honeypots_new": [
-  "MINIMAL",
-  "apxUSD"
- ],
+ "honeypots_new": [],
  "track": {
   "logged": 105,
-  "new_rows": [
-   [
-    "BAGSPAY",
-    "S"
-   ],
-   [
-    "CLAUS",
-    "S"
-   ]
-  ],
+  "new_rows": [],
   "best_x": 14.93,
-  "median_peak_x": 1.04,
+  "median_peak_x": 1.05,
   "hit_2x_today": [
-   "SAFU (bsc)"
+   "CBUCKS (solana)"
   ],
-  "to_zero_today": [
-   "STONKS (robinhood)"
-  ],
+  "to_zero_today": [],
   "repriced": true
  },
  "igniting_track": {
   "logged": 60,
-  "new_rows": [
-   "BAGSPAY"
-  ],
+  "new_rows": [],
   "hit_2x_today": [],
   "to_zero_today": [
-   "PREDICT (solana)",
-   "XTEN (solana)"
+   "PREDICT (solana)"
   ]
  },
  "momentum_track": {
-  "logged": 85,
+  "logged": 86,
   "new_rows": [
-   "coin",
-   "ASI",
-   "Rocco",
-   "腾讯场"
+   "WEALTH"
   ],
   "hit_2x_today": [],
   "to_zero_today": [
-   "爱奇艺 (bsc)"
+   "SAFU (bsc)"
   ]
  },
  "control": {
-  "rows": 775,
+  "rows": 778,
   "median_peak_x": 1.0,
   "hit_2x_today": [
-   "PSTR (hyperevm)",
-   "FLOAT (solana)"
+   "RAYCAT (solana)",
+   "STANK (solana)"
   ],
   "to_zero_today": [
-   "PAIREX (robinhood)",
-   "GLXY (robinhood)",
-   "CHINAPAD (robinhood)",
-   "FlyBrain (bsc)",
-   "AMBA (solana)",
-   "SI (robinhood)",
-   "JEV (robinhood)",
-   "AMD (solana)",
-   "XTEN (solana)",
+   "Maple (robinhood)",
+   "FOMOBALL (robinhood)",
+   "CDOG (solana)",
+   "BOB (solana)",
+   "CSI (bsc)",
+   "MOON (bsc)",
+   "OWLDACITY (solana)",
+   "SAFU (bsc)",
+   "COGE (robinhood)",
    "PREDICT (solana)"
   ]
  },

@@ -326,4 +326,5 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-11-07,momentum,coin,solana,568.6,Tokenised equities,21.73,38.91,0.96,112.0,1.02,rugcheck,https://dexscreener.com/solana/GaCmBdqtW7HbUEv6BWe583Yxw5gS9gjGr59GYmvygTRi,daily scan
 2026-11-07,momentum,CORLA,bsc,674.0,Unclassified,7.89,60.48,0.5,11.06,1.78,goplus,https://dexscreener.com/bsc/0xe015a78814EbAdEB0f202446E64B970642F9B965,daily scan
 2026-11-07,momentum,Rocco,solana,792.8,Classic memes,6.35,26.73,0.43,10.74,1.39,rugcheck,https://dexscreener.com/solana/3jW1ykKqUTNgNUDGbrwXpvZKtMFf4pWytoTP3TeXhKBQ,daily scan
+2026-11-07,momentum,WEALTH,solana,589.2,Unclassified,7.27,31.6,1.04,56.55,1.85,rugcheck,https://dexscreener.com/solana/5n8V68fCaNTRQvaXzrmBryDe5jFLrgm65pFfsmia6Nro,evening scan
 2026-11-07,momentum,腾讯场,bsc,1280.7,Unclassified,56.66,3.79,0.78,10.82,1.4,goplus,https://dexscreener.com/bsc/0xfd72aAd8AED0f638D2b86Dc3fe9Ca6B3D37D6D74,daily scan
