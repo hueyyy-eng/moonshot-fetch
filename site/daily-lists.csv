@@ -316,3 +316,14 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-11-06,momentum,AMD,solana,695.4,Dog & animal memes,42.82,79.24,0.54,35.21,2.12,rugcheck,https://dexscreener.com/solana/7RD5YALHcMLUFKJ8FRePGd6ei11F15uXZF1rc7mPKeCv,daily scan
 2026-11-06,momentum,CORLA,bsc,773.5,Unclassified,13.38,32.99,0.77,-16.07,1.29,goplus,https://dexscreener.com/bsc/0xe015a78814EbAdEB0f202446E64B970642F9B965,evening scan
 2026-11-06,momentum,SAFU,bsc,609.9,Unclassified,51.87,46.12,0.77,76.99,1.44,goplus,https://dexscreener.com/bsc/0x4bbd2227d7149c57319b10eE27C8c3BFBC55Fea8,daily scan
+2026-11-07,shortlist,BAGSPAY,solana,1570.7,Unclassified,2.37,37.34,2.75,80.77,39.03,rugcheck,https://dexscreener.com/solana/DxSBgaYreFNFxGu9TEC17n4Usq5jjy4Zf9djT7RBLrGf,daily scan
+2026-11-07,shortlist,CLAUS,robinhood,1585.2,AI,1.38,53.11,2.54,-10.58,1.02,explorer,https://dexscreener.com/robinhood/0x51c9a331b57ac985e5b66849ae04a755a9f6257d2b88ae951f9e5a1c7116e6a7,daily scan
+2026-11-07,shortlist,jeff,solana,864.1,KOL / personality,1.34,76.82,1.59,13.15,9.98,rugcheck,https://dexscreener.com/solana/JCXWfcZGjgJC8NZa5Qb6JP3cgvqW4vGUg4Tqj87G5ZnY,daily scan
+2026-11-07,shortlist,three,solana,557.1,AI,1.29,31.76,0.37,-6.24,191.72,rugcheck,https://dexscreener.com/solana/5ByL7MZoLABYnwMPZKPKjf4MGkZ7FeBzrAnos19Pre2z,daily scan
+2026-11-07,igniting,BAGSPAY,solana,1570.7,Unclassified,2.37,37.34,2.75,80.77,39.03,rugcheck,https://dexscreener.com/solana/DxSBgaYreFNFxGu9TEC17n4Usq5jjy4Zf9djT7RBLrGf,daily scan
+2026-11-07,igniting,jeff,solana,864.1,KOL / personality,1.34,76.82,1.59,13.15,9.98,rugcheck,https://dexscreener.com/solana/JCXWfcZGjgJC8NZa5Qb6JP3cgvqW4vGUg4Tqj87G5ZnY,daily scan
+2026-11-07,momentum,ASI,bsc,1036.2,Dog & animal memes,111.59,6.48,0.79,34.2,1.36,goplus,https://dexscreener.com/bsc/0xADd329E52669aBABE0DAC6A35D2BB3D5BAdc0F58,daily scan
+2026-11-07,momentum,coin,solana,568.6,Tokenised equities,21.73,38.91,0.96,112.0,1.02,rugcheck,https://dexscreener.com/solana/GaCmBdqtW7HbUEv6BWe583Yxw5gS9gjGr59GYmvygTRi,daily scan
+2026-11-07,momentum,CORLA,bsc,674.0,Unclassified,7.89,60.48,0.5,11.06,1.78,goplus,https://dexscreener.com/bsc/0xe015a78814EbAdEB0f202446E64B970642F9B965,daily scan
+2026-11-07,momentum,Rocco,solana,792.8,Classic memes,6.35,26.73,0.43,10.74,1.39,rugcheck,https://dexscreener.com/solana/3jW1ykKqUTNgNUDGbrwXpvZKtMFf4pWytoTP3TeXhKBQ,daily scan
+2026-11-07,momentum,腾讯场,bsc,1280.7,Unclassified,56.66,3.79,0.78,10.82,1.4,goplus,https://dexscreener.com/bsc/0xfd72aAd8AED0f638D2b86Dc3fe9Ca6B3D37D6D74,daily scan
