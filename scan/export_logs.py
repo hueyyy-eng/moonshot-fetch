@@ -91,7 +91,7 @@ def main() -> int:
 PT_HEADER = ["listed_date", "list", "symbol", "chain", "listed_mcap_k", "listed_price_usd", "price_now_usd",
              "change_since_listed_pct", "best_pct", "worst_pct", "low_tracked_from_listing", "days_since_listed",
              "peak_on_day", "pair_url"]
-PT_LIST = {"S": "shortlist", "P": "pullback", "I": "igniting", "M": "momentum"}
+PT_LIST = {"S": "shortlist", "P": "pullback", "I": "igniting", "M": "momentum", "U": "runners"}
 
 
 def _pct(v, px):
@@ -103,13 +103,14 @@ def write_price_tracking(src: str, hist: list, path: str) -> None:
     Same figures as the dashboard's Price tracking tab."""
     ign = read_const(src, "IGNHIST") if "const IGNHIST = " in src else []
     mom = read_const(src, "MOMHIST") if "const MOMHIST = " in src else []
+    run = read_const(src, "RUNHIST") if "const RUNHIST = " in src else []
     from datetime import date
     try:
         today = date.fromisoformat(str(read_const(src, "LOG_AT"))[:10])
     except Exception:  # noqa: BLE001
         today = None
     rows = []
-    for r in list(hist) + list(ign) + list(mom):
+    for r in list(hist) + list(ign) + list(mom) + list(run):
         px = r.get("px")
         if not px:
             continue
@@ -134,7 +135,8 @@ def write_price_tracking(src: str, hist: list, path: str) -> None:
 # so a quiet day is distinguishable from a day the scan did not run.
 DAILY_HEADER = ["scan_date", "list", "symbol", "chain", "mcap_k", "narrative", "run_x_off_7d_low", "pct_below_high",
                 "vol_6h_pace_x", "change_6h_pct", "age_days", "safety_source", "pair_url", "source"]
-LIST_NAMES = (("shortlist", "shortlist"), ("pullback", "pullback"), ("igniting", "igniting"), ("momentum", "momentum"))
+LIST_NAMES = (("shortlist", "shortlist"), ("pullback", "pullback"), ("igniting", "igniting"), ("momentum", "momentum"),
+              ("runners", "runners"))
 
 
 def daily_rows(summary: dict, source: str = "") -> list[list]:
@@ -176,7 +178,7 @@ def update_daily_lists(summary: dict, path: str) -> None:
     merged += [row for row in fresh if row[1] != "none" and (row[1], row[12]) not in seen]
     if not merged:
         merged = (today_old or fresh)[:1]
-    order = ["shortlist", "pullback", "igniting", "momentum", "none"]
+    order = ["shortlist", "pullback", "igniting", "momentum", "runners", "none"]
     rows = sorted(old + merged, key=lambda x: (x[0], order.index(x[1]) if x[1] in order else 9, str(x[2]).lower()))
     with open(path, "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)

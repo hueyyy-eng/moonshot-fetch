@@ -75,6 +75,25 @@ If a change would break one of them, stop and ask first.
   mirrored in `site/page.html`). Keep the tag whenever this exception applies. If a rug service adds Elysium, wire it
   into `fetch/safety.py` and the exception stops applying by itself (it only covers tokens with no rug data).
 
+## Lists, score and tags (owner's review of the back-tests, 8 Nov 2026)
+
+- **Five lists:** Shortlist, Pullback, Igniting, Momentum and **» Runners** (experimental): already ran 3×+ but under
+  3 days old, buyer share 70–90%, trading 10×+ its liquidity, usual liquidity / mcap / wash / honeypot checks, unknown
+  rug data allowed (as Momentum). A token on another list stays there. Runners are logged (`RUNHIST`, list code `U`)
+  to Price tracking, the CSVs and the pattern study like the other lists. Keep it until a review decides otherwise.
+- **Score (0–100)** on every token, lists sorted highest first: buyer share 70–90% 25, age 1–7 days 20, 24h move
+  +100–300% 15, Solana/BSC/Ethereum 15, mcap $1–2m 10, turnover 10×+ 10, has X/site 5. Same rules in
+  `scan/build_block.py` (`score`) and `site/page.html` (`score`); the points table and back-test results are shown
+  under "How the Score works" in the How to use tab. Change the points only after a review, in both places.
+- **"Has an X or a site" is a warning, not a gate** (`SOFT_GATES`): it is still shown, with a grey "no X / site" tag,
+  but never keeps a token off a list.
+- **"tracks an asset"** (grey tag): price stayed within ~15% over 7 days (`run` ≤ 1.15 and `retr` ≤ 13). Never removed;
+  always sorted to the bottom of every list and of the token table. Decided by price behaviour, not by type label
+  (type labels wrongly caught PSTR, FLOAT and HYDX, which pumped).
+- **Robinhood Chain:** no extra hard bar (back-test: it would have dropped 28 of its 30 winners). The score ranks
+  weak Robinhood tokens lower instead.
+- **Bi-weekly review:** the owner reviews the dashboard every other Sunday. Rule changes only after the owner approves.
+
 ## Narrative labels
 
 - **"Utilities"** = tools, DeFi, trading infrastructure, data, and general infrastructure. Not launchpads.
