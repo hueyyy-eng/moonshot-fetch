@@ -329,8 +329,14 @@ def launch_description(http, t: dict) -> str:
         return ""
     STATS["launch_tried"] += 1
     try:
-        uri = metadata_uri(http.post_json(SOLANA_RPC, {"jsonrpc": "2.0", "id": 1, "method": "getAccountInfo",
-                                                        "params": [t["ta"], {"encoding": "jsonParsed"}]}))
+        # plain client name: the public RPC refuses the browser-like identity the scanner uses elsewhere (403)
+        import requests
+        time.sleep(0.5)
+        r = requests.post(SOLANA_RPC, json={"jsonrpc": "2.0", "id": 1, "method": "getAccountInfo",
+                                            "params": [t["ta"], {"encoding": "jsonParsed"}]},
+                          headers={"User-Agent": "moonshot-scanner/1.0"}, timeout=12)
+        r.raise_for_status()
+        uri = metadata_uri(r.json())
     except Exception as e:  # noqa: BLE001 - best-effort
         print(f"  solana rpc {t.get('sym')}: {str(e)[:60]}")
         return ""
@@ -342,6 +348,7 @@ def launch_description(http, t: dict) -> str:
         desc = str((j or {}).get("description") or "").strip() if isinstance(j, dict) else ""
         if desc:
             STATS["launch_ok"] += 1
+            print(f"  launch text {t.get('sym')}: {desc[:110]!r}")
         return desc
     return ""
 
@@ -364,6 +371,7 @@ def dexscreener_description(http, t: dict) -> str:
         return ""
     if desc:
         STATS["ds_ok"] += 1
+        print(f"  dexscreener text {t.get('sym')}: {desc[:110]!r}")
     return desc
 
 
