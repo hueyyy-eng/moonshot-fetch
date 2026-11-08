@@ -320,7 +320,7 @@
 </section>
 
 <section class="step" id="momentum">
-  <div class="step-head"><h2><b>⚡</b>Momentum</h2><span class="rule">Experimental (13 Oct 2026). The opposite bet to the Shortlist: tokens 1–3 days old on Solana, BSC or Robinhood Chain, $500k–2m cap, with buyers between 45% and 90% of traders and no honeypot flag. In the first 23 days of snapshots this profile reached 2× about three times as often as average — and was down 50%+ well over half the time. High variance by design; judge it by its own track record below, not by this description.</span></div>
+  <div class="step-head"><h2><b>⚡</b>Momentum</h2><span class="rule">Experimental (13 Oct 2026). The opposite bet to the Shortlist: tokens 1–3 days old on Solana, BSC, Robinhood Chain or Elysium, $500k–2m cap, with buyers between 45% and 90% of traders and no honeypot flag. In the first 23 days of snapshots this profile reached 2× about three times as often as average — and was down 50%+ well over half the time. High variance by design; judge it by its own track record below, not by this description.</span></div>
   <div class="tablewrap"><table><thead><tr id="momHead"></tr></thead><tbody id="momBody"></tbody></table></div>
   <div class="note" id="momNote"></div>
 </section>
@@ -482,7 +482,7 @@
   <h3>Daily checklist</h3>
   <ol>
     <li><strong>Check the date at the top.</strong> Make sure you are looking at today's scan (GitHub sometimes starts it hours late).</li>
-    <li><strong>Liquidity flow (step 1):</strong> which chains are "hot". Tokens are searched on hot chains, the 5 core chains, and the 3 chains with the biggest 7-day net inflow (tagged <span class="chip">top inflow</span>).</li>
+    <li><strong>Liquidity flow (step 1):</strong> which chains are "hot". Tokens are searched on hot chains, the 6 core chains (including Elysium), and the 3 chains with the biggest 7-day net inflow (tagged <span class="chip">top inflow</span>).</li>
     <li><strong>Read the four lists:</strong> ★ Shortlist (passed every check), ◆ Pullback watch (ran, dipped, buyers still there), ▲ Igniting (moving right now — act fast or skip), ⚡ Momentum (experimental, very new tokens).</li>
     <li><strong>For any token you like, check it yourself:</strong> hover the gate bars and safety pill to see why it passed, note its type tag, then use <a href="#s4">Narrative</a> to see whether real people on X are talking about it.</li>
     <li><strong>Size it with the <a href="#playbook">Playbook</a>:</strong> pot A (safest) gets the biggest share, then B, then C; pot C only in easy markets.</li>
@@ -2002,7 +2002,7 @@ const fmtSigned = v => v==null ? "—" : (v>0?"+":v<0?"−":"") + fmtM(Math.abs(
 const fmtX = v => v==null ? "—" : v.toFixed(2)+"×";
 const pct = v => v==null ? '<span class="dim">—</span>' : `<span class="${v>0?"pos":v<0?"neg":"dim"}">${v>0?"+":v<0?"−":""}${Math.abs(v)>=1000?(Math.abs(v)/1000).toFixed(1)+"k":Math.abs(v).toFixed(Math.abs(v)>=100?0:1)}%</span>`;
 const ageTxt = d => d==null ? "—" : d<1 ? Math.max(1,Math.round(d*24))+"h" : d<30 ? (d<7?d.toFixed(1):Math.round(d))+"d" : d<365 ? Math.round(d/30)+"mo" : (d/365).toFixed(1)+"y";
-const CHAIN_NAME = {solana:"Solana",ethereum:"Ethereum",robinhood:"Robinhood Chain",optimism:"Optimism",ink:"Ink",near:"NEAR",tron:"Tron",unichain:"Unichain",base:"Base",bsc:"BSC",arbitrum:"Arbitrum",pulsechain:"PulseChain",xrpl:"XRP Ledger",plasma:"Plasma",polygon:"Polygon"};
+const CHAIN_NAME = {solana:"Solana",elysium:"Elysium",ethereum:"Ethereum",robinhood:"Robinhood Chain",optimism:"Optimism",ink:"Ink",near:"NEAR",tron:"Tron",unichain:"Unichain",base:"Base",bsc:"BSC",arbitrum:"Arbitrum",pulsechain:"PulseChain",xrpl:"XRP Ledger",plasma:"Plasma",polygon:"Polygon"};
 const cname = c => CHAIN_NAME[c] || c;
 const esc = s => String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 const dayLabel = i => { const base=(typeof LAST_DAY_LIVE!=="undefined"&&LAST_DAY_LIVE)||LAST_DAY; const d=new Date((base-(13-i)*86400)*1000); return d.toLocaleDateString("en-GB",{day:"numeric",month:"short",timeZone:"UTC"}); };
@@ -2019,12 +2019,12 @@ const SECTION_TIPS={
   shortlist:"WHAT: tokens that passed every one of the 9 checks (size, liquidity, real trading, more buyers than sellers, not collapsing, has not already run, no wash trading, rug checks, has an X or website).\nHOW TO USE: your cleanest research candidates. Open each one, check the safety pill and its X activity before buying anything.",
   pullback:"WHAT: tokens that already ran 3x or more, fell back 40-70%, and still have buyers and volume.\nHOW TO USE: the 'second chance' entry, after the first spike has cooled. They are tagged 'already ran' on purpose. Riskier than the Shortlist; decide your exit first.",
   ignite:"WHAT: tokens moving right now: volume in the last 6 hours well above the day's pace, price up but not yet blown out.\nHOW TO USE: the most time-sensitive list. Check the scan time at the top: if the scan ran late, the move may already be over.",
-  momentum:"WHAT: experimental. Very new tokens (1-3 days old) on Solana, BSC or Robinhood Chain with steady buyers.\nHOW TO USE: highest risk on the page. Small amounts only; most of these have gone to zero in the track record.",
+  momentum:"WHAT: experimental. Very new tokens (1-3 days old) on Solana, BSC, Robinhood Chain or Elysium with steady buyers.\nHOW TO USE: highest risk on the page. Small amounts only; most of these have gone to zero in the track record.",
   playbook:"WHAT: the same candidates sorted into three pots: A Leader of the Leaders (safest), B Emerging Leaders, C Itch Hand Early Plays (very new or already ran). Toggle by chain or by narrative.\nHOW TO USE: decide how much goes where. A gets the biggest share, then B, then C; pot C only in easy markets. The one line beside each token says why it is in its pot.",
   track:"WHAT: every token ever put on the Shortlist or Pullback list, with its price on the day it was listed, re-priced daily. Below it: the near-misses that failed exactly one check, as a control group.\nHOW TO USE: the honest scoreboard. If the picks do no better than the near-misses, the checks are not earning their keep.",
   prices:"WHAT: every token from the four lists, from the day it was listed: change since then, best and worst point.\nHOW TO USE: see how fast gains appear and disappear. Use it to set realistic profit-taking and stop-loss levels.",
   patterns:"WHAT: of every token the scanner has looked at, which features (list, chain, age, size, type, trading activity) went with reaching 2x.\nHOW TO USE: spot which kinds of tokens tend to work, and which to avoid. Small samples, so treat it as a hint, not proof.",
-  s1:"WHAT: step 1. Which blockchains are 'hot': trading volume rising against their own recent average, with stablecoins not leaving. Tabs show DEX volume, perps, TVL, stablecoins and bridge net flows.\nHOW TO USE: tokens are searched on hot chains, on the 5 core chains (Solana, Base, BSC, Hyperliquid, Robinhood Chain), and on the 3 chains with the biggest 7-day net bridge inflow (tagged 'top inflow'). Think: which neighbourhood is getting busy.",
+  s1:"WHAT: step 1. Which blockchains are 'hot': trading volume rising against their own recent average, with stablecoins not leaving. Tabs show DEX volume, perps, TVL, stablecoins and bridge net flows.\nHOW TO USE: tokens are searched on hot chains, on the 6 core chains (Solana, Base, BSC, Hyperliquid, Robinhood Chain, Elysium), and on the 3 chains with the biggest 7-day net bridge inflow (tagged 'top inflow'). Think: which neighbourhood is getting busy.",
   s2:"WHAT: step 2. Every $500k-$2m token found on the scanned chains, with each check's pass/fail. Failed rows stay visible but dimmed.\nHOW TO USE: browse beyond the Shortlist, or see why a token you know was rejected. Filters at the top narrow it down.",
   s3:"WHAT: step 3. The same candidates grouped by how old the trading pair is (under 24h, 1-3 days, 3-7 days, over 7 days).\nHOW TO USE: each age band needs a different entry; the text in each card explains what to look for.",
   s4:"WHAT: step 4. One-click X searches for each shortlisted token, plus well-known accounts and each chain's own voices.\nHOW TO USE: the check the scanner cannot do for you. Is anyone real talking about this token, or only bots? Attention usually comes before price.",
@@ -2161,6 +2161,8 @@ function derive(t){
   t._v4 = typeof t.pa==="string" && t.pa.length>50;
   t._secKnown = ((t.sec==="goplus"||t.sec==="rugcheck") && (t.t10!=null||t.stx!=null||t.sstx!=null||t.rcs!=null||t.mint!=null||t.frz!=null||t.tb!=null||!!t.hpOk))
              || (t._partial && t.t10!=null && t.ver===1);
+  // chains no rug service covers yet (owner, 8 Nov 2026): no rug data counts as passed, shown with a red tag
+  t._unchk = !t._secKnown && ["elysium"].includes(t.c) && !t._honey;
   t._top10ok = t.t10!=null ? t.t10<TOP10_MAX : null;
   const tax = Math.max(t.stx==null?0:t.stx, t.sstx==null?0:t.sstx);
   t._taxok = (t.stx==null&&t.sstx==null) ? null : tax<=TAX_MAX;
@@ -2194,8 +2196,8 @@ const GATES = [
    test:t=>!t._wash, txt:t=>t.turn+"× turnover, "+(t.tpw==null?"?":t.tpw)+" trades/wallet",
    why:"Real activity is many wallets trading a little; wash trading is few wallets trading endlessly."},
   {k:"safe", nm:"Rug checks", rule:"not a honeypot · top-10 <"+TOP10_MAX+"% · sell tax ≤"+TAX_MAX+"% · mint/freeze revoked. Chains no rug service covers (Robinhood Chain) get a partial check instead: explorer holders top-10 <"+TOP10_MAX+"% + verified code with no live mint or owner-control function — no sell simulation, so it is marked partial", src:"RugCheck · GoPlus · Honeypot.is · Blockscout (partial)",
-   test:t=>t._honey?false:(t._secKnown?(t._top10ok!==false&&t._taxok!==false&&t._authok!==false):null),
-   txt:t=>t._honey?"honeypot":(t._secKnown?safetyText(t):(t._partial&&t.t10!=null&&t.ver!==1?"partial check impossible — contract source not verified, so its authority functions cannot be read":"no rug data ("+t.sec+")")),
+   test:t=>t._honey?false:(t._secKnown?(t._top10ok!==false&&t._taxok!==false&&t._authok!==false):(t._unchk?true:null)),
+   txt:t=>t._honey?"honeypot":t._unchk?"NOT CHECKED — no rug-check service covers "+cname(t.c)+" yet; let through on purpose, check it yourself":(t._secKnown?safetyText(t):(t._partial&&t.t10!=null&&t.ver!==1?"partial check impossible — contract source not verified, so its authority functions cannot be read":"no rug data ("+t.sec+")")),
    why:"Holder concentration, mint authority and a simulated sell are the three things that actually catch rugs. The partial tier has the first two and not the third."},
   {k:"social", nm:"Has an X or a site", rule:"at least one listed on DexScreener", src:"DexScreener",
    test:t=>!!(t.tw||t.web), txt:t=>t.tw?"@"+t.tw:(t.web?"website only":"neither"),
@@ -2253,7 +2255,7 @@ function isIgn(t){
 // Momentum (experimental): the 2x/10x profile from the first 23 days of snapshots. Day-zero tokens are
 // excluded on purpose — first seen under 1 day old they were the worst group (median peak 0.11x); the ones
 // that survive to day 1-3 were the best. A token that keeps the profile qualifies the next morning.
-const MOM={ageLo:1, ageHi:3, mcLo:500, mcHi:2000, ubrLo:0.45, ubrHi:0.90, chains:["solana","bsc","robinhood"]};
+const MOM={ageLo:1, ageHi:3, mcLo:500, mcHi:2000, ubrLo:0.45, ubrHi:0.90, chains:["solana","bsc","robinhood","elysium"]};
 function isMom(t){
   return t.band!=="l" && t.age!=null && t.age>=MOM.ageLo && t.age<MOM.ageHi
     && MOM.chains.indexOf(t.c)>=0
@@ -2335,7 +2337,7 @@ const HOT = new Set(DATA.filter(r=>chainHot(r).ok).map(r=>r.s));
 const SCANNED = new Set([...CORE_CHAINS, ...(typeof SCANNED_CHAINS!=="undefined"?SCANNED_CHAINS:[]), ...[...new Set(TOKENS.map(t=>t.c))]]);
 // chains added to the search because they had one of the 3 biggest 7-day net bridge inflows (owner, 29 Oct 2026)
 const INFLOW = new Set(typeof INFLOW_CHAINS!=="undefined"?INFLOW_CHAINS:[]);
-const inflowChip = s => INFLOW.has(s) ? '<span class="chip" data-tip="Added to the token search because it had one of the 3 biggest 7-day net bridge inflows (outside the 5 core chains)">top inflow</span>' : "";
+const inflowChip = s => INFLOW.has(s) ? '<span class="chip" data-tip="Added to the token search because it had one of the 3 biggest 7-day net bridge inflows (outside the 6 core chains)">top inflow</span>' : "";
 const HEADS = {
   dex:[["Chain",""],["Hot","w-g"],["Daily DEX volume · 14d","w-sp"],["DEX 24h",""],["DEX 7d",""],["DEX 30d",""],["vs 7d",""],["vs 30d",""],["Fees 24h",""],["Fee / vol",""],["Perp 24h",""],["Stables 7d",""],["TVL 7d",""]],
   perp:[["Chain",""],["Hot","w-g"],["Perp 24h",""],["Perp 7d",""],["Perp 30d",""],["vs 7d",""],["vs 30d",""],["Open interest",""],["DEX 24h",""],["DEX 30d",""]],
@@ -2505,8 +2507,8 @@ const segs = t => {
 };
 const safetyCell = t => {
   const v=t._g.safe;
-  const cls = v===true?(t._partial?"p-part":"p-ok"):v===false?"p-bad":"p-unk";
-  const lab = v===true?(t._partial?"partial ok":"ok"):v===false?(t._honey?"honeypot":"risk"):"no data";
+  const cls = t._unchk?"p-bad":v===true?(t._partial?"p-part":"p-ok"):v===false?"p-bad":"p-unk";
+  const lab = t._unchk?"not checked":v===true?(t._partial?"partial ok":"ok"):v===false?(t._honey?"honeypot":"risk"):"no data";
   return `<span class="pill ${cls}" data-tip="${esc(GATES.find(g=>g.k==="safe").txt(t)+"\nsource: "+(t.sec==="nodata"?"none available":t.sec))}">${lab}</span>`;
 };
 const buyCell = t => t.ubr==null ? '<span class="dim">—</span>'
@@ -2530,6 +2532,7 @@ function tokRow(t, dimIfFail){
   if(t._chase) tags.push('<span class="chip warn" data-tip="1h move above +50% — you would be chasing">chasing</span>');
   if(t._wash) tags.push(`<span class="chip bad" data-tip="Turnover ${t.turn}× on ${t.tpw==null?"?":t.tpw} trades per wallet — wash-trading pattern">wash?</span>`);
   if(t._honey) tags.push('<span class="chip bad" data-tip="A simulated buy-then-sell failed: you could not sell">honeypot</span>');
+  if(t._unchk) tags.push('<span class="chip bad" data-tip="No rug-check service covers this chain yet, so holder concentration, mint authority and a test sell were NOT checked. It is on the list without that check, on purpose. Check the contract yourself and use small amounts.">no rug check</span>');
   if(t.noCd) tags.push('<span class="chip" data-tip="Too new for daily candles — already-ran uses the 24h move instead">new pair</span>');
   if(t.hpInc) tags.push('<span class="chip" data-tip="Sell simulation reverted on V3/V4 routing — inconclusive, not a honeypot">sim n/a</span>');
   if(t.bo) tags.push('<span class="chip" data-tip="Paid DexScreener boost — someone is paying for attention">boosted</span>');

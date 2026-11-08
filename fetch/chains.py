@@ -18,6 +18,10 @@ STAB = "https://stablecoins.llama.fi"
 SITE = "https://defillama.com"
 
 CORE_CHAINS = ["solana", "base", "bsc", "hyperliquid", "robinhood"]
+# Always searched for tokens too, but with no DefiLlama chain row (owner, 8 Nov 2026): the HYPE-paired Elysium chain
+# that launched in Nov 2026. DefiLlama's "Elysium" is a different, older chain (Vulcan Forged), so its numbers must
+# not be shown under this name. GeckoTerminal and DexScreener both call the new chain "elysium".
+TOKEN_ONLY_CORE = ["elysium"]
 DEX_MIN_M = 2.0        # universe: DEX 24h ≥ $2m
 TVL_MIN_M = 100.0      # universe: TVL ≥ $100m
 

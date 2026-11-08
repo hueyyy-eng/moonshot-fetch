@@ -91,13 +91,14 @@ def main(repo_root: str) -> int:
         ch = {"LAST_DAY": None, "DATA": [], "NETFLOW": None, "BRIDGES": None, "MAJORS": None, "perp_slugs_present": []}
     passing = passing_chains(ch["DATA"])
     log.info("passing chains: %s", passing)
-    inflow = top_inflow_chains(ch.get("INFLOW7"), chains.CORE_CHAINS)
+    core = chains.CORE_CHAINS + chains.TOKEN_ONLY_CORE
+    inflow = top_inflow_chains(ch.get("INFLOW7"), core)
     log.info("top 7-day inflow chains: %s", inflow)
 
     # STEP 2 — discovery + pair rows
     stage(http, "discovery")
     try:
-        disc = discover.run(http, st, passing + [s for s in inflow if s not in passing], chains.CORE_CHAINS)
+        disc = discover.run(http, st, passing + [s for s in inflow if s not in passing], core)
     except Exception as e:  # noqa: BLE001
         st.fail("discovery", f"discovery stage crashed: {e}")
         disc = {"tokens": [], "chains_scanned": [], "NO_DEXSCREENER": []}
@@ -134,7 +135,7 @@ def main(repo_root: str) -> int:
     status["inflow_chains"] = inflow
     scanned_ds = set(disc.get("chains_scanned", []))
     # DefiLlama names of the chains actually searched (core + hot + top inflow), for the page's "scanned" tags
-    scanned_llama = [s for s in dict.fromkeys(chains.CORE_CHAINS + passing + inflow)
+    scanned_llama = [s for s in dict.fromkeys(core + passing + inflow)
                      if any(d in scanned_ds for d in discover.LLAMA_TO_DS.get(s, []))]
     out = {
         "schema": 1,
@@ -143,7 +144,7 @@ def main(repo_root: str) -> int:
         "SLOT": slot,
         "status": status["sources"],
         "LAST_DAY": ch.get("LAST_DAY"),
-        "CORE_CHAINS": chains.CORE_CHAINS,
+        "CORE_CHAINS": core,
         "NO_DEXSCREENER": [s for s in disc.get("NO_DEXSCREENER", []) if s in passing],
         "passing_chains": passing,
         "INFLOW_CHAINS": inflow,

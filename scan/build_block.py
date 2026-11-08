@@ -93,7 +93,10 @@ class Consts:
     # 23 days of snapshots — 1-3 days old, small cap, buyers neither one-sided nor absent. Tracked in MOMHIST
     # to find out whether that pattern survives on data it was not tuned on.
     MOM = {"ageLo": 1, "ageHi": 3, "mcLo": 500, "mcHi": 2000, "ubrLo": 0.45, "ubrHi": 0.90,
-           "chains": ("solana", "bsc", "robinhood")}
+           "chains": ("solana", "bsc", "robinhood", "elysium")}
+    # Chains no rug-check service covers yet, whose tokens may still reach the lists (owner, 8 Nov 2026). With no
+    # rug data the safety gate counts as passed, and the page shows a red "no rug check" tag on every such token.
+    UNCHECKED = ("elysium",)
     UBR_MAX = 0.90   # 90%+ buyers with no sellers = honeypot profile (95% of them end down 50%+); no list admits it
     CHAIN_GATE = {"dr": 1.3, "dv": 5}
 
@@ -113,6 +116,7 @@ def derive(t: dict) -> None:
     sec = t.get("sec")
     t["_secKnown"] = ((sec in ("goplus", "rugcheck")) and any(t.get(k) is not None for k in ("t10", "stx", "sstx", "rcs", "mint", "frz", "tb")) or (sec in ("goplus", "rugcheck") and bool(t.get("hpOk")))) \
         or (t["_partial"] and t.get("t10") is not None and t.get("ver") == 1)
+    t["_unchk"] = not t["_secKnown"] and t.get("c") in C.UNCHECKED and not t["_honey"]
     t["_top10ok"] = (t["t10"] < C.TOP10_MAX) if t.get("t10") is not None else None
     tax = max(t.get("stx") or 0, t.get("sstx") or 0)
     t["_taxok"] = None if (t.get("stx") is None and t.get("sstx") is None) else tax <= C.TAX_MAX
@@ -149,7 +153,7 @@ def gate(t: dict, k: str):
         if t["_honey"]:
             return False
         if not t["_secKnown"]:
-            return None
+            return True if t["_unchk"] else None
         return t["_top10ok"] is not False and t["_taxok"] is not False and t["_authok"] is not False
     if k == "social":
         return bool(t.get("tw") or t.get("web"))
