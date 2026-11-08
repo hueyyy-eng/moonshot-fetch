@@ -27,6 +27,7 @@ LLAMA_TO_DS: dict[str, list[str]] = {
     "sei": ["sei"], "aptos": ["aptos"], "stacks": ["stacks"], "celo": ["celo"], "flare": ["flare"],
     "cronos": ["cronos"], "ton": ["ton"], "pulsechain": ["pulsechain"], "sonic": ["sonic"], "abstract": ["abstract"],
     "berachain": ["berachain"], "linea": ["linea"], "scroll": ["scroll"], "zksync": ["zksync"], "blast": ["blast"],
+    "elysium": ["elysium"],
 }
 # DexScreener chainId -> GeckoTerminal network id
 DS_TO_GT: dict[str, str] = {
@@ -37,6 +38,7 @@ DS_TO_GT: dict[str, str] = {
     "tron": "tron", "near": "near", "aptos": "aptos", "celo": "celo", "cronos": "cro", "abstract": "abstract",
     "berachain": "berachain", "linea": "linea", "scroll": "scroll", "zksync": "zksync", "blast": "blast",
     "pulsechain": "pulsechain", "starknet": "starknet-alpha", "flare": "flare", "stacks": "stacks",
+    "elysium": "elysium",
 }
 
 MCAP_M = (500.0, 2000.0)      # $k

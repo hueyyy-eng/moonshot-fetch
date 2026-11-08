@@ -88,6 +88,23 @@ from fetch.chains import CORE_CHAINS
 assert top_inflow_chains({"arc": 4822, "ethereum": 860, "base": 45, "plasma": 20, "mantle": 14, "anubis": 15,
                           "polygon": -4612, "sui": -4}, CORE_CHAINS) == ["ethereum", "plasma", "mantle"]
 assert top_inflow_chains({"ethereum": 5, "polygon": -1}, CORE_CHAINS) == ["ethereum"], "never pads with outflow chains"
+# Elysium (owner, 8 Nov 2026): always searched, token-only, mapped to GeckoTerminal/DexScreener "elysium"
+from fetch.chains import TOKEN_ONLY_CORE
+from fetch import discover as _d
+assert "elysium" in TOKEN_ONLY_CORE and "elysium" not in CORE_CHAINS
+assert _d.LLAMA_TO_DS["elysium"] == ["elysium"] and _d.DS_TO_GT["elysium"] == "elysium"
+assert "elysium" in out["CORE_CHAINS"], out["CORE_CHAINS"]
+assert top_inflow_chains({"elysium": 99, "ethereum": 5}, CORE_CHAINS + TOKEN_ONLY_CORE) == ["ethereum"], "core chains never fill inflow slots"
+# no rug check on Elysium: no rug data counts as passed (with a tag); the same token on Solana stays unknown
+import sys as _sys; _sys.path.insert(0, "scan")
+from build_block import evaluate, C as _C
+_tok = lambda c: {"c": c, "pa": "x", "sym": "T", "band": "m", "sec": "nodata", "mc": 900, "lp": 10, "liq": 90, "turn": 5,
+                  "ubr": 0.6, "c6": 10, "c24": 20, "run": 1.5, "tw": "t", "v6": 10, "v24": 30}
+e, s_ = _tok("elysium"), _tok("solana"); evaluate(e); evaluate(s_)
+assert e["_unchk"] and e["_g"]["safe"] is True, e["_g"]
+assert not s_["_unchk"] and s_["_g"]["safe"] is None, s_["_g"]
+h = dict(_tok("elysium"), honey=1); evaluate(h); assert h["_g"]["safe"] is False, "a failed sell simulation still blocks"
+assert "elysium" in _C.MOM["chains"]
 assert "INFLOW_CHAINS" in out and set(out["SCANNED_CHAINS"]) >= {"solana", "bsc"}, (out.get("INFLOW_CHAINS"), out.get("SCANNED_CHAINS"))
 assert "OldChain" not in [r[0] for r in out["NETFLOW"]["day"]], "deprecated chains are left out"
 assert out["NETFLOW"]["month"][0] == ["BSC", -1003.33, "bsc"], out["NETFLOW"]

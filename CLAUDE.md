@@ -62,10 +62,18 @@ If a change would break one of them, stop and ask first.
 
 - Keep the **separate higher-cap discovery pass** (the "leader" band, market cap ≥ $2m)
   that feeds pot A. Do not merge it into the $500k–$2m moonshot pass or remove it.
-- Tokens are searched on: the 5 **core** chains (Solana, Base, BSC, Hyperliquid, Robinhood Chain), every
+- Tokens are searched on: the 6 **core** chains (Solana, Base, BSC, Hyperliquid, Robinhood Chain, **Elysium**), every
   **hot** chain, and the **3 chains with the biggest 7-day net bridge inflow** that are not core
   (`top_inflow_chains` in `fetch/main.py`, picked fresh every scan). A chain with no token data source
   (e.g. Arc) is skipped and the next one taken. These show a **"top inflow"** tag on the page.
+- **Elysium** (added 8 Nov 2026, owner's request) is the new HYPE-paired chain GeckoTerminal and DexScreener call
+  `elysium` — not Vulcan Forged's older "Elysium" (PYR), which is what DefiLlama tracks under that name. So it is
+  token-search only (`TOKEN_ONLY_CORE` in `fetch/chains.py`): no DefiLlama chain row, never "hot" or "top inflow".
+- **No rug check on Elysium:** GoPlus and Honeypot.is do not cover it yet. By the owner's choice its tokens may still
+  reach Shortlist, Pullback, Igniting and Momentum; with no rug data the safety gate counts as passed, and every such
+  token shows a red **"no rug check"** tag and a red "not checked" safety pill (`UNCHECKED` in `scan/build_block.py`,
+  mirrored in `site/page.html`). Keep the tag whenever this exception applies. If a rug service adds Elysium, wire it
+  into `fetch/safety.py` and the exception stops applying by itself (it only covers tokens with no rug data).
 
 ## Narrative labels
 
@@ -86,7 +94,7 @@ If a change would break one of them, stop and ask first.
 - **No per-token 2x sell target.** Do not add one.
 - **Keep** the "reached 2x / 5x / 10x" counts in the track record and in the alerts.
 - Keep the **Price tracking** tab.
-- Keep the **Momentum** list, including **Robinhood Chain**.
+- Keep the **Momentum** list, including **Robinhood Chain** (chains: Solana, BSC, Robinhood Chain, Elysium).
 - Track record and Price tracking show these six outcome tiles: **2x, 5x, 10x, Down 50%, Down 100%**
   and **"In between −49% to +99%"**. Keep all six.
 
