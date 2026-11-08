@@ -123,6 +123,16 @@ assert abs(run_exit([2.0, 4.0], r_recommended(False)) - 3.0) < 1e-9, "half at 2x
 assert abs(run_exit([2.0, 3.0], r_owner) - 2.5) < 1e-9, "half at 2x, 25% of the rest at 3x, rest held at 3x"
 assert abs(run_exit([0.4, 3.0], with_stop(r_owner)) - 0.4) < 1e-9, "stop-loss sells everything at -60%"
 assert abs(run_exit([2.5, 0.1], r_recommended(True)) - 2.5) < 1e-9, "fast lists: everything out at 2x"
+# classification sources (8 Nov 2026): Solana launch text via the token's own metadata link, then DexScreener profile
+import auto_nar as _an
+_mi = {"result": {"value": {"data": {"parsed": {"info": {"extensions": [
+    {"extension": "tokenMetadata", "state": {"uri": "https://ipfs.io/ipfs/bafkreifubj7qp4lxavasfmmf5x7kdixhdqs6n25f5vqxk2nmnm5ufm77ge"}}]}}}}}}
+assert _an.metadata_uri(_mi).endswith("ufm77ge") and _an.metadata_uri({"result": {"value": None}}) == ""
+assert _an.ipfs_urls(_an.metadata_uri(_mi))[0].startswith("https://ipfs.filebase.io/ipfs/bafkrei"), "ipfs.io blocks GitHub: use the gateways that answer"
+assert _an.ipfs_urls("https://example.com/m.json") == ["https://example.com/m.json"] and _an.ipfs_urls("") == []
+assert _an.ds_description({"cms": {"description": " An AI agent "}}) == "An AI agent" and _an.ds_description({"cms": None}) == ""
+assert _an.tags_from_profile([], "The first dog on Solana. Woof!") == ["Dog & animal memes"]
+assert _an.tags_from_profile([], "Buy Wealth. Own Wealth. Build Wealth") == ["Unclassified"], "vague text is not guessed"
 assert "INFLOW_CHAINS" in out and set(out["SCANNED_CHAINS"]) >= {"solana", "bsc"}, (out.get("INFLOW_CHAINS"), out.get("SCANNED_CHAINS"))
 assert "OldChain" not in [r[0] for r in out["NETFLOW"]["day"]], "deprecated chains are left out"
 assert out["NETFLOW"]["month"][0] == ["BSC", -1003.33, "bsc"], out["NETFLOW"]

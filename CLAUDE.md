@@ -114,6 +114,12 @@ If a change would break one of them, stop and ask first.
   The first tag is the one used for grouping (Playbook "by narrative") and for the narrative counts.
 - Well-known projects whose name misleads are fixed in `KNOWN_PROJECTS` in `scan/auto_nar.py`; those
   labels replace any older label on the next scan.
+- **Where labels come from** (`scan/auto_nar.py`, each step only if the one before found nothing — owner's order,
+  8 Nov 2026): 1. ticker / name / website address; 2. the creator's launch description (Solana: the token's own
+  on-chain metadata link, read through IPFS gateways that answer GitHub — `IPFS_GATEWAYS`); 3. the DexScreener
+  profile description; 4. GeckoTerminal profile + categories and the token's website title. Vague text stays
+  "Unclassified" — never guess. EVM launchpads (four.meme, Clanker) block GitHub or need a paid key, so they are
+  not used.
 
 ## Tracking
 
