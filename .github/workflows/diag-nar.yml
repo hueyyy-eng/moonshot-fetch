@@ -1,0 +1,28 @@
+name: diag narrative sources (temporary)
+on:
+  push:
+    branches: [claude/funny-goodall-y0z745]
+    paths: [.github/workflows/diag-nar.yml]
+jobs:
+  look:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Try each source
+        run: |
+          try() { echo "== $1"; curl -s -m 15 -A "Mozilla/5.0" -o /tmp/r -w "HTTP %{http_code}\n" "$1"; head -c 400 /tmp/r | tr '\n' ' '; echo; echo; sleep 1; }
+          # pump.fun (Solana)
+          try "https://frontend-api-v3.pump.fun/coins/BWh8q5etuPwekJ2JEDkbMxMQWy4FysoJ8LEwE3rFpump"
+          try "https://frontend-api.pump.fun/coins/8Mi9E1V2bdPeAaRkR5yxUsAvpzP6UBUEEUrYmgKNpump"
+          # Solana token metadata through public RPC (Metaplex / Token-2022 metadata)
+          echo "== solana rpc getAsset-like (public RPC)"; curl -s -m 15 https://api.mainnet-beta.solana.com -H 'content-type: application/json' -d '{"jsonrpc":"2.0","id":1,"method":"getAccountInfo","params":["BWh8q5etuPwekJ2JEDkbMxMQWy4FysoJ8LEwE3rFpump",{"encoding":"jsonParsed"}]}' | head -c 600; echo; echo
+          # four.meme / flap (BSC launchpads)
+          try "https://four.meme/meme-api/v1/private/token/get/v2?address=0x615b5CcF26e752c26827157eD78Aac65e2920974"
+          try "https://four.meme/meme-api/v1/private/token/get?address=0x2A06dDb8F82b2926CCd852d8cdc2348246857777"
+          try "https://flap.sh/api/token/0x2A06dDb8F82b2926CCd852d8cdc2348246857777"
+          # Clanker (Base)
+          try "https://www.clanker.world/api/get-clanker-by-address?address=0xeD517277fFcaBAf75d7DB6278a07cD75Fd159Db5"
+          # DexScreener profiles
+          try "https://api.dexscreener.com/token-profiles/latest/v1"
+          try "https://io.dexscreener.com/dex/pair-details/v4/solana/BWh8q5etuPwekJ2JEDkbMxMQWy4FysoJ8LEwE3rFpump"
+          try "https://api.dexscreener.com/tokens/v1/solana/BWh8q5etuPwekJ2JEDkbMxMQWy4FysoJ8LEwE3rFpump"
