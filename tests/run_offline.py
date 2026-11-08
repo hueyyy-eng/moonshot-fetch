@@ -117,6 +117,12 @@ assert runner["_ran"] and is_run(runner), "already ran, half a day old, 80% buye
 from build_block import is_mom
 mom_too = dict(runner, age=1.5); evaluate(mom_too); assert is_mom(mom_too) and not is_run(mom_too), "a Momentum token stays in Momentum"
 old = dict(runner, age=5.0); evaluate(old); assert not is_run(old), "Runners are under 3 days old"
+# Review tab maths (scan/review_study.py): exit rules on a $1 position, scan by scan
+from review_study import run_exit, r_owner, r_recommended, with_stop
+assert abs(run_exit([2.0, 4.0], r_recommended(False)) - 3.0) < 1e-9, "half at 2x ($1) + half at 4x ($2)"
+assert abs(run_exit([2.0, 3.0], r_owner) - 2.5) < 1e-9, "half at 2x, 25% of the rest at 3x, rest held at 3x"
+assert abs(run_exit([0.4, 3.0], with_stop(r_owner)) - 0.4) < 1e-9, "stop-loss sells everything at -60%"
+assert abs(run_exit([2.5, 0.1], r_recommended(True)) - 2.5) < 1e-9, "fast lists: everything out at 2x"
 assert "INFLOW_CHAINS" in out and set(out["SCANNED_CHAINS"]) >= {"solana", "bsc"}, (out.get("INFLOW_CHAINS"), out.get("SCANNED_CHAINS"))
 assert "OldChain" not in [r[0] for r in out["NETFLOW"]["day"]], "deprecated chains are left out"
 assert out["NETFLOW"]["month"][0] == ["BSC", -1003.33, "bsc"], out["NETFLOW"]

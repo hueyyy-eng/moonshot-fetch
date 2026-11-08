@@ -280,6 +280,7 @@
   <a href="#track"><b>~</b>Track record</a>
   <a href="#prices"><b>%</b>Price tracking</a>
   <a href="#patterns"><b>?</b>Pattern study</a>
+  <a href="#review"><b>R</b>Review</a>
   <a href="#criteria"><b>=</b>Criteria</a>
   <a href="#howto"><b>ⓘ</b>How to use</a>
 </nav>
@@ -469,6 +470,12 @@
   <div class="cards" id="chainAccts" style="margin-top:12px"></div>
 </section>
 
+<section class="step" id="review">
+  <div class="step-head"><h2><b>R</b>Review</h2><span class="rule">Every back-test from the 8 Nov 2026 review, recalculated from all the saved scans at every scan. Use it for the review every other Sunday: compare with the last review, and change a rule only when the change holds up here.</span></div>
+  <p class="lede" id="rvLede"></p>
+  <div id="rvBody"></div>
+</section>
+
 <section class="step" id="criteria">
   <div class="step-head"><h2><b>=</b>Criteria</h2><span class="rule">Generated from the same constants the scan runs on, so this can never drift from what actually happened.</span></div>
   <h3 style="font-size:15px;margin-top:16px">Chain gate — step 1</h3>
@@ -496,6 +503,7 @@
     <li><strong>Size it with the <a href="#playbook">Playbook</a>:</strong> pot A (safest) gets the biggest share, then B, then C; pot C only in easy markets.</li>
     <li><strong>Decide your exit before you buy</strong> — a price to take profit and a price to cut the loss. The scoreboard below shows why.</li>
     <li><strong>Once a week, look at the scoreboard</strong> (<a href="#track">Track record</a>, <a href="#prices">Price tracking</a>, <a href="#patterns">Pattern study</a>) to see whether the picks are earning their keep.</li>
+    <li><strong>Every other Sunday, open the <a href="#review">Review</a> tab</strong>: every back-test recalculated on all the data so far, with the last review's numbers in brackets. Change a rule only when the change holds up there.</li>
   </ol>
   <h3>Live scoreboard — how past picks actually did</h3>
   <p id="howtoScoreLede"></p>
@@ -2057,6 +2065,7 @@ const SECTION_TIPS={
   shortlist:"WHAT: tokens that passed every one of the 9 checks (size, liquidity, real trading, more buyers than sellers, not collapsing, has not already run, no wash trading, rug checks, has an X or website).\nHOW TO USE: your cleanest research candidates. Open each one, check the safety pill and its X activity before buying anything.",
   pullback:"WHAT: tokens that already ran 3x or more, fell back 40-70%, and still have buyers and volume.\nHOW TO USE: the 'second chance' entry, after the first spike has cooled. They are tagged 'already ran' on purpose. Riskier than the Shortlist; decide your exit first.",
   ignite:"WHAT: tokens moving right now: volume in the last 6 hours well above the day's pace, price up but not yet blown out.\nHOW TO USE: the most time-sensitive list. Check the scan time at the top: if the scan ran late, the move may already be over.",
+  review:"WHAT: every back-test from the 8 Nov 2026 review — list results by exit rule, how fast winners moved, what winners looked like, and whether the Score, Runners, X/site warning, Robinhood and 'tracks an asset' rules still hold — recalculated at every scan.\nHOW TO USE: open it at the review every other Sunday. Numbers in brackets show the last review. Change a rule only when the change holds up on both halves of the history.",
   momentum:"WHAT: experimental. Very new tokens (1-3 days old) on Solana, BSC, Robinhood Chain or Elysium with steady buyers.\nHOW TO USE: highest risk on the page. Small amounts only; most of these have gone to zero in the track record.",
   runners:"WHAT: experimental (8 Nov 2026). Brand-new tokens (under 3 days) that already ran 3× or more but still have 70–90% buyers and very heavy trading. In the back-test this group hit 5× most often (13%) — and 9 in 10 later crashed.\nHOW TO USE: fast trades only. Half out at 2×, all out within 3 days, small amounts. Logged to Price tracking under » so we can see if it keeps working.",
   playbook:"WHAT: the same candidates sorted into three pots: A Leader of the Leaders (safest), B Emerging Leaders, C Itch Hand Early Plays (very new or already ran). Toggle by chain or by narrative.\nHOW TO USE: decide how much goes where. A gets the biggest share, then B, then C; pot C only in easy markets. The one line beside each token says why it is in its pot.",
@@ -2080,6 +2089,7 @@ const COL_TIPS={
   "Liq / mcap":"Liquidity as a share of market cap. Higher = easier to buy and sell without moving the price.",
   "Vol 24h":"Trading volume in the last 24 hours.",
   "Score":"Score out of 100 from the traits that went with 2× outcomes in the back-test (buyers 70–90%, age 1–7 days, 24h move +100–300%, Solana/BSC/Ethereum, $1–2m cap, heavy trading, has X/site). Hover a score to see its points. HOW TO USE: look at the highest scores first; it is not a measure of safety. Full table under How to use.",
+  "Days to 2×/5×/10×":"How many days after it appeared until its price first reached 2×, 5× and 10× its listed price (½ = by the next scan). A dash means it has not got there yet. HOW TO USE: fast movers (Igniting, Momentum, Runners) usually double within 1–3 days or not at all; Shortlist and Pullback winners usually take 1–2 weeks.",
   "Turn":"Turnover: 24h volume divided by liquidity. Healthy trading is active but not extreme; very high can mean wash trading.",
   "Buyers":"Share of unique wallets buying vs selling in 24h. Above 50% = more buyers than sellers. Counted by wallets, which are harder to fake than trades.",
   "Run off low":"How many times the price has risen from its 7-day low. 3x or more counts as 'already ran'.",
@@ -2830,7 +2840,7 @@ function renderPlaybook(){
 
 /* ---------- track record ---------- */
 let histL="all";
-const HIST_HEAD=[["Logged",""],["Token",""],["List","w-g"],["Entry mcap",""],["Entry price",""],["Price now",""],["Now vs entry",""],["Peak vs entry",""],["Days held",""],["Peak on day",""],["Holders",""]];
+const HIST_HEAD=[["Logged",""],["Token",""],["List","w-g"],["Entry mcap",""],["Entry price",""],["Price now",""],["Now vs entry",""],["Peak vs entry",""],["Days held",""],["Peak on day",""],["Days to 2×/5×/10×",""],["Holders",""]];
 // Holder count series, keyed by pair address. Latest reading plus the move since the first one.
 function holders(pa){
   const H = (typeof HOLDHIST!=="undefined") ? HOLDHIST.filter(r=>r.pa===pa) : [];
@@ -2842,11 +2852,18 @@ function holders(pa){
   const pc=Math.round(d/first*100);
   return `${n} <span class="${d>0?"pos":d<0?"neg":"dim"}" style="font-size:11px">${d>0?"+":""}${pc}%</span>`;
 }
-const REJ_HEAD=[["Logged",""],["Token",""],["Gate it failed","w-g"],["Mcap then",""],["Price then",""],["Price now",""],["Now vs then",""],["Peak vs then",""],["Days tracked",""],["Peak on day",""]];
+const REJ_HEAD=[["Logged",""],["Token",""],["Gate it failed","w-g"],["Mcap then",""],["Price then",""],["Price now",""],["Now vs then",""],["Peak vs then",""],["Days tracked",""],["Peak on day",""],["Days to 2×/5×/10×",""]];
 const xMult = v => v==null ? '<span class="dim">—</span>'
   : `<span class="${v>=2?"pos":v<0.6?"neg":""}" style="font-family:'IBM Plex Mono',monospace;font-weight:600">${v>=10?v.toFixed(0):v.toFixed(2)}×</span>`;
 const px = v => v==null ? "—" : v>=1 ? "$"+v.toFixed(3) : "$"+v.toPrecision(3);
 const daysBetween = (a,b) => Math.round((Date.parse(b)-Date.parse(a))/86400000);
+// days after listing until the price first reached 2x / 5x / 10x (worked out by scan/review_study.py from the scans)
+const daysTo = (l, pa) => {
+  const h = (REVIEW && REVIEW.hits) ? REVIEW.hits[l+":"+String(pa).toLowerCase()] : null;
+  if(!h) return '<span class="dim">—</span>';
+  const f = v => v==null ? '<span class="dim">–</span>' : `<b>${v<1?"½":Math.round(v*2)/2}</b>`;
+  return `<span style="white-space:nowrap">${f(h[0])}/${f(h[1])}/${f(h[2])}d</span>`;
+};
 function renderHistory(){
   const today = SNAP_AT.slice(0,10);
   document.querySelectorAll("#tabs-pb button").forEach(b=>b.addEventListener("click",()=>{pbView=b.dataset.v; renderPlaybook();}));
@@ -2872,6 +2889,7 @@ document.querySelectorAll("#tabs-hl button").forEach(b=>b.setAttribute("aria-pre
       <td class="num">${xMult(h._peak)}</td>
       <td class="num dim">${h._age}d</td>
       <td class="num dim">${h.dMax==null?"—":h.dMax+"d"}</td>
+      <td class="num">${daysTo("R", h.pa)}</td>
     </tr>`).join("") : `<tr><td colspan="${REJ_HEAD.length}" class="empty">No near-misses logged yet — the first scan that runs with this build seeds them.</td></tr>`;
     renderControl(); renderNarHist();
     document.getElementById("histNote").textContent = `Tokens that were found on a scanned chain and failed exactly ONE gate — near-misses, not junk. They are re-priced every day exactly like the shortlist, and they are the control group: if these do as well as the picks, the gate that rejected them is not earning its keep. Nothing here is a buy list; several failed a safety check.`;
@@ -2888,6 +2906,7 @@ document.querySelectorAll("#tabs-hl button").forEach(b=>b.setAttribute("aria-pre
     <td class="num">${xMult(h._peak)}</td>
     <td class="num dim">${h._age}d</td>
     <td class="num dim">${h.dMax==null?"—":h.dMax+"d"}</td>
+    <td class="num">${daysTo(h.l, h.pa)}</td>
     <td class="num">${holders(h.pa)}</td>
   </tr>`).join("") : `<tr><td colspan="${HIST_HEAD.length}" class="empty">Nothing logged yet.</td></tr>`;
 
@@ -2919,7 +2938,7 @@ document.querySelectorAll("#tabs-hl button").forEach(b=>b.setAttribute("aria-pre
 
 /* ---------- price tracking: every listed token, priced from the day it first appeared ---------- */
 let ptL="all", ptSort="date";
-const PT_HEAD=[["Listed",""],["Token",""],["List","w-g"],["Listed mcap",""],["Listed price",""],["Price now",""],["Since listed",""],["Best",""],["Worst",""],["Days",""],["Peak on day",""]];
+const PT_HEAD=[["Listed",""],["Token",""],["List","w-g"],["Listed mcap",""],["Listed price",""],["Price now",""],["Since listed",""],["Best",""],["Worst",""],["Days",""],["Peak on day",""],["Days to 2×/5×/10×",""]];
 const LIST_NM={S:"★ Shortlist",P:"◆ Pullback",I:"▲ Igniting",M:"⚡ Momentum",U:"» Runners"};
 function ptRows(){
   const ign=(typeof IGNHIST!=="undefined")?IGNHIST:[];
@@ -2994,6 +3013,7 @@ function renderPrices(){
     <td class="num"${h._lowSeen?"":' data-tip="Lows are recorded from 1 Oct 2026. For tokens listed earlier it only covers prices seen since then, so the real low may have been deeper."'}>${pct(h._worst)}${h._lowSeen?"":'<span class="dim">*</span>'}</td>
     <td class="num dim">${h._days}d</td>
     <td class="num dim">${h.dMax==null?"—":h.dMax+"d"}</td>
+    <td class="num">${daysTo(h.l, h.pa)}</td>
   </tr>`).join("") : `<tr><td colspan="${PT_HEAD.length}" class="empty">Nothing tracked on this list yet.</td></tr>`;
   document.getElementById("ptNote").textContent =
     `${rows.length} shown. Since listed, best and worst are measured against the price on the day the token first appeared on that list, and every row is re-priced each morning. `
@@ -3003,6 +3023,82 @@ function renderPrices(){
 }
 
 /* ---------- how-to guide: live scoreboard + one card per part of the page ---------- */
+/* ---------- Review: the back-tests, recalculated every scan (data: REVIEW, from scan/review_study.py) ---------- */
+function renderReview(){
+  const lede=document.getElementById("rvLede"), box=document.getElementById("rvBody"); if(!box) return;
+  if(!REVIEW){ lede.textContent="Not calculated yet — the first scan with this build fills it in."; box.innerHTML=""; return; }
+  const R=REVIEW, P=v=>v==null?"—":v+"%", S=v=>v==null?"—":(v>0?"+":v<0?"−":"")+Math.abs(Math.round(v))+"%";
+  const tbl=(head,rows)=>`<div class="tablewrap"><table><thead><tr>${head.map(h=>`<th scope="col">${h}</th>`).join("")}</tr></thead><tbody>${rows.join("")}</tbody></table></div>`;
+  const tr=cells=>`<tr>${cells.map((c,i)=>`<td${i?' class="num"':""}>${c}</td>`).join("")}</tr>`;
+  const last=(R.history||[]).length?R.history[R.history.length-1]:null;
+  // "(at last review X)": the value saved on the most recent review Sunday, for comparison
+  const was=(get,fmt)=>{ if(!last) return ""; const v=get(last.k); return v==null?"":` <span class="dim" style="font-size:11px" data-tip="Value at the last review (${last.review})">(${fmt(v)})</span>`; };
+  lede.innerHTML=`${R.tokens.toLocaleString()} tokens the scanner has seen since ${R.first_day}, followed to the latest scan (${esc(R.generated)}). `
+    +`"First half" = tokens first seen before ${R.split}, "second half" = from ${R.split}: a rule set on the first half only counts as working if it also holds on the second. `
+    +(last?`Numbers in brackets are the values saved at the last review (${last.review}).`:"");
+  let h="";
+  // 1. lists and exit rules
+  h+=`<h3>1. How each list did — $1 in every token, by exit rule</h3>`;
+  h+=tbl(["List","Tokens","Reached 2×","5× / 10×","Still 2×+ now","Now down 50%+","Just hold","Owner's rule","Owner's + stop −50%","Recommended"],
+    R.lists.map(x=>tr([x.name, x.n, P(x.hit2)+was(k=>k.lists[x.l]&&k.lists[x.l].hit2,P), x.hit5+" / "+x.hit10, x.still2, P(x.down50),
+      S(x.exits.hold), S(x.exits.owner), S(x.exits.owner_stop), `<b>${S(x.exits.recommended)}</b>`+was(k=>k.lists[x.l]&&k.lists[x.l].recommended,S)])));
+  h+=`<p class="note">Profit or loss per $1, scan prices twice a day, no fees or slippage (real results are worse). Owner's rule: half at 2× (capital back), then 25% of the rest at 3×, 4×, 5×… Recommended: half at 2×, rest at 4× (Igniting and Runners: everything at 2×), and sell everything at −50%. Seconds-long spikes above 50× are left out of the exit columns.</p>`;
+  // 2. timing
+  h+=`<h3>2. How fast winners moved after appearing</h3>`;
+  const tc=(t,m)=>{ const x=t["x"+m]; return x.n?`<span style="white-space:nowrap">${x.n} · <b>${x.days_med}d</b>${m===2&&x.age_med!=null?` <span class="dim">age ${Math.round(x.age_med*10)/10}d</span>`:""}</span>`:"—"; };
+  h+=tbl(["List","2×: how many · median days · age","When 2×: next scan / 1–3d / 3–7d / 7d+","5×: how many · days","10×: how many · days"],
+    R.timing.map(t=>tr([t.name, tc(t,2), `${t.x2.within1} / ${t.x2.d1_3} / ${t.x2.d3_7} / ${t.x2.over7}`, tc(t,5), tc(t,10)])));
+  h+=`<p class="note">"Age" is how old the token was when it hit that level. Fast lists (Igniting, Momentum, Runners) usually double within 1–3 days or not at all; Shortlist and Pullback winners usually take 1–2 weeks.</p>`;
+  // 3. fast vs slow winners
+  const W=R.winners, wf=(k,f)=>[W.fast,W.slow,W.never].map(x=>f(x[k]));
+  h+=`<h3>3. What the winners looked like when first seen</h3>`;
+  h+=tbl(["Typical value when first seen","⚡ Fast spikes (2× within 3 days)","🐢 Slow climbers (later)","Never doubled"],[
+    tr(["Tokens"].concat([W.fast.n,W.slow.n,W.never.n])),
+    tr(["Age (days)"].concat(wf("age",v=>v??"—"))),
+    tr(["Market cap"].concat(wf("mcap_k",v=>v==null?"—":fmtK(v)))),
+    tr(["Trading vs liquidity (24h)"].concat(wf("turn",v=>v==null?"—":v+"×"))),
+    tr(["Buyer share (6h)"].concat(wf("buyers",v=>v==null?"—":Math.round(v*100)+"%"))),
+    tr(["Price move last 6h"].concat(wf("c6",v=>v==null?"—":S(v)))),
+    tr(["Below its 7-day high"].concat(wf("below_high",v=>v==null?"—":Math.round(v)+"%"))),
+    tr(["Holders"].concat(wf("holders",v=>v==null?"—":Math.round(v).toLocaleString()))),
+    tr(["Has an X or website"].concat(wf("has_social",P))),
+    tr(["Main chains"].concat([W.fast,W.slow,W.never].map(x=>(x.chains||[]).map(c=>cname(c[0])+" "+c[1]+"%").join(", "))))]);
+  // 4. score
+  const sc=R.score;
+  h+=`<h3>4. Score — does a higher score still mean more winners?</h3>`;
+  h+=tbl(["Score","First half: tokens / doubled","Second half: tokens / doubled","Second half: reached 5×","Second half: now down 50%+"],
+    sc.bands.map(b=>tr([b.band, `${b.first.n} / ${P(b.first.hit2)}`, `${b.second.n} / <b>${P(b.second.hit2)}</b>`+was(k=>k.score&&k.score[b.band],P), P(b.second.hit5), P(b.second.down50)])));
+  if(sc.top20) h+=`<p class="note">Second half: top 20% by score doubled ${P(sc.top20.hit2)}, bottom 20% ${P(sc.bottom20.hit2)}. If the bands stop rising from 0–20 to 60–100, the points need changing.</p>`;
+  h+=tbl(["Score trait","Points","Doubled — with the trait","Doubled — without"],
+    sc.traits.map(t=>tr([esc(t.label), t.points, `${P(t.with.hit2)} <span class="dim">(${t.with.n})</span>`, `${P(t.without.hit2)} <span class="dim">(${t.without.n})</span>`])));
+  // 5-8: runners, social, robinhood, asset
+  const ru=R.runners;
+  h+=`<h3>5. Runners rule on all history</h3>`;
+  h+=tbl(["","Tokens","Doubled","Reached 5×","Now down 50%+"],[
+    tr(["First half",ru.first.n,P(ru.first.hit2),P(ru.first.hit5),P(ru.first.down50)]),
+    tr(["Second half",ru.second.n,P(ru.second.hit2),P(ru.second.hit5),P(ru.second.down50)]),
+    tr(["<b>All</b>",ru.all.n,`<b>${P(ru.all.hit2)}</b>`+was(k=>k.runners,P),P(ru.all.hit5),P(ru.all.down50)]),
+    tr(["All 'already ran' (compare)",ru.all_ran.n,P(ru.all_ran.hit2),P(ru.all_ran.hit5),P(ru.all_ran.down50)])]);
+  if(ru.big&&ru.big.length) h+=`<p class="note">Reached 5× or more: ${ru.big.map(b=>esc(b[0])+" ("+cname(b[1])+") "+b[2]+"×").join(", ")}.</p>`;
+  const so=R.social;
+  h+=`<h3>6. "No X / website" as a warning only</h3>`;
+  h+=tbl(["","Tokens","Doubled","Reached 5×","Now down 50%+"],[
+    tr(["Failed only X / site",so.only_social.n,`<b>${P(so.only_social.hit2)}</b>`+was(k=>k.social,P),P(so.only_social.hit5),P(so.only_social.down50)]),
+    tr(["Shortlist (has X / site)",so.shortlist_with_site.n,P(so.shortlist_with_site.hit2),P(so.shortlist_with_site.hit5),P(so.shortlist_with_site.down50)])]);
+  const rh=R.robinhood;
+  h+=`<h3>7. Robinhood Chain — would an extra bar help?</h3>`;
+  h+=tbl(["Extra bar","Tokens kept","Winners kept (2×+)","Doubled — kept","Doubled — dropped"],
+    rh.bars.map(b=>tr([esc(b.bar), `${b.kept} of ${b.of}`, `${b.winners_kept} of ${b.winners}`, P(b.hit2_kept), P(b.hit2_dropped)])));
+  h+=`<p class="note">Robinhood tokens that reached Shortlist, Pullback, Igniting or Momentum when first seen: ${rh.on_lists}. A good bar keeps most winners and drops most of the rest.</p>`;
+  const as=R.asset;
+  h+=`<h3>8. "Tracks an asset" tag (price within ~15% over 7 days)</h3>`;
+  h+=tbl(["","Tokens","Doubled","Now down 50%+"],[
+    tr(["Tagged",as.calm.n,`<b>${P(as.calm.hit2)}</b>`,P(as.calm.down50)]),
+    tr(["Everything else",as.rest.n,P(as.rest.hit2),P(as.rest.down50)])]);
+  h+=`<p class="note">${as.calm_doubled.length?"Tagged tokens that doubled anyway (check the rule): "+as.calm_doubled.map(c=>esc(c[0])+" "+c[2]+"×").join(", "):"No tagged token has ever doubled — the tag is doing its job."}</p>`;
+  box.innerHTML=h;
+}
+
 function renderHowto(){
   document.querySelectorAll("section.step").forEach(sec=>{ const h=sec.querySelector(".step-head h2"); if(h && SECTION_TIPS[sec.id]) h.classList.add("has-tip"); });
   const box=document.getElementById("howtoScore"); if(!box) return;
@@ -3030,6 +3126,8 @@ function renderHowto(){
 
 /* ---------- pattern study: which characteristics go with reaching 2x (data injected by scan/pattern_study.py) ---------- */
 const PATTERN = /*PATTERN-START*/{"generated":"2026-11-08 20:29 SGT","first_day":"2026-09-19","last_day":"2026-11-08-pm","days":70,"dropped_bad_readings":50,"all":{"n":1786,"hit_all":195,"hit_conf":129,"still2":28,"down50":1311,"med_peak":1.0},"groups":{"list":{"title":"Which list","note":"Ever on that list. Measured from the day the scanner first saw the token, which can be before it was listed. Saved daily scans start on 19 Sep 2026, so picks from 12-18 Sep (Stonks, pill, IF and others) are not in this study; see Track record and Price tracking for those.","rows":[{"label":"★ Shortlist","n":44,"hit_all":10,"hit_conf":10,"still2":1,"down50":22,"med_peak":1.18},{"label":"◆ Pullback","n":38,"hit_all":9,"hit_conf":4,"still2":1,"down50":29,"med_peak":1.04},{"label":"▲ Igniting","n":46,"hit_all":12,"hit_conf":10,"still2":0,"down50":45,"med_peak":1.28},{"label":"⚡ Momentum","n":74,"hit_all":8,"hit_conf":6,"still2":1,"down50":65,"med_peak":1.0},{"label":"✕ Near-miss","n":491,"hit_all":41,"hit_conf":28,"still2":10,"down50":372,"med_peak":0.86},{"label":"Not listed","n":1093,"hit_all":115,"hit_conf":71,"still2":15,"down50":778,"med_peak":1.0}]},"chain":{"title":"Chain","note":"","rows":[{"label":"robinhood","n":590,"hit_all":30,"hit_conf":22,"still2":3,"down50":520,"med_peak":0.88},{"label":"solana","n":495,"hit_all":85,"hit_conf":57,"still2":9,"down50":406,"med_peak":0.94},{"label":"bsc","n":269,"hit_all":54,"hit_conf":30,"still2":10,"down50":195,"med_peak":0.93},{"label":"base","n":179,"hit_all":8,"hit_conf":6,"still2":2,"down50":123,"med_peak":1.0},{"label":"ethereum","n":59,"hit_all":10,"hit_conf":6,"still2":0,"down50":34,"med_peak":1.07},{"label":"hyperevm","n":32,"hit_all":2,"hit_conf":2,"still2":2,"down50":4,"med_peak":1.12},{"label":"arbitrum","n":21,"hit_all":2,"hit_conf":2,"still2":1,"down50":5,"med_peak":1.04},{"label":"sui","n":21,"hit_all":0,"hit_conf":0,"still2":0,"down50":4,"med_peak":1.02},{"label":"avalanche","n":19,"hit_all":1,"hit_conf":1,"still2":0,"down50":4,"med_peak":1.16},{"label":"polygon","n":16,"hit_all":0,"hit_conf":0,"still2":0,"down50":1,"med_peak":1.0},{"label":"optimism","n":13,"hit_all":0,"hit_conf":0,"still2":0,"down50":1,"med_peak":1.02},{"label":"ton","n":12,"hit_all":0,"hit_conf":0,"still2":0,"down50":2,"med_peak":1.09},{"label":"tron","n":12,"hit_all":1,"hit_conf":1,"still2":1,"down50":0,"med_peak":1.02},{"label":"cronos","n":12,"hit_all":0,"hit_conf":0,"still2":0,"down50":2,"med_peak":1.01},{"label":"ink","n":11,"hit_all":0,"hit_conf":0,"still2":0,"down50":2,"med_peak":1.0},{"label":"near","n":9,"hit_all":2,"hit_conf":2,"still2":0,"down50":5,"med_peak":1.42},{"label":"unichain","n":5,"hit_all":0,"hit_conf":0,"still2":0,"down50":2,"med_peak":1.0},{"label":"monad","n":4,"hit_all":0,"hit_conf":0,"still2":0,"down50":1,"med_peak":1.23},{"label":"mantle","n":4,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":1.02},{"label":"sonic","n":2,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":1.01},{"label":"plasma","n":1,"hit_all":0,"hit_conf":0,"still2":0,"down50":0,"med_peak":1.02}]},"age":{"title":"Token age when first seen","note":"","rows":[{"label":"under 1 day","n":1022,"hit_all":116,"hit_conf":68,"still2":13,"down50":979,"med_peak":0.5},{"label":"1–3 days","n":188,"hit_all":38,"hit_conf":26,"still2":2,"down50":150,"med_peak":0.99},{"label":"3–7 days","n":58,"hit_all":12,"hit_conf":9,"still2":4,"down50":37,"med_peak":1.01},{"label":"7–30 days","n":109,"hit_all":11,"hit_conf":11,"still2":3,"down50":58,"med_peak":1.02},{"label":"30–90 days","n":99,"hit_all":5,"hit_conf":3,"still2":0,"down50":42,"med_peak":1.05},{"label":"90+ days","n":301,"hit_all":13,"hit_conf":12,"still2":6,"down50":44,"med_peak":1.02}]},"mcap":{"title":"Market cap when first seen","note":"","rows":[{"label":"$500k–1m","n":622,"hit_all":78,"hit_conf":50,"still2":12,"down50":538,"med_peak":0.79},{"label":"$1–2m","n":459,"hit_all":75,"hit_conf":50,"still2":9,"down50":378,"med_peak":0.98},{"label":"$2–5m","n":127,"hit_all":16,"hit_conf":9,"still2":2,"down50":91,"med_peak":0.98},{"label":"$5m+","n":578,"hit_all":26,"hit_conf":20,"still2":5,"down50":304,"med_peak":1.0}]},"nar":{"title":"Narrative","note":"Narrative tags come from the dashboard's rules. Tags are kept from 4 Oct 2026 for every scanned token (earlier: list tokens from 26 Sep only).","rows":[{"label":"Unclassified","n":514,"hit_all":69,"hit_conf":55,"still2":11,"down50":445,"med_peak":1.0},{"label":"Dog & animal memes","n":164,"hit_all":21,"hit_conf":12,"still2":2,"down50":138,"med_peak":0.68},{"label":"AI","n":143,"hit_all":21,"hit_conf":17,"still2":7,"down50":103,"med_peak":1.0},{"label":"Utilities","n":130,"hit_all":7,"hit_conf":5,"still2":1,"down50":67,"med_peak":1.01},{"label":"Classic memes","n":93,"hit_all":14,"hit_conf":10,"still2":3,"down50":64,"med_peak":1.01},{"label":"Tokenised equities","n":91,"hit_all":2,"hit_conf":2,"still2":1,"down50":20,"med_peak":1.02},{"label":"Wrapped assets","n":49,"hit_all":1,"hit_conf":1,"still2":1,"down50":4,"med_peak":1.0},{"label":"KOL / personality","n":34,"hit_all":4,"hit_conf":2,"still2":0,"down50":28,"med_peak":0.95},{"label":"Stablecoins","n":22,"hit_all":0,"hit_conf":0,"still2":0,"down50":2,"med_peak":1.0},{"label":"Launchpad / infra","n":18,"hit_all":3,"hit_conf":2,"still2":0,"down50":11,"med_peak":1.19},{"label":"Gold / BTC proxies","n":14,"hit_all":0,"hit_conf":0,"still2":0,"down50":4,"med_peak":1.02},{"label":"RWA","n":13,"hit_all":1,"hit_conf":1,"still2":0,"down50":7,"med_peak":1.0},{"label":"Brand-name memes","n":9,"hit_all":0,"hit_conf":0,"still2":0,"down50":9,"med_peak":0.02},{"label":"Chain-native lore","n":5,"hit_all":0,"hit_conf":0,"still2":0,"down50":1,"med_peak":1.14},{"label":"Leveraged tokens","n":2,"hit_all":0,"hit_conf":0,"still2":0,"down50":2,"med_peak":0.5}]},"turn":{"title":"24h volume ÷ liquidity","note":"How hard the pool is being traded.","rows":[{"label":"under 1×","n":181,"hit_all":5,"hit_conf":5,"still2":2,"down50":49,"med_peak":1.01},{"label":"1–3×","n":241,"hit_all":18,"hit_conf":15,"still2":6,"down50":121,"med_peak":1.0},{"label":"3–10×","n":468,"hit_all":47,"hit_conf":31,"still2":9,"down50":355,"med_peak":1.0},{"label":"10–30×","n":444,"hit_all":59,"hit_conf":38,"still2":7,"down50":369,"med_peak":0.94},{"label":"30×+","n":452,"hit_all":66,"hit_conf":40,"still2":4,"down50":417,"med_peak":0.37}]},"ubr":{"title":"Buyer share of traders (6h)","note":"90%+ buyers with almost no sellers is often a honeypot (you can buy but not sell), not strength.","rows":[{"label":"under 45%","n":140,"hit_all":7,"hit_conf":7,"still2":1,"down50":55,"med_peak":1.01},{"label":"45–55%","n":701,"hit_all":60,"hit_conf":41,"still2":10,"down50":452,"med_peak":1.0},{"label":"55–70%","n":541,"hit_all":37,"hit_conf":25,"still2":10,"down50":455,"med_peak":0.74},{"label":"70–90%","n":217,"hit_all":41,"hit_conf":31,"still2":3,"down50":195,"med_peak":1.0},{"label":"90%+","n":138,"hit_all":45,"hit_conf":22,"still2":3,"down50":134,"med_peak":0.99}]},"c24":{"title":"24h price move when first seen","note":"","rows":[{"label":"below −30%","n":33,"hit_all":7,"hit_conf":6,"still2":0,"down50":26,"med_peak":1.0},{"label":"−30% to 0","n":227,"hit_all":7,"hit_conf":7,"still2":2,"down50":61,"med_peak":1.02},{"label":"0 to +30%","n":297,"hit_all":9,"hit_conf":8,"still2":5,"down50":97,"med_peak":1.01},{"label":"+30% to +100%","n":141,"hit_all":21,"hit_conf":17,"still2":2,"down50":115,"med_peak":0.98},{"label":"+100% to +300%","n":134,"hit_all":33,"hit_conf":22,"still2":2,"down50":110,"med_peak":1.13},{"label":"+300%+","n":907,"hit_all":118,"hit_conf":69,"still2":17,"down50":865,"med_peak":0.43}]},"run":{"title":"Run off 7-day low","note":"Needs daily candles; tokens without them are left out.","rows":[{"label":"under 1.5×","n":340,"hit_all":9,"hit_conf":8,"still2":3,"down50":51,"med_peak":1.01},{"label":"1.5–3×","n":100,"hit_all":13,"hit_conf":12,"still2":4,"down50":45,"med_peak":1.14},{"label":"3–5×","n":24,"hit_all":3,"hit_conf":3,"still2":0,"down50":17,"med_peak":1.05},{"label":"5×+","n":224,"hit_all":48,"hit_conf":33,"still2":7,"down50":187,"med_peak":1.0}]}},"tabs":[{"id":"list","name":"List","groups":["list"]},{"id":"cas","name":"Chain, age & size","groups":["chain","age","mcap"]},{"id":"nar","name":"Narrative","groups":["nar"]},{"id":"act","name":"Trading activity","groups":["turn","ubr","c24","run"]}]}/*PATTERN-END*/;
+// back-tests from the owner's 8 Nov 2026 review, recalculated every scan by scan/review_study.py (bot-written)
+const REVIEW = /*REVIEW-START*/null/*REVIEW-END*/;
 let patTab = "list";
 function renderPattern(){
   const lede=document.getElementById("patLede"), tabs=document.getElementById("tabs-pat"),
@@ -3314,7 +3412,7 @@ function freshness(){
 }
 document.getElementById("stampText").textContent="chains "+SNAP_AT.slice(11)+" · tokens "+TOK_AT.slice(11)+" · "+SNAP_AT.slice(0,10);
 freshness();
-renderChains(); renderTokens(); renderCriteria(); renderHistory(); renderRegime(); renderPrices(); renderPattern(); renderHowto();
+renderChains(); renderTokens(); renderCriteria(); renderHistory(); renderRegime(); renderPrices(); renderPattern(); renderReview(); renderHowto();
 </script>
 
 </body>
