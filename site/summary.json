@@ -1,7 +1,7 @@
 {
- "now": "2026-11-07 20:20 SGT",
- "slot": "pm",
- "cand_at": "2026-11-07 20:20 SGT",
+ "now": "2026-11-08 09:16 SGT",
+ "slot": "am",
+ "cand_at": "2026-11-08 09:16 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [
@@ -29,14 +29,8 @@
    "ripple",
    "ink"
   ],
-  "new": [
-   "ripple"
-  ],
-  "dropped": [
-   "dexalot",
-   "edgex",
-   "sui"
-  ],
+  "new": [],
+  "dropped": [],
   "hottest": {
    "s": "thorchain",
    "n": "Thorchain",
@@ -45,93 +39,76 @@
   }
  },
  "tokens": {
-  "total": 72,
-  "band_m": 31,
+  "total": 71,
+  "band_m": 30,
   "candle_or_wallet_coverage_pct": 100,
   "nodata": 1
  },
- "shortlist": [
-  {
-   "sym": "jeff",
-   "c": "solana",
-   "mc": 1004.9,
-   "nar": "KOL / personality",
-   "run": 1.34,
-   "retr": 76.82,
-   "acc": 0.26,
-   "c6": 1.55,
-   "age": 10.44,
-   "sec": "rugcheck",
-   "pa": "JCXWfcZGjgJC8NZa5Qb6JP3cgvqW4vGUg4Tqj87G5ZnY"
-  }
- ],
+ "shortlist": [],
  "shortlist_new": [],
  "shortlist_dropped": [
-  "BAGSPAY",
-  "CLAUS",
-  "three"
+  "jeff"
  ],
- "pullback": [],
- "pullback_new": [],
- "pullback_dropped": [],
- "igniting": [],
- "momentum": [
+ "pullback": [
   {
-   "sym": "Rocco",
+   "sym": "José",
    "c": "solana",
-   "mc": 802.7,
-   "nar": "Classic memes",
-   "run": 6.35,
-   "retr": 26.73,
-   "acc": 0.24,
-   "c6": 10.02,
-   "age": 1.85,
+   "mc": 737.2,
+   "nar": "Utilities",
+   "run": 20.71,
+   "retr": 68.12,
+   "acc": 3.49,
+   "c6": 1594.0,
+   "age": 1.08,
    "sec": "rugcheck",
-   "pa": "3jW1ykKqUTNgNUDGbrwXpvZKtMFf4pWytoTP3TeXhKBQ"
+   "pa": "CdpY6qHVhtN9dVJx1WJutDztzVMck5TFVnNXZ51HdPrY"
   },
   {
-   "sym": "WEALTH",
+   "sym": "BAGSPAY",
    "c": "solana",
-   "mc": 589.2,
+   "mc": 1910.2,
    "nar": "Unclassified",
-   "run": 7.27,
-   "retr": 31.6,
-   "acc": 1.04,
-   "c6": 56.55,
-   "age": 1.85,
+   "run": 4.63,
+   "retr": 40.21,
+   "acc": 0.27,
+   "c6": 4.06,
+   "age": 40.03,
    "sec": "rugcheck",
-   "pa": "5n8V68fCaNTRQvaXzrmBryDe5jFLrgm65pFfsmia6Nro"
-  },
-  {
-   "sym": "CORLA",
-   "c": "bsc",
-   "mc": 579.2,
-   "nar": "Unclassified",
-   "run": 7.89,
-   "retr": 60.48,
-   "acc": 0.88,
-   "c6": 15.15,
-   "age": 2.24,
-   "sec": "goplus",
-   "pa": "0xe015a78814EbAdEB0f202446E64B970642F9B965"
+   "pa": "DxSBgaYreFNFxGu9TEC17n4Usq5jjy4Zf9djT7RBLrGf"
   }
  ],
- "momentum_new": [
+ "pullback_new": [
+  "BAGSPAY",
+  "José"
+ ],
+ "pullback_dropped": [],
+ "igniting": [],
+ "momentum": [],
+ "momentum_new": [],
+ "momentum_dropped": [
+  "CORLA",
+  "Rocco",
   "WEALTH"
  ],
- "momentum_dropped": [
-  "ASI",
-  "coin",
-  "腾讯场"
+ "honeypots_new": [
+  "GTA6"
  ],
- "honeypots_new": [],
  "track": {
-  "logged": 105,
-  "new_rows": [],
+  "logged": 107,
+  "new_rows": [
+   [
+    "José",
+    "P"
+   ],
+   [
+    "BAGSPAY",
+    "P"
+   ]
+  ],
   "best_x": 14.93,
-  "median_peak_x": 1.05,
+  "median_peak_x": 1.04,
   "hit_2x_today": [
-   "CBUCKS (solana)"
+   "CLAUDIA (solana)"
   ],
   "to_zero_today": [],
   "repriced": true
@@ -140,38 +117,35 @@
   "logged": 60,
   "new_rows": [],
   "hit_2x_today": [],
-  "to_zero_today": [
-   "PREDICT (solana)"
-  ]
+  "to_zero_today": []
  },
  "momentum_track": {
   "logged": 86,
-  "new_rows": [
-   "WEALTH"
+  "new_rows": [],
+  "hit_2x_today": [
+   "OAK (robinhood)"
   ],
-  "hit_2x_today": [],
   "to_zero_today": [
-   "SAFU (bsc)"
+   "FTR (solana)",
+   "SI (robinhood)"
   ]
  },
  "control": {
-  "rows": 778,
+  "rows": 785,
   "median_peak_x": 1.0,
   "hit_2x_today": [
-   "RAYCAT (solana)",
-   "STANK (solana)"
+   "REROLL (hyperevm)",
+   "OAK (robinhood)"
   ],
   "to_zero_today": [
-   "Maple (robinhood)",
-   "FOMOBALL (robinhood)",
-   "CDOG (solana)",
-   "BOB (solana)",
-   "CSI (bsc)",
-   "MOON (bsc)",
-   "OWLDACITY (solana)",
-   "SAFU (bsc)",
-   "COGE (robinhood)",
-   "PREDICT (solana)"
+   "PAIREX (robinhood)",
+   "BLAST (robinhood)",
+   "WAIFU (robinhood)",
+   "ROBINPEPE (robinhood)",
+   "VRAX (robinhood)",
+   "SA (solana)",
+   "RARINU (solana)",
+   "FTR (solana)"
   ]
  },
  "changed": true,
