@@ -8,21 +8,21 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Elysium pools on GeckoTerminal (top by 24h volume)
+      - name: Chain id of Elysium (chainlist)
         run: |
-          curl -s "https://api.geckoterminal.com/api/v2/networks/elysium/pools?page=1&sort=h24_volume_usd_desc" | python3 -c "
-          import json,sys;d=json.load(sys.stdin).get('data',[]);print('pools on page 1:',len(d))
-          for p in d[:20]:
-              a=p['attributes'];print(f\"{a['name'][:28]:28} vol24 \${float(a['volume_usd']['h24'] or 0):>12,.0f}  liq \${float(a['reserve_in_usd'] or 0):>12,.0f}  fdv \${float(a.get('fdv_usd') or 0):>14,.0f}  mcap \${float(a.get('market_cap_usd') or 0):>12,.0f}  created {a.get('pool_created_at','')[:10]}\")"
-          sleep 3
-          curl -s "https://api.geckoterminal.com/api/v2/networks/elysium/dexes" | python3 -c "import json,sys;print('dexes:',[x['id'] for x in json.load(sys.stdin).get('data',[])])"
-      - name: DefiLlama Elysium chain (DEX volume)
+          curl -s https://chainid.network/chains.json | python3 -c "import json,sys;[print(c['chainId'],c['name'],c.get('nativeCurrency',{}).get('symbol'),c.get('rpc',[])[:2]) for c in json.load(sys.stdin) if 'elysium' in c['name'].lower()]"
+      - name: GoPlus supported chains
         run: |
-          curl -s https://api.llama.fi/v2/chains | python3 -c "import json,sys;[print(c) for c in json.load(sys.stdin) if (c.get('name') or '').lower()=='elysium']"
-          curl -s "https://api.llama.fi/overview/dexs/elysium?excludeTotalDataChart=true" | python3 -c "import json,sys;d=json.load(sys.stdin);print('dex 24h',d.get('total24h'),'7d',d.get('total7d'))" || true
-      - name: DexScreener elysium pairs
+          curl -s "https://api.gopluslabs.io/api/v1/supported_chains?name=token_security" | python3 -c "import json,sys;d=json.load(sys.stdin).get('result',[]);print(len(d),'chains');print([c for c in d if 'ely' in (c.get('name','')+str(c.get('id'))).lower()] or 'elysium not listed')"
+      - name: One Elysium token through GoPlus / Honeypot.is (by guessed chain id)
         run: |
-          curl -s "https://api.dexscreener.com/latest/dex/search?q=elysium" | python3 -c "
-          import json,sys
-          for p in json.load(sys.stdin).get('pairs') or []:
-              if p['chainId']=='elysium': print(p['baseToken']['symbol'],'/',p['quoteToken']['symbol'],p['dexId'],'vol24',p.get('volume',{}).get('h24'),'liq',(p.get('liquidity') or {}).get('usd'),'mcap',p.get('marketCap'))"
+          pool=$(curl -s "https://api.geckoterminal.com/api/v2/networks/elysium/pools?page=1&sort=h24_volume_usd_desc" | python3 -c "import json,sys;d=json.load(sys.stdin)['data'];print(d[4]['relationships']['base_token']['data']['id'].split('_',1)[1])")
+          echo "token $pool"
+          for id in $(curl -s https://chainid.network/chains.json | python3 -c "import json,sys;print(' '.join(str(c['chainId']) for c in json.load(sys.stdin) if 'elysium' in c['name'].lower()))"); do
+            echo "== chain $id GoPlus"; curl -s "https://api.gopluslabs.io/api/v1/token_security/$id?contract_addresses=$pool" | head -c 300; echo
+            echo "== chain $id honeypot.is"; curl -s "https://api.honeypot.is/v2/IsHoneypot?address=$pool&chainID=$id" | head -c 300; echo
+          done
+      - name: GeckoTerminal token info (holders) for that token
+        run: |
+          pool=$(curl -s "https://api.geckoterminal.com/api/v2/networks/elysium/pools?page=1&sort=h24_volume_usd_desc" | python3 -c "import json,sys;d=json.load(sys.stdin)['data'];print(d[4]['attributes']['address'])")
+          sleep 3; curl -s "https://api.geckoterminal.com/api/v2/networks/elysium/pools/$pool/ohlcv/day?limit=5" | head -c 300; echo
