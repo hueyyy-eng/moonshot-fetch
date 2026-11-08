@@ -314,4 +314,5 @@ def run(http: Http, st: Status, passing_slugs: list[str], core: list[str]) -> di
         st.partial("discovery", cut[2:], tokens=len(tokens), per_chain=per_chain)
     else:
         st.ok("discovery", tokens=len(tokens), per_chain=per_chain)
-    return {"tokens": tokens, "chains_scanned": chains, "NO_DEXSCREENER": sorted(no_ds)}
+    # only the chains actually searched: on a busy day the time limit can stop before the last ones
+    return {"tokens": tokens, "chains_scanned": chains[:done], "NO_DEXSCREENER": sorted(no_ds)}

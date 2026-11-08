@@ -64,6 +64,10 @@ def main() -> int:
             mo = syms("#momBody")
             wantm = [t["sym"] for t in summary["momentum"]]
             check("momentum on page == builder", sorted(mo) == sorted(wantm), f"page {mo} vs builder {wantm}")
+        if "runners" in summary:
+            ru = syms("#runBody")
+            wantu = [t["sym"] for t in summary["runners"]]
+            check("runners on page == builder", sorted(ru) == sorted(wantu), f"page {ru} vs builder {wantu}")
 
         # playbook renders in both groupings
         n_chain = pg.evaluate("document.querySelectorAll('#pbWrap .pbgroup').length")

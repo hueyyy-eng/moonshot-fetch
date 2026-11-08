@@ -105,6 +105,18 @@ assert e["_unchk"] and e["_g"]["safe"] is True, e["_g"]
 assert not s_["_unchk"] and s_["_g"]["safe"] is None, s_["_g"]
 h = dict(_tok("elysium"), honey=1); evaluate(h); assert h["_g"]["safe"] is False, "a failed sell simulation still blocks"
 assert "elysium" in _C.MOM["chains"]
+# 8 Nov 2026 back-test changes: score, social as a warning, "tracks an asset", Runners
+from build_block import is_short, is_run, score as _score
+good = dict(_tok("solana"), sec="rugcheck", t10=20, rcs=1, mc=1500, ubr=0.75, age=2, c24=150, turn=12, c6=10, run=1.5, retr=10)
+evaluate(good); assert good["_score"] == 100 and good["_sparts"][0] == "buyers", (good["_score"], good["_sparts"])
+nosoc = dict(good, tw=None); evaluate(nosoc)
+assert nosoc["_g"]["social"] is False and nosoc["_nf"] == 0 and is_short(nosoc), "no X / site warns but does not block"
+calm = dict(good, run=1.1, retr=5); evaluate(calm); assert calm["_calm"] and not good["_calm"]
+runner = dict(good, run=4.0, retr=10, age=0.5, ubr=0.8, turn=15, c24=150, c6=20, mc=1200); evaluate(runner)
+assert runner["_ran"] and is_run(runner), "already ran, half a day old, 80% buyers, 15x turnover -> Runners"
+from build_block import is_mom
+mom_too = dict(runner, age=1.5); evaluate(mom_too); assert is_mom(mom_too) and not is_run(mom_too), "a Momentum token stays in Momentum"
+old = dict(runner, age=5.0); evaluate(old); assert not is_run(old), "Runners are under 3 days old"
 assert "INFLOW_CHAINS" in out and set(out["SCANNED_CHAINS"]) >= {"solana", "bsc"}, (out.get("INFLOW_CHAINS"), out.get("SCANNED_CHAINS"))
 assert "OldChain" not in [r[0] for r in out["NETFLOW"]["day"]], "deprecated chains are left out"
 assert out["NETFLOW"]["month"][0] == ["BSC", -1003.33, "bsc"], out["NETFLOW"]

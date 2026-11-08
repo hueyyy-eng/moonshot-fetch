@@ -271,6 +271,7 @@
   <a href="#pullback"><b>◆</b>Pullback watch</a>
   <a href="#ignite"><b>▲</b>Igniting</a>
   <a href="#momentum"><b>⚡</b>Momentum</a>
+  <a href="#runners"><b>»</b>Runners</a>
   <a href="#s1"><b>1</b>Liquidity flow</a>
   <a href="#s2"><b>2</b>Trading volume</a>
   <a href="#s3"><b>3</b>Token age</a>
@@ -325,6 +326,12 @@
   <div class="note" id="momNote"></div>
 </section>
 
+<section class="step" id="runners">
+  <div class="step-head"><h2><b>»</b>Runners</h2><span class="rule">Experimental (8 Nov 2026). Tokens that already ran 3× or more but are still under 3 days old, with 70–90% of traders buying and trading 10× or more their liquidity. In the back-test this group reached 5× more often than any list (13%), but 9 in 10 later fell by half or more. Trade it fast: half out at 2×, all out within 3 days.</span></div>
+  <div class="tablewrap"><table><thead><tr id="runHead"></tr></thead><tbody id="runBody"></tbody></table></div>
+  <div class="note" id="runNote"></div>
+</section>
+
 <section class="step" id="playbook">
   <div class="step-head"><h2><b>◇</b>Playbook</h2><span class="rule">The same candidates sorted the way you actually trade them: by type first, then by chain or by narrative. Type is about survival, not size — a token is a leader because it lived through a drawdown and still trades. Sizing and hold period are your framework's, shown here as labels, not as advice.</span></div>
   <div class="controls">
@@ -373,6 +380,7 @@
         <button data-l="P" aria-pressed="false">◆ Pullback</button>
         <button data-l="I" aria-pressed="false">▲ Igniting</button>
         <button data-l="M" aria-pressed="false">⚡ Momentum</button>
+        <button data-l="U" aria-pressed="false">» Runners</button>
       </div></div>
     <div class="field"><label for="ptSort">Sort</label><select id="ptSort"><option value="date">Newest first</option><option value="chg">Change since listed</option><option value="best">Best move</option><option value="worst">Worst drop</option></select></div>
   </div>
@@ -441,7 +449,7 @@
         <button data-s="risk" aria-pressed="false">Safety flags</button>
       </div></div>
     <div class="field"><label for="chainsel">Chain</label><select id="chainsel"><option value="all">All chains</option></select></div>
-    <div class="field"><label for="tsort">Sort</label><select id="tsort"><option value="gates">Gates cleared</option><option value="v24">24h volume</option><option value="turn">Turnover</option><option value="run">Run from 7d low</option><option value="age">Youngest first</option></select></div>
+    <div class="field"><label for="tsort">Sort</label><select id="tsort"><option value="gates">Gates cleared</option><option value="score">Score</option><option value="v24">24h volume</option><option value="turn">Turnover</option><option value="run">Run from 7d low</option><option value="age">Youngest first</option></select></div>
   </div>
   <div class="tablewrap"><table><thead><tr id="tokHead"></tr></thead><tbody id="tokBody"></tbody></table></div>
   <div class="note" id="tokNote"></div>
@@ -483,7 +491,7 @@
   <ol>
     <li><strong>Check the date at the top.</strong> Make sure you are looking at today's scan (GitHub sometimes starts it hours late).</li>
     <li><strong>Liquidity flow (step 1):</strong> which chains are "hot". Tokens are searched on hot chains, the 6 core chains (including Elysium), and the 3 chains with the biggest 7-day net inflow (tagged <span class="chip">top inflow</span>).</li>
-    <li><strong>Read the four lists:</strong> ★ Shortlist (passed every check), ◆ Pullback watch (ran, dipped, buyers still there), ▲ Igniting (moving right now — act fast or skip), ⚡ Momentum (experimental, very new tokens).</li>
+    <li><strong>Read the five lists:</strong> ★ Shortlist (passed every check), ◆ Pullback watch (ran, dipped, buyers still there), ▲ Igniting (moving right now — act fast or skip), ⚡ Momentum (experimental, very new tokens), » Runners (experimental, brand-new tokens still running). Within each list, start from the highest <strong>Score</strong>; grey "tracks an asset" tokens sit at the bottom.</li>
     <li><strong>For any token you like, check it yourself:</strong> hover the gate bars and safety pill to see why it passed, note its type tag, then use <a href="#s4">Narrative</a> to see whether real people on X are talking about it.</li>
     <li><strong>Size it with the <a href="#playbook">Playbook</a>:</strong> pot A (safest) gets the biggest share, then B, then C; pot C only in easy markets.</li>
     <li><strong>Decide your exit before you buy</strong> — a price to take profit and a price to cut the loss. The scoreboard below shows why.</li>
@@ -493,6 +501,24 @@
   <p id="howtoScoreLede"></p>
   <div class="lede" id="howtoScore"></div>
   <p id="howtoScoreNote" style="margin-top:8px"></p>
+  <h3 id="scorehow">How the Score works</h3>
+  <p>Every token gets a score out of 100: the sum of the points below for each trait it has when the scanner sees it. Lists are sorted by score, highest first. Hover a token's score to see which points it earned. The points come from a back-test on 1,581 tokens seen between 19 Sep and 8 Nov 2026: the rules were set on the first half (19 Sep – 14 Oct) and checked on the second half (15 Oct – 8 Nov), which they had not "seen". Reviewed every two weeks.</p>
+  <div class="tablewrap"><table><thead><tr><th scope="col">Trait when first seen</th><th scope="col">Points</th><th scope="col">Doubled later: with the trait / without</th></tr></thead><tbody>
+    <tr><td>Buyer share 70–90% (90%+ gets nothing: honeypot pattern)</td><td class="num">25</td><td>about 20% / 7–10%</td></tr>
+    <tr><td>Token 1–7 days old</td><td class="num">20</td><td>about 21% / 4–16%</td></tr>
+    <tr><td>24h move +100% to +300%</td><td class="num">15</td><td>about 27% / 4–16%</td></tr>
+    <tr><td>Chain Solana, BSC or Ethereum</td><td class="num">15</td><td>about 19% / 5–7%</td></tr>
+    <tr><td>Market cap $1–2m</td><td class="num">10</td><td>about 18% / 5–16%</td></tr>
+    <tr><td>Trading 10× or more its liquidity</td><td class="num">10</td><td>about 16% / 3–14%</td></tr>
+    <tr><td>Has an X account or website (tie-breaker only)</td><td class="num">5</td><td>11–15% either way</td></tr>
+  </tbody></table></div>
+  <div class="tablewrap" style="margin-top:10px"><table><thead><tr><th scope="col">Score</th><th scope="col">First half: doubled</th><th scope="col">Second half: doubled</th><th scope="col">Second half: now down 50%+</th></tr></thead><tbody>
+    <tr><td>0–20</td><td class="num">4%</td><td class="num">3%</td><td class="num">25%</td></tr>
+    <tr><td>20–40</td><td class="num">16%</td><td class="num">15%</td><td class="num">58%</td></tr>
+    <tr><td>40–60</td><td class="num">18%</td><td class="num">19%</td><td class="num">69%</td></tr>
+    <tr><td>60–100</td><td class="num">31%</td><td class="num">29%</td><td class="num">55%</td></tr>
+  </tbody></table></div>
+  <p class="note">"First half" and "second half" are the two date ranges above. "Now down 50%+" is the share whose price today is half or less of the price when first seen. A high score means more chances of a quick double, not a safer coin to hold. Decide your exit before you buy.</p>
   <h3>Each part of the page</h3>
   <div class="cards" id="howtoParts"></div>
   <h3>Before you put money in</h3>
@@ -2032,6 +2058,7 @@ const SECTION_TIPS={
   pullback:"WHAT: tokens that already ran 3x or more, fell back 40-70%, and still have buyers and volume.\nHOW TO USE: the 'second chance' entry, after the first spike has cooled. They are tagged 'already ran' on purpose. Riskier than the Shortlist; decide your exit first.",
   ignite:"WHAT: tokens moving right now: volume in the last 6 hours well above the day's pace, price up but not yet blown out.\nHOW TO USE: the most time-sensitive list. Check the scan time at the top: if the scan ran late, the move may already be over.",
   momentum:"WHAT: experimental. Very new tokens (1-3 days old) on Solana, BSC, Robinhood Chain or Elysium with steady buyers.\nHOW TO USE: highest risk on the page. Small amounts only; most of these have gone to zero in the track record.",
+  runners:"WHAT: experimental (8 Nov 2026). Brand-new tokens (under 3 days) that already ran 3× or more but still have 70–90% buyers and very heavy trading. In the back-test this group hit 5× most often (13%) — and 9 in 10 later crashed.\nHOW TO USE: fast trades only. Half out at 2×, all out within 3 days, small amounts. Logged to Price tracking under » so we can see if it keeps working.",
   playbook:"WHAT: the same candidates sorted into three pots: A Leader of the Leaders (safest), B Emerging Leaders, C Itch Hand Early Plays (very new or already ran). Toggle by chain or by narrative.\nHOW TO USE: decide how much goes where. A gets the biggest share, then B, then C; pot C only in easy markets. The one line beside each token says why it is in its pot.",
   track:"WHAT: every token ever put on the Shortlist or Pullback list, with its price on the day it was listed, re-priced daily. Below it: the near-misses that failed exactly one check, as a control group.\nHOW TO USE: the honest scoreboard. If the picks do no better than the near-misses, the checks are not earning their keep.",
   prices:"WHAT: every token from the four lists, from the day it was listed: change since then, best and worst point.\nHOW TO USE: see how fast gains appear and disappear. Use it to set realistic profit-taking and stop-loss levels.",
@@ -2052,6 +2079,7 @@ const COL_TIPS={
   "Mcap":"Market cap: price x supply. The moonshot band is $500k-$2m.",
   "Liq / mcap":"Liquidity as a share of market cap. Higher = easier to buy and sell without moving the price.",
   "Vol 24h":"Trading volume in the last 24 hours.",
+  "Score":"Score out of 100 from the traits that went with 2× outcomes in the back-test (buyers 70–90%, age 1–7 days, 24h move +100–300%, Solana/BSC/Ethereum, $1–2m cap, heavy trading, has X/site). Hover a score to see its points. HOW TO USE: look at the highest scores first; it is not a measure of safety. Full table under How to use.",
   "Turn":"Turnover: 24h volume divided by liquidity. Healthy trading is active but not extreme; very high can mean wash trading.",
   "Buyers":"Share of unique wallets buying vs selling in 24h. Above 50% = more buyers than sellers. Counted by wallets, which are harder to fake than trades.",
   "Run off low":"How many times the price has risen from its 7-day low. 3x or more counts as 'already ran'.",
@@ -2155,6 +2183,19 @@ const COL_TIPS={
 
 /* ---------- derived token state ---------- */
 let minliq = 25, allowUnk = false;
+// Score out of 100 (8 Nov 2026): each line went with more 2x outcomes in both halves of the back-test
+const SCORE=[["buyers","buyer share 70–90%",25],["age","1–7 days old",20],["move","24h move +100–300%",15],
+  ["chain","Solana, BSC or Ethereum",15],["mcap","market cap $1–2m",10],["turn","trading 10×+ its liquidity",10],["social","has an X or site",5]];
+const CALM={runMax:1.15, retrMax:13};
+function score(t){
+  const ok={buyers:t.ubr!=null && t.ubr>=0.70 && t.ubr<0.90, age:t.age!=null && t.age>=1 && t.age<7,
+    move:t.c24!=null && t.c24>=100 && t.c24<300, chain:["solana","bsc","ethereum"].indexOf(t.c)>=0,
+    mcap:t.mc!=null && t.mc>=1000 && t.mc<2000, turn:(t.turn||0)>=10, social:!!(t.tw||t.web)};
+  const parts=SCORE.filter(x=>ok[x[0]]).map(x=>x[0]);
+  return [SCORE.filter(x=>ok[x[0]]).reduce((s,x)=>s+x[2],0), parts];
+}
+const scoreTip=t=>"Score "+t._score+"/100.\n"+SCORE.map(x=>(t._sparts.indexOf(x[0])>=0?"+"+x[2]:" 0")+"  "+x[1]).join("\n")
+  +"\nIn the back-test, tokens scoring 60+ doubled about 30% of the time; under 20, about 3–4%. A higher score is not a safer hold.";
 function derive(t){
   const runOk = t.run!=null && t.run>0;                       // run===0 means the candle low was unusable
   t._runOk = runOk;
@@ -2173,6 +2214,9 @@ function derive(t){
   t._v4 = typeof t.pa==="string" && t.pa.length>50;
   t._secKnown = ((t.sec==="goplus"||t.sec==="rugcheck") && (t.t10!=null||t.stx!=null||t.sstx!=null||t.rcs!=null||t.mint!=null||t.frz!=null||t.tb!=null||!!t.hpOk))
              || (t._partial && t.t10!=null && t.ver===1);
+  // "tracks an asset": price stayed within ~15% over 7 days (stocks, wrapped coins, stable-like tokens)
+  t._calm = !!(t._runOk && t.run<=CALM.runMax && t.retr!=null && t.retr<=CALM.retrMax);
+  const sc=score(t); t._score=sc[0]; t._sparts=sc[1];
   // chains no rug service covers yet (owner, 8 Nov 2026): no rug data counts as passed, shown with a red tag
   t._unchk = !t._secKnown && ["elysium"].includes(t.c) && !t._honey;
   t._top10ok = t.t10!=null ? t.t10<TOP10_MAX : null;
@@ -2236,12 +2280,15 @@ function safetyText(t){
   }
   return p.length?p.join(" · "):"checked, nothing flagged";
 }
+// Gates that warn but never block a list (8 Nov 2026): tokens with no X / site did better than the Shortlist
+const SOFT_GATES=["social"];
 function evalGates(t){
   const r={}; GATES.forEach(g=>r[g.k]=g.test(t));
   t._g=r;
   t._np=Object.values(r).filter(v=>v===true).length;
-  t._nf=Object.values(r).filter(v=>v===false).length;
-  t._nu=Object.values(r).filter(v=>v===null).length;
+  const hard=Object.keys(r).filter(k=>SOFT_GATES.indexOf(k)<0).map(k=>r[k]);
+  t._nf=hard.filter(v=>v===false).length;
+  t._nu=hard.filter(v=>v===null).length;
 }
 const UBR_MAX=0.90;   // 90%+ buyers with almost no sellers: honeypot / coordinated-pump profile — no list admits it
 const crowded=t=>t.ubr!=null && t.ubr>=UBR_MAX;
@@ -2268,6 +2315,16 @@ function isIgn(t){
 // excluded on purpose — first seen under 1 day old they were the worst group (median peak 0.11x); the ones
 // that survive to day 1-3 were the best. A token that keeps the profile qualifies the next morning.
 const MOM={ageLo:1, ageHi:3, mcLo:500, mcHi:2000, ubrLo:0.45, ubrHi:0.90, chains:["solana","bsc","robinhood","elysium"]};
+// --- added 8 Nov 2026 (owner's review of the back-tests). Same rules as scan/build_block.py ---
+const RUN={ageMax:3, ubrLo:0.70, ubrHi:0.90, turnMin:10};
+function isRun(t){
+  return t.band!=="l" && t._ran && t.age!=null && t.age<RUN.ageMax
+    && t.ubr!=null && t.ubr>=RUN.ubrLo && t.ubr<RUN.ubrHi && (t.turn||0)>=RUN.turnMin
+    && !t._honey && !t._wash && !crowded(t) && t._g.safe!==false && t._g.liq===true && t._g.mcap===true
+    && !(isShort(t)||isPull(t)||isIgn(t)||isMom(t));
+}
+// lists: calm "tracks an asset" tokens last, then highest score first
+const byScore=(a,b)=>(a._calm-b._calm)||(b._score-a._score);
 function isMom(t){
   return t.band!=="l" && t.age!=null && t.age>=MOM.ageLo && t.age<MOM.ageHi
     && MOM.chains.indexOf(t.c)>=0
@@ -2511,7 +2568,7 @@ function renderChains(){
 }
 
 /* ---------- token tables ---------- */
-const TOK_HEAD=[["Token",""],["Gates","w-g"],["Safety","w-sf"],["Price · days","w-sp"],["Mcap",""],["Liq / mcap",""],["Vol 24h",""],["Turn",""],["Buyers",""],["Run off low",""],["Off high",""],["6h",""],["24h",""],["Age",""],["X",""]];
+const TOK_HEAD=[["Token",""],["Score",""],["Gates","w-g"],["Safety","w-sf"],["Price · days","w-sp"],["Mcap",""],["Liq / mcap",""],["Vol 24h",""],["Turn",""],["Buyers",""],["Run off low",""],["Off high",""],["6h",""],["24h",""],["Age",""],["X",""]];
 const segs = t => {
   const parts = GATES.map(g=>{ const v=t._g[g.k]; return `<i class="${v===true?"on":v===false?"off":"unk"}"></i>`; }).join("");
   const detail = GATES.map(g=>{ const v=t._g[g.k]; return (v===true?"PASS":v===false?"FAIL":"?  ")+"  "+g.nm+" — "+g.txt(t); }).join("\n");
@@ -2545,6 +2602,8 @@ function tokRow(t, dimIfFail){
   if(t._wash) tags.push(`<span class="chip bad" data-tip="Turnover ${t.turn}× on ${t.tpw==null?"?":t.tpw} trades per wallet — wash-trading pattern">wash?</span>`);
   if(t._honey) tags.push('<span class="chip bad" data-tip="A simulated buy-then-sell failed: you could not sell">honeypot</span>');
   if(t._unchk) tags.push('<span class="chip bad" data-tip="No rug-check service covers this chain yet, so holder concentration, mint authority and a test sell were NOT checked. It is on the list without that check, on purpose. Check the contract yourself and use small amounts.">no rug check</span>');
+  if(t._calm) tags.push('<span class="chip" data-tip="Price stayed within about 15% over the last 7 days while trading: it tracks something (a stock, a wrapped coin, a stable-like token) rather than speculating. In the back-test none of these ever doubled, so they are moved to the bottom of every list.">tracks an asset</span>');
+  if(t._g && t._g.social===false) tags.push('<span class="chip" data-tip="No X account or website listed. A warning only (since 8 Nov 2026): in the back-test, tokens that failed only this check did better than the Shortlist.">no X / site</span>');
   if(t.noCd) tags.push('<span class="chip" data-tip="Too new for daily candles — already-ran uses the 24h move instead">new pair</span>');
   if(t.hpInc) tags.push('<span class="chip" data-tip="Sell simulation reverted on V3/V4 routing — inconclusive, not a honeypot">sim n/a</span>');
   if(t.bo) tags.push('<span class="chip" data-tip="Paid DexScreener boost — someone is paying for attention">boosted</span>');
@@ -2552,6 +2611,7 @@ function tokRow(t, dimIfFail){
   const dimmed = dimIfFail && t._nf>0;
   return `<tr class="${isShort(t)?"short":""}${isIgn(t)?" ign":""}${dimmed?" dim-row":""}">
     <td class="tok"><a href="https://dexscreener.com/${t.c}/${t.pa}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">${esc(t.sym)}</a> <span class="chip">${cname(t.c)}</span><small>${narChips(t.nar, t.nar2)}${esc(t.nm||"")}${t.nm?" · ":""}${esc(t.dex)} · ${esc(t.q)} pair${tags.length?"<br>"+tags.join(""):""}</small></td>
+    <td class="num" data-tip="${esc(scoreTip(t))}"><b>${t._score}</b></td>
     <td class="w-g">${segs(t)}</td>
     <td class="w-sf">${safetyCell(t)}</td>
     <td class="w-sp">${spark(t.cs, t._ran)}</td>
@@ -2579,7 +2639,7 @@ function renderTokens(){
   // shortlist
   let sl=TOKENS.filter(isShort);
   if(sage!=="all") sl=sl.filter(t=>t._band===sage);
-  sl.sort((a,b)=>(b.ubr||0)-(a.ubr||0)||b.v24-a.v24);
+  sl.sort((a,b)=>byScore(a,b)||(b.ubr||0)-(a.ubr||0)||b.v24-a.v24);
   document.getElementById("shortHead").innerHTML=TOK_HEAD.map(h=>`<th scope="col" class="${h[1]}">${h[0]}</th>`).join("");
   const sb=document.getElementById("shortBody");
   sb.innerHTML = sl.length ? sl.map(t=>tokRow(t,false)).join("")
@@ -2588,10 +2648,10 @@ function renderTokens(){
   const unkN=all.filter(t=>t._band==="unk").length;
   const bands=["d1","d3","d7","d7p"].map(b=>b+": "+all.filter(t=>t._band===b).length).join(" · ")+(unkN?" · age unknown: "+unkN:"");
   document.getElementById("shortNote").textContent =
-    `${all.length} of ${TOKENS.length} candidates clear all ${GATES.length} gates (${bands}). ${near.length} miss exactly one. Hover the gate bars or the safety pill for the reason behind any verdict.`;
+    `${all.length} of ${TOKENS.length} candidates clear every required gate (${bands}); the X / site gate is a warning only since 8 Nov 2026. ${near.length} miss exactly one. Hover the gate bars or the safety pill for the reason behind any verdict.`;
 
   // pullback
-  const pl=TOKENS.filter(isPull).sort((a,b)=>b.vvp-a.vvp);
+  const pl=TOKENS.filter(isPull).sort((a,b)=>byScore(a,b)||b.vvp-a.vvp);
   document.getElementById("pullHead").innerHTML=TOK_HEAD.map(h=>`<th scope="col" class="${h[1]}">${h[0]}</th>`).join("");
   document.getElementById("pullBody").innerHTML = pl.length ? pl.map(t=>tokRow(t,false)).join("")
     : `<tr><td colspan="${TOK_HEAD.length}" class="empty">No token is sitting in a healthy pullback right now.</td></tr>`;
@@ -2600,7 +2660,7 @@ function renderTokens(){
     : `Nothing qualifies. The window is narrow on purpose: shallower than ${PULL.retrLo}% is not a reset, deeper than ${PULL.retrHi}% is usually a failure.`;
 
   // igniting
-  const ig=TOKENS.filter(isIgn).sort((a,b)=>b._acc-a._acc);
+  const ig=TOKENS.filter(isIgn).sort((a,b)=>byScore(a,b)||b._acc-a._acc);
   document.getElementById("ignHead").innerHTML=TOK_HEAD.map(h=>`<th scope="col" class="${h[1]}">${h[0]}</th>`).join("");
   document.getElementById("ignBody").innerHTML = ig.length ? ig.map(t=>tokRow(t,false)).join("")
     : `<tr><td colspan="${TOK_HEAD.length}" class="empty">Nothing is igniting in this candidate set. Often that is the discovery step rather than the market — the scan ranks by 24-hour volume, which surfaces tokens whose move is already in that number. The daily scan also ranks by 6-hour trending to catch them earlier.</td></tr>`;
@@ -2609,13 +2669,22 @@ function renderTokens(){
     : `Empty is the normal state. A token is only in this window for hours, so an empty list at 10pm says little about 10am.`;
 
   // momentum (experimental)
-  const mo=TOKENS.filter(isMom).sort((a,b)=>(b.turn||0)-(a.turn||0));
+  const mo=TOKENS.filter(isMom).sort((a,b)=>byScore(a,b)||(b.turn||0)-(a.turn||0));
   document.getElementById("momHead").innerHTML=TOK_HEAD.map(h=>`<th scope="col" class="${h[1]}">${h[0]}</th>`).join("");
   document.getElementById("momBody").innerHTML = mo.length ? mo.map(t=>tokRow(t,false)).join("")
     : `<tr><td colspan="${TOK_HEAD.length}" class="empty">No token fits the momentum profile today. The window is 1–3 days of age, so names enter and leave quickly.</td></tr>`;
   document.getElementById("momNote").textContent = mo.length
     ? `${mo.length} in the experimental window. Expect most to fail: in the data this profile was built on, roughly 1 in 4 reached 2× and well over half ended down 50%+. Each is logged to Price tracking under ⚡ on the day it first appears, so the idea is judged on data it was not tuned on.`
     : `Tokens first seen under 1 day old are deliberately left out — they were the worst group in the data. The ones that survive to day 1–3 with balanced buying are what this list waits for.`;
+
+  // runners (experimental)
+  const ru=TOKENS.filter(isRun).sort(byScore);
+  document.getElementById("runHead").innerHTML=TOK_HEAD.map(h=>`<th scope="col" class="${h[1]}">${h[0]}</th>`).join("");
+  document.getElementById("runBody").innerHTML = ru.length ? ru.map(t=>tokRow(t,false)).join("")
+    : `<tr><td colspan="${TOK_HEAD.length}" class="empty">No runner right now. The window is narrow on purpose: under 3 days old, already up 3×+, 70–90% buyers and very heavy trading. About one token every two scans fits.</td></tr>`;
+  document.getElementById("runNote").textContent = ru.length
+    ? `${ru.length} brand-new token${ru.length>1?"s":""} still running with strong buying. Each is logged to Price tracking under » on the day it first appears. Expect most to crash: decide the exit first.`
+    : `Nothing qualifies right now.`;
 
   // staleness of candle-derived fields
   const sb2=staleBanner();
@@ -2630,9 +2699,9 @@ function renderTokens(){
   if(showF==="ign") rows=rows.filter(isIgn);
   if(showF==="ran") rows=rows.filter(t=>t._ran||t._parab);
   if(showF==="risk") rows=rows.filter(t=>t._g.safe===false||t._wash||t._g.safe===null);
-  const S={gates:(a,b)=>b._np-a._np||a._nf-b._nf||b.v24-a.v24, v24:(a,b)=>b.v24-a.v24, turn:(a,b)=>b.turn-a.turn,
+  const S={score:(a,b)=>b._score-a._score||b.v24-a.v24, gates:(a,b)=>b._np-a._np||a._nf-b._nf||b.v24-a.v24, v24:(a,b)=>b.v24-a.v24, turn:(a,b)=>b.turn-a.turn,
     run:(a,b)=>(b.run||0)-(a.run||0), age:(a,b)=>(a.age==null?1e9:a.age)-(b.age==null?1e9:b.age)}[tsort];
-  rows.sort(S);
+  rows.sort((a,b)=>(a._calm-b._calm)||S(a,b));   // "tracks an asset" tokens always last
   document.getElementById("tokHead").innerHTML=TOK_HEAD.map(h=>`<th scope="col" class="${h[1]}">${h[0]}</th>`).join("");
   document.getElementById("tokBody").innerHTML = rows.length ? rows.map(t=>tokRow(t,true)).join("")
     : `<tr><td colspan="${TOK_HEAD.length}" class="empty">Nothing matches this filter.</td></tr>`;
@@ -2851,12 +2920,13 @@ document.querySelectorAll("#tabs-hl button").forEach(b=>b.setAttribute("aria-pre
 /* ---------- price tracking: every listed token, priced from the day it first appeared ---------- */
 let ptL="all", ptSort="date";
 const PT_HEAD=[["Listed",""],["Token",""],["List","w-g"],["Listed mcap",""],["Listed price",""],["Price now",""],["Since listed",""],["Best",""],["Worst",""],["Days",""],["Peak on day",""]];
-const LIST_NM={S:"★ Shortlist",P:"◆ Pullback",I:"▲ Igniting",M:"⚡ Momentum"};
+const LIST_NM={S:"★ Shortlist",P:"◆ Pullback",I:"▲ Igniting",M:"⚡ Momentum",U:"» Runners"};
 function ptRows(){
   const ign=(typeof IGNHIST!=="undefined")?IGNHIST:[];
   const mh=(typeof MOMHIST!=="undefined")?MOMHIST:[];
+  const uh=(typeof RUNHIST!=="undefined")?RUNHIST:[];
   const today=SNAP_AT.slice(0,10);
-  return HISTORY.concat(ign).concat(mh).filter(h=>h.px).map(h=>{
+  return HISTORY.concat(ign).concat(mh).concat(uh).filter(h=>h.px).map(h=>{
     // lows are recorded from 1 Oct 2026: for tokens listed earlier the real low may have been deeper
     const lowSeen=h.d>="2026-10-01", lo=h.pxMin!=null?h.pxMin:Math.min(h.px, h.pxNow!=null?h.pxNow:h.px);
     return Object.assign({}, h, {
@@ -2897,7 +2967,7 @@ function renderPrices(){
   const all=ptRows();
   document.querySelectorAll("#tabs-pt button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.l===ptL)));
   const tile=(k,v,n)=>`<div><div class="k">${k}</div><div class="v num">${v}</div><div class="n">${n}</div></div>`;
-  document.getElementById("priceLede").innerHTML=["S","P","I","M"].map(L=>{
+  document.getElementById("priceLede").innerHTML=["S","P","I","M","U"].map(L=>{
     const r=all.filter(h=>h.l===L && h._chg!=null);
     if(!r.length) return tile(LIST_NM[L],"—","nothing tracked yet");
     const m=med(r.map(h=>h._chg)), up=r.filter(h=>h._chg>0).length, best=Math.max(...r.map(h=>h._best==null?-100:h._best));
@@ -2940,9 +3010,9 @@ function renderHowto(){
   const tile=(k,v,n)=>`<div><div class="k">${k}</div><div class="v num">${v}</div><div class="n">${n}</div></div>`;
   const first=all.length?all.map(h=>h.d).sort()[0]:null;
   document.getElementById("howtoScoreLede").textContent = all.length
-    ? `Every token the four lists have shown since ${first}, followed at each daily scan. Updated automatically with every scan.`
+    ? `Every token the five lists have shown since ${first}, followed at each daily scan. Updated automatically with every scan.`
     : "Nothing tracked yet.";
-  box.innerHTML=["S","P","I","M"].map(L=>{
+  box.innerHTML=["S","P","I","M","U"].map(L=>{
     const r=all.filter(h=>h.l===L); if(!r.length) return tile(LIST_NM[L],"—","nothing tracked yet");
     const o=outcomes(r), hit=o.b2+o.b5+o.b10, m=med(r.map(h=>h._chg));
     return tile(LIST_NM[L], `${hit} of ${o.n}`, `reached 2× or more at some point · median today ${fmtChg(m)} · ${o.d50+o.d100} now down 50% or more`);
@@ -3099,7 +3169,11 @@ const TAGS=[
   ["new pair","Too new for daily candles, so the already-ran check uses the 24h move."],
   ["heating N×","Volume in the last 6 hours is running N times the 24-hour average pace. Above "+IGN.accel+"× puts a token on the Igniting list if it also passes everything else."],
   ["boosted","Someone paid DexScreener for placement. Neither good nor bad; just paid."],
-  ["core","Scanned for tokens regardless of the chain gate (Solana, Base, BSC, Hyperliquid, Robinhood Chain)."],
+  ["no rug check","Elysium only: no rug-check service covers the chain yet, so the token reached the list without that check, on purpose (owner, 8 Nov 2026). Check the contract yourself."],
+  ["tracks an asset","Price stayed within about 15% over 7 days while trading (stocks, wrapped coins, stable-like tokens). None of these doubled in the back-test, so they sit at the bottom of every list."],
+  ["no X / site","No X account or website listed. A warning only since 8 Nov 2026: tokens that failed only this check did better than the Shortlist in the back-test."],
+  ["Score","0–100 from the traits that went with 2× outcomes (see How to use). Lists are sorted by it, highest first."],
+  ["core","Scanned for tokens regardless of the chain gate (Solana, Base, BSC, Hyperliquid, Robinhood Chain, Elysium)."],
   ["no DS","The chain passed the gate but has no DexScreener page, so no tokens can be scanned there."]
 ];
 function renderCriteria(){
