@@ -92,7 +92,14 @@ If a change would break one of them, stop and ask first.
   (type labels wrongly caught PSTR, FLOAT and HYDX, which pumped).
 - **Robinhood Chain:** no extra hard bar (back-test: it would have dropped 28 of its 30 winners). The score ranks
   weak Robinhood tokens lower instead.
-- **Bi-weekly review:** the owner reviews the dashboard every other Sunday. Rule changes only after the owner approves.
+- **Bi-weekly review:** the owner reviews the dashboard every other Sunday (summary around 11am SGT). Rule changes
+  only after the owner approves.
+- **Review tab** (`#review`): every back-test from the 8 Nov 2026 review, recalculated from all snapshots at every scan
+  by `scan/review_study.py` (run after the pattern study in the workflow; injected between `/*REVIEW-START*/` and
+  `/*REVIEW-END*/`). It also writes `site/review.json` (read by the review task) and, on the first scan on or after
+  each review Sunday (every 14 days from 8 Nov 2026), appends the headline numbers to `site/review-history.json`,
+  shown in brackets on the tab. When a rule changes after a review, update the matching test there too.
+- **Days to 2× / 5× / 10×** columns in Track record, near-misses and Price tracking come from the same study.
 
 ## Narrative labels
 
@@ -150,6 +157,6 @@ Recorded 18 Oct 2026. Not fixed yet — only change these when the owner asks.
 - `snapshots/` and `latest/` are written by the bot. Do not hand-edit them.
 - `site/page.html`: the page design (layout, labels, tiles, the code that draws the page) may be
   edited **only when the owner asks**. Never touch the data section between `/*DATA-START*/` and
-  `/*DATA-END*/` (or `/*PATTERN-START*/` … `/*PATTERN-END*/`) — the bot replaces it every scan.
-- The other files in `site/` (CSVs, `summary.json`, `nar_auto.json`, `pattern-nar.json`) are written
-  by the bot. Do not hand-edit them.
+  `/*DATA-END*/` (or `/*PATTERN-START*/` … `/*PATTERN-END*/`, `/*REVIEW-START*/` … `/*REVIEW-END*/`) — the bot replaces it every scan.
+- The other files in `site/` (CSVs, `summary.json`, `nar_auto.json`, `pattern-nar.json`, `review.json`,
+  `review-history.json`) are written by the bot. Do not hand-edit them.
