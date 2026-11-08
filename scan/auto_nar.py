@@ -9,10 +9,12 @@ A token can carry a second label when it plainly fits two (OpenAI PreStocks: Tok
 The first label is the one the page groups and counts by; the second only shows as an extra tag. A token
 with two labels is written as ["first", "second"] instead of a plain string.
 
-Two passes per token:
+Passes per token, each only if the one before finds nothing (owner's choice, 8 Nov 2026):
   1. its ticker, name and website address (the original keyword rules, widened);
-  2. only if pass 1 finds nothing: what the token says about itself - its GeckoTerminal profile
-     (description + category tags) and the title / description of its own website.
+  2. the description its creator wrote at launch (Solana: read from the token itself on-chain, then the
+     launchpad's metadata file on IPFS - this covers pump.fun tokens);
+  3. its DexScreener profile description;
+  4. its GeckoTerminal profile (description + category tags) and the title / description of its own website.
 When neither pass finds a clear fit the token stays "Unclassified" rather than being guessed, and it
 is looked up again on the next day's run (profiles and sites often appear a day or two after launch).
 
@@ -236,7 +238,12 @@ MAX_LOOKUPS = 90            # tokens looked up per run
 TIME_BUDGET_S = 300         # stop looking things up after 5 minutes; the rest wait for tomorrow
 SITE_MAX_BYTES = 300_000
 # how the lookups went today; written into nar.json under "_stats" so the daily report can show it
-STATS = {"gt_ok": 0, "gt_failed": 0, "gt_had_text": 0, "site_tried": 0, "site_ok": 0}
+STATS = {"gt_ok": 0, "gt_failed": 0, "gt_had_text": 0, "site_tried": 0, "site_ok": 0,
+         "launch_tried": 0, "launch_ok": 0, "ds_tried": 0, "ds_ok": 0}
+SOLANA_RPC = "https://api.mainnet-beta.solana.com"
+# IPFS gateways that answer GitHub's runners (checked 8 Nov 2026; ipfs.io and dweb.link block them)
+IPFS_GATEWAYS = ("https://ipfs.filebase.io/ipfs/", "https://gw.ipfs-lens.dev/ipfs/")
+DS_DETAILS = "https://io.dexscreener.com/dex/pair-details/v4"
 
 _META_RE = re.compile(r'<meta[^>]+(?:name|property)\s*=\s*["\'](?:description|og:description|twitter:description|'
                       r'og:title|twitter:title)["\'][^>]*>', re.I)
@@ -266,6 +273,10 @@ def make_http():
     from fetch.discover import DS_TO_GT
     http = Http(timeout=12.0)
     http.pace("api.geckoterminal.com", 20)
+    http.pace("api.mainnet-beta.solana.com", 60)
+    http.pace("io.dexscreener.com", 40)
+    for g in IPFS_GATEWAYS:
+        http.pace(g.split("/")[2], 60)
     return http, DS_TO_GT
 
 
@@ -292,6 +303,70 @@ def gt_profile(http, net_map: dict, t: dict) -> tuple[list[str], str, list[str]]
     return cats, str(desc), webs
 
 
+def metadata_uri(mint_info: dict) -> str:
+    """Solana getAccountInfo (jsonParsed) -> the metadata file address a Token-2022 mint stores about itself."""
+    info = ((((mint_info or {}).get("result") or {}).get("value") or {}).get("data") or {})
+    info = (info.get("parsed") or {}).get("info") or {} if isinstance(info, dict) else {}
+    for ext in info.get("extensions") or []:
+        if ext.get("extension") == "tokenMetadata":
+            return str((ext.get("state") or {}).get("uri") or "")
+    return ""
+
+
+def ipfs_urls(uri: str) -> list[str]:
+    """an ipfs link in any form -> the same file on the gateways that answer GitHub; other links kept as they are"""
+    m = re.search(r"/ipfs/([A-Za-z0-9]{40,}[^\s\"']*)", uri or "") or re.match(r"ipfs://([A-Za-z0-9]{40,}\S*)", uri or "")
+    if m:
+        return [g + m.group(1) for g in IPFS_GATEWAYS]
+    return [uri] if re.match(r"^https://", uri or "") else []
+
+
+def launch_description(http, t: dict) -> str:
+    """Pass 2: what the creator wrote when launching the token. Solana only for now: pump.fun and most new Solana
+    tokens keep a link to a small metadata file (name, symbol, description) inside the token itself. EVM launchpads
+    (four.meme, Clanker, ...) block GitHub's runners or need a paid key, so those go straight to pass 3."""
+    if (t.get("c") or "").lower() != "solana" or not t.get("ta"):
+        return ""
+    STATS["launch_tried"] += 1
+    try:
+        uri = metadata_uri(http.post_json(SOLANA_RPC, {"jsonrpc": "2.0", "id": 1, "method": "getAccountInfo",
+                                                        "params": [t["ta"], {"encoding": "jsonParsed"}]}))
+    except Exception as e:  # noqa: BLE001 - best-effort
+        print(f"  solana rpc {t.get('sym')}: {str(e)[:60]}")
+        return ""
+    for url in ipfs_urls(uri):
+        try:
+            j = http.get(url, retries=0)
+        except Exception:  # noqa: BLE001 - try the next gateway
+            continue
+        desc = str((j or {}).get("description") or "").strip() if isinstance(j, dict) else ""
+        if desc:
+            STATS["launch_ok"] += 1
+        return desc
+    return ""
+
+
+def ds_description(details: dict) -> str:
+    """DexScreener pair-details -> the token's profile description (empty when it has no profile)"""
+    cms = (details or {}).get("cms") or {}
+    return str(cms.get("description") or "").strip() if isinstance(cms, dict) else ""
+
+
+def dexscreener_description(http, t: dict) -> str:
+    """Pass 3: the description on the token's DexScreener profile, if its team set one up."""
+    if not t.get("c") or not t.get("ta"):
+        return ""
+    STATS["ds_tried"] += 1
+    try:
+        desc = ds_description(http.get(f"{DS_DETAILS}/{t['c']}/{t['ta']}", retries=0))
+    except Exception as e:  # noqa: BLE001 - best-effort
+        print(f"  dexscreener profile {t.get('sym')}: {str(e)[:60]}")
+        return ""
+    if desc:
+        STATS["ds_ok"] += 1
+    return desc
+
+
 def fetch_site(http, url: str) -> str:
     if not url or not re.match(r"^https?://", url, re.I):
         return ""
@@ -314,7 +389,7 @@ def main() -> int:
     offline = "--offline" in sys.argv
     todo = json.load(open(args[0], encoding="utf-8"))
     out: dict[str, str | list[str]] = {}
-    how: dict[str, int] = {"name": 0, "profile": 0, "unclassified": 0, "skipped": 0}
+    how: dict[str, int] = {"name": 0, "launch": 0, "dexscreener": 0, "profile": 0, "unclassified": 0, "skipped": 0}
     http = net_map = None
     if not offline:
         try:
@@ -331,12 +406,19 @@ def main() -> int:
             how["name"] += 1
         elif http is not None and looked < MAX_LOOKUPS and time.time() - t0 < TIME_BUDGET_S:
             looked += 1
-            cats, desc, webs = gt_profile(http, net_map, t)
-            labels = tags_from_profile(cats, desc)
+            src = "launch"
+            labels = tags_from_profile([], launch_description(http, t))                 # 2. creator's launch text
             if labels[0] == "Unclassified":
-                site = t.get("web") or (webs[0] if webs else "")
-                labels = tags_from_profile([], f"{desc} . {fetch_site(http, site)}")
-            how["profile" if labels[0] != "Unclassified" else "unclassified"] += 1
+                src = "dexscreener"
+                labels = tags_from_profile([], dexscreener_description(http, t))         # 3. DexScreener profile
+            if labels[0] == "Unclassified":
+                src = "profile"
+                cats, desc, webs = gt_profile(http, net_map, t)                          # 4. GeckoTerminal + site
+                labels = tags_from_profile(cats, desc)
+                if labels[0] == "Unclassified":
+                    site = t.get("web") or (webs[0] if webs else "")
+                    labels = tags_from_profile([], f"{desc} . {fetch_site(http, site)}")
+            how[src if labels[0] != "Unclassified" else "unclassified"] += 1
         else:
             how["unclassified" if http is not None or offline else "skipped"] += 1
         out[key] = labels[:2] if len(labels) > 1 else labels[0]
@@ -344,7 +426,11 @@ def main() -> int:
     for v in out.values():
         v = v[0] if isinstance(v, list) else v
         counts[v] = counts.get(v, 0) + 1
-    stats = {"tagged": len(out), "by_name": how["name"], "by_profile_or_site": how["profile"],
+    stats = {"tagged": len(out), "by_name": how["name"],
+             "by_profile_or_site": how["launch"] + how["dexscreener"] + how["profile"],
+             "by_launch_text": how["launch"], "by_dexscreener": how["dexscreener"], "by_gt_or_site": how["profile"],
+             "launch_tried": STATS["launch_tried"], "launch_read": STATS["launch_ok"],
+             "dexscreener_tried": STATS["ds_tried"], "dexscreener_read": STATS["ds_ok"],
              "still_unclassified": counts.get("Unclassified", 0), "looked_up": looked,
              "profile_lookups_ok": STATS["gt_ok"], "profile_lookups_failed": STATS["gt_failed"],
              "profiles_with_text": STATS["gt_had_text"], "sites_tried": STATS["site_tried"],
@@ -352,7 +438,8 @@ def main() -> int:
              "lookups_enabled": http is not None}
     # the builder only looks up pair/token addresses in this file, so an extra "_stats" key is ignored there
     json.dump({**out, "_stats": stats}, open(args[1], "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    print(f"auto-tagged {len(out)} tokens ({how['name']} by name, {how['profile']} from their profile/site, "
+    print(f"auto-tagged {len(out)} tokens ({how['name']} by name, {how['launch']} from launch text, "
+          f"{how['dexscreener']} from DexScreener, {how['profile']} from GeckoTerminal/site, "
           f"{how['unclassified']} still unclassified, {looked} looked up in {time.time() - t0:.0f}s): "
           + ", ".join(f"{k} {v}" for k, v in sorted(counts.items(), key=lambda x: -x[1])))
     return 0
