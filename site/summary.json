@@ -1,12 +1,10 @@
 {
- "now": "2026-11-08 09:16 SGT",
- "slot": "am",
- "cand_at": "2026-11-08 09:16 SGT",
+ "now": "2026-11-08 20:24 SGT",
+ "slot": "pm",
+ "cand_at": "2026-11-08 20:24 SGT",
  "tokens_carried": false,
  "stale": [],
- "notes": [
-  "implausible re-prices ignored (>1000x entry): 腾讯场 (bsc) 11,570,312x ignored"
- ],
+ "notes": [],
  "sources": {
   "llama.dexs_overview": "ok",
   "llama.chains": "ok",
@@ -24,92 +22,127 @@
   "reprice": "ok"
  },
  "chains": {
-  "hot": [
-   "doma",
-   "ripple",
-   "ink"
-  ],
+  "hot": [],
   "new": [],
-  "dropped": [],
+  "dropped": [
+   "doma",
+   "ink",
+   "ripple"
+  ],
   "hottest": {
-   "s": "thorchain",
-   "n": "Thorchain",
-   "dr": 2.18,
-   "dr30": 4.14
+   "s": "mayachain",
+   "n": "Mayachain",
+   "dr": 1.68,
+   "dr30": 0.45
   }
  },
  "tokens": {
-  "total": 71,
-  "band_m": 30,
+  "total": 79,
+  "band_m": 36,
   "candle_or_wallet_coverage_pct": 100,
-  "nodata": 1
+  "nodata": 10
  },
- "shortlist": [],
- "shortlist_new": [],
- "shortlist_dropped": [
-  "jeff"
+ "shortlist": [
+  {
+   "sym": "GOATED",
+   "c": "bsc",
+   "mc": 1193.8,
+   "nar": "Dog & animal memes",
+   "run": 1.0,
+   "retr": 31.66,
+   "acc": 0.95,
+   "c6": -0.29,
+   "age": 409.44,
+   "sec": "goplus",
+   "pa": "0xc744be8190e2A4d9058294AfE86d43ad9FB118e7"
+  }
  ],
+ "shortlist_new": [
+  "GOATED"
+ ],
+ "shortlist_dropped": [],
  "pullback": [
   {
    "sym": "José",
    "c": "solana",
-   "mc": 737.2,
+   "mc": 627.0,
    "nar": "Utilities",
    "run": 20.71,
    "retr": 68.12,
-   "acc": 3.49,
-   "c6": 1594.0,
-   "age": 1.08,
+   "acc": 0.2,
+   "c6": -20.96,
+   "age": 1.54,
    "sec": "rugcheck",
    "pa": "CdpY6qHVhtN9dVJx1WJutDztzVMck5TFVnNXZ51HdPrY"
-  },
-  {
-   "sym": "BAGSPAY",
-   "c": "solana",
-   "mc": 1910.2,
-   "nar": "Unclassified",
-   "run": 4.63,
-   "retr": 40.21,
-   "acc": 0.27,
-   "c6": 4.06,
-   "age": 40.03,
-   "sec": "rugcheck",
-   "pa": "DxSBgaYreFNFxGu9TEC17n4Usq5jjy4Zf9djT7RBLrGf"
   }
  ],
- "pullback_new": [
-  "BAGSPAY",
-  "José"
+ "pullback_new": [],
+ "pullback_dropped": [
+  "BAGSPAY"
  ],
- "pullback_dropped": [],
  "igniting": [],
- "momentum": [],
- "momentum_new": [],
- "momentum_dropped": [
-  "CORLA",
-  "Rocco",
+ "momentum": [
+  {
+   "sym": "WEALTH",
+   "c": "solana",
+   "mc": 552.9,
+   "nar": "Unclassified",
+   "run": 12.24,
+   "retr": 62.93,
+   "acc": 0.33,
+   "c6": -26.3,
+   "age": 2.85,
+   "sec": "rugcheck",
+   "pa": "5n8V68fCaNTRQvaXzrmBryDe5jFLrgm65pFfsmia6Nro"
+  },
+  {
+   "sym": "Flap",
+   "c": "bsc",
+   "mc": 957.5,
+   "nar": "Unclassified",
+   "run": 8.76,
+   "retr": 25.01,
+   "acc": 1.07,
+   "c6": 126.0,
+   "age": 1.09,
+   "sec": "goplus",
+   "pa": "0x85C098721681a3af714ea2b1E8b7269B46F2b2Dd"
+  },
+  {
+   "sym": "LETRO",
+   "c": "robinhood",
+   "mc": 573.3,
+   "nar": "Unclassified",
+   "run": 26.0,
+   "retr": 24.92,
+   "acc": 0.0,
+   "c6": null,
+   "age": 1.12,
+   "sec": "explorer",
+   "pa": "0xba913fbdc36535574a4b3932db06dd78664b28a25ce379cde94dedbc159d459f"
+  }
+ ],
+ "momentum_new": [
+  "Flap",
+  "LETRO",
   "WEALTH"
  ],
+ "momentum_dropped": [],
  "honeypots_new": [
-  "GTA6"
+  "VAR",
+  "MINIMAL"
  ],
  "track": {
-  "logged": 107,
+  "logged": 108,
   "new_rows": [
    [
-    "José",
-    "P"
-   ],
-   [
-    "BAGSPAY",
-    "P"
+    "GOATED",
+    "S"
    ]
   ],
   "best_x": 14.93,
-  "median_peak_x": 1.04,
-  "hit_2x_today": [
-   "CLAUDIA (solana)"
-  ],
+  "median_peak_x": 1.03,
+  "hit_2x_today": [],
   "to_zero_today": [],
   "repriced": true
  },
@@ -120,32 +153,28 @@
   "to_zero_today": []
  },
  "momentum_track": {
-  "logged": 86,
-  "new_rows": [],
-  "hit_2x_today": [
-   "OAK (robinhood)"
+  "logged": 88,
+  "new_rows": [
+   "Flap",
+   "LETRO"
   ],
+  "hit_2x_today": [],
   "to_zero_today": [
-   "FTR (solana)",
-   "SI (robinhood)"
+   "腾讯场 (bsc)"
   ]
  },
  "control": {
-  "rows": 785,
+  "rows": 793,
   "median_peak_x": 1.0,
-  "hit_2x_today": [
-   "REROLL (hyperevm)",
-   "OAK (robinhood)"
-  ],
+  "hit_2x_today": [],
   "to_zero_today": [
-   "PAIREX (robinhood)",
-   "BLAST (robinhood)",
-   "WAIFU (robinhood)",
-   "ROBINPEPE (robinhood)",
-   "VRAX (robinhood)",
-   "SA (solana)",
-   "RARINU (solana)",
-   "FTR (solana)"
+   "MACHINE (robinhood)",
+   "QT (solana)",
+   "SUPMKT (solana)",
+   "VEILTRUMP (solana)",
+   "Anakin (ethereum)",
+   "GTA6 (ethereum)",
+   "AMD (solana)"
   ]
  },
  "changed": true,
