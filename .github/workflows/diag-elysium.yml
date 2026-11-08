@@ -1,0 +1,25 @@
+name: diag elysium (temporary)
+on:
+  push:
+    branches: [claude/funny-goodall-y0z745]
+    paths: [.github/workflows/diag-elysium.yml]
+jobs:
+  look:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: GeckoTerminal networks matching elysium / lava / vulcan
+        run: |
+          for p in 1 2 3 4 5 6 7 8 9 10 11 12; do
+            curl -s "https://api.geckoterminal.com/api/v2/networks?page=$p" | python3 -c "import json,sys;d=json.load(sys.stdin);[print(n['id'],'|',n['attributes'].get('name')) for n in d.get('data',[]) if any(w in (n['id']+' '+(n['attributes'].get('name') or '')).lower() for w in ('elys','lava','vulcan'))]" || true
+            sleep 3
+          done
+      - name: DexScreener search
+        run: |
+          for q in elysium LAVA vulcan; do
+            echo "== $q"
+            curl -s "https://api.dexscreener.com/latest/dex/search?q=$q" | python3 -c "import json,sys,collections;d=json.load(sys.stdin);print(collections.Counter(p['chainId'] for p in d.get('pairs') or []).most_common(15))"
+          done
+      - name: DefiLlama chains matching
+        run: |
+          curl -s https://api.llama.fi/v2/chains | python3 -c "import json,sys;[print(c.get('name'),'|',c.get('gecko_id'),'| TVL',round((c.get('tvl') or 0)/1e6,1),'m') for c in json.load(sys.stdin) if any(w in (c.get('name') or '').lower() for w in ('elys','lava','vulcan'))]"
