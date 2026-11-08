@@ -6,20 +6,23 @@ on:
 jobs:
   look:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
-      - name: Try each source
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Run the new classifier on every token on the page that is Unclassified or recently seen
         run: |
-          set +e
-          try() { echo "== $1"; curl -s -m 20 -A "Mozilla/5.0" -o /tmp/r -w "HTTP %{http_code} %{time_total}s\n" "$1"; head -c 500 /tmp/r | tr '\n' ' '; echo; echo; sleep 1; }
-          try "https://ipfs.io/ipfs/bafkreifubj7qp4lxavasfmmf5x7kdixhdqs6n25f5vqxk2nmnm5ufm77ge"
-          for g in https://pump.mypinata.cloud https://gateway.pinata.cloud https://w3s.link https://nftstorage.link https://4everland.io https://ipfs.filebase.io https://gw.ipfs-lens.dev; do try "$g/ipfs/bafkreifubj7qp4lxavasfmmf5x7kdixhdqs6n25f5vqxk2nmnm5ufm77ge"; done
-          try "https://bafkreifubj7qp4lxavasfmmf5x7kdixhdqs6n25f5vqxk2nmnm5ufm77ge.ipfs.dweb.link/"
-          try "https://dweb.link/ipfs/bafkreifubj7qp4lxavasfmmf5x7kdixhdqs6n25f5vqxk2nmnm5ufm77ge"
-          # older Solana token (not Token-2022): owner program
-          echo "== XTEN mint (not a pump suffix)"; curl -s -m 15 https://api.mainnet-beta.solana.com -H 'content-type: application/json' -d '{"jsonrpc":"2.0","id":1,"method":"getAccountInfo","params":["GXKH2nRJqu7BznzSdUELcMwk7C3ebNDcqB5YEgM4bbpK",{"encoding":"jsonParsed"}]}' | head -c 500; echo; echo
-          # DexScreener cms profile for EVM tokens (token address and pair address)
-          try "https://io.dexscreener.com/dex/pair-details/v4/bsc/0x2A06dDb8F82b2926CCd852d8cdc2348246857777"
-          try "https://io.dexscreener.com/dex/pair-details/v4/base/0xeD517277fFcaBAf75d7DB6278a07cD75Fd159Db5"
-          try "https://io.dexscreener.com/dex/pair-details/v4/robinhood/0xe07f395fEf11829EDFB196d418286301C3C3361E"
-          try "https://io.dexscreener.com/dex/pair-details/v4/solana/GXKH2nRJqu7BznzSdUELcMwk7C3ebNDcqB5YEgM4bbpK"
+          python - <<'PY'
+          import json, re
+          s = open("site/page.html", encoding="utf-8").read()
+          T = json.loads(re.search(r"const TOKENS\s*=\s*(\[.*?\]);\n", s, re.S).group(1))
+          todo = [t for t in T if (t.get("nar") or "Unclassified") == "Unclassified"]
+          json.dump(todo, open("/tmp/todo.json", "w"))
+          print(len(todo), "unclassified tokens on the page")
+          PY
+          python scan/auto_nar.py /tmp/todo.json /tmp/nar.json
+          python -c "import json;d=json.load(open('/tmp/nar.json'));print(json.dumps(d.get('_stats')));[print(k[:12],v) for k,v in d.items() if k!='_stats']"
