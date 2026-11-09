@@ -133,6 +133,15 @@ assert _an.ipfs_urls("https://example.com/m.json") == ["https://example.com/m.js
 assert _an.ds_description({"cms": {"description": " An AI agent "}}) == "An AI agent" and _an.ds_description({"cms": None}) == ""
 assert _an.tags_from_profile([], "The first dog on Solana. Woof!") == ["Dog & animal memes"]
 assert _an.tags_from_profile([], "Buy Wealth. Own Wealth. Build Wealth") == ["Unclassified"], "vague text is not guessed"
+# quick Solana check (9 Nov 2026): quiet hours 11pm-7am SGT, message never carries a sell target
+from datetime import datetime as _dt
+from fetch import quick as _q
+from fetch.common import SGT as _SGT
+assert _q.quiet(_dt(2026, 11, 9, 23, 5, tzinfo=_SGT)) and _q.quiet(_dt(2026, 11, 9, 6, 59, tzinfo=_SGT))
+assert not _q.quiet(_dt(2026, 11, 9, 7, 0, tzinfo=_SGT)) and not _q.quiet(_dt(2026, 11, 9, 22, 59, tzinfo=_SGT))
+_m = _q.message({"sym": "T", "pa": "abc", "_score": 70, "_sparts": ["buyers"], "mc": 1200, "liq": 150, "ubr": 0.76,
+                 "c24": 150, "c6": 20, "age": 1.4, "sec": "rugcheck", "_ran": False}, "U")
+assert "score 70/100" in _m and "Not a recommendation" in _m and "2x" not in _m.lower().replace("2×", "")
 assert "INFLOW_CHAINS" in out and set(out["SCANNED_CHAINS"]) >= {"solana", "bsc"}, (out.get("INFLOW_CHAINS"), out.get("SCANNED_CHAINS"))
 assert "OldChain" not in [r[0] for r in out["NETFLOW"]["day"]], "deprecated chains are left out"
 assert out["NETFLOW"]["month"][0] == ["BSC", -1003.33, "bsc"], out["NETFLOW"]
