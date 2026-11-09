@@ -9,8 +9,9 @@ If a change would break one of them, stop and ask first.
 - Never put an API key, password, token or private URL in any file, commit message,
   code comment, log line or test fixture — not even temporarily.
 - Keys live only in **GitHub → Settings → Secrets and variables → Actions** and reach the
-  code as environment variables (today: `BLOCKSCOUT_API_KEY`, read in `fetch/safety.py`, and
-  `GDRIVE_SERVICE_ACCOUNT_JSON` + `GDRIVE_FOLDER_ID`, read in `scan/upload_drive.py`).
+  code as environment variables (today: `BLOCKSCOUT_API_KEY`, read in `fetch/safety.py`,
+  `GDRIVE_SERVICE_ACCOUNT_JSON` + `GDRIVE_FOLDER_ID`, read in `scan/upload_drive.py`, and
+  `TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID`, read in `scan/telegram.py`).
 - If a new source needs a key, add it as an Actions secret and pass it in through `env:`
   in `.github/workflows/daily.yml`. Tell the owner the secret's name; never ask them to paste the value into chat.
 
@@ -27,6 +28,17 @@ If a change would break one of them, stop and ask first.
   `site/summary.json`): morning → `snapshots/<day>/`, evening → `snapshots/<day>-pm/`. Manual runs: before 3pm SGT = morning.
   If a cron line changes, change the matching `SCAN_SLOT` line in the workflow too.
 - Do not change these times without being asked.
+
+## Quick Solana check + Telegram alerts (owner, 9 Nov 2026)
+
+- `.github/workflows/quick.yml` runs `fetch/quick.py` every 2 hours from 7:23am to 9:23pm SGT (GitHub may start it late).
+  Solana only, same code as the daily scan, then the dashboard's own rules from `scan/build_block.py`.
+- It sends a Telegram message (`scan/telegram.py`) for each token that would be on **Igniting, Runners or Momentum**
+  AND scores **60+**, is not already on the dashboard's lists and was not alerted in the last 3 days (remembered in
+  `.alerts/sent.json` through the workflow cache, never committed). At most 5 alerts per check.
+- **Quiet 11pm–7am SGT:** a run that lands in those hours sends nothing. Never put a sell target in an alert
+  (no per-token 2x target, see Tracking). The quick check never changes the dashboard.
+- The token is never printed: error messages are cleaned of it before they reach the public log.
 
 ## Google Drive copy
 
