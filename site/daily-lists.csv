@@ -335,9 +335,20 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-11-08,momentum,LETRO,robinhood,573.3,Unclassified,26.0,24.92,0.0,,1.12,explorer,https://dexscreener.com/robinhood/0xba913fbdc36535574a4b3932db06dd78664b28a25ce379cde94dedbc159d459f,evening scan
 2026-11-08,momentum,WEALTH,solana,552.9,Unclassified,12.24,62.93,0.33,-26.3,2.85,rugcheck,https://dexscreener.com/solana/5n8V68fCaNTRQvaXzrmBryDe5jFLrgm65pFfsmia6Nro,evening scan
 2026-11-09,shortlist,AETHER,elysium,618.1,Utilities,,,4.0,-2.38,0.18,nodata,https://dexscreener.com/elysium/0xcdddb760b8ea77b60147548d02173179dcbd875d9e9ab14a35cb7491f10189b1,daily scan
+2026-11-09,shortlist,cbBTC,robinhood,1968.5,Wrapped assets,1.02,24.73,0.43,1.02,57.93,explorer,https://dexscreener.com/robinhood/0x934e60D1C6C34242b92159A5Bcc710FAFa50AD87,evening scan
+2026-11-09,shortlist,GIGATENEV,robinhood,1213.0,Classic memes,1.26,81.97,0.84,2.96,30.82,explorer,https://dexscreener.com/robinhood/0xe96c99be1ffcc204714ebce32870ab12b8b362308fa50b9352c03b2486a5d448,evening scan
+2026-11-09,shortlist,Macca,solana,892.8,Brand-name memes,1.15,51.7,1.41,11.69,24.99,rugcheck,https://dexscreener.com/solana/4FoNNNMMKMa66ppCiA9557cg63s2BNN9UoFcaKxXbmvg,evening scan
+2026-11-09,shortlist,NIO,solana,1183.4,Unclassified,2.72,40.85,0.82,-17.36,18.89,rugcheck,https://dexscreener.com/solana/B4Wmjc6PvjCtU3qSVS3eTT9Mr4M5V5jBkRQctWANTc71,evening scan
+2026-11-09,shortlist,PREDICT,solana,826.8,Unclassified,,,2.75,55.28,0.36,rugcheck,https://dexscreener.com/solana/nLnwD64foXoWvDi5ohCCQKBTty3gBQHAZDjQhCcmvsg,evening scan
+2026-11-09,shortlist,USO,robinhood,1652.0,Tokenised equities,1.04,29.8,1.8,-2.69,115.16,explorer,https://dexscreener.com/robinhood/0x02175608F1b5E6b5ed221cCFdC7Be197D111D915,evening scan
 2026-11-09,shortlist,XTEN,solana,785.6,Unclassified,,,3.8,75.08,0.26,rugcheck,https://dexscreener.com/solana/GjNtQHNKKwkkfNZEPhATMwL9j946zV7n3oDrQzciddmh,daily scan
+2026-11-09,shortlist,XTEN,solana,931.5,Unclassified,,,2.63,58.38,0.38,rugcheck,https://dexscreener.com/solana/AAt6dwREhNfa3BvoLJWeSDjwVmV2jqHwXB3sB3ERynE8,evening scan
 2026-11-09,pullback,CHAMELEON,elysium,943.3,Dog & animal memes,324.52,63.31,1.06,-3.02,3.89,nodata,https://dexscreener.com/elysium/0x61a799e016a5433af3e67cee4ca32dae81338c1ae7287192dc9d69b83b282aac,daily scan
+2026-11-09,pullback,VOID,elysium,947.5,Unclassified,185.91,40.85,0.78,-0.11,4.76,nodata,https://dexscreener.com/elysium/0xe488e93cba1cbbb1493d898a4f352571d0d96ddc4902f5449d07ad33ee34ee08,evening scan
+2026-11-09,pullback,WEALTH,solana,607.2,Unclassified,10.97,66.79,0.62,29.22,3.93,rugcheck,https://dexscreener.com/solana/5n8V68fCaNTRQvaXzrmBryDe5jFLrgm65pFfsmia6Nro,evening scan
+2026-11-09,igniting,PREDICT,solana,826.8,Unclassified,,,2.75,55.28,0.36,rugcheck,https://dexscreener.com/solana/nLnwD64foXoWvDi5ohCCQKBTty3gBQHAZDjQhCcmvsg,evening scan
 2026-11-09,igniting,XTEN,solana,785.6,Unclassified,,,3.8,75.08,0.26,rugcheck,https://dexscreener.com/solana/GjNtQHNKKwkkfNZEPhATMwL9j946zV7n3oDrQzciddmh,daily scan
+2026-11-09,igniting,XTEN,solana,931.5,Unclassified,,,2.63,58.38,0.38,rugcheck,https://dexscreener.com/solana/AAt6dwREhNfa3BvoLJWeSDjwVmV2jqHwXB3sB3ERynE8,evening scan
 2026-11-09,momentum,BTC,solana,1021.1,Gold / BTC proxies,27.91,18.09,0.67,14.0,1.46,rugcheck,https://dexscreener.com/solana/CrrYbad77F4KNUBhpnUTUufYHt8gcbGZQhfc2uZaamt7,daily scan
 2026-11-09,momentum,CHILL,solana,799.6,Dog & animal memes,22.53,35.12,1.05,12.1,1.3,rugcheck,https://dexscreener.com/solana/GoM6pz6Nc2NATJvtR29Xa98GSQmJzt72rJNkEKypRZs8,daily scan
 2026-11-09,momentum,GM,bsc,714.0,Classic memes,63.93,75.59,0.8,-22.38,1.36,goplus,https://dexscreener.com/bsc/0xdEDF81CC554F351c2d7b1D87b0B82aC285021002,daily scan
