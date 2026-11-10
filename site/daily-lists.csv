@@ -353,3 +353,12 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-11-09,momentum,CHILL,solana,799.6,Dog & animal memes,22.53,35.12,1.05,12.1,1.3,rugcheck,https://dexscreener.com/solana/GoM6pz6Nc2NATJvtR29Xa98GSQmJzt72rJNkEKypRZs8,daily scan
 2026-11-09,momentum,GM,bsc,714.0,Classic memes,63.93,75.59,0.8,-22.38,1.36,goplus,https://dexscreener.com/bsc/0xdEDF81CC554F351c2d7b1D87b0B82aC285021002,daily scan
 2026-11-09,runners,HEREWEGO,solana,1930.3,Classic memes,,,0.89,1.5,0.94,rugcheck,https://dexscreener.com/solana/67BwjNjSjbdPP3KPi6GDeevK25QGrprwFTTmQE4wSziR,daily scan
+2026-11-10,shortlist,GRIFT,robinhood,604.9,Unclassified,2.2,85.01,1.18,18.26,53.45,explorer,https://dexscreener.com/robinhood/0xd23635812197b00b0ea0fd0e36021740c7951fb34ff1ca79260052b47e9769bc,daily scan
+2026-11-10,shortlist,jeff,solana,1015.2,Launchpad / infra,1.97,66.86,1.1,-5.14,13.04,rugcheck,https://dexscreener.com/solana/JCXWfcZGjgJC8NZa5Qb6JP3cgvqW4vGUg4Tqj87G5ZnY,daily scan
+2026-11-10,shortlist,Macca,solana,830.6,Brand-name memes,1.3,51.25,1.07,-9.37,25.51,rugcheck,https://dexscreener.com/solana/4FoNNNMMKMa66ppCiA9557cg63s2BNN9UoFcaKxXbmvg,daily scan
+2026-11-10,shortlist,SNOWMOON,ethereum,1572.1,KOL / personality,1.2,42.51,1.29,5.7,10.66,goplus,https://dexscreener.com/ethereum/0xFfd41513dFF8f09Edf8Dec08790a1f41C1e6e8ee,daily scan
+2026-11-10,shortlist,swordcat,solana,896.8,Dog & animal memes,1.1,79.24,1.86,-19.15,42.7,rugcheck,https://dexscreener.com/solana/8ewuF2o8ACro7fqWepZ3tKhkbBjndZU4Ldk9scRPw83d,daily scan
+2026-11-10,shortlist,USO,robinhood,1630.7,Tokenised equities,1.01,32.78,0.44,0.33,115.68,explorer,https://dexscreener.com/robinhood/0x02175608F1b5E6b5ed221cCFdC7Be197D111D915,daily scan
+2026-11-10,pullback,OAK,robinhood,612.5,AI,3.56,54.77,1.13,-1.84,7.88,explorer,https://dexscreener.com/robinhood/0xdb324dde34ef01debe23f8f8ab4bb6053154b5dea8646dec9d8ea65e414fad59,daily scan
+2026-11-10,momentum,AETHER,elysium,663.4,Utilities,298.58,31.37,0.88,-1.06,1.24,nodata,https://dexscreener.com/elysium/0xcdddb760b8ea77b60147548d02173179dcbd875d9e9ab14a35cb7491f10189b1,daily scan
+2026-11-10,momentum,比特币,bsc,537.2,Gold / BTC proxies,76.46,13.28,0.58,17.25,2.52,goplus,https://dexscreener.com/bsc/0x3f95DFcE2D6BD72fbA4433A50B54AC7bbcc64e02,daily scan

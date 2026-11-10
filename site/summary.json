@@ -1,7 +1,7 @@
 {
- "now": "2026-11-09 22:19 SGT",
- "slot": "pm",
- "cand_at": "2026-11-09 22:19 SGT",
+ "now": "2026-11-10 11:08 SGT",
+ "slot": "am",
+ "cand_at": "2026-11-10 11:08 SGT",
  "tokens_carried": false,
  "stale": [],
  "notes": [],
@@ -23,284 +23,241 @@
  },
  "chains": {
   "hot": [
-   "thorchain"
+   "arbitrum",
+   "thorchain",
+   "unichain",
+   "doma",
+   "ink"
   ],
   "new": [
-   "thorchain"
+   "arbitrum",
+   "doma",
+   "ink",
+   "unichain"
   ],
   "dropped": [],
   "hottest": {
-   "s": "sxr",
-   "n": "Sxr",
-   "dr": 1.65,
-   "dr30": 1.7
+   "s": "provenance",
+   "n": "Provenance",
+   "dr": 2.46,
+   "dr30": 1.55
   }
  },
  "tokens": {
-  "total": 83,
-  "band_m": 37,
+  "total": 109,
+  "band_m": 42,
   "candle_or_wallet_coverage_pct": 100,
-  "nodata": 14
+  "nodata": 16
  },
  "shortlist": [
   {
-   "sym": "XTEN",
-   "c": "solana",
-   "mc": 931.5,
-   "nar": "Unclassified",
-   "run": null,
-   "retr": null,
-   "acc": 2.63,
-   "c6": 58.38,
-   "age": 0.38,
-   "sec": "rugcheck",
-   "pa": "AAt6dwREhNfa3BvoLJWeSDjwVmV2jqHwXB3sB3ERynE8",
-   "score": 65
-  },
-  {
-   "sym": "PREDICT",
-   "c": "solana",
-   "mc": 826.8,
-   "nar": "Unclassified",
-   "run": null,
-   "retr": null,
-   "acc": 2.75,
-   "c6": 55.28,
-   "age": 0.36,
-   "sec": "rugcheck",
-   "pa": "nLnwD64foXoWvDi5ohCCQKBTty3gBQHAZDjQhCcmvsg",
-   "score": 65
-  },
-  {
-   "sym": "NIO",
-   "c": "solana",
-   "mc": 1183.4,
-   "nar": "Unclassified",
-   "run": 2.72,
-   "retr": 40.85,
-   "acc": 0.82,
-   "c6": -17.36,
-   "age": 18.89,
-   "sec": "rugcheck",
-   "pa": "B4Wmjc6PvjCtU3qSVS3eTT9Mr4M5V5jBkRQctWANTc71",
-   "score": 30
-  },
-  {
    "sym": "Macca",
    "c": "solana",
-   "mc": 892.8,
+   "mc": 830.6,
    "nar": "Brand-name memes",
-   "run": 1.15,
-   "retr": 51.7,
-   "acc": 1.41,
-   "c6": 11.69,
-   "age": 24.99,
+   "run": 1.3,
+   "retr": 51.25,
+   "acc": 1.07,
+   "c6": -9.37,
+   "age": 25.51,
    "sec": "rugcheck",
    "pa": "4FoNNNMMKMa66ppCiA9557cg63s2BNN9UoFcaKxXbmvg",
    "score": 20
   },
   {
+   "sym": "swordcat",
+   "c": "solana",
+   "mc": 896.8,
+   "nar": "Dog & animal memes",
+   "run": 1.1,
+   "retr": 79.24,
+   "acc": 1.86,
+   "c6": -19.15,
+   "age": 42.7,
+   "sec": "rugcheck",
+   "pa": "8ewuF2o8ACro7fqWepZ3tKhkbBjndZU4Ldk9scRPw83d",
+   "score": 20
+  },
+  {
+   "sym": "jeff",
+   "c": "solana",
+   "mc": 1015.2,
+   "nar": "Launchpad / infra",
+   "run": 1.97,
+   "retr": 66.86,
+   "acc": 1.1,
+   "c6": -5.14,
+   "age": 13.04,
+   "sec": "rugcheck",
+   "pa": "JCXWfcZGjgJC8NZa5Qb6JP3cgvqW4vGUg4Tqj87G5ZnY",
+   "score": 55
+  },
+  {
    "sym": "USO",
    "c": "robinhood",
-   "mc": 1652.0,
+   "mc": 1630.7,
    "nar": "Tokenised equities",
-   "run": 1.04,
-   "retr": 29.8,
-   "acc": 1.8,
-   "c6": -2.69,
-   "age": 115.16,
+   "run": 1.01,
+   "retr": 32.78,
+   "acc": 0.44,
+   "c6": 0.33,
+   "age": 115.68,
    "sec": "explorer",
    "pa": "0x02175608F1b5E6b5ed221cCFdC7Be197D111D915",
-   "score": 10
+   "score": 35
   },
   {
-   "sym": "cbBTC",
+   "sym": "GRIFT",
    "c": "robinhood",
-   "mc": 1968.5,
-   "nar": "Wrapped assets",
-   "run": 1.02,
-   "retr": 24.73,
-   "acc": 0.43,
-   "c6": 1.02,
-   "age": 57.93,
+   "mc": 604.9,
+   "nar": "Unclassified",
+   "run": 2.2,
+   "retr": 85.01,
+   "acc": 1.18,
+   "c6": 18.26,
+   "age": 53.45,
    "sec": "explorer",
-   "pa": "0x934e60D1C6C34242b92159A5Bcc710FAFa50AD87",
-   "score": 10
+   "pa": "0xd23635812197b00b0ea0fd0e36021740c7951fb34ff1ca79260052b47e9769bc",
+   "score": 5
   },
   {
-   "sym": "GIGATENEV",
-   "c": "robinhood",
-   "mc": 1213.0,
-   "nar": "Classic memes",
-   "run": 1.26,
-   "retr": 81.97,
-   "acc": 0.84,
-   "c6": 2.96,
-   "age": 30.82,
-   "sec": "explorer",
-   "pa": "0xe96c99be1ffcc204714ebce32870ab12b8b362308fa50b9352c03b2486a5d448",
-   "score": 15
-  },
-  {
-   "sym": "AETHER",
-   "c": "elysium",
-   "mc": 551.0,
-   "nar": "Utilities",
-   "run": null,
-   "retr": null,
-   "acc": 1.53,
-   "c6": -0.31,
-   "age": 0.72,
-   "sec": "nodata",
-   "pa": "0xcdddb760b8ea77b60147548d02173179dcbd875d9e9ab14a35cb7491f10189b1",
-   "score": 15
+   "sym": "SNOWMOON",
+   "c": "ethereum",
+   "mc": 1572.1,
+   "nar": "KOL / personality",
+   "run": 1.2,
+   "retr": 42.51,
+   "acc": 1.29,
+   "c6": 5.7,
+   "age": 10.66,
+   "sec": "goplus",
+   "pa": "0xFfd41513dFF8f09Edf8Dec08790a1f41C1e6e8ee",
+   "score": 30
   }
  ],
  "shortlist_new": [
+  "GRIFT",
+  "SNOWMOON",
+  "jeff",
+  "swordcat"
+ ],
+ "shortlist_dropped": [
+  "AETHER",
   "GIGATENEV",
-  "Macca",
   "NIO",
   "PREDICT",
-  "USO",
+  "XTEN",
   "cbBTC"
  ],
- "shortlist_dropped": [],
  "pullback": [
   {
-   "sym": "WEALTH",
-   "c": "solana",
-   "mc": 607.2,
-   "nar": "Unclassified",
-   "run": 10.97,
-   "retr": 66.79,
-   "acc": 0.62,
-   "c6": 29.22,
-   "age": 3.93,
-   "sec": "rugcheck",
-   "pa": "5n8V68fCaNTRQvaXzrmBryDe5jFLrgm65pFfsmia6Nro",
-   "score": 40
-  },
-  {
-   "sym": "VOID",
-   "c": "elysium",
-   "mc": 947.5,
-   "nar": "Unclassified",
-   "run": 185.91,
-   "retr": 40.85,
-   "acc": 0.78,
-   "c6": -0.11,
-   "age": 4.76,
-   "sec": "nodata",
-   "pa": "0xe488e93cba1cbbb1493d898a4f352571d0d96ddc4902f5449d07ad33ee34ee08",
-   "score": 25
+   "sym": "OAK",
+   "c": "robinhood",
+   "mc": 612.5,
+   "nar": "AI",
+   "run": 3.56,
+   "retr": 54.77,
+   "acc": 1.13,
+   "c6": -1.84,
+   "age": 7.88,
+   "sec": "explorer",
+   "pa": "0xdb324dde34ef01debe23f8f8ab4bb6053154b5dea8646dec9d8ea65e414fad59",
+   "score": 5
   }
  ],
  "pullback_new": [
+  "OAK"
+ ],
+ "pullback_dropped": [
   "VOID",
   "WEALTH"
  ],
- "pullback_dropped": [
-  "CHAMELEON"
- ],
- "igniting": [
+ "igniting": [],
+ "momentum": [
   {
-   "sym": "PREDICT",
-   "c": "solana",
-   "mc": 826.8,
-   "nar": "Unclassified",
-   "run": null,
-   "retr": null,
-   "acc": 2.75,
-   "c6": 55.28,
-   "age": 0.36,
-   "sec": "rugcheck",
-   "pa": "nLnwD64foXoWvDi5ohCCQKBTty3gBQHAZDjQhCcmvsg",
-   "score": 65
+   "sym": "AETHER",
+   "c": "elysium",
+   "mc": 663.4,
+   "nar": "Utilities",
+   "run": 298.58,
+   "retr": 31.37,
+   "acc": 0.88,
+   "c6": -1.06,
+   "age": 1.24,
+   "sec": "nodata",
+   "pa": "0xcdddb760b8ea77b60147548d02173179dcbd875d9e9ab14a35cb7491f10189b1",
+   "score": 35
   },
   {
-   "sym": "XTEN",
-   "c": "solana",
-   "mc": 931.5,
-   "nar": "Unclassified",
-   "run": null,
-   "retr": null,
-   "acc": 2.63,
-   "c6": 58.38,
-   "age": 0.38,
-   "sec": "rugcheck",
-   "pa": "AAt6dwREhNfa3BvoLJWeSDjwVmV2jqHwXB3sB3ERynE8",
-   "score": 65
+   "sym": "比特币",
+   "c": "bsc",
+   "mc": 537.2,
+   "nar": "Gold / BTC proxies",
+   "run": 76.46,
+   "retr": 13.28,
+   "acc": 0.58,
+   "c6": 17.25,
+   "age": 2.52,
+   "sec": "goplus",
+   "pa": "0x3f95DFcE2D6BD72fbA4433A50B54AC7bbcc64e02",
+   "score": 45
   }
  ],
- "momentum": [],
- "momentum_new": [],
- "momentum_dropped": [
-  "BTC",
-  "CHILL",
-  "GM"
+ "momentum_new": [
+  "AETHER",
+  "比特币"
  ],
+ "momentum_dropped": [],
  "runners": [],
  "runners_new": [],
- "runners_dropped": [
-  "HEREWEGO"
+ "runners_dropped": [],
+ "honeypots_new": [
+  "ON",
+  "MERL"
  ],
- "honeypots_new": [],
  "track": {
-  "logged": 118,
+  "logged": 120,
   "new_rows": [
    [
-    "XTEN",
+    "SNOWMOON",
     "S"
    ],
    [
-    "PREDICT",
-    "S"
-   ],
-   [
-    "NIO",
-    "S"
-   ],
-   [
-    "USO",
-    "S"
-   ],
-   [
-    "cbBTC",
-    "S"
-   ],
-   [
-    "WEALTH",
-    "P"
-   ],
-   [
-    "VOID",
+    "OAK",
     "P"
    ]
   ],
   "best_x": 14.93,
-  "median_peak_x": 1.01,
-  "hit_2x_today": [],
+  "median_peak_x": 1.05,
+  "hit_2x_today": [
+   "XTEN (solana)",
+   "PREDICT (solana)"
+  ],
   "to_zero_today": [],
   "repriced": true
  },
  "igniting_track": {
   "logged": 63,
-  "new_rows": [
-   "PREDICT",
-   "XTEN"
+  "new_rows": [],
+  "hit_2x_today": [
+   "PREDICT (solana)",
+   "XTEN (solana)"
   ],
-  "hit_2x_today": [],
   "to_zero_today": [
-   "RSGP (solana)"
+   "PREDICT (solana)"
   ]
  },
  "momentum_track": {
-  "logged": 91,
-  "new_rows": [],
-  "hit_2x_today": [],
-  "to_zero_today": [
-   "Flap (bsc)"
-  ]
+  "logged": 93,
+  "new_rows": [
+   "AETHER",
+   "比特币"
+  ],
+  "hit_2x_today": [
+   "GLITCH (solana)",
+   "WEALTH (solana)"
+  ],
+  "to_zero_today": []
  },
  "runners_track": {
   "logged": 1,
@@ -309,24 +266,27 @@
   "to_zero_today": []
  },
  "control": {
-  "rows": 831,
+  "rows": 844,
   "median_peak_x": 1.0,
   "hit_2x_today": [
-   "STANK (solana)"
+   "GLITCH (solana)",
+   "PANGEA (robinhood)",
+   "WEALTH (solana)"
   ],
   "to_zero_today": [
-   "CHINAPAD (robinhood)",
-   "FLEX (solana)",
-   "ROBINPEPE (robinhood)",
-   "RARINU (solana)",
-   "SUPMKT (solana)",
-   "RSGP (solana)",
-   "CATONICE (solana)",
-   "David (solana)",
-   "Claude (base)",
-   "BB (base)",
-   "QUERO (robinhood)",
-   "ADYROS (robinhood)"
+   "MM (solana)",
+   "BATONIUS (solana)",
+   "QED (robinhood)",
+   "7 (solana)",
+   "SS (solana)",
+   "catius (solana)",
+   "CATCRAFT (solana)",
+   "Doomsday (solana)",
+   "GTA6 (ethereum)",
+   "PREDICT (solana)",
+   "TEXEL (robinhood)",
+   "POSTURE (base)",
+   "VIOR (base)"
   ]
  },
  "changed": true,
