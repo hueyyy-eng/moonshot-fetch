@@ -1,164 +1,171 @@
 listed_date,list,symbol,chain,listed_mcap_k,listed_price_usd,price_now_usd,change_since_listed_pct,best_pct,worst_pct,low_tracked_from_listing,days_since_listed,peak_on_day,pair_url
-2026-11-10,shortlist,SNOWMOON,ethereum,1572.1,0.002305,0.002305,0.0,0.0,0.0,yes,0,0,https://dexscreener.com/ethereum/0xFfd41513dFF8f09Edf8Dec08790a1f41C1e6e8ee
-2026-11-10,pullback,OAK,robinhood,612.5,0.0006988,0.0006988,0.0,0.0,0.0,yes,0,0,https://dexscreener.com/robinhood/0xdb324dde34ef01debe23f8f8ab4bb6053154b5dea8646dec9d8ea65e414fad59
-2026-11-10,momentum,比特币,bsc,537.2,2699.5,2699.5,0.0,0.0,0.0,yes,0,0,https://dexscreener.com/bsc/0x3f95DFcE2D6BD72fbA4433A50B54AC7bbcc64e02
-2026-11-10,momentum,AETHER,elysium,663.4,0.0006633,0.0006633,0.0,0.0,0.0,yes,0,0,https://dexscreener.com/elysium/0xcdddb760b8ea77b60147548d02173179dcbd875d9e9ab14a35cb7491f10189b1
-2026-11-09,shortlist,XTEN,solana,785.6,7.856e-06,1.06e-05,34.9,34.9,0.0,yes,1,0,https://dexscreener.com/solana/GjNtQHNKKwkkfNZEPhATMwL9j946zV7n3oDrQzciddmh
-2026-11-09,shortlist,XTEN,solana,931.5,9.314e-06,2.034e-05,118.4,118.4,0.0,yes,1,1,https://dexscreener.com/solana/AAt6dwREhNfa3BvoLJWeSDjwVmV2jqHwXB3sB3ERynE8
-2026-11-09,shortlist,USO,robinhood,1652.0,143.018,141.17,-1.3,0.0,-1.3,yes,1,0,https://dexscreener.com/robinhood/0x02175608F1b5E6b5ed221cCFdC7Be197D111D915
-2026-11-09,shortlist,PREDICT,solana,826.8,8.267e-06,1.866e-05,125.7,125.7,0.0,yes,1,1,https://dexscreener.com/solana/nLnwD64foXoWvDi5ohCCQKBTty3gBQHAZDjQhCcmvsg
-2026-11-09,shortlist,NIO,solana,1183.4,0.001242,0.0009196,-26.0,0.0,-26.0,yes,1,0,https://dexscreener.com/solana/B4Wmjc6PvjCtU3qSVS3eTT9Mr4M5V5jBkRQctWANTc71
-2026-11-09,shortlist,cbBTC,robinhood,1968.5,74643.86,74761.53,0.2,0.2,0.0,yes,1,1,https://dexscreener.com/robinhood/0x934e60D1C6C34242b92159A5Bcc710FAFa50AD87
-2026-11-09,shortlist,AETHER,elysium,618.1,0.000618,0.0006633,7.3,7.3,-10.9,yes,1,1,https://dexscreener.com/elysium/0xcdddb760b8ea77b60147548d02173179dcbd875d9e9ab14a35cb7491f10189b1
-2026-11-09,runners,HEREWEGO,solana,1930.3,0.001939,2.464e-06,-99.9,0.0,-99.9,yes,1,0,https://dexscreener.com/solana/67BwjNjSjbdPP3KPi6GDeevK25QGrprwFTTmQE4wSziR
-2026-11-09,pullback,WEALTH,solana,607.2,0.0006114,0.00122,99.5,99.5,0.0,yes,1,1,https://dexscreener.com/solana/5n8V68fCaNTRQvaXzrmBryDe5jFLrgm65pFfsmia6Nro
-2026-11-09,pullback,VOID,elysium,947.5,0.0009537,0.0006098,-36.1,0.0,-36.1,yes,1,0,https://dexscreener.com/elysium/0xe488e93cba1cbbb1493d898a4f352571d0d96ddc4902f5449d07ad33ee34ee08
-2026-11-09,pullback,CHAMELEON,elysium,943.3,0.0009442,0.0005186,-45.1,32.8,-45.1,yes,1,0,https://dexscreener.com/elysium/0x61a799e016a5433af3e67cee4ca32dae81338c1ae7287192dc9d69b83b282aac
+2026-11-10,shortlist,XTEN,solana,647.7,6.476e-06,6.476e-06,0.0,0.0,0.0,yes,0,0,https://dexscreener.com/solana/GRhRaGpDbhRqsCYmChyB2FqzP327EehZogcQFUFuyYER
+2026-11-10,shortlist,SNOWMOON,ethereum,1572.1,0.002305,0.001997,-13.4,0.0,-13.4,yes,0,0,https://dexscreener.com/ethereum/0xFfd41513dFF8f09Edf8Dec08790a1f41C1e6e8ee
+2026-11-10,shortlist,KNTQ,elysium,682.5,0.3915,0.3915,0.0,0.0,0.0,yes,0,0,https://dexscreener.com/elysium/0xde07161F99A7C01C56F602e73F31918cbDAc9BbC
+2026-11-10,shortlist,ETHEL,elysium,556.2,0.0005561,0.0005561,0.0,0.0,0.0,yes,0,0,https://dexscreener.com/elysium/0x3439ec14b87df0ab79e6708b934ec9388d8890f3194b3605c1c2fc79801dcb98
+2026-11-10,pullback,OAK,robinhood,612.5,0.0006988,0.0006155,-11.9,0.0,-11.9,yes,0,0,https://dexscreener.com/robinhood/0xdb324dde34ef01debe23f8f8ab4bb6053154b5dea8646dec9d8ea65e414fad59
+2026-11-10,momentum,牛逼,bsc,1337.0,1.337e-06,1.337e-06,0.0,0.0,0.0,yes,0,0,https://dexscreener.com/bsc/0xe71984e3fc90a625d8d7E5056CD6A4418D57C7Fa
+2026-11-10,momentum,比特币,bsc,537.2,2699.5,1882.16,-30.3,0.0,-30.3,yes,0,0,https://dexscreener.com/bsc/0x3f95DFcE2D6BD72fbA4433A50B54AC7bbcc64e02
+2026-11-10,momentum,CLU,elysium,1580.9,0.00158,0.00158,0.0,0.0,0.0,yes,0,0,https://dexscreener.com/elysium/0x8081ed5312303d807613151d7ba96d280ad308526a5414178b54301b6a99f103
+2026-11-10,momentum,BIG,solana,761.7,0.0008021,0.0008021,0.0,0.0,0.0,yes,0,0,https://dexscreener.com/solana/5TecgcpFLdBnJvBrpjvk32UAYABPRA1HgeFPEUjQQkYK
+2026-11-10,momentum,AETHER,elysium,663.4,0.0006633,0.0009387,41.5,41.5,0.0,yes,0,0,https://dexscreener.com/elysium/0xcdddb760b8ea77b60147548d02173179dcbd875d9e9ab14a35cb7491f10189b1
+2026-11-10,igniting,XTEN,solana,647.7,6.476e-06,6.476e-06,0.0,0.0,0.0,yes,0,0,https://dexscreener.com/solana/GRhRaGpDbhRqsCYmChyB2FqzP327EehZogcQFUFuyYER
+2026-11-09,shortlist,XTEN,solana,785.6,7.856e-06,0.0,-100.0,34.9,-100.0,yes,1,0,https://dexscreener.com/solana/GjNtQHNKKwkkfNZEPhATMwL9j946zV7n3oDrQzciddmh
+2026-11-09,shortlist,XTEN,solana,931.5,9.314e-06,2.726e-05,192.7,192.7,0.0,yes,1,1,https://dexscreener.com/solana/AAt6dwREhNfa3BvoLJWeSDjwVmV2jqHwXB3sB3ERynE8
+2026-11-09,shortlist,USO,robinhood,1652.0,143.018,139.11,-2.7,0.0,-2.7,yes,1,0,https://dexscreener.com/robinhood/0x02175608F1b5E6b5ed221cCFdC7Be197D111D915
+2026-11-09,shortlist,PREDICT,solana,826.8,8.267e-06,3.226e-05,290.2,290.2,0.0,yes,1,1,https://dexscreener.com/solana/nLnwD64foXoWvDi5ohCCQKBTty3gBQHAZDjQhCcmvsg
+2026-11-09,shortlist,NIO,solana,1183.4,0.001242,0.001094,-11.9,0.0,-26.0,yes,1,0,https://dexscreener.com/solana/B4Wmjc6PvjCtU3qSVS3eTT9Mr4M5V5jBkRQctWANTc71
+2026-11-09,shortlist,cbBTC,robinhood,1968.5,74643.86,74148.56,-0.7,0.2,-0.7,yes,1,1,https://dexscreener.com/robinhood/0x934e60D1C6C34242b92159A5Bcc710FAFa50AD87
+2026-11-09,shortlist,AETHER,elysium,618.1,0.000618,0.0009387,51.9,51.9,-10.9,yes,1,1,https://dexscreener.com/elysium/0xcdddb760b8ea77b60147548d02173179dcbd875d9e9ab14a35cb7491f10189b1
+2026-11-09,runners,HEREWEGO,solana,1930.3,0.001939,2.391e-06,-99.9,0.0,-99.9,yes,1,0,https://dexscreener.com/solana/67BwjNjSjbdPP3KPi6GDeevK25QGrprwFTTmQE4wSziR
+2026-11-09,pullback,WEALTH,solana,607.2,0.0006114,0.001005,64.4,99.5,0.0,yes,1,1,https://dexscreener.com/solana/5n8V68fCaNTRQvaXzrmBryDe5jFLrgm65pFfsmia6Nro
+2026-11-09,pullback,VOID,elysium,947.5,0.0009537,0.0008145,-14.6,0.0,-36.1,yes,1,0,https://dexscreener.com/elysium/0xe488e93cba1cbbb1493d898a4f352571d0d96ddc4902f5449d07ad33ee34ee08
+2026-11-09,pullback,CHAMELEON,elysium,943.3,0.0009442,0.0009816,4.0,32.8,-45.1,yes,1,0,https://dexscreener.com/elysium/0x61a799e016a5433af3e67cee4ca32dae81338c1ae7287192dc9d69b83b282aac
 2026-11-09,momentum,GM,bsc,714.0,0.000714,3.884e-08,-100.0,0.0,-100.0,yes,1,0,https://dexscreener.com/bsc/0xdEDF81CC554F351c2d7b1D87b0B82aC285021002
-2026-11-09,momentum,CHILL,solana,799.6,0.0008026,0.001015,26.5,26.5,0.0,yes,1,1,https://dexscreener.com/solana/GoM6pz6Nc2NATJvtR29Xa98GSQmJzt72rJNkEKypRZs8
-2026-11-09,momentum,BTC,solana,1021.1,0.001035,2.167e-06,-99.8,0.0,-99.8,yes,1,0,https://dexscreener.com/solana/CrrYbad77F4KNUBhpnUTUufYHt8gcbGZQhfc2uZaamt7
-2026-11-09,igniting,XTEN,solana,785.6,7.856e-06,1.06e-05,34.9,34.9,0.0,yes,1,0,https://dexscreener.com/solana/GjNtQHNKKwkkfNZEPhATMwL9j946zV7n3oDrQzciddmh
-2026-11-09,igniting,XTEN,solana,931.5,9.314e-06,2.034e-05,118.4,118.4,0.0,yes,1,1,https://dexscreener.com/solana/AAt6dwREhNfa3BvoLJWeSDjwVmV2jqHwXB3sB3ERynE8
-2026-11-09,igniting,PREDICT,solana,826.8,8.267e-06,1.866e-05,125.7,125.7,0.0,yes,1,1,https://dexscreener.com/solana/nLnwD64foXoWvDi5ohCCQKBTty3gBQHAZDjQhCcmvsg
-2026-11-08,shortlist,GOATED,bsc,1193.8,0.01144,0.0114,-0.3,0.6,-0.3,yes,2,1,https://dexscreener.com/bsc/0xc744be8190e2A4d9058294AfE86d43ad9FB118e7
-2026-11-08,pullback,José,solana,737.2,0.0007498,0.0003525,-53.0,0.0,-68.1,yes,2,0,https://dexscreener.com/solana/CdpY6qHVhtN9dVJx1WJutDztzVMck5TFVnNXZ51HdPrY
-2026-11-08,pullback,BAGSPAY,solana,1910.2,0.00191,0.001031,-46.0,0.0,-46.0,yes,2,0,https://dexscreener.com/solana/DxSBgaYreFNFxGu9TEC17n4Usq5jjy4Zf9djT7RBLrGf
+2026-11-09,momentum,CHILL,solana,799.6,0.0008026,0.0009186,14.5,26.5,0.0,yes,1,1,https://dexscreener.com/solana/GoM6pz6Nc2NATJvtR29Xa98GSQmJzt72rJNkEKypRZs8
+2026-11-09,momentum,BTC,solana,1021.1,0.001035,2.087e-06,-99.8,0.0,-99.8,yes,1,0,https://dexscreener.com/solana/CrrYbad77F4KNUBhpnUTUufYHt8gcbGZQhfc2uZaamt7
+2026-11-09,igniting,XTEN,solana,785.6,7.856e-06,0.0,-100.0,34.9,-100.0,yes,1,0,https://dexscreener.com/solana/GjNtQHNKKwkkfNZEPhATMwL9j946zV7n3oDrQzciddmh
+2026-11-09,igniting,XTEN,solana,931.5,9.314e-06,2.726e-05,192.7,192.7,0.0,yes,1,1,https://dexscreener.com/solana/AAt6dwREhNfa3BvoLJWeSDjwVmV2jqHwXB3sB3ERynE8
+2026-11-09,igniting,PREDICT,solana,826.8,8.267e-06,3.226e-05,290.2,290.2,0.0,yes,1,1,https://dexscreener.com/solana/nLnwD64foXoWvDi5ohCCQKBTty3gBQHAZDjQhCcmvsg
+2026-11-08,shortlist,GOATED,bsc,1193.8,0.01144,0.01153,0.8,0.8,-0.3,yes,2,2,https://dexscreener.com/bsc/0xc744be8190e2A4d9058294AfE86d43ad9FB118e7
+2026-11-08,pullback,José,solana,737.2,0.0007498,0.000299,-60.1,0.0,-68.1,yes,2,0,https://dexscreener.com/solana/CdpY6qHVhtN9dVJx1WJutDztzVMck5TFVnNXZ51HdPrY
+2026-11-08,pullback,BAGSPAY,solana,1910.2,0.00191,0.001038,-45.7,0.0,-46.0,yes,2,0,https://dexscreener.com/solana/DxSBgaYreFNFxGu9TEC17n4Usq5jjy4Zf9djT7RBLrGf
 2026-11-08,momentum,LETRO,robinhood,573.3,0.0005733,0.0,-100.0,0.0,-100.0,yes,2,0,https://dexscreener.com/robinhood/0xba913fbdc36535574a4b3932db06dd78664b28a25ce379cde94dedbc159d459f
 2026-11-08,momentum,Flap,bsc,957.5,9.574e-07,0.0,-100.0,22262.6,-100.0,yes,2,1,https://dexscreener.com/bsc/0x85C098721681a3af714ea2b1E8b7269B46F2b2Dd
-2026-11-07,shortlist,CLAUS,robinhood,1585.2,0.001598,0.0004608,-71.2,0.0,-71.2,yes,3,0,https://dexscreener.com/robinhood/0x51c9a331b57ac985e5b66849ae04a755a9f6257d2b88ae951f9e5a1c7116e6a7
-2026-11-07,shortlist,BAGSPAY,solana,1570.7,0.00157,0.001031,-34.3,45.5,-34.3,yes,3,0,https://dexscreener.com/solana/DxSBgaYreFNFxGu9TEC17n4Usq5jjy4Zf9djT7RBLrGf
+2026-11-07,shortlist,CLAUS,robinhood,1585.2,0.001598,0.0003577,-77.6,0.0,-77.6,yes,3,0,https://dexscreener.com/robinhood/0x51c9a331b57ac985e5b66849ae04a755a9f6257d2b88ae951f9e5a1c7116e6a7
+2026-11-07,shortlist,BAGSPAY,solana,1570.7,0.00157,0.001038,-33.9,45.5,-34.3,yes,3,0,https://dexscreener.com/solana/DxSBgaYreFNFxGu9TEC17n4Usq5jjy4Zf9djT7RBLrGf
 2026-11-07,momentum,腾讯场,bsc,1280.7,1.28e-06,0.0,-100.0,0.0,-100.0,yes,3,0,https://dexscreener.com/bsc/0xfd72aAd8AED0f638D2b86Dc3fe9Ca6B3D37D6D74
-2026-11-07,momentum,WEALTH,solana,589.2,0.0005933,0.00122,105.6,105.6,-23.7,yes,3,3,https://dexscreener.com/solana/5n8V68fCaNTRQvaXzrmBryDe5jFLrgm65pFfsmia6Nro
-2026-11-07,momentum,Rocco,solana,792.8,0.0008131,0.0006711,-17.5,10.3,-27.5,yes,3,2,https://dexscreener.com/solana/3jW1ykKqUTNgNUDGbrwXpvZKtMFf4pWytoTP3TeXhKBQ
-2026-11-07,momentum,coin,solana,568.6,0.0005861,3.278e-05,-94.4,0.0,-94.9,yes,3,0,https://dexscreener.com/solana/GaCmBdqtW7HbUEv6BWe583Yxw5gS9gjGr59GYmvygTRi
+2026-11-07,momentum,WEALTH,solana,589.2,0.0005933,0.001005,69.4,105.6,-23.7,yes,3,3,https://dexscreener.com/solana/5n8V68fCaNTRQvaXzrmBryDe5jFLrgm65pFfsmia6Nro
+2026-11-07,momentum,Rocco,solana,792.8,0.0008131,0.0007866,-3.3,10.3,-27.5,yes,3,2,https://dexscreener.com/solana/3jW1ykKqUTNgNUDGbrwXpvZKtMFf4pWytoTP3TeXhKBQ
+2026-11-07,momentum,coin,solana,568.6,0.0005861,2.473e-05,-95.8,0.0,-95.8,yes,3,0,https://dexscreener.com/solana/GaCmBdqtW7HbUEv6BWe583Yxw5gS9gjGr59GYmvygTRi
 2026-11-07,momentum,ASI,bsc,1036.2,0.001036,0.0,-100.0,0.0,-100.0,yes,3,0,https://dexscreener.com/bsc/0xADd329E52669aBABE0DAC6A35D2BB3D5BAdc0F58
-2026-11-07,igniting,BAGSPAY,solana,1570.7,0.00157,0.001031,-34.3,45.5,-34.3,yes,3,0,https://dexscreener.com/solana/DxSBgaYreFNFxGu9TEC17n4Usq5jjy4Zf9djT7RBLrGf
+2026-11-07,igniting,BAGSPAY,solana,1570.7,0.00157,0.001038,-33.9,45.5,-34.3,yes,3,0,https://dexscreener.com/solana/DxSBgaYreFNFxGu9TEC17n4Usq5jjy4Zf9djT7RBLrGf
 2026-11-06,momentum,SAFU,bsc,609.9,0.0006099,0.0,-100.0,0.0,-100.0,yes,4,0,https://dexscreener.com/bsc/0x4bbd2227d7149c57319b10eE27C8c3BFBC55Fea8
-2026-11-06,momentum,CORLA,bsc,773.5,0.7735,0.306,-60.4,0.0,-60.4,yes,4,0,https://dexscreener.com/bsc/0xe015a78814EbAdEB0f202446E64B970642F9B965
-2026-11-06,momentum,AMD,solana,695.4,0.0007233,0.0002177,-69.9,0.0,-84.6,yes,4,0,https://dexscreener.com/solana/7RD5YALHcMLUFKJ8FRePGd6ei11F15uXZF1rc7mPKeCv
+2026-11-06,momentum,CORLA,bsc,773.5,0.7735,0.3064,-60.4,0.0,-60.4,yes,4,0,https://dexscreener.com/bsc/0xe015a78814EbAdEB0f202446E64B970642F9B965
+2026-11-06,momentum,AMD,solana,695.4,0.0007233,0.000217,-70.0,0.0,-84.6,yes,4,0,https://dexscreener.com/solana/7RD5YALHcMLUFKJ8FRePGd6ei11F15uXZF1rc7mPKeCv
 2026-11-06,igniting,PREDICT,solana,848.1,8.481e-06,0.0,-100.0,55.2,-100.0,yes,4,0,https://dexscreener.com/solana/FRSrUPVvuF4bSeQAZdVrCNmVwywhZr2S8CKnMn5UzNX7
-2026-11-05,shortlist,jeff,solana,1381.5,0.001381,0.001015,-26.5,4.4,-49.2,yes,5,0,https://dexscreener.com/solana/JCXWfcZGjgJC8NZa5Qb6JP3cgvqW4vGUg4Tqj87G5ZnY
+2026-11-05,shortlist,jeff,solana,1381.5,0.001381,0.0009484,-31.3,4.4,-49.2,yes,5,0,https://dexscreener.com/solana/JCXWfcZGjgJC8NZa5Qb6JP3cgvqW4vGUg4Tqj87G5ZnY
 2026-11-05,momentum,爱奇艺,bsc,784.2,7.841e-07,0.0,-100.0,22014.5,-100.0,yes,5,1,https://dexscreener.com/bsc/0xdc06bf60826EEE79167a68a946BbBDc7276DA804
-2026-11-05,momentum,STONKS,solana,549.7,0.0005497,3.987e-05,-92.7,0.0,-93.1,yes,5,0,https://dexscreener.com/solana/4KHfHnqxV4BRGvwoRtuFj2P8P6JesY65sWecVpxfHdpn
-2026-11-05,momentum,Impeach,solana,814.3,0.000858,0.0002752,-67.9,0.0,-91.7,yes,5,0,https://dexscreener.com/solana/12Y1mRKWEWEwoYqhSwybEsJzM8gAGnig1XqGQLC5uW3V
+2026-11-05,momentum,STONKS,solana,549.7,0.0005497,3.883e-05,-92.9,0.0,-93.1,yes,5,0,https://dexscreener.com/solana/4KHfHnqxV4BRGvwoRtuFj2P8P6JesY65sWecVpxfHdpn
+2026-11-05,momentum,Impeach,solana,814.3,0.000858,0.0001989,-76.8,0.0,-91.7,yes,5,0,https://dexscreener.com/solana/12Y1mRKWEWEwoYqhSwybEsJzM8gAGnig1XqGQLC5uW3V
 2026-11-05,igniting,XTEN,solana,1052.6,1.052e-05,0.0,-100.0,0.0,-100.0,yes,5,0,https://dexscreener.com/solana/GeHmsyqLrLSwxNDNj5iT3A93z3Er7G4xgA1X1njd3rSJ
 2026-11-05,igniting,PREDICT,solana,1007.2,1.007e-05,0.0,-100.0,0.0,-100.0,yes,5,0,https://dexscreener.com/solana/8qv79veb8rA4RLHi7CKxnuP78iS7HRqVdoZjJZDSAuYL
-2026-11-05,igniting,jeff,solana,1381.5,0.001381,0.001015,-26.5,4.4,-49.2,yes,5,0,https://dexscreener.com/solana/JCXWfcZGjgJC8NZa5Qb6JP3cgvqW4vGUg4Tqj87G5ZnY
-2026-11-04,pullback,WASTED,solana,906.2,0.0009236,0.001016,10.0,10.0,-42.9,yes,6,6,https://dexscreener.com/solana/TT7DKs9YjJZj1fwMGoPmKBmDreZzyMAMrHoDCGdfwqN
-2026-11-04,pullback,ANT,robinhood,1285.7,0.001299,0.001179,-9.2,574.7,-24.4,yes,6,2,https://dexscreener.com/robinhood/0xaf7d2ecec21c88509c317726ee7408a390199103f242695dfe554ff5d559f9c3
+2026-11-05,igniting,jeff,solana,1381.5,0.001381,0.0009484,-31.3,4.4,-49.2,yes,5,0,https://dexscreener.com/solana/JCXWfcZGjgJC8NZa5Qb6JP3cgvqW4vGUg4Tqj87G5ZnY
+2026-11-04,pullback,WASTED,solana,906.2,0.0009236,0.001606,73.9,73.9,-42.9,yes,6,6,https://dexscreener.com/solana/TT7DKs9YjJZj1fwMGoPmKBmDreZzyMAMrHoDCGdfwqN
+2026-11-04,pullback,ANT,robinhood,1285.7,0.001299,0.001075,-17.2,574.7,-24.4,yes,6,2,https://dexscreener.com/robinhood/0xaf7d2ecec21c88509c317726ee7408a390199103f242695dfe554ff5d559f9c3
 2026-11-04,momentum,SI,robinhood,833.7,0.0008336,0.0,-100.0,0.0,-100.0,yes,6,0,https://dexscreener.com/robinhood/0xbd3ffe5499ab2f76e5c30192d7563ffd0b25392f0c9e5a6507115af6ca2db958
-2026-11-04,momentum,OAK,robinhood,504.9,0.0005064,0.0006988,38.0,115.8,0.0,yes,6,4,https://dexscreener.com/robinhood/0xdb324dde34ef01debe23f8f8ab4bb6053154b5dea8646dec9d8ea65e414fad59
+2026-11-04,momentum,OAK,robinhood,504.9,0.0005064,0.0006155,21.5,115.8,0.0,yes,6,4,https://dexscreener.com/robinhood/0xdb324dde34ef01debe23f8f8ab4bb6053154b5dea8646dec9d8ea65e414fad59
 2026-11-04,igniting,XTEN,solana,1051.3,1.051e-05,0.0,-100.0,100.5,-100.0,yes,6,1,https://dexscreener.com/solana/4sQ1M4mB6MybZ4Qk1Vn6TszjsYpyLVJwTEpe787xhceu
 2026-11-04,igniting,PREDICT,solana,760.4,7.603e-06,0.0,-100.0,765.8,-100.0,yes,6,1,https://dexscreener.com/solana/4AAfKd5GYZhJJXJXeqq31KpD4r1dM9grpaD2kq46XfUU
-2026-11-03,shortlist,worth,base,603.9,0.0006039,0.0001587,-73.7,0.0,-74.3,yes,7,0,https://dexscreener.com/base/0x6cf637a82362d304dfa56a6387fc8f909ec0008ec520ee5fb999506d9b1f3514
-2026-11-03,pullback,MAMESUKE,solana,1732.0,0.001732,0.0002139,-87.7,9.9,-87.7,yes,7,1,https://dexscreener.com/solana/HPeXruE5Msv7paz5WPViwScLeSYWgZr8vhDakuiEp5ku
-2026-11-03,momentum,币安魂,bsc,827.8,0.0008278,4.08e-05,-95.1,0.0,-95.8,yes,7,0,https://dexscreener.com/bsc/0x5E2F5A94FcFeA8115f363195850849F8898F0e7C
-2026-11-03,momentum,ANT,robinhood,1507.3,0.001522,0.001179,-22.5,475.9,-49.7,yes,7,3,https://dexscreener.com/robinhood/0xaf7d2ecec21c88509c317726ee7408a390199103f242695dfe554ff5d559f9c3
-2026-11-02,shortlist,GLOAM,robinhood,592.8,1.18,0.3371,-71.4,0.0,-72.8,yes,8,0,https://dexscreener.com/robinhood/0xc5f373710186d788eee3048f9ff92608d344e3360b2a35bea98068146e18dd1a
-2026-11-02,pullback,Leverhedge,solana,744.3,0.0007521,2.15e-06,-99.7,23.8,-99.7,yes,8,0,https://dexscreener.com/solana/6d3uJEzDB2WDbvVryFycvgXSiH9fW6ML6hScia5QVHwp
+2026-11-03,shortlist,worth,base,603.9,0.0006039,0.0001693,-72.0,0.0,-74.3,yes,7,0,https://dexscreener.com/base/0x6cf637a82362d304dfa56a6387fc8f909ec0008ec520ee5fb999506d9b1f3514
+2026-11-03,pullback,MAMESUKE,solana,1732.0,0.001732,0.0001485,-91.4,9.9,-91.4,yes,7,1,https://dexscreener.com/solana/HPeXruE5Msv7paz5WPViwScLeSYWgZr8vhDakuiEp5ku
+2026-11-03,momentum,币安魂,bsc,827.8,0.0008278,3.903e-05,-95.3,0.0,-95.8,yes,7,0,https://dexscreener.com/bsc/0x5E2F5A94FcFeA8115f363195850849F8898F0e7C
+2026-11-03,momentum,ANT,robinhood,1507.3,0.001522,0.001075,-29.4,475.9,-49.7,yes,7,3,https://dexscreener.com/robinhood/0xaf7d2ecec21c88509c317726ee7408a390199103f242695dfe554ff5d559f9c3
+2026-11-02,shortlist,GLOAM,robinhood,592.8,1.18,0.3445,-70.8,0.0,-72.8,yes,8,0,https://dexscreener.com/robinhood/0xc5f373710186d788eee3048f9ff92608d344e3360b2a35bea98068146e18dd1a
+2026-11-02,pullback,Leverhedge,solana,744.3,0.0007521,2.115e-06,-99.7,23.8,-99.7,yes,8,0,https://dexscreener.com/solana/6d3uJEzDB2WDbvVryFycvgXSiH9fW6ML6hScia5QVHwp
 2026-11-02,pullback,ANSEM,solana,683.7,0.0007042,0.0002666,-62.1,0.0,-62.1,yes,8,0,https://dexscreener.com/solana/8q2jaCSxrbD98BBC9M8TsWY8euKCjuhk7hdv7YqJV174
-2026-11-02,momentum,WASTED,solana,626.1,0.0006381,0.001016,59.2,106.1,-17.3,yes,8,1,https://dexscreener.com/solana/TT7DKs9YjJZj1fwMGoPmKBmDreZzyMAMrHoDCGdfwqN
-2026-11-02,momentum,Leverhedge,solana,784.2,0.0007925,2.15e-06,-99.7,0.0,-99.7,yes,8,0,https://dexscreener.com/solana/6d3uJEzDB2WDbvVryFycvgXSiH9fW6ML6hScia5QVHwp
+2026-11-02,momentum,WASTED,solana,626.1,0.0006381,0.001606,151.7,151.7,-17.3,yes,8,8,https://dexscreener.com/solana/TT7DKs9YjJZj1fwMGoPmKBmDreZzyMAMrHoDCGdfwqN
+2026-11-02,momentum,Leverhedge,solana,784.2,0.0007925,2.115e-06,-99.7,0.0,-99.7,yes,8,0,https://dexscreener.com/solana/6d3uJEzDB2WDbvVryFycvgXSiH9fW6ML6hScia5QVHwp
 2026-11-02,igniting,XTEN,solana,584.9,5.848e-06,0.0,-100.0,117.2,-100.0,yes,8,1,https://dexscreener.com/solana/EZdUr7QVnY2tXh4uHVR6aDMCTW4GB9S3XKCa8dEA8tsG
 2026-11-02,igniting,PREDICT,solana,988.6,9.885e-06,0.0,-100.0,102.1,-100.0,yes,8,1,https://dexscreener.com/solana/3KZbpFg3ofXRy2sbdKugaQV3M7hWW5zJZt87GauqZqtL
-2026-11-01,shortlist,WIF,robinhood,1384.0,0.001384,0.001388,0.3,15.4,-12.1,yes,9,4,https://dexscreener.com/robinhood/0x71ef4106340f0a3b9c19ec994eef4fc44a1d2513f38faac39d7636b156548c79
-2026-11-01,shortlist,SAFU,bsc,635.2,0.0006351,0.0007843,23.5,175.4,-32.6,yes,9,3,https://dexscreener.com/bsc/0x13b86Fcf85C9C8F5C36593822D216B8893C25450
-2026-11-01,shortlist,Anakin,solana,697.0,0.0007328,0.0001045,-85.7,343.5,-85.7,yes,9,1,https://dexscreener.com/solana/HJa61kEfSAwRt3DW9p15mLh6U5MaQgZGbE51ngg7bYtT
-2026-11-01,pullback,Saturween,solana,519.7,0.0005353,5.168e-06,-99.0,0.0,-99.0,yes,9,0,https://dexscreener.com/solana/HJZMbpTZGuq5Nkss7CrDV4ooxfYKLv7p5aWiqYSBDdq2
-2026-11-01,pullback,PEAK,solana,551.1,0.0005511,0.0004394,-20.3,96.3,-35.8,yes,9,1,https://dexscreener.com/solana/H4sb6cH4bJ4G9vJG3cDA2h3gYAMgCfuzXu8h56RhkVnC
-2026-11-01,pullback,paws,solana,732.2,0.0007635,0.0001915,-74.9,0.0,-79.0,yes,9,0,https://dexscreener.com/solana/2rmaFtFZmJtLXdPgRvk417RLc9GBD3jGbAqtttmfG3AF
-2026-11-01,momentum,币安人,bsc,835.9,1.047e-06,2.688e-08,-97.4,0.0,-97.4,yes,9,0,https://dexscreener.com/bsc/0xf7F7ccEdAEb1FB131e2b5bB0790B51b5Ad3B1260
-2026-11-01,momentum,WOFL,robinhood,507.3,0.0005073,0.0002362,-53.4,16.7,-53.4,yes,9,1,https://dexscreener.com/robinhood/0x780ab912bafd2c7c4a41cdaf517ff48e76d84218ffabafea14be5d27591efe52
+2026-11-01,shortlist,WIF,robinhood,1384.0,0.001384,0.00131,-5.3,15.4,-12.1,yes,9,4,https://dexscreener.com/robinhood/0x71ef4106340f0a3b9c19ec994eef4fc44a1d2513f38faac39d7636b156548c79
+2026-11-01,shortlist,SAFU,bsc,635.2,0.0006351,0.0008408,32.4,175.4,-32.6,yes,9,3,https://dexscreener.com/bsc/0x13b86Fcf85C9C8F5C36593822D216B8893C25450
+2026-11-01,shortlist,Anakin,solana,697.0,0.0007328,0.0001171,-84.0,343.5,-85.7,yes,9,1,https://dexscreener.com/solana/HJa61kEfSAwRt3DW9p15mLh6U5MaQgZGbE51ngg7bYtT
+2026-11-01,pullback,Saturween,solana,519.7,0.0005353,5.24e-06,-99.0,0.0,-99.0,yes,9,0,https://dexscreener.com/solana/HJZMbpTZGuq5Nkss7CrDV4ooxfYKLv7p5aWiqYSBDdq2
+2026-11-01,pullback,PEAK,solana,551.1,0.0005511,0.0005102,-7.4,96.3,-35.8,yes,9,1,https://dexscreener.com/solana/H4sb6cH4bJ4G9vJG3cDA2h3gYAMgCfuzXu8h56RhkVnC
+2026-11-01,pullback,paws,solana,732.2,0.0007635,0.0001931,-74.7,0.0,-79.0,yes,9,0,https://dexscreener.com/solana/2rmaFtFZmJtLXdPgRvk417RLc9GBD3jGbAqtttmfG3AF
+2026-11-01,momentum,币安人,bsc,835.9,1.047e-06,2.614e-08,-97.5,0.0,-97.5,yes,9,0,https://dexscreener.com/bsc/0xf7F7ccEdAEb1FB131e2b5bB0790B51b5Ad3B1260
+2026-11-01,momentum,WOFL,robinhood,507.3,0.0005073,0.0002211,-56.4,16.7,-56.4,yes,9,1,https://dexscreener.com/robinhood/0x780ab912bafd2c7c4a41cdaf517ff48e76d84218ffabafea14be5d27591efe52
 2026-11-01,momentum,SAFU,bsc,694.0,0.000694,0.0,-100.0,25.9,-100.0,yes,9,1,https://dexscreener.com/bsc/0x7B889D19a3Cc60a0C7bC577333aCa16efdB209A0
-2026-11-01,momentum,LOBIN,robinhood,558.6,0.0005597,0.0007744,38.4,229.3,0.0,yes,9,1,https://dexscreener.com/robinhood/0xf1289106ef25c46c4c2c0d7c87f7f506723650f5629ea17ad27c20f896029667
+2026-11-01,momentum,LOBIN,robinhood,558.6,0.0005597,0.0007814,39.6,229.3,0.0,yes,9,1,https://dexscreener.com/robinhood/0xf1289106ef25c46c4c2c0d7c87f7f506723650f5629ea17ad27c20f896029667
 2026-11-01,momentum,GTA6,robinhood,826.5,8.265e-05,0.0,-100.0,0.0,-100.0,yes,9,0,https://dexscreener.com/robinhood/0x991841e9254714f4b4f94c5acdd85b6eaea2c2540cade3256672b942da6b4a47
-2026-10-31,shortlist,GRIFT,robinhood,1607.1,0.001707,0.0006448,-62.2,6.2,-74.7,yes,10,2,https://dexscreener.com/robinhood/0xd23635812197b00b0ea0fd0e36021740c7951fb34ff1ca79260052b47e9769bc
-2026-10-31,shortlist,DACITY,ethereum,764.8,0.0007648,8.57e-05,-88.8,30.1,-89.0,yes,10,1,https://dexscreener.com/ethereum/0x8D5288B22EAeF3084dF16159D5491De6140E95EA
-2026-10-31,shortlist,CLAUDIA,solana,1965.8,0.002077,0.007368,254.7,290.9,-10.6,yes,10,8,https://dexscreener.com/solana/Fe7bpDYCs74GqiCUF14HwgUMToPKV1d9mDYVX5BTohFr
+2026-10-31,shortlist,GRIFT,robinhood,1607.1,0.001707,0.0006852,-59.9,6.2,-74.7,yes,10,2,https://dexscreener.com/robinhood/0xd23635812197b00b0ea0fd0e36021740c7951fb34ff1ca79260052b47e9769bc
+2026-10-31,shortlist,DACITY,ethereum,764.8,0.0007648,8.315e-05,-89.1,30.1,-89.1,yes,10,1,https://dexscreener.com/ethereum/0x8D5288B22EAeF3084dF16159D5491De6140E95EA
+2026-10-31,shortlist,CLAUDIA,solana,1965.8,0.002077,0.005733,176.0,290.9,-10.6,yes,10,8,https://dexscreener.com/solana/Fe7bpDYCs74GqiCUF14HwgUMToPKV1d9mDYVX5BTohFr
 2026-10-31,momentum,Pumpkin,bsc,507.9,0.0005078,0.0,-100.0,69.5,-100.0,yes,10,2,https://dexscreener.com/bsc/0x423803827377Cf404264FFfad0b0cB234197CbAE
-2026-10-31,momentum,HI,solana,1022.9,0.001054,0.0001304,-87.6,0.0,-93.1,yes,10,0,https://dexscreener.com/solana/2yyP1cEXm4VZEHSGpqnWGxcZ3kSSVAK7m3j5nsKmFAhE
+2026-10-31,momentum,HI,solana,1022.9,0.001054,0.0001051,-90.0,0.0,-93.1,yes,10,0,https://dexscreener.com/solana/2yyP1cEXm4VZEHSGpqnWGxcZ3kSSVAK7m3j5nsKmFAhE
 2026-10-31,momentum,GTA6,robinhood,1018.0,0.001017,0.0,-100.0,0.0,-100.0,yes,10,0,https://dexscreener.com/robinhood/0xa64f8671cd44d693edf4395df498abdd4097869e49e53ed34e5fe34ec3440f42
-2026-10-31,momentum,FLOAT,solana,622.4,0.0006229,0.01015,1529.5,2102.6,-25.7,yes,10,9,https://dexscreener.com/solana/FJk9sajdc2Q4heRPPu3yLzkmf2ZByZkpiHQLv9e2bn5A
-2026-10-30,shortlist,three,solana,644.6,0.0006448,0.0003743,-42.0,13.9,-42.0,yes,11,7,https://dexscreener.com/solana/5ByL7MZoLABYnwMPZKPKjf4MGkZ7FeBzrAnos19Pre2z
-2026-10-30,shortlist,Macca,solana,742.8,0.0007792,0.0008713,11.8,86.2,0.0,yes,11,6,https://dexscreener.com/solana/4FoNNNMMKMa66ppCiA9557cg63s2BNN9UoFcaKxXbmvg
-2026-10-30,shortlist,GIGATENEV,robinhood,1083.0,0.001082,0.0007426,-31.4,46.0,-31.4,yes,11,6,https://dexscreener.com/robinhood/0xe96c99be1ffcc204714ebce32870ab12b8b362308fa50b9352c03b2486a5d448
+2026-10-31,momentum,FLOAT,solana,622.4,0.0006229,0.00908,1357.7,2102.6,-25.7,yes,10,9,https://dexscreener.com/solana/FJk9sajdc2Q4heRPPu3yLzkmf2ZByZkpiHQLv9e2bn5A
+2026-10-30,shortlist,three,solana,644.6,0.0006448,0.0003803,-41.0,13.9,-42.0,yes,11,7,https://dexscreener.com/solana/5ByL7MZoLABYnwMPZKPKjf4MGkZ7FeBzrAnos19Pre2z
+2026-10-30,shortlist,Macca,solana,742.8,0.0007792,0.001025,31.5,86.2,0.0,yes,11,6,https://dexscreener.com/solana/4FoNNNMMKMa66ppCiA9557cg63s2BNN9UoFcaKxXbmvg
+2026-10-30,shortlist,GIGATENEV,robinhood,1083.0,0.001082,0.0006719,-37.9,46.0,-37.9,yes,11,6,https://dexscreener.com/robinhood/0xe96c99be1ffcc204714ebce32870ab12b8b362308fa50b9352c03b2486a5d448
 2026-10-30,momentum,MAFIA,robinhood,526.3,0.0005263,0.0,-100.0,0.0,-100.0,yes,11,0,https://dexscreener.com/robinhood/0xb3d5de63afbc54eb5e1fbe685e469cb2b04944aa432293f9c66c672c86924340
-2026-10-30,momentum,jeff,solana,1433.2,0.001433,0.001015,-29.2,88.8,-51.1,yes,11,2,https://dexscreener.com/solana/JCXWfcZGjgJC8NZa5Qb6JP3cgvqW4vGUg4Tqj87G5ZnY
-2026-10-30,momentum,ASSAY,robinhood,739.8,0.0007397,0.0001174,-84.1,0.0,-84.1,yes,11,0,https://dexscreener.com/robinhood/0x617b079d8ba5c12a65f2ae9fffeba86d3912b6084212ab6080a390822af00949
+2026-10-30,momentum,jeff,solana,1433.2,0.001433,0.0009484,-33.8,88.8,-51.1,yes,11,2,https://dexscreener.com/solana/JCXWfcZGjgJC8NZa5Qb6JP3cgvqW4vGUg4Tqj87G5ZnY
+2026-10-30,momentum,ASSAY,robinhood,739.8,0.0007397,0.0001199,-83.8,0.0,-84.1,yes,11,0,https://dexscreener.com/robinhood/0x617b079d8ba5c12a65f2ae9fffeba86d3912b6084212ab6080a390822af00949
 2026-10-30,igniting,RSGP,solana,583.3,5.833e-06,0.0,-100.0,31.1,-100.0,yes,11,0,https://dexscreener.com/solana/71jjypYKfzFvLY8KeuinruiYs5uBodtwMV9gNYiSmZE6
 2026-10-30,igniting,PREDICT,solana,762.3,7.622e-06,0.0,-100.0,15.8,-100.0,yes,11,0,https://dexscreener.com/solana/9i64MvE7JUNeMnT94QwT2EXDTKHzHFadeNUsZzBHnuWV
 2026-10-30,igniting,FOREVER,solana,804.0,8.039e-06,0.0,-100.0,24.3,-100.0,yes,11,0,https://dexscreener.com/solana/95jLaS4YMfZL9tLGNv6zzvqbKZ7iSpST97UT3pDFAdHP
-2026-10-30,igniting,AgenC,solana,1531.2,0.001531,0.001527,-0.3,48.4,-0.3,yes,11,0,https://dexscreener.com/solana/BUMh6YebpBvAh4by4oTGJUvzQ9CvH6dqPgrZvXFDMwC1
-2026-10-29,shortlist,RAETO,robinhood,1647.8,0.001647,0.001935,17.5,113.1,-44.3,yes,12,8,https://dexscreener.com/robinhood/0xdb36324392b4a3f4261230e21f9f3f04e627074e8866ec9b69ee1d00af96d60a
-2026-10-29,pullback,███WIF,solana,1465.4,0.001482,2.016e-06,-99.9,0.0,-99.9,yes,12,0,https://dexscreener.com/solana/35QgKestyQozSeRbZa7c7WDhR32svTgC6RZVDS8KcEmQ
+2026-10-30,igniting,AgenC,solana,1531.2,0.001531,0.001409,-8.0,48.4,-8.0,yes,11,0,https://dexscreener.com/solana/BUMh6YebpBvAh4by4oTGJUvzQ9CvH6dqPgrZvXFDMwC1
+2026-10-29,shortlist,RAETO,robinhood,1647.8,0.001647,0.002058,25.0,113.1,-44.3,yes,12,8,https://dexscreener.com/robinhood/0xdb36324392b4a3f4261230e21f9f3f04e627074e8866ec9b69ee1d00af96d60a
+2026-10-29,pullback,███WIF,solana,1465.4,0.001482,1.954e-06,-99.9,0.0,-99.9,yes,12,0,https://dexscreener.com/solana/35QgKestyQozSeRbZa7c7WDhR32svTgC6RZVDS8KcEmQ
 2026-10-29,pullback,Trenchors,base,611.2,0.0006112,0.0,-100.0,0.0,-100.0,yes,12,0,https://dexscreener.com/base/0x9706d902794dbedaccd47e6255d99797ae379288c965d8063e09b2d2da828f4f
 2026-10-29,momentum,SI,robinhood,980.7,0.0009807,0.0,-100.0,0.0,-100.0,yes,12,0,https://dexscreener.com/robinhood/0x6d95f92f493ba13f95e416dc2b1ea58f079550b980543d48f45a26b44ced0b50
-2026-10-29,momentum,REBATE,robinhood,1640.3,0.001644,0.0001834,-88.8,6.3,-89.7,yes,12,0,https://dexscreener.com/robinhood/0xdfc96a1bc3455ffce6564e1833270c1b0664b761626db961012068007851d83c
+2026-10-29,momentum,REBATE,robinhood,1640.3,0.001644,0.0001977,-88.0,6.3,-89.7,yes,12,0,https://dexscreener.com/robinhood/0xdfc96a1bc3455ffce6564e1833270c1b0664b761626db961012068007851d83c
 2026-10-29,momentum,poteto,robinhood,505.8,5.058e-06,0.0,-100.0,0.0,-100.0,yes,12,0,https://dexscreener.com/robinhood/0x99ce1ebbca95379324a146deaec4c80cd0f4bb0513cd0d43d54f4b8320421f6a
-2026-10-29,momentum,MOGZ,solana,581.7,0.0005926,0.0001142,-80.7,0.0,-81.4,yes,12,0,https://dexscreener.com/solana/7j13CapqLC4dGaGYFCxgL8t31R7B1Gt93uBh8EdoRp9H
-2026-10-29,momentum,INVERSE,solana,1481.6,0.001481,8.258e-05,-94.4,0.0,-96.9,yes,12,0,https://dexscreener.com/solana/Rwq7WrFAzyBtDzGBxYKEHAtHfhAedW6vYqghPT1xBau
-2026-10-28,shortlist,富贵,robinhood,1313.3,0.00154,0.0009343,-39.3,0.0,-48.9,yes,13,0,https://dexscreener.com/robinhood/0xec52A53D7AA278b2027C83449B425Cde8ff8015b
+2026-10-29,momentum,MOGZ,solana,581.7,0.0005926,0.0001086,-81.7,0.0,-81.7,yes,12,0,https://dexscreener.com/solana/7j13CapqLC4dGaGYFCxgL8t31R7B1Gt93uBh8EdoRp9H
+2026-10-29,momentum,INVERSE,solana,1481.6,0.001481,3.237e-05,-97.8,0.0,-97.8,yes,12,0,https://dexscreener.com/solana/Rwq7WrFAzyBtDzGBxYKEHAtHfhAedW6vYqghPT1xBau
+2026-10-28,shortlist,富贵,robinhood,1313.3,0.00154,0.0008826,-42.7,0.0,-48.9,yes,13,0,https://dexscreener.com/robinhood/0xec52A53D7AA278b2027C83449B425Cde8ff8015b
 2026-10-28,momentum,旺柴,robinhood,1876.3,0.001876,0.0,-100.0,0.0,-100.0,yes,13,0,https://dexscreener.com/robinhood/0x913b544fa778b6e3a4942fd1195d3b19d93448330dc6e2c4be5379c22f5017b4
 2026-10-28,momentum,Kimchi,robinhood,1796.7,0.001964,0.0,-100.0,0.0,-100.0,yes,13,0,https://dexscreener.com/robinhood/0x8399570a66ee464ee168f8048b548dae3801bd7250e005cc533b79deec4b773d
 2026-10-28,momentum,GANG,robinhood,951.3,0.001197,0.0,-100.0,0.0,-100.0,yes,13,0,https://dexscreener.com/robinhood/0x9ab3fa44f5d207907042d520fd8bb61b53f1c9ed9c2946ef1d0ea89d1844329c
-2026-10-28,igniting,富贵,robinhood,1313.3,0.00154,0.0009343,-39.3,0.0,-48.9,yes,13,0,https://dexscreener.com/robinhood/0xec52A53D7AA278b2027C83449B425Cde8ff8015b
-2026-10-27,shortlist,LAUNCH,solana,1906.5,0.001925,1.464e-05,-99.2,12.7,-99.3,yes,14,1,https://dexscreener.com/solana/2H2TNJuqivWWM87oZF3pgBa7KhH3ugo6qea5rjkFey2b
-2026-10-27,pullback,worth,base,1104.8,0.001104,0.0001587,-85.6,69.7,-85.9,yes,14,1,https://dexscreener.com/base/0x6cf637a82362d304dfa56a6387fc8f909ec0008ec520ee5fb999506d9b1f3514
-2026-10-27,momentum,LAUNCH,solana,1917.4,0.001936,1.489e-05,-99.2,11.3,-99.2,yes,14,1,https://dexscreener.com/solana/GezArkyjgqsjid7m9zg3jkxxFmnHuh8dDzmqUpbL7K59
+2026-10-28,igniting,富贵,robinhood,1313.3,0.00154,0.0008826,-42.7,0.0,-48.9,yes,13,0,https://dexscreener.com/robinhood/0xec52A53D7AA278b2027C83449B425Cde8ff8015b
+2026-10-27,shortlist,LAUNCH,solana,1906.5,0.001925,1.555e-05,-99.2,12.7,-99.3,yes,14,1,https://dexscreener.com/solana/2H2TNJuqivWWM87oZF3pgBa7KhH3ugo6qea5rjkFey2b
+2026-10-27,pullback,worth,base,1104.8,0.001104,0.0001693,-84.7,69.7,-85.9,yes,14,1,https://dexscreener.com/base/0x6cf637a82362d304dfa56a6387fc8f909ec0008ec520ee5fb999506d9b1f3514
+2026-10-27,momentum,LAUNCH,solana,1917.4,0.001936,1.542e-05,-99.2,11.3,-99.2,yes,14,1,https://dexscreener.com/solana/GezArkyjgqsjid7m9zg3jkxxFmnHuh8dDzmqUpbL7K59
 2026-10-27,momentum,KIVO,robinhood,718.5,0.0007185,0.0,-100.0,0.0,-100.0,yes,14,0,https://dexscreener.com/robinhood/0x7f6f3fc2dc5f751225eb59bf0e73d4ae04534bbdc08e8e66fcaa06c50164323f
-2026-10-26,pullback,PMUP,solana,580.4,0.0006142,1.307e-05,-97.9,12.9,-98.0,yes,15,4,https://dexscreener.com/solana/Ang7vjh7KoSScfbuE1ZWW6gAoXf7EcAZLPJzmMdcgwZj
-2026-10-26,pullback,CATTLEAXE,solana,1186.7,0.001192,2.584e-06,-99.8,0.0,-99.8,yes,15,0,https://dexscreener.com/solana/3p3uYa9AYzV7w2nHEJeo8ANkuuwhYUonQvhHS8LyrqJY
+2026-10-26,pullback,PMUP,solana,580.4,0.0006142,1.303e-05,-97.9,12.9,-98.0,yes,15,4,https://dexscreener.com/solana/Ang7vjh7KoSScfbuE1ZWW6gAoXf7EcAZLPJzmMdcgwZj
+2026-10-26,pullback,CATTLEAXE,solana,1186.7,0.001192,2.535e-06,-99.8,0.0,-99.8,yes,15,0,https://dexscreener.com/solana/3p3uYa9AYzV7w2nHEJeo8ANkuuwhYUonQvhHS8LyrqJY
 2026-10-26,momentum,牛币,bsc,677.4,0.0006773,0.0,-100.0,0.0,-100.0,yes,15,0,https://dexscreener.com/bsc/0xA5B9113B3b2AB087B63511ad1bF9941168DEa7bB
 2026-10-26,momentum,MEMEWAR,robinhood,503.7,0.0005039,0.0,-100.0,0.0,-100.0,yes,15,0,https://dexscreener.com/robinhood/0xc382495a92b1e1ad09f5042d75f3db5fa614f2f79433b2d52be158e90cf82fb9
 2026-10-26,momentum,DARK,robinhood,533.8,0.0005338,0.0,-100.0,0.0,-100.0,yes,15,0,https://dexscreener.com/robinhood/0x72750a5efc837414b341b01032b5647521940385846e98068590ca63184ebdfe
 2026-10-26,momentum,ACON,robinhood,535.4,0.0005354,0.0,-100.0,0.0,-100.0,yes,15,0,https://dexscreener.com/robinhood/0x9acc38df577abd527e2af6f6accaebe491fd32cf9af1653e49032c2a6b764484
-2026-10-26,momentum,4AGENT,bsc,623.4,0.0006233,2.114e-05,-96.6,0.0,-96.6,yes,15,0,https://dexscreener.com/bsc/0xd6Da6b9cf8a2f3a602c4F9FB0aC58d08cE4A503b
+2026-10-26,momentum,4AGENT,bsc,623.4,0.0006233,2.41e-05,-96.1,0.0,-96.6,yes,15,0,https://dexscreener.com/bsc/0xd6Da6b9cf8a2f3a602c4F9FB0aC58d08cE4A503b
 2026-10-26,igniting,SO,solana,1286.3,1.286e-05,0.0,-100.0,212.9,-100.0,yes,15,1,https://dexscreener.com/solana/6cxAo7BeaTKzLbRfttv9Rdw2rrTphtmUMf7oGzsrxit2
 2026-10-26,igniting,ALLOX,solana,1174.1,1.174e-05,0.0,-100.0,198.8,-100.0,yes,15,1,https://dexscreener.com/solana/JA7oS7Eg9rUEAsYA3md9DNSZ9XrerLUPx4XFXNN4SH4
-2026-10-25,pullback,███,solana,641.7,0.0006591,0.0004176,-36.6,109.1,-41.6,yes,16,10,https://dexscreener.com/solana/9sY4Amm2RFpsBQ1qgCQTxcjfvhmfJ9K4d2J5xfM1k75M
-2026-10-25,momentum,REMUS,solana,629.0,0.0006379,0.0001883,-70.5,169.8,-84.1,yes,16,3,https://dexscreener.com/solana/6JDiSPsWBwcSN8xBa4LNBzMZRikxksbxcto8J3ELR4cG
-2026-10-25,momentum,PANGEA,robinhood,1343.2,0.0008221,0.000878,6.8,197.3,-38.2,yes,16,1,https://dexscreener.com/robinhood/0xcfe04bc182706f8683f4f486104b52fb6a4115cfe9e4471c468fca65703f9b9d
+2026-10-25,pullback,███,solana,641.7,0.0006591,0.0004053,-38.5,109.1,-41.6,yes,16,10,https://dexscreener.com/solana/9sY4Amm2RFpsBQ1qgCQTxcjfvhmfJ9K4d2J5xfM1k75M
+2026-10-25,momentum,REMUS,solana,629.0,0.0006379,0.0001939,-69.6,169.8,-84.1,yes,16,3,https://dexscreener.com/solana/6JDiSPsWBwcSN8xBa4LNBzMZRikxksbxcto8J3ELR4cG
+2026-10-25,momentum,PANGEA,robinhood,1343.2,0.0008221,0.0007438,-9.5,197.3,-38.2,yes,16,1,https://dexscreener.com/robinhood/0xcfe04bc182706f8683f4f486104b52fb6a4115cfe9e4471c468fca65703f9b9d
 2026-10-25,momentum,ODIE,robinhood,658.3,6.583e-06,0.0,-100.0,0.0,-100.0,yes,16,0,https://dexscreener.com/robinhood/0x171194dfe8041edc99cbf78b3dfc2b25c0134a35e339941d208defdd5837d1dd
 2026-10-25,momentum,MONEROPAY,robinhood,505.2,0.0005051,0.0,-100.0,0.0,-100.0,yes,16,0,https://dexscreener.com/robinhood/0x07e48a2ba2248b3c8ed0ec19042952257a0bc8554f3019911cf46bfe67f2eb3a
 2026-10-25,momentum,microduck,robinhood,1844.3,0.00282,0.0,-100.0,0.0,-100.0,yes,16,0,https://dexscreener.com/robinhood/0x698f77b916377245308362957007182ac45957b19501a9ea71905934d5eca2ed
-2026-10-25,igniting,swordcat,solana,1872.2,0.00195,0.0009342,-52.1,62.7,-52.1,yes,16,1,https://dexscreener.com/solana/8ewuF2o8ACro7fqWepZ3tKhkbBjndZU4Ldk9scRPw83d
+2026-10-25,igniting,swordcat,solana,1872.2,0.00195,0.0008824,-54.7,62.7,-54.7,yes,16,1,https://dexscreener.com/solana/8ewuF2o8ACro7fqWepZ3tKhkbBjndZU4Ldk9scRPw83d
 2026-10-25,igniting,SO,solana,1189.1,1.189e-05,0.0,-100.0,61.0,-100.0,yes,16,0,https://dexscreener.com/solana/J6sx2A6hgt8S3pB7zd4BmPdMwDqEaBibnDtfozBq55Ku
 2026-10-25,igniting,ALLOX,solana,1124.4,1.124e-05,0.0,-100.0,57.4,-100.0,yes,16,0,https://dexscreener.com/solana/A67d8qXm4frRJc4LcdoXnvEbXjUT4ywWCRvWBFSY6Y7W
 2026-10-24,shortlist,HELL,solana,1804.1,0.001891,0.003059,61.8,61.8,0.0,yes,17,0,https://dexscreener.com/solana/EwsYHiuznyNqH5f65YpfsoQBLq2KyETuvhm5un7wsfDG
-2026-10-24,shortlist,fone,solana,1912.9,0.001932,0.001368,-29.2,16.0,-34.9,yes,17,9,https://dexscreener.com/solana/3dcwhqJp6JBTJPq8ga335HWgSQVS7uQmdmeX7iGjMNpj
+2026-10-24,shortlist,fone,solana,1912.9,0.001932,0.00146,-24.4,16.0,-34.9,yes,17,9,https://dexscreener.com/solana/3dcwhqJp6JBTJPq8ga335HWgSQVS7uQmdmeX7iGjMNpj
 2026-10-24,momentum,TOGI,robinhood,643.7,0.0006438,0.0,-100.0,0.0,-100.0,yes,17,0,https://dexscreener.com/robinhood/0x59f6a572f1f5f123f05c217496142e2f61154410c939c4c46a2acd1cc894a68d
-2026-10-24,momentum,CREORA,robinhood,1317.3,0.001317,9.912e-06,-99.2,29.7,-99.2,yes,17,3,https://dexscreener.com/robinhood/0x089ada66d5258297e1cab1516708a9fb1aef166df3ee901a75f3f2c7f7e79202
+2026-10-24,momentum,CREORA,robinhood,1317.3,0.001317,9.449e-06,-99.3,29.7,-99.3,yes,17,3,https://dexscreener.com/robinhood/0x089ada66d5258297e1cab1516708a9fb1aef166df3ee901a75f3f2c7f7e79202
 2026-10-24,momentum,BLACKTOBER,solana,702.5,0.0007339,0.000326,-55.6,0.0,-55.6,yes,17,0,https://dexscreener.com/solana/C73M9QWLSAY16TKQEsEjSThBVXwMpbg94ijZRzYCxbiR
 2026-10-24,igniting,SO,solana,1283.1,1.283e-05,0.0,-100.0,178.7,-100.0,yes,17,1,https://dexscreener.com/solana/CmonQbqzYFGTh6tucPsw5798uuEEQ7Y5GkUJwowVnDhn
 2026-10-24,igniting,ALLOX,solana,1190.3,1.19e-05,0.0,-100.0,170.8,-100.0,yes,17,1,https://dexscreener.com/solana/BLjvc4NjYCyPtUv68FghNXN47LoLah5E2rWYiyxyfzzU
-2026-10-23,shortlist,PAIR,robinhood,1347.6,0.001546,0.000699,-54.8,24.0,-55.0,yes,18,1,https://dexscreener.com/robinhood/0xf224a070c8626c890a085b258cf562ee4bf052b6d1d59104b3b44d722640c001
-2026-10-23,shortlist,DOPE,solana,1722.7,0.001745,0.0007736,-55.7,115.2,-60.8,yes,18,2,https://dexscreener.com/solana/6iep3EgqksbZwgzMBCyAJtiVtVYkCgL9BnPBEwLR8AGQ
-2026-10-23,shortlist,CBUCKS,solana,1267.2,0.001343,0.004264,217.5,217.5,-33.1,yes,18,18,https://dexscreener.com/solana/B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB
-2026-10-23,pullback,Pepper,solana,605.8,0.0006283,6.625e-05,-89.5,0.0,-91.1,yes,18,0,https://dexscreener.com/solana/GKVfZiv4EUNViMRfUejEn5QJN29oXGCyk7FY2iUv3bGi
+2026-10-23,shortlist,PAIR,robinhood,1347.6,0.001546,0.0006626,-57.1,24.0,-57.1,yes,18,1,https://dexscreener.com/robinhood/0xf224a070c8626c890a085b258cf562ee4bf052b6d1d59104b3b44d722640c001
+2026-10-23,shortlist,DOPE,solana,1722.7,0.001745,0.000765,-56.2,115.2,-60.8,yes,18,2,https://dexscreener.com/solana/6iep3EgqksbZwgzMBCyAJtiVtVYkCgL9BnPBEwLR8AGQ
+2026-10-23,shortlist,CBUCKS,solana,1267.2,0.001343,0.004326,222.1,222.1,-33.1,yes,18,18,https://dexscreener.com/solana/B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB
+2026-10-23,pullback,Pepper,solana,605.8,0.0006283,6.576e-05,-89.5,0.0,-91.1,yes,18,0,https://dexscreener.com/solana/GKVfZiv4EUNViMRfUejEn5QJN29oXGCyk7FY2iUv3bGi
 2026-10-23,pullback,IBM,robinhood,574.1,0.0005741,0.0,-100.0,0.0,-100.0,yes,18,0,https://dexscreener.com/robinhood/0x1e0b3c5082f2f5777f0b2a1e378cff6e72395bbfe907deed758801361eb25e7e
-2026-10-23,momentum,ヤギ,solana,1930.5,0.001997,2.696e-05,-98.6,0.0,-98.8,yes,18,0,https://dexscreener.com/solana/FQ75g9yWEK5jhyjVX3vWyXQ8AXKYJFNXaM5dYDBfqYyb
+2026-10-23,momentum,ヤギ,solana,1930.5,0.001997,2.662e-05,-98.7,0.0,-98.8,yes,18,0,https://dexscreener.com/solana/FQ75g9yWEK5jhyjVX3vWyXQ8AXKYJFNXaM5dYDBfqYyb
 2026-10-23,momentum,TIM,bsc,1878.6,1.878e-06,0.0,-100.0,0.0,-100.0,yes,18,0,https://dexscreener.com/bsc/0x7582990c08cDb734f5DE18E3b4E203B7418Df375
-2026-10-23,momentum,POFD,bsc,1379.1,0.001379,1.326e-05,-99.0,0.0,-99.4,yes,18,0,https://dexscreener.com/bsc/0x0622F87D1643cdB0c79421a644885FF44E2D56F2
+2026-10-23,momentum,POFD,bsc,1379.1,0.001379,1.304e-05,-99.1,0.0,-99.4,yes,18,0,https://dexscreener.com/bsc/0x0622F87D1643cdB0c79421a644885FF44E2D56F2
 2026-10-23,momentum,Lovot,robinhood,976.6,0.0009765,0.0,-100.0,0.0,-100.0,yes,18,0,https://dexscreener.com/robinhood/0xfa2ae66897e4b3edf4c9c29d7a5baa941754c8da96fed88de4de43e03979ff63
-2026-10-23,momentum,.ai,bsc,590.9,0.0005908,2.465e-05,-95.8,3.8,-95.8,yes,18,3,https://dexscreener.com/bsc/0xcBc77d857D11d9a8407B6e580010540D885b0B40
+2026-10-23,momentum,.ai,bsc,590.9,0.0005908,2.576e-05,-95.6,3.8,-95.8,yes,18,3,https://dexscreener.com/bsc/0xcBc77d857D11d9a8407B6e580010540D885b0B40
 2026-10-23,igniting,SO,solana,1564.1,1.564e-05,0.0,-100.0,65.6,-100.0,yes,18,1,https://dexscreener.com/solana/3iquRUwXxp5uPFwteeR7facKaqp6rEaN4v8EzRRNuAhE
-2026-10-22,shortlist,.ai,bsc,561.4,0.0005613,2.465e-05,-95.6,89.2,-95.6,yes,19,0,https://dexscreener.com/bsc/0xcBc77d857D11d9a8407B6e580010540D885b0B40
-2026-10-22,pullback,PHP,solana,1300.5,0.001331,1.156e-05,-99.1,0.0,-99.1,yes,19,0,https://dexscreener.com/solana/YQ4NNeQxHAtdcB8ohx21eJ9U8eTzxNRvGNHkRaA4Pnw
-2026-10-22,pullback,.ai,bsc,1062.4,0.001062,2.465e-05,-97.7,0.0,-97.7,yes,19,0,https://dexscreener.com/bsc/0xcBc77d857D11d9a8407B6e580010540D885b0B40
+2026-10-22,shortlist,.ai,bsc,561.4,0.0005613,2.576e-05,-95.4,89.2,-95.6,yes,19,0,https://dexscreener.com/bsc/0xcBc77d857D11d9a8407B6e580010540D885b0B40
+2026-10-22,pullback,PHP,solana,1300.5,0.001331,1.082e-05,-99.2,0.0,-99.2,yes,19,0,https://dexscreener.com/solana/YQ4NNeQxHAtdcB8ohx21eJ9U8eTzxNRvGNHkRaA4Pnw
+2026-10-22,pullback,.ai,bsc,1062.4,0.001062,2.576e-05,-97.6,0.0,-97.7,yes,19,0,https://dexscreener.com/bsc/0xcBc77d857D11d9a8407B6e580010540D885b0B40
 2026-10-22,momentum,MONEYBIZ,robinhood,1801.8,1.801e-05,0.0,-100.0,0.0,-100.0,yes,19,0,https://dexscreener.com/robinhood/0x636aa2466f59d74075983420405feb9719f056ed432842d6f15d53f5924319d5
 2026-10-22,momentum,EMBER,robinhood,642.7,0.0006427,0.0,-100.0,0.0,-100.0,yes,19,0,https://dexscreener.com/robinhood/0x2833187af60775a392d4ce69ce068699771cd4c4d609ec5fcd548b895a2d764d
 2026-10-22,momentum,$AXIS,bsc,1355.0,1.354e-06,1.354e-06,0.0,0.0,0.0,yes,19,0,https://dexscreener.com/bsc/0x74Cf25D6d8C96242493621d7ABE980CC6a370E89
 2026-10-22,igniting,SO,solana,1158.2,1.158e-05,0.0,-100.0,134.5,-100.0,yes,19,1,https://dexscreener.com/solana/HJ2dFju4rZsMydA86WQooLq3Jgfda2uUEzmvCEMCQX8g
 2026-10-22,igniting,RSGP,solana,1059.1,1.059e-05,0.0,-100.0,172.0,-100.0,yes,19,1,https://dexscreener.com/solana/GUpgi7i5WKHGCWLHxPghLSpZSLdHt7yHtb5saDm29LHY
 2026-10-22,igniting,ALLOX,solana,1016.2,1.016e-05,0.0,-100.0,972.8,-100.0,yes,19,1,https://dexscreener.com/solana/SVMvpwvGEo1Ht33WPxpVdBuSsMSYssJA8s9QYCgwMTa
-2026-10-21,pullback,GLOAM,robinhood,567.5,1.13,0.3371,-70.2,237.2,-71.6,yes,20,1,https://dexscreener.com/robinhood/0xc5f373710186d788eee3048f9ff92608d344e3360b2a35bea98068146e18dd1a
+2026-10-21,pullback,GLOAM,robinhood,567.5,1.13,0.3445,-69.5,237.2,-71.6,yes,20,1,https://dexscreener.com/robinhood/0xc5f373710186d788eee3048f9ff92608d344e3360b2a35bea98068146e18dd1a
 2026-10-21,momentum,重生之我在币安广场赚100个亿,bsc,521.7,0.0005217,0.0,-100.0,0.0,-100.0,yes,20,0,https://dexscreener.com/bsc/0xb54DAFca9Ae333f9eE6cF57C1F65635046515e19
 2026-10-21,momentum,WEFT,solana,1447.4,0.001521,0.000632,-58.4,0.0,-58.4,yes,20,0,https://dexscreener.com/solana/E5bdE27ATDTeg1ZPNFhjnU5fcVKjccQ5iFZLaX8fscgx
-2026-10-21,igniting,SI276,solana,689.4,0.0007156,1.999e-05,-97.2,14.7,-97.3,yes,20,3,https://dexscreener.com/solana/12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG
-2026-10-20,shortlist,swordcat,solana,1416.7,0.001475,0.0009342,-36.7,115.1,-41.9,yes,21,6,https://dexscreener.com/solana/8ewuF2o8ACro7fqWepZ3tKhkbBjndZU4Ldk9scRPw83d
-2026-10-20,pullback,CBUCKS,solana,1047.1,0.00111,0.004264,284.1,284.1,-19.1,yes,21,21,https://dexscreener.com/solana/B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB
+2026-10-21,igniting,SI276,solana,689.4,0.0007156,1.92e-05,-97.3,14.7,-97.3,yes,20,3,https://dexscreener.com/solana/12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG
+2026-10-20,shortlist,swordcat,solana,1416.7,0.001475,0.0008824,-40.2,115.1,-41.9,yes,21,6,https://dexscreener.com/solana/8ewuF2o8ACro7fqWepZ3tKhkbBjndZU4Ldk9scRPw83d
+2026-10-20,pullback,CBUCKS,solana,1047.1,0.00111,0.004326,289.7,289.7,-19.1,yes,21,21,https://dexscreener.com/solana/B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB
 2026-10-20,momentum,UMBRA,robinhood,628.0,0.0006279,0.0,-100.0,0.0,-100.0,yes,21,0,https://dexscreener.com/robinhood/0xeca49d10868e52e750c86cc75a01464381133d3a8e71992aa6518d8846ea5c86
-2026-10-20,momentum,Pokémon,solana,631.0,0.0006516,0.0001594,-75.5,132.8,-85.6,yes,21,1,https://dexscreener.com/solana/CxyUG8PvWbbKW41MLAq7J87ft3dryDJZV2A5pgwb31an
+2026-10-20,momentum,Pokémon,solana,631.0,0.0006516,0.0001789,-72.5,132.8,-85.6,yes,21,1,https://dexscreener.com/solana/CxyUG8PvWbbKW41MLAq7J87ft3dryDJZV2A5pgwb31an
 2026-10-20,momentum,Paper,robinhood,1282.7,1.282e-05,0.0,-100.0,0.0,-100.0,yes,21,0,https://dexscreener.com/robinhood/0x4079162f402622db782a862c6a85e2f1158723df1ef4b62f1af37cd610387a6c
 2026-10-20,momentum,FLFLT,robinhood,651.3,6.512e-06,0.0,-100.0,0.0,-100.0,yes,21,0,https://dexscreener.com/robinhood/0x1f3c9a7dd32c98644be90f4e2ad62cfe39fbf44954aa53cbf34d54d29d54e0eb
 2026-10-20,momentum,$Light,bsc,938.7,9.387e-07,0.0,-100.0,16508.1,-100.0,yes,21,1,https://dexscreener.com/bsc/0xc9ac824CBc99d0EF8BB0026699a5A63184780cE5
@@ -169,110 +176,110 @@ listed_date,list,symbol,chain,listed_mcap_k,listed_price_usd,price_now_usd,chang
 2026-10-19,igniting,SO,solana,1382.1,1.382e-05,0.0,-100.0,89.7,-100.0,yes,22,1,https://dexscreener.com/solana/CAxbjZUBVWkMi8TJ4TqRdPgqyCX8onQF67kGgSgogjvK
 2026-10-19,igniting,FABLES,solana,1355.6,1.355e-05,0.0,-100.0,85.3,-100.0,yes,22,1,https://dexscreener.com/solana/E1F4pd8Bo5cfx24J3GKNUxAknErn8CrHKSUzvCbVcovC
 2026-10-19,igniting,ALLOX,solana,1132.7,1.132e-05,0.0,-100.0,108.0,-100.0,yes,22,1,https://dexscreener.com/solana/BkoJbnvzDVnMx64rC3G2okQumt2tdoxtitN8eHJhkM8F
-2026-10-18,shortlist,Gato,solana,645.5,0.0006643,4.201e-05,-93.7,0.0,-93.7,yes,23,0,https://dexscreener.com/solana/H4wp14QGkt3YextGrQXDqF1c3EPZVMxufgGcUhxSRJN4
-2026-10-18,shortlist,AgenC,solana,1466.4,0.001466,0.001527,4.2,55.0,-49.3,yes,23,12,https://dexscreener.com/solana/BUMh6YebpBvAh4by4oTGJUvzQ9CvH6dqPgrZvXFDMwC1
-2026-10-18,pullback,simulator,solana,1497.8,0.001499,0.0003001,-80.0,0.0,-80.0,yes,23,0,https://dexscreener.com/solana/EzJV2yGpbS3VM5qWmgqYQ4GPVi77LdhwgFhAy6u4ts1U
-2026-10-18,momentum,onboard,solana,566.0,0.0005803,2.318e-05,-96.0,0.0,-96.1,yes,23,0,https://dexscreener.com/solana/DBzf8tQ3mTLSdGMLcDj1YA7E8HqAtq22JaFqma92Fi4
-2026-10-18,momentum,GLITCH,solana,970.2,0.001017,0.002436,139.5,299.9,0.0,yes,23,16,https://dexscreener.com/solana/Em6RvzGXhd35pZ7CVUjCTPEnv4jAztScaVHaXBXCBcG7
-2026-10-18,momentum,FTR,solana,1192.0,0.001204,2.298e-06,-99.8,0.0,-100.0,yes,23,0,https://dexscreener.com/solana/8JoQRQ4oAXNuQSTcComuUAAgF3ViJ7e3escwatMncZ3H
-2026-10-18,momentum,EMPIREX,robinhood,1080.5,0.001098,8.479e-06,-99.2,0.0,-99.2,yes,23,0,https://dexscreener.com/robinhood/0x8f9952e593923792ffbcbc882dcf9c1112c2351c780e28f54a53abf0e8501f32
+2026-10-18,shortlist,Gato,solana,645.5,0.0006643,4.114e-05,-93.8,0.0,-93.8,yes,23,0,https://dexscreener.com/solana/H4wp14QGkt3YextGrQXDqF1c3EPZVMxufgGcUhxSRJN4
+2026-10-18,shortlist,AgenC,solana,1466.4,0.001466,0.001409,-3.9,55.0,-49.3,yes,23,12,https://dexscreener.com/solana/BUMh6YebpBvAh4by4oTGJUvzQ9CvH6dqPgrZvXFDMwC1
+2026-10-18,pullback,simulator,solana,1497.8,0.001499,0.0002822,-81.2,0.0,-81.2,yes,23,0,https://dexscreener.com/solana/EzJV2yGpbS3VM5qWmgqYQ4GPVi77LdhwgFhAy6u4ts1U
+2026-10-18,momentum,onboard,solana,566.0,0.0005803,2.154e-05,-96.3,0.0,-96.3,yes,23,0,https://dexscreener.com/solana/DBzf8tQ3mTLSdGMLcDj1YA7E8HqAtq22JaFqma92Fi4
+2026-10-18,momentum,GLITCH,solana,970.2,0.001017,0.002227,119.0,299.9,0.0,yes,23,16,https://dexscreener.com/solana/Em6RvzGXhd35pZ7CVUjCTPEnv4jAztScaVHaXBXCBcG7
+2026-10-18,momentum,FTR,solana,1192.0,0.001204,0.0,-100.0,0.0,-100.0,yes,23,0,https://dexscreener.com/solana/8JoQRQ4oAXNuQSTcComuUAAgF3ViJ7e3escwatMncZ3H
+2026-10-18,momentum,EMPIREX,robinhood,1080.5,0.001098,8.18e-06,-99.3,0.0,-99.3,yes,23,0,https://dexscreener.com/robinhood/0x8f9952e593923792ffbcbc882dcf9c1112c2351c780e28f54a53abf0e8501f32
 2026-10-18,igniting,SO,solana,1421.0,1.421e-05,0.0,-100.0,109.2,-100.0,yes,23,1,https://dexscreener.com/solana/HSvpmiasoQkQnATU2tCr6RzsPFJ4AXKeSsxpMdbCNqQd
 2026-10-18,igniting,RSGP,solana,1545.6,1.545e-05,0.0,-100.0,0.0,-100.0,yes,23,0,https://dexscreener.com/solana/7iz4WepXZdBQnWUZvzKVqNSy2gg7uojCVVRNuQLPs6ho
 2026-10-18,igniting,FABLES,solana,1410.4,1.41e-05,0.0,-100.0,0.0,-100.0,yes,23,0,https://dexscreener.com/solana/uMviMGzSbeBgo3juhL9MfKwBmnZM2ricRCjaoA5X4UM
 2026-10-18,igniting,FABLES,solana,1651.1,1.651e-05,0.0,-100.0,48228.3,-100.0,yes,23,1,https://dexscreener.com/solana/4YQbqJ7v2N8awVZ5JUVjgTBfKsdYSEBJT4KbMpW4sKhD
 2026-10-18,igniting,ALLOX,solana,1474.8,1.474e-05,0.0,-100.0,315.5,-100.0,yes,23,1,https://dexscreener.com/solana/9sRABaFrHnF5rk9gG5ekzJCR9CYkeCWKV8BPTrsyd4JA
-2026-10-17,shortlist,HARMONIC,robinhood,1243.5,0.001511,0.001681,11.3,140.2,-27.1,yes,24,11,https://dexscreener.com/robinhood/0x77ea11bbfb8f1259c702cb0ebc2105b7c007db89cf30c2f1a8776886a4467c07
-2026-10-17,pullback,1,solana,1196.9,0.001226,0.0001791,-85.4,0.0,-89.5,yes,24,0,https://dexscreener.com/solana/AQN7UkKYSnaZns61dVW2Q6hQmm7WiFSAyjBon6FVwhGf
+2026-10-17,shortlist,HARMONIC,robinhood,1243.5,0.001511,0.00176,16.5,140.2,-27.1,yes,24,11,https://dexscreener.com/robinhood/0x77ea11bbfb8f1259c702cb0ebc2105b7c007db89cf30c2f1a8776886a4467c07
+2026-10-17,pullback,1,solana,1196.9,0.001226,0.0001591,-87.0,0.0,-89.5,yes,24,0,https://dexscreener.com/solana/AQN7UkKYSnaZns61dVW2Q6hQmm7WiFSAyjBon6FVwhGf
 2026-10-17,momentum,蝴蝶人生,bsc,506.8,0.0005068,0.0,-100.0,0.0,-100.0,yes,24,0,https://dexscreener.com/bsc/0xA1c7Fab4E28fc8244fc57e7863221FD38F9F673c
 2026-10-17,momentum,OPOSS,robinhood,1148.7,1.148e-05,0.0,-100.0,0.0,-100.0,yes,24,0,https://dexscreener.com/robinhood/0xcdc8430fc758ff94d153eb304797f8c373337992d6617ab2d02f1d0ef205b0da
 2026-10-17,igniting,RSGP,solana,1174.6,1.174e-05,0.0,-100.0,0.0,-100.0,yes,24,0,https://dexscreener.com/solana/8dvFN9YTbWW3Lo6zV9Uxs6Mzkgg6fyuA6vAYDN94twvN
 2026-10-17,igniting,PULT,solana,1454.1,1.454e-05,0.0,-100.0,102.3,-100.0,yes,24,1,https://dexscreener.com/solana/7keTBuD7Q9HczsvxRhvQ7uXT5biVLsRgPDSfqEkDFjqm
-2026-10-16,shortlist,SI276,solana,1103.2,0.001144,1.999e-05,-98.3,0.0,-98.3,yes,25,0,https://dexscreener.com/solana/12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG
-2026-10-16,shortlist,PsyopAnime,solana,766.9,0.0007669,0.0005413,-29.4,0.0,-36.6,yes,25,0,https://dexscreener.com/solana/FpyosQzp5ijfrxqqBVNm67rfam7VsbVNAm7PUf8Yvt1c
+2026-10-16,shortlist,SI276,solana,1103.2,0.001144,1.92e-05,-98.3,0.0,-98.3,yes,25,0,https://dexscreener.com/solana/12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG
+2026-10-16,shortlist,PsyopAnime,solana,766.9,0.0007669,0.0005572,-27.3,0.0,-36.6,yes,25,0,https://dexscreener.com/solana/FpyosQzp5ijfrxqqBVNm67rfam7VsbVNAm7PUf8Yvt1c
 2026-10-16,momentum,MEKIBA,robinhood,1138.8,0.001138,0.0,-100.0,0.0,-100.0,yes,25,0,https://dexscreener.com/robinhood/0x81cfec237c216048a1dccd5eb030ffdd3cd260aa7a8612573252f8f9bd6f8c8f
 2026-10-16,momentum,HGLHG,robinhood,1730.6,1.73e-05,0.0,-100.0,0.0,-100.0,yes,25,0,https://dexscreener.com/robinhood/0x5e3b0d14e416dd5910a4d4177da582bc8e17854fc11ff8bb996bf63e92c0875d
 2026-10-16,igniting,PULT,solana,1310.4,1.31e-05,0.0,-100.0,75.6,-100.0,yes,25,1,https://dexscreener.com/solana/7BmRsyd5zCfN9rVpdyyApP2joyn8Qqg1nXMh1e6oY5vV
-2026-10-15,shortlist,GOMO,solana,587.8,0.0007081,4.867e-05,-93.1,0.0,-93.3,yes,26,0,https://dexscreener.com/solana/5a7QurJLARt146JajJYPe5nh6vLyFpN2QrHUSLqbsCZy
-2026-10-15,shortlist,BABA,robinhood,1458.6,109.86,103.76,-5.6,2.4,-11.0,yes,26,1,https://dexscreener.com/robinhood/0xfe709115a71c7f9c007f2ac9cb932071ff3b3117865122134e2c1bd96719734c
-2026-10-15,shortlist,Agency,solana,1523.9,0.001593,0.0001432,-91.0,8.7,-91.0,yes,26,0,https://dexscreener.com/solana/CyJwKnLiiY4fmiwqMCSWFSHxo7T9Ubshgs2uRAuJCrk5
-2026-10-15,momentum,SAINDRA,solana,651.4,0.0006616,3.833e-05,-94.2,0.0,-95.9,yes,26,0,https://dexscreener.com/solana/9hjKmterUjufRaYUrSTEHEYJZg83LQ52behux54LSeF6
+2026-10-15,shortlist,GOMO,solana,587.8,0.0007081,4.686e-05,-93.4,0.0,-93.4,yes,26,0,https://dexscreener.com/solana/5a7QurJLARt146JajJYPe5nh6vLyFpN2QrHUSLqbsCZy
+2026-10-15,shortlist,BABA,robinhood,1458.6,109.86,104.96,-4.5,2.4,-11.0,yes,26,1,https://dexscreener.com/robinhood/0xfe709115a71c7f9c007f2ac9cb932071ff3b3117865122134e2c1bd96719734c
+2026-10-15,shortlist,Agency,solana,1523.9,0.001593,0.0001166,-92.7,8.7,-92.7,yes,26,0,https://dexscreener.com/solana/CyJwKnLiiY4fmiwqMCSWFSHxo7T9Ubshgs2uRAuJCrk5
+2026-10-15,momentum,SAINDRA,solana,651.4,0.0006616,3.464e-05,-94.8,0.0,-95.9,yes,26,0,https://dexscreener.com/solana/9hjKmterUjufRaYUrSTEHEYJZg83LQ52behux54LSeF6
 2026-10-15,momentum,LLL,robinhood,548.3,0.0005483,0.0,-100.0,0.0,-100.0,yes,26,0,https://dexscreener.com/robinhood/0x697052f1b1df9354b884a78d37a8db9df82b86fd677ee97fc6fab4f20bd87442
 2026-10-15,momentum,binancians,bsc,825.3,0.0008253,0.0,-100.0,0.0,-100.0,yes,26,0,https://dexscreener.com/bsc/0x19C389a3bBbbC4676EfCA4244B580b5933a966CC
 2026-10-15,igniting,RSGP,solana,1086.9,1.086e-05,0.0,-100.0,1.5,-100.0,yes,26,0,https://dexscreener.com/solana/9C25APpJyrRf3zHKwrgZcwPNDP85AVJQeT2HRqwREY5v
 2026-10-15,igniting,PULT,solana,1043.6,1.043e-05,0.0,-100.0,0.8,-100.0,yes,26,0,https://dexscreener.com/solana/DCpcRwtyq2WzZNuJdCSS8SQjAyk1r5t4QxDz3Kahqk5W
 2026-10-15,igniting,ALLOX,solana,1072.1,1.072e-05,0.0,-100.0,2.2,-100.0,yes,26,0,https://dexscreener.com/solana/8cUHbh9vdDmLSWoLe5cqsBb7u3kaDKVWBaeyhmZGN9KR
-2026-10-14,shortlist,中国人能飞,bsc,1608.1,0.001608,0.00137,-14.8,68.3,-23.4,yes,27,10,https://dexscreener.com/bsc/0x8650B97Cc260125119D8c6FBE7cCe69A2676eE49
-2026-10-14,shortlist,SI,solana,1030.0,0.00106,0.0002239,-78.9,0.0,-78.9,yes,27,0,https://dexscreener.com/solana/7Nj7mBE7iVmjvnBHNvjgaz6G3ZktTHFNbf7aQDfZ7iNR
-2026-10-14,shortlist,GME,robinhood,1182.9,0.001182,0.0007522,-36.4,36.6,-59.5,yes,27,2,https://dexscreener.com/robinhood/0x24c65014991e23383da21f9081f99c6e4bc128bbd4075c1b7d67a7e44efa4f2e
-2026-10-14,pullback,SEALS,solana,918.0,0.0009902,9.488e-06,-99.0,0.0,-99.0,yes,27,0,https://dexscreener.com/solana/HvYfFr8nm6bn9V93TDDMgqWwS2D2LsMn1Y3rDCToqeAB
-2026-10-14,pullback,GIGATENEV,robinhood,755.5,0.0007554,0.0007426,-1.7,303.0,-60.7,yes,27,7,https://dexscreener.com/robinhood/0xe96c99be1ffcc204714ebce32870ab12b8b362308fa50b9352c03b2486a5d448
+2026-10-14,shortlist,中国人能飞,bsc,1608.1,0.001608,0.001307,-18.7,68.3,-23.4,yes,27,10,https://dexscreener.com/bsc/0x8650B97Cc260125119D8c6FBE7cCe69A2676eE49
+2026-10-14,shortlist,SI,solana,1030.0,0.00106,0.0002175,-79.5,0.0,-79.5,yes,27,0,https://dexscreener.com/solana/7Nj7mBE7iVmjvnBHNvjgaz6G3ZktTHFNbf7aQDfZ7iNR
+2026-10-14,shortlist,GME,robinhood,1182.9,0.001182,0.0006122,-48.2,36.6,-59.5,yes,27,2,https://dexscreener.com/robinhood/0x24c65014991e23383da21f9081f99c6e4bc128bbd4075c1b7d67a7e44efa4f2e
+2026-10-14,pullback,SEALS,solana,918.0,0.0009902,9.156e-06,-99.1,0.0,-99.1,yes,27,0,https://dexscreener.com/solana/HvYfFr8nm6bn9V93TDDMgqWwS2D2LsMn1Y3rDCToqeAB
+2026-10-14,pullback,GIGATENEV,robinhood,755.5,0.0007554,0.0006719,-11.1,303.0,-60.7,yes,27,7,https://dexscreener.com/robinhood/0xe96c99be1ffcc204714ebce32870ab12b8b362308fa50b9352c03b2486a5d448
 2026-10-14,pullback,EAXO,robinhood,1007.3,1.007e-05,0.0,-100.0,0.0,-100.0,yes,27,0,https://dexscreener.com/robinhood/0x77a2f375a10b017436e34bd523ca2b3827459f425190d6c7f36da126a1b796fb
-2026-10-14,pullback,Altai,solana,1626.5,0.001653,2.392e-05,-98.6,0.0,-98.6,yes,27,0,https://dexscreener.com/solana/DMEUT8UV5JX8G7jB7TP9XyfBUrP5z7p6VPLSE2WbbRHt
-2026-10-14,momentum,IGNITION,robinhood,635.0,0.000635,2.719e-05,-95.7,95.1,-97.9,yes,27,8,https://dexscreener.com/robinhood/0x5e4ae95442e07e3c996890515d32c50cb5c975cc001df477ec53da5d3fd28e48
-2026-10-14,momentum,BIBI,bsc,1408.6,0.001408,1.607e-05,-98.9,71.0,-99.2,yes,27,2,https://dexscreener.com/bsc/0xeD76AF88Fd8C74bd287468348600c9643eFb7dcF
-2026-10-14,igniting,GME,robinhood,1182.9,0.001182,0.0007522,-36.4,36.6,-59.5,yes,27,2,https://dexscreener.com/robinhood/0x24c65014991e23383da21f9081f99c6e4bc128bbd4075c1b7d67a7e44efa4f2e
-2026-10-13,momentum,SAFU,bsc,978.9,0.0009789,0.0007843,-19.9,91.7,-84.6,yes,28,17,https://dexscreener.com/bsc/0x13b86Fcf85C9C8F5C36593822D216B8893C25450
+2026-10-14,pullback,Altai,solana,1626.5,0.001653,2.336e-05,-98.6,0.0,-98.6,yes,27,0,https://dexscreener.com/solana/DMEUT8UV5JX8G7jB7TP9XyfBUrP5z7p6VPLSE2WbbRHt
+2026-10-14,momentum,IGNITION,robinhood,635.0,0.000635,2.289e-05,-96.4,95.1,-97.9,yes,27,8,https://dexscreener.com/robinhood/0x5e4ae95442e07e3c996890515d32c50cb5c975cc001df477ec53da5d3fd28e48
+2026-10-14,momentum,BIBI,bsc,1408.6,0.001408,1.495e-05,-98.9,71.0,-99.2,yes,27,2,https://dexscreener.com/bsc/0xeD76AF88Fd8C74bd287468348600c9643eFb7dcF
+2026-10-14,igniting,GME,robinhood,1182.9,0.001182,0.0006122,-48.2,36.6,-59.5,yes,27,2,https://dexscreener.com/robinhood/0x24c65014991e23383da21f9081f99c6e4bc128bbd4075c1b7d67a7e44efa4f2e
+2026-10-13,momentum,SAFU,bsc,978.9,0.0009789,0.0008408,-14.1,91.7,-84.6,yes,28,17,https://dexscreener.com/bsc/0x13b86Fcf85C9C8F5C36593822D216B8893C25450
 2026-10-13,momentum,RETURN,robinhood,605.2,0.0006051,0.0,-100.0,0.0,-100.0,yes,28,0,https://dexscreener.com/robinhood/0x75e4de5b2feb359c0526c3e31eb71e76efcf2864248e39453912e3984c656c53
-2026-10-13,momentum,Normie,solana,709.8,0.0007251,0.0001506,-79.2,56.8,-92.3,yes,28,4,https://dexscreener.com/solana/4powEghZAR3Qd2HpbKrkyq8bB3dy7vAnSZHbQ3rSXrYh
-2026-10-13,momentum,DOPE,solana,995.5,0.001008,0.0007736,-23.3,398.9,-32.2,yes,28,3,https://dexscreener.com/solana/6iep3EgqksbZwgzMBCyAJtiVtVYkCgL9BnPBEwLR8AGQ
+2026-10-13,momentum,Normie,solana,709.8,0.0007251,0.0001476,-79.6,56.8,-92.3,yes,28,4,https://dexscreener.com/solana/4powEghZAR3Qd2HpbKrkyq8bB3dy7vAnSZHbQ3rSXrYh
+2026-10-13,momentum,DOPE,solana,995.5,0.001008,0.000765,-24.1,398.9,-32.2,yes,28,3,https://dexscreener.com/solana/6iep3EgqksbZwgzMBCyAJtiVtVYkCgL9BnPBEwLR8AGQ
 2026-10-13,momentum,Altai,robinhood,630.6,0.0006305,0.0,-100.0,0.0,-100.0,yes,28,0,https://dexscreener.com/robinhood/0x286d938416257a7faae3f046f2fbc3fa360fbc48d6d9e3c9e6bd77c556f1abc6
 2026-10-13,igniting,RSGP,solana,1251.5,1.251e-05,0.0,-100.0,314.5,-100.0,yes,28,1,https://dexscreener.com/solana/4URjTvHggPQ6F7oYGcF9ocSfg83SAFSaf5oMEq36xRgN
 2026-10-13,igniting,ALLOX,solana,1157.6,1.157e-05,0.0,-100.0,1585.4,-100.0,yes,28,19,https://dexscreener.com/solana/95rrREz1jUvQML9XJ5b3UwbNq62EFs9o87wAFwLFwTpf
-2026-10-12,shortlist,TRUMAN,bsc,1326.8,0.001326,0.0002521,-81.0,0.0,-83.8,yes,29,0,https://dexscreener.com/bsc/0xD05AdB810Fe61b441808a54137E410BBcCd9d03a
+2026-10-12,shortlist,TRUMAN,bsc,1326.8,0.001326,0.0003089,-76.7,0.0,-83.8,yes,29,0,https://dexscreener.com/bsc/0xD05AdB810Fe61b441808a54137E410BBcCd9d03a
 2026-10-12,pullback,龙虾,bsc,612.6,0.0006126,0.0,-100.0,138.8,-100.0,yes,29,2,https://dexscreener.com/bsc/0x2124251eB568784AB50B5d2fB9D45B86e2a63aaf
 2026-10-12,igniting,RSGP,solana,1219.1,1.219e-05,0.0,-100.0,478.5,-100.0,yes,29,1,https://dexscreener.com/solana/D3vzKTEJntE3wSu4QaPd79e2bnifnHggVDVewu1ukkAJ
 2026-10-12,igniting,PULT,solana,1182.4,1.182e-05,0.0,-100.0,375.5,-100.0,yes,29,1,https://dexscreener.com/solana/FRvYyNTGzQRQfsbDZntcqQwHJpmHZKtMh7N85uDG1i4H
 2026-10-12,igniting,ALLOX,solana,1174.2,1.174e-05,0.0,-100.0,159.3,-100.0,yes,29,1,https://dexscreener.com/solana/6KCmCfW5GSf7nQ7hfk8ds2aTiZXUYLcKAsmH3ZLZW6p3
-2026-10-11,pullback,SI276,solana,861.0,0.0008858,1.999e-05,-97.7,61.2,-97.8,yes,30,1,https://dexscreener.com/solana/12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG
+2026-10-11,pullback,SI276,solana,861.0,0.0008858,1.92e-05,-97.8,61.2,-97.8,yes,30,1,https://dexscreener.com/solana/12jc1DzJpzbCDaKuM4brAKh9jcFry2TLG1FfGsL4ftCG
 2026-10-11,igniting,RSGP,solana,1361.9,1.361e-05,0.0,-100.0,0.0,-100.0,yes,30,0,https://dexscreener.com/solana/C8WBdieHDTjKC6u2X4vxNkHu61CsY3c3yQkVjdWYYjm1
-2026-10-11,igniting,elizaOS,bsc,661.4,0.0003713,0.0002364,-36.3,41.2,-36.4,yes,30,1,https://dexscreener.com/bsc/0x56ADADF82E3346eb8317628df5ce1f776F89014D
+2026-10-11,igniting,elizaOS,bsc,661.4,0.0003713,0.0002294,-38.2,41.2,-38.2,yes,30,1,https://dexscreener.com/bsc/0x56ADADF82E3346eb8317628df5ce1f776F89014D
 2026-10-11,igniting,ALLOX,solana,1323.0,1.322e-05,0.0,-100.0,0.0,-100.0,yes,30,0,https://dexscreener.com/solana/HikPqbKMSwFfwmqpNg9MgBC69L1nrnyf5p5oLLgTBihT
-2026-10-10,shortlist,WhiteWhale,solana,1708.5,0.001708,0.0007899,-53.8,0.0,-56.1,yes,31,0,https://dexscreener.com/solana/4qxSqMh6iEdbdvtMp8r5MK2psAGKNk57PfGeVo2VhczQ
-2026-10-09,shortlist,DGUY,base,734.1,0.000767,0.0008171,6.5,123.9,-24.6,yes,32,19,https://dexscreener.com/base/0x4bE684f77419999AA3E1162D25D9aE6FF64C05a0
-2026-10-09,pullback,Frank,solana,709.3,0.0007462,1.181e-05,-98.4,0.0,-98.6,yes,32,0,https://dexscreener.com/solana/745ATaSSWxvry5qt1XVv9eXuG884hDvNJfvA2o82dNBi
-2026-10-09,pullback,elizaOS,bsc,921.9,0.000548,0.0002364,-56.9,0.0,-56.9,yes,32,0,https://dexscreener.com/bsc/0x56ADADF82E3346eb8317628df5ce1f776F89014D
-2026-10-07,shortlist,FUSE,ethereum,1177.1,0.001237,0.000158,-87.2,0.0,-88.8,yes,34,0,https://dexscreener.com/ethereum/0x90a64ed1c47392829a39df15ff25401c21818ea2db9e2538c9c25182f76b7c1e
-2026-10-07,pullback,slopcannon,solana,970.3,0.001006,3.238e-05,-96.8,0.0,-97.9,yes,34,0,https://dexscreener.com/solana/BNG5962Zkbd6ZFmfAKjtCF6Z2mJbA7qn97oMsQShspLP
-2026-10-07,pullback,GOMO,solana,1576.6,0.001894,4.867e-05,-97.4,0.0,-97.5,yes,34,0,https://dexscreener.com/solana/5a7QurJLARt146JajJYPe5nh6vLyFpN2QrHUSLqbsCZy
-2026-10-06,shortlist,WORM,robinhood,1606.8,0.001669,0.001247,-25.3,129.2,-49.9,yes,35,26,https://dexscreener.com/robinhood/0xf49ee5b66c4e7163026e5d25e6a1f93cff46dca4d3752f712d181d9392c1d567
-2026-10-06,shortlist,elizaOS,bsc,609.2,0.0003877,0.0002364,-39.0,98.7,-39.1,yes,35,2,https://dexscreener.com/bsc/0x56ADADF82E3346eb8317628df5ce1f776F89014D
-2026-10-06,igniting,WORM,robinhood,1606.8,0.001669,0.001247,-25.3,129.2,-49.9,yes,35,26,https://dexscreener.com/robinhood/0xf49ee5b66c4e7163026e5d25e6a1f93cff46dca4d3752f712d181d9392c1d567
-2026-10-04,shortlist,boar,base,1316.0,1.329e-05,2.781e-06,-79.1,0.0,-83.4,yes,37,0,https://dexscreener.com/base/0xef256e214c45aab706ca54d6e2c5d0ca42b87895a43e97b382ea012d13e78e49
+2026-10-10,shortlist,WhiteWhale,solana,1708.5,0.001708,0.0007738,-54.7,0.0,-56.1,yes,31,0,https://dexscreener.com/solana/4qxSqMh6iEdbdvtMp8r5MK2psAGKNk57PfGeVo2VhczQ
+2026-10-09,shortlist,DGUY,base,734.1,0.000767,0.0006908,-9.9,123.9,-24.6,yes,32,19,https://dexscreener.com/base/0x4bE684f77419999AA3E1162D25D9aE6FF64C05a0
+2026-10-09,pullback,Frank,solana,709.3,0.0007462,1.089e-05,-98.5,0.0,-98.6,yes,32,0,https://dexscreener.com/solana/745ATaSSWxvry5qt1XVv9eXuG884hDvNJfvA2o82dNBi
+2026-10-09,pullback,elizaOS,bsc,921.9,0.000548,0.0002294,-58.1,0.0,-58.1,yes,32,0,https://dexscreener.com/bsc/0x56ADADF82E3346eb8317628df5ce1f776F89014D
+2026-10-07,shortlist,FUSE,ethereum,1177.1,0.001237,0.0001532,-87.6,0.0,-88.8,yes,34,0,https://dexscreener.com/ethereum/0x90a64ed1c47392829a39df15ff25401c21818ea2db9e2538c9c25182f76b7c1e
+2026-10-07,pullback,slopcannon,solana,970.3,0.001006,3.139e-05,-96.9,0.0,-97.9,yes,34,0,https://dexscreener.com/solana/BNG5962Zkbd6ZFmfAKjtCF6Z2mJbA7qn97oMsQShspLP
+2026-10-07,pullback,GOMO,solana,1576.6,0.001894,4.686e-05,-97.5,0.0,-97.5,yes,34,0,https://dexscreener.com/solana/5a7QurJLARt146JajJYPe5nh6vLyFpN2QrHUSLqbsCZy
+2026-10-06,shortlist,WORM,robinhood,1606.8,0.001669,0.001226,-26.5,129.2,-49.9,yes,35,26,https://dexscreener.com/robinhood/0xf49ee5b66c4e7163026e5d25e6a1f93cff46dca4d3752f712d181d9392c1d567
+2026-10-06,shortlist,elizaOS,bsc,609.2,0.0003877,0.0002294,-40.8,98.7,-40.8,yes,35,2,https://dexscreener.com/bsc/0x56ADADF82E3346eb8317628df5ce1f776F89014D
+2026-10-06,igniting,WORM,robinhood,1606.8,0.001669,0.001226,-26.5,129.2,-49.9,yes,35,26,https://dexscreener.com/robinhood/0xf49ee5b66c4e7163026e5d25e6a1f93cff46dca4d3752f712d181d9392c1d567
+2026-10-04,shortlist,boar,base,1316.0,1.329e-05,2.386e-06,-82.0,0.0,-83.4,yes,37,0,https://dexscreener.com/base/0xef256e214c45aab706ca54d6e2c5d0ca42b87895a43e97b382ea012d13e78e49
 2026-10-04,pullback,PWPLT,robinhood,521.3,5.213e-06,0.0,-100.0,0.0,-100.0,yes,37,0,https://dexscreener.com/robinhood/0xaf2a34fecf939f10f903944adf3d377dcd43360faa1724310668b0fd7aa12d96
-2026-10-02,shortlist,Holdoween,solana,653.3,0.0006715,1.74e-05,-97.4,0.0,-97.7,yes,39,0,https://dexscreener.com/solana/Apy5FShcDSLdyYSH4HWgY8zSFj4At8FbKeHZF3D72e9k
+2026-10-02,shortlist,Holdoween,solana,653.3,0.0006715,1.734e-05,-97.4,0.0,-97.7,yes,39,0,https://dexscreener.com/solana/Apy5FShcDSLdyYSH4HWgY8zSFj4At8FbKeHZF3D72e9k
 2026-09-30,pullback,Pygoscelis,solana,545.9,0.0005653,0.0002646,-53.2,0.0,-53.2,no (lows recorded from 2026-10-01),41,0,https://dexscreener.com/solana/5fPMykyh2Gc3HC3Rpj2TJQR2LnNuEm2tEEN6Nz9HMBv
-2026-09-30,pullback,MVP,bsc,1231.5,0.001291,0.00126,-2.4,42.4,-49.8,no (lows recorded from 2026-10-01),41,22,https://dexscreener.com/bsc/0xDBE36fC6ef1b51dd71FdbD136A03F413b83327aa
+2026-09-30,pullback,MVP,bsc,1231.5,0.001291,0.001173,-9.1,42.4,-49.8,no (lows recorded from 2026-10-01),41,22,https://dexscreener.com/bsc/0xDBE36fC6ef1b51dd71FdbD136A03F413b83327aa
 2026-09-30,pullback,EUNICE,base,1151.9,0.0005759,0.0,-100.0,4.9,-100.0,no (lows recorded from 2026-10-01),41,0,https://dexscreener.com/base/0x8357668966377879be18A942029DAE8bA6B34dd8
 2026-09-30,pullback,ARROWFARM,robinhood,1025.9,480.53,376.46,-21.7,0.0,-21.7,no (lows recorded from 2026-10-01),41,0,https://dexscreener.com/robinhood/0x81Af43B4A865633Cd16c9758569CDB5846C54CAF
 2026-09-30,igniting,JUMP,solana,1798.8,1.798e-05,0.0,-100.0,0.0,-100.0,no (lows recorded from 2026-10-01),41,0,https://dexscreener.com/solana/EeYdQrxko3AWEFfDHhzQ6wx24JnXnq48qUMNuDnFz1yt
 2026-09-30,igniting,AXIS,solana,1611.7,1.611e-05,0.0,-100.0,0.0,-100.0,no (lows recorded from 2026-10-01),41,0,https://dexscreener.com/solana/V2VPbAauwgDd72bsvHTD1s81vUrYTnP4EAjQsjuFJ4F
-2026-09-29,shortlist,ROBIN,robinhood,1678.0,0.001678,0.0003717,-77.8,0.0,-84.4,no (lows recorded from 2026-10-01),42,0,https://dexscreener.com/robinhood/0x5eac4195930d5ff8b7a34a347f2bde951c42eb730d6e26075bea3dd7c66feb40
-2026-09-29,shortlist,Pumpoween,solana,997.0,0.00106,8.133e-06,-99.2,19.4,-99.5,no (lows recorded from 2026-10-01),42,3,https://dexscreener.com/solana/8NVFB1unNk9aDtL5hooF8Hahf2rt4GLPWx9ctEadikHg
+2026-09-29,shortlist,ROBIN,robinhood,1678.0,0.001678,0.0003676,-78.1,0.0,-84.4,no (lows recorded from 2026-10-01),42,0,https://dexscreener.com/robinhood/0x5eac4195930d5ff8b7a34a347f2bde951c42eb730d6e26075bea3dd7c66feb40
+2026-09-29,shortlist,Pumpoween,solana,997.0,0.00106,7.937e-06,-99.3,19.4,-99.5,no (lows recorded from 2026-10-01),42,3,https://dexscreener.com/solana/8NVFB1unNk9aDtL5hooF8Hahf2rt4GLPWx9ctEadikHg
 2026-09-29,igniting,XDP,solana,1443.5,1.443e-05,0.0,-100.0,96.3,-100.0,no (lows recorded from 2026-10-01),42,1,https://dexscreener.com/solana/8SZkDCsHSexNT4Mz54eGUiD8nUHUaStktR7H4kwsXXdX
-2026-09-29,igniting,Pumpoween,solana,997.0,0.00106,8.133e-06,-99.2,19.4,-99.5,no (lows recorded from 2026-10-01),42,3,https://dexscreener.com/solana/8NVFB1unNk9aDtL5hooF8Hahf2rt4GLPWx9ctEadikHg
+2026-09-29,igniting,Pumpoween,solana,997.0,0.00106,7.937e-06,-99.3,19.4,-99.5,no (lows recorded from 2026-10-01),42,3,https://dexscreener.com/solana/8NVFB1unNk9aDtL5hooF8Hahf2rt4GLPWx9ctEadikHg
 2026-09-29,igniting,JUMP,solana,1357.9,1.357e-05,0.0,-100.0,91.8,-100.0,no (lows recorded from 2026-10-01),42,1,https://dexscreener.com/solana/AxGtLoCCfgXD1STXNUT8UFowHHQn4GEFPRg4wWi3uZXq
 2026-09-29,igniting,AXIS,solana,1275.6,1.275e-05,0.0,-100.0,105.3,-100.0,no (lows recorded from 2026-10-01),42,1,https://dexscreener.com/solana/G9FyTYBehMn5uUnvw9TTx6deYFMg2mLDJzC8U6Je1mN7
-2026-09-27,igniting,INTC,robinhood,1729.8,123.77,59.016,-52.3,0.0,-57.0,no (lows recorded from 2026-10-01),44,0,https://dexscreener.com/robinhood/0x7fb585f108d921de3b197cf7e26b5aebc96b035fec13f972b868e008ea062394
-2026-09-26,shortlist,ARENA,solana,564.9,0.0005695,3.749e-06,-99.3,20.3,-99.3,no (lows recorded from 2026-10-01),45,1,https://dexscreener.com/solana/RbHYPnS9j1WYBsSsvorm9NXt8hLvsDV3YECZwGMV68T
-2026-09-26,pullback,NPC,solana,1971.8,0.002131,1.175e-05,-99.4,0.0,-99.4,no (lows recorded from 2026-10-01),45,0,https://dexscreener.com/solana/BRjMA8UALNp3diTKHfdeAn5riQrYPoaYez7KhYWD4oEs
-2026-09-26,pullback,Holdoween,solana,1226.2,0.00126,1.74e-05,-98.6,0.0,-98.8,no (lows recorded from 2026-10-01),45,0,https://dexscreener.com/solana/Apy5FShcDSLdyYSH4HWgY8zSFj4At8FbKeHZF3D72e9k
-2026-09-21,shortlist,WOOF,robinhood,856.4,8.563e-07,9.137e-08,-89.3,5.5,-91.6,no (lows recorded from 2026-10-01),50,1,https://dexscreener.com/robinhood/0x2a004148BE6eFeE250420d93a1AC6393E32D2D60
-2026-09-21,shortlist,INU,solana,1482.8,0.001482,3.507e-05,-97.6,0.0,-98.2,no (lows recorded from 2026-10-01),50,0,https://dexscreener.com/solana/EqnkEMJN4mBWkjTWF5dqED31ax8SZm51suYHbe8PiWqJ
-2026-09-21,pullback,MUSEWORLD,base,702.0,0.0007292,4.077e-05,-94.4,57.4,-100.0,no (lows recorded from 2026-10-01),50,2,https://dexscreener.com/base/0x050e44afe314c0298d695f7e7b6bb4769475d7541a37da644950a59413460360
-2026-09-21,pullback,CALI,solana,1025.9,0.001035,0.0001324,-87.2,1088.4,-88.3,no (lows recorded from 2026-10-01),50,8,https://dexscreener.com/solana/2i2iULr7UwK1SDRB17T5FUtiMnFQL7fyy7rh69brZihc
-2026-09-20,shortlist,IF,robinhood,1439.5,0.001602,0.0003333,-79.2,364.5,-86.1,no (lows recorded from 2026-10-01),51,4,https://dexscreener.com/robinhood/0x39A200271525E9641e799127bdAB299DAeF21953
-2026-09-19,shortlist,Pepe,solana,1501.1,0.001441,0.0005637,-60.9,23.0,-60.9,no (lows recorded from 2026-10-01),52,1,https://dexscreener.com/solana/FCEnSxyJfRSKsz6tASUENCsfGwKgkH6YuRn1AMmyHhZn
-2026-09-17,shortlist,GRAMS,solana,869.9,0.0008699,0.0001944,-77.7,18.1,-81.3,no (lows recorded from 2026-10-01),54,2,https://dexscreener.com/solana/FxeRAf7vpaHjH2pzPQhR5bdh85gMLni11k7izjwaJMAa
-2026-09-16,shortlist,Stonks,bsc,678.4,0.0006783,0.0004836,-28.7,1393.4,-37.0,no (lows recorded from 2026-10-01),55,9,https://dexscreener.com/bsc/0xDb6f1D044b8b2887a6C450D0D13176C81E3F936d
+2026-09-27,igniting,INTC,robinhood,1729.8,123.77,57.72,-53.4,0.0,-57.0,no (lows recorded from 2026-10-01),44,0,https://dexscreener.com/robinhood/0x7fb585f108d921de3b197cf7e26b5aebc96b035fec13f972b868e008ea062394
+2026-09-26,shortlist,ARENA,solana,564.9,0.0005695,3.672e-06,-99.4,20.3,-99.4,no (lows recorded from 2026-10-01),45,1,https://dexscreener.com/solana/RbHYPnS9j1WYBsSsvorm9NXt8hLvsDV3YECZwGMV68T
+2026-09-26,pullback,NPC,solana,1971.8,0.002131,1.155e-05,-99.5,0.0,-99.5,no (lows recorded from 2026-10-01),45,0,https://dexscreener.com/solana/BRjMA8UALNp3diTKHfdeAn5riQrYPoaYez7KhYWD4oEs
+2026-09-26,pullback,Holdoween,solana,1226.2,0.00126,1.734e-05,-98.6,0.0,-98.8,no (lows recorded from 2026-10-01),45,0,https://dexscreener.com/solana/Apy5FShcDSLdyYSH4HWgY8zSFj4At8FbKeHZF3D72e9k
+2026-09-21,shortlist,WOOF,robinhood,856.4,8.563e-07,8.074e-08,-90.6,5.5,-91.6,no (lows recorded from 2026-10-01),50,1,https://dexscreener.com/robinhood/0x2a004148BE6eFeE250420d93a1AC6393E32D2D60
+2026-09-21,shortlist,INU,solana,1482.8,0.001482,3.503e-05,-97.6,0.0,-98.2,no (lows recorded from 2026-10-01),50,0,https://dexscreener.com/solana/EqnkEMJN4mBWkjTWF5dqED31ax8SZm51suYHbe8PiWqJ
+2026-09-21,pullback,MUSEWORLD,base,702.0,0.0007292,3.104e-05,-95.7,57.4,-100.0,no (lows recorded from 2026-10-01),50,2,https://dexscreener.com/base/0x050e44afe314c0298d695f7e7b6bb4769475d7541a37da644950a59413460360
+2026-09-21,pullback,CALI,solana,1025.9,0.001035,0.0001332,-87.1,1088.4,-88.3,no (lows recorded from 2026-10-01),50,8,https://dexscreener.com/solana/2i2iULr7UwK1SDRB17T5FUtiMnFQL7fyy7rh69brZihc
+2026-09-20,shortlist,IF,robinhood,1439.5,0.001602,0.0003246,-79.7,364.5,-86.1,no (lows recorded from 2026-10-01),51,4,https://dexscreener.com/robinhood/0x39A200271525E9641e799127bdAB299DAeF21953
+2026-09-19,shortlist,Pepe,solana,1501.1,0.001441,0.0005746,-60.1,23.0,-60.9,no (lows recorded from 2026-10-01),52,1,https://dexscreener.com/solana/FCEnSxyJfRSKsz6tASUENCsfGwKgkH6YuRn1AMmyHhZn
+2026-09-17,shortlist,GRAMS,solana,869.9,0.0008699,0.0001911,-78.0,18.1,-81.3,no (lows recorded from 2026-10-01),54,2,https://dexscreener.com/solana/FxeRAf7vpaHjH2pzPQhR5bdh85gMLni11k7izjwaJMAa
+2026-09-16,shortlist,Stonks,bsc,678.4,0.0006783,0.0004878,-28.1,1393.4,-37.0,no (lows recorded from 2026-10-01),55,9,https://dexscreener.com/bsc/0xDb6f1D044b8b2887a6C450D0D13176C81E3F936d
 2026-09-16,shortlist,CX,solana,756.4,0.03138,0.02445,-22.1,44.0,-22.1,no (lows recorded from 2026-10-01),55,4,https://dexscreener.com/solana/AtK4fYMF1mFosQn6qRiMJoE1hsjpCFwpTy1TKpE5Ez6E
-2026-09-16,pullback,pill,solana,1600.3,0.001656,0.0008052,-51.4,185.1,-60.9,no (lows recorded from 2026-10-01),55,2,https://dexscreener.com/solana/Bof2XL9zAbLZ15kzAXcXy39wDeZFgKwyvb3UVkv3FhsX
-2026-09-15,shortlist,MENSA,solana,520.4,0.0005204,0.0001816,-65.1,0.0,-80.5,no (lows recorded from 2026-10-01),56,0,https://dexscreener.com/solana/E8RJG3srQBiSFMxDwrKG2DkwpWGyK7UYcFjkaTs9tbrS
-2026-09-15,shortlist,Machi,solana,642.6,0.0007461,0.0002354,-68.4,0.0,-68.4,no (lows recorded from 2026-10-01),56,0,https://dexscreener.com/solana/7cmefCYxzK6yfBcmB4j234A3EKY2w13GfEdB3DJvNWzx
+2026-09-16,pullback,pill,solana,1600.3,0.001656,0.0008932,-46.1,185.1,-60.9,no (lows recorded from 2026-10-01),55,2,https://dexscreener.com/solana/Bof2XL9zAbLZ15kzAXcXy39wDeZFgKwyvb3UVkv3FhsX
+2026-09-15,shortlist,MENSA,solana,520.4,0.0005204,0.0001696,-67.4,0.0,-80.5,no (lows recorded from 2026-10-01),56,0,https://dexscreener.com/solana/E8RJG3srQBiSFMxDwrKG2DkwpWGyK7UYcFjkaTs9tbrS
+2026-09-15,shortlist,Machi,solana,642.6,0.0007461,0.0002365,-68.3,0.0,-68.4,no (lows recorded from 2026-10-01),56,0,https://dexscreener.com/solana/7cmefCYxzK6yfBcmB4j234A3EKY2w13GfEdB3DJvNWzx
 2026-09-15,pullback,BinanceTown,bsc,959.9,0.0009598,0.0,-100.0,0.0,-100.0,no (lows recorded from 2026-10-01),56,0,https://dexscreener.com/bsc/0xcEC13213c390d51121F82bA2ECafb8E11e0AF7a3
-2026-09-14,pullback,YOYO,solana,1295.1,0.001296,8.762e-05,-93.2,0.0,-93.2,no (lows recorded from 2026-10-01),57,0,https://dexscreener.com/solana/2eAX4Jgn81aaW7wGCoLc43NVrBcnswKKz7cmpE7unyqh
-2026-09-12,shortlist,USEFUL,solana,1090,0.001089,0.000287,-73.6,70.9,-81.4,no (lows recorded from 2026-10-01),59,4,https://dexscreener.com/solana/FZuTAARDYJapX7HqniQEzzDboNY8RT4FXCrakVFJap2R
-2026-09-12,shortlist,STONKS,robinhood,811,0.0008114,4.43e-05,-94.5,0.0,-100.0,no (lows recorded from 2026-10-01),59,0,https://dexscreener.com/robinhood/0x1b7d438a31ffa0602509208246d8db133e83e5197e709f9639fe0a2d8fd5c2fa
-2026-09-12,shortlist,ODYS,arbitrum,1381,0.001495,7.841e-05,-94.8,0.0,-100.0,no (lows recorded from 2026-10-01),59,0,https://dexscreener.com/arbitrum/0x628854F0CFD7Debd6E04361421Ee9c06C77048c3
-2026-09-12,shortlist,Hachiko,bsc,1218,0.001287,0.0007565,-41.2,0.0,-42.1,no (lows recorded from 2026-10-01),59,0,https://dexscreener.com/bsc/0xE6EDC555061D1D9Fe0145867b7eA7b07Da840898
+2026-09-14,pullback,YOYO,solana,1295.1,0.001296,8.67e-05,-93.3,0.0,-93.3,no (lows recorded from 2026-10-01),57,0,https://dexscreener.com/solana/2eAX4Jgn81aaW7wGCoLc43NVrBcnswKKz7cmpE7unyqh
+2026-09-12,shortlist,USEFUL,solana,1090,0.001089,0.0002518,-76.9,70.9,-81.4,no (lows recorded from 2026-10-01),59,4,https://dexscreener.com/solana/FZuTAARDYJapX7HqniQEzzDboNY8RT4FXCrakVFJap2R
+2026-09-12,shortlist,STONKS,robinhood,811,0.0008114,4.415e-05,-94.6,0.0,-100.0,no (lows recorded from 2026-10-01),59,0,https://dexscreener.com/robinhood/0x1b7d438a31ffa0602509208246d8db133e83e5197e709f9639fe0a2d8fd5c2fa
+2026-09-12,shortlist,ODYS,arbitrum,1381,0.001495,7.717e-05,-94.8,0.0,-100.0,no (lows recorded from 2026-10-01),59,0,https://dexscreener.com/arbitrum/0x628854F0CFD7Debd6E04361421Ee9c06C77048c3
+2026-09-12,shortlist,Hachiko,bsc,1218,0.001287,0.0007228,-43.8,0.0,-43.8,no (lows recorded from 2026-10-01),59,0,https://dexscreener.com/bsc/0xE6EDC555061D1D9Fe0145867b7eA7b07Da840898
 2026-09-12,pullback,牛梦,bsc,611,0.0006111,0.0,-100.0,1.1,-100.0,no (lows recorded from 2026-10-01),59,2,https://dexscreener.com/bsc/0x33d2E1eeB4D399591C11ac9AD64863fa11678304
-2026-09-12,pullback,PAIRZ,solana,615,0.000638,2.137e-06,-99.7,0.0,-99.7,no (lows recorded from 2026-10-01),59,0,https://dexscreener.com/solana/8XXnvNEMU3UoMRPWY2KJBW5z1T2KKj6vH9WYJfcGDqYQ
+2026-09-12,pullback,PAIRZ,solana,615,0.000638,2.099e-06,-99.7,0.0,-99.7,no (lows recorded from 2026-10-01),59,0,https://dexscreener.com/solana/8XXnvNEMU3UoMRPWY2KJBW5z1T2KKj6vH9WYJfcGDqYQ
