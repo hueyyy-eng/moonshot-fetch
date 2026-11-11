@@ -29,16 +29,22 @@ If a change would break one of them, stop and ask first.
   If a cron line changes, change the matching `SCAN_SLOT` line in the workflow too.
 - Do not change these times without being asked.
 
-## Quick Solana check + Telegram alerts (owner, 9 Nov 2026)
+## Quick Solana + BSC check + Telegram alerts (owner, 9 Nov 2026; BSC added 11 Nov 2026)
 
 - `.github/workflows/quick.yml` runs `fetch/quick.py` every 2 hours from 7:23am to 9:23pm SGT (GitHub may start it late).
-  Solana only, same code as the daily scan, then the dashboard's own rules from `scan/build_block.py`.
+  Solana and BSC, same code as the daily scan, then the dashboard's own rules from `scan/build_block.py`. Only the
+  $500k–$2m band can be alerted.
 - It sends a Telegram message (`scan/telegram.py`) for each token that would be on **Igniting, Runners or Momentum**
   AND scores **60+**, is not already on the dashboard's lists and was not alerted in the last 3 days (remembered in
   `.alerts/sent.json` through the workflow cache, never committed). At most 5 alerts per check.
 - **Quiet 11pm–7am SGT:** a run that lands in those hours sends nothing. Never put a sell target in an alert
   (no per-token 2x target, see Tracking). The quick check never changes the dashboard.
 - The token is never printed: error messages are cleaned of it before they reach the public log.
+- **Micro watch (silent experiment, 11 Nov 2026):** the quick check also writes down every **Solana** token it first
+  sees at **$50k–$200k with a pool of $10k+** ("micro") and at $200k–$500k ("early", for comparison), then re-prices
+  them at every check. **No list, no Telegram alert.** Log: `.alerts/watch.json` (cache), copied by the daily scan to
+  `site/micro-watch.json` (bot-written) and shown in the Review tab by size tier. Judged at the **22 Nov and 6 Dec 2026**
+  reviews before it may feed any list or alert.
 
 ## Google Drive copy
 
@@ -87,9 +93,26 @@ If a change would break one of them, stop and ask first.
   mirrored in `site/page.html`). Keep the tag whenever this exception applies. If a rug service adds Elysium, wire it
   into `fetch/safety.py` and the exception stops applying by itself (it only covers tokens with no rug data).
 
+## Smaller tokens, breakouts and the wider search (owner, 11 Nov 2026)
+
+- **◌ Early watch** (experimental): `$200k–$500k` band (`e`, `MCAP_E`), searched on the core chains only
+  (`EARLY_CHAINS` in `fetch/main.py`). Rule: at least 1 day old, buyers 50%+ (not 90%+), liquidity gate, not
+  collapsing, no wash trading, no honeypot, rug checks not failed. **Its own list** — never on the five main lists and
+  never in a Telegram alert until a review approves it. Logged as `EARLYHIST` (list code `E`).
+- **↗ Breakouts:** a token seen in the $200k–$2m bands in the last 7 days (`breakout_watch` in `fetch/main.py`) that is
+  now above $2m (band `b`), shown for **3 days** from the first scan it appears (`bko`). Logged as `BRKHIST` (code `B`).
+- The five main lists take only the $500k–$2m band (`mainband` / `mainBand`); near-misses and narrative counts too.
+  The pattern study and the older Review tables leave the new bands out so their numbers stay comparable.
+- **"second look"** tag (green): under 7 days old, seen at the previous scan, price up more than 10% since then and
+  55%+ buyers (`second_look`, field `sl`).
+- **Wider search:** discovery also reads GeckoTerminal's newest pools (page 1) and most-trades pools (pages 1–2) per
+  chain. Tokens found only that way carry `ws: 1`; the Review tab compares them with the rest. Judged at the
+  **22 Nov and 6 Dec 2026** reviews: keep it only if those extra tokens do at least as well.
+- Same rules in `scan/build_block.py` and `site/page.html`; `scan/verify_page.py` checks both new lists.
+
 ## Lists, score and tags (owner's review of the back-tests, 8 Nov 2026)
 
-- **Five lists:** Shortlist, Pullback, Igniting, Momentum and **» Runners** (experimental): already ran 3×+ but under
+- **Five main lists** (plus Breakouts and Early watch, above): Shortlist, Pullback, Igniting, Momentum and **» Runners** (experimental): already ran 3×+ but under
   3 days old, buyer share 70–90%, trading 10×+ its liquidity, usual liquidity / mcap / wash / honeypot checks, unknown
   rug data allowed (as Momentum). A token on another list stays there. Runners are logged (`RUNHIST`, list code `U`)
   to Price tracking, the CSVs and the pattern study like the other lists. Keep it until a review decides otherwise.
@@ -177,4 +200,4 @@ Recorded 18 Oct 2026. Not fixed yet — only change these when the owner asks.
   edited **only when the owner asks**. Never touch the data section between `/*DATA-START*/` and
   `/*DATA-END*/` (or `/*PATTERN-START*/` … `/*PATTERN-END*/`, `/*REVIEW-START*/` … `/*REVIEW-END*/`) — the bot replaces it every scan.
 - The other files in `site/` (CSVs, `summary.json`, `nar_auto.json`, `pattern-nar.json`, `review.json`,
-  `review-history.json`) are written by the bot. Do not hand-edit them.
+  `review-history.json`, `micro-watch.json`) are written by the bot. Do not hand-edit them.

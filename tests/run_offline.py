@@ -142,6 +142,26 @@ assert not _q.quiet(_dt(2026, 11, 9, 7, 0, tzinfo=_SGT)) and not _q.quiet(_dt(20
 _m = _q.message({"sym": "T", "pa": "abc", "_score": 70, "_sparts": ["buyers"], "mc": 1200, "liq": 150, "ubr": 0.76,
                  "c24": 150, "c6": 20, "age": 1.4, "sec": "rugcheck", "_ran": False}, "U")
 assert "score 70/100" in _m and "Not a recommendation" in _m and "2x" not in _m.lower().replace("2×", "")
+assert "quick check — BSC" in _q.message(dict(sym="T", pa="abc", c="bsc", _score=70, _sparts=[]), "I"), "BSC alerts say BSC"
+# 11 Nov 2026: Early watch, Breakouts, Second look, band rules, wider search
+from build_block import is_early, is_brk, second_look, mainband, is_ign, is_pull
+ew = dict(good, band="e", mc=350, liq=60, lp=17, age=2); evaluate(ew)
+assert ew["_g"]["mcap"] is True and is_early(ew) and not is_short(ew) and not is_mom(ew) and not is_run(ew), "early band: own list only"
+assert not is_early(dict(ew, age=0.5, _g=ew["_g"], _honey=False, _wash=False)), "Early watch wants 1 day+"
+bk = dict(good, band="b", mc=2600, liq=300, lp=11, bko=1); evaluate(bk)
+assert is_brk(bk) and not is_short(bk) and not is_run(bk)
+bk3 = dict(bk, bko=3); evaluate(bk3); assert not is_brk(bk3), "Breakouts show for 3 days"
+assert second_look(dict(px=1.2, age=2, ubr=0.6), dict(px=1.0)) and not second_look(dict(px=1.05, age=2, ubr=0.6), dict(px=1.0))
+assert not second_look(dict(px=1.2, age=8, ubr=0.6), dict(px=1.0)) and not second_look(dict(px=1.2, age=2, ubr=0.5), dict(px=1.0))
+assert mainband({}) and mainband({"band": "m"}) and not mainband({"band": "e"})
+from fetch import discover as _d
+_rows = [dict(ta="a1", pa="p1", mc=300, liq=40, lp=13, turn=3, v24=100), dict(ta="a2", pa="p2", mc=120, liq=12, lp=10, turn=1, v24=50),
+         dict(ta="a3", pa="p3", mc=2500, liq=200, lp=8, turn=2, v24=80), dict(ta="a4", pa="p4", mc=900, liq=90, lp=10, turn=2, v24=70),
+         dict(ta="a5", pa="p5", mc=120, liq=5, lp=4, turn=1, v24=40)]
+_b = {r["ta"]: r["band"] for r in _d.narrow_and_band([dict(r) for r in _rows], ("m", "l", "e", "x", "b"), {"a3"})}
+assert _b == {"a1": "e", "a2": "x", "a3": "b", "a4": "m"}, _b
+_b = {r["ta"]: r["band"] for r in _d.narrow_and_band([dict(r) for r in _rows])}
+assert _b == {"a3": "l", "a4": "m"}, ("default bands unchanged", _b)
 assert "INFLOW_CHAINS" in out and set(out["SCANNED_CHAINS"]) >= {"solana", "bsc"}, (out.get("INFLOW_CHAINS"), out.get("SCANNED_CHAINS"))
 assert "OldChain" not in [r[0] for r in out["NETFLOW"]["day"]], "deprecated chains are left out"
 assert out["NETFLOW"]["month"][0] == ["BSC", -1003.33, "bsc"], out["NETFLOW"]

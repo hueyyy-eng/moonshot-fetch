@@ -40,7 +40,8 @@ MAX_SANE = 200.0          # same bad-reading cut as the pattern study
 SPIKE = 50.0              # exit tests leave out seconds-long spikes no one could sell into
 REVIEW_ANCHOR = date(2026, 11, 8)
 LISTS = [("S", "★ Shortlist"), ("P", "◆ Pullback"), ("I", "▲ Igniting"), ("M", "⚡ Momentum"), ("U", "» Runners"),
-         ("R", "✕ Near-misses")]
+         ("E", "◌ Early watch"), ("B", "↗ Breakouts"), ("R", "✕ Near-misses")]
+NEW_BANDS = ("e", "b", "x")   # added 11 Nov 2026; kept out of the older studies so their numbers stay comparable
 
 
 def tday(d: str) -> float:
@@ -60,7 +61,7 @@ def med(v):
 def load(root: str):
     snaps = sorted(d for d in os.listdir(os.path.join(root, "snapshots"))
                    if os.path.exists(os.path.join(root, "snapshots", d, "scan.json")))
-    price, recs, first = {}, {}, {}
+    price, recs, first, extra = {}, {}, {}, {}
     for d in snaps:
         try:
             s = json.load(open(os.path.join(root, "snapshots", d, "scan.json"), encoding="utf-8"))
@@ -76,8 +77,8 @@ def load(root: str):
             if t.get("px"):
                 price.setdefault(k, {})[d] = float(t["px"])
             recs.setdefault(k, []).append((d, t))
-            first.setdefault(k, (d, t))
-    return snaps, price, recs, first
+            (extra if t.get("band") in NEW_BANDS else first).setdefault(k, (d, t))
+    return snaps, price, recs, first, extra
 
 
 # ---------------------------------------------------------------- exit rules (one $1 position, scan by scan)
@@ -161,8 +162,9 @@ def row_path(row, price, snaps_t):
 def lists_and_timing(page: str, price, recs, snaps):
     snaps_t = {d: tday(d) for d in snaps}
     rows = []
-    for name, lab in (("HISTORY", None), ("IGNHIST", "I"), ("MOMHIST", "M"), ("RUNHIST", "U"), ("REJECTS", "R")):
-        for h in js_const(page, name):
+    for name, lab in (("HISTORY", None), ("IGNHIST", "I"), ("MOMHIST", "M"), ("RUNHIST", "U"), ("EARLYHIST", "E"),
+                      ("BRKHIST", "B"), ("REJECTS", "R")):
+        for h in (js_const(page, name) if f"const {name} = " in page else []):
             if h.get("pa") and h.get("px") and h.get("d"):
                 rows.append(dict(h, l=lab or h.get("l") or "S"))
     hits, per = {}, {L: [] for L, _ in LISTS}
@@ -331,17 +333,125 @@ def add_d2(rows, price, first):
                 break
 
 
+# ---------------------------------------------------------------- 11 Nov 2026 experiments
+TIERS = [("x", "Micro $50–100k", 50, 100), ("x", "Micro $100–200k", 100, 200),
+         ("e", "Early $200–350k", 200, 350), ("e", "Early $350–500k", 350, 500)]
+
+
+def tier_rates(rs, px="px", now="pxNow", peak="pxMax"):
+    n = len(rs)
+    pk = [(r[peak] or 0) / r[px] for r in rs]
+    nw = [(r[now] or 0) / r[px] for r in rs]
+    return {"n": n, "hit2": pct(sum(x >= 2 for x in pk), n), "hit5": sum(x >= 5 for x in pk),
+            "hit10": sum(x >= 10 for x in pk), "down50": pct(sum(x <= 0.5 for x in nw), n),
+            "zero": pct(sum(x <= 0.1 for x in nw), n)}
+
+
+def tiers_block(watch_rows, price, extra):
+    """Micro / Early watch: the quick check's silent log (Solana, every 2 hours) by size when first seen, and the
+    daily scans' Early band (core chains). 'zero' = now down 90% or more (or gone)."""
+    quick = []
+    for _, lab, lo, hi in TIERS:
+        rs = [r for r in watch_rows if r.get("px") and r.get("mc") is not None and lo <= r["mc"] < hi]
+        x = tier_rates(rs)
+        h2 = [r["h2"] for r in rs if r.get("h2") is not None]
+        x.update({"tier": lab, "hours_to_2x": med(h2), "pool10k": sum((r.get("liq") or 0) >= 10 for r in rs)})
+        quick.append(x)
+    daily = []
+    for lab, lo, hi in (("Early $200–350k", 200, 350), ("Early $350–500k", 350, 500)):
+        rs = []
+        for k, (d0, t) in extra.items():
+            if t.get("band") != "e" or not t.get("px") or not (lo <= (t.get("mc") or 0) < hi):
+                continue
+            later = [v for d, v in price.get(k, {}).items() if d > d0]
+            if not later or max(later) / t["px"] > MAX_SANE:
+                continue
+            rs.append({"px": t["px"], "pxMax": max(later), "pxNow": later[-1] if later else t["px"]})
+        x = tier_rates(rs)
+        x["tier"] = lab
+        daily.append(x)
+    first = min((r.get("t0", "") for r in watch_rows), default="")[:10] or None
+    return {"quick": quick, "daily": daily, "since": first}
+
+
+def breakouts_block(extra, price):
+    """every token first seen as a Breakout (grew past $2m), measured from that scan's price"""
+    rs = []
+    for k, (d0, t) in extra.items():
+        if t.get("band") != "b" or not t.get("px"):
+            continue
+        later = [v for d, v in sorted(price.get(k, {}).items()) if d > d0]
+        if not later or max(later) / t["px"] > MAX_SANE:
+            continue
+        rs.append({"px": t["px"], "pxMax": max(later), "pxNow": later[-1]})
+    return tier_rates(rs)
+
+
+def second_look_block(snaps, recs, price):
+    """$500k-$2m tokens under 7 days old seen at two scans in a row: up 10%+ with 55%+ buyers at the second look,
+    vs all tokens seen twice, vs flat (within ±10%). Measured from the second scan's price."""
+    idx = {d: i for i, d in enumerate(snaps)}
+    tag, flat, every = [], [], []
+    for k, seen in recs.items():
+        if len(seen) < 2:
+            continue
+        (d1, a), (d2, b) = seen[0], seen[1]
+        if a.get("band") in NEW_BANDS or idx.get(d2, -9) != idx.get(d1, -99) + 1:
+            continue
+        if not a.get("px") or not b.get("px") or a.get("age") is None or a["age"] >= 7:
+            continue
+        later = [v for d, v in sorted(price.get(k, {}).items()) if d > d2]
+        if not later or max(later) / b["px"] > MAX_SANE:
+            continue
+        r = {"px": b["px"], "pxMax": max(later), "pxNow": later[-1]}
+        every.append(r)
+        up = b["px"] / a["px"]
+        if up > C.SECOND["up"] and (b.get("ubr") or 0) >= C.SECOND["ubrMin"]:
+            tag.append(r)
+        elif 0.9 <= up <= 1.1:
+            flat.append(r)
+    return {"tagged": tier_rates(tag), "all_twice": tier_rates(every), "flat": tier_rates(flat)}
+
+
+def wider_block(snaps, extra, first, price, root):
+    """tokens found only by the wider search (GeckoTerminal newest pools / most trades), from 11 Nov 2026"""
+    rs, other, per_scan = [], [], []
+    for k, (d0, t) in list(first.items()) + list(extra.items()):
+        if d0[:10] < "2026-11-11" or not t.get("px"):
+            continue
+        later = [v for d, v in sorted(price.get(k, {}).items()) if d > d0]
+        if not later or max(later) / t["px"] > MAX_SANE:
+            continue
+        (rs if t.get("ws") else other).append({"px": t["px"], "pxMax": max(later), "pxNow": later[-1]})
+    for d in snaps:
+        if d[:10] < "2026-11-11":
+            continue
+        try:
+            stt = json.load(open(os.path.join(root, "snapshots", d, "status.json"), encoding="utf-8"))
+            pc = ((stt.get("sources") or {}).get("discovery") or {}).get("per_chain") or {}
+            if any("wider_kept" in v for v in pc.values()):
+                per_scan.append(sum(v.get("wider_kept", 0) for v in pc.values()))
+        except (OSError, ValueError, AttributeError):
+            continue
+    return {"wider_only": tier_rates(rs), "rest": tier_rates(other), "scans": len(per_scan),
+            "per_scan": round(st.mean(per_scan), 1) if per_scan else None}
+
+
 def headline(review: dict) -> dict:
     """the few numbers kept at each review, to show what changed since"""
     return {"lists": {x["l"]: {"n": x["n"], "hit2": x["hit2"], "down50": x["down50"],
                                "recommended": x["exits"].get("recommended")} for x in review["lists"]},
             "score": {b["band"]: b["second"]["hit2"] for b in review["score"]["bands"]},
             "runners": review["runners"]["all"]["hit2"], "social": review["social"]["only_social"]["hit2"],
-            "asset_doubled": len(review["asset"]["calm_doubled"])}
+            "asset_doubled": len(review["asset"]["calm_doubled"]),
+            "tiers": {x["tier"]: x["hit2"] for x in (review.get("tiers") or {}).get("quick", [])},
+            "breakouts": (review.get("breakouts") or {}).get("hit2"),
+            "second_look": ((review.get("second_look") or {}).get("tagged") or {}).get("hit2"),
+            "wider": ((review.get("wider") or {}).get("wider_only") or {}).get("hit2")}
 
 
-def study(root: str, page: str) -> dict:
-    snaps, price, recs, first = load(root)
+def study(root: str, page: str, watch_rows=None) -> dict:
+    snaps, price, recs, first, extra = load(root)
     lists, timing, hits = lists_and_timing(page, price, recs, snaps)
     rows = first_seen_rows(price, first)
     add_d2(rows, price, first)
@@ -352,7 +462,9 @@ def study(root: str, page: str) -> dict:
             "last_day": snaps[-1] if snaps else None, "tokens": len(rows), "split": split,
             "lists": lists, "timing": timing, "winners": winners_block(rows), "score": score_block(rows, split),
             "runners": runners_block(rows, split), "social": social_block(rows), "robinhood": robinhood_block(rows),
-            "asset": asset_block(rows), "hits": hits}
+            "asset": asset_block(rows), "tiers": tiers_block(watch_rows or [], price, extra),
+            "breakouts": breakouts_block(extra, price), "second_look": second_look_block(snaps, recs, price),
+            "wider": wider_block(snaps, extra, first, price, root), "hits": hits}
 
 
 def keep_history(path: str, review: dict) -> list:
@@ -379,8 +491,12 @@ def main() -> int:
     if page.count(START) != 1 or page.count(END) != 1:
         print("review study: markers not found in page — template not updated yet, skipping")
         return 0
-    review = study(root, page)
     site = os.path.dirname(page_path)
+    try:
+        watch_rows = json.load(open(os.path.join(site, "micro-watch.json"), encoding="utf-8"))
+    except (OSError, ValueError):
+        watch_rows = []
+    review = study(root, page, watch_rows if isinstance(watch_rows, list) else [])
     hist = keep_history(os.path.join(site, "review-history.json"), review)
     review["history"] = hist[-6:]
     with open(os.path.join(site, "review.json"), "w", encoding="utf-8") as f:
