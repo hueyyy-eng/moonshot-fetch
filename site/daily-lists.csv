@@ -370,3 +370,19 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-11-10,momentum,CLU,elysium,1580.9,Dog & animal memes,190.36,7.05,1.24,-1.34,2.05,nodata,https://dexscreener.com/elysium/0x8081ed5312303d807613151d7ba96d280ad308526a5414178b54301b6a99f103,evening scan
 2026-11-10,momentum,比特币,bsc,537.2,Gold / BTC proxies,76.46,13.28,0.58,17.25,2.52,goplus,https://dexscreener.com/bsc/0x3f95DFcE2D6BD72fbA4433A50B54AC7bbcc64e02,daily scan
 2026-11-10,momentum,牛逼,bsc,1337.0,Dog & animal memes,32.86,1.61,1.36,38.54,1.1,goplus,https://dexscreener.com/bsc/0xe71984e3fc90a625d8d7E5056CD6A4418D57C7Fa,evening scan
+2026-11-11,shortlist,HIMS,robinhood,1870.6,Tokenised equities,1.03,47.48,0.61,0.64,74.18,explorer,https://dexscreener.com/robinhood/0x67983c0d78cea3a8b4a5cc283feeeefd278a8ae5c6504b983b0c72bde13d1c0c,daily scan
+2026-11-11,shortlist,jeff,solana,1322.2,Launchpad / infra,2.11,64.45,1.22,2.12,13.98,rugcheck,https://dexscreener.com/solana/JCXWfcZGjgJC8NZa5Qb6JP3cgvqW4vGUg4Tqj87G5ZnY,daily scan
+2026-11-11,shortlist,OAK,robinhood,527.6,AI,2.16,54.37,1.09,11.05,8.82,explorer,https://dexscreener.com/robinhood/0xdb324dde34ef01debe23f8f8ab4bb6053154b5dea8646dec9d8ea65e414fad59,daily scan
+2026-11-11,shortlist,POCKET,elysium,757.6,Unclassified,,,4.0,0.1,0.2,nodata,https://dexscreener.com/elysium/0x37a99c5c3fb3f8431e718494fed8746c856de1c6a61f8cd96aa145cf3f1bc9a5,daily scan
+2026-11-11,shortlist,swordcat,solana,793.5,Dog & animal memes,1.19,82.24,1.41,0.62,43.63,rugcheck,https://dexscreener.com/solana/8ewuF2o8ACro7fqWepZ3tKhkbBjndZU4Ldk9scRPw83d,daily scan
+2026-11-11,shortlist,TTWO,robinhood,1208.9,Tokenised equities,1.17,6.93,0.25,0.7,74.34,explorer,https://dexscreener.com/robinhood/0xD9Ab4b7fAe6DC2f7020134Ec744A8F53Ef3E5E24,daily scan
+2026-11-11,shortlist,USO,robinhood,1631.9,Tokenised equities,1.03,32.51,0.1,0.04,116.62,explorer,https://dexscreener.com/robinhood/0x02175608F1b5E6b5ed221cCFdC7Be197D111D915,daily scan
+2026-11-11,pullback,ETHEL,elysium,607.1,Unclassified,222.61,40.99,0.98,0.92,1.37,nodata,https://dexscreener.com/elysium/0x3439ec14b87df0ab79e6708b934ec9388d8890f3194b3605c1c2fc79801dcb98,daily scan
+2026-11-11,pullback,WEALTH,solana,892.8,Unclassified,19.42,46.24,0.75,3.51,5.39,rugcheck,https://dexscreener.com/solana/5n8V68fCaNTRQvaXzrmBryDe5jFLrgm65pFfsmia6Nro,daily scan
+2026-11-11,igniting,POCKET,elysium,757.6,Unclassified,,,4.0,0.1,0.2,nodata,https://dexscreener.com/elysium/0x37a99c5c3fb3f8431e718494fed8746c856de1c6a61f8cd96aa145cf3f1bc9a5,daily scan
+2026-11-11,momentum,BIG,solana,1064.8,Dog & animal memes,,,0.85,11.9,2.34,rugcheck,https://dexscreener.com/solana/5TecgcpFLdBnJvBrpjvk32UAYABPRA1HgeFPEUjQQkYK,daily scan
+2026-11-11,momentum,Catbalio,elysium,633.0,Dog & animal memes,338.01,0.0,3.01,1.37,1.3,nodata,https://dexscreener.com/elysium/0xdf7241f817587e23341ef3ad40426d037c05f0874b4042a2fa35743cc9a8108b,daily scan
+2026-11-11,momentum,CLU,elysium,1851.0,Dog & animal memes,848.69,13.74,1.1,1.67,2.52,nodata,https://dexscreener.com/elysium/0x8081ed5312303d807613151d7ba96d280ad308526a5414178b54301b6a99f103,daily scan
+2026-11-11,momentum,牛逼,bsc,1758.2,Dog & animal memes,167.52,4.98,0.72,213.0,1.34,goplus,https://dexscreener.com/bsc/0xC96c0C6a81342BE14D7BcCb98dDC69a053dD8a21,daily scan
+2026-11-11,momentum,牛逼,bsc,1458.9,Dog & animal memes,63.93,11.62,0.98,1.18,1.57,goplus,https://dexscreener.com/bsc/0xe71984e3fc90a625d8d7E5056CD6A4418D57C7Fa,daily scan
+2026-11-11,runners,DACITY,solana,1693.7,Classic memes,,,4.0,3985.0,0.22,rugcheck,https://dexscreener.com/solana/89RSdzZ3WNCeBoJfruvi6oMxBDYtNreLFVQcVq1oPhNQ,daily scan
