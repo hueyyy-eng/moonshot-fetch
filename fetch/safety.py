@@ -248,7 +248,7 @@ def run(http: Http, st: Status, tokens: list[dict]) -> None:
                 if c in HONEYPOT_IDS:
                     honeypot(http, t, HONEYPOT_IDS[c])
                     n_hp += 1
-                if c == "robinhood" and t.get("band") == "m" and not key_rejected:
+                if c == "robinhood" and t.get("band") in ("m", "e", "b") and not key_rejected:
                     try:
                         explorer(http, t, key)
                         n_ex += 1

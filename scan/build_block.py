@@ -46,7 +46,7 @@ GATE_KEYS = ["mcap", "liq", "turn", "buyers", "hold", "notRan", "noWash", "safe"
 ORDER = ["LAST_DAY", "SNAP_AT", "TOK_AT", "CHAIN_GATE", "CORE_CHAINS", "MCAP", "LIQ_PCT", "TURN_MIN", "RAN_MULT",
          "DROP_MAX", "PULL", "IGN", "MCAP_L", "TYPE", "CAND_AT", "NO_DEXSCREENER", "INFLOW_CHAINS", "SCANNED_CHAINS", "DATA", "NETFLOW_AT", "NETFLOW",
          "BRIDGES_AT", "BRIDGES", "REGIME_AT", "MAJORS", "LOG_AT", "REJECTS", "NARHIST", "HOLDHIST", "TOKENS",
-         "HISTORY", "IGNHIST", "MOMHIST", "RUNHIST", "KOLS", "CHAIN_ACCTS"]
+         "HISTORY", "IGNHIST", "MOMHIST", "RUNHIST", "EARLYHIST", "BRKHIST", "KOLS", "CHAIN_ACCTS"]
 
 
 # ------------------------------------------------------------------ block parsing
@@ -111,9 +111,23 @@ class Consts:
     CALM = {"runMax": 1.15, "retrMax": 13}
     UBR_MAX = 0.90   # 90%+ buyers with no sellers = honeypot profile (95% of them end down 50%+); no list admits it
     CHAIN_GATE = {"dr": 1.3, "dv": 5}
+    # --- added 11 Nov 2026 (owner's request; judged at the 22 Nov / 6 Dec reviews) ---
+    # Early watch: $200-500k tokens on the core chains, at least 1 day old, with the basic checks passed. Its own list:
+    # never on the five main lists and never in a Telegram alert until a review approves it.
+    MCAP_E = (200, 500)
+    EARLY = {"ageMin": 1}
+    # Breakouts: a token seen in the $200k-$2m bands in the last 7 days that is now above $2m, shown for 3 days
+    BRK = {"days": 3}
+    # "Second look" tag: under 7 days old, seen at the previous scan too, price up more than 10% since then, 55%+ buyers
+    SECOND = {"ageMax": 7, "up": 1.10, "ubrMin": 0.55}
 
 
 C = Consts()
+
+
+def mainband(t) -> bool:
+    """the five main lists only take the $500k-$2m moonshot band (rows saved before bands existed count as that)"""
+    return t.get("band") not in ("l", "e", "b", "x")
 
 
 def derive(t: dict) -> None:
@@ -162,7 +176,7 @@ def score(t: dict):
 
 def gate(t: dict, k: str):
     if k == "mcap":
-        B = C.MCAP_L if t.get("band") == "l" else C.MCAP
+        B = {"l": C.MCAP_L, "b": C.MCAP_L, "e": C.MCAP_E}.get(t.get("band"), C.MCAP)
         mc = t.get("mc")
         return mc is not None and mc >= B[0] and (B[1] is None or mc <= B[1])
     if k == "liq":
@@ -202,16 +216,16 @@ def crowded(t):
     return t.get("ubr") is not None and t["ubr"] >= C.UBR_MAX
 
 
-def is_short(t):  return t.get("band") != "l" and t["_nf"] == 0 and t["_nu"] == 0 and not crowded(t)
+def is_short(t):  return mainband(t) and t["_nf"] == 0 and t["_nu"] == 0 and not crowded(t)
 def is_pull(t):
     g = t["_g"]
-    return (t.get("band") != "l" and t["_runOk"] and t.get("retr") is not None and t["run"] >= C.PULL["run"]
+    return (mainband(t) and t["_runOk"] and t.get("retr") is not None and t["run"] >= C.PULL["run"]
             and C.PULL["retrLo"] <= t["retr"] <= C.PULL["retrHi"] and t.get("vvp") is not None and t["vvp"] >= C.PULL["volVsPeak"]
             and t.get("ubr") is not None and t["ubr"] >= C.BUYER_SHARE and not t["_honey"] and not t["_wash"]
             and not crowded(t) and g["safe"] is True and g["liq"] is True and g["mcap"] is True)
 def is_ign(t):
     g = t["_g"]
-    return (t.get("band") != "l" and t["_acc"] is not None and t["_acc"] >= C.IGN["accel"]
+    return (mainband(t) and t["_acc"] is not None and t["_acc"] >= C.IGN["accel"]
             and t.get("c6") is not None and 0 < t["c6"] <= C.PARAB_6H
             and (t.get("c24") is None or t["c24"] < C.IGN["c24Max"])
             and (t.get("run") is None or C.IGN["runLo"] <= t["run"] < C.IGN["runHi"])
@@ -224,7 +238,7 @@ def is_mom(t):
     were the worst group in the data (median peak 0.11x); the same tokens that survive to day 1-3 were the best.
     A token that keeps the profile simply qualifies the next morning."""
     age, mc, ubr = t.get("age"), t.get("mc"), t.get("ubr")
-    return (t.get("band") != "l" and age is not None and C.MOM["ageLo"] <= age < C.MOM["ageHi"]
+    return (mainband(t) and age is not None and C.MOM["ageLo"] <= age < C.MOM["ageHi"]
             and t.get("c") in C.MOM["chains"]
             and mc is not None and C.MOM["mcLo"] <= mc < C.MOM["mcHi"]
             and ubr is not None and C.MOM["ubrLo"] <= ubr < C.MOM["ubrHi"]
@@ -236,11 +250,33 @@ def is_run(t):
     """Experimental Runners list (8 Nov 2026): already ran 3x+, but under 3 days old with 70-90% buyers and
     trading 10x+ its liquidity. Unknown rug data allowed (as Momentum); a token on another list stays there."""
     g, age, ubr = t["_g"], t.get("age"), t.get("ubr")
-    return (t.get("band") != "l" and t["_ran"] and age is not None and age < C.RUN["ageMax"]
+    return (mainband(t) and t["_ran"] and age is not None and age < C.RUN["ageMax"]
             and ubr is not None and C.RUN["ubrLo"] <= ubr < C.RUN["ubrHi"] and (t.get("turn") or 0) >= C.RUN["turnMin"]
             and not t["_honey"] and not t["_wash"] and not crowded(t)
             and g["safe"] is not False and g["liq"] is True and g["mcap"] is True
             and not (is_short(t) or is_pull(t) or is_ign(t) or is_mom(t)))
+
+
+def is_early(t):
+    """Early watch (11 Nov 2026): $200-500k, at least 1 day old, buyers 50%+ (not 90%+), liquidity, not collapsing,
+    no wash trading, no honeypot, rug checks not failed (unknown allowed, as Momentum)."""
+    g = t["_g"]
+    return (t.get("band") == "e" and t.get("age") is not None and t["age"] >= C.EARLY["ageMin"]
+            and t.get("ubr") is not None and t["ubr"] >= C.BUYER_SHARE and not crowded(t)
+            and not t["_honey"] and not t["_wash"] and g["safe"] is not False
+            and g["liq"] is True and g["mcap"] is True and g["hold"] is True)
+
+
+def is_brk(t):
+    """Breakouts (11 Nov 2026): grew past $2m within the last 3 days (t["bko"] = days since it was first logged as one)."""
+    return (t.get("band") == "b" and t.get("bko") is not None and t["bko"] < C.BRK["days"]
+            and (t.get("mc") or 0) >= C.MCAP_L[0] and not t["_honey"] and not crowded(t) and t["_g"]["safe"] is not False)
+
+
+def second_look(t, prev) -> bool:
+    """seen at the previous scan too, under 7 days old, price up more than 10% since then and 55%+ buyers"""
+    return bool(prev and prev.get("px") and t.get("px") and t.get("age") is not None and t["age"] < C.SECOND["ageMax"]
+                and t["px"] / prev["px"] > C.SECOND["up"] and t.get("ubr") is not None and t["ubr"] >= C.SECOND["ubrMin"])
 
 
 def chain_hot(r: dict) -> bool:
@@ -456,9 +492,19 @@ def main() -> int:
         return 3
 
     # ---- gates
+    brk_old = [dict(r) for r in oldv("BRKHIST", [])]
+    brk_d = {r["pa"].lower(): r["d"] for r in brk_old if r.get("pa")}
+    day0 = datetime.strptime(today, "%Y-%m-%d")
     for t in tokens:
+        t.pop("sl", None)
+        t.pop("bko", None)
         evaluate(t)
         flags(t)
+        if t.get("band") == "b":                      # days since it first showed as a breakout (0 if new today)
+            d = brk_d.get((t.get("pa") or "").lower())
+            t["bko"] = (day0 - datetime.strptime(d, "%Y-%m-%d")).days if d else 0
+        if not tokens_carried and second_look(t, old_by_pa.get((t.get("pa") or "").lower())):
+            t["sl"] = 1
     for t in old_tokens:
         evaluate(t)
     short = [t for t in tokens if is_short(t)]
@@ -466,10 +512,13 @@ def main() -> int:
     ign = sorted([t for t in tokens if is_ign(t)], key=lambda t: -t["_acc"])
     mom = sorted([t for t in tokens if is_mom(t)], key=lambda t: -(t.get("turn") or 0))
     runs = sorted([t for t in tokens if is_run(t)], key=lambda t: -t["_score"])
+    early = sorted([t for t in tokens if is_early(t)], key=lambda t: -t["_score"])
+    brks = sorted([t for t in tokens if is_brk(t)], key=lambda t: -t["_score"])
     old_short = {t["sym"] for t in old_tokens if is_short(t)}
     old_pull = {t["sym"] for t in old_tokens if is_pull(t) and not is_short(t)}
     old_mom = {t["sym"] for t in old_tokens if is_mom(t)}
     old_run = {t["sym"] for t in old_tokens if is_run(t)}
+    old_early = {t["sym"] for t in old_tokens if is_early(t)}
     hot = [r["s"] for r in data if chain_hot(r)]
     old_hot = [r["s"] for r in old_data if chain_hot(r)]
 
@@ -480,6 +529,9 @@ def main() -> int:
     ign_hist = [dict(r) for r in oldv("IGNHIST", [])]   # igniting tokens, tracked apart from the picks
     mom_hist = [dict(r) for r in oldv("MOMHIST", [])]   # experimental momentum picks, same treatment
     run_hist = [dict(r) for r in oldv("RUNHIST", [])]   # experimental runners (8 Nov 2026), same treatment
+    early_hist = [dict(r) for r in oldv("EARLYHIST", [])]   # Early watch (11 Nov 2026)
+    brk_hist = brk_old                                      # Breakouts (11 Nov 2026)
+    e_hit2x, e_tozero, b_hit2x, b_tozero = [], [], [], []
     i_hit2x, i_tozero = [], []
     m_hit2x, m_tozero = [], []
     u_hit2x, u_tozero = [], []
@@ -509,7 +561,7 @@ def main() -> int:
             bad_px.append(f"{row['sym']} ({row['c']}) {p / px:,.0f}x ignored")
             return
         was = row.get("pxNow")
-        if row.get("l") in ("S", "P", "I", "M", "U"):              # lowest price seen since listing (picks + igniting only)
+        if row.get("l") in ("S", "P", "I", "M", "U", "E", "B"):              # lowest price seen since listing (picks + igniting only)
             lo = row.get("pxMin")
             if lo is None:                                  # rows logged before lows were tracked: start from what is known
                 known = [v for v in (px, was) if v is not None]
@@ -534,10 +586,14 @@ def main() -> int:
         reprice(r, m_hit2x, m_tozero)
     for r in run_hist:
         reprice(r, u_hit2x, u_tozero)
+    for r in early_hist:
+        reprice(r, e_hit2x, e_tozero)
+    for r in brk_hist:
+        reprice(r, b_hit2x, b_tozero)
     if bad_px:
         notes.append("implausible re-prices ignored (>" + str(MAX_JUMP) + "x entry): " + "; ".join(bad_px[:12]))
     have = {(r["pa"].lower(), r["l"]) for r in hist}
-    new_hist, new_ign, new_mom, new_run = [], [], [], []
+    new_hist, new_ign, new_mom, new_run, new_early, new_brk = [], [], [], [], [], []
     if not tokens_carried:
         for lst, rows in (("S", short), ("P", pull)):
             for t in rows:
@@ -567,8 +623,16 @@ def main() -> int:
             row = {"d": today, "sym": t["sym"], "c": t["c"], "pa": t["pa"], "l": "U", "mc": t.get("mc"),
                    "px": t["px"], "pxNow": t["px"], "pxMax": t["px"], "pxMin": t["px"], "dMax": 0}
             run_hist.append(row); new_run.append(row); have_u.add(t["pa"].lower())
+        for lst, rows_, log_, new_ in (("E", early, early_hist, new_early), ("B", brks, brk_hist, new_brk)):
+            have_x = {r["pa"].lower() for r in log_}
+            for t in rows_:
+                if t["pa"].lower() in have_x or t.get("px") is None:
+                    continue
+                row = {"d": today, "sym": t["sym"], "c": t["c"], "pa": t["pa"], "l": lst, "mc": t.get("mc"),
+                       "px": t["px"], "pxNow": t["px"], "pxMax": t["px"], "pxMin": t["px"], "dMax": 0}
+                log_.append(row); new_.append(row); have_x.add(t["pa"].lower())
         have_r = {r["pa"].lower() for r in rej}
-        near = sorted([t for t in tokens if t["_nf"] == 1 and t["pa"].lower() not in have_r and t.get("px") is not None],
+        near = sorted([t for t in tokens if mainband(t) and t["_nf"] == 1 and t["pa"].lower() not in have_r and t.get("px") is not None],
                       key=lambda t: -(t.get("mc") or 0))[:REJECT_CAP]
         for t in near:
             why = next(k for k, v in t["_g"].items() if v is False)
@@ -582,7 +646,7 @@ def main() -> int:
     except (OSError, ValueError):
         seen_nar = {}
     tok_by_pa = {(t.get("pa") or "").lower(): t for t in tokens}
-    for row in hist + rej + ign_hist + mom_hist + run_hist:
+    for row in hist + rej + ign_hist + mom_hist + run_hist + early_hist + brk_hist:
         t = tok_by_pa.get((row.get("pa") or "").lower())
         if t and t.get("nar"):
             row["nar"] = t["nar"]
@@ -600,6 +664,8 @@ def main() -> int:
         if not any(r.get("d") == today for r in narhist):
             counts: dict[str, int] = {}
             for t in tokens:
+                if t.get("band") in ("e", "b", "x"):        # narrative counts stay on the original two bands
+                    continue
                 counts[t["nar"]] = counts.get(t["nar"], 0) + 1
             narhist.append({"d": today, "t": counts})
         seen_h = {(r["d"], r["pa"].lower()) for r in holdhist}
@@ -610,6 +676,8 @@ def main() -> int:
     new["IGNHIST"] = ign_hist
     new["MOMHIST"] = mom_hist
     new["RUNHIST"] = run_hist
+    new["EARLYHIST"] = early_hist
+    new["BRKHIST"] = brk_hist
     new["LOG_AT"] = now
     new["TOKENS"] = [public(t) for t in tokens]
 
@@ -619,7 +687,8 @@ def main() -> int:
         if name in ("CHAIN_GATE", "CORE_CHAINS", "MCAP", "LIQ_PCT", "TURN_MIN", "RAN_MULT", "DROP_MAX", "PULL", "IGN",
                     "MCAP_L", "TYPE", "KOLS", "CHAIN_ACCTS"):
             lines.append(old[name]["line"] + "\n")
-        elif name in ("DATA", "REJECTS", "NARHIST", "HOLDHIST", "TOKENS", "HISTORY", "IGNHIST", "MOMHIST", "RUNHIST", "BRIDGES"):
+        elif name in ("DATA", "REJECTS", "NARHIST", "HOLDHIST", "TOKENS", "HISTORY", "IGNHIST", "MOMHIST", "RUNHIST",
+                      "EARLYHIST", "BRKHIST", "BRIDGES"):
             lines.append(rows_dump(name, new[name]))
         elif name == "CAND_AT":
             lines.append(f'const CAND_AT = {jsdump(new[name])};   // {"carried" if new[name] != now else "fresh candles + rug checks this run"}\n')
@@ -678,6 +747,11 @@ def main() -> int:
         "runners": [brief(t) for t in runs],
         "runners_new": sorted({t["sym"] for t in runs} - old_run),
         "runners_dropped": sorted(old_run - {t["sym"] for t in runs}),
+        "early": [brief(t) for t in early],
+        "early_new": sorted({t["sym"] for t in early} - old_early),
+        "breakouts": [brief(t) for t in brks],
+        "second_look": [brief(t) for t in tokens if t.get("sl")],
+        "wider_search": sum(1 for t in tokens if t.get("ws")),
         "honeypots_new": honey_new,
         "track": {"logged": len(hist), "new_rows": [(r["sym"], r["l"]) for r in new_hist],
                   "best_x": round(max(pick_m), 2) if pick_m else None,
@@ -690,6 +764,10 @@ def main() -> int:
                            "hit_2x_today": names(m_hit2x), "to_zero_today": names(m_tozero)},
         "runners_track": {"logged": len(run_hist), "new_rows": [r["sym"] for r in new_run],
                           "hit_2x_today": names(u_hit2x), "to_zero_today": names(u_tozero)},
+        "early_track": {"logged": len(early_hist), "new_rows": [r["sym"] for r in new_early],
+                        "hit_2x_today": names(e_hit2x), "to_zero_today": names(e_tozero)},
+        "breakouts_track": {"logged": len(brk_hist), "new_rows": [r["sym"] for r in new_brk],
+                            "hit_2x_today": names(b_hit2x), "to_zero_today": names(b_tozero)},
         "control": {"rows": len(rej), "median_peak_x": round(statistics.median(rej_m), 2) if rej_m else None,
                     "hit_2x_today": names(c_hit2x), "to_zero_today": names(c_tozero)},
         "changed": bool(({t["sym"] for t in short} != old_short) or ({t["sym"] for t in pull} != old_pull)
@@ -700,7 +778,7 @@ def main() -> int:
     json.dump(summary, open(os.path.join(a.out, "summary.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(json.dumps({k: summary[k] for k in ("now", "cand_at", "stale", "chains", "tokens", "shortlist_new", "shortlist_dropped",
                                                "pullback_new", "pullback_dropped", "changed")}, ensure_ascii=False))
-    print(f"shortlist {len(short)} · pullback {len(pull)} · igniting {len(ign)} · momentum {len(mom)} (+{len(new_mom)}) · runners {len(runs)} (+{len(new_run)}) · history {len(hist)} (+{len(new_hist)}) · rejects {len(rej)}")
+    print(f"shortlist {len(short)} · pullback {len(pull)} · igniting {len(ign)} · momentum {len(mom)} (+{len(new_mom)}) · runners {len(runs)} (+{len(new_run)}) · early {len(early)} (+{len(new_early)}) · breakouts {len(brks)} (+{len(new_brk)}) · second look {sum(1 for t in tokens if t.get("sl"))} · history {len(hist)} (+{len(new_hist)}) · rejects {len(rej)}")
     return 0
 
 

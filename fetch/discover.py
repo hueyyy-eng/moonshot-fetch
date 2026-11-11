@@ -43,6 +43,11 @@ DS_TO_GT: dict[str, str] = {
 
 MCAP_M = (500.0, 2000.0)      # $k
 MCAP_L_MIN = 2000.0
+# --- added 11 Nov 2026 (owner's request; experiments judged at the 22 Nov / 6 Dec reviews) ---
+MCAP_E = (200.0, 500.0)       # "Early watch" band: core chains only, its own list, never on the five main lists
+MCAP_X = (50.0, 200.0)        # "Micro watch": quick check only (Solana), logged silently, needs a $10k+ pool
+LIQ_X_MIN_K = 10.0
+CAP_E, CAP_B, CAP_X = 12, 10, 80
 LIQ_PCT, LIQ_MIN_K, LIQ_L_MIN_K = 5.0, 25.0, 100.0
 TURN_MIN, DROP_MAX = 1.0, -40.0
 CAP_M, CAP_L = 45, 6          # leaders capped lower than the prompt's ~10: each one costs GeckoTerminal budget the moonshot band needs more
@@ -102,19 +107,25 @@ def ds_screener(http: Http, chain: str, st: Status) -> tuple[set[str], set[str],
     return out["A"], out["B"], out["C"], worked
 
 
-def gt_pools(http: Http, chain: str) -> tuple[set[str], bool]:
-    """Candidate pool addresses from GeckoTerminal: 5 pages by 24h volume + trending (6h and 24h)."""
+def gt_pools(http: Http, chain: str) -> tuple[set[str], bool, set[str]]:
+    """Candidate pool addresses from GeckoTerminal: 8 pages by 24h volume + trending (5m/1h/6h/24h), plus the
+    "wider search" (11 Nov 2026): the newest pools and the pools with the most trades. Returns (all, worked,
+    found only by the wider search) — the last set is measured so the review can judge whether it is worth its calls."""
     net = DS_TO_GT.get(chain)
     if not net:
-        return set(), False
+        return set(), False, set()
     found: set[str] = set()
+    wider: set[str] = set()
     worked = False
     # GeckoTerminal has no market-cap filter, and the $500k-$2m band sits well below the first page of a
     # volume-sorted listing (run #2 on 19 Sep: 1-2 pages/chain -> 14 moonshot tokens vs 76 on the dashboard).
     # So: 8 volume pages + all four trending windows (trending skews small-cap). 12 calls/chain, retried patiently.
     urls = [f"{GT}/networks/{net}/pools?page={p}&sort=h24_volume_usd_desc" for p in range(1, 9)]
     urls += [f"{GT}/networks/{net}/trending_pools?duration={d}" for d in ("5m", "1h", "6h", "24h")]
-    for u in urls:
+    n_old = len(urls)
+    urls += [f"{GT}/networks/{net}/new_pools?page=1"]
+    urls += [f"{GT}/networks/{net}/pools?page={p}&sort=h24_tx_count_desc" for p in (1, 2)]
+    for i, u in enumerate(urls):
         try:
             j = http.get(u, headers={"Accept": "application/json;version=20230302"}, retries=3)
             if not j:
@@ -122,13 +133,14 @@ def gt_pools(http: Http, chain: str) -> tuple[set[str], bool]:
             for pool in j.get("data", []):
                 addr = (pool.get("attributes") or {}).get("address")
                 if addr:
-                    found.add(addr)
+                    (found if i < n_old else wider).add(addr)
             worked = True
         except Exception as e:  # noqa: BLE001
             log.warning("GeckoTerminal discovery %s: %s", chain, str(e)[-160:])
             if isinstance(e, BlockedError):
                 break
-    return found, worked
+    wider_only = wider - found
+    return found | wider, worked, wider_only
 
 
 def ds_promoted(http: Http) -> dict[str, set[str]]:
@@ -220,8 +232,11 @@ def ds_pairs(http: Http, chain: str, addrs: list[str]) -> list[dict]:
     return rows
 
 
-def narrow_and_band(rows: list[dict]) -> list[dict]:
-    """Assign band from mcap, apply the pre-enrichment narrowing, dedupe per token, cap per chain."""
+def narrow_and_band(rows: list[dict], bands: tuple = ("m", "l"), watch: Optional[set] = None) -> list[dict]:
+    """Assign band from mcap, apply the pre-enrichment narrowing, dedupe per token, cap per chain.
+    Bands: m moonshot $500k-$2m, l leader $2m+, e early $200-500k, x micro $50-200k, b breakout (a token seen in
+    the m or e band in the last 7 days that is now above $2m — taken from `watch`, the pair addresses to follow)."""
+    watch = {w.lower() for w in (watch or ())}
     by_token: dict[str, dict] = {}
     for r in rows:
         key = (r.get("ta") or "").lower()
@@ -237,10 +252,23 @@ def narrow_and_band(rows: list[dict]) -> list[dict]:
         elif mc >= MCAP_L_MIN:
             if is_unit_not_bet(r.get("sym"), r.get("nm"), r.get("q")):
                 continue
-            band = "l"
+            followed = (r.get("pa") or "").lower() in watch or (r.get("ta") or "").lower() in watch
+            band = "b" if ("b" in bands and followed) else "l"
+            if band == "l" and "l" not in bands:
+                continue
+        elif "e" in bands and MCAP_E[0] <= mc < MCAP_E[1]:
+            band = "e"
+        elif "x" in bands and MCAP_X[0] <= mc < MCAP_X[1]:
+            band = "x"
         else:
             continue
-        if band == "m":
+        if band == "x":
+            if liq < LIQ_X_MIN_K or is_unit_not_bet(r.get("sym"), r.get("nm"), r.get("q")):
+                continue
+        elif band == "b":
+            if liq < LIQ_MIN_K:
+                continue
+        elif band in ("m", "e"):
             # pre-enrichment narrowing (the page re-applies these as gates; this just saves API budget)
             if lp < LIQ_PCT or liq < LIQ_MIN_K or turn < TURN_MIN:
                 continue
@@ -253,13 +281,20 @@ def narrow_and_band(rows: list[dict]) -> list[dict]:
                 continue
         r["band"] = band
         keep.append(r)
-    m = sorted([r for r in keep if r["band"] == "m"], key=lambda r: -(r.get("v24") or 0))[:CAP_M]
-    l = sorted([r for r in keep if r["band"] == "l"], key=lambda r: -(r.get("v24") or 0))[:CAP_L]
-    return m + l
+    caps = {"m": CAP_M, "l": CAP_L, "e": CAP_E, "b": CAP_B, "x": CAP_X}
+    out: list[dict] = []
+    for b in ("m", "b", "e", "l", "x"):
+        out += sorted([r for r in keep if r["band"] == b], key=lambda r: -(r.get("v24") or 0))[:caps[b]]
+    return out
 
 
 # ---------------------------------------------------------------- orchestration
-def run(http: Http, st: Status, passing_slugs: list[str], core: list[str]) -> dict[str, Any]:
+def run(http: Http, st: Status, passing_slugs: list[str], core: list[str], watch: Optional[dict] = None,
+        early_chains: Optional[list] = None, micro_chains: tuple = (), leaders: bool = True) -> dict[str, Any]:
+    """watch: chainId -> {pair address: token address} seen in the m/e band in the last 7 days (for Breakouts).
+    early_chains: DexScreener chainIds also searched for the Early band ($200-500k); micro_chains: for the Micro band."""
+    watch = watch or {}
+    early = set(early_chains or [])
     http.pace("api.dexscreener.com", 200)
     http.pace("dexscreener.com", 30)
     http.pace("api.geckoterminal.com", 12)     # shared runner IP: 25/min tripped 429s on ~half the calls in run #2
@@ -285,20 +320,32 @@ def run(http: Http, st: Status, passing_slugs: list[str], core: list[str]) -> di
                         done, len(chains), http.elapsed_min(), ", ".join(chains[done:]))
             break
         a, b, c, ds_worked = ds_screener(http, chain, st)
-        g, gt_worked = gt_pools(http, chain)
+        g, gt_worked, wider_only = gt_pools(http, chain)
         ds_ok += int(ds_worked)
         gt_ok += int(gt_worked)
         cands = list(dict.fromkeys(list(a) + list(b) + list(c) + list(g)))
+        have = {x.lower() for x in cands}
+        cands += [w for w in sorted(watch.get(chain, {})) if w.lower() not in have]   # followed for Breakouts
         rows = ds_pairs(http, chain, cands) if cands else []
         promo = sorted(promoted.get(chain, set()))
         if promo:
             seen = {r["pa"].lower() for r in rows}
             rows += [r for r in ds_tokens_to_pairs(http, chain, promo) if r["pa"].lower() not in seen]
-        kept = narrow_and_band(rows)
+        bands = (("m",) + (("l",) if leaders else ()) + (("e",) if chain in early else ())
+                 + (("x",) if chain in micro_chains else ()) + (("b",) if watch.get(chain) else ()))
+        wl = watch.get(chain) or {}
+        kept = narrow_and_band(rows, bands, set(wl) | {v for v in wl.values() if v})
+        wider_l = {x.lower() for x in wider_only}
+        promo_l = {x.lower() for x in promo}
         for r in kept:
             r["_from_ds"] = (r["pa"] in a) or (r["pa"] in b) or (r["pa"] in c) or (r["pa"].lower() in {x.lower() for x in a | b | c})
+            if r["pa"].lower() in wider_l and (r.get("ta") or "").lower() not in promo_l and not r["_from_ds"]:
+                r["ws"] = 1                    # found only by the wider search (newest pools / most trades)
         per_chain[chain] = {"screened": len(cands), "promoted": len(promo), "priced": len(rows), "kept_m": sum(r["band"] == "m" for r in kept),
-                            "kept_l": sum(r["band"] == "l" for r in kept), "ds": ds_worked, "gt": gt_worked}
+                            "kept_l": sum(r["band"] == "l" for r in kept), "kept_e": sum(r["band"] == "e" for r in kept),
+                            "kept_b": sum(r["band"] == "b" for r in kept), "kept_x": sum(r["band"] == "x" for r in kept),
+                            "wider_found": len(wider_only), "wider_kept": sum(1 for r in kept if r.get("ws")),
+                            "ds": ds_worked, "gt": gt_worked}
         tokens.extend(kept)
         done += 1
         log.info("discovery %s: %d candidates, %d kept (%.0f min, GeckoTerminal rate-limited %d times so far)",

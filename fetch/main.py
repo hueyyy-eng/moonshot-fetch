@@ -56,10 +56,35 @@ def top_inflow_chains(inflow7: dict, core: list[str], n: int = INFLOW_EXTRA) -> 
     return picked
 
 
+EARLY_CHAINS = ["solana", "base", "bsc", "hyperliquid", "hyperevm", "robinhood", "elysium"]   # the core chains' DexScreener ids
+WATCH_DAYS = 7
+
+
+def breakout_watch(repo_root: str) -> dict:
+    """Pairs seen in the $200k-$2m bands (m or e) in the last 7 days of snapshots: {chainId: {pair: token}}.
+    If one of them is now above $2m it is a Breakout candidate (owner, 11 Nov 2026)."""
+    import glob
+    from datetime import timedelta
+    cutoff = (now_utc() - timedelta(days=WATCH_DAYS)).astimezone(SGT).strftime("%Y-%m-%d")
+    out: dict[str, dict] = {}
+    for path in sorted(glob.glob(os.path.join(repo_root, "snapshots", "*", "scan.json"))):
+        if os.path.basename(os.path.dirname(path))[:10] < cutoff:
+            continue
+        try:
+            import json
+            snap = json.load(open(path, encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+        for t in snap.get("TOKENS") or []:
+            if t.get("band") in ("m", "e", "b") and t.get("c") and t.get("pa"):
+                out.setdefault(t["c"], {})[t["pa"]] = (t.get("ta") or "").lower()
+    return out
+
+
 def clean_token(t: dict) -> dict:
     t = {k: v for k, v in t.items() if not k.startswith("_")}
     order = ["c", "pa", "sym", "nm", "ta", "q", "dex", "mc", "liq", "lp", "v24", "v6", "v1", "b6", "s6", "ub", "us", "ubr", "tpw",
-             "turn", "c1", "c6", "c24", "age", "tw", "web", "bo", "band", "px", "run", "retr", "vvp", "nd", "cs", "noCd",
+             "turn", "c1", "c6", "c24", "age", "tw", "web", "bo", "band", "ws", "px", "run", "retr", "vvp", "nd", "cs", "noCd",
              "sec", "rcs", "lpk", "t10", "hld", "stx", "sstx", "mint", "frz", "tb", "t1", "pool", "cN", "ver", "own", "cnm",
              "honey", "hpOk", "hpInc", "rk", "ran", "par", "wsh"]
     out = {k: t[k] for k in order if k in t and t[k] is not None}
@@ -98,12 +123,14 @@ def main(repo_root: str) -> int:
     # STEP 2 — discovery + pair rows
     stage(http, "discovery")
     try:
-        disc = discover.run(http, st, passing + [s for s in inflow if s not in passing], core)
+        disc = discover.run(http, st, passing + [s for s in inflow if s not in passing], core,
+                            watch=breakout_watch(repo_root), early_chains=EARLY_CHAINS)
     except Exception as e:  # noqa: BLE001
         st.fail("discovery", f"discovery stage crashed: {e}")
         disc = {"tokens": [], "chains_scanned": [], "NO_DEXSCREENER": []}
     tokens = disc["tokens"]
-    log.info("tokens after narrowing: %d (%d m / %d l)", len(tokens), sum(t["band"] == "m" for t in tokens), sum(t["band"] == "l" for t in tokens))
+    log.info("tokens after narrowing: %d (%s)", len(tokens),
+             " / ".join(f"{sum(t['band'] == b for t in tokens)} {b}" for b in ("m", "b", "e", "l")))
 
     # STEP 3 — candles/wallets, then safety
     if tokens:

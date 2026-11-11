@@ -1,7 +1,8 @@
-name: Quick Solana check (Telegram alerts)
+name: Quick Solana + BSC check (Telegram alerts)
 
-# Owner, 9 Nov 2026: a light Solana-only search every 2 hours between the daily scans, with a Telegram alert for
-# tokens that would be on Igniting, Runners or Momentum AND score 60+. Quiet 11pm-7am SGT.
+# Owner, 9 Nov 2026: a light Solana search every 2 hours between the daily scans, with a Telegram alert for
+# tokens that would be on Igniting, Runners or Momentum AND score 60+. Quiet 11pm-7am SGT. BSC added 11 Nov 2026,
+# plus the silent Micro / Early watch log (Solana $50k-$500k tokens written down and re-priced, no alerts).
 # The cron lines are 7:23am, 9:23am ... 9:23pm SGT; GitHub often starts scheduled runs late, and a run that lands
 # inside the quiet hours sends nothing (fetch/quick.py checks the clock). Changes nothing on the dashboard.
 on:
@@ -24,7 +25,7 @@ concurrency:
 jobs:
   quick:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
@@ -32,13 +33,13 @@ jobs:
           python-version: "3.11"
           cache: pip
       - run: pip install -r requirements.txt
-      - name: Remember which tokens were already alerted
+      - name: Remember which tokens were already alerted (and the watch log)
         uses: actions/cache/restore@v5
         with:
           path: .alerts
           key: quick-alerts-${{ github.run_id }}
           restore-keys: quick-alerts-
-      - name: Search Solana and send alerts
+      - name: Search Solana and BSC, send alerts, update the watch log
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}

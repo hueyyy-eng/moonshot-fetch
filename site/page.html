@@ -272,6 +272,8 @@
   <a href="#ignite"><b>▲</b>Igniting</a>
   <a href="#momentum"><b>⚡</b>Momentum</a>
   <a href="#runners"><b>»</b>Runners</a>
+  <a href="#breakouts"><b>↗</b>Breakouts</a>
+  <a href="#early"><b>◌</b>Early watch</a>
   <a href="#s1"><b>1</b>Liquidity flow</a>
   <a href="#s2"><b>2</b>Trading volume</a>
   <a href="#s3"><b>3</b>Token age</a>
@@ -333,6 +335,18 @@
   <div class="note" id="runNote"></div>
 </section>
 
+<section class="step" id="breakouts">
+  <div class="step-head"><h2><b>↗</b>Breakouts</h2><span class="rule">Added 11 Nov 2026. Tokens the scanner saw at $200k–$2m in the last 7 days that have now grown past $2m — kept on show for 3 days instead of vanishing. In the back-test (161 tokens, measured from the price when they crossed $2m) 19% doubled again, 7% reached 5× and 4 reached 10× — but 68% ended down 50% or more. A second chance to follow a winner, not a safe one.</span></div>
+  <div class="tablewrap"><table><thead><tr id="brkHead"></tr></thead><tbody id="brkBody"></tbody></table></div>
+  <div class="note" id="brkNote"></div>
+</section>
+
+<section class="step" id="early">
+  <div class="step-head"><h2><b>◌</b>Early watch</h2><span class="rule">Experimental (11 Nov 2026). Smaller tokens, $200k–$500k, on the core chains: at least 1 day old, more buyers than sellers (but not 90%+), enough liquidity, not collapsing, no wash trading, rug checks not failed. In the back-test, tokens of this size a day before they were found doubled about 20% of the time vs 8% overall — and smaller tokens rug more. Its own list: never mixed into the five lists above and never sent to Telegram until a review says it works.</span></div>
+  <div class="tablewrap"><table><thead><tr id="earlyHead"></tr></thead><tbody id="earlyBody"></tbody></table></div>
+  <div class="note" id="earlyNote"></div>
+</section>
+
 <section class="step" id="playbook">
   <div class="step-head"><h2><b>◇</b>Playbook</h2><span class="rule">The same candidates sorted the way you actually trade them: by type first, then by chain or by narrative. Type is about survival, not size — a token is a leader because it lived through a drawdown and still trades. Sizing and hold period are your framework's, shown here as labels, not as advice.</span></div>
   <div class="controls">
@@ -382,6 +396,8 @@
         <button data-l="I" aria-pressed="false">▲ Igniting</button>
         <button data-l="M" aria-pressed="false">⚡ Momentum</button>
         <button data-l="U" aria-pressed="false">» Runners</button>
+        <button data-l="B" aria-pressed="false">↗ Breakouts</button>
+        <button data-l="E" aria-pressed="false">◌ Early watch</button>
       </div></div>
     <div class="field"><label for="ptSort">Sort</label><select id="ptSort"><option value="date">Newest first</option><option value="chg">Change since listed</option><option value="best">Best move</option><option value="worst">Worst drop</option></select></div>
   </div>
@@ -498,7 +514,7 @@
   <ol>
     <li><strong>Check the date at the top.</strong> Make sure you are looking at today's scan (GitHub sometimes starts it hours late).</li>
     <li><strong>Liquidity flow (step 1):</strong> which chains are "hot". Tokens are searched on hot chains, the 6 core chains (including Elysium), and the 3 chains with the biggest 7-day net inflow (tagged <span class="chip">top inflow</span>).</li>
-    <li><strong>Read the five lists:</strong> ★ Shortlist (passed every check), ◆ Pullback watch (ran, dipped, buyers still there), ▲ Igniting (moving right now — act fast or skip), ⚡ Momentum (experimental, very new tokens), » Runners (experimental, brand-new tokens still running). Within each list, start from the highest <strong>Score</strong>; grey "tracks an asset" tokens sit at the bottom.</li>
+    <li><strong>Read the five lists:</strong> ★ Shortlist (passed every check), ◆ Pullback watch (ran, dipped, buyers still there), ▲ Igniting (moving right now — act fast or skip), ⚡ Momentum (experimental, very new tokens), » Runners (experimental, brand-new tokens still running). Two more below them: ↗ Breakouts (tokens that just grew past $2m, shown for 3 days) and ◌ Early watch (experimental, smaller $200k–$500k tokens). A green <span class="chip">second look</span> tag marks a young token whose price kept rising since the previous scan with buyers still in charge. Within each list, start from the highest <strong>Score</strong>; grey "tracks an asset" tokens sit at the bottom.</li>
     <li><strong>For any token you like, check it yourself:</strong> hover the gate bars and safety pill to see why it passed, note its type tag, then use <a href="#s4">Narrative</a> to see whether real people on X are talking about it.</li>
     <li><strong>Size it with the <a href="#playbook">Playbook</a>:</strong> pot A (safest) gets the biggest share, then B, then C; pot C only in easy markets.</li>
     <li><strong>Decide your exit before you buy</strong> — a price to take profit and a price to cut the loss. The scoreboard below shows why.</li>
@@ -2193,8 +2209,10 @@ const SECTION_TIPS={
   shortlist:"WHAT: tokens that passed every one of the 9 checks (size, liquidity, real trading, more buyers than sellers, not collapsing, has not already run, no wash trading, rug checks, has an X or website).\nHOW TO USE: your cleanest research candidates. Open each one, check the safety pill and its X activity before buying anything.",
   pullback:"WHAT: tokens that already ran 3x or more, fell back 40-70%, and still have buyers and volume.\nHOW TO USE: the 'second chance' entry, after the first spike has cooled. They are tagged 'already ran' on purpose. Riskier than the Shortlist; decide your exit first.",
   ignite:"WHAT: tokens moving right now: volume in the last 6 hours well above the day's pace, price up but not yet blown out.\nHOW TO USE: the most time-sensitive list. Check the scan time at the top: if the scan ran late, the move may already be over.",
-  review:"WHAT: every back-test from the 8 Nov 2026 review — list results by exit rule, how fast winners moved, what winners looked like, and whether the Score, Runners, X/site warning, Robinhood and 'tracks an asset' rules still hold — recalculated at every scan.\nHOW TO USE: open it at the review every other Sunday. Numbers in brackets show the last review. Change a rule only when the change holds up on both halves of the history.",
+  review:"WHAT: every back-test from the 8 Nov 2026 review (plus, from 11 Nov 2026, the Micro / Early watch tiers, Breakouts, the Second look tag and the wider search) — list results by exit rule, how fast winners moved, what winners looked like, and whether the Score, Runners, X/site warning, Robinhood and 'tracks an asset' rules still hold — recalculated at every scan.\nHOW TO USE: open it at the review every other Sunday. Numbers in brackets show the last review. Change a rule only when the change holds up on both halves of the history.",
   momentum:"WHAT: experimental. Very new tokens (1-3 days old) on Solana, BSC, Robinhood Chain or Elysium with steady buyers.\nHOW TO USE: highest risk on the page. Small amounts only; most of these have gone to zero in the track record.",
+  breakouts:"WHAT: tokens the scanner saw at $200k–$2m in the last 7 days that have now grown past $2m, shown for 3 days (added 11 Nov 2026). In the back-test about 1 in 5 doubled again from that point, and 2 in 3 ended down 50% or more.\nHOW TO USE: a second chance to follow a token that is already working. Check the buyers bar and the 6h move: a breakout that is still being bought is worth a look, one that is fading is not. Logged to Price tracking under ↗.",
+  early:"WHAT: experimental (11 Nov 2026). Smaller tokens, $200k–$500k, on the core chains, at least 1 day old and passing the basic checks (buyers, liquidity, not collapsing, no wash trading, no failed rug check).\nHOW TO USE: earlier and riskier than the main lists. Small amounts only. Not sent to Telegram; the Review tab shows whether this tier earns its place, and it is judged at the 22 Nov and 6 Dec reviews.",
   runners:"WHAT: experimental (8 Nov 2026). Brand-new tokens (under 3 days) that already ran 3× or more but still have 70–90% buyers and very heavy trading. In the back-test this group hit 5× most often (13%) — and 9 in 10 later crashed.\nHOW TO USE: fast trades only. Half out at 2×, all out within 3 days, small amounts. Logged to Price tracking under » so we can see if it keeps working.",
   playbook:"WHAT: the same candidates sorted into three pots: A Leader of the Leaders (safest), B Emerging Leaders, C Itch Hand Early Plays (very new or already ran). Toggle by chain or by narrative.\nHOW TO USE: decide how much goes where. A gets the biggest share, then B, then C; pot C only in easy markets. The one line beside each token says why it is in its pot.",
   track:"WHAT: every token ever put on the Shortlist or Pullback list, with its price on the day it was listed, re-priced daily. Below it: the near-misses that failed exactly one check, as a control group.\nHOW TO USE: the honest scoreboard. If the picks do no better than the near-misses, the checks are not earning their keep.",
@@ -2228,7 +2246,7 @@ const COL_TIPS={
   "X":"The token's X (Twitter) account, or a search link if it has none.",
   "Logged":"The date the token was added to the list.",
   "Listed":"The date the token was added to the list.",
-  "List":"Which list it was on: Shortlist, Pullback, Igniting or Momentum.",
+  "List":"Which list it was on: Shortlist, Pullback, Igniting, Momentum, Runners, Breakouts or Early watch.",
   "Entry mcap":"Market cap on the day it was listed.",
   "Listed mcap":"Market cap on the day it was listed.",
   "Mcap then":"Market cap on the day it was logged.",
@@ -2369,7 +2387,8 @@ TOKENS.forEach(derive);
 
 const GATES = [
   {k:"mcap", nm:"Market cap in band", rule:"moonshot $"+MCAP[0]+"k – $"+(MCAP[1]/1000)+"m · leader $"+(MCAP_L[0]/1000)+"m and up, no ceiling", src:"DexScreener",
-   test:t=>{const B=t.band==="l"?MCAP_L:MCAP; return t.mc>=B[0]&&(B[1]==null||t.mc<=B[1]);}, txt:t=>fmtK(t.mc)+(t.band==="l"?" (leader band)":""),
+   test:t=>{const B=(t.band==="l"||t.band==="b")?MCAP_L:t.band==="e"?MCAP_E:MCAP; return t.mc>=B[0]&&(B[1]==null||t.mc<=B[1]);},
+   txt:t=>fmtK(t.mc)+({l:" (leader band)",b:" (breakout: grew past $2m)",e:" (early band $200–500k)"}[t.band]||""),
    why:"A 10× needs a realistic ceiling. Below the floor there is rarely enough liquidity to exit."},
   {k:"liq", nm:"Liquidity vs size", rule:"≥"+LIQ_PCT+"% of mcap, ≥$"+LIQ_MIN+"k", src:"DexScreener",
    test:t=>t.lp>=LIQ_PCT&&t.liq>=Math.max(LIQ_MIN,minliq), txt:t=>t.lp+"% of mcap ("+fmtK(t.liq)+")",
@@ -2430,9 +2449,9 @@ function evalGates(t){
 }
 const UBR_MAX=0.90;   // 90%+ buyers with almost no sellers: honeypot / coordinated-pump profile — no list admits it
 const crowded=t=>t.ubr!=null && t.ubr>=UBR_MAX;
-function isShort(t){ return t.band!=="l" && t._nf===0 && (allowUnk ? true : t._nu===0) && !crowded(t); }
+function isShort(t){ return mainBand(t) && t._nf===0 && (allowUnk ? true : t._nu===0) && !crowded(t); }
 function isPull(t){
-  return t.band!=="l" && t._runOk && t.retr!=null && t.run>=PULL.run && t.retr>=PULL.retrLo && t.retr<=PULL.retrHi
+  return mainBand(t) && t._runOk && t.retr!=null && t.run>=PULL.run && t.retr>=PULL.retrLo && t.retr<=PULL.retrHi
     && t.vvp!=null && t.vvp>=PULL.volVsPeak && t.ubr!=null && t.ubr>=BUYER_SHARE
     && !t._honey && !t._wash && !crowded(t) && (allowUnk ? t._g.safe!==false : t._g.safe===true) && t._g.liq===true && t._g.mcap===true;
 }
@@ -2440,7 +2459,7 @@ function isPull(t){
 // Igniting: moving RIGHT NOW and early in the move. Deliberately admits tokens with no candles yet
 // (run==null) because that is where early moves live; the c24 cap is what keeps blown-out launches out.
 function isIgn(t){
-  return t.band!=="l" && t._acc!=null && t._acc>=IGN.accel
+  return mainBand(t) && t._acc!=null && t._acc>=IGN.accel
     && t.c6!=null && t.c6>0 && t.c6<=PARAB_6H
     && (t.c24==null || t.c24<IGN.c24Max)
     && (t.run==null || (t.run>=IGN.runLo && t.run<IGN.runHi))
@@ -2456,15 +2475,27 @@ const MOM={ageLo:1, ageHi:3, mcLo:500, mcHi:2000, ubrLo:0.45, ubrHi:0.90, chains
 // --- added 8 Nov 2026 (owner's review of the back-tests). Same rules as scan/build_block.py ---
 const RUN={ageMax:3, ubrLo:0.70, ubrHi:0.90, turnMin:10};
 function isRun(t){
-  return t.band!=="l" && t._ran && t.age!=null && t.age<RUN.ageMax
+  return mainBand(t) && t._ran && t.age!=null && t.age<RUN.ageMax
     && t.ubr!=null && t.ubr>=RUN.ubrLo && t.ubr<RUN.ubrHi && (t.turn||0)>=RUN.turnMin
     && !t._honey && !t._wash && !crowded(t) && t._g.safe!==false && t._g.liq===true && t._g.mcap===true
     && !(isShort(t)||isPull(t)||isIgn(t)||isMom(t));
 }
+// --- added 11 Nov 2026 (owner's request). Same rules as scan/build_block.py ---
+const MCAP_E=[200,500];                     // Early watch band, $k
+// the five lists above only take the $500k-$2m band; e = early $200-500k, b = breakout (grew past $2m), l = leader
+function mainBand(t){ return ["l","e","b","x"].indexOf(t.band)<0; }
+function isEarly(t){
+  return t.band==="e" && t.age!=null && t.age>=1 && t.ubr!=null && t.ubr>=BUYER_SHARE && !crowded(t)
+    && !t._honey && !t._wash && t._g.safe!==false && t._g.liq===true && t._g.mcap===true && t._g.hold===true;
+}
+// bko = days since it first showed as a breakout (worked out by the scan from the Breakouts log)
+function isBrk(t){
+  return t.band==="b" && t.bko!=null && t.bko<3 && t.mc>=MCAP_L[0] && !t._honey && !crowded(t) && t._g.safe!==false;
+}
 // lists: calm "tracks an asset" tokens last, then highest score first
 const byScore=(a,b)=>(a._calm-b._calm)||(b._score-a._score);
 function isMom(t){
-  return t.band!=="l" && t.age!=null && t.age>=MOM.ageLo && t.age<MOM.ageHi
+  return mainBand(t) && t.age!=null && t.age>=MOM.ageLo && t.age<MOM.ageHi
     && MOM.chains.indexOf(t.c)>=0
     && t.mc!=null && t.mc>=MOM.mcLo && t.mc<MOM.mcHi
     && t.ubr!=null && t.ubr>=MOM.ubrLo && t.ubr<MOM.ubrHi
@@ -2573,7 +2604,7 @@ function renderRegime(){
   if(!el || typeof MAJORS==="undefined") return;
   el.hidden=false;
   const m=MAJORS, avg7=(m.btc.d7+m.eth.d7+m.sol.d7)/3, avg30=(m.btc.d30+m.eth.d30+m.sol.d30)/3;
-  const pool=TOKENS.filter(t=>t.band!=="l" && t.c24!=null);
+  const pool=TOKENS.filter(t=>mainBand(t) && t.c24!=null);
   const up=pool.filter(t=>t.c24>0).length, breadth=pool.length?Math.round(up/pool.length*100):null;
   let verdict="mixed", why;
   if(avg7>=0 && breadth!=null && breadth>=55){ verdict="easy"; why="Majors up on the week and most candidates green today."; }
@@ -2742,6 +2773,9 @@ function tokRow(t, dimIfFail){
   if(t._unchk) tags.push('<span class="chip bad" data-tip="No rug-check service covers this chain yet, so holder concentration, mint authority and a test sell were NOT checked. It is on the list without that check, on purpose. Check the contract yourself and use small amounts.">no rug check</span>');
   if(t._calm) tags.push('<span class="chip" data-tip="Price stayed within about 15% over the last 7 days while trading: it tracks something (a stock, a wrapped coin, a stable-like token) rather than speculating. In the back-test none of these ever doubled, so they are moved to the bottom of every list.">tracks an asset</span>');
   if(t._g && t._g.social===false) tags.push('<span class="chip" data-tip="No X account or website listed. A warning only (since 8 Nov 2026): in the back-test, tokens that failed only this check did better than the Shortlist.">no X / site</span>');
+  if(t.sl) tags.push('<span class="chip" style="border-color:var(--pos,#2e7d32);color:var(--pos,#2e7d32)" data-tip="Second look: under 7 days old, seen at the previous scan too, price up more than 10% since then and 55%+ buyers. In the back-test 22% of these doubled, vs 9% of all tokens seen twice (price flat at the second look: 5%).">second look</span>');
+  if(t.band==="e") tags.push('<span class="chip" data-tip="Early band: $200k–$500k, smaller than the main $500k–$2m band. Experimental (11 Nov 2026); never on the five main lists.">early band</span>');
+  if(t.band==="b") tags.push(`<span class="chip" data-tip="Seen at $200k–$2m in the last 7 days, now above $2m. Shown on Breakouts for 3 days (day ${t.bko==null?"?":t.bko+1} of 3).">breakout</span>`);
   if(t.noCd) tags.push('<span class="chip" data-tip="Too new for daily candles — already-ran uses the 24h move instead">new pair</span>');
   if(t.hpInc) tags.push('<span class="chip" data-tip="Sell simulation reverted on V3/V4 routing — inconclusive, not a honeypot">sim n/a</span>');
   if(t.bo) tags.push('<span class="chip" data-tip="Paid DexScreener boost — someone is paying for attention">boosted</span>');
@@ -2782,7 +2816,7 @@ function renderTokens(){
   const sb=document.getElementById("shortBody");
   sb.innerHTML = sl.length ? sl.map(t=>tokRow(t,false)).join("")
     : `<tr><td colspan="${TOK_HEAD.length}" class="empty">Nothing clears every gate in this band at a $${minliq}k floor. That is a real answer, not an error — widen the band or lower the floor to see near-misses in step 2.</td></tr>`;
-  const all=TOKENS.filter(isShort), near=TOKENS.filter(t=>t._nf===1);
+  const all=TOKENS.filter(isShort), near=TOKENS.filter(t=>mainBand(t)&&t._nf===1);
   const unkN=all.filter(t=>t._band==="unk").length;
   const bands=["d1","d3","d7","d7p"].map(b=>b+": "+all.filter(t=>t._band===b).length).join(" · ")+(unkN?" · age unknown: "+unkN:"");
   document.getElementById("shortNote").textContent =
@@ -2824,6 +2858,24 @@ function renderTokens(){
     ? `${ru.length} brand-new token${ru.length>1?"s":""} still running with strong buying. Each is logged to Price tracking under » on the day it first appears. Expect most to crash: decide the exit first.`
     : `Nothing qualifies right now.`;
 
+  // breakouts (11 Nov 2026)
+  const bk=TOKENS.filter(isBrk).sort(byScore);
+  document.getElementById("brkHead").innerHTML=TOK_HEAD.map(h=>`<th scope="col" class="${h[1]}">${h[0]}</th>`).join("");
+  document.getElementById("brkBody").innerHTML = bk.length ? bk.map(t=>tokRow(t,false)).join("")
+    : `<tr><td colspan="${TOK_HEAD.length}" class="empty">No token has grown past $2m in the last 3 days.</td></tr>`;
+  document.getElementById("brkNote").textContent = bk.length
+    ? `${bk.length} token${bk.length>1?"s":""} grew past $2m recently. Each is logged to Price tracking under ↗ the first day it shows, measured from that price. Most fade: in the back-test about 1 in 5 doubled again and 2 in 3 ended down 50%+.`
+    : `Nothing broke out recently. A token stays here for 3 days after it first grows past $2m.`;
+
+  // early watch (experimental, 11 Nov 2026)
+  const ew=TOKENS.filter(isEarly).sort(byScore);
+  document.getElementById("earlyHead").innerHTML=TOK_HEAD.map(h=>`<th scope="col" class="${h[1]}">${h[0]}</th>`).join("");
+  document.getElementById("earlyBody").innerHTML = ew.length ? ew.map(t=>tokRow(t,false)).join("")
+    : `<tr><td colspan="${TOK_HEAD.length}" class="empty">No $200k–$500k token passes the basic checks today.</td></tr>`;
+  document.getElementById("earlyNote").textContent = ew.length
+    ? `${ew.length} smaller token${ew.length>1?"s":""} ($200k–$500k). Each is logged to Price tracking under ◌ the first day it shows; the Review tab compares this tier with the main band. Small amounts only: smaller tokens rug more often.`
+    : `Searched on the core chains only (Solana, Base, BSC, Hyperliquid, Robinhood Chain, Elysium).`;
+
   // staleness of candle-derived fields
   const sb2=staleBanner();
   document.getElementById("shortStale").innerHTML=sb2;
@@ -2833,7 +2885,7 @@ function renderTokens(){
   let rows=TOKENS.slice();
   if(chainF!=="all") rows=rows.filter(t=>t.c===chainF);
   if(showF==="pass") rows=rows.filter(isShort);
-  if(showF==="near") rows=rows.filter(t=>t._nf===1);
+  if(showF==="near") rows=rows.filter(t=>mainBand(t)&&t._nf===1);
   if(showF==="ign") rows=rows.filter(isIgn);
   if(showF==="ran") rows=rows.filter(t=>t._ran||t._parab);
   if(showF==="risk") rows=rows.filter(t=>t._g.safe===false||t._wash||t._g.safe===null);
@@ -3067,13 +3119,15 @@ document.querySelectorAll("#tabs-hl button").forEach(b=>b.setAttribute("aria-pre
 /* ---------- price tracking: every listed token, priced from the day it first appeared ---------- */
 let ptL="all", ptSort="date";
 const PT_HEAD=[["Listed",""],["Token",""],["List","w-g"],["Listed mcap",""],["Listed price",""],["Price now",""],["Since listed",""],["Best",""],["Worst",""],["Days",""],["Peak on day",""],["Days to 2×/5×/10×",""]];
-const LIST_NM={S:"★ Shortlist",P:"◆ Pullback",I:"▲ Igniting",M:"⚡ Momentum",U:"» Runners"};
+const LIST_NM={S:"★ Shortlist",P:"◆ Pullback",I:"▲ Igniting",M:"⚡ Momentum",U:"» Runners",B:"↗ Breakouts",E:"◌ Early watch"};
 function ptRows(){
   const ign=(typeof IGNHIST!=="undefined")?IGNHIST:[];
   const mh=(typeof MOMHIST!=="undefined")?MOMHIST:[];
   const uh=(typeof RUNHIST!=="undefined")?RUNHIST:[];
+  const eh=(typeof EARLYHIST!=="undefined")?EARLYHIST:[];
+  const bh=(typeof BRKHIST!=="undefined")?BRKHIST:[];
   const today=SNAP_AT.slice(0,10);
-  return HISTORY.concat(ign).concat(mh).concat(uh).filter(h=>h.px).map(h=>{
+  return HISTORY.concat(ign).concat(mh).concat(uh).concat(bh).concat(eh).filter(h=>h.px).map(h=>{
     // lows are recorded from 1 Oct 2026: for tokens listed earlier the real low may have been deeper
     const lowSeen=h.d>="2026-10-01", lo=h.pxMin!=null?h.pxMin:Math.min(h.px, h.pxNow!=null?h.pxNow:h.px);
     return Object.assign({}, h, {
@@ -3114,7 +3168,7 @@ function renderPrices(){
   const all=ptRows();
   document.querySelectorAll("#tabs-pt button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.l===ptL)));
   const tile=(k,v,n)=>`<div><div class="k">${k}</div><div class="v num">${v}</div><div class="n">${n}</div></div>`;
-  document.getElementById("priceLede").innerHTML=["S","P","I","M","U"].map(L=>{
+  document.getElementById("priceLede").innerHTML=["S","P","I","M","U","B","E"].map(L=>{
     const r=all.filter(h=>h.l===L && h._chg!=null);
     if(!r.length) return tile(LIST_NM[L],"—","nothing tracked yet");
     const m=med(r.map(h=>h._chg)), up=r.filter(h=>h._chg>0).length, best=Math.max(...r.map(h=>h._best==null?-100:h._best));
@@ -3224,6 +3278,36 @@ function renderReview(){
     tr(["Tagged",as.calm.n,`<b>${P(as.calm.hit2)}</b>`,P(as.calm.down50)]),
     tr(["Everything else",as.rest.n,P(as.rest.hit2),P(as.rest.down50)])]);
   h+=`<p class="note">${as.calm_doubled.length?"Tagged tokens that doubled anyway (check the rule): "+as.calm_doubled.map(c=>esc(c[0])+" "+c[2]+"×").join(", "):"No tagged token has ever doubled — the tag is doing its job."}</p>`;
+  // 9-12: the 11 Nov 2026 experiments (judged at the 22 Nov and 6 Dec reviews)
+  const rt=(lab,x,extra)=>tr([lab, x.n, `<b>${P(x.hit2)}</b>`, `${x.hit5} / ${x.hit10}`, P(x.down50), P(x.zero)].concat(extra===undefined?[]:[extra]));
+  const TI=R.tiers;
+  if(TI){
+    h+=`<h3>9. Smaller tokens — Micro watch ($50–200k) and Early watch ($200–500k)</h3>`;
+    h+=tbl(["Size when first seen (quick check, Solana)","Tokens","Reached 2×","5× / 10×","Now down 50%+","Went to ~zero (down 90%+)","Median hours to 2×"],
+      TI.quick.map(x=>rt(esc(x.tier),x,x.hours_to_2x==null?"—":x.hours_to_2x+"h").replace(`<b>${P(x.hit2)}</b>`,`<b>${P(x.hit2)}</b>`+was(k=>k.tiers&&k.tiers[x.tier],P))));
+    h+=tbl(["Early band in the twice-daily scans (core chains)","Tokens","Reached 2×","5× / 10×","Now down 50%+","Went to ~zero"], TI.daily.map(x=>rt(esc(x.tier),x)));
+    h+=`<p class="note">Micro watch is a silent experiment: the quick check writes down every Solana token it first sees at $50k–$200k with a pool of $10k+ (and $200k–$500k for comparison), then re-prices it every 2 hours. No list, no alert. ${TI.since?"Logging since "+TI.since+". ":"No rows yet. "}Compare with the main $500k–$2m band in table 1. A tier earns a list only if it doubles more often <em>and</em> does not go to zero much more often.</p>`;
+  }
+  if(R.breakouts){
+    h+=`<h3>10. Breakouts — grew past $2m</h3>`;
+    h+=tbl(["","Tokens","Reached 2× (from the $2m price)","5× / 10×","Now down 50%+","Went to ~zero"],[rt("First seen as a breakout",R.breakouts)]);
+    h+=`<p class="note">Before this list existed the back-test found 161 such tokens: 19% doubled again, 7% reached 5×, 68% ended down 50%+. These rows count from 11 Nov 2026 on.</p>`;
+  }
+  const SL=R.second_look;
+  if(SL){
+    h+=`<h3>11. "Second look" tag — still rising at the next scan</h3>`;
+    h+=tbl(["Young tokens ($500k–2m, under 7 days) seen at two scans in a row","Tokens","Reached 2× (from the 2nd scan)","5× / 10×","Now down 50%+","Went to ~zero"],[
+      rt("Tagged: up 10%+ and 55%+ buyers",SL.tagged).replace(`<b>${P(SL.tagged.hit2)}</b>`,`<b>${P(SL.tagged.hit2)}</b>`+was(k=>k.second_look,P)),
+      rt("Price flat (±10%)",SL.flat), rt("All seen twice (compare)",SL.all_twice)]);
+  }
+  const WD=R.wider;
+  if(WD){
+    h+=`<h3>12. Wider search — GeckoTerminal "newest pools" and "most trades"</h3>`;
+    h+=tbl(["Tokens first seen from 11 Nov 2026","Tokens","Reached 2×","5× / 10×","Now down 50%+","Went to ~zero"],[
+      rt("Found only by the wider search",WD.wider_only).replace(`<b>${P(WD.wider_only.hit2)}</b>`,`<b>${P(WD.wider_only.hit2)}</b>`+was(k=>k.wider,P)),
+      rt("Found by the usual search",WD.rest)]);
+    h+=`<p class="note">${WD.per_scan==null?"No scan with the wider search yet.":`On average ${WD.per_scan} extra tokens per scan came only from the wider search (${WD.scans} scans).`} It costs about 3 extra calls per chain. Keep it if those extra tokens do at least as well as the rest.</p>`;
+  }
   box.innerHTML=h;
 }
 
@@ -3234,9 +3318,9 @@ function renderHowto(){
   const tile=(k,v,n)=>`<div><div class="k">${k}</div><div class="v num">${v}</div><div class="n">${n}</div></div>`;
   const first=all.length?all.map(h=>h.d).sort()[0]:null;
   document.getElementById("howtoScoreLede").textContent = all.length
-    ? `Every token the five lists have shown since ${first}, followed at each daily scan. Updated automatically with every scan.`
+    ? `Every token the lists have shown since ${first}, followed at each daily scan. Updated automatically with every scan.`
     : "Nothing tracked yet.";
-  box.innerHTML=["S","P","I","M","U"].map(L=>{
+  box.innerHTML=["S","P","I","M","U","B","E"].map(L=>{
     const r=all.filter(h=>h.l===L); if(!r.length) return tile(LIST_NM[L],"—","nothing tracked yet");
     const o=outcomes(r), hit=o.b2+o.b5+o.b10, m=med(r.map(h=>h._chg));
     return tile(LIST_NM[L], `${hit} of ${o.n}`, `reached 2× or more at some point · median today ${fmtChg(m)} · ${o.d50+o.d100} now down 50% or more`);
@@ -3398,6 +3482,9 @@ const TAGS=[
   ["no rug check","Elysium only: no rug-check service covers the chain yet, so the token reached the list without that check, on purpose (owner, 8 Nov 2026). Check the contract yourself."],
   ["tracks an asset","Price stayed within about 15% over 7 days while trading (stocks, wrapped coins, stable-like tokens). None of these doubled in the back-test, so they sit at the bottom of every list."],
   ["no X / site","No X account or website listed. A warning only since 8 Nov 2026: tokens that failed only this check did better than the Shortlist in the back-test."],
+  ["second look","Under 7 days old, seen at the previous scan too, price up more than 10% since then and 55%+ buyers (added 11 Nov 2026). In the back-test 22% of these doubled, vs 9% of all tokens seen twice."],
+  ["early band","$200k–$500k: smaller than the main $500k–$2m band. Experimental; only on the Early watch list."],
+  ["breakout","Seen at $200k–$2m in the last 7 days and now above $2m. On the Breakouts list for 3 days."],
   ["Score","0–100 from the traits that went with 2× outcomes (see How to use). Lists are sorted by it, highest first."],
   ["core","Scanned for tokens regardless of the chain gate (Solana, Base, BSC, Hyperliquid, Robinhood Chain, Elysium)."],
   ["no DS","The chain passed the gate but has no DexScreener page, so no tokens can be scanned there."]

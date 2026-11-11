@@ -117,8 +117,17 @@ jobs:
       - name: Check the rendered page (fails the run, and publishes nothing, if anything is wrong)
         run: python scan/verify_page.py out/page_new.html out/summary.json
 
+      # the quick check's silent Micro / Early watch log lives in its cache; a copy is kept in site/ for the Review tab
+      - name: Get the quick check's watch log
+        uses: actions/cache/restore@v5
+        with:
+          path: .alerts
+          key: quick-alerts-daily-${{ github.run_id }}
+          restore-keys: quick-alerts-
+
       - name: Commit the built page
         run: |
+          if [ -f .alerts/watch.json ]; then cp .alerts/watch.json site/micro-watch.json; fi
           cp out/page_new.html site/page.html
           cp out/summary.json site/summary.json
           cp out/track-record.csv site/track-record.csv

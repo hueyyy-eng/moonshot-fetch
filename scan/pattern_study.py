@@ -74,7 +74,8 @@ TABS = [("list", "List", ["list"]), ("cas", "Chain, age & size", ["chain", "age"
 
 def label_for(g: str, r: dict):
     if g == "list":
-        return {"S": "★ Shortlist", "P": "◆ Pullback", "I": "▲ Igniting", "M": "⚡ Momentum", "U": "» Runners", "R": "✕ Near-miss"}.get(r["lst"], "Not listed")
+        return {"S": "★ Shortlist", "P": "◆ Pullback", "I": "▲ Igniting", "M": "⚡ Momentum", "U": "» Runners", "E": "◌ Early watch", "B": "↗ Breakouts",
+                "R": "✕ Near-miss"}.get(r["lst"], "Not listed")
     if g == "chain":
         return r["c"]
     if g == "age":
@@ -135,7 +136,7 @@ def study(root: str, page: str, nar_path: str) -> dict:
 
     lists = {}
     for name, lab in (("HISTORY", None), ("IGNHIST", "I"), ("MOMHIST", "M"), ("RUNHIST", "U"), ("REJECTS", "R")):
-        for h in js_const(page, name):
+        for h in (js_const(page, name) if f"const {name} = " in page else []):
             if h.get("pa"):
                 k = key(h["c"], h["pa"])
                 L = lab or h.get("l") or "S"
@@ -156,7 +157,8 @@ def study(root: str, page: str, nar_path: str) -> dict:
             k = key(t["c"], t["pa"])
             if t.get("px"):
                 price.setdefault(k, {})[d] = float(t["px"])
-            first.setdefault(k, (d, t))
+            if t.get("band") not in ("e", "b", "x"):     # 11 Nov 2026 bands: studied in the Review tab instead
+                first.setdefault(k, (d, t))
 
     rows = []
     dropped = 0

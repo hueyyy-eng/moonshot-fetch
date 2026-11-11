@@ -140,10 +140,12 @@ def flags(row: dict) -> None:
 
 def run(http: Http, st: Status, tokens: list[dict]) -> None:
     http.pace("api.geckoterminal.com", 12)
-    # moonshot band first, chain by chain, then leaders: if the budget runs out it runs out on the leaders
+    # moonshot band first, chain by chain, then breakouts, early band, and leaders last: if the budget runs out
+    # it runs out on the leaders
+    rank = {"m": 0, "b": 1, "e": 2}
     by_chain: dict[str, list[dict]] = {}
-    for t in sorted(tokens, key=lambda t: 0 if t.get("band") == "m" else 1):
-        by_chain.setdefault((0 if t.get("band") == "m" else 1, t["c"]), []).append(t)
+    for t in sorted(tokens, key=lambda t: rank.get(t.get("band"), 3)):
+        by_chain.setdefault((rank.get(t.get("band"), 3), t["c"]), []).append(t)
     got_wallet = got_candle = 0
     blocked = False
     skipped = 0
