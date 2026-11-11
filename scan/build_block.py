@@ -778,7 +778,8 @@ def main() -> int:
     json.dump(summary, open(os.path.join(a.out, "summary.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(json.dumps({k: summary[k] for k in ("now", "cand_at", "stale", "chains", "tokens", "shortlist_new", "shortlist_dropped",
                                                "pullback_new", "pullback_dropped", "changed")}, ensure_ascii=False))
-    print(f"shortlist {len(short)} · pullback {len(pull)} · igniting {len(ign)} · momentum {len(mom)} (+{len(new_mom)}) · runners {len(runs)} (+{len(new_run)}) · early {len(early)} (+{len(new_early)}) · breakouts {len(brks)} (+{len(new_brk)}) · second look {sum(1 for t in tokens if t.get("sl"))} · history {len(hist)} (+{len(new_hist)}) · rejects {len(rej)}")
+    n_sl = sum(1 for t in tokens if t.get("sl"))
+    print(f"shortlist {len(short)} · pullback {len(pull)} · igniting {len(ign)} · momentum {len(mom)} (+{len(new_mom)}) · runners {len(runs)} (+{len(new_run)}) · early {len(early)} (+{len(new_early)}) · breakouts {len(brks)} (+{len(new_brk)}) · second look {n_sl} · history {len(hist)} (+{len(new_hist)}) · rejects {len(rej)}")
     return 0
 
 
