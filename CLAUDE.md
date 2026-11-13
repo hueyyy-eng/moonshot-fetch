@@ -31,7 +31,12 @@ If a change would break one of them, stop and ask first.
 
 ## Quick Solana + BSC check + Telegram alerts (owner, 9 Nov 2026; BSC added 11 Nov 2026)
 
-- `.github/workflows/quick.yml` runs `fetch/quick.py` every 2 hours from 7:23am to 9:23pm SGT (GitHub may start it late).
+- `.github/workflows/quick.yml` runs `fetch/quick.py` every 2 hours from 7:23am to 9:23pm SGT.
+- **Self-restarting chain (owner, 13 Nov 2026):** GitHub dropped most timed starts (12 Nov: 2 of 8), so after each
+  check the `next` job waits until the next slot (`scan/quick_next.py`: next 7:23 / 9:23 ... 9:23pm SGT slot at least
+  30 min away) and presses the workflow's own "Run workflow" button with the built-in GitHub token (`actions: write`,
+  no extra secret). Overnight one `relay` run only waits (a job may run 6 hours at most). The cron line stays as a
+  backup that restarts a broken chain; concurrency group `quick-chain` keeps only the newest chain waiting.
   Solana and BSC, same code as the daily scan, then the dashboard's own rules from `scan/build_block.py`. Only the
   $500k–$2m band can be alerted.
 - It sends a Telegram message (`scan/telegram.py`) for each token that would be on **Igniting, Runners or Momentum**
