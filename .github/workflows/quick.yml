@@ -5,6 +5,11 @@ name: Quick Solana + BSC check (Telegram alerts)
 # plus the silent Micro / Early watch log (Solana $50k-$500k tokens written down and re-priced, no alerts).
 # The cron lines are 7:23am, 9:23am ... 9:23pm SGT; GitHub often starts scheduled runs late, and a run that lands
 # inside the quiet hours sends nothing (fetch/quick.py checks the clock). Changes nothing on the dashboard.
+# Self-restarting chain (owner, 13 Nov 2026): GitHub drops many timed starts (12 Nov: 2 of 8 ran), so after each
+# check the "next" job waits until the next slot and presses this workflow's own "Run workflow" button
+# (scan/quick_next.py works out the time; overnight one "relay" run only waits and passes it on). The cron line
+# stays as a backup: if the chain ever breaks, the next timed start restarts it, and the newest chain always
+# replaces an older one (concurrency below), so there is never more than one.
 on:
   schedule:
     - cron: "23 23,1,3,5,7,9,11,13 * * *"
@@ -14,16 +19,20 @@ on:
         description: "Run even inside the quiet hours (for a test)"
         type: boolean
         default: false
+      relay:
+        description: "Internal (overnight): no check, only wait for the morning slot and start it"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
 
-concurrency:
-  group: quick-solana-check
-  cancel-in-progress: true                # a late run is replaced by the newer one, never stacked
-
 jobs:
   quick:
+    if: ${{ !inputs.relay }}
+    concurrency:
+      group: quick-solana-check
+      cancel-in-progress: true            # a late run is replaced by the newer one, never stacked
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
@@ -50,3 +59,29 @@ jobs:
         with:
           path: .alerts
           key: quick-alerts-${{ github.run_id }}
+
+  # waits until the next slot, then starts the next quick check (GitHub's own "Run workflow"; starts within a minute)
+  next:
+    needs: quick
+    if: ${{ !cancelled() }}               # also after a failed check, so one bad run never stops the chain
+    concurrency:
+      group: quick-chain
+      cancel-in-progress: true            # a newer chain replaces an older one: never two waiting at once
+    runs-on: ubuntu-latest
+    timeout-minutes: 345
+    permissions:
+      contents: read
+      actions: write                      # only to press this workflow's own "Run workflow" button
+    steps:
+      - uses: actions/checkout@v5
+      - name: Work out the next slot
+        id: plan
+        run: python3 scan/quick_next.py >> "$GITHUB_OUTPUT"
+      - name: Wait until then
+        run: |
+          echo "next: ${{ steps.plan.outputs.slot }} SGT (relay=${{ steps.plan.outputs.relay }}), waiting ${{ steps.plan.outputs.wait }} s"
+          sleep "${{ steps.plan.outputs.wait }}"
+      - name: Start the next quick check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run quick.yml --repo "$GITHUB_REPOSITORY" --ref main -f relay=${{ steps.plan.outputs.relay }}
