@@ -1,0 +1,17 @@
+name: TEMP dispatch test (removed before merge)
+on:
+  push:
+    branches: [claude/funny-goodall-y0z745]
+    paths: [.github/workflows/zz-dispatch-test.yml]
+permissions:
+  contents: read
+  actions: write
+jobs:
+  t:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - run: python3 scan/quick_next.py
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run quick.yml --repo "$GITHUB_REPOSITORY" --ref main -f force=false && echo DISPATCH-OK

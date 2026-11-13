@@ -142,6 +142,12 @@ assert not _q.quiet(_dt(2026, 11, 9, 7, 0, tzinfo=_SGT)) and not _q.quiet(_dt(20
 _m = _q.message({"sym": "T", "pa": "abc", "_score": 70, "_sparts": ["buyers"], "mc": 1200, "liq": 150, "ubr": 0.76,
                  "c24": 150, "c6": 20, "age": 1.4, "sec": "rugcheck", "_ran": False}, "U")
 assert "score 70/100" in _m and "Not a recommendation" in _m and "2x" not in _m.lower().replace("2×", "")
+# 13 Nov 2026: self-restarting quick-check chain - next slot at least 30 min away, overnight one relay wait
+from quick_next import plan as _plan
+_w, _r, _s = _plan(_dt(2026, 11, 13, 9, 35, tzinfo=_SGT)); assert (_s.hour, _s.minute, _r) == (11, 23, False), (_s, _r)
+_w, _r, _s = _plan(_dt(2026, 11, 13, 9, 0, tzinfo=_SGT)); assert (_s.hour, _r) == (11, False), "23 min to 9:23 is too close"
+_w, _r, _s = _plan(_dt(2026, 11, 13, 21, 35, tzinfo=_SGT)); assert _r and _s.hour == 7 and _w <= 330 * 60, "overnight: relay"
+_w, _r, _s = _plan(_dt(2026, 11, 14, 3, 5, tzinfo=_SGT)); assert not _r and (_s.hour, _s.minute) == (7, 23) and _w == 258 * 60
 assert "quick check — BSC" in _q.message(dict(sym="T", pa="abc", c="bsc", _score=70, _sparts=[]), "I"), "BSC alerts say BSC"
 # 11 Nov 2026: Early watch, Breakouts, Second look, band rules, wider search
 from build_block import is_early, is_brk, second_look, mainband, is_ign, is_pull
