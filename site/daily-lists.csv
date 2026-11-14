@@ -508,6 +508,7 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-11-13,breakouts,USPR,solana,2278.6,AI,1.63,2.37,0.7,0.93,11.16,rugcheck,https://dexscreener.com/solana/2xaqj16kC9vT8JuCD4FKaqduvtDgrcAcEHn4Mz3E7Bwq,daily scan
 2026-11-14,shortlist,AMC,robinhood,1588.3,Tokenised equities,1.07,14.08,0.34,-1.05,70.84,explorer,https://dexscreener.com/robinhood/0x7499938c352d5b5b8f0c648722aca5ee964ef9b85c3a3041f1ec379726291d9d,daily scan
 2026-11-14,shortlist,ANTH,solana,627.5,AI,,,4.0,95.37,0.22,rugcheck,https://dexscreener.com/solana/EUxRxmif6HoFwSe14PyQC6cPDPCsm5u6GaUo1c8YKFFZ,daily scan
+2026-11-14,shortlist,ANTH,solana,507.9,AI,,,4.0,67.92,0.14,rugcheck,https://dexscreener.com/solana/ZFKZS2yiL2ZB5Us2vSZVrf1oMCvwVrgb99oqKjukc9t,evening scan
 2026-11-14,shortlist,BAGSPAY,solana,736.8,Unclassified,1.1,75.75,0.92,-1.77,46.03,rugcheck,https://dexscreener.com/solana/DxSBgaYreFNFxGu9TEC17n4Usq5jjy4Zf9djT7RBLrGf,daily scan
 2026-11-14,shortlist,Dacity,solana,1864.0,Classic memes,1.69,89.0,0.97,-16.65,33.55,rugcheck,https://dexscreener.com/solana/G2UuRbmVDzDFP4qyoBJrSKBXSi7d6V4bPP9tHPs36y4b,daily scan
 2026-11-14,shortlist,GIGATENEV,robinhood,570.3,Classic memes,1.24,90.92,0.75,-7.79,35.28,explorer,https://dexscreener.com/robinhood/0xe96c99be1ffcc204714ebce32870ab12b8b362308fa50b9352c03b2486a5d448,daily scan
@@ -515,15 +516,22 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-11-14,shortlist,MeiMei,solana,746.0,Dog & animal memes,1.37,63.6,0.29,-3.68,136.3,rugcheck,https://dexscreener.com/solana/DtDfaWqhCEaeFXJUHjGC8Xo9XxH52ENVhA1XoJ9F4d8Y,daily scan
 2026-11-14,shortlist,MSFT,robinhood,1829.0,Tokenised equities,1.03,20.14,0.43,-0.1,46.95,explorer,https://dexscreener.com/robinhood/0x18074ca08154f613c70444ef22793ff1875e9bdc92bab25a5ee0f39107c77258,daily scan
 2026-11-14,shortlist,Rocco,solana,507.3,Dog & animal memes,1.06,60.25,1.89,-20.32,8.39,rugcheck,https://dexscreener.com/solana/3jW1ykKqUTNgNUDGbrwXpvZKtMFf4pWytoTP3TeXhKBQ,daily scan
+2026-11-14,shortlist,SAFU,bsc,691.8,KOL / personality,1.19,84.44,1.2,-0.23,34.71,goplus,https://dexscreener.com/bsc/0x13b86Fcf85C9C8F5C36593822D216B8893C25450,evening scan
 2026-11-14,shortlist,swordcat,solana,709.2,Dog & animal memes,1.1,81.01,0.85,-10.19,46.63,rugcheck,https://dexscreener.com/solana/8ewuF2o8ACro7fqWepZ3tKhkbBjndZU4Ldk9scRPw83d,daily scan
 2026-11-14,pullback,FOOD,solana,900.9,Classic memes,41.37,65.9,0.38,-13.71,1.05,rugcheck,https://dexscreener.com/solana/2XhQqp1vDVxtaa21bPsekQF5gjts9euqRPSZ6Urs41qk,daily scan
+2026-11-14,pullback,POPO,ethereum,597.8,Dog & animal memes,297.31,42.27,0.64,8.85,1.86,goplus,https://dexscreener.com/ethereum/0xc027c6897dd4Ee14145D01dE9fb2DeA75E8637C7,evening scan
 2026-11-14,igniting,ANTH,solana,627.5,AI,,,4.0,95.37,0.22,rugcheck,https://dexscreener.com/solana/EUxRxmif6HoFwSe14PyQC6cPDPCsm5u6GaUo1c8YKFFZ,daily scan
+2026-11-14,igniting,ANTH,solana,507.9,AI,,,4.0,67.92,0.14,rugcheck,https://dexscreener.com/solana/ZFKZS2yiL2ZB5Us2vSZVrf1oMCvwVrgb99oqKjukc9t,evening scan
+2026-11-14,momentum,FOOD,solana,1046.6,Classic memes,41.37,65.9,0.25,17.49,1.52,rugcheck,https://dexscreener.com/solana/2XhQqp1vDVxtaa21bPsekQF5gjts9euqRPSZ6Urs41qk,evening scan
 2026-11-14,momentum,Max,solana,1799.5,Unclassified,55.1,87.5,1.27,-0.48,2.14,rugcheck,https://dexscreener.com/solana/Eoe22HdCa9rhtBwKL6nNZmZxfuzF35xkxobcvfaF1vWQ,daily scan
 2026-11-14,momentum,SHARKBUX,solana,524.2,Unclassified,26.08,27.49,0.45,-21.93,1.03,rugcheck,https://dexscreener.com/solana/GCApLjm8aviTumEXSYPCVMGK6Rer9KG7gUN4L9YKP394,daily scan
+2026-11-14,momentum,StarsAI,bsc,805.4,AI,1.58,39.32,1.73,24.13,2.13,goplus,https://dexscreener.com/bsc/0x38fbdD5ce58a73De08e670AD114b2A78c4298956,evening scan
 2026-11-14,runners,CSI,solana,1237.8,Dog & animal memes,,,4.0,2779.0,0.07,rugcheck,https://dexscreener.com/solana/8f95uFDBHsXaErCMCDxboE3AfePWLUkzomhkGSYdTP5M,daily scan
 2026-11-14,early watch,:3,solana,278.8,Dog & animal memes,139.03,42.81,0.73,-20.64,27.27,rugcheck,https://dexscreener.com/solana/GxYbNxjGR9mEuVzXsGBi2Y78RGkwBMRok4RS9sMUb8hE,daily scan
+2026-11-14,early watch,AMD,solana,497.3,Dog & animal memes,7.91,82.79,0.35,-9.01,10.6,rugcheck,https://dexscreener.com/solana/7RD5YALHcMLUFKJ8FRePGd6ei11F15uXZF1rc7mPKeCv,evening scan
 2026-11-14,early watch,Ansemmas,solana,344.0,KOL / personality,3.93,41.86,3.39,0.99,43.31,rugcheck,https://dexscreener.com/solana/6qirp44Q2T8B1CfbGmnqeXCLdQhFqmNCfAFfpKG4N156,daily scan
 2026-11-14,early watch,CoinaSaurus,base,271.1,Unclassified,24.88,31.0,0.0,,1.06,goplus,https://dexscreener.com/base/0x37e6f9fdc846732d1b382da731213d17b11660e83221e0eb0f79db9d764b38b9,daily scan
+2026-11-14,early watch,greg,solana,272.1,Dog & animal memes,19.03,51.36,1.72,1.53,3.39,rugcheck,https://dexscreener.com/solana/4s8CAbVgaDHoPkkbitjdQZ4TfqXKuczHWdfy8HLVUbdQ,evening scan
 2026-11-14,early watch,MAMESUKE,solana,201.4,Dog & animal memes,2.38,93.26,0.24,-0.09,11.53,rugcheck,https://dexscreener.com/solana/HPeXruE5Msv7paz5WPViwScLeSYWgZr8vhDakuiEp5ku,daily scan
 2026-11-14,early watch,Max,base,460.0,Unclassified,34.82,9.72,0.93,24.98,1.41,goplus,https://dexscreener.com/base/0xb1ca77F8ccB7df23179a6b7854963ae6deb43a2b,daily scan
 2026-11-14,early watch,Neiro,bsc,228.3,Unclassified,9.68,31.6,0.26,-16.05,5.44,goplus,https://dexscreener.com/bsc/0x353068BF078d2A6fe2124dB5E10fC985268DDD13,daily scan
@@ -536,14 +544,22 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-11-14,early watch,PIRATE,solana,270.5,Unclassified,4.84,62.9,0.99,24.65,11.29,rugcheck,https://dexscreener.com/solana/CKuwAXUbnxmeCNurN5VvyC7kLz42JnQtyh2nyFJ8Kv1X,daily scan
 2026-11-14,early watch,PLTRc,base,447.8,Tokenised equities,1.07,18.55,0.81,-1.39,22.94,goplus,https://dexscreener.com/base/0xA0473ceD0cd1bfB857e3E04B5FA4b6aF18C5e44d,daily scan
 2026-11-14,early watch,Punch,solana,302.8,Dog & animal memes,1.82,58.17,0.25,-20.28,281.64,rugcheck,https://dexscreener.com/solana/A6KHMiFzn9AM7VKBtVP4fZNY9bCo2jP63R9dphaW1vrq,daily scan
+2026-11-14,early watch,SHARKBUX,solana,409.7,Unclassified,26.08,27.49,0.44,-23.74,1.51,rugcheck,https://dexscreener.com/solana/GCApLjm8aviTumEXSYPCVMGK6Rer9KG7gUN4L9YKP394,evening scan
 2026-11-14,early watch,Shitcoin,solana,290.6,Classic memes,64.87,20.61,0.59,5.21,1.64,rugcheck,https://dexscreener.com/solana/9ovaDmtnzr164fJVBpypehiQ9a5FZMLaCaTTAprM8xxJ,daily scan
+2026-11-14,early watch,Sue,bsc,220.3,Dog & animal memes,1.41,79.24,1.81,25.08,81.97,goplus,https://dexscreener.com/bsc/0xfFCa411CFbcD3194503eFfA80Fd394b55387915c,evening scan
+2026-11-14,early watch,TTWOc,base,315.5,Tokenised equities,1.17,78.7,0.86,-1.5,23.42,goplus,https://dexscreener.com/base/0x18907cAE5a9c7b45F85c5d2e1F7508C27c134f83,evening scan
 2026-11-14,early watch,WEALTH,solana,417.7,Unclassified,2.2,70.2,1.5,-28.11,8.39,rugcheck,https://dexscreener.com/solana/5n8V68fCaNTRQvaXzrmBryDe5jFLrgm65pFfsmia6Nro,daily scan
 2026-11-14,early watch,███,solana,283.2,Dog & animal memes,2.03,84.61,0.69,-2.85,20.87,rugcheck,https://dexscreener.com/solana/9sY4Amm2RFpsBQ1qgCQTxcjfvhmfJ9K4d2J5xfM1k75M,daily scan
+2026-11-14,breakouts,AMD,robinhood,2015.1,Tokenised equities,1.2,22.5,0.15,-0.39,102.68,explorer,https://dexscreener.com/robinhood/0xe6e17efdbdd916526293cf1b509171be4ffb04f47c4a5fe1a7367acdaa6ffd82,evening scan
 2026-11-14,breakouts,AntAI,bsc,9131.0,AI,1580.21,2.6,0.7,21.41,2.7,goplus,https://dexscreener.com/bsc/0x4c458d1066D65FaD1918ACaFe341402098EbB71C,daily scan
 2026-11-14,breakouts,BTC,solana,2050.4,Gold / BTC proxies,120.53,91.07,1.49,-19.41,61.18,rugcheck,https://dexscreener.com/solana/3M9sVgL4u6ATKaiExf3XhQqNfMB6ijvzk3meMcQaen1w,daily scan
 2026-11-14,breakouts,CLU,elysium,3955.6,Dog & animal memes,2293.97,2.82,1.54,-0.86,5.52,nodata,https://dexscreener.com/elysium/0x8081ed5312303d807613151d7ba96d280ad308526a5414178b54301b6a99f103,daily scan
+2026-11-14,breakouts,Dacity,solana,2103.6,Classic memes,1.69,89.0,0.58,-0.44,34.02,rugcheck,https://dexscreener.com/solana/G2UuRbmVDzDFP4qyoBJrSKBXSi7d6V4bPP9tHPs36y4b,evening scan
 2026-11-14,breakouts,Jensen,bsc,2080.2,KOL / personality,104.21,1.67,0.85,9.07,1.42,goplus,https://dexscreener.com/bsc/0x9c882A2A6a508e72e32EcD6af3609063CF3C01cd,daily scan
 2026-11-14,breakouts,KNTQ,elysium,5010.4,Utilities,1.05,37.74,0.32,-0.8,4.24,nodata,https://dexscreener.com/elysium/0x5ecB73050f35D8bD67231512C3bef91ad0b3dcc7,daily scan
+2026-11-14,breakouts,Macca,solana,2323.9,Brand-name memes,2.78,21.8,0.77,1.79,29.92,rugcheck,https://dexscreener.com/solana/4FoNNNMMKMa66ppCiA9557cg63s2BNN9UoFcaKxXbmvg,evening scan
 2026-11-14,breakouts,NIO,solana,2105.7,Unclassified,2.87,30.06,2.1,78.72,23.35,rugcheck,https://dexscreener.com/solana/B4Wmjc6PvjCtU3qSVS3eTT9Mr4M5V5jBkRQctWANTc71,daily scan
 2026-11-14,breakouts,STANK,solana,2068.2,Unclassified,2.41,65.53,2.35,-11.0,15.43,rugcheck,https://dexscreener.com/solana/6hYFMyE2BYYScTErqUeCKhihQ5X9j2WD2z9waTdwy38N,daily scan
+2026-11-14,breakouts,TBULL,tron,2089.0,Dog & animal memes,1.1,37.61,0.0,,19.58,nodata,https://dexscreener.com/tron/T9zbAmC2W4wg8xemXMzN66b1xinHyB452K,evening scan
 2026-11-14,breakouts,USPR,solana,2426.7,AI,1.63,0.13,0.99,1.96,12.16,rugcheck,https://dexscreener.com/solana/2xaqj16kC9vT8JuCD4FKaqduvtDgrcAcEHn4Mz3E7Bwq,daily scan
+2026-11-14,breakouts,WASTED,solana,3339.6,Classic memes,5.97,28.29,2.15,19.59,14.74,rugcheck,https://dexscreener.com/solana/TT7DKs9YjJZj1fwMGoPmKBmDreZzyMAMrHoDCGdfwqN,evening scan
