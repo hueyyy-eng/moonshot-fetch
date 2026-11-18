@@ -1,25 +1,18 @@
 {
- "now": "2026-11-18 10:33 SGT",
- "slot": "am",
- "cand_at": "2026-11-18 10:33 SGT",
+ "now": "2026-11-18 22:51 SGT",
+ "slot": "pm",
+ "cand_at": "2026-11-18 22:51 SGT",
  "tokens_carried": false,
- "stale": [
-  "perps (carried, pStale)",
-  "net flows (carried)",
-  "bridge protocol stats (carried)"
- ],
- "notes": [
-  "implausible re-prices ignored (>1000x entry): Max (base) 612,094x ignored; Max (base) 902,174x ignored"
- ],
+ "stale": [],
+ "notes": [],
  "sources": {
   "llama.dexs_overview": "ok",
   "llama.chains": "ok",
   "llama.chain_rows": "ok",
-  "llama.perps_page": "partial",
-  "llama.perps_api": "fail",
-  "llama.netflow": "fail",
-  "llama.bridges_chains": "fail",
-  "llama.bridges_protocols": "fail",
+  "llama.perps_page": "ok",
+  "llama.netflow": "ok",
+  "llama.bridges_chains": "ok",
+  "llama.bridges_protocols": "ok",
   "llama.majors": "ok",
   "discovery": "partial",
   "geckoterminal": "ok",
@@ -30,17 +23,13 @@
  },
  "chains": {
   "hot": [
+   "sei",
    "eos"
   ],
   "new": [
-   "eos"
+   "sei"
   ],
-  "dropped": [
-   "chainflip",
-   "ink",
-   "provenance",
-   "unichain"
-  ],
+  "dropped": [],
   "hottest": {
    "s": "thorchain",
    "n": "Thorchain",
@@ -49,291 +38,302 @@
   }
  },
  "tokens": {
-  "total": 138,
-  "band_m": 57,
+  "total": 139,
+  "band_m": 52,
   "candle_or_wallet_coverage_pct": 100,
   "nodata": 5
  },
  "shortlist": [
   {
-   "sym": "Rocco",
+   "sym": "Macca",
    "c": "solana",
-   "mc": 1022.8,
-   "nar": "Dog & animal memes",
-   "run": 2.21,
-   "retr": 30.01,
-   "acc": 1.04,
-   "c6": -0.43,
-   "age": 12.43,
+   "mc": 1313.6,
+   "nar": "Brand-name memes",
+   "run": 2.49,
+   "retr": 31.95,
+   "acc": 1.78,
+   "c6": -32.05,
+   "age": 33.99,
    "sec": "rugcheck",
-   "pa": "3jW1ykKqUTNgNUDGbrwXpvZKtMFf4pWytoTP3TeXhKBQ",
+   "pa": "4FoNNNMMKMa66ppCiA9557cg63s2BNN9UoFcaKxXbmvg",
    "score": 30
-  },
-  {
-   "sym": "GLITCH",
-   "c": "solana",
-   "mc": 1070.9,
-   "nar": "Classic memes",
-   "run": 1.5,
-   "retr": 75.15,
-   "acc": 1.17,
-   "c6": 3.24,
-   "age": 32.41,
-   "sec": "rugcheck",
-   "pa": "Em6RvzGXhd35pZ7CVUjCTPEnv4jAztScaVHaXBXCBcG7",
-   "score": 30
-  },
-  {
-   "sym": "paws",
-   "c": "solana",
-   "mc": 637.9,
-   "nar": "Dog & animal memes",
-   "run": 2.13,
-   "retr": 59.47,
-   "acc": 1.0,
-   "c6": 5.38,
-   "age": 21.89,
-   "sec": "rugcheck",
-   "pa": "2rmaFtFZmJtLXdPgRvk417RLc9GBD3jGbAqtttmfG3AF",
-   "score": 20
   },
   {
    "sym": "BTC",
    "c": "solana",
-   "mc": 1217.9,
+   "mc": 1302.1,
    "nar": "Gold / BTC proxies",
    "run": 1.79,
    "retr": 93.96,
-   "acc": 1.64,
-   "c6": -23.72,
-   "age": 65.22,
+   "acc": 0.29,
+   "c6": -11.16,
+   "age": 65.72,
    "sec": "rugcheck",
    "pa": "3M9sVgL4u6ATKaiExf3XhQqNfMB6ijvzk3meMcQaen1w",
    "score": 55
   },
   {
-   "sym": "牛逼",
+   "sym": "SAFU",
    "c": "bsc",
-   "mc": 968.5,
-   "nar": "Dog & animal memes",
-   "run": 1.24,
-   "retr": 87.49,
-   "acc": 0.13,
-   "c6": -1.34,
-   "age": 8.93,
+   "mc": 718.2,
+   "nar": "KOL / personality",
+   "run": 1.27,
+   "retr": 83.82,
+   "acc": 0.88,
+   "c6": -1.59,
+   "age": 38.78,
    "sec": "goplus",
-   "pa": "0xae1031AB8dDec5930184cc747e5261dEbD756c4A",
+   "pa": "0x13b86Fcf85C9C8F5C36593822D216B8893C25450",
    "score": 20
   },
   {
    "sym": "ANT",
    "c": "robinhood",
-   "mc": 702.2,
+   "mc": 1316.9,
    "nar": "AI",
    "run": 2.2,
    "retr": 94.75,
-   "acc": 1.0,
-   "c6": 50.82,
-   "age": 15.56,
+   "acc": 1.04,
+   "c6": 14.51,
+   "age": 16.06,
    "sec": "explorer",
    "pa": "0xaf7d2ecec21c88509c317726ee7408a390199103f242695dfe554ff5d559f9c3",
-   "score": 5
+   "score": 30
   },
   {
-   "sym": "MRNA",
+   "sym": "HIMS",
    "c": "robinhood",
-   "mc": 555.3,
+   "mc": 1744.0,
    "nar": "Tokenised equities",
-   "run": 1.02,
-   "retr": 25.49,
-   "acc": 0.55,
-   "c6": 0.5,
-   "age": 75.12,
+   "run": 1.04,
+   "retr": 50.4,
+   "acc": 1.25,
+   "c6": -0.15,
+   "age": 81.73,
    "sec": "explorer",
-   "pa": "0xB40196272A6d2EB5edF6d93bc4DC39856AD95E0E",
-   "score": 0
+   "pa": "0x67983c0d78cea3a8b4a5cc283feeeefd278a8ae5c6504b983b0c72bde13d1c0c",
+   "score": 10
   },
   {
    "sym": "WIF",
    "c": "robinhood",
-   "mc": 1001.3,
+   "mc": 934.7,
    "nar": "Classic memes",
    "run": 1.22,
    "retr": 48.5,
-   "acc": 1.44,
-   "c6": -0.61,
-   "age": 103.67,
+   "acc": 1.48,
+   "c6": -2.08,
+   "age": 104.17,
    "sec": "explorer",
    "pa": "0x71ef4106340f0a3b9c19ec994eef4fc44a1d2513f38faac39d7636b156548c79",
-   "score": 40
+   "score": 30
+  },
+  {
+   "sym": "Tesera",
+   "c": "elysium",
+   "mc": 778.4,
+   "nar": "AI",
+   "run": null,
+   "retr": null,
+   "acc": 1.46,
+   "c6": 54.69,
+   "age": 8.83,
+   "sec": "nodata",
+   "pa": "0x07184505168003343330f25a74a2ecdc2448d021974babf56a6aaecc5db0a08f",
+   "score": 5
   }
  ],
  "shortlist_new": [
-  "ANT",
-  "BTC",
+  "HIMS",
+  "Macca",
+  "SAFU",
+  "Tesera"
+ ],
+ "shortlist_dropped": [
+  "GLITCH",
   "MRNA",
+  "Rocco",
   "paws",
   "牛逼"
  ],
- "shortlist_dropped": [
-  "Dacity",
-  "GIGATENEV",
-  "GTA",
-  "JOB",
-  "MSFT",
-  "Macca",
-  "PAID"
- ],
  "pullback": [
-  {
-   "sym": "BAWSAQ",
-   "c": "solana",
-   "mc": 613.7,
-   "nar": "Unclassified",
-   "run": 22.64,
-   "retr": 61.76,
-   "acc": 0.75,
-   "c6": 23.96,
-   "age": 1.16,
-   "sec": "rugcheck",
-   "pa": "DQnoiJies9KrPJUiuCLExiCWh8jCrofL3zzUhgdL55kR",
-   "score": 50
-  },
   {
    "sym": "Lucia",
    "c": "solana",
-   "mc": 783.0,
+   "mc": 725.1,
    "nar": "Classic memes",
    "run": 3.04,
    "retr": 48.11,
-   "acc": 1.31,
-   "c6": 13.56,
-   "age": 66.21,
+   "acc": 1.85,
+   "c6": -19.7,
+   "age": 66.71,
    "sec": "rugcheck",
    "pa": "GfJ9N22hFFBqF29M5yxmCU39rcWLXarCbpvNzr71k4YW",
    "score": 20
-  },
-  {
-   "sym": "StarsAI",
-   "c": "bsc",
-   "mc": 1549.9,
-   "nar": "AI",
-   "run": 7.9,
-   "retr": 40.44,
-   "acc": 0.45,
-   "c6": -11.99,
-   "age": 5.7,
-   "sec": "goplus",
-   "pa": "0x38fbdD5ce58a73De08e670AD114b2A78c4298956",
-   "score": 50
   }
  ],
- "pullback_new": [
-  "BAWSAQ",
-  "Lucia",
-  "StarsAI"
- ],
+ "pullback_new": [],
  "pullback_dropped": [
-  "HOGE"
+  "BAWSAQ",
+  "StarsAI"
  ],
  "igniting": [],
  "momentum": [
   {
    "sym": "牛逼",
    "c": "bsc",
-   "mc": 546.8,
+   "mc": 514.6,
    "nar": "Dog & animal memes",
    "run": 45.87,
    "retr": 27.01,
-   "acc": 0.8,
-   "c6": 61.94,
-   "age": 1.41,
+   "acc": 0.35,
+   "c6": 21.45,
+   "age": 1.91,
    "sec": "goplus",
    "pa": "0x6DF3426Fc645c0F3D0b7bDb2C1a24AdAE50dC761",
    "score": 50
   },
   {
-   "sym": "HOGE",
-   "c": "solana",
-   "mc": 538.0,
-   "nar": "Dog & animal memes",
-   "run": 56.72,
-   "retr": 55.56,
-   "acc": 0.43,
-   "c6": -21.62,
-   "age": 2.77,
-   "sec": "rugcheck",
-   "pa": "7CNC9gGegzEfFK8fLXiYUhdtMEeFPQZoND56U1Mxhnor",
-   "score": 50
-  },
-  {
-   "sym": "Vision",
+   "sym": "RDRIOT",
    "c": "robinhood",
-   "mc": 571.0,
+   "mc": 555.5,
    "nar": "Unclassified",
-   "run": 33.76,
-   "retr": 27.3,
+   "run": 29.86,
+   "retr": 0.0,
    "acc": 0.0,
    "c6": null,
-   "age": 1.16,
+   "age": 1.01,
    "sec": "explorer",
-   "pa": "0xb20cb3897f8e8446cf20d00b6c169b259520c1b6f201547ac1f2a1a78d2c6251",
-   "score": 20
-  },
-  {
-   "sym": "$APEC",
-   "c": "bsc",
-   "mc": 967.0,
-   "nar": "Unclassified",
-   "run": 61.1,
-   "retr": 6.74,
-   "acc": 1.02,
-   "c6": -16.57,
-   "age": 1.68,
-   "sec": "goplus",
-   "pa": "0x9Ff5692727723098655173Bb1BDfBa675B200CeC",
+   "pa": "0x82965399e063aca5b5eb68784d6db5d57bc82c8bba75cc4f49b04e78aa2f2887",
    "score": 35
   }
  ],
  "momentum_new": [
-  "HOGE",
-  "Vision",
-  "牛逼"
+  "RDRIOT"
  ],
  "momentum_dropped": [
-  "Jacket"
+  "$APEC",
+  "HOGE",
+  "Vision"
  ],
- "runners": [],
- "runners_new": [],
+ "runners": [
+  {
+   "sym": "Leonida",
+   "c": "solana",
+   "mc": 1588.9,
+   "nar": "Launchpad / infra",
+   "run": null,
+   "retr": null,
+   "acc": 0.87,
+   "c6": 69.28,
+   "age": 0.51,
+   "sec": "rugcheck",
+   "pa": "6Ecx5Lm5dinVma1xWMEumj6ABZL3g1Xx4t5rxQxELzdn",
+   "score": 65
+  }
+ ],
+ "runners_new": [
+  "Leonida"
+ ],
  "runners_dropped": [],
  "early": [
   {
-   "sym": "WANTED",
+   "sym": "rockstar",
    "c": "solana",
-   "mc": 232.2,
+   "mc": 323.7,
    "nar": "Classic memes",
-   "run": 6.66,
-   "retr": 27.42,
-   "acc": 0.85,
-   "c6": -23.3,
-   "age": 13.34,
+   "run": 1.84,
+   "retr": 69.3,
+   "acc": 0.79,
+   "c6": -21.14,
+   "age": 3.1,
    "sec": "rugcheck",
-   "pa": "CowBNpAYZn5FxtvgkjTRY9C69Ps2Bp8nRDYt7tiyPLXo",
-   "score": 45
+   "pa": "5PYNPPTNpdG5REsu3VqeJKqHePiJ1uwP5L7A2CcHMxdY",
+   "score": 50
   },
   {
    "sym": "CHILL",
    "c": "solana",
-   "mc": 414.3,
+   "mc": 320.4,
    "nar": "Dog & animal memes",
    "run": 3.02,
    "retr": 62.69,
-   "acc": 2.03,
-   "c6": 9.6,
-   "age": 10.35,
+   "acc": 0.29,
+   "c6": -18.27,
+   "age": 10.85,
    "sec": "rugcheck",
    "pa": "GoM6pz6Nc2NATJvtR29Xa98GSQmJzt72rJNkEKypRZs8",
    "score": 45
+  },
+  {
+   "sym": "DSP",
+   "c": "solana",
+   "mc": 329.9,
+   "nar": "Dog & animal memes",
+   "run": 30.66,
+   "retr": 60.8,
+   "acc": 0.67,
+   "c6": 57.41,
+   "age": 1.85,
+   "sec": "rugcheck",
+   "pa": "8b79cMtRTCS7NxJ3zLnHxaq156GygzeDxVmWJDN2idsX",
+   "score": 40
+  },
+  {
+   "sym": "DIGS",
+   "c": "solana",
+   "mc": 353.7,
+   "nar": "Classic memes",
+   "run": 3.37,
+   "retr": 20.88,
+   "acc": 1.67,
+   "c6": 27.52,
+   "age": 21.04,
+   "sec": "rugcheck",
+   "pa": "3mxDjdZ1gAe5HziC4dj4UnLdXJ5DBcC9jsSYq55mFyKg",
+   "score": 30
+  },
+  {
+   "sym": "PINO",
+   "c": "solana",
+   "mc": 302.6,
+   "nar": "AI",
+   "run": 2.54,
+   "retr": 27.68,
+   "acc": 0.88,
+   "c6": 4.81,
+   "age": 49.73,
+   "sec": "rugcheck",
+   "pa": "BHKyty1uDDxSwAkhkefn8ZwNQZjfQrmC672D2UW874dD",
+   "score": 20
+  },
+  {
+   "sym": "Ansemmas",
+   "c": "solana",
+   "mc": 256.0,
+   "nar": "KOL / personality",
+   "run": 2.8,
+   "retr": 47.35,
+   "acc": 0.39,
+   "c6": -3.72,
+   "age": 47.86,
+   "sec": "rugcheck",
+   "pa": "6qirp44Q2T8B1CfbGmnqeXCLdQhFqmNCfAFfpKG4N156",
+   "score": 20
+  },
+  {
+   "sym": "WASTED",
+   "c": "base",
+   "mc": 390.8,
+   "nar": "Unclassified",
+   "run": 23.1,
+   "retr": 5.71,
+   "acc": 1.0,
+   "c6": -4.71,
+   "age": 2.37,
+   "sec": "goplus",
+   "pa": "0x033ab6eFe0a223e5d17844e569D11BfE591a376B",
+   "score": 20
   },
   {
    "sym": "TE",
@@ -344,156 +344,58 @@
    "retr": 35.71,
    "acc": 0.0,
    "c6": null,
-   "age": 1.22,
+   "age": 1.72,
    "sec": "goplus",
    "pa": "0x6aa9f6e55f8fea2ec881d164772364bb3f57e93500d9a24a86de241e6983d17b",
-   "score": 35
-  },
-  {
-   "sym": "DIGS",
-   "c": "solana",
-   "mc": 259.3,
-   "nar": "Classic memes",
-   "run": 3.37,
-   "retr": 20.88,
-   "acc": 0.41,
-   "c6": -4.72,
-   "age": 20.54,
-   "sec": "rugcheck",
-   "pa": "3mxDjdZ1gAe5HziC4dj4UnLdXJ5DBcC9jsSYq55mFyKg",
-   "score": 30
-  },
-  {
-   "sym": "Leonida",
-   "c": "solana",
-   "mc": 428.2,
-   "nar": "Launchpad / infra",
-   "run": 2.11,
-   "retr": 48.53,
-   "acc": 0.58,
-   "c6": 2.85,
-   "age": 12.24,
-   "sec": "rugcheck",
-   "pa": "5GxdoPcK2LJ6QYcJ3uvtC37tgsFHma55ULFkufTYe49R",
    "score": 20
   },
   {
-   "sym": "WASTED",
-   "c": "base",
-   "mc": 406.2,
+   "sym": "GTA6",
+   "c": "robinhood",
+   "mc": 283.1,
    "nar": "Unclassified",
-   "run": 23.1,
-   "retr": 5.71,
-   "acc": 1.04,
-   "c6": 15.21,
-   "age": 1.87,
-   "sec": "goplus",
-   "pa": "0x033ab6eFe0a223e5d17844e569D11BfE591a376B",
+   "run": 9.01,
+   "retr": 0.0,
+   "acc": 0.01,
+   "c6": 0.93,
+   "age": 1.1,
+   "sec": "explorer",
+   "pa": "0x124f6f6f393ec76ad0b1ffa585808b42c5d7316d14507de50a43e596f21843bc",
    "score": 20
-  },
-  {
-   "sym": "TTWOc",
-   "c": "base",
-   "mc": 346.8,
-   "nar": "Tokenised equities",
-   "run": 1.04,
-   "retr": 81.62,
-   "acc": 1.33,
-   "c6": 0.57,
-   "age": 26.97,
-   "sec": "goplus",
-   "pa": "0x18907cAE5a9c7b45F85c5d2e1F7508C27c134f83",
-   "score": 5
-  },
-  {
-   "sym": "Tesera",
-   "c": "elysium",
-   "mc": 465.2,
-   "nar": "Unclassified",
-   "run": null,
-   "retr": null,
-   "acc": 0.85,
-   "c6": -11.49,
-   "age": 8.33,
-   "sec": "nodata",
-   "pa": "0x07184505168003343330f25a74a2ecdc2448d021974babf56a6aaecc5db0a08f",
-   "score": 5
-  },
-  {
-   "sym": "NFLXc",
-   "c": "base",
-   "mc": 492.6,
-   "nar": "Tokenised equities",
-   "run": 1.01,
-   "retr": 29.67,
-   "acc": 1.1,
-   "c6": 0.29,
-   "age": 26.97,
-   "sec": "goplus",
-   "pa": "0x67Ba8dBeDC6D7f93f0F5967Aa2420715f1edC756",
-   "score": 0
-  },
-  {
-   "sym": "HIMSc",
-   "c": "base",
-   "mc": 343.3,
-   "nar": "Tokenised equities",
-   "run": 1.05,
-   "retr": 48.63,
-   "acc": 1.27,
-   "c6": 1.13,
-   "age": 26.95,
-   "sec": "goplus",
-   "pa": "0x41D7793FAa4Ca181B6f021423fF3F9015C00b2ff",
-   "score": 0
-  },
-  {
-   "sym": "SKHYc",
-   "c": "base",
-   "mc": 296.3,
-   "nar": "Tokenised equities",
-   "run": 1.09,
-   "retr": 23.14,
-   "acc": 1.31,
-   "c6": 4.71,
-   "age": 26.96,
-   "sec": "goplus",
-   "pa": "0xEBC746A47ebb274de1dbDC9a465E6C5C2301C5DA",
-   "score": 0
   },
   {
    "sym": "BEc",
    "c": "base",
-   "mc": 237.2,
+   "mc": 233.5,
    "nar": "Tokenised equities",
    "run": 1.13,
    "retr": 37.97,
-   "acc": 1.05,
-   "c6": 6.73,
-   "age": 26.83,
+   "acc": 0.63,
+   "c6": -1.29,
+   "age": 27.34,
    "sec": "goplus",
    "pa": "0xDe2BfE5409aD9e825cdB3562A06EDaFb9d753DFc",
    "score": 0
   }
  ],
  "early_new": [
-  "BEc",
-  "HIMSc",
-  "NFLXc",
-  "SKHYc",
-  "TE"
+  "Ansemmas",
+  "DSP",
+  "GTA6",
+  "PINO",
+  "rockstar"
  ],
  "breakouts": [
   {
    "sym": "MARSBASE",
    "c": "base",
-   "mc": 8339.7,
+   "mc": 8022.7,
    "nar": "RWA",
    "run": 34.04,
    "retr": 29.67,
-   "acc": 0.63,
-   "c6": -0.17,
-   "age": 4.66,
+   "acc": 1.98,
+   "c6": -3.52,
+   "age": 5.16,
    "sec": "goplus",
    "pa": "0x5d020084793dddb8c5270ce450ff8c9fd08809889b529d23180badebf7da098e",
    "score": 25
@@ -501,41 +403,27 @@
   {
    "sym": "JOB",
    "c": "solana",
-   "mc": 2488.9,
+   "mc": 2715.7,
    "nar": "Dog & animal memes",
    "run": 2.59,
    "retr": 68.61,
-   "acc": 1.27,
-   "c6": 47.34,
-   "age": 21.26,
+   "acc": 1.12,
+   "c6": 8.76,
+   "age": 21.76,
    "sec": "rugcheck",
    "pa": "HAUVBmNthCFmG9SRXMvZ1GAXNpU955hkPdSAsC2cx4C8",
    "score": 20
   },
   {
-   "sym": "うさぎ",
-   "c": "bsc",
-   "mc": 2030.0,
-   "nar": "Dog & animal memes",
-   "run": 1.92,
-   "retr": 40.65,
-   "acc": 1.05,
-   "c6": 12.1,
-   "age": 70.3,
-   "sec": "goplus",
-   "pa": "0xd6fE21107c05A153d419eDc3d93072066D52dFF9",
-   "score": 20
-  },
-  {
    "sym": "USO",
    "c": "robinhood",
-   "mc": 2348.2,
+   "mc": 2342.3,
    "nar": "Tokenised equities",
    "run": 1.02,
    "retr": 32.7,
-   "acc": 0.36,
-   "c6": -0.17,
-   "age": 123.67,
+   "acc": 1.73,
+   "c6": 1.4,
+   "age": 124.17,
    "sec": "explorer",
    "pa": "0x02175608F1b5E6b5ed221cCFdC7Be197D111D915",
    "score": 5
@@ -543,127 +431,142 @@
  ],
  "second_look": [
   {
+   "sym": "SHIT",
+   "c": "solana",
+   "mc": 1314.5,
+   "nar": "Unclassified",
+   "run": null,
+   "retr": null,
+   "acc": 1.21,
+   "c6": 24.04,
+   "age": 0.58,
+   "sec": "rugcheck",
+   "pa": "D1LXpkFpbQr1YwVgWYQsed93czdz8hA7s9g7yb8LMFfe",
+   "score": 40
+  },
+  {
    "sym": "币安中国",
    "c": "bsc",
-   "mc": 163738.1,
+   "mc": 277609.2,
    "nar": "Unclassified",
    "run": 44334.24,
    "retr": 0.32,
    "acc": 1.0,
-   "c6": 31.74,
-   "age": 5.9,
+   "c6": 28.59,
+   "age": 6.4,
    "sec": "goplus",
    "pa": "0xd222a511958d76800D6f5A279B603D349EA2fb71",
    "score": 50
   },
   {
-   "sym": "RDRIOT",
+   "sym": "GTA6",
    "c": "robinhood",
-   "mc": 555.5,
+   "mc": 283.1,
    "nar": "Unclassified",
-   "run": null,
-   "retr": null,
-   "acc": 0.0,
-   "c6": null,
-   "age": 0.5,
+   "run": 9.01,
+   "retr": 0.0,
+   "acc": 0.01,
+   "c6": 0.93,
+   "age": 1.1,
    "sec": "explorer",
-   "pa": "0x82965399e063aca5b5eb68784d6db5d57bc82c8bba75cc4f49b04e78aa2f2887",
-   "score": 0
+   "pa": "0x124f6f6f393ec76ad0b1ffa585808b42c5d7316d14507de50a43e596f21843bc",
+   "score": 20
   }
  ],
  "wider_search": 1,
- "honeypots_new": [],
+ "honeypots_new": [
+  "SQD"
+ ],
  "track": {
-  "logged": 168,
+  "logged": 169,
   "new_rows": [
    [
-    "牛逼",
+    "Tesera",
     "S"
-   ],
-   [
-    "MRNA",
-    "S"
-   ],
-   [
-    "BAWSAQ",
-    "P"
-   ],
-   [
-    "Lucia",
-    "P"
-   ],
-   [
-    "StarsAI",
-    "P"
    ]
   ],
   "best_x": 223.14,
-  "median_peak_x": 1.06,
-  "hit_2x_today": [],
+  "median_peak_x": 1.08,
+  "hit_2x_today": [
+   "POCKET (elysium)",
+   "ANT (robinhood)",
+   "ANT (solana)",
+   "HOGE (solana)"
+  ],
   "to_zero_today": [],
   "repriced": true
  },
  "igniting_track": {
   "logged": 76,
   "new_rows": [],
-  "hit_2x_today": [],
+  "hit_2x_today": [
+   "POCKET (elysium)",
+   "ANT (solana)"
+  ],
   "to_zero_today": []
  },
  "momentum_track": {
-  "logged": 120,
+  "logged": 121,
   "new_rows": [
-   "牛逼",
-   "HOGE",
-   "Vision"
+   "RDRIOT"
   ],
-  "hit_2x_today": [],
+  "hit_2x_today": [
+   "$APEC (bsc)",
+   "HOGE (solana)"
+  ],
   "to_zero_today": [
-   "牛逼 (bsc)"
+   "ASSAY (robinhood)",
+   "Vision (robinhood)"
   ]
  },
  "runners_track": {
-  "logged": 5,
-  "new_rows": [],
+  "logged": 6,
+  "new_rows": [
+   "Leonida"
+  ],
   "hit_2x_today": [],
   "to_zero_today": []
  },
  "early_track": {
-  "logged": 70,
+  "logged": 73,
   "new_rows": [
-   "TE"
+   "rockstar",
+   "DSP",
+   "GTA6"
   ],
   "hit_2x_today": [
-   ":3 (solana)"
+   "Tesera (elysium)",
+   "HOGE (solana)"
   ],
   "to_zero_today": [
-   "牛逼 (bsc)"
+   "Max (base)",
+   "VOUCH (base)"
   ]
  },
  "breakouts_track": {
   "logged": 30,
-  "new_rows": [
-   "JOB"
-  ],
+  "new_rows": [],
   "hit_2x_today": [],
   "to_zero_today": []
  },
  "control": {
-  "rows": 830,
+  "rows": 835,
   "median_peak_x": 1.0,
-  "hit_2x_today": [],
+  "hit_2x_today": [
+   "$APEC (bsc)",
+   "HOGE (solana)"
+  ],
   "to_zero_today": [
-   "MACHINE (robinhood)",
-   "Underdog (robinhood)",
-   "SS (solana)",
-   "VRAX (robinhood)",
-   "PAWS (robinhood)",
-   "CLAUD (solana)",
-   "Chaton (solana)",
-   "Doomsday (solana)",
-   "aDOGymous (solana)",
-   "牛逼 (bsc)"
+   "7 (solana)",
+   "HOOKEDINU (solana)",
+   "ANIMA (bsc)",
+   "ASSAY (robinhood)",
+   "SP (ethereum)",
+   "MI (bsc)",
+   "Max (base)",
+   "Vision (robinhood)"
   ]
  },
  "changed": true,
- "alert": false
+ "alert": true
 }
