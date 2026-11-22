@@ -45,5 +45,79 @@
    "social": 33.3,
    "asset_doubled": 0
   }
+ },
+ {
+  "review": "2026-11-22",
+  "taken": "2026-11-22 10:05 SGT",
+  "k": {
+   "lists": {
+    "S": {
+     "n": 108,
+     "hit2": 18.5,
+     "down50": 63.9,
+     "recommended": -3.6
+    },
+    "P": {
+     "n": 66,
+     "hit2": 18.2,
+     "down50": 83.3,
+     "recommended": -28.1
+    },
+    "I": {
+     "n": 70,
+     "hit2": 37.1,
+     "down50": 87.1,
+     "recommended": -12.1
+    },
+    "M": {
+     "n": 109,
+     "hit2": 23.9,
+     "down50": 86.2,
+     "recommended": -40.4
+    },
+    "U": {
+     "n": 6,
+     "hit2": 0.0,
+     "down50": 100.0,
+     "recommended": -99.0
+    },
+    "E": {
+     "n": 97,
+     "hit2": 9.3,
+     "down50": 57.7,
+     "recommended": -36.3
+    },
+    "B": {
+     "n": 38,
+     "hit2": 13.2,
+     "down50": 55.3,
+     "recommended": -10.3
+    },
+    "R": {
+     "n": 748,
+     "hit2": 14.6,
+     "down50": 78.3,
+     "recommended": -44.9
+    }
+   },
+   "score": {
+    "0–20": 2.9,
+    "20–40": 16.5,
+    "40–60": 17.9,
+    "60–100": 24.6
+   },
+   "runners": 15.6,
+   "social": 33.3,
+   "asset_doubled": 2,
+   "tiers": {
+    "Micro $50–100k": 13.7,
+    "Micro $100–200k": 15.7,
+    "Early $200–350k": 12.8,
+    "Early $350–500k": 12.5
+   },
+   "breakouts": 22.0,
+   "second_look": 32.9,
+   "wider": 10.0
+  }
  }
 ]
