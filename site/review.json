@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-22 22:39 SGT",
+ "generated": "2026-11-23 10:06 SGT",
  "first_day": "2026-09-19",
- "last_day": "2026-11-22-pm",
- "tokens": 2021,
+ "last_day": "2026-11-23",
+ "tokens": 2040,
  "split": "2026-10-22",
  "lists": [
   {
@@ -13,13 +13,13 @@
    "hit5": 6,
    "hit10": 4,
    "still2": 2,
-   "down50": 62.5,
+   "down50": 63.4,
    "spikes_left_out": 1,
    "exits": {
-    "hold": -53.3,
-    "owner": -28.8,
-    "owner_stop": -17.4,
-    "recommended": -2.2
+    "hold": -54.8,
+    "owner": -29.6,
+    "owner_stop": -18.2,
+    "recommended": -2.8
    }
   },
   {
@@ -33,10 +33,10 @@
    "down50": 81.7,
    "spikes_left_out": 0,
    "exits": {
-    "hold": -67.7,
-    "owner": -46.5,
-    "owner_stop": -34.0,
-    "recommended": -27.8
+    "hold": -68.7,
+    "owner": -48.1,
+    "owner_stop": -34.9,
+    "recommended": -29.0
    }
   },
   {
@@ -47,13 +47,13 @@
    "hit5": 8,
    "hit10": 5,
    "still2": 0,
-   "down50": 86.1,
+   "down50": 87.5,
    "spikes_left_out": 2,
    "exits": {
-    "hold": -84.1,
-    "owner": -30.3,
-    "owner_stop": -25.6,
-    "recommended": -11.3
+    "hold": -84.2,
+    "owner": -30.5,
+    "owner_stop": -26.0,
+    "recommended": -11.8
    }
   },
   {
@@ -63,14 +63,14 @@
    "hit2": 24.3,
    "hit5": 12,
    "hit10": 10,
-   "still2": 4,
-   "down50": 87.4,
+   "still2": 2,
+   "down50": 89.2,
    "spikes_left_out": 9,
    "exits": {
-    "hold": -75.0,
-    "owner": -54.7,
-    "owner_stop": -41.1,
-    "recommended": -41.1
+    "hold": -78.6,
+    "owner": -56.2,
+    "owner_stop": -42.7,
+    "recommended": -41.2
    }
   },
   {
@@ -97,14 +97,14 @@
    "hit2": 8.7,
    "hit5": 1,
    "hit10": 1,
-   "still2": 3,
-   "down50": 58.3,
+   "still2": 2,
+   "down50": 60.2,
    "spikes_left_out": 0,
    "exits": {
-    "hold": -40.1,
-    "owner": -40.0,
-    "owner_stop": -33.8,
-    "recommended": -33.5
+    "hold": -41.9,
+    "owner": -43.3,
+    "owner_stop": -37.0,
+    "recommended": -36.7
    }
   },
   {
@@ -115,30 +115,30 @@
    "hit5": 2,
    "hit10": 2,
    "still2": 1,
-   "down50": 53.8,
+   "down50": 56.4,
    "spikes_left_out": 1,
    "exits": {
-    "hold": -51.8,
-    "owner": -34.4,
-    "owner_stop": -28.5,
-    "recommended": -10.9
+    "hold": -53.6,
+    "owner": -36.4,
+    "owner_stop": -29.2,
+    "recommended": -11.6
    }
   },
   {
    "l": "R",
    "name": "✕ Near-misses",
    "n": 761,
-   "hit2": 14.6,
+   "hit2": 14.7,
    "hit5": 36,
    "hit10": 18,
-   "still2": 9,
-   "down50": 77.8,
+   "still2": 7,
+   "down50": 78.6,
    "spikes_left_out": 11,
    "exits": {
-    "hold": -73.6,
-    "owner": -51.6,
-    "owner_stop": -47.7,
-    "recommended": -44.5
+    "hold": -74.4,
+    "owner": -52.1,
+    "owner_stop": -48.0,
+    "recommended": -44.7
    }
   }
  ],
@@ -364,13 +364,13 @@
    "l": "R",
    "name": "✕ Near-misses",
    "x2": {
-    "n": 103,
+    "n": 104,
     "days_med": 1.5,
     "within1": 18,
-    "d1_3": 58,
+    "d1_3": 59,
     "d3_7": 12,
     "over7": 15,
-    "age_med": 2.43
+    "age_med": 2.38
    },
    "x5": {
     "n": 35,
@@ -394,31 +394,31 @@
  ],
  "winners": {
   "fast": {
-   "n": 180,
+   "n": 182,
    "age": 0.57,
    "mcap_k": 1228.4,
    "turn": 15.1,
    "buyers": 0.75,
    "c6": 56.64,
    "below_high": 16.55,
-   "holders": 2245,
-   "has_social": 30.0,
+   "holders": 2242.0,
+   "has_social": 30.2,
    "chains": [
     [
      "solana",
-     43.9
+     43.4
     ],
     [
      "bsc",
-     33.9
+     34.1
     ],
     [
      "robinhood",
-     8.9
+     8.8
     ],
     [
      "ethereum",
-     5.6
+     5.5
     ]
    ]
   },
@@ -452,23 +452,23 @@
    ]
   },
   "never": {
-   "n": 1779,
+   "n": 1796,
    "age": 0.69,
-   "mcap_k": 1764.3,
-   "turn": 8.4,
+   "mcap_k": 1769.95,
+   "turn": 8.3,
    "buyers": 0.54,
-   "c6": 6.42,
-   "below_high": 20.1,
-   "holders": 1564,
-   "has_social": 42.7,
+   "c6": 6.41,
+   "below_high": 20.09,
+   "holders": 1551.0,
+   "has_social": 42.5,
    "chains": [
     [
      "robinhood",
-     30.5
+     30.6
     ],
     [
      "solana",
-     27.0
+     26.9
     ],
     [
      "bsc",
@@ -489,13 +489,13 @@
      "n": 419,
      "hit2": 4.1,
      "hit5": 1.2,
-     "down50": 39.1
+     "down50": 39.4
     },
     "second": {
-     "n": 406,
-     "hit2": 3.0,
+     "n": 415,
+     "hit2": 2.9,
      "hit5": 1.0,
-     "down50": 18.7
+     "down50": 18.6
     }
    },
    {
@@ -507,10 +507,10 @@
      "down50": 68.4
     },
     "second": {
-     "n": 308,
-     "hit2": 16.6,
-     "hit5": 6.8,
-     "down50": 63.0
+     "n": 313,
+     "hit2": 16.9,
+     "hit5": 6.7,
+     "down50": 62.6
     }
    },
    {
@@ -519,13 +519,13 @@
      "n": 157,
      "hit2": 19.1,
      "hit5": 7.6,
-     "down50": 88.5
+     "down50": 89.2
     },
     "second": {
-     "n": 151,
-     "hit2": 17.9,
-     "hit5": 6.6,
-     "down50": 71.5
+     "n": 156,
+     "hit2": 17.3,
+     "hit5": 6.4,
+     "down50": 71.2
     }
    },
    {
@@ -545,16 +545,16 @@
    }
   ],
   "top20": {
-   "n": 187,
-   "hit2": 21.9,
-   "hit5": 9.6,
-   "down50": 67.4
+   "n": 191,
+   "hit2": 21.5,
+   "hit5": 9.4,
+   "down50": 67.5
   },
   "bottom20": {
-   "n": 187,
+   "n": 191,
    "hit2": 0.5,
    "hit5": 0.0,
-   "down50": 9.6
+   "down50": 9.9
   },
   "traits": [
    {
@@ -562,16 +562,16 @@
     "label": "buyer share 70-90%",
     "points": 25,
     "with": {
-     "n": 261,
-     "hit2": 19.2,
+     "n": 263,
+     "hit2": 19.4,
      "hit5": 6.5,
-     "down50": 55.2
+     "down50": 55.5
     },
     "without": {
-     "n": 1760,
+     "n": 1777,
      "hit2": 10.9,
-     "hit5": 4.4,
-     "down50": 52.9
+     "hit5": 4.3,
+     "down50": 52.7
     }
    },
    {
@@ -579,16 +579,16 @@
     "label": "1-7 days old",
     "points": 20,
     "with": {
-     "n": 291,
-     "hit2": 22.3,
-     "hit5": 8.6,
-     "down50": 74.6
+     "n": 296,
+     "hit2": 22.0,
+     "hit5": 8.4,
+     "down50": 73.3
     },
     "without": {
-     "n": 1730,
-     "hit2": 10.2,
+     "n": 1744,
+     "hit2": 10.3,
      "hit5": 4.0,
-     "down50": 49.6
+     "down50": 49.7
     }
    },
    {
@@ -596,16 +596,16 @@
     "label": "24h move +100-300%",
     "points": 15,
     "with": {
-     "n": 153,
-     "hit2": 27.5,
-     "hit5": 11.1,
-     "down50": 58.8
+     "n": 154,
+     "hit2": 27.3,
+     "hit5": 11.0,
+     "down50": 59.7
     },
     "without": {
-     "n": 1868,
+     "n": 1886,
      "hit2": 10.7,
      "hit5": 4.1,
-     "down50": 52.7
+     "down50": 52.5
     }
    },
    {
@@ -613,16 +613,16 @@
     "label": "Solana, BSC or Ethereum",
     "points": 15,
     "with": {
-     "n": 1015,
+     "n": 1023,
      "hit2": 18.4,
-     "hit5": 7.8,
+     "hit5": 7.7,
      "down50": 70.0
     },
     "without": {
-     "n": 1006,
+     "n": 1017,
      "hit2": 5.5,
      "hit5": 1.5,
-     "down50": 36.3
+     "down50": 36.1
     }
    },
    {
@@ -630,16 +630,16 @@
     "label": "market cap $1-2m",
     "points": 10,
     "with": {
-     "n": 491,
+     "n": 493,
      "hit2": 18.1,
      "hit5": 7.1,
-     "down50": 67.6
+     "down50": 68.0
     },
     "without": {
-     "n": 1530,
+     "n": 1547,
      "hit2": 10.0,
-     "hit5": 3.9,
-     "down50": 48.6
+     "hit5": 3.8,
+     "down50": 48.4
     }
    },
    {
@@ -647,16 +647,16 @@
     "label": "trading 10x+ its liquidity",
     "points": 10,
     "with": {
-     "n": 970,
+     "n": 975,
      "hit2": 15.2,
-     "hit5": 5.9,
-     "down50": 72.7
+     "hit5": 5.8,
+     "down50": 72.8
     },
     "without": {
-     "n": 1051,
+     "n": 1065,
      "hit2": 9.0,
      "hit5": 3.5,
-     "down50": 35.2
+     "down50": 35.0
     }
    },
    {
@@ -664,16 +664,16 @@
     "label": "has an X or site",
     "points": 5,
     "with": {
-     "n": 859,
-     "hit2": 11.5,
-     "hit5": 3.3,
-     "down50": 79.2
+     "n": 863,
+     "hit2": 11.6,
+     "hit5": 3.2,
+     "down50": 79.3
     },
     "without": {
-     "n": 1162,
-     "hit2": 12.3,
-     "hit5": 5.7,
-     "down50": 34.0
+     "n": 1177,
+     "hit2": 12.2,
+     "hit5": 5.6,
+     "down50": 33.9
     }
    }
   ]
@@ -698,10 +698,10 @@
    "down50": 93.3
   },
   "all_ran": {
-   "n": 1144,
-   "hit2": 15.1,
+   "n": 1154,
+   "hit2": 15.2,
    "hit5": 6.7,
-   "down50": 76.0
+   "down50": 75.8
   },
   "big": [
    [
@@ -733,16 +733,16 @@
  },
  "social": {
   "only_social": {
-   "n": 52,
-   "hit2": 32.7,
-   "hit5": 7.7,
-   "down50": 23.1
+   "n": 53,
+   "hit2": 32.1,
+   "hit5": 7.5,
+   "down50": 22.6
   },
   "shortlist_with_site": {
    "n": 37,
    "hit2": 13.5,
    "hit5": 2.7,
-   "down50": 64.9
+   "down50": 67.6
   },
   "examples": [
    [
@@ -783,26 +783,26 @@
   "bars": [
    {
     "bar": "No extra bar",
-    "kept": 575,
-    "of": 575,
+    "kept": 581,
+    "of": 581,
     "winners_kept": 32,
     "winners": 32,
-    "hit2_kept": 5.6,
+    "hit2_kept": 5.5,
     "hit2_dropped": null
    },
    {
     "bar": "Buyer share 70%+",
     "kept": 58,
-    "of": 575,
+    "of": 581,
     "winners_kept": 2,
     "winners": 32,
     "hit2_kept": 3.4,
-    "hit2_dropped": 5.8
+    "hit2_dropped": 5.7
    },
    {
     "bar": "At least 2 days old",
     "kept": 137,
-    "of": 575,
+    "of": 581,
     "winners_kept": 14,
     "winners": 32,
     "hit2_kept": 10.2,
@@ -810,17 +810,17 @@
    },
    {
     "bar": "Trading 3×+ its liquidity",
-    "kept": 432,
-    "of": 575,
+    "kept": 436,
+    "of": 581,
     "winners_kept": 25,
     "winners": 32,
-    "hit2_kept": 5.8,
-    "hit2_dropped": 4.9
+    "hit2_kept": 5.7,
+    "hit2_dropped": 4.8
    },
    {
     "bar": "Score 30+",
     "kept": 76,
-    "of": 575,
+    "of": 581,
     "winners_kept": 13,
     "winners": 32,
     "hit2_kept": 17.1,
@@ -837,10 +837,10 @@
    "down50": 4.8
   },
   "rest": {
-   "n": 1856,
+   "n": 1875,
    "hit2": 12.9,
-   "hit5": 5.1,
-   "down50": 57.5
+   "hit5": 5.0,
+   "down50": 57.3
   },
   "calm_doubled": [
    [
@@ -904,21 +904,21 @@
   ],
   "daily": [
    {
-    "n": 197,
-    "hit2": 6.1,
+    "n": 206,
+    "hit2": 5.8,
     "hit5": 4,
     "hit10": 2,
-    "down50": 42.1,
-    "zero": 27.4,
+    "down50": 40.8,
+    "zero": 27.2,
     "tier": "Early $200–350k"
    },
    {
-    "n": 107,
-    "hit2": 9.3,
+    "n": 109,
+    "hit2": 10.1,
     "hit5": 2,
     "hit10": 0,
-    "down50": 46.7,
-    "zero": 30.8,
+    "down50": 47.7,
+    "zero": 29.4,
     "tier": "Early $350–500k"
    }
   ],
@@ -929,33 +929,33 @@
   "hit2": 21.4,
   "hit5": 5,
   "hit10": 4,
-  "down50": 50.0,
+  "down50": 52.4,
   "zero": 38.1
  },
  "second_look": {
   "tagged": {
-   "n": 70,
-   "hit2": 32.9,
+   "n": 71,
+   "hit2": 32.4,
    "hit5": 10,
    "hit10": 5,
-   "down50": 57.1,
-   "zero": 52.9
+   "down50": 56.3,
+   "zero": 52.1
   },
   "all_twice": {
-   "n": 351,
-   "hit2": 13.7,
+   "n": 354,
+   "hit2": 13.6,
    "hit5": 23,
    "hit10": 12,
-   "down50": 57.0,
-   "zero": 47.9
+   "down50": 56.8,
+   "zero": 48.0
   },
   "flat": {
-   "n": 144,
-   "hit2": 6.9,
+   "n": 146,
+   "hit2": 6.8,
    "hit5": 5,
    "hit10": 2,
-   "down50": 34.0,
-   "zero": 25.0
+   "down50": 33.6,
+   "zero": 24.7
   }
  },
  "wider": {
@@ -968,14 +968,14 @@
    "zero": 50.0
   },
   "rest": {
-   "n": 684,
+   "n": 714,
    "hit2": 9.1,
    "hit5": 27,
    "hit10": 16,
-   "down50": 41.5,
-   "zero": 30.3
+   "down50": 40.9,
+   "zero": 29.8
   },
-  "scans": 23,
+  "scans": 24,
   "per_scan": 0.9
  },
  "history": [

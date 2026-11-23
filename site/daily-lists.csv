@@ -894,3 +894,24 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-11-22,breakouts,FIONA,solana,2107.6,Dog & animal memes,64.55,54.17,1.12,31.24,2.15,rugcheck,https://dexscreener.com/solana/DjbLtX1HRGZZrJgJ7CwTX6SN3D7tBLiytkGwomBUwTVB,daily scan
 2026-11-22,breakouts,Rings,solana,3816.7,Launchpad / infra,28.05,24.45,1.74,43.41,11.22,rugcheck,https://dexscreener.com/solana/8fSUYVnTy4r5fZUksjzKexLq2Tx96K3UPdYRvW5XWJ9t,daily scan
 2026-11-22,breakouts,RYDE4,bsc,3788.7,Unclassified,1.33,22.12,0.19,5.53,3.4,goplus,https://dexscreener.com/bsc/0x83D26894F65191566c4293118C1Bfccf5b899195,daily scan
+2026-11-23,shortlist,DOOM,solana,508.7,Unclassified,2.35,44.82,0.95,-17.45,125.3,rugcheck,https://dexscreener.com/solana/FnQZftTbLr7YUCyfozG1jatS39MVn6eELXFD47ByRfQg,daily scan
+2026-11-23,shortlist,JOB,solana,1593.2,Dog & animal memes,1.49,77.58,1.16,-12.88,26.22,rugcheck,https://dexscreener.com/solana/HAUVBmNthCFmG9SRXMvZ1GAXNpU955hkPdSAsC2cx4C8,daily scan
+2026-11-23,shortlist,NIO,solana,1237.5,Unclassified,2.09,60.26,0.78,1.68,32.35,rugcheck,https://dexscreener.com/solana/B4Wmjc6PvjCtU3qSVS3eTT9Mr4M5V5jBkRQctWANTc71,daily scan
+2026-11-23,shortlist,WIF,robinhood,833.4,Classic memes,1.1,50.15,0.22,2.76,108.63,explorer,https://dexscreener.com/robinhood/0x71ef4106340f0a3b9c19ec994eef4fc44a1d2513f38faac39d7636b156548c79,daily scan
+2026-11-23,pullback,Singularity,solana,634.5,Unclassified,37.77,56.81,0.88,-9.16,2.18,rugcheck,https://dexscreener.com/solana/58XqWPXDGp3GfU9DAFxs8C1GJwTLdHdQhJRofAF5yWTV,daily scan
+2026-11-23,momentum,chud,solana,639.7,Unclassified,25.86,30.86,0.75,5.4,2.13,rugcheck,https://dexscreener.com/solana/HQBfT5FrSDKj1scAUC62uqvxrzrM4F9FHooT9u4pCfj2,daily scan
+2026-11-23,momentum,蚂蚁,bsc,939.0,Unclassified,,,0.16,0.68,2.67,goplus,https://dexscreener.com/bsc/0x243de50DDBf4762dD13e106790a3ceDC3886093E,daily scan
+2026-11-23,runners,cateball,solana,1905.5,Dog & animal memes,,,1.92,190.0,0.64,rugcheck,https://dexscreener.com/solana/EkEXwkZqweA8rbv31KwjbYzSE3SoSgez1VrYkvu6uY2w,daily scan
+2026-11-23,runners,UCASH,solana,1274.1,Classic memes,,,0.55,32.62,0.55,rugcheck,https://dexscreener.com/solana/4h7R5JzaQ6PgNjFuD12AeUQJRQYgwz2YhPSrA6sh1Rxt,daily scan
+2026-11-23,early watch,Ansemmas,solana,332.9,KOL / personality,1.74,43.62,0.37,-5.64,52.31,rugcheck,https://dexscreener.com/solana/6qirp44Q2T8B1CfbGmnqeXCLdQhFqmNCfAFfpKG4N156,daily scan
+2026-11-23,early watch,DacityCoin,solana,211.2,Classic memes,1.17,98.39,1.1,-3.51,38.46,rugcheck,https://dexscreener.com/solana/7Te1wXcfeQjKLGHXFvxSCnGZTqunoZ9fxBn7KKjrkNEr,daily scan
+2026-11-23,early watch,DIGS,solana,221.5,Classic memes,1.68,54.98,1.14,-18.64,25.5,rugcheck,https://dexscreener.com/solana/3mxDjdZ1gAe5HziC4dj4UnLdXJ5DBcC9jsSYq55mFyKg,daily scan
+2026-11-23,early watch,HIMSc,base,354.6,Tokenised equities,1.08,50.45,1.16,0.21,31.92,goplus,https://dexscreener.com/base/0x41D7793FAa4Ca181B6f021423fF3F9015C00b2ff,daily scan
+2026-11-23,early watch,KNTQ,base,445.5,Utilities,1.13,67.18,0.19,-0.37,17.79,goplus,https://dexscreener.com/base/0x2aCFe5952EA0E78c73Ea7Ca5d709C3C1C13AB661,daily scan
+2026-11-23,early watch,Max,solana,497.2,Dog & animal memes,1.16,96.53,1.24,-9.59,11.14,rugcheck,https://dexscreener.com/solana/Eoe22HdCa9rhtBwKL6nNZmZxfuzF35xkxobcvfaF1vWQ,daily scan
+2026-11-23,early watch,ORCLc,base,356.1,Tokenised equities,1.06,28.99,1.17,0.35,31.66,goplus,https://dexscreener.com/base/0x62B5452E80E50B047dcF6dd3Fb6a1D266C678eB5,daily scan
+2026-11-23,early watch,RAETO,robinhood,352.2,Unclassified,30.02,23.72,0.0,,1.0,explorer,https://dexscreener.com/robinhood/0x4c575ce84fc2444c090e9039e23cc4c6f8e35bf8a2cf07c5b9d3ead5a1dd74c5,daily scan
+2026-11-23,early watch,SIDOOR,solana,215.9,Launchpad / infra,9.81,59.91,2.21,29.34,1.15,rugcheck,https://dexscreener.com/solana/3peugE6Fm4fpaVvrV2KBFN3nvLbCGEhGoUXDDxAHuscR,daily scan
+2026-11-23,breakouts,DCTY,solana,2308.8,Unclassified,4.47,89.68,0.44,-10.48,33.89,rugcheck,https://dexscreener.com/solana/DChXQ4qFPpNPEDfZLNiwvPhrVuuFGfqEDLAAZbiZHUWf,daily scan
+2026-11-23,breakouts,Rings,solana,3136.4,Launchpad / infra,10.12,35.04,1.32,4.71,12.22,rugcheck,https://dexscreener.com/solana/8fSUYVnTy4r5fZUksjzKexLq2Tx96K3UPdYRvW5XWJ9t,daily scan
+2026-11-23,breakouts,TeslaSI,bsc,2336.6,AI,145.17,0.44,0.9,20.11,1.53,goplus,https://dexscreener.com/bsc/0xCF068576413167fa7024e0c5bD06d5FB8EF73b36,daily scan
