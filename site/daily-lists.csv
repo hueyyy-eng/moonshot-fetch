@@ -1025,3 +1025,23 @@ scan_date,list,symbol,chain,mcap_k,narrative,run_x_off_7d_low,pct_below_high,vol
 2026-11-26,breakouts,KNTQ,elysium,2901.3,Utilities,1.06,47.2,1.38,-5.08,12.88,nodata,https://dexscreener.com/elysium/0xa3f234a829d1c4a980e9776ccddf4b0c12070e03a0558d1eed2e9c0090d3cd7a,evening scan
 2026-11-26,breakouts,TEXEL,robinhood,2202.0,AI,35.67,39.4,2.18,76.23,17.41,explorer,https://dexscreener.com/robinhood/0x5e73f5892ef5cf4d553fe0cc9b109e884c3c2a52635bf6c4f1dceff9637fe932,daily scan
 2026-11-26,breakouts,VRAX,robinhood,2272.2,Unclassified,1.91,70.14,1.22,5.56,57.12,explorer,https://dexscreener.com/robinhood/0x338fce553e60c8b0acccde1956bc378586ef6f2935339ebae5804d429d461e44,daily scan
+2026-11-27,shortlist,GOATED,bsc,1377.3,Dog & animal memes,1.06,12.82,0.98,0.2,427.56,goplus,https://dexscreener.com/bsc/0xc744be8190e2A4d9058294AfE86d43ad9FB118e7,evening scan
+2026-11-27,shortlist,SDLR,ethereum,668.6,Unclassified,1.08,24.51,1.0,-0.07,99.27,goplus,https://dexscreener.com/ethereum/0x32B16Ffa899aC5fD40d798AbbAfb4EE59de88Fb1,evening scan
+2026-11-27,shortlist,STANK,solana,564.3,Unclassified,2.63,94.63,2.0,32.94,28.02,rugcheck,https://dexscreener.com/solana/6hYFMyE2BYYScTErqUeCKhihQ5X9j2WD2z9waTdwy38N,evening scan
+2026-11-27,shortlist,TTWO,robinhood,1247.1,Tokenised equities,1.11,5.8,1.38,-0.58,16.15,explorer,https://dexscreener.com/robinhood/0xbf88d2B2B0922484Af03D9b0a786a1D04e9F523B,evening scan
+2026-11-27,shortlist,WIF,robinhood,627.8,Classic memes,1.02,61.74,1.93,-4.1,112.21,explorer,https://dexscreener.com/robinhood/0x71ef4106340f0a3b9c19ec994eef4fc44a1d2513f38faac39d7636b156548c79,evening scan
+2026-11-27,igniting,STANK,solana,564.3,Unclassified,2.63,94.63,2.0,32.94,28.02,rugcheck,https://dexscreener.com/solana/6hYFMyE2BYYScTErqUeCKhihQ5X9j2WD2z9waTdwy38N,evening scan
+2026-11-27,momentum,BASKET,robinhood,524.7,Unclassified,27.3,3.04,0.0,,1.23,explorer,https://dexscreener.com/robinhood/0xce6a8353c88011f73a8d2a074bb0cc1d494acfa6d77b4957ae89133883c26d76,evening scan
+2026-11-27,momentum,JIMMY,solana,963.7,Unclassified,92.99,65.06,0.48,33.89,2.72,rugcheck,https://dexscreener.com/solana/FnHWfV49ywCtGCDTyf34AVN8BiXxcgXUKqLctkrkP1gQ,evening scan
+2026-11-27,momentum,MFLO,robinhood,526.5,Unclassified,30.9,53.48,0.0,,1.33,explorer,https://dexscreener.com/robinhood/0xecfb043b5115f5c2cae133c3ab0bb47628385bcdf7213e1f8ae9bc05171787a3,evening scan
+2026-11-27,early watch,ber,solana,368.6,Unclassified,1.46,69.05,0.36,0.58,32.94,rugcheck,https://dexscreener.com/solana/EtbSvbD69mUpkrFkaN56GEYZtuGoueYm2HBk2PLhjbST,evening scan
+2026-11-27,early watch,BSKBT,robinhood,499.2,Unclassified,36.92,3.84,0.0,,1.01,explorer,https://dexscreener.com/robinhood/0x5df3b068ac1c30096e7dc5760409bb6c64bfcf2eb23feb2d940ba89b0b92c498,evening scan
+2026-11-27,early watch,hello,solana,406.2,Unclassified,6.36,37.06,2.66,42.96,10.06,rugcheck,https://dexscreener.com/solana/2zXQoisGWLEhdBg3tAD2RMciAwDXgqT4DKijLr4BvjUx,evening scan
+2026-11-27,early watch,PINO,solana,428.3,AI,1.45,28.83,1.57,-1.96,57.77,rugcheck,https://dexscreener.com/solana/BHKyty1uDDxSwAkhkefn8ZwNQZjfQrmC672D2UW874dD,evening scan
+2026-11-27,early watch,Santa,solana,223.1,Unclassified,1.54,33.88,0.71,29.85,1.89,rugcheck,https://dexscreener.com/solana/4P4WjRDEihtBCa4M1Fnrvf1f9JuLspqzo1smCR1Mnr7v,evening scan
+2026-11-27,early watch,SKHYc,base,311.8,Tokenised equities,1.1,32.77,0.42,-0.34,35.52,goplus,https://dexscreener.com/base/0xEBC746A47ebb274de1dbDC9a465E6C5C2301C5DA,evening scan
+2026-11-27,breakouts,FIONA,robinhood,2657.8,Dog & animal memes,3234.98,39.96,0.88,-59.31,1.54,explorer,https://dexscreener.com/robinhood/0xb449db79e09ffab3bb8a786f8d61157e787d8e99a920fd8799b5db8ec57f36bd,evening scan
+2026-11-27,breakouts,JIMMY,ethereum,4181.3,Unclassified,,,1.52,82.07,1.06,goplus,https://dexscreener.com/ethereum/0xebcc56de21579ba29b2d21e9af057ad350800b56d53b74196e131b17154b3faf,evening scan
+2026-11-27,breakouts,LiquidV,elysium,2245.7,Utilities,8.99,13.1,1.07,36.22,16.46,nodata,https://dexscreener.com/elysium/0xf8fd4b7062bba1c01d8d981e982cc80a8598a787280ce0c4ef08fee659a5217a,evening scan
+2026-11-27,breakouts,PUMPCHAN,solana,8318.1,Classic memes,,,2.86,20.9,0.54,rugcheck,https://dexscreener.com/solana/DDcyemq9bkyqtC93djkwaH6VaMKCjVsoCUVGV29q7teB,evening scan
+2026-11-27,breakouts,TEXEL,robinhood,2795.1,AI,35.67,39.4,0.69,32.29,17.93,explorer,https://dexscreener.com/robinhood/0x5e73f5892ef5cf4d553fe0cc9b109e884c3c2a52635bf6c4f1dceff9637fe932,evening scan
